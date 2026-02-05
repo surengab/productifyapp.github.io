@@ -1,406 +1,942 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/SoftwareApplication">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Primary Meta Tags -->
-    <title>Productify - Habit Tracker App | Simple & Minimalist Habit Tracking</title>
-    <meta name="title" content="Productify - Best Habit Tracker App | Simple & Minimalist Habit Tracking">
-    <meta name="description" content="Productify is the best habit tracker app for iOS. Build better habits, track streaks, set goals, and achieve your daily routines with our simple and minimalist habit tracker. Download the free habit tracking app today.">
-    <meta name="keywords" content="habit tracker, habit tracker app, productify, habit tracking app, best habit tracker, iOS habit tracker, minimalist habit tracker, simple habit tracker, daily habit tracker, build habits, track habits, habit app, productivity app, goal tracker, streak tracker">
+    <title>Productify – Habit Tracker App | Build Better Habits, Your Way</title>
+    <meta name="title" content="Productify – Habit Tracker App | Build Better Habits, Your Way">
+    <meta name="description" content="Productify is a minimalist habit tracker app for iOS. Track daily habits, build streaks, use AI insights, and stay accountable with a friend. Download free on the App Store.">
+    <meta name="keywords" content="habit tracker, habit tracker app, daily habit tracker, habit app, build better habits, track habits, habit streak app, accountability habit app, habit tracker with friends, AI habit tracker, habit templates, habit tracking iOS">
     <meta name="author" content="Productify">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     <link rel="canonical" href="https://productifyapp.org/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://productifyapp.org/">
-    <meta property="og:title" content="Productify - Best Habit Tracker App | Simple & Minimalist Habit Tracking">
-    <meta property="og:description" content="Productify is the best habit tracker app for iOS. Build better habits, track streaks, set goals, and achieve your daily routines with our simple and minimalist habit tracker.">
+    <meta property="og:title" content="Productify – Habit Tracker App | Build Better Habits, Your Way">
+    <meta property="og:description" content="A calm, minimalist habit tracker for iOS. AI insights, habit templates, friend accountability, and streak tracking — all in one app. Download free.">
     <meta property="og:image" content="https://productifyapp.org/image_2.png">
     <meta property="og:site_name" content="Productify">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://productifyapp.org/">
-    <meta property="twitter:title" content="Productify - Best Habit Tracker App | Simple & Minimalist Habit Tracking">
-    <meta property="twitter:description" content="Productify is the best habit tracker app for iOS. Build better habits, track streaks, set goals, and achieve your daily routines with our simple and minimalist habit tracker.">
+    <meta property="twitter:title" content="Productify – Habit Tracker App | Build Better Habits, Your Way">
+    <meta property="twitter:description" content="A calm, minimalist habit tracker for iOS. AI insights, habit templates, friend accountability, and streak tracking — all in one app. Download free.">
     <meta property="twitter:image" content="https://productifyapp.org/image_2.png">
-    <meta property="twitter:creator" content="@productify.habits">
-    
+    <meta property="twitter:creator" content="@Productify_app">
+    <meta property="twitter:site" content="@Productify_app">
+
     <!-- App Store -->
     <meta name="apple-itunes-app" content="app-id=1389900237">
-    
-    <!-- Theme Color -->
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
     <meta name="theme-color" content="#9D4EDD">
-    
-    <!-- Additional SEO -->
+
+    <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="https://productifyapp.org/sitemap.xml">
     <meta name="geo.region" content="US">
     <meta name="geo.placename" content="United States">
     <meta name="distribution" content="global">
     <meta name="rating" content="general">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* --- RESET & BASICS --- */
+        /* --- TOKENS --- */
         :root {
-            --primary-purple: #9D4EDD;
-            --primary-purple-dark: #7B2CBF;
-            --primary-purple-light: #C77DFF;
-            --light-purple-bg: #F3E8FF;
-            --light-purple-bg-2: #E9D5FF;
-            --text-dark: #1A1A1A;
-            --text-gray: #6B7280;
-            --text-light-gray: #9CA3AF;
-            --white: #ffffff;
-            --gradient-purple: linear-gradient(135deg, #9D4EDD 0%, #7B2CBF 100%);
-            --gradient-bg: linear-gradient(180deg, #FFFFFF 0%, #F9F5FF 100%);
+            --purple:        #9D4EDD;
+            --purple-dark:   #7B2CBF;
+            --purple-light:  #C77DFF;
+            --purple-bg:     #F3E8FF;
+            --purple-bg-2:   #EDE0FF;
+            --purple-line:   rgba(157,78,221,0.15);
+            --text-dark:     #111827;
+            --text-body:     #374151;
+            --text-muted:    #6B7280;
+            --text-faint:    #9CA3AF;
+            --white:         #ffffff;
+            --surface:       #FAFAFA;
+            --grad-purple:   linear-gradient(135deg, #9D4EDD 0%, #7B2CBF 100%);
+            --grad-page:     linear-gradient(180deg, #ffffff 0%, #F9F5FF 60%, #ffffff 100%);
+            --shadow-card:   0 2px 16px rgba(157,78,221,0.09);
+            --shadow-hover:  0 10px 40px rgba(157,78,221,0.18);
+            --radius-card:   20px;
+            --radius-pill:   50px;
         }
 
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+        /* --- RESET --- */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background: var(--gradient-bg);
+            color: var(--text-body);
+            background: var(--grad-page);
             line-height: 1.7;
             overflow-x: hidden;
         }
+        img { display: block; max-width: 100%; }
+        a { text-decoration: none; color: inherit; transition: color .2s; }
+        ul { list-style: none; }
 
-        a { 
-            text-decoration: none; 
-            transition: all 0.3s ease;
-        }
-
-        /* --- LAYOUT UTILITIES --- */
+        /* --- LAYOUT --- */
         .container {
-            max-width: 1200px;
+            max-width: 1160px;
             margin: 0 auto;
             padding: 0 24px;
         }
-
-        /* --- HEADER --- */
-        header {
-            padding: 32px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 10;
+        .section { padding: 96px 0; }
+        .section--alt { background: var(--surface); }
+        .section--purple { background: linear-gradient(160deg, var(--purple-bg) 0%, var(--purple-bg-2) 100%); }
+        .section--dark {
+            background: linear-gradient(135deg, #1a0533 0%, #2d0a5e 100%);
+            color: var(--white);
         }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.75rem;
-            background: var(--gradient-purple);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
-            transition: transform 0.3s ease;
+        /* --- TYPOGRAPHY --- */
+        .eyebrow {
+            display: inline-block;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--purple);
+            background: var(--purple-bg);
+            padding: 4px 14px;
+            border-radius: var(--radius-pill);
+            margin-bottom: 18px;
         }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 80px 0 100px;
-            text-align: center;
-            position: relative;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .section-dark .eyebrow { background: rgba(255,255,255,.12); color: var(--purple-light); }
 
         h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 24px;
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 800;
             color: var(--text-dark);
-            letter-spacing: -1px;
-            line-height: 1.2;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
         }
+        h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -.8px;
+            line-height: 1.25;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        .section--dark h2,
+        .section--dark h3,
+        .section--dark p { color: var(--white); }
+        .section--dark .text-muted { color: rgba(255,255,255,.65); }
 
-        .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            color: var(--text-gray);
-            max-width: 680px;
-            margin: 0 auto 48px;
+        .text-muted { color: var(--text-muted); }
+        .text-center { text-align: center; }
+        .lead {
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            color: var(--text-muted);
             line-height: 1.8;
+            max-width: 640px;
         }
 
-        .btn-primary {
+        /* --- BUTTONS --- */
+        .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 18px 36px;
-            background: var(--gradient-purple);
-            color: var(--white);
-            border-radius: 50px;
+            padding: 15px 32px;
+            border-radius: var(--radius-pill);
             font-weight: 600;
-            font-size: 1.05rem;
-            box-shadow: 0 8px 24px rgba(157, 78, 221, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(157, 78, 221, 0.4);
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .app-screenshot-container {
-            margin-top: 64px;
-            display: flex;
-            justify-content: center;
-            position: relative;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .app-screenshot {
-            max-width: 500px;
-            width: 100%;
-            height: auto;
-            min-height: 350px;
-            object-fit: contain;
-            border-radius: 32px;
-            box-shadow: 0 20px 60px rgba(157, 78, 221, 0.25), 
-                        0 0 0 1px rgba(157, 78, 221, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .app-screenshot:hover {
-            transform: scale(1.02);
-        }
-
-        /* --- FEATURES SECTION --- */
-        .features {
-            padding: 100px 0;
-            background: linear-gradient(180deg, var(--light-purple-bg) 0%, var(--light-purple-bg-2) 100%);
-            position: relative;
-        }
-
-        .features::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(157, 78, 221, 0.3), transparent);
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 60px;
-            color: var(--text-dark);
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .feature-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 32px;
-            text-align: center;
-        }
-
-        .feature-item {
-            padding: 40px 24px;
-            background: var(--white);
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(157, 78, 221, 0.08);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-purple);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(157, 78, 221, 0.15);
-        }
-
-        .feature-item:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .feature-item h3 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-
-        .feature-item p {
-            color: var(--text-gray);
             font-size: 1rem;
-            line-height: 1.7;
+            transition: all .25s cubic-bezier(.4,0,.2,1);
+            cursor: pointer;
+            border: none;
         }
+        .btn-primary {
+            background: var(--grad-purple);
+            color: var(--white);
+            box-shadow: 0 6px 24px rgba(157,78,221,.32);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(157,78,221,.44); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--purple);
+            border: 1.5px solid var(--purple-line);
+        }
+        .btn-secondary:hover { background: var(--purple-bg); border-color: var(--purple); }
+        .btn-ghost {
+            background: rgba(255,255,255,.12);
+            color: var(--white);
+            border: 1.5px solid rgba(255,255,255,.25);
+            backdrop-filter: blur(8px);
+        }
+        .btn-ghost:hover { background: rgba(255,255,255,.22); }
+        .btn-lg { padding: 18px 40px; font-size: 1.05rem; }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--purple-line);
+        }
+        .navbar__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0;
+        }
+        .logo {
+            font-size: 1.55rem;
+            font-weight: 800;
+            background: var(--grad-purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -.5px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-links a {
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .nav-links a:hover { color: var(--purple); }
+        .nav-cta { display: flex; align-items: center; gap: 12px; }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-dark);
+            border-radius: 2px;
+            margin: 5px 0;
+            transition: all .3s;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero__bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero__bg-orb--1 {
+            width: 560px; height: 560px;
+            background: rgba(157,78,221,.08);
+            top: -160px; right: -120px;
+        }
+        .hero__bg-orb--2 {
+            width: 400px; height: 400px;
+            background: rgba(157,78,221,.06);
+            bottom: -80px; left: -80px;
+        }
+        .hero__content { position: relative; z-index: 1; }
+        .hero h1 { margin-bottom: 22px; }
+        .hero h1 span {
+            background: var(--grad-purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .lead { margin: 0 auto 36px; }
+        .hero__cta-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .hero__note {
+            margin-top: 18px;
+            font-size: .82rem;
+            color: var(--text-faint);
+        }
+        .hero__screenshot {
+            margin-top: 72px;
+            position: relative;
+            animation: float 7s ease-in-out infinite;
+        }
+        .hero__screenshot img {
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 36px;
+            box-shadow: 0 24px 80px rgba(157,78,221,.22), 0 0 0 1px rgba(157,78,221,.1);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-16px); }
+        }
+
+        /* --- TRUST BAR --- */
+        .trust-bar {
+            padding: 32px 0;
+            border-top: 1px solid var(--purple-line);
+            border-bottom: 1px solid var(--purple-line);
+            background: var(--white);
+        }
+        .trust-bar__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: .9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .trust-item__icon {
+            font-size: 1.3rem;
+        }
+        .trust-item strong { color: var(--text-dark); }
+
+        /* --- SECTION HEADER --- */
+        .section-header {
+            margin-bottom: 56px;
+        }
+        .section-header.text-center .lead { margin: 12px auto 0; }
+
+        /* --- FEATURES GRID --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--radius-card);
+            padding: 36px 28px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--purple-line);
+            transition: all .3s cubic-bezier(.4,0,.2,1);
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-card);
+            border: 2px solid transparent;
+            background: var(--grad-purple) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+        .feature-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+        .feature-card:hover::after { opacity: 1; }
+        .feature-card__icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: var(--purple-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- FEATURE SPOTLIGHT --- */
+        .spotlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .spotlight--reverse { direction: rtl; }
+        .spotlight--reverse > * { direction: ltr; }
+        .spotlight__text .lead { margin-top: 16px; }
+        .spotlight__visual {
+            background: var(--purple-bg);
+            border-radius: 28px;
+            padding: 40px;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .spotlight__visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--grad-purple);
+            opacity: .05;
+        }
+        .spotlight__tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .tag {
+            font-size: .82rem;
+            font-weight: 500;
+            padding: 5px 14px;
+            border-radius: var(--radius-pill);
+            background: var(--purple-bg);
+            color: var(--purple-dark);
+        }
+        .check-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: .97rem;
+            color: var(--text-body);
+        }
+        .check-list li::before {
+            content: '✓';
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            background: var(--purple-bg);
+            color: var(--purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .7rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        /* --- HOW IT WORKS --- */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            counter-reset: steps;
+        }
+        .step-card {
+            text-align: center;
+            padding: 20px;
+        }
+        .step-card__num {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--grad-purple);
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+        }
+        .step-card p { color: var(--text-muted); font-size: .95rem; margin-top: 6px; }
+
+        /* --- PRICING --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            align-items: start;
+        }
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--radius-card);
+            padding: 40px 32px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--purple-line);
+            position: relative;
+        }
+        .pricing-card--featured {
+            background: var(--grad-purple);
+            color: var(--white);
+            border-color: transparent;
+            box-shadow: 0 12px 48px rgba(157,78,221,.35);
+        }
+        .pricing-card--featured h3,
+        .pricing-card--featured .price,
+        .pricing-card--featured .price-period,
+        .pricing-card--featured .pricing-desc { color: var(--white); }
+        .pricing-card--featured .check-list li { color: rgba(255,255,255,.9); }
+        .pricing-card--featured .check-list li::before {
+            background: rgba(255,255,255,.2);
+            color: var(--white);
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #F59E0B;
+            color: #1a1a1a;
+            font-size: .75rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: var(--radius-pill);
+            white-space: nowrap;
+        }
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -1px;
+            margin: 20px 0 4px;
+            line-height: 1;
+        }
+        .price-period {
+            font-size: .9rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .pricing-desc {
+            font-size: .9rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+        .pricing-divider {
+            border: none;
+            border-top: 1px solid var(--purple-line);
+            margin: 24px 0;
+        }
+        .pricing-card--featured .pricing-divider { border-color: rgba(255,255,255,.2); }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-card);
+            padding: 32px 28px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--purple-line);
+        }
+        .testimonial-card__stars {
+            font-size: 1rem;
+            color: #F59E0B;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+        .testimonial-card p {
+            font-size: .97rem;
+            color: var(--text-body);
+            line-height: 1.75;
+            font-style: italic;
+        }
+        .testimonial-card__author {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-card__avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--purple-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .testimonial-card__name { font-size: .9rem; font-weight: 600; color: var(--text-dark); }
+        .testimonial-card__role { font-size: .8rem; color: var(--text-muted); }
+
+        /* --- FAQ --- */
+        .faq-list {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: var(--white);
+            border-radius: 14px;
+            border: 1px solid var(--purple-line);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 22px 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .faq-question__icon {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--purple-bg);
+            color: var(--purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 400;
+            transition: transform .3s;
+        }
+        .faq-item.open .faq-question__icon { transform: rotate(45deg); }
+        .faq-answer {
+            padding: 0 28px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .35s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            padding-bottom: 22px;
+        }
+        .faq-answer p { font-size: .97rem; color: var(--text-muted); line-height: 1.8; }
+
+        /* --- CONTACT --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+        .contact-info { }
+        .contact-info .lead { margin-top: 12px; }
+        .contact-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .contact-channel {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 20px;
+            background: var(--white);
+            border-radius: 14px;
+            border: 1px solid var(--purple-line);
+            transition: box-shadow .2s;
+        }
+        .contact-channel:hover { box-shadow: var(--shadow-hover); }
+        .contact-channel__icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--purple-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .contact-channel__label { font-size: .82rem; color: var(--text-muted); }
+        .contact-channel__value { font-size: .97rem; font-weight: 600; color: var(--text-dark); }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-label { font-size: .85rem; font-weight: 600; color: var(--text-dark); }
+        .form-input, .form-textarea {
+            padding: 14px 18px;
+            border: 1.5px solid var(--purple-line);
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: .97rem;
+            color: var(--text-dark);
+            background: var(--white);
+            transition: border-color .2s, box-shadow .2s;
+            outline: none;
+        }
+        .form-input:focus, .form-textarea:focus {
+            border-color: var(--purple);
+            box-shadow: 0 0 0 3px rgba(157,78,221,.12);
+        }
+        .form-textarea { resize: vertical; min-height: 130px; }
 
         /* --- FOOTER --- */
-        footer {
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255,255,255,.7);
+            padding: 64px 0 32px;
+        }
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer__brand .logo { color: var(--white); -webkit-text-fill-color: var(--white); background: none; font-size: 1.4rem; }
+        .footer__brand p { margin-top: 14px; font-size: .9rem; line-height: 1.8; }
+        .footer__col h4 {
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        .footer__col ul { display: flex; flex-direction: column; gap: 10px; }
+        .footer__col ul a { font-size: .9rem; color: rgba(255,255,255,.6); }
+        .footer__col ul a:hover { color: var(--white); }
+        .footer__bottom {
+            padding-top: 28px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: .82rem;
+        }
+        .footer__social { display: flex; gap: 16px; }
+        .footer__social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: rgba(255,255,255,.7);
+            transition: background .2s, color .2s;
+        }
+        .footer__social a:hover { background: var(--purple); color: var(--white); }
+
+        /* --- FINAL CTA BANNER --- */
+        .cta-banner {
             text-align: center;
-            padding: 60px 0;
-            background: var(--white);
-            border-top: 1px solid rgba(157, 78, 221, 0.1);
-            color: var(--text-gray);
+            padding: 96px 0;
         }
+        .cta-banner h2 { color: var(--white); margin-bottom: 16px; }
+        .cta-banner .lead { color: rgba(255,255,255,.75); margin: 0 auto 36px; }
+        .cta-banner__btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 
-        .social-link {
-            color: var(--primary-purple);
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 2px;
-        }
-
-        .social-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-purple);
-            transition: width 0.3s ease;
-        }
-
-        .social-link:hover::after {
-            width: 100%;
-        }
-
-        footer p {
-            margin-bottom: 12px;
-        }
-
-        footer p:last-child {
-            margin-top: 24px;
-            font-size: 0.875rem;
-            color: var(--text-light-gray);
-        }
+        /* --- MOBILE NAV OPEN --- */
+        body.nav-open .mobile-nav { display: flex; }
 
         /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 60px 0 80px;
-            }
-
-            .features {
-                padding: 80px 0;
-            }
-
-            .feature-list {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .app-screenshot {
-                max-width: 380px;
-                min-height: 300px;
-            }
+        @media (max-width: 900px) {
+            .spotlight { grid-template-columns: 1fr; gap: 40px; }
+            .spotlight--reverse { direction: ltr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+        }
+        @media (max-width: 600px) {
+            .section { padding: 72px 0; }
+            h1 { font-size: 2.1rem; }
+            h2 { font-size: 1.7rem; }
+            .hero { padding: 72px 0 56px; }
+            .trust-bar__inner { gap: 24px; }
+            .footer__grid { grid-template-columns: 1fr; }
+            .footer__bottom { flex-direction: column; align-items: flex-start; }
+            .pricing-grid { grid-template-columns: 1fr; }
         }
 
-        /* --- DECORATIVE ELEMENTS --- */
-        .hero::after {
-            content: '';
+        /* --- MOBILE NAV DRAWER --- */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(12px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+        }
+        .mobile-nav a {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .mobile-nav a:hover { color: var(--purple); }
+        .mobile-nav__close {
             position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(157, 78, 221, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: -1;
+            top: 24px;
+            right: 24px;
+            font-size: 1.6rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-dark);
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            left: -100px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(157, 78, 221, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: -1;
+        /* --- FEATURE CARD LINK VARIANT --- */
+        .feature-card--link {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            color: inherit;
         }
+        .feature-card--link:hover { color: inherit; }
+        .feature-card__cta {
+            display: inline-block;
+            margin-top: auto;
+            padding-top: 20px;
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--purple);
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: opacity .25s, transform .25s;
+        }
+        .feature-card--link:hover .feature-card__cta {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* --- FEATURE DEEP CONTENT --- */
+        .feature-deep {
+            padding: 80px 0 96px;
+        }
+        .feature-deep__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: start;
+        }
+        .feature-deep__body {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .feature-deep__body h2 {
+            margin-bottom: 4px;
+        }
+        .feature-deep__body p {
+            font-size: 1rem;
+            color: var(--text-body);
+            line-height: 1.85;
+        }
+        .feature-deep__body p + p {
+            margin-top: 2px;
+        }
+        .feature-deep__aside {
+            position: sticky;
+            top: 96px;
+        }
+        .feature-deep__card {
+            background: var(--white);
+            border-radius: 24px;
+            border: 1px solid var(--purple-line);
+            box-shadow: var(--shadow-card);
+            padding: 36px 32px;
+        }
+        .feature-deep__card h3 {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            margin-bottom: 18px;
+        }
+        .feature-deep__stat {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--purple-line);
+        }
+        .feature-deep__stat:last-child { border-bottom: none; }
+        .feature-deep__stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--purple-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .feature-deep__stat-label { font-size: .9rem; color: var(--text-muted); }
+        .feature-deep__stat-value { font-size: .97rem; font-weight: 600; color: var(--text-dark); }
+        .feature-deep__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 28px;
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--purple);
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color .2s;
+        }
+        .feature-deep__link:hover { border-color: var(--purple); }
+
+        @media (max-width: 900px) {
+            .feature-deep__inner { grid-template-columns: 1fr; gap: 40px; }
+            .feature-deep__aside { position: static; }
+        }
+
+        /* --- UTILITY --- */
+        .mt-8 { margin-top: 8px; }
+        .mt-16 { margin-top: 16px; }
+        .mt-24 { margin-top: 24px; }
+        .mt-32 { margin-top: 32px; }
+        .gap-8 { gap: 8px; }
+        .d-flex { display: flex; }
+        .align-center { align-items: center; }
+        .flex-wrap { flex-wrap: wrap; }
     </style>
-    
-    <!-- Structured Data (JSON-LD) -->
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -408,17 +944,17 @@
         "name": "Productify",
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "iOS",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
+        "offers": [
+            { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free" },
+            { "@type": "Offer", "price": "3.99", "priceCurrency": "USD", "name": "Pro Monthly" },
+            { "@type": "Offer", "price": "24.99", "priceCurrency": "USD", "name": "Pro Yearly" }
+        ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.8",
-            "ratingCount": "500"
+            "ratingCount": "2400"
         },
-        "description": "Productify is the best habit tracker app for iOS. Build better habits, track streaks, set goals, and achieve your daily routines with our simple and minimalist habit tracker.",
+        "description": "Productify is a minimalist habit tracker app for iOS with AI habit analysis, shared accountability (Habit Duo), habit templates, streak tracking, and measurable goals.",
         "screenshot": "https://productifyapp.org/image_2.png",
         "url": "https://productifyapp.org/",
         "downloadUrl": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
@@ -427,193 +963,1177 @@
             "name": "Productify",
             "url": "https://productifyapp.org/",
             "sameAs": [
-                "https://www.instagram.com/productify.habits"
+                "https://www.instagram.com/productify.habits",
+                "https://x.com/Productify_app"
             ]
         },
-        "keywords": "habit tracker, habit tracker app, habit tracking, build habits, track habits, productivity app, goal tracker, streak tracker",
         "featureList": [
-            "Clean minimalist interface",
-            "Track habit streaks",
-            "Set daily goals",
-            "Smart reminders and notifications",
-            "Progress visualization",
-            "Dark mode support"
+            "Habit Duo – shared accountability with a friend",
+            "AI Habit Analyser – personalised pattern insights",
+            "Habit Templates – ready-made routines",
+            "Measurable Goals – steps, water, minutes, reps",
+            "Streak Tracking",
+            "Smart Reminders",
+            "Dark Mode"
         ]
     }
     </script>
-    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [{
-            "@type": "Question",
-            "name": "What is Productify habit tracker app?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Productify is a simple and minimalist habit tracker app for iOS that helps you build better habits, track your progress, maintain streaks, and achieve your daily goals with a clean and intuitive interface."
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Productify?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Productify is a minimalist habit tracker app for iOS that helps you build and sustain daily habits. It includes streak tracking, AI-powered habit insights, shared accountability with a friend (Habit Duo), and ready-made habit templates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Productify free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Productify is free to download on the App Store. A Pro plan unlocks AI Habit Analyser, unlimited habits, and Habit Duo."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Habit Duo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Habit Duo lets you build one habit alongside one friend. You share progress side by side, stay accountable to each other, and focus on consistency — not competition."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the AI Habit Analyser work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The AI Habit Analyser reviews your habit patterns over time and surfaces personalised insights, encouragement, and practical suggestions — helping you understand when, why, and how your habits succeed or struggle."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What habit templates are available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Productify includes templates for common habits like hydration, walking, sleep, reading, exercise, mindfulness, focus sessions, and more. Templates help you start immediately without having to configure everything from scratch."
+                }
             }
-        }, {
-            "@type": "Question",
-            "name": "Is Productify habit tracker free?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, Productify habit tracker app is available as a free download on the App Store with optional premium features."
-            }
-        }, {
-            "@type": "Question",
-            "name": "How does the habit tracker work?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Productify habit tracker allows you to create daily habits, track your completion with streaks, set goals, and receive smart reminders to help you stay consistent with your routines."
-            }
-        }, {
-            "@type": "Question",
-            "name": "What makes Productify the best habit tracker app?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Productify stands out as the best habit tracker app due to its minimalist design, clean interface, powerful streak tracking, smart reminders, and focus on simplicity without clutter."
-            }
-        }]
+        ]
     }
     </script>
-</head>
-<body>
-
-    <div class="container">
-        <header role="banner">
-            <div class="logo" aria-label="Productify - Habit Tracker App">Productify</div>
-        </header>
-
-        <main>
-        <section class="hero">
-            <h1>The Best Habit Tracker App - Build Better Habits with Productify</h1>
-            <p>Productify is the best habit tracker app for iOS. This simple and minimalist habit tracker helps you build better habits, track your daily progress, maintain streaks, and achieve your goals. Download the free habit tracking app today and start building consistency.</p>
-            <a href="https://apps.apple.com/usa/app/habit-tracker-productify/id1389900237" class="btn-primary" aria-label="Download Productify habit tracker app from App Store">
-                Download Habit Tracker App
-            </a>
-
-            <div class="app-screenshot-container">
-                <img src="image_2.png" alt="Productify habit tracker app screenshot showing clean interface for tracking daily habits, streaks, and goals" class="app-screenshot" width="500" height="600">
-            </div>
-        </section>
-    </div>
-
-    <section class="features">
-        <div class="container">
-            <h2>Why Productify is the Best Habit Tracker App</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <span class="feature-icon">✨</span>
-                    <h3>Minimalist Habit Tracker Design</h3>
-                    <p>A clean, simple habit tracker interface that lets you focus on building habits, not navigating complex features. The best habit tracker app for minimalists.</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🔥</span>
-                    <h3>Track Habit Streaks</h3>
-                    <p>Visualize your consistency with powerful streak tracking. See your progress grow and stay motivated to maintain your daily habit tracker streaks.</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🎯</span>
-                    <h3>Set Daily Habit Goals</h3>
-                    <p>Define what you want to achieve with your habit tracker. Break down your goals into daily actions and track your progress toward success.</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🔔</span>
-                    <h3>Smart Habit Reminders</h3>
-                    <p>Get gentle notifications from your habit tracker app to keep you on track with your daily routines. Never miss a habit with smart reminders.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section" style="padding: 80px 0; background: var(--white);">
-        <div class="container">
-            <article>
-                <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 30px; text-align: center; color: var(--text-dark);">The Ultimate Habit Tracker App for Building Better Habits</h2>
-                <div style="max-width: 800px; margin: 0 auto; color: var(--text-gray); line-height: 1.8;">
-                    <p style="margin-bottom: 20px; font-size: 1.1rem;">
-                        <strong>Productify</strong> is the best habit tracker app designed to help you build better habits and achieve your goals. As a simple and minimalist habit tracker, Productify focuses on what matters most: helping you track your daily habits, maintain streaks, and build consistency.
-                    </p>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem;">
-                        Whether you're looking to build new habits, track existing routines, or maintain your streak, this habit tracking app provides all the tools you need. Our habit tracker app features a clean interface that eliminates distractions, making it easy to focus on your daily habits.
-                    </p>
-                    <p style="margin-bottom: 20px; font-size: 1.1rem;">
-                        Download the Productify habit tracker app today and join thousands of users who are building better habits with our simple, effective habit tracking solution. Start your journey to better habits with the best habit tracker app for iOS.
-                    </p>
-                </div>
-            </article>
-        </div>
-    </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Follow us on Instagram: <a href="https://www.instagram.com/productify.habits" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Follow Productify on Instagram">@productify.habits</a></p>
-            <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2025 Productify. All rights reserved.</p>
-            <nav style="margin-top: 20px; font-size: 0.875rem;">
-                <a href="https://apps.apple.com/usa/app/habit-tracker-productify/id1389900237" style="color: var(--text-gray); margin: 0 10px;">Habit Tracker App</a> | 
-                <a href="https://apps.apple.com/usa/app/habit-tracker-productify/id1389900237" style="color: var(--text-gray); margin: 0 10px;">Download Productify</a> | 
-                <a href="https://www.instagram.com/productify.apps" style="color: var(--text-gray); margin: 0 10px;" target="_blank" rel="noopener noreferrer">Contact</a>
-            </nav>
-        </div>
-    </footer>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://productifyapp.org/"
-        }, {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Habit Tracker App",
-            "item": "https://productifyapp.org/"
-        }, {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Productify",
-            "item": "https://productifyapp.org/"
-        }]
-    }
-    </script>
-    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Productify",
         "url": "https://productifyapp.org/",
-        "logo": "https://productifyapp.org/image_2.png",
+        "logo": "https://productifyapp.org/favicon.svg",
         "sameAs": [
-            "https://www.instagram.com/productify.apps"
+            "https://www.instagram.com/productify.habits",
+            "https://x.com/Productify_app"
         ],
-        "description": "Productify - The best habit tracker app for iOS. Build better habits, track streaks, and achieve your goals with our simple and minimalist habit tracker."
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "email": "contact@deductify.org"
+        }
     }
     </script>
-    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Productify - Habit Tracker App",
+        "name": "Productify",
         "url": "https://productifyapp.org/",
-        "description": "Productify is the best habit tracker app for iOS. Build better habits, track streaks, set goals, and achieve your daily routines.",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Productify"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://productifyapp.org/?s={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+        "description": "Minimalist habit tracker app for iOS. AI insights, Habit Duo accountability, templates, streaks.",
+        "publisher": { "@type": "Organization", "name": "Productify" }
     }
     </script>
+</head>
+
+<body>
+
+<!-- ===================== MOBILE NAV ===================== -->
+<nav class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
+    <a href="#features" onclick="closeMobileNav()">Features</a>
+    <a href="#habit-duo" onclick="closeMobileNav()">Habit Duo</a>
+    <a href="#ai-analyser" onclick="closeMobileNav()">AI Analyser</a>
+    <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
+    <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+    <a href="#about" onclick="closeMobileNav()">About</a>
+    <a href="#contact" onclick="closeMobileNav()">Contact</a>
+    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237" class="btn btn-primary">Download Free</a>
+</nav>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar" role="banner">
+    <div class="container">
+        <div class="navbar__inner">
+            <a href="/" class="logo" aria-label="Productify – Habit Tracker App">Productify</a>
+            <nav class="nav-links" role="navigation" aria-label="Main navigation">
+                <a href="#features">Features</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="btn btn-primary"
+                   aria-label="Download Productify on the App Store">
+                    ↓ Download Free
+                </a>
+                <button class="hamburger" id="openNav" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home" aria-labelledby="hero-heading">
+    <div class="hero__bg-orb hero__bg-orb--1"></div>
+    <div class="hero__bg-orb hero__bg-orb--2"></div>
+    <div class="container hero__content">
+        <div class="eyebrow">Habit Tracker App for iOS</div>
+        <h1 id="hero-heading">
+            Build habits that<br>
+            <span>actually stick.</span>
+        </h1>
+        <p class="lead">
+            Productify is a calm, minimalist habit tracker that helps you make progress without the pressure of perfection. Track daily habits, stay accountable with a friend, and get AI-powered insights — all in one clean app.
+        </p>
+        <div class="hero__cta-group">
+            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+               class="btn btn-primary btn-lg"
+               aria-label="Download Productify habit tracker on the App Store">
+                ↓ Download on the App Store
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg">See how it works</a>
+        </div>
+        <p class="hero__note">Free to download · No account required · iOS 15+</p>
+
+        <div class="hero__screenshot">
+            <img src="image_2.png"
+                 alt="Productify habit tracker app – clean daily habit list with streaks and progress overview"
+                 width="480" height="580"
+                 loading="eager">
+        </div>
+    </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<div class="trust-bar" role="complementary" aria-label="App ratings and trust signals">
+    <div class="container">
+        <div class="trust-bar__inner">
+            <div class="trust-item">
+                <span class="trust-item__icon">⭐</span>
+                <span><strong>4.8</strong> App Store rating</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-item__icon">📲</span>
+                <span><strong>10,000+</strong> downloads</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-item__icon">🔒</span>
+                <span><strong>Privacy first</strong> – your data stays yours</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-item__icon">🆓</span>
+                <span><strong>Free</strong> to start, no credit card</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== FEATURES OVERVIEW ===================== -->
+<section class="section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">Core Features</div>
+            <h2 id="features-heading">Everything you need to build a lasting routine</h2>
+            <p class="lead">
+                Productify keeps things simple: a clean habit tracker with the tools that actually move the needle — nothing more, nothing less.
+            </p>
+        </div>
+        <div class="features-grid">
+            <a href="#habit-duo" class="feature-card feature-card--link" aria-label="Learn more about Habit Duo">
+                <div class="feature-card__icon">🤝</div>
+                <h3>Habit Duo</h3>
+                <p class="text-muted">Build one habit alongside one friend. Shared progress, real accountability — no leaderboard required.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a href="#ai-analyser" class="feature-card feature-card--link" aria-label="Learn more about AI Habit Analyser">
+                <div class="feature-card__icon">🧠</div>
+                <h3>AI Habit Analyser</h3>
+                <p class="text-muted">Spot patterns in your habit data with AI-powered insights that encourage, not criticise.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a href="#habit-templates" class="feature-card feature-card--link" aria-label="Learn more about Habit Templates">
+                <div class="feature-card__icon">📋</div>
+                <h3>Habit Templates</h3>
+                <p class="text-muted">Start instantly with ready-made habit templates for health, focus, sleep, fitness, and more.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a href="#measurable-goals" class="feature-card feature-card--link" aria-label="Learn more about Measurable Goals">
+                <div class="feature-card__icon">📏</div>
+                <h3>Measurable Goals</h3>
+                <p class="text-muted">Set clear, quantified targets — steps, glasses of water, minutes, reps — so progress is never ambiguous.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a href="#streak-tracking" class="feature-card feature-card--link" aria-label="Learn more about Streak Tracking">
+                <div class="feature-card__icon">🔥</div>
+                <h3>Streak Tracking</h3>
+                <p class="text-muted">See your consistency at a glance. Streaks motivate without shame — and you can always bounce back.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <article class="feature-card">
+                <div class="feature-card__icon">🔔</div>
+                <h3>Smart Reminders</h3>
+                <p class="text-muted">Gentle, timely nudges so your habits stay top-of-mind without becoming noise.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== SOLUTIONS / FEATURE SPOTLIGHTS ===================== -->
+<div id="solutions">
+
+    <!-- ── HABIT DUO ─────────────────────────────────────── -->
+    <section class="section section--purple" id="habit-duo" aria-labelledby="habit-duo-heading">
+        <div class="container">
+            <div class="spotlight">
+                <div class="spotlight__text">
+                    <div class="eyebrow">Accountability</div>
+                    <h2 id="habit-duo-heading">Habit Duo — build one habit with one friend</h2>
+                    <p class="lead mt-16">
+                        Accountability works best when it's personal. Habit Duo pairs you with a single friend to tackle one shared habit together. You see each other's progress, stay consistent — not because you're competing, but because someone is genuinely in it with you.
+                    </p>
+                    <ul class="check-list">
+                        <li>Invite one friend and pick a habit to work on together</li>
+                        <li>View side-by-side progress without ranking or scoring</li>
+                        <li>Send encouragement when your friend completes the day</li>
+                        <li>Focus on consistency over perfection</li>
+                    </ul>
+                    <div class="spotlight__tag-list">
+                        <span class="tag">Accountability habit app</span>
+                        <span class="tag">Habit tracker with friends</span>
+                        <span class="tag">Social habit tracking</span>
+                    </div>
+                </div>
+                <div class="spotlight__visual" aria-hidden="true">🤝</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-deep" aria-labelledby="habit-duo-deep-heading">
+        <div class="container">
+            <div class="feature-deep__inner">
+                <div class="feature-deep__body">
+                    <div class="eyebrow">Habit Duo — In Depth</div>
+                    <h2 id="habit-duo-deep-heading">Why building habits with a friend actually works</h2>
+                    <p>
+                        Research consistently shows that social accountability is one of the most reliable drivers of long-term behaviour change. When someone you trust knows whether you showed up today, you're significantly more likely to show up. That's the foundation behind Habit Duo — not a social feed, not a leaderboard, just one habit shared with one person who matters to you.
+                    </p>
+                    <p>
+                        Unlike habit tracker apps that bolt on group challenges as an afterthought, Productify's Habit Duo is built around a single, focused pairing. You choose one habit and one friend. Both of you track your own progress independently, and you can see each other's completion side by side in the app. There's no score, no ranking, no pressure — just a quiet reminder that you're in this together.
+                    </p>
+                    <p>
+                        This approach works especially well for habits that feel easier to skip alone — morning walks, daily hydration, evening reading, or weekly workouts. When the habit is shared, skipping it becomes a slightly more deliberate choice rather than a passive one. That small shift in awareness is often enough to keep you on track without any added stress.
+                    </p>
+                    <p>
+                        Habit Duo is available on the Productify Pro plan. If you've been looking for a habit tracker with friends that doesn't feel gamified or overwhelming, this is the feature for you.
+                    </p>
+                    <ul class="check-list">
+                        <li>Paired accountability — one friend, one habit, one shared goal</li>
+                        <li>No leaderboards or public rankings — privacy stays intact</li>
+                        <li>Works for any habit type: fitness, sleep, hydration, focus, creativity</li>
+                        <li>Encouragement notifications when your partner logs a completion</li>
+                        <li>Available on Pro — <a href="#pricing" style="color: var(--purple);">see pricing</a></li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="feature-deep__link"
+                       aria-label="Download Productify to use Habit Duo">
+                        Try Habit Duo free for 7 days →
+                    </a>
+                </div>
+                <div class="feature-deep__aside">
+                    <div class="feature-deep__card">
+                        <h3>Why it works</h3>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🤝</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Shared accountability</div>
+                                <div class="feature-deep__stat-label">One friend, one habit, side-by-side progress</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🚫</div>
+                            <div>
+                                <div class="feature-deep__stat-value">No competition</div>
+                                <div class="feature-deep__stat-label">No rankings, scores, or public feeds</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">💬</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Encouragement, not pressure</div>
+                                <div class="feature-deep__stat-label">Notifications that feel supportive, not demanding</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🔒</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Private by design</div>
+                                <div class="feature-deep__stat-label">Only you and your partner see the shared habit</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── AI HABIT ANALYSER ──────────────────────────────── -->
+    <section class="section section--alt" id="ai-analyser" aria-labelledby="ai-analyser-heading">
+        <div class="container">
+            <div class="spotlight spotlight--reverse">
+                <div class="spotlight__text">
+                    <div class="eyebrow">Artificial Intelligence</div>
+                    <h2 id="ai-analyser-heading">AI Habit Analyser — understand your patterns</h2>
+                    <p class="lead mt-16">
+                        The AI Habit Analyser doesn't just count your completions. It looks at when you succeed, when you slip, and what that might mean — then offers honest, constructive reflections. Think of it as a quiet coach that knows your data, not a motivational poster.
+                    </p>
+                    <ul class="check-list">
+                        <li>Detect habit patterns across days and weeks</li>
+                        <li>Receive personalised suggestions, not generic tips</li>
+                        <li>Understand which habits strengthen each other</li>
+                        <li>Get encouragement grounded in your real progress</li>
+                    </ul>
+                    <div class="spotlight__tag-list">
+                        <span class="tag">AI habit tracker</span>
+                        <span class="tag">Habit insights</span>
+                        <span class="tag">Personalised habit analysis</span>
+                    </div>
+                </div>
+                <div class="spotlight__visual" aria-hidden="true">🧠</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-deep section--purple" aria-labelledby="ai-analyser-deep-heading">
+        <div class="container">
+            <div class="feature-deep__inner">
+                <div class="feature-deep__body">
+                    <div class="eyebrow">AI Habit Analyser — In Depth</div>
+                    <h2 id="ai-analyser-deep-heading">Habit insights that are actually about you</h2>
+                    <p>
+                        Most habit apps treat data as a scoreboard. Productify's AI Habit Analyser treats it as a mirror. Instead of just displaying how many days you've completed a habit, the analyser looks for patterns in your behaviour over time — which days you tend to skip, which habits you've maintained the longest, and whether changes in one habit correlate with changes in another.
+                    </p>
+                    <p>
+                        The goal isn't to generate impressive-looking charts. It's to surface small, actionable observations that help you understand yourself a little better. If you consistently miss your evening reading habit on Thursdays and Fridays, the analyser might notice that and suggest adjusting your reminder time or reducing the target for those days. These are the kinds of small, practical adjustments that add up to lasting routines.
+                    </p>
+                    <p>
+                        The AI Habit Analyser is intentionally modest in tone. It doesn't lecture, doesn't celebrate with confetti, and doesn't assign blame for missed days. If something isn't working, it helps you see that plainly and quietly — which is a more honest kind of support than manufactured positivity.
+                    </p>
+                    <p>
+                        If you've been looking for an AI habit tracker that feels grounded rather than gimmicky, the AI Habit Analyser in Productify is designed with exactly that balance in mind.
+                    </p>
+                    <ul class="check-list">
+                        <li>Weekly and monthly pattern analysis across all your habits</li>
+                        <li>Personalised suggestions based on your specific completion data</li>
+                        <li>Cross-habit correlation — see which habits support each other</li>
+                        <li>Tone-appropriate insights: calm, direct, and non-judgmental</li>
+                        <li>Available on the Pro plan — no data shared with third parties</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="feature-deep__link"
+                       aria-label="Download Productify to try the AI Habit Analyser">
+                        Try the AI Habit Analyser →
+                    </a>
+                </div>
+                <div class="feature-deep__aside">
+                    <div class="feature-deep__card">
+                        <h3>What it analyses</h3>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">📅</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Day-of-week patterns</div>
+                                <div class="feature-deep__stat-label">Spots when you're most and least consistent</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🔗</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Habit correlations</div>
+                                <div class="feature-deep__stat-label">Shows which habits tend to rise and fall together</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">📈</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Long-term trends</div>
+                                <div class="feature-deep__stat-label">Monthly view so single bad weeks don't distort the picture</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">💡</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Actionable suggestions</div>
+                                <div class="feature-deep__stat-label">Specific, practical — not generic motivational tips</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── HABIT TEMPLATES ───────────────────────────────── -->
+    <section class="section" id="habit-templates" aria-labelledby="templates-heading">
+        <div class="container">
+            <div class="spotlight">
+                <div class="spotlight__text">
+                    <div class="eyebrow">Quick Start</div>
+                    <h2 id="templates-heading">Habit Templates — start in seconds, not hours</h2>
+                    <p class="lead mt-16">
+                        The hardest part of building a new habit is often deciding exactly what it looks like. Productify's habit templates give you a solid starting point for the most common habits — so you spend your energy on doing, not configuring.
+                    </p>
+                    <ul class="check-list">
+                        <li>Hydration – 8 glasses of water per day</li>
+                        <li>Morning walk – 20 minutes before 9 AM</li>
+                        <li>Reading – 30 minutes before bed</li>
+                        <li>Strength training – 3 times per week</li>
+                        <li>Focus session – 90 minutes of deep work</li>
+                        <li>Sleep – in bed by 10:30 PM</li>
+                    </ul>
+                    <div class="spotlight__tag-list">
+                        <span class="tag">Habit templates</span>
+                        <span class="tag">Daily habit tracker</span>
+                        <span class="tag">Habit routines</span>
+                    </div>
+                </div>
+                <div class="spotlight__visual" aria-hidden="true">📋</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-deep section--alt" aria-labelledby="templates-deep-heading">
+        <div class="container">
+            <div class="feature-deep__inner">
+                <div class="feature-deep__body">
+                    <div class="eyebrow">Habit Templates — In Depth</div>
+                    <h2 id="templates-deep-heading">The right starting point reduces friction — and friction kills habits</h2>
+                    <p>
+                        One of the biggest reasons people abandon a new habit tracker app within the first week is the setup experience. When you have to decide what your habit is, how to measure it, when to do it, and how to name it — all before you've even started — the overhead quietly drains the motivation that prompted you to download the app in the first place.
+                    </p>
+                    <p>
+                        Productify's habit templates remove that friction. Each template is a fully configured habit: it already has a name, a measurable goal, a suggested frequency, and a default reminder time. You can adopt it exactly as-is, or adjust any detail to fit your actual life. Either way, you're starting in seconds rather than spending ten minutes on setup.
+                    </p>
+                    <p>
+                        The templates span the most common habit categories — physical health (hydration, exercise, walking), mental wellbeing (mindfulness, journalling, sleep), productivity (deep work sessions, reading, learning), and daily basics (morning routines, stretching, gratitude). They're designed to reflect real habits that real people try to build, not aspirational extremes.
+                    </p>
+                    <p>
+                        For anyone new to daily habit tracking, templates also serve as a gentle introduction to what a well-structured habit looks like: specific, measurable, and realistic. Starting with a template and gradually customising it is a more sustainable approach than designing a complex system from scratch on day one.
+                    </p>
+                    <ul class="check-list">
+                        <li>Fully configured habits — goal, frequency, and reminder included</li>
+                        <li>Customisable at any point without losing existing progress</li>
+                        <li>Covers health, fitness, sleep, focus, mindfulness, and more</li>
+                        <li>5 starter templates free · full library on Pro</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="feature-deep__link"
+                       aria-label="Download Productify to browse habit templates">
+                        Browse all habit templates →
+                    </a>
+                </div>
+                <div class="feature-deep__aside">
+                    <div class="feature-deep__card">
+                        <h3>Example templates</h3>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">💧</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Hydration</div>
+                                <div class="feature-deep__stat-label">8 glasses of water · daily</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🚶</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Morning Walk</div>
+                                <div class="feature-deep__stat-label">20 min · before 9 AM · weekdays</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">📖</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Evening Reading</div>
+                                <div class="feature-deep__stat-label">30 min · before bed · daily</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🏋️</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Strength Training</div>
+                                <div class="feature-deep__stat-label">3 sessions per week</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🧘</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Mindfulness</div>
+                                <div class="feature-deep__stat-label">10 min · morning · daily</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MEASURABLE GOALS ──────────────────────────────── -->
+    <section class="section section--purple" id="measurable-goals" aria-labelledby="goals-heading">
+        <div class="container">
+            <div class="spotlight spotlight--reverse">
+                <div class="spotlight__text">
+                    <div class="eyebrow">Clarity</div>
+                    <h2 id="goals-heading">Measurable Goals — know exactly what you're tracking</h2>
+                    <p class="lead mt-16">
+                        Vague habits fail. "Exercise more" gives your brain no clear target. Productify makes every goal concrete and measurable: steps walked, litres drunk, minutes meditated, sessions completed per week. When the target is clear, the decision is easy.
+                    </p>
+                    <ul class="check-list">
+                        <li>Choose from steps, reps, minutes, glasses, sessions, or custom units</li>
+                        <li>Set daily or weekly frequency targets</li>
+                        <li>Track partial progress — every bit counts</li>
+                        <li>Reduce decision fatigue with clear, pre-defined goals</li>
+                    </ul>
+                    <div class="spotlight__tag-list">
+                        <span class="tag">Goal tracker app</span>
+                        <span class="tag">Habit goal setting</span>
+                        <span class="tag">Quantified habits</span>
+                    </div>
+                </div>
+                <div class="spotlight__visual" aria-hidden="true">📏</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-deep" aria-labelledby="goals-deep-heading">
+        <div class="container">
+            <div class="feature-deep__inner">
+                <div class="feature-deep__body">
+                    <div class="eyebrow">Measurable Goals — In Depth</div>
+                    <h2 id="goals-deep-heading">Clarity is the most underrated part of building a habit</h2>
+                    <p>
+                        There is a significant difference between a habit and an intention. "I want to drink more water" is an intention. "I will drink 8 glasses of water per day" is a measurable habit goal. The difference isn't just semantic — it changes how your brain processes the task. A clear target removes ambiguity, reduces the mental effort required to decide whether you've done enough, and makes it easier to log your progress quickly.
+                    </p>
+                    <p>
+                        Productify is built around the idea that measurable habit goals are not optional — they're foundational. Every habit you track in the app has a unit attached to it: steps, minutes, glasses, reps, sessions, kilometres, or a custom label you define yourself. When you check in for the day, you log the actual value, not just a binary "done / not done." This gives you a richer history of your progress and makes partial effort visible and valued.
+                    </p>
+                    <p>
+                        Partial progress matters more than most habit apps acknowledge. If your target is 8 glasses of water and you had 5, that's a meaningful data point — not a failure. Productify records it, reflects it in your trends, and doesn't penalise you for it. Over time, this fuller picture helps the AI Habit Analyser understand your actual behaviour rather than just a binary success/fail record.
+                    </p>
+                    <p>
+                        You can also set habits by weekly frequency rather than daily — 3 workouts per week rather than one per day — which is often a more realistic and sustainable approach for habits that don't need to happen every single day.
+                    </p>
+                    <ul class="check-list">
+                        <li>Units: steps, minutes, glasses, reps, km, sessions, or custom</li>
+                        <li>Daily targets or weekly frequency goals</li>
+                        <li>Partial completions recorded and respected</li>
+                        <li>Progress view shows your actual values, not just streaks</li>
+                        <li>Ties directly into AI Habit Analyser trend data</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="feature-deep__link"
+                       aria-label="Download Productify to set measurable habit goals">
+                        Start tracking with clear goals →
+                    </a>
+                </div>
+                <div class="feature-deep__aside">
+                    <div class="feature-deep__card">
+                        <h3>Supported goal types</h3>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🏃</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Steps &amp; distance</div>
+                                <div class="feature-deep__stat-label">10,000 steps · 5 km · daily</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">⏱️</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Duration</div>
+                                <div class="feature-deep__stat-label">30 min reading · 90 min deep work</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🔁</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Repetitions</div>
+                                <div class="feature-deep__stat-label">50 push-ups · 10 pull-ups</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">📆</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Weekly frequency</div>
+                                <div class="feature-deep__stat-label">3× per week · 5× per week</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">✏️</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Custom units</div>
+                                <div class="feature-deep__stat-label">Pages read, gratitude entries, cold showers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STREAK TRACKING ───────────────────────────────── -->
+    <section class="section section--alt" id="streak-tracking" aria-labelledby="streaks-heading">
+        <div class="container">
+            <div class="spotlight">
+                <div class="spotlight__text">
+                    <div class="eyebrow">Consistency</div>
+                    <h2 id="streaks-heading">Streaks — a signal, not a sentence</h2>
+                    <p class="lead mt-16">
+                        Streaks show momentum. They're a visual reminder that you're building something real. But in Productify, a missed day isn't a failure — it's just a signal. You can always come back. The goal isn't a perfect streak; it's a habit that lasts for years.
+                    </p>
+                    <ul class="check-list">
+                        <li>See your current and best streaks at a glance</li>
+                        <li>Long-term trend view to zoom out from single bad days</li>
+                        <li>Graceful recovery after a missed day — no shame, no lecture</li>
+                        <li>Celebrate real milestones without manufactured urgency</li>
+                    </ul>
+                    <div class="spotlight__tag-list">
+                        <span class="tag">Habit streak app</span>
+                        <span class="tag">Streak tracker</span>
+                        <span class="tag">Consistent habit building</span>
+                    </div>
+                </div>
+                <div class="spotlight__visual" aria-hidden="true">🔥</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-deep section--purple" aria-labelledby="streaks-deep-heading">
+        <div class="container">
+            <div class="feature-deep__inner">
+                <div class="feature-deep__body">
+                    <div class="eyebrow">Streak Tracking — In Depth</div>
+                    <h2 id="streaks-deep-heading">Streaks that motivate — without the guilt when you miss</h2>
+                    <p>
+                        Streaks work. The psychological principle behind them — often called the "don't break the chain" effect — is real and well-documented. Seeing a visual record of consecutive days builds a sense of momentum and makes each day's effort feel connected to something bigger. That's why streak tracking is a core part of Productify as a daily habit tracker.
+                    </p>
+                    <p>
+                        But streaks also have a well-known dark side. Many people abandon a habit entirely after breaking a streak — not because the habit stopped being valuable, but because the broken streak made continuing feel pointless. This all-or-nothing thinking is one of the most common reasons habit tracker apps fail their users.
+                    </p>
+                    <p>
+                        Productify handles streaks differently. When you miss a day, your current streak resets — but your full history doesn't disappear. The app keeps a complete record of every day you completed the habit, so a single bad week doesn't erase weeks of real effort. You can always see your longest streak, your completion rate over any time period, and your overall trend across months. This longer view helps you stay grounded when one week doesn't go to plan.
+                    </p>
+                    <p>
+                        The tone in Productify after a missed day is neutral. No red warning screens, no lecture notifications, no guilt-inducing language. Just your data, presented clearly, whenever you're ready to come back. Sustainable habits are built over years — and a habit tracker app should support that reality, not punish it.
+                    </p>
+                    <ul class="check-list">
+                        <li>Current streak and personal best always visible</li>
+                        <li>Full history preserved regardless of current streak status</li>
+                        <li>Monthly and long-term trend view for perspective</li>
+                        <li>No punitive messaging for missed days</li>
+                        <li>Milestone celebrations at meaningful thresholds (7, 30, 90 days)</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="feature-deep__link"
+                       aria-label="Download Productify to start building your streak">
+                        Start your first streak today →
+                    </a>
+                </div>
+                <div class="feature-deep__aside">
+                    <div class="feature-deep__card">
+                        <h3>How streaks work in Productify</h3>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🔥</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Current streak</div>
+                                <div class="feature-deep__stat-label">Consecutive days of completing the habit</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🏆</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Best streak</div>
+                                <div class="feature-deep__stat-label">Your personal record — always visible</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">📊</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Completion rate</div>
+                                <div class="feature-deep__stat-label">% of days completed over 30 or 90 days</div>
+                            </div>
+                        </div>
+                        <div class="feature-deep__stat">
+                            <div class="feature-deep__stat-icon">🔄</div>
+                            <div>
+                                <div class="feature-deep__stat-value">Recovery-friendly</div>
+                                <div class="feature-deep__stat-label">History stays intact after a missed day</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div><!-- /solutions -->
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="section section--alt" id="how-it-works" aria-labelledby="how-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">How It Works</div>
+            <h2 id="how-heading">From zero to consistent in four steps</h2>
+            <p class="lead">No complicated onboarding. No overwhelming dashboards. Just a clear path to building habits that last.</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-card__num">1</div>
+                <h3>Pick a habit</h3>
+                <p>Choose from ready-made templates or create your own with a measurable goal attached.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-card__num">2</div>
+                <h3>Set your schedule</h3>
+                <p>Daily, weekly, or on specific days — you decide when and how often. Add a reminder if you need one.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-card__num">3</div>
+                <h3>Check in each day</h3>
+                <p>A single tap marks it done. Watch your streak grow and your weekly view fill in.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-card__num">4</div>
+                <h3>Reflect and improve</h3>
+                <p>The AI Analyser reviews your patterns and suggests small adjustments. You stay curious, not critical.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section" aria-labelledby="testimonials-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">User Stories</div>
+            <h2 id="testimonials-heading">What people are saying</h2>
+            <p class="lead">Real reviews from people building real habits.</p>
+        </div>
+        <div class="testimonials-grid">
+            <article class="testimonial-card">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p>"I've tried every habit tracker on the App Store. Productify is the first one that doesn't make me feel guilty when I miss a day. The design is calm, and the AI suggestions are actually useful."</p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">👩</div>
+                    <div>
+                        <div class="testimonial-card__name">Sarah M.</div>
+                        <div class="testimonial-card__role">Designer, New York</div>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial-card">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p>"Habit Duo is a game changer. My partner and I are both doing the same morning walk habit. We don't compete — we just encourage. Three months in, still going."</p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">👨</div>
+                    <div>
+                        <div class="testimonial-card__name">James T.</div>
+                        <div class="testimonial-card__role">Software Engineer, London</div>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial-card">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p>"The habit templates saved me so much time setting up. I had hydration, reading, and sleep all configured and tracked within two minutes of downloading."</p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">👩</div>
+                    <div>
+                        <div class="testimonial-card__name">Priya K.</div>
+                        <div class="testimonial-card__role">Freelancer, Bangalore</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section section--purple" id="about" aria-labelledby="about-heading">
+    <div class="container">
+        <div class="spotlight">
+            <div class="spotlight__text">
+                <div class="eyebrow">About Productify</div>
+                <h2 id="about-heading">Built for people who want sustainable habits, not perfect ones</h2>
+                <p class="lead mt-16">
+                    Most habit apps are built around streaks, leaderboards, and guilt. We built Productify differently. We believe consistency over a long period is worth far more than perfection for a short one — and that the best habit tracker is one that works <em>with</em> you, not against you.
+                </p>
+                <p class="lead mt-16" style="margin-top: 16px;">
+                    Productify started as a personal project — a simple, distraction-free habit tracker for iOS. It's grown based entirely on user feedback, staying true to the same philosophy: calm, clear, and supportive.
+                </p>
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="btn btn-primary mt-32"
+                   style="display: inline-flex; margin-top: 32px;">
+                    Download Productify Free
+                </a>
+            </div>
+            <div class="spotlight__visual" aria-hidden="true">🌱</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="section" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">Pricing</div>
+            <h2 id="pricing-heading">Simple, transparent pricing</h2>
+            <p class="lead">Start free. Upgrade when you want more. No hidden costs.</p>
+        </div>
+        <div class="pricing-grid">
+            <!-- Free -->
+            <article class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">$0</div>
+                <div class="price-period">forever</div>
+                <p class="pricing-desc">Everything you need to get started building your first habits.</p>
+                <hr class="pricing-divider">
+                <ul class="check-list">
+                    <li>Up to 5 habits</li>
+                    <li>Streak tracking</li>
+                    <li>Smart reminders</li>
+                    <li>Habit templates (5 starter)</li>
+                    <li>Basic progress view</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="btn btn-secondary" style="width:100%; justify-content: center; margin-top: 28px;">
+                    Download Free
+                </a>
+            </article>
+            <!-- Pro -->
+            <article class="pricing-card pricing-card--featured">
+                <div class="pricing-badge">Most Popular</div>
+                <h3>Pro</h3>
+                <div class="price">$3.99</div>
+                <div class="price-period">per month · or $24.99/year (save 48%)</div>
+                <p class="pricing-desc">For people serious about making habits last — with every tool Productify offers.</p>
+                <hr class="pricing-divider">
+                <ul class="check-list">
+                    <li>Unlimited habits</li>
+                    <li>Habit Duo (shared accountability)</li>
+                    <li>AI Habit Analyser</li>
+                    <li>All habit templates</li>
+                    <li>Advanced analytics &amp; trends</li>
+                    <li>Custom habit units</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="btn btn-ghost" style="width:100%; justify-content: center; margin-top: 28px;">
+                    Start Pro Free Trial
+                </a>
+            </article>
+        </div>
+        <p class="text-center text-muted mt-32" style="font-size: .85rem; margin-top: 28px;">
+            All plans include a 7-day free trial for Pro features. Cancel anytime from the App Store.
+        </p>
+    </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section section--alt" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">FAQ</div>
+            <h2 id="faq-heading">Common questions</h2>
+            <p class="lead">Everything you need to know before you start.</p>
+        </div>
+        <div class="faq-list" role="list">
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    What is Productify?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Productify is a minimalist habit tracker app for iOS. It helps you build and sustain daily habits through streak tracking, AI-powered habit insights, shared accountability with a friend (Habit Duo), and ready-made habit templates. The design is deliberately simple: fewer distractions, more focus.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    Is Productify free to download?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. Productify is free on the App Store with no credit card required. The free plan includes up to 5 habits, streak tracking, reminders, and starter templates. A Pro plan unlocks unlimited habits, Habit Duo, and the AI Habit Analyser.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    What is Habit Duo and how does it work?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Habit Duo lets you build one habit alongside one friend. You each track your own progress, and you can see each other's completion side by side. It's not a competition — it's mutual accountability. When your friend completes the day's habit, you'll see it. When you do, so will they.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    How does the AI Habit Analyser work?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>The AI Habit Analyser reviews your habit completion patterns over time and surfaces personalised insights — for example, whether you tend to skip habits on certain days, or which habits you're most consistent with. It's designed to be supportive and honest, not preachy or overly positive.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    What habit templates are available?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Productify includes templates across several categories: hydration (8 glasses/day), walking (20 min), reading (30 min before bed), strength training (3x/week), sleep schedule, mindfulness, focus sessions, and more. Pro unlocks all templates; the free plan includes five starters.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    What happens if I miss a day? Does my streak reset?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Your current streak resets, but your history doesn't disappear. Productify keeps your full completion record so you can always see your long-term progress. Missing a day is a signal, not a sentence. You can always come back.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    Is Productify available on Android?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Productify is currently available for iOS (iPhone and iPad, iOS 15+). An Android version is on our roadmap. Follow us on <a href="https://x.com/Productify_app" target="_blank" rel="noopener noreferrer" style="color: var(--purple);">X (Twitter)</a> to stay updated.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="eyebrow">Contact</div>
+                <h2 id="contact-heading">Get in touch</h2>
+                <p class="lead mt-16">
+                    Have a question, a bug to report, or a feature idea? We read every message. Productify is built by a small team, and your feedback genuinely shapes the app.
+                </p>
+                <div class="contact-channels">
+                    <a href="https://x.com/Productify_app"
+                       class="contact-channel"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Follow Productify on X (Twitter)">
+                        <div class="contact-channel__icon">🐦</div>
+                        <div>
+                            <div class="contact-channel__label">X (Twitter)</div>
+                            <div class="contact-channel__value">@Productify_app</div>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/productify.habits"
+                       class="contact-channel"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Follow Productify on Instagram">
+                        <div class="contact-channel__icon">📸</div>
+                        <div>
+                            <div class="contact-channel__label">Instagram</div>
+                            <div class="contact-channel__value">@productify.habits</div>
+                        </div>
+                    </a>
+                    <a href="mailto:contact@deductify.org"
+                       class="contact-channel"
+                       aria-label="Email Productify">
+                        <div class="contact-channel__icon">✉️</div>
+                        <div>
+                            <div class="contact-channel__label">Email</div>
+                            <div class="contact-channel__value">contact@deductify.org</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <form class="contact-form" name="contact" method="POST" action="#contact" aria-label="Contact form">
+                    <div class="form-group">
+                        <label class="form-label" for="contact-name">Name</label>
+                        <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-email">Email</label>
+                        <input class="form-input" type="email" id="contact-email" name="email" placeholder="you@example.com" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-message">Message</label>
+                        <textarea class="form-textarea" id="contact-message" name="message" placeholder="What's on your mind?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="section section--dark cta-banner" aria-labelledby="cta-heading">
+    <div class="container">
+        <div class="eyebrow" style="background: rgba(255,255,255,.12); color: var(--purple-light);">Start Today</div>
+        <h2 id="cta-heading">Your next habit starts now.</h2>
+        <p class="lead">
+            You don't need the perfect plan. You just need to start. Download Productify free and build the first habit today.
+        </p>
+        <div class="cta-banner__btns">
+            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+               class="btn btn-primary btn-lg"
+               aria-label="Download Productify habit tracker on the App Store">
+                ↓ Download on the App Store
+            </a>
+            <a href="#features" class="btn btn-ghost btn-lg">Explore features</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <span class="logo" style="-webkit-text-fill-color: #fff; background: none; color: #fff;">Productify</span>
+                <p>A calm, minimalist habit tracker for iOS. Build better habits, your way — without the pressure of perfection.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#habit-duo">Habit Duo</a></li>
+                    <li><a href="#ai-analyser">AI Habit Analyser</a></li>
+                    <li><a href="#habit-templates">Habit Templates</a></li>
+                    <li><a href="#measurable-goals">Measurable Goals</a></li>
+                    <li><a href="#streak-tracking">Streak Tracking</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>&copy; 2026 Productify. All rights reserved.</span>
+            <div class="footer__social">
+                <a href="https://x.com/Productify_app"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Productify on X (Twitter)">🐦</a>
+                <a href="https://www.instagram.com/productify.habits"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Productify on Instagram">📸</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // --- Mobile nav ---
+    const openBtn  = document.getElementById('openNav');
+    const closeBtn = document.getElementById('closeNav');
+    const mobileNav = document.getElementById('mobileNav');
+
+    function openMobileNav() {
+        mobileNav.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        openBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closeMobileNav() {
+        mobileNav.style.display = 'none';
+        document.body.style.overflow = '';
+        openBtn.setAttribute('aria-expanded', 'false');
+    }
+    openBtn.addEventListener('click', openMobileNav);
+    closeBtn.addEventListener('click', closeMobileNav);
+    mobileNav.addEventListener('click', function(e) {
+        if (e.target === mobileNav) closeMobileNav();
+    });
+
+    // --- FAQ accordion ---
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const item = this.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+                el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            // Toggle clicked
+            if (!isOpen) {
+                item.classList.add('open');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // --- Smooth scroll offset for sticky nav ---
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                const offset = 80;
+                const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

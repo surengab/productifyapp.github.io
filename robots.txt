@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block build/config files that shouldn't be indexed
+Disallow: /.git/
+Disallow: /node_modules/
+
+Sitemap: https://productifyapp.org/sitemap.xml
