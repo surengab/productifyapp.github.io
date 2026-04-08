@@ -226,6 +226,48 @@
             .appstore-badge--hero { width: 155px; }
         }
 
+        /* ─── NAV DROPDOWN ───────────────────────────────── */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown__toggle {
+            font-size: .88rem; font-weight: 500; color: var(--ink-muted);
+            padding: 6px 10px; border-radius: 8px;
+            background: none; border: none; cursor: pointer;
+            display: flex; align-items: center; gap: 4px;
+            font-family: 'Inter', sans-serif;
+            transition: color .2s, background .2s;
+        }
+        .nav-dropdown__toggle:hover { color: var(--ink); background: var(--bg-alt); }
+        .nav-dropdown__toggle svg { width: 12px; height: 12px; transition: transform .2s; }
+        .nav-dropdown:hover .nav-dropdown__toggle svg { transform: rotate(180deg); }
+        .nav-dropdown__menu {
+            display: none; position: absolute; top: calc(100% + 8px); left: 0;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 8px; min-width: 230px;
+            box-shadow: var(--shadow-md); z-index: 200;
+        }
+        .nav-dropdown:hover .nav-dropdown__menu,
+        .nav-dropdown:focus-within .nav-dropdown__menu { display: block; }
+        .nav-dropdown__item {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 10px 12px; border-radius: 8px;
+            transition: background .15s; color: inherit;
+        }
+        .nav-dropdown__item:hover { background: var(--bg-alt); }
+        .nav-dropdown__item-icon {
+            width: 32px; height: 32px; border-radius: 8px;
+            background: var(--blue-dim);
+            display: flex; align-items: center; justify-content: center;
+            font-size: .95rem; flex-shrink: 0;
+        }
+        .nav-dropdown__item-text strong {
+            display: block; font-size: .86rem; font-weight: 600; color: var(--ink);
+        }
+        .nav-dropdown__item-text span { font-size: .78rem; color: var(--ink-muted); }
+        /* mobile nav groups */
+        .mobile-nav__group { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .mobile-nav__group-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+        .mobile-nav__sub { font-size: 1rem !important; }
+
         /* ─── NAVBAR ─────────────────────────────────────── */
         .navbar {
             position: sticky; top: 0; z-index: 100;
@@ -242,9 +284,13 @@
             font-size: 1.4rem; font-weight: 800;
             color: var(--ink); letter-spacing: -.5px;
         }
-        .nav-links { display: flex; align-items: center; gap: 28px; }
-        .nav-links a { font-size: .88rem; font-weight: 500; color: var(--ink-muted); }
-        .nav-links a:hover { color: var(--ink); }
+        .nav-links { display: flex; align-items: center; gap: 4px; }
+        .nav-links > a {
+            font-size: .88rem; font-weight: 500; color: var(--ink-muted);
+            padding: 6px 10px; border-radius: 8px;
+            transition: color .2s, background .2s;
+        }
+        .nav-links > a:hover { color: var(--ink); background: var(--bg-alt); }
         .nav-cta { display: flex; align-items: center; gap: 12px; }
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
         .hamburger span {
@@ -825,8 +871,17 @@
 <nav class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
     <a href="#features" onclick="closeMobileNav()">Features</a>
-    <a href="#habit-duo" onclick="closeMobileNav()">Habit Duo</a>
-    <a href="#ai-analyser" onclick="closeMobileNav()">AI Analyser</a>
+    <div class="mobile-nav__group">
+        <span class="mobile-nav__group-label">Feature Pages</span>
+        <a href="/features/habit-streaks/" class="mobile-nav__sub" onclick="closeMobileNav()">Habit Streaks</a>
+        <a href="/features/minimalist-design/" class="mobile-nav__sub" onclick="closeMobileNav()">Minimalist Design</a>
+        <a href="/features/smart-reminders/" class="mobile-nav__sub" onclick="closeMobileNav()">Smart Reminders</a>
+    </div>
+    <div class="mobile-nav__group">
+        <span class="mobile-nav__group-label">Solutions</span>
+        <a href="/solutions/morning-routine/" class="mobile-nav__sub" onclick="closeMobileNav()">Morning Routine</a>
+        <a href="/solutions/productivity-at-work/" class="mobile-nav__sub" onclick="closeMobileNav()">Productivity at Work</a>
+    </div>
     <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
     <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
     <a href="#about" onclick="closeMobileNav()">About</a>
@@ -844,8 +899,46 @@
         <div class="navbar__inner">
             <a href="/" class="logo" aria-label="Productify – Habit Tracker App">Productify</a>
             <nav class="nav-links" role="navigation" aria-label="Main navigation">
-                <a href="#features">Features</a>
-                <a href="#solutions">Solutions</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown__toggle" aria-haspopup="true">
+                        Features
+                        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+                    </button>
+                    <div class="nav-dropdown__menu">
+                        <a href="#features" class="nav-dropdown__item">
+                            <div class="nav-dropdown__item-icon">⭐</div>
+                            <div class="nav-dropdown__item-text"><strong>All Features</strong><span>Overview of every feature</span></div>
+                        </a>
+                        <a href="/features/habit-streaks/" class="nav-dropdown__item">
+                            <div class="nav-dropdown__item-icon">🔥</div>
+                            <div class="nav-dropdown__item-text"><strong>Habit Streaks</strong><span>Visualize your consistency</span></div>
+                        </a>
+                        <a href="/features/minimalist-design/" class="nav-dropdown__item">
+                            <div class="nav-dropdown__item-icon">✦</div>
+                            <div class="nav-dropdown__item-text"><strong>Minimalist Design</strong><span>Calm, distraction-free UI</span></div>
+                        </a>
+                        <a href="/features/smart-reminders/" class="nav-dropdown__item">
+                            <div class="nav-dropdown__item-icon">🔔</div>
+                            <div class="nav-dropdown__item-text"><strong>Smart Reminders</strong><span>Gentle nudges, not noise</span></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown__toggle" aria-haspopup="true">
+                        Solutions
+                        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+                    </button>
+                    <div class="nav-dropdown__menu">
+                        <a href="/solutions/morning-routine/" class="nav-dropdown__item">
+                            <div class="nav-dropdown__item-icon">🌅</div>
+                            <div class="nav-dropdown__item-text"><strong>Morning Routine</strong><span>Start your day with intention</span></div>
+                        </a>
+                        <a href="/solutions/productivity-at-work/" class="nav-dropdown__item">
+                            <div class="nav-dropdown__item-icon">💼</div>
+                            <div class="nav-dropdown__item-text"><strong>Productivity at Work</strong><span>Habits that improve performance</span></div>
+                        </a>
+                    </div>
+                </div>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#about">About</a>
@@ -965,17 +1058,43 @@
                 <p class="text-muted">Replace vague intentions with clear targets — steps, glasses, minutes, reps — so you always know where you stand.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="#streak-tracking" class="feature-card feature-card--link" aria-label="Learn more about Streak Tracking">
+            <a href="/features/habit-streaks/" class="feature-card feature-card--link" aria-label="Learn more about Habit Streaks">
                 <div class="feature-card__icon">🔥</div>
                 <h3>Streak Tracking</h3>
                 <p class="text-muted">Visualize your consistency and stay motivated — a missed day is just a signal, not the end.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <article class="feature-card">
+            <a href="/features/smart-reminders/" class="feature-card feature-card--link" aria-label="Learn more about Smart Reminders">
                 <div class="feature-card__icon">🔔</div>
                 <h3>Smart Reminders</h3>
                 <p class="text-muted">Gentle nudges at the right moment — so your daily planner works for you, not against you.</p>
-            </article>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== SOLUTIONS TEASER ===================== -->
+<section class="section section--alt" aria-labelledby="solutions-teaser-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">Solutions</div>
+            <h2 id="solutions-teaser-heading">Guides for real-life routines</h2>
+            <p class="lead">In-depth, practical guides to help you apply Productify to what actually matters to you.</p>
+        </div>
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <a href="/solutions/morning-routine/" class="feature-card feature-card--link" aria-label="Read the Morning Routine guide">
+                <div class="feature-card__icon">🌅</div>
+                <h3>Build a Morning Routine</h3>
+                <p class="text-muted">The psychology of starting small — and how to design a morning that survives even your worst days.</p>
+                <span class="feature-card__cta">Read the guide →</span>
+            </a>
+            <a href="/solutions/productivity-at-work/" class="feature-card feature-card--link" aria-label="Read the Productivity at Work guide">
+                <div class="feature-card__icon">💼</div>
+                <h3>Productivity at Work</h3>
+                <p class="text-muted">Which daily habits compound into real professional growth — and how to track them without adding overhead.</p>
+                <span class="feature-card__cta">Read the guide →</span>
+            </a>
         </div>
     </div>
 </section>
@@ -1872,20 +1991,20 @@
                 </a>
             </div>
             <div class="footer__col">
-                <h4>Product</h4>
+                <h4>Features</h4>
                 <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#habit-duo">Habit Duo</a></li>
-                    <li><a href="#ai-analyser">AI Habit Analyser</a></li>
-                    <li><a href="#habit-templates">Habit Templates</a></li>
-                    <li><a href="#measurable-goals">Measurable Goals</a></li>
-                    <li><a href="#streak-tracking">Streak Tracking</a></li>
+                    <li><a href="#features">All Features</a></li>
+                    <li><a href="/features/habit-streaks/">Habit Streaks</a></li>
+                    <li><a href="/features/minimalist-design/">Minimalist Design</a></li>
+                    <li><a href="/features/smart-reminders/">Smart Reminders</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                 </ul>
             </div>
             <div class="footer__col">
-                <h4>Company</h4>
+                <h4>Solutions</h4>
                 <ul>
+                    <li><a href="/solutions/morning-routine/">Morning Routine</a></li>
+                    <li><a href="/solutions/productivity-at-work/">Productivity at Work</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#faq">FAQ</a></li>
