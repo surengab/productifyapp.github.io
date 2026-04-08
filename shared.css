@@ -50,7 +50,7 @@ body {
 }
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; transition: color .2s; }
-ul { list-style: none; }
+ul, ol { list-style: none; }
 
 /* ─── LAYOUT ──────────────────────────────────────────────────────────────── */
 .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
@@ -222,7 +222,7 @@ h3 {
     border-bottom: 1px solid var(--border);
     font-size: .82rem; color: var(--ink-muted);
 }
-.breadcrumb__list { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.breadcrumb__list { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; }
 .breadcrumb__list a { color: var(--ink-muted); transition: color .2s; }
 .breadcrumb__list a:hover { color: var(--blue); }
 .breadcrumb__sep { color: var(--ink-faint); }
