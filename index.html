@@ -288,11 +288,11 @@
             animation: float 7s ease-in-out infinite;
         }
         .hero__screenshot img {
-            max-width: 480px;
+            max-width: 320px;
             width: 100%;
             margin: 0 auto;
-            border-radius: 36px;
-            box-shadow: 0 24px 80px rgba(157,78,221,.22), 0 0 0 1px rgba(157,78,221,.1);
+            border-radius: 44px;
+            box-shadow: 0 32px 96px rgba(0,0,0,.45), 0 0 0 1px rgba(157,78,221,.15);
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -403,6 +403,20 @@
             inset: 0;
             background: var(--grad-purple);
             opacity: .05;
+        }
+        /* Phone screenshot inside spotlight */
+        .spotlight__visual--phone {
+            background: #111;
+            padding: 24px 32px;
+        }
+        .spotlight__visual--phone::before { display: none; }
+        .spotlight__phone-img {
+            max-height: 520px;
+            width: auto;
+            max-width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 24px 64px rgba(0,0,0,.45);
+            display: block;
         }
         .spotlight__tag-list {
             display: flex;
@@ -1124,9 +1138,9 @@
         <p class="hero__note">Free to download · No account required · iOS 15+</p>
 
         <div class="hero__screenshot">
-            <img src="image_2.png"
-                 alt="Productify habit tracker app – clean daily habit list with streaks and progress overview"
-                 width="480" height="580"
+            <img src="screenshot_main.png"
+                 alt="Productify habit tracker app – daily habit list showing Drink Water, Walk, Read, Drink Coffee and Stretch with streaks and progress bars"
+                 width="390" height="680"
                  loading="eager">
         </div>
     </div>
@@ -1231,7 +1245,12 @@
                         <span class="tag">Social habit tracking</span>
                     </div>
                 </div>
-                <div class="spotlight__visual" aria-hidden="true">🤝</div>
+                <div class="spotlight__visual spotlight__visual--phone">
+                    <img src="screenshot_habit_duo.png"
+                         alt="Habit Duo screen showing two users tracking a Walk habit together for 27 days"
+                         class="spotlight__phone-img"
+                         loading="lazy">
+                </div>
             </div>
         </div>
     </section>
@@ -1423,7 +1442,12 @@
                         <span class="tag">Habit routines</span>
                     </div>
                 </div>
-                <div class="spotlight__visual" aria-hidden="true">📋</div>
+                <div class="spotlight__visual spotlight__visual--phone">
+                    <img src="screenshot_templates.png"
+                         alt="Habit Templates screen showing categories like Creators & Thinkers, Proven Systems, and Mind & Body with template cards"
+                         class="spotlight__phone-img"
+                         loading="lazy">
+                </div>
             </div>
         </div>
     </section>
@@ -1626,7 +1650,12 @@
                         <span class="tag">Consistent habit building</span>
                     </div>
                 </div>
-                <div class="spotlight__visual" aria-hidden="true">🔥</div>
+                <div class="spotlight__visual spotlight__visual--phone">
+                    <img src="screenshot_main.png"
+                         alt="Productify app main screen showing habit streaks and progress bars for daily habits"
+                         class="spotlight__phone-img"
+                         loading="lazy">
+                </div>
             </div>
         </div>
     </section>
