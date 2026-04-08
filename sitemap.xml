@@ -4,6 +4,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Homepage -->
   <url>
     <loc>https://productifyapp.org/</loc>
     <lastmod>2026-04-08</lastmod>
@@ -11,27 +12,65 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Core feature pages -->
+  <url>
+    <loc>https://productifyapp.org/features/habit-duo/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://productifyapp.org/features/ai-analyser/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://productifyapp.org/features/habit-templates/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://productifyapp.org/features/measurable-goals/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://productifyapp.org/features/streak-tracking/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Legacy feature pages -->
   <url>
     <loc>https://productifyapp.org/features/habit-streaks/</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://productifyapp.org/features/minimalist-design/</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://productifyapp.org/features/smart-reminders/</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
+  <!-- Blog / solutions pages -->
   <url>
     <loc>https://productifyapp.org/solutions/morning-routine/</loc>
     <lastmod>2026-04-08</lastmod>
@@ -46,6 +85,7 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Legal -->
   <url>
     <loc>https://productifyapp.org/privacy.html</loc>
     <lastmod>2026-04-08</lastmod>

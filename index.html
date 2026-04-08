@@ -6,33 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Productify – Small changes. Lasting results. | iOS Daily Routine Tracker</title>
-    <meta name="title" content="Productify – Small changes. Lasting results. | iOS Daily Routine Tracker">
-    <meta name="description" content="Productify is a calm, minimalist iOS app for building daily routines that actually last. Frictionless tracking, AI pattern insights, shared accountability, and beautiful streak visualisation. Free on the App Store.">
-    <meta name="keywords" content="habit tracker, daily habit tracker, routine building, habit app, build better habits, track habits, habit streak app, accountability app, habit tracker with friends, AI habit tracker, habit templates, self-improvement app, atomic habits, daily planner iOS">
+    <!-- Title: 58 chars — targets "minimalist habit tracker" + brand within Google's ~60-char limit -->
+    <title>Productify – Minimalist Habit Tracker for iOS | Free</title>
+    <meta name="title" content="Productify – Minimalist Habit Tracker for iOS | Free">
+    <!-- Description: 152 chars — within Google's ~155-char sweet spot -->
+    <meta name="description" content="Productify is a calm, minimalist habit tracker for iOS. AI insights, streak tracking, shared accountability, and 50+ templates. Free to download on the App Store.">
+    <meta name="keywords" content="minimalist habit tracker, habit tracker app, daily habit tracker, routine building, build better habits, habit streak app, AI habit tracker, habit tracker with friends, habit templates, daily planner iOS, atomic habits app">
     <meta name="author" content="Productify">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
     <link rel="canonical" href="https://productifyapp.org/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://productifyapp.org/">
-    <meta property="og:title" content="Productify – Small changes. Lasting results.">
-    <meta property="og:description" content="A calm, focused daily companion for iOS. Frictionless tracking, AI insights, shared accountability, and visual streaks — free to download.">
+    <meta property="og:title" content="Productify – Minimalist Habit Tracker for iOS">
+    <meta property="og:description" content="A calm, minimalist habit tracker for iOS. AI insights, streak tracking, Habit Duo accountability, and 50+ templates — free to download.">
     <meta property="og:image" content="https://productifyapp.org/image_2.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Productify – minimalist habit tracker app for iOS showing daily routine screen">
     <meta property="og:site_name" content="Productify">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://productifyapp.org/">
-    <meta property="twitter:title" content="Productify – Small changes. Lasting results.">
-    <meta property="twitter:description" content="A calm, focused daily companion for iOS. Frictionless tracking, AI insights, shared accountability, and visual streaks — free to download.">
-    <meta property="twitter:image" content="https://productifyapp.org/image_2.png">
-    <meta property="twitter:creator" content="@Productify_app">
-    <meta property="twitter:site" content="@Productify_app">
+    <!-- Twitter Card — spec requires name= not property= for twitter: tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://productifyapp.org/">
+    <meta name="twitter:title" content="Productify – Minimalist Habit Tracker for iOS">
+    <meta name="twitter:description" content="A calm, minimalist habit tracker for iOS. AI insights, streak tracking, Habit Duo accountability, and 50+ templates — free to download.">
+    <meta name="twitter:image" content="https://productifyapp.org/image_2.png">
+    <meta name="twitter:image:alt" content="Productify – minimalist habit tracker app for iOS showing daily routine screen">
+    <meta name="twitter:creator" content="@Productify_app">
+    <meta name="twitter:site" content="@Productify_app">
 
     <!-- App Store -->
     <meta name="apple-itunes-app" content="app-id=1389900237">
@@ -49,10 +54,15 @@
     <meta name="distribution" content="global">
     <meta name="rating" content="general">
 
-    <!-- Fonts -->
+    <!-- Fonts — preconnect (eliminates connection round-trip for LCP) + dns-prefetch fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <!-- font-display:swap baked into Google Fonts URL to prevent render-blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Preconnect to App Store CDN for badge/link performance -->
+    <link rel="dns-prefetch" href="https://apps.apple.com">
 
     <style>
         /* ─── TOKENS ─────────────────────────────────────── */
@@ -822,9 +832,10 @@
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Productify",
+        "name": "Productify – Minimalist Habit Tracker",
         "applicationCategory": "LifestyleApplication",
-        "operatingSystem": "iOS",
+        "applicationSubCategory": "ProductivityApplication",
+        "operatingSystem": "iOS 15+",
         "offers": [
             { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free" },
             { "@type": "Offer", "price": "3.99", "priceCurrency": "USD", "name": "Pro Monthly" },
@@ -832,13 +843,16 @@
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "491"
+            "ratingValue": "4.4",
+            "ratingCount": "525",
+            "bestRating": "5",
+            "worstRating": "1"
         },
-        "description": "Productify is a minimalist iOS app for building daily routines through frictionless tracking, AI habit insights, shared accountability (Habit Duo), templates, and streak visualisation.",
+        "description": "Productify is a calm, minimalist habit tracker for iOS. Build lasting daily routines with frictionless check-ins, AI pattern insights (TempO), shared Habit Duo accountability, 50+ templates, measurable goals, and guilt-free streak tracking.",
         "screenshot": "https://productifyapp.org/image_2.png",
         "url": "https://productifyapp.org/",
         "downloadUrl": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
+        "sameAs": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
         "author": {
             "@type": "Organization",
             "name": "Productify",
@@ -849,14 +863,32 @@
             ]
         },
         "featureList": [
-            "Habit Duo – shared accountability with a friend",
-            "AI Habit Analyser – personalised pattern insights",
-            "Habit Templates – ready-made routines",
-            "Measurable Goals – steps, water, minutes, reps",
-            "Streak Tracking",
-            "Smart Reminders",
-            "Dark Mode"
+            "Habit Duo – shared accountability with one friend",
+            "AI Habit Analyser (TempO) – personalised behaviour insights",
+            "50+ Habit Templates – ready-made daily routines",
+            "Measurable Goals – steps, water, minutes, reps, frequency",
+            "Streak Tracking – current and personal best, no guilt messaging",
+            "Smart Reminders – gentle, schedulable nudges",
+            "Dark Mode",
+            "No account required"
         ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Productify",
+        "url": "https://productifyapp.org/",
+        "description": "Official website for Productify, a minimalist habit tracker app for iOS.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://productifyapp.org/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
     }
     </script>
     <script type="application/ld+json">
