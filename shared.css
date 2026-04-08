@@ -153,17 +153,28 @@ h3 {
 .nav-dropdown.open .nav-dropdown__toggle { color: var(--ink); background: var(--bg-alt); }
 .nav-dropdown__toggle svg { width: 12px; height: 12px; transition: transform .25s; }
 .nav-dropdown.open .nav-dropdown__toggle svg { transform: rotate(180deg); }
+/* hover-to-open: hidden via opacity/visibility so the invisible bridge works */
 .nav-dropdown__menu {
-    display: none; position: absolute; top: 100%; left: 0;
-    padding-top: 8px; /* invisible bridge — no gap the cursor can fall through */
+    position: absolute; top: 100%; left: 0;
+    padding-top: 8px;   /* invisible bridge — cursor stays inside the element */
     z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out, visibility .2s;
+    pointer-events: none;
 }
 .nav-dropdown__menu-inner {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; padding: 8px; min-width: 220px;
+    border-radius: 12px; padding: 8px; min-width: 230px;
     box-shadow: var(--shadow-md);
 }
-.nav-dropdown.open .nav-dropdown__menu { display: block; }
+.nav-dropdown.open .nav-dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
 .nav-dropdown__item {
     display: flex; align-items: flex-start; gap: 10px;
     padding: 10px 12px; border-radius: 8px;
@@ -333,7 +344,8 @@ h3 {
     .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
     .nav-links { display: none; }
     .hamburger { display: block; }
-    .nav-dropdown__menu { display: none !important; }
+    /* dropdowns hidden with mobile nav open — transition still works when nav-links is shown */
+    .nav-dropdown__menu { pointer-events: none !important; opacity: 0 !important; visibility: hidden !important; }
 }
 @media (max-width: 600px) {
     .section { padding: 60px 0; }

@@ -61,8 +61,8 @@
         <a href="/features/smart-reminders/" class="mobile-nav__sub">Smart Reminders</a>
     </div>
     <div class="mobile-nav__group">
-        <span class="mobile-nav__group-label">Solutions</span>
-        <a href="/solutions/morning-routine/" class="mobile-nav__sub">Morning Routine</a>
+        <span class="mobile-nav__group-label">Blog</span>
+        <a href="/solutions/morning-routine/" class="mobile-nav__sub">Build a Morning Routine</a>
         <a href="/solutions/productivity-at-work/" class="mobile-nav__sub">Productivity at Work</a>
     </div>
     <a href="/#pricing">Pricing</a>
@@ -82,31 +82,39 @@
                     </button>
                     <div class="nav-dropdown__menu">
                         <div class="nav-dropdown__menu-inner">
-                            <a href="/features/habit-streaks/" class="nav-dropdown__item">
+                            <a href="/#habit-duo" class="nav-dropdown__item">
+                                <div class="nav-dropdown__item-icon">🤝</div>
+                                <div class="nav-dropdown__item-text"><strong>Habit Duo</strong><span>Build one habit with a friend</span></div>
+                            </a>
+                            <a href="/#ai-analyser" class="nav-dropdown__item">
+                                <div class="nav-dropdown__item-icon">🧠</div>
+                                <div class="nav-dropdown__item-text"><strong>AI Habit Analyser</strong><span>Personalised pattern insights</span></div>
+                            </a>
+                            <a href="/#habit-templates" class="nav-dropdown__item">
+                                <div class="nav-dropdown__item-icon">📋</div>
+                                <div class="nav-dropdown__item-text"><strong>Habit Templates</strong><span>Start in seconds, not hours</span></div>
+                            </a>
+                            <a href="/#measurable-goals" class="nav-dropdown__item">
+                                <div class="nav-dropdown__item-icon">📏</div>
+                                <div class="nav-dropdown__item-text"><strong>Measurable Goals</strong><span>Clear targets, less friction</span></div>
+                            </a>
+                            <a href="/#streak-tracking" class="nav-dropdown__item">
                                 <div class="nav-dropdown__item-icon">🔥</div>
-                                <div class="nav-dropdown__item-text"><strong>Habit Streaks</strong><span>Visualize your consistency</span></div>
-                            </a>
-                            <a href="/features/minimalist-design/" class="nav-dropdown__item">
-                                <div class="nav-dropdown__item-icon">✦</div>
-                                <div class="nav-dropdown__item-text"><strong>Minimalist Design</strong><span>Calm, distraction-free UI</span></div>
-                            </a>
-                            <a href="/features/smart-reminders/" class="nav-dropdown__item">
-                                <div class="nav-dropdown__item-icon">🔔</div>
-                                <div class="nav-dropdown__item-text"><strong>Smart Reminders</strong><span>Gentle nudges, not noise</span></div>
+                                <div class="nav-dropdown__item-text"><strong>Streak Tracking</strong><span>Momentum without the guilt</span></div>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="nav-dropdown">
                     <button class="nav-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
-                        Solutions
+                        Blog
                         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
                     </button>
                     <div class="nav-dropdown__menu">
                         <div class="nav-dropdown__menu-inner">
                             <a href="/solutions/morning-routine/" class="nav-dropdown__item">
                                 <div class="nav-dropdown__item-icon">🌅</div>
-                                <div class="nav-dropdown__item-text"><strong>Morning Routine</strong><span>Start your day with intention</span></div>
+                                <div class="nav-dropdown__item-text"><strong>Build a Morning Routine</strong><span>Start your day with intention</span></div>
                             </a>
                             <a href="/solutions/productivity-at-work/" class="nav-dropdown__item">
                                 <div class="nav-dropdown__item-icon">💼</div>
@@ -295,9 +303,9 @@
                 </ul>
             </div>
             <div class="footer__col">
-                <h4>Solutions</h4>
+                <h4>Blog</h4>
                 <ul>
-                    <li><a href="/solutions/morning-routine/">Morning Routine</a></li>
+                    <li><a href="/solutions/morning-routine/">Build a Morning Routine</a></li>
                     <li><a href="/solutions/productivity-at-work/">Productivity at Work</a></li>
                     <li><a href="/#pricing">Pricing</a></li>
                 </ul>
@@ -333,7 +341,14 @@
     closeBtn.addEventListener('click', closeMobileNav);
     mobileNav.addEventListener('click', function(e) { if (e.target === mobileNav) closeMobileNav(); });
 
-    // Nav dropdowns — click-toggle
+    // Nav dropdowns — hover on desktop, click-toggle on touch
+    var isTouchDevice = false;
+    window.addEventListener('touchstart', function() { isTouchDevice = true; }, { once: true });
+    function openDropdown(dd) {
+        closeAllDropdowns(dd);
+        dd.classList.add('open');
+        dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded','true');
+    }
     function closeAllDropdowns(except) {
         document.querySelectorAll('.nav-dropdown.open').forEach(function(dd) {
             if (dd !== except) {
@@ -342,20 +357,32 @@
             }
         });
     }
-    document.querySelectorAll('.nav-dropdown__toggle').forEach(function(toggle) {
-        toggle.addEventListener('click', function(e) {
+    document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+        var leaveTimer;
+        dd.addEventListener('mouseenter', function() {
+            if (isTouchDevice) return;
+            clearTimeout(leaveTimer);
+            openDropdown(dd);
+        });
+        dd.addEventListener('mouseleave', function() {
+            if (isTouchDevice) return;
+            leaveTimer = setTimeout(function() {
+                dd.classList.remove('open');
+                dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded','false');
+            }, 120);
+        });
+        dd.querySelector('.nav-dropdown__toggle').addEventListener('click', function(e) {
             e.stopPropagation();
-            var dd = this.closest('.nav-dropdown');
             var isOpen = dd.classList.contains('open');
             closeAllDropdowns(dd);
             if (!isOpen) { dd.classList.add('open'); this.setAttribute('aria-expanded','true'); }
             else { dd.classList.remove('open'); this.setAttribute('aria-expanded','false'); }
         });
     });
-    document.addEventListener('click', function() { closeAllDropdowns(); });
     document.querySelectorAll('.nav-dropdown__menu').forEach(function(m) {
         m.addEventListener('click', function(e) { e.stopPropagation(); });
     });
+    document.addEventListener('click', function() { closeAllDropdowns(); });
     document.addEventListener('keydown', function(e) { if (e.key==='Escape') closeAllDropdowns(); });
 </script>
 
