@@ -316,7 +316,7 @@
 
         /* ─── HERO ───────────────────────────────────────── */
         .hero {
-            padding: 96px 0 0;
+            padding: 80px 0 0;
             background: var(--bg);
             position: relative;
             overflow: hidden;
@@ -324,54 +324,74 @@
         .hero::before {
             content: '';
             position: absolute; inset: 0;
-            background: radial-gradient(ellipse 1100px 500px at 50% -60px, rgba(37,99,235,.055) 0%, transparent 68%);
+            background: radial-gradient(ellipse 1100px 480px at 50% -40px, rgba(37,99,235,.05) 0%, transparent 68%);
             pointer-events: none;
         }
         .hero__bg-orb { display: none; }
         .hero__inner {
             position: relative; z-index: 1;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
+            grid-template-columns: 52% 48%;
+            gap: 40px;
             align-items: flex-end;
+            min-height: 540px;
         }
-        .hero__text { padding-bottom: 72px; }
-        .hero h1 { margin-bottom: 22px; text-align: left; }
+        .hero__text {
+            padding-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero h1 { margin-bottom: 20px; text-align: left; }
         .hero h1 span { color: var(--blue); }
-        .hero .lead { margin: 0 0 36px; text-align: left; }
+        .hero .lead { margin: 0 0 32px; text-align: left; }
         .hero__cta-group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-        .hero__note { margin-top: 14px; font-size: .8rem; color: var(--ink-faint); }
+        .hero__note { margin-top: 12px; font-size: .8rem; color: var(--ink-faint); }
         .hero__visual {
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
+            height: 100%;
+            /* clip phones to a comfortable max so they don't overflow viewport */
+            max-height: 580px;
+            overflow: visible;
         }
         .hero__phone {
-            border-radius: 44px;
+            border-radius: 38px;
             box-shadow: var(--shadow-phone);
-            width: 220px;
+            /* height-based sizing so they scale with the column, not overflow it */
+            height: min(520px, 58vw);
+            width: auto;
+            object-fit: cover;
+            object-position: top;
             animation: float 7s ease-in-out infinite;
+            flex-shrink: 0;
         }
         .hero__phone--secondary {
-            width: 190px;
+            height: min(460px, 50vw);
             animation-delay: -3.5s;
             margin-bottom: 32px;
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(-14px); }
+            50%       { transform: translateY(-12px); }
+        }
+        /* Tablet */
+        @media (max-width: 960px) {
+            .hero__phone       { height: min(440px, 42vw); }
+            .hero__phone--secondary { height: min(390px, 36vw); }
         }
         /* single-column hero on mobile */
-        @media (max-width: 860px) {
-            .hero { padding: 72px 0 0; text-align: center; }
-            .hero__inner { grid-template-columns: 1fr; gap: 48px; }
+        @media (max-width: 720px) {
+            .hero { padding: 64px 0 0; text-align: center; }
+            .hero__inner { grid-template-columns: 1fr; gap: 40px; min-height: unset; }
             .hero__text { padding-bottom: 0; }
             .hero h1, .hero .lead { text-align: center; }
-            .hero .lead { margin: 0 auto 36px; }
+            .hero .lead { margin: 0 auto 32px; }
             .hero__cta-group { justify-content: center; }
-            .hero__visual { padding-bottom: 0; }
-            .hero__phone { width: 180px; }
+            .hero__visual { max-height: 360px; justify-content: center; }
+            .hero__phone { height: 320px; }
             .hero__phone--secondary { display: none; }
         }
 
