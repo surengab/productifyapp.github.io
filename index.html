@@ -242,17 +242,27 @@
         .nav-dropdown__toggle svg { width: 12px; height: 12px; transition: transform .25s; }
         .nav-dropdown.open .nav-dropdown__toggle svg { transform: rotate(180deg); }
         .nav-dropdown__menu {
-            display: none; position: absolute; top: 100%; left: 0;
-            /* 8px invisible padding-top so the mouse bridge is seamless */
+            position: absolute; top: 100%; left: 0;
             padding-top: 8px;
             z-index: 200;
+            /* hidden by default */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity .18s ease, transform .18s ease, visibility .18s;
+            pointer-events: none;
         }
         .nav-dropdown__menu-inner {
             background: var(--surface); border: 1px solid var(--border);
             border-radius: 12px; padding: 8px; min-width: 230px;
             box-shadow: var(--shadow-md);
         }
-        .nav-dropdown.open .nav-dropdown__menu { display: block; }
+        .nav-dropdown.open .nav-dropdown__menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
         .nav-dropdown__item {
             display: flex; align-items: flex-start; gap: 10px;
             padding: 10px 12px; border-radius: 8px;
@@ -306,66 +316,88 @@
 
         /* ─── HERO ───────────────────────────────────────── */
         .hero {
-            padding: 100px 0 72px;
-            text-align: center;
+            padding: 96px 0 0;
             background: var(--bg);
             position: relative;
             overflow: hidden;
         }
-        /* Very subtle tinted stripe */
         .hero::before {
             content: '';
             position: absolute; inset: 0;
-            background: radial-gradient(ellipse 900px 500px at 50% 0%, rgba(37,99,235,.05) 0%, transparent 70%);
+            background: radial-gradient(ellipse 1100px 500px at 50% -60px, rgba(37,99,235,.055) 0%, transparent 68%);
             pointer-events: none;
         }
         .hero__bg-orb { display: none; }
-        .hero__content { position: relative; z-index: 1; }
-        .hero h1 { margin-bottom: 20px; }
+        .hero__inner {
+            position: relative; z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: flex-end;
+        }
+        .hero__text { padding-bottom: 72px; }
+        .hero h1 { margin-bottom: 22px; text-align: left; }
         .hero h1 span { color: var(--blue); }
-        .hero .lead { margin: 0 auto 36px; }
-        .hero__cta-group { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .hero .lead { margin: 0 0 36px; text-align: left; }
+        .hero__cta-group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .hero__note { margin-top: 14px; font-size: .8rem; color: var(--ink-faint); }
-        .hero__screenshot {
-            margin-top: 64px;
-            position: relative;
+        .hero__visual {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 20px;
+        }
+        .hero__phone {
+            border-radius: 44px;
+            box-shadow: var(--shadow-phone);
+            width: 220px;
             animation: float 7s ease-in-out infinite;
         }
-        .hero__screenshot img {
-            max-width: 300px; width: 100%; margin: 0 auto;
-            border-radius: 40px;
-            box-shadow: var(--shadow-phone);
+        .hero__phone--secondary {
+            width: 190px;
+            animation-delay: -3.5s;
+            margin-bottom: 32px;
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(-12px); }
+            50%       { transform: translateY(-14px); }
+        }
+        /* single-column hero on mobile */
+        @media (max-width: 860px) {
+            .hero { padding: 72px 0 0; text-align: center; }
+            .hero__inner { grid-template-columns: 1fr; gap: 48px; }
+            .hero__text { padding-bottom: 0; }
+            .hero h1, .hero .lead { text-align: center; }
+            .hero .lead { margin: 0 auto 36px; }
+            .hero__cta-group { justify-content: center; }
+            .hero__visual { padding-bottom: 0; }
+            .hero__phone { width: 180px; }
+            .hero__phone--secondary { display: none; }
         }
 
         /* ─── TRUST BAR ──────────────────────────────────── */
         .trust-bar {
-            padding: 26px 0;
+            padding: 22px 0;
             background: var(--bg-alt);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
-        .trust-bar__inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
-        .trust-item { display: flex; align-items: center; gap: 9px; font-size: .87rem; color: var(--ink-muted); font-weight: 500; }
-        .trust-item__icon { font-size: 1.1rem; }
+        .trust-bar__inner {
+            display: flex; align-items: center; justify-content: center;
+            gap: 0; flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 8px;
+            font-size: .86rem; color: var(--ink-muted); font-weight: 500;
+            padding: 6px 28px;
+        }
+        .trust-item + .trust-item { border-left: 1px solid var(--border); }
+        @media (max-width: 640px) {
+            .trust-item + .trust-item { border-left: none; }
+            .trust-item { padding: 6px 16px; }
+        }
+        .trust-item__icon { font-size: 1.05rem; }
         .trust-item strong { color: var(--ink); }
-
-        /* ─── SOCIAL PROOF BANNER ────────────────────────── */
-        .social-proof-bar {
-            background: var(--blue);
-            padding: 14px 0;
-            text-align: center;
-        }
-        .social-proof-bar p {
-            color: #fff;
-            font-size: .92rem;
-            font-weight: 500;
-            letter-spacing: .01em;
-        }
-        .social-proof-bar strong { font-weight: 700; }
 
         /* ─── SECTION HEADER ─────────────────────────────── */
         .section-header { margin-bottom: 52px; }
@@ -432,23 +464,27 @@
         }
         .spotlight__visual--phone {
             background: #0D1117;
-            border-color: #0D1117;
-            padding: 32px 24px;
+            border-color: rgba(255,255,255,.06);
+            padding: 40px 28px;
             box-shadow: var(--shadow-lg);
+            position: relative;
         }
-        .spotlight__phone-img {
-            max-height: 500px; width: auto; max-width: 100%;
-            border-radius: 30px;
-            box-shadow: var(--shadow-phone);
-            display: block; margin: 0 auto;
-        }
-        /* Reflection glow at bottom */
-        .spotlight__visual--phone::after {
+        /* Ambient blue glow */
+        .spotlight__visual--phone::before {
             content: '';
-            position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
-            background: linear-gradient(to bottom, transparent, rgba(37,99,235,.06));
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 90%, rgba(37,99,235,.18) 0%, transparent 70%);
             pointer-events: none;
         }
+        .spotlight__phone-img {
+            max-height: 520px; width: auto; max-width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06);
+            display: block; margin: 0 auto;
+            position: relative; z-index: 1;
+        }
+        .spotlight__visual--phone::after { display: none; }
 
         .spotlight__visual--emoji {
             font-size: 5rem;
@@ -526,22 +562,48 @@
 
         /* ─── TESTIMONIALS ───────────────────────────────── */
         .testimonials-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
         }
         .testimonial-card {
             background: var(--surface); border-radius: var(--radius-card);
-            padding: 28px 24px; border: 1px solid var(--border); box-shadow: var(--shadow-xs);
+            padding: 28px 26px 24px; border: 1px solid var(--border);
+            box-shadow: var(--shadow-xs);
+            display: flex; flex-direction: column; gap: 0;
         }
-        .testimonial-card__stars { font-size: .95rem; color: #F59E0B; margin-bottom: 12px; letter-spacing: 2px; }
-        .testimonial-card p { font-size: .94rem; color: var(--ink-2); line-height: 1.75; font-style: italic; }
-        .testimonial-card__author { margin-top: 18px; display: flex; align-items: center; gap: 12px; }
+        .testimonial-card__stars {
+            display: flex; gap: 3px; margin-bottom: 14px;
+        }
+        .testimonial-card__stars svg {
+            width: 16px; height: 16px; fill: #F59E0B;
+        }
+        .testimonial-card__quote {
+            font-size: .95rem; color: var(--ink-2); line-height: 1.78;
+            font-style: normal; flex: 1;
+        }
+        .testimonial-card__author {
+            margin-top: 20px; padding-top: 18px;
+            border-top: 1px solid var(--border);
+            display: flex; align-items: center; gap: 12px;
+        }
         .testimonial-card__avatar {
             width: 38px; height: 38px; border-radius: 50%;
-            background: var(--bg-alt-2);
-            display: flex; align-items: center; justify-content: center; font-size: 1rem;
+            background: var(--blue-dim);
+            display: flex; align-items: center; justify-content: center;
+            font-size: .82rem; font-weight: 700; color: var(--blue);
+            flex-shrink: 0; letter-spacing: -.5px;
         }
-        .testimonial-card__name { font-size: .87rem; font-weight: 600; color: var(--ink); }
-        .testimonial-card__role { font-size: .77rem; color: var(--ink-muted); }
+        .testimonial-card__name { font-size: .88rem; font-weight: 600; color: var(--ink); }
+        .testimonial-card__role { font-size: .76rem; color: var(--ink-muted); margin-top: 2px; }
+        .testimonials-aggregate {
+            text-align: center; margin-bottom: 40px;
+            display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+        }
+        .testimonials-aggregate__stars { display: flex; gap: 3px; }
+        .testimonials-aggregate__stars svg { width: 20px; height: 20px; fill: #F59E0B; }
+        .testimonials-aggregate__score {
+            font-size: 1.6rem; font-weight: 800; color: var(--ink); letter-spacing: -1px;
+        }
+        .testimonials-aggregate__label { font-size: .88rem; color: var(--ink-muted); }
 
         /* ─── FAQ ────────────────────────────────────────── */
         .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
@@ -972,32 +1034,39 @@
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="home" aria-labelledby="hero-heading">
-    <div class="hero__bg-orb hero__bg-orb--1"></div>
-    <div class="hero__bg-orb hero__bg-orb--2"></div>
-    <div class="container hero__content">
-        <div class="eyebrow">iOS Habit Tracker · Free to Download</div>
-        <h1 id="hero-heading">
-            Build habits that<br>
-            <span>actually stick.</span>
-        </h1>
-        <p class="lead">
-            Productify is a calm, minimalist daily companion that helps you make real progress — without the pressure of perfection. Build lasting routines, stay accountable with a friend, and let AI surface what's actually working.
-        </p>
-        <div class="hero__cta-group">
-            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="appstore-badge-link"
-               aria-label="Download Productify habit tracker on the App Store">
-                <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180" height="53">
-            </a>
-            <a href="#how-it-works" class="btn btn-secondary btn-lg">See how it works</a>
-        </div>
-        <p class="hero__note">Free to download · No account required · iOS 15+</p>
-
-        <div class="hero__screenshot">
-            <img src="screenshot_main.png"
-                 alt="Productify habit tracker app – daily habit list showing Drink Water, Walk, Read, Drink Coffee and Stretch with streaks and progress bars"
-                 width="390" height="680"
-                 loading="eager">
+    <div class="container">
+        <div class="hero__inner">
+            <div class="hero__text">
+                <div class="eyebrow">iOS Habit Tracker · Free to Download</div>
+                <h1 id="hero-heading">
+                    Build habits that<br>
+                    <span>actually stick.</span>
+                </h1>
+                <p class="lead">
+                    Productify is a calm, focused daily companion for iOS. Track habits, measure real progress, stay accountable with a friend — without the pressure of perfection.
+                </p>
+                <div class="hero__cta-group">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="appstore-badge-link"
+                       aria-label="Download Productify on the App Store">
+                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180" height="53">
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-lg">See how it works</a>
+                </div>
+                <p class="hero__note">Free to download · No account required · iOS 15+</p>
+            </div>
+            <div class="hero__visual">
+                <img src="screenshot_daily.png"
+                     class="hero__phone"
+                     alt="Productify daily habit list — Walk 7900/12000 steps, Learn new things, Read 0s/45m timer, Drink water completed"
+                     width="390" height="844"
+                     loading="eager">
+                <img src="screenshot_templates_browse.png"
+                     class="hero__phone hero__phone--secondary"
+                     alt="Productify habit templates — Minimalist Morning, High Performance, Priority Protocol and Franklin Schedule routines"
+                     width="390" height="844"
+                     loading="eager">
+            </div>
         </div>
     </div>
 </section>
@@ -1023,13 +1092,6 @@
                 <span><strong>Free</strong> to start, no credit card</span>
             </div>
         </div>
-    </div>
-</div>
-
-<!-- ===================== SOCIAL PROOF BAR ===================== -->
-<div class="social-proof-bar" role="complementary" aria-label="Social proof">
-    <div class="container">
-        <p>Join <strong>5,000+ people</strong> building better habits with Productify — one small step at a time.</p>
     </div>
 </div>
 
@@ -1128,11 +1190,7 @@
                         <li>Send encouragement when your friend completes the day</li>
                         <li>Focus on consistency over perfection</li>
                     </ul>
-                    <div class="spotlight__tag-list">
-                        <span class="tag">Accountability habit app</span>
-                        <span class="tag">Habit tracker with friends</span>
-                        <span class="tag">Social habit tracking</span>
-                    </div>
+                    <p class="lead" style="margin-top: 20px; font-size: .9rem;">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></p>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone" style="gap: 16px; display: flex; align-items: flex-end; justify-content: center; padding: 24px 16px;">
                     <img src="screenshot_habit_duo_choose.png"
@@ -1166,7 +1224,7 @@
                         This works especially well for habits that feel easier to skip alone — morning walks, daily hydration, evening reading, weekly workouts. When the routine is shared, skipping becomes a deliberate choice rather than a passive one. That small shift in awareness is often enough to sustain the habit long-term without added stress.
                     </p>
                     <p>
-                        If you've been looking for a way to stay accountable to a friend without it feeling gamified or overwhelming, Habit Duo is designed exactly for that. Available on the Pro plan.
+                        Habit Duo works for fitness, sleep, hydration, reading — any habit that benefits from a quiet partner. Available on Pro.
                     </p>
                     <ul class="check-list">
                         <li>Paired accountability — one friend, one habit, one shared goal</li>
@@ -1234,11 +1292,7 @@
                         <li>Understand which habits strengthen each other</li>
                         <li>Get encouragement grounded in your real progress</li>
                     </ul>
-                    <div class="spotlight__tag-list">
-                        <span class="tag">AI habit tracker</span>
-                        <span class="tag">Habit insights</span>
-                        <span class="tag">Personalised habit analysis</span>
-                    </div>
+                    <p class="lead" style="margin-top: 20px; font-size: .9rem;">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></p>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
                     <img src="screenshot_ai_analyser.png"
@@ -1266,7 +1320,7 @@
                         The AI Habit Analyser is intentionally modest in tone. It doesn't lecture, doesn't celebrate with confetti, and doesn't assign blame for missed days. If something isn't working, it helps you see that plainly and quietly — which is a more honest kind of support than manufactured positivity.
                     </p>
                     <p>
-                        If you've been looking for an AI habit tracker that feels grounded rather than gimmicky, the AI Habit Analyser in Productify is designed with exactly that balance in mind.
+                        The result is an AI that feels more like a calm coach than a dashboard — useful precisely because it doesn't oversell what it knows.
                     </p>
                     <ul class="check-list">
                         <li>Weekly and monthly pattern analysis across all your habits</li>
@@ -1336,15 +1390,11 @@
                         <li>Focus session – 90 minutes of deep work</li>
                         <li>Sleep – in bed by 10:30 PM</li>
                     </ul>
-                    <div class="spotlight__tag-list">
-                        <span class="tag">Habit templates</span>
-                        <span class="tag">Daily habit tracker</span>
-                        <span class="tag">Habit routines</span>
-                    </div>
+                    <p class="lead" style="margin-top: 20px; font-size: .9rem;">5 templates free · full library on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></p>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="screenshot_templates_2.png"
-                         alt="Habit Template detail screen showing the High-Performance routine with Wake Up, Hydrate, Movement, Journaling, Deep Work and an Adopt Routine button"
+                    <img src="screenshot_templates_browse.png"
+                         alt="Productify habit template library — browse Morning Rituals, Productivity and Creators & Thinkers categories with pre-built routines"
                          class="spotlight__phone-img"
                          loading="lazy">
                 </div>
@@ -1442,15 +1492,10 @@
                         <li>Track partial progress — every bit counts</li>
                         <li>Reduce decision fatigue with clear, pre-defined goals</li>
                     </ul>
-                    <div class="spotlight__tag-list">
-                        <span class="tag">Goal tracker app</span>
-                        <span class="tag">Habit goal setting</span>
-                        <span class="tag">Quantified habits</span>
-                    </div>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="screenshot_progress.png"
-                         alt="Productify progress screen showing 7-day completion rate for Drink Water, Read, Meditate, Walk and Stretch habits with pie charts"
+                    <img src="screenshot_daily.png"
+                         alt="Productify daily view — Walk habit showing 7900 out of 12000 steps progress bar, Read habit with 45-minute timer, Drink water completed"
                          class="spotlight__phone-img"
                          loading="lazy">
                 </div>
@@ -1549,15 +1594,10 @@
                         <li>Graceful recovery after a missed day — no shame, no lecture</li>
                         <li>Celebrate real milestones without manufactured urgency</li>
                     </ul>
-                    <div class="spotlight__tag-list">
-                        <span class="tag">Habit streak app</span>
-                        <span class="tag">Streak tracker</span>
-                        <span class="tag">Consistent habit building</span>
-                    </div>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="screenshot_progress.png"
-                         alt="Productify progress tracking screen showing 7-day habit completion history with green, red and skipped indicators"
+                    <img src="screenshot_streak_detail.png"
+                         alt="Productify streak detail — calendar view showing completed days, Starter achievement badge, Best day April 7 at 100%, and a completion trend chart"
                          class="spotlight__phone-img"
                          loading="lazy">
                 </div>
@@ -1673,40 +1713,69 @@
     <div class="container">
         <div class="section-header text-center">
             <div class="eyebrow">App Store Reviews</div>
-            <h2 id="testimonials-heading">Rated 4.9 out of 5</h2>
-            <p class="lead">Real words from real users — copied directly from the App Store.</p>
+            <h2 id="testimonials-heading">People who use it, love it</h2>
+            <p class="lead">Real quotes copied directly from the App Store.</p>
+        </div>
+        <div class="testimonials-aggregate" aria-label="Overall rating: 4.9 out of 5 from 491 ratings">
+            <div class="testimonials-aggregate__stars" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testimonials-aggregate__score">4.9</span>
+            <span class="testimonials-aggregate__label">out of 5 · 491 ratings on the App Store</span>
         </div>
         <div class="testimonials-grid">
             <article class="testimonial-card">
-                <div class="testimonial-card__stars">★★★★★</div>
-                <p>"I really want to gush about this app but worry it will look fake. My love for this app isn't fake. Streaks work very well for me so the visual of an ongoing streak is elegant and perfect. The clean simplicity of using it is perfect. I upgraded within a week so I could add more habits. Highly recommend!"</p>
+                <div class="testimonial-card__stars" aria-label="5 stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-card__quote">"I really want to gush about this app but worry it will look fake. My love for this app isn't fake. Streaks work very well for me so the visual of an ongoing streak is elegant and perfect. The clean simplicity of using it is perfect. I upgraded within a week so I could add more habits. Highly recommend!"</p>
                 <div class="testimonial-card__author">
-                    <div class="testimonial-card__avatar">⭐</div>
+                    <div class="testimonial-card__avatar" aria-hidden="true">RC</div>
                     <div>
                         <div class="testimonial-card__name">RCGStreer</div>
-                        <div class="testimonial-card__role">App Store review · 5 stars</div>
+                        <div class="testimonial-card__role">Verified App Store review</div>
                     </div>
                 </div>
             </article>
             <article class="testimonial-card">
-                <div class="testimonial-card__stars">★★★★★</div>
-                <p>"I absolutely love this app — it helps me keep a good cleaning schedule for every day of the week and reminds me to take vitamins. I have no complaints. I haven't had a problem since I started and would recommend it to anyone building a daily routine."</p>
+                <div class="testimonial-card__stars" aria-label="5 stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-card__quote">"I absolutely love this app — it helps me keep a good cleaning schedule for every day of the week and reminds me to take vitamins. I have no complaints. I haven't had a problem since I started and would recommend it to anyone building a daily routine."</p>
                 <div class="testimonial-card__author">
-                    <div class="testimonial-card__avatar">⭐</div>
+                    <div class="testimonial-card__avatar" aria-hidden="true">MO</div>
                     <div>
                         <div class="testimonial-card__name">MilofromOhio</div>
-                        <div class="testimonial-card__role">App Store review · 5 stars</div>
+                        <div class="testimonial-card__role">Verified App Store review</div>
                     </div>
                 </div>
             </article>
             <article class="testimonial-card">
-                <div class="testimonial-card__stars">★★★★★</div>
-                <p>"This app provides you with the tools you need to build and track good habits and to potentially eliminate bad ones in a beautiful way. It's exactly what I was looking for."</p>
+                <div class="testimonial-card__stars" aria-label="5 stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-card__quote">"This app provides you with the tools you need to build and track good habits and to potentially eliminate bad ones in a beautiful way. It's exactly what I was looking for."</p>
                 <div class="testimonial-card__author">
-                    <div class="testimonial-card__avatar">⭐</div>
+                    <div class="testimonial-card__avatar" aria-hidden="true">NS</div>
                     <div>
                         <div class="testimonial-card__name">northandsouth</div>
-                        <div class="testimonial-card__role">App Store review · 5 stars</div>
+                        <div class="testimonial-card__role">Verified App Store review</div>
                     </div>
                 </div>
             </article>
@@ -1734,7 +1803,12 @@
                     <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
                 </a>
             </div>
-            <div class="spotlight__visual spotlight__visual--emoji" aria-hidden="true">🌱</div>
+            <div class="spotlight__visual spotlight__visual--phone">
+                <img src="screenshot_timer.png"
+                     alt="Productify in-app timer — Read for 45 minutes habit showing 31 minutes elapsed with circular progress ring"
+                     class="spotlight__phone-img"
+                     loading="lazy">
+            </div>
         </div>
     </div>
 </section>
@@ -2101,7 +2175,15 @@
         });
     });
 
-    // --- Nav dropdowns (click-toggle, close on outside click) ---
+    // --- Nav dropdowns (hover on desktop, click-toggle on touch) ---
+    var isTouchDevice = false;
+    window.addEventListener('touchstart', function() { isTouchDevice = true; }, { once: true });
+
+    function openDropdown(dd) {
+        closeAllDropdowns(dd);
+        dd.classList.add('open');
+        dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded', 'true');
+    }
     function closeAllDropdowns(except) {
         document.querySelectorAll('.nav-dropdown.open').forEach(function(dd) {
             if (dd !== except) {
@@ -2110,10 +2192,23 @@
             }
         });
     }
-    document.querySelectorAll('.nav-dropdown__toggle').forEach(function(toggle) {
-        toggle.addEventListener('click', function(e) {
+
+    document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+        var leaveTimer;
+        dd.addEventListener('mouseenter', function() {
+            if (isTouchDevice) return;
+            clearTimeout(leaveTimer);
+            openDropdown(dd);
+        });
+        dd.addEventListener('mouseleave', function() {
+            if (isTouchDevice) return;
+            leaveTimer = setTimeout(function() {
+                dd.classList.remove('open');
+                dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded', 'false');
+            }, 120);
+        });
+        dd.querySelector('.nav-dropdown__toggle').addEventListener('click', function(e) {
             e.stopPropagation();
-            var dd = this.closest('.nav-dropdown');
             var isOpen = dd.classList.contains('open');
             closeAllDropdowns(dd);
             if (!isOpen) {
@@ -2125,13 +2220,10 @@
             }
         });
     });
-    // Close on click anywhere outside
-    document.addEventListener('click', function() { closeAllDropdowns(); });
-    // Prevent clicks inside the menu from closing it
     document.querySelectorAll('.nav-dropdown__menu').forEach(function(menu) {
         menu.addEventListener('click', function(e) { e.stopPropagation(); });
     });
-    // Close on Escape key
+    document.addEventListener('click', function() { closeAllDropdowns(); });
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeAllDropdowns();
     });
