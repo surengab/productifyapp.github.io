@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Productify – Habit Tracker App | Build Better Habits, Your Way</title>
-    <meta name="title" content="Productify – Habit Tracker App | Build Better Habits, Your Way">
-    <meta name="description" content="Productify is a minimalist habit tracker app for iOS. Track daily habits, build streaks, use AI insights, and stay accountable with a friend. Download free on the App Store.">
-    <meta name="keywords" content="habit tracker, habit tracker app, daily habit tracker, habit app, build better habits, track habits, habit streak app, accountability habit app, habit tracker with friends, AI habit tracker, habit templates, habit tracking iOS">
+    <title>Productify – Build Better Habits, Your Way | iOS Habit Tracker</title>
+    <meta name="title" content="Productify – Build Better Habits, Your Way | iOS Habit Tracker">
+    <meta name="description" content="Productify is a calm, minimalist daily planner for building lasting routines. Track habits, build streaks, get AI insights, and stay accountable with a friend. Free on the App Store.">
+    <meta name="keywords" content="habit tracker, daily habit tracker, routine building, habit app, build better habits, track habits, habit streak app, accountability app, habit tracker with friends, AI habit tracker, habit templates, self-improvement app, atomic habits, daily planner iOS">
     <meta name="author" content="Productify">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="English">
@@ -19,8 +19,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://productifyapp.org/">
-    <meta property="og:title" content="Productify – Habit Tracker App | Build Better Habits, Your Way">
-    <meta property="og:description" content="A calm, minimalist habit tracker for iOS. AI insights, habit templates, friend accountability, and streak tracking — all in one app. Download free.">
+    <meta property="og:title" content="Productify – Build Better Habits, Your Way">
+    <meta property="og:description" content="A calm, minimalist daily companion for iOS. AI insights, habit templates, friend accountability, and streak tracking — free to download.">
     <meta property="og:image" content="https://productifyapp.org/image_2.png">
     <meta property="og:site_name" content="Productify">
     <meta property="og:locale" content="en_US">
@@ -28,8 +28,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://productifyapp.org/">
-    <meta property="twitter:title" content="Productify – Habit Tracker App | Build Better Habits, Your Way">
-    <meta property="twitter:description" content="A calm, minimalist habit tracker for iOS. AI insights, habit templates, friend accountability, and streak tracking — all in one app. Download free.">
+    <meta property="twitter:title" content="Productify – Build Better Habits, Your Way">
+    <meta property="twitter:description" content="A calm, minimalist daily companion for iOS. AI insights, habit templates, friend accountability, and streak tracking — free to download.">
     <meta property="twitter:image" content="https://productifyapp.org/image_2.png">
     <meta property="twitter:creator" content="@Productify_app">
     <meta property="twitter:site" content="@Productify_app">
@@ -300,6 +300,20 @@
         .trust-item { display: flex; align-items: center; gap: 9px; font-size: .87rem; color: var(--ink-muted); font-weight: 500; }
         .trust-item__icon { font-size: 1.1rem; }
         .trust-item strong { color: var(--ink); }
+
+        /* ─── SOCIAL PROOF BANNER ────────────────────────── */
+        .social-proof-bar {
+            background: var(--blue);
+            padding: 14px 0;
+            text-align: center;
+        }
+        .social-proof-bar p {
+            color: #fff;
+            font-size: .92rem;
+            font-weight: 500;
+            letter-spacing: .01em;
+        }
+        .social-proof-bar strong { font-weight: 700; }
 
         /* ─── SECTION HEADER ─────────────────────────────── */
         .section-header { margin-bottom: 52px; }
@@ -755,6 +769,22 @@
                     "@type": "Answer",
                     "text": "Productify includes templates for common habits like hydration, walking, sleep, reading, exercise, mindfulness, focus sessions, and more. Templates help you start immediately without having to configure everything from scratch."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Productify good for building routines based on Atomic Habits principles?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Productify is built around the same core ideas popularised by Atomic Habits: small, measurable actions done consistently over time. The app encourages habit stacking, clear goal measurement, and recovery after missed days — all of which align with the principle that tiny habits compound into meaningful self-improvement."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use Productify as a daily planner?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Productify works as a focused daily routine companion. Each day you see exactly which habits are scheduled, can log your progress with a single tap, and review your completion history. It is designed to be a lightweight, distraction-free part of your morning or evening routine — not a full calendar or task manager."
+                }
             }
         ]
     }
@@ -804,7 +834,7 @@
     <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
        class="appstore-badge-link"
        aria-label="Download Productify on the App Store">
-        <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge" width="140">
+        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="140" height="41">
     </a>
 </nav>
 
@@ -825,7 +855,7 @@
                 <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                    class="appstore-badge-link"
                    aria-label="Download Productify on the App Store">
-                    <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge" width="140">
+                    <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="140" height="41">
                 </a>
                 <button class="hamburger" id="openNav" aria-label="Open menu" aria-expanded="false">
                     <span></span><span></span><span></span>
@@ -842,19 +872,19 @@
     <div class="hero__bg-orb hero__bg-orb--1"></div>
     <div class="hero__bg-orb hero__bg-orb--2"></div>
     <div class="container hero__content">
-        <div class="eyebrow">Habit Tracker App for iOS</div>
+        <div class="eyebrow">iOS Habit Tracker · Free to Download</div>
         <h1 id="hero-heading">
             Build habits that<br>
             <span>actually stick.</span>
         </h1>
         <p class="lead">
-            Productify is a calm, minimalist habit tracker that helps you make progress without the pressure of perfection. Track daily habits, stay accountable with a friend, and get AI-powered insights — all in one clean app.
+            Productify is a calm, minimalist daily companion that helps you make real progress — without the pressure of perfection. Build lasting routines, stay accountable with a friend, and let AI surface what's actually working.
         </p>
         <div class="hero__cta-group">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                class="appstore-badge-link"
                aria-label="Download Productify habit tracker on the App Store">
-                <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180">
+                <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180" height="53">
             </a>
             <a href="#how-it-works" class="btn btn-secondary btn-lg">See how it works</a>
         </div>
@@ -878,8 +908,8 @@
                 <span><strong>4.8</strong> App Store rating</span>
             </div>
             <div class="trust-item">
-                <span class="trust-item__icon">📲</span>
-                <span><strong>10,000+</strong> downloads</span>
+                <span class="trust-item__icon">👥</span>
+                <span><strong>5,000+</strong> people building better habits</span>
             </div>
             <div class="trust-item">
                 <span class="trust-item__icon">🔒</span>
@@ -893,51 +923,58 @@
     </div>
 </div>
 
+<!-- ===================== SOCIAL PROOF BAR ===================== -->
+<div class="social-proof-bar" role="complementary" aria-label="Social proof">
+    <div class="container">
+        <p>Join <strong>5,000+ people</strong> building better habits with Productify — one small step at a time.</p>
+    </div>
+</div>
+
 <!-- ===================== FEATURES OVERVIEW ===================== -->
 <section class="section" id="features" aria-labelledby="features-heading">
     <div class="container">
         <div class="section-header text-center">
             <div class="eyebrow">Core Features</div>
-            <h2 id="features-heading">Everything you need to build a lasting routine</h2>
+            <h2 id="features-heading">Everything you need to build lasting routines</h2>
             <p class="lead">
-                Productify keeps things simple: a clean habit tracker with the tools that actually move the needle — nothing more, nothing less.
+                Productify is a focused daily tool — not an overwhelming productivity suite. Every feature is designed to support consistent routine building, without getting in your way.
             </p>
         </div>
         <div class="features-grid">
             <a href="#habit-duo" class="feature-card feature-card--link" aria-label="Learn more about Habit Duo">
                 <div class="feature-card__icon">🤝</div>
                 <h3>Habit Duo</h3>
-                <p class="text-muted">Build one habit alongside one friend. Shared progress, real accountability — no leaderboard required.</p>
+                <p class="text-muted">Stay consistent by sharing one habit with one friend — side-by-side progress, zero competition.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#ai-analyser" class="feature-card feature-card--link" aria-label="Learn more about AI Habit Analyser">
                 <div class="feature-card__icon">🧠</div>
                 <h3>AI Habit Analyser</h3>
-                <p class="text-muted">Spot patterns in your habit data with AI-powered insights that encourage, not criticise.</p>
+                <p class="text-muted">Understand your patterns with honest, personalised insights — not generic motivational tips.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#habit-templates" class="feature-card feature-card--link" aria-label="Learn more about Habit Templates">
                 <div class="feature-card__icon">📋</div>
                 <h3>Habit Templates</h3>
-                <p class="text-muted">Start instantly with ready-made habit templates for health, focus, sleep, fitness, and more.</p>
+                <p class="text-muted">Skip the setup friction. Start your first routine in seconds with pre-built, real-life templates.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#measurable-goals" class="feature-card feature-card--link" aria-label="Learn more about Measurable Goals">
                 <div class="feature-card__icon">📏</div>
                 <h3>Measurable Goals</h3>
-                <p class="text-muted">Set clear, quantified targets — steps, glasses of water, minutes, reps — so progress is never ambiguous.</p>
+                <p class="text-muted">Replace vague intentions with clear targets — steps, glasses, minutes, reps — so you always know where you stand.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#streak-tracking" class="feature-card feature-card--link" aria-label="Learn more about Streak Tracking">
                 <div class="feature-card__icon">🔥</div>
                 <h3>Streak Tracking</h3>
-                <p class="text-muted">See your consistency at a glance. Streaks motivate without shame — and you can always bounce back.</p>
+                <p class="text-muted">Visualize your consistency and stay motivated — a missed day is just a signal, not the end.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <article class="feature-card">
                 <div class="feature-card__icon">🔔</div>
                 <h3>Smart Reminders</h3>
-                <p class="text-muted">Gentle, timely nudges so your habits stay top-of-mind without becoming noise.</p>
+                <p class="text-muted">Gentle nudges at the right moment — so your daily planner works for you, not against you.</p>
             </article>
         </div>
     </div>
@@ -985,16 +1022,16 @@
                     <div class="eyebrow">Habit Duo — In Depth</div>
                     <h2 id="habit-duo-deep-heading">Why building habits with a friend actually works</h2>
                     <p>
-                        Research consistently shows that social accountability is one of the most reliable drivers of long-term behaviour change. When someone you trust knows whether you showed up today, you're significantly more likely to show up. That's the foundation behind Habit Duo — not a social feed, not a leaderboard, just one habit shared with one person who matters to you.
+                        Research consistently shows that social accountability is one of the most reliable drivers of long-term behaviour change. When someone you trust knows whether you showed up today, you're significantly more likely to show up. That's the thinking behind Habit Duo — not a social feed, not a leaderboard, just one shared habit with one person who matters to you.
                     </p>
                     <p>
-                        Unlike habit tracker apps that bolt on group challenges as an afterthought, Productify's Habit Duo is built around a single, focused pairing. You choose one habit and one friend. Both of you track your own progress independently, and you can see each other's completion side by side in the app. There's no score, no ranking, no pressure — just a quiet reminder that you're in this together.
+                        Habit Duo is built around a single, focused pairing — not a group challenge tacked on as an afterthought. You choose one routine to work on, invite a friend, and both of you track progress independently. You can see each other's completion side by side. No score, no ranking, no pressure — just a quiet reminder that you're in this together.
                     </p>
                     <p>
-                        This approach works especially well for habits that feel easier to skip alone — morning walks, daily hydration, evening reading, or weekly workouts. When the habit is shared, skipping it becomes a slightly more deliberate choice rather than a passive one. That small shift in awareness is often enough to keep you on track without any added stress.
+                        This works especially well for habits that feel easier to skip alone — morning walks, daily hydration, evening reading, weekly workouts. When the routine is shared, skipping becomes a deliberate choice rather than a passive one. That small shift in awareness is often enough to sustain the habit long-term without added stress.
                     </p>
                     <p>
-                        Habit Duo is available on the Productify Pro plan. If you've been looking for a habit tracker with friends that doesn't feel gamified or overwhelming, this is the feature for you.
+                        If you've been looking for a way to stay accountable to a friend without it feeling gamified or overwhelming, Habit Duo is designed exactly for that. Available on the Pro plan.
                     </p>
                     <ul class="check-list">
                         <li>Paired accountability — one friend, one habit, one shared goal</li>
@@ -1187,16 +1224,16 @@
                     <div class="eyebrow">Habit Templates — In Depth</div>
                     <h2 id="templates-deep-heading">The right starting point reduces friction — and friction kills habits</h2>
                     <p>
-                        One of the biggest reasons people abandon a new habit tracker app within the first week is the setup experience. When you have to decide what your habit is, how to measure it, when to do it, and how to name it — all before you've even started — the overhead quietly drains the motivation that prompted you to download the app in the first place.
+                        One of the biggest reasons people give up on a new self-improvement routine within the first week is the setup experience. When you have to decide what your habit is, how to measure it, when to do it, and how to name it — all before you've even started — the overhead quietly drains the motivation that brought you here in the first place.
                     </p>
                     <p>
-                        Productify's habit templates remove that friction. Each template is a fully configured habit: it already has a name, a measurable goal, a suggested frequency, and a default reminder time. You can adopt it exactly as-is, or adjust any detail to fit your actual life. Either way, you're starting in seconds rather than spending ten minutes on setup.
+                        Productify's habit templates remove that friction. Each one is a fully configured routine: it already has a name, a measurable goal, a suggested frequency, and a default reminder time. You can adopt it exactly as-is, or adjust any detail to fit your actual life. Either way, you're building in seconds rather than spending ten minutes on setup.
                     </p>
                     <p>
-                        The templates span the most common habit categories — physical health (hydration, exercise, walking), mental wellbeing (mindfulness, journalling, sleep), productivity (deep work sessions, reading, learning), and daily basics (morning routines, stretching, gratitude). They're designed to reflect real habits that real people try to build, not aspirational extremes.
+                        The templates span the most common categories — physical health (hydration, exercise, walking), mental wellbeing (mindfulness, journalling, sleep), productivity (deep work sessions, reading, learning), and daily basics (morning routines, stretching, gratitude). They reflect real habits that real people try to build — not aspirational extremes.
                     </p>
                     <p>
-                        For anyone new to daily habit tracking, templates also serve as a gentle introduction to what a well-structured habit looks like: specific, measurable, and realistic. Starting with a template and gradually customising it is a more sustainable approach than designing a complex system from scratch on day one.
+                        For anyone starting out with routine building, templates also serve as a gentle introduction to what a well-structured habit looks like: specific, measurable, and realistic. Starting with a template and gradually customising it is a far more sustainable approach than designing a complex system from scratch on day one — which is something Atomic Habits author James Clear has written about extensively.
                     </p>
                     <ul class="check-list">
                         <li>Fully configured habits — goal, frequency, and reminder included</li>
@@ -1296,13 +1333,13 @@
                         There is a significant difference between a habit and an intention. "I want to drink more water" is an intention. "I will drink 8 glasses of water per day" is a measurable habit goal. The difference isn't just semantic — it changes how your brain processes the task. A clear target removes ambiguity, reduces the mental effort required to decide whether you've done enough, and makes it easier to log your progress quickly.
                     </p>
                     <p>
-                        Productify is built around the idea that measurable habit goals are not optional — they're foundational. Every habit you track in the app has a unit attached to it: steps, minutes, glasses, reps, sessions, kilometres, or a custom label you define yourself. When you check in for the day, you log the actual value, not just a binary "done / not done." This gives you a richer history of your progress and makes partial effort visible and valued.
+                        Productify is built around the idea that measurable goals are not optional — they're foundational. Every routine you track has a unit attached to it: steps, minutes, glasses, reps, sessions, kilometres, or a custom label you define yourself. When you check in for the day, you log the actual value, not just a binary "done / not done." This gives you a richer history and makes partial effort visible and valued.
                     </p>
                     <p>
                         Partial progress matters more than most habit apps acknowledge. If your target is 8 glasses of water and you had 5, that's a meaningful data point — not a failure. Productify records it, reflects it in your trends, and doesn't penalise you for it. Over time, this fuller picture helps the AI Habit Analyser understand your actual behaviour rather than just a binary success/fail record.
                     </p>
                     <p>
-                        You can also set habits by weekly frequency rather than daily — 3 workouts per week rather than one per day — which is often a more realistic and sustainable approach for habits that don't need to happen every single day.
+                        You can also set habits by weekly frequency rather than daily — 3 workouts per week rather than one per day — which is often a more realistic and sustainable approach for routines that don't need to happen every single day. Combined with Productify's daily planner view, you get a clear picture of exactly what's scheduled and how close you are to hitting each week's targets.
                     </p>
                     <ul class="check-list">
                         <li>Units: steps, minutes, glasses, reps, km, sessions, or custom</li>
@@ -1400,16 +1437,16 @@
                     <div class="eyebrow">Streak Tracking — In Depth</div>
                     <h2 id="streaks-deep-heading">Streaks that motivate — without the guilt when you miss</h2>
                     <p>
-                        Streaks work. The psychological principle behind them — often called the "don't break the chain" effect — is real and well-documented. Seeing a visual record of consecutive days builds a sense of momentum and makes each day's effort feel connected to something bigger. That's why streak tracking is a core part of Productify as a daily habit tracker.
+                        Streaks work. The psychological principle behind them — often called the "don't break the chain" effect — is real and well-documented. Seeing a visual record of consecutive days builds momentum and makes each small effort feel like part of something bigger. That's why visualising consistency is central to how Productify works.
                     </p>
                     <p>
-                        But streaks also have a well-known dark side. Many people abandon a habit entirely after breaking a streak — not because the habit stopped being valuable, but because the broken streak made continuing feel pointless. This all-or-nothing thinking is one of the most common reasons habit tracker apps fail their users.
+                        But streaks also have a well-known dark side. Many people abandon a routine entirely after breaking a streak — not because the habit stopped mattering, but because the broken chain made continuing feel pointless. This all-or-nothing thinking is one of the most common ways self-improvement tools fail the very people they're trying to help.
                     </p>
                     <p>
-                        Productify handles streaks differently. When you miss a day, your current streak resets — but your full history doesn't disappear. The app keeps a complete record of every day you completed the habit, so a single bad week doesn't erase weeks of real effort. You can always see your longest streak, your completion rate over any time period, and your overall trend across months. This longer view helps you stay grounded when one week doesn't go to plan.
+                        Productify handles streaks differently. When you miss a day, your current streak resets — but your full history stays intact. The app keeps a complete record of every day you completed the habit, so a single bad week doesn't erase weeks of real effort. You can always see your longest streak, your completion rate over any period, and your overall trend across months. That longer view keeps things in perspective when one week doesn't go to plan.
                     </p>
                     <p>
-                        The tone in Productify after a missed day is neutral. No red warning screens, no lecture notifications, no guilt-inducing language. Just your data, presented clearly, whenever you're ready to come back. Sustainable habits are built over years — and a habit tracker app should support that reality, not punish it.
+                        The tone after a missed day is neutral. No red warning screens, no lecture notifications, no guilt. Just your data, presented clearly, whenever you're ready to come back. Sustainable routine building happens over years — and your daily companion should reflect that reality, not fight it.
                     </p>
                     <ul class="check-list">
                         <li>Current streak and personal best always visible</li>
@@ -1548,18 +1585,18 @@
         <div class="spotlight">
             <div class="spotlight__text">
                 <div class="eyebrow">About Productify</div>
-                <h2 id="about-heading">Built for people who want sustainable habits, not perfect ones</h2>
+                <h2 id="about-heading">Built for real self-improvement — not performative perfection</h2>
                 <p class="lead mt-16">
-                    Most habit apps are built around streaks, leaderboards, and guilt. We built Productify differently. We believe consistency over a long period is worth far more than perfection for a short one — and that the best habit tracker is one that works <em>with</em> you, not against you.
+                    Most apps are built around streaks, leaderboards, and guilt. Productify is different. We believe that consistency over a long period is worth far more than perfection for a short one — and that the best daily companion is one that works <em>with</em> you, not against you.
                 </p>
                 <p class="lead mt-16" style="margin-top: 16px;">
-                    Productify started as a personal project — a simple, distraction-free habit tracker for iOS. It's grown based entirely on user feedback, staying true to the same philosophy: calm, clear, and supportive.
+                    Productify started as a personal project — a simple, distraction-free routine-building tool for iOS. It's grown based entirely on user feedback, staying true to the same philosophy: calm, clear, and genuinely supportive.
                 </p>
                 <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                    class="appstore-badge-link"
                    style="margin-top: 32px; display: inline-block;"
                    aria-label="Download Productify on the App Store">
-                    <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge" width="160">
+                    <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
                 </a>
             </div>
             <div class="spotlight__visual spotlight__visual--emoji" aria-hidden="true">🌱</div>
@@ -1590,10 +1627,13 @@
                     <li>Habit templates (5 starter)</li>
                     <li>Basic progress view</li>
                 </ul>
-                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                   class="btn btn-secondary" style="width:100%; justify-content: center; margin-top: 28px;">
-                    Download Free
-                </a>
+                <div style="margin-top: 28px; display: flex; justify-content: center;">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="appstore-badge-link"
+                       aria-label="Download Productify free on the App Store">
+                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44">
+                    </a>
+                </div>
             </article>
             <!-- Pro -->
             <article class="pricing-card pricing-card--featured">
@@ -1612,10 +1652,13 @@
                     <li>Custom habit units</li>
                     <li>Priority support</li>
                 </ul>
-                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                   class="btn btn-ghost" style="width:100%; justify-content: center; margin-top: 28px;">
-                    Start Pro Free Trial
-                </a>
+                <div style="margin-top: 28px; display: flex; justify-content: center;">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="appstore-badge-link"
+                       aria-label="Start Productify Pro free trial on the App Store">
+                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44">
+                    </a>
+                </div>
             </article>
         </div>
         <p class="text-center text-muted mt-32" style="font-size: .85rem; margin-top: 28px;">
@@ -1629,8 +1672,8 @@
     <div class="container">
         <div class="section-header text-center">
             <div class="eyebrow">FAQ</div>
-            <h2 id="faq-heading">Common questions</h2>
-            <p class="lead">Everything you need to know before you start.</p>
+            <h2 id="faq-heading">Questions people actually ask</h2>
+            <p class="lead">Everything you need to know before your first habit.</p>
         </div>
         <div class="faq-list" role="list">
 
@@ -1691,6 +1734,26 @@
                 </button>
                 <div class="faq-answer">
                     <p>Your current streak resets, but your history doesn't disappear. Productify keeps your full completion record so you can always see your long-term progress. Missing a day is a signal, not a sentence. You can always come back.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    Is Productify good for building routines based on Atomic Habits principles?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. Productify is built around the same core ideas popularised by Atomic Habits: small, measurable actions done consistently over time. The app encourages clear goal measurement, habit stacking through templates, and graceful recovery after missed days — all of which align with the idea that tiny habits compound into meaningful self-improvement.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false">
+                    Can I use Productify as a daily planner?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Productify works as a focused daily routine companion. Each day you see exactly which habits are scheduled, log your progress with a single tap, and review your completion history at a glance. It's designed to be a lightweight, distraction-free part of your morning or evening routine — not a full calendar or task manager.</p>
                 </div>
             </div>
 
@@ -1777,15 +1840,15 @@
 <section class="section section--dark cta-banner" aria-labelledby="cta-heading">
     <div class="container">
         <div class="eyebrow" style="background: rgba(255,255,255,.12); color: var(--purple-light);">Start Today</div>
-        <h2 id="cta-heading">Your next habit starts now.</h2>
+        <h2 id="cta-heading">Your next routine starts now.</h2>
         <p class="lead">
-            You don't need the perfect plan. You just need to start. Download Productify free and build the first habit today.
+            You don't need the perfect plan. You just need to start. Productify is free to download — begin building your first daily habit today.
         </p>
         <div class="cta-banner__btns">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                class="appstore-badge-link"
                aria-label="Download Productify habit tracker on the App Store">
-                <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180">
+                <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180" height="53">
             </a>
             <a href="#features" class="btn btn-ghost btn-lg">Explore features</a>
         </div>
@@ -1800,7 +1863,13 @@
         <div class="footer__grid">
             <div class="footer__brand">
                 <span class="logo" style="-webkit-text-fill-color: #fff; background: none; color: #fff;">Productify</span>
-                <p>A calm, minimalist habit tracker for iOS. Build better habits, your way — without the pressure of perfection.</p>
+                <p>A calm, minimalist daily companion for iOS. Build lasting routines, your way — without the pressure of perfection.</p>
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="appstore-badge-link"
+                   style="margin-top: 18px; display: inline-block;"
+                   aria-label="Download Productify on the App Store">
+                    <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="140" height="41">
+                </a>
             </div>
             <div class="footer__col">
                 <h4>Product</h4>
