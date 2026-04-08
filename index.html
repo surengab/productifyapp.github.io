@@ -212,6 +212,20 @@
         .btn-ghost:hover { background: rgba(255,255,255,.18); }
         .btn-lg { padding: 16px 38px; font-size: 1.02rem; }
 
+        /* ─── APP STORE BADGE ────────────────────────────── */
+        .appstore-badge-link { display: inline-block; line-height: 0; }
+        .appstore-badge {
+            display: block;
+            height: auto;
+            border-radius: 10px;
+            transition: opacity .2s, transform .2s;
+        }
+        .appstore-badge:hover { opacity: .85; transform: translateY(-2px); }
+        .appstore-badge--hero { width: 180px; }
+        @media (max-width: 480px) {
+            .appstore-badge--hero { width: 155px; }
+        }
+
         /* ─── NAVBAR ─────────────────────────────────────── */
         .navbar {
             position: sticky; top: 0; z-index: 100;
@@ -787,7 +801,11 @@
     <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
     <a href="#about" onclick="closeMobileNav()">About</a>
     <a href="#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237" class="btn btn-primary">Download Free</a>
+    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+       class="appstore-badge-link"
+       aria-label="Download Productify on the App Store">
+        <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge" width="140">
+    </a>
 </nav>
 
 <!-- ===================== NAVBAR ===================== -->
@@ -805,9 +823,9 @@
             </nav>
             <div class="nav-cta">
                 <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                   class="btn btn-primary"
+                   class="appstore-badge-link"
                    aria-label="Download Productify on the App Store">
-                    ↓ Download Free
+                    <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge" width="140">
                 </a>
                 <button class="hamburger" id="openNav" aria-label="Open menu" aria-expanded="false">
                     <span></span><span></span><span></span>
@@ -834,9 +852,9 @@
         </p>
         <div class="hero__cta-group">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="btn btn-primary btn-lg"
+               class="appstore-badge-link"
                aria-label="Download Productify habit tracker on the App Store">
-                ↓ Download on the App Store
+                <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180">
             </a>
             <a href="#how-it-works" class="btn btn-secondary btn-lg">See how it works</a>
         </div>
@@ -1538,9 +1556,10 @@
                     Productify started as a personal project — a simple, distraction-free habit tracker for iOS. It's grown based entirely on user feedback, staying true to the same philosophy: calm, clear, and supportive.
                 </p>
                 <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                   class="btn btn-primary mt-32"
-                   style="display: inline-flex; margin-top: 32px;">
-                    Download Productify Free
+                   class="appstore-badge-link"
+                   style="margin-top: 32px; display: inline-block;"
+                   aria-label="Download Productify on the App Store">
+                    <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge" width="160">
                 </a>
             </div>
             <div class="spotlight__visual spotlight__visual--emoji" aria-hidden="true">🌱</div>
@@ -1764,9 +1783,9 @@
         </p>
         <div class="cta-banner__btns">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="btn btn-primary btn-lg"
+               class="appstore-badge-link"
                aria-label="Download Productify habit tracker on the App Store">
-                ↓ Download on the App Store
+                <img src="appstore_badge.png" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180">
             </a>
             <a href="#features" class="btn btn-ghost btn-lg">Explore features</a>
         </div>
