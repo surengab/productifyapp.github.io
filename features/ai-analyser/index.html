@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Minimalist Design – Why a Calmer Interface Helps You Build Better Habits | Productify</title>
-    <meta name="description" content="Discover the design philosophy behind Productify. A clutter-free, distraction-free habit app built on calm aesthetics — because how an app looks and feels directly affects whether you stick to your routines.">
+    <title>AI Habit Analyser – Understand Your Patterns, Not Just Your Streaks | Productify</title>
+    <meta name="description" content="Productify's AI Habit Analyser goes beyond streak counts. It reads your completion history to surface real behavioural patterns — and offers calm, personalised insights to help you build routines that last.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://productifyapp.org/features/minimalist-design/">
+    <link rel="canonical" href="https://productifyapp.org/features/ai-analyser/">
 
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://productifyapp.org/features/minimalist-design/">
-    <meta property="og:title" content="Minimalist Design – Why a Calmer Interface Helps You Build Better Habits">
-    <meta property="og:description" content="Explore why Productify's minimal UI makes it easier to stick to your daily routines. Less clutter, more clarity — by design.">
+    <meta property="og:url" content="https://productifyapp.org/features/ai-analyser/">
+    <meta property="og:title" content="AI Habit Analyser – Understand Your Patterns, Not Just Your Streaks">
+    <meta property="og:description" content="Discover how Productify's AI Analyser turns your habit data into actionable insights — without the hype, guilt, or fake coaching.">
     <meta property="og:image" content="https://productifyapp.org/image_2.png">
     <meta property="og:site_name" content="Productify">
 
@@ -28,9 +28,9 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Minimalist Design – Why a Calmer Interface Helps You Build Better Habits",
-        "description": "The design philosophy behind Productify and how a distraction-free UI supports lasting routine building.",
-        "url": "https://productifyapp.org/features/minimalist-design/",
+        "headline": "AI Habit Analyser – Understand Your Patterns, Not Just Your Streaks",
+        "description": "How Productify's AI Analyser uses your habit completion history to surface personalised behavioural insights that help you build lasting routines.",
+        "url": "https://productifyapp.org/features/ai-analyser/",
         "author": { "@type": "Organization", "name": "Productify" },
         "publisher": { "@type": "Organization", "name": "Productify", "logo": { "@type": "ImageObject", "url": "https://productifyapp.org/favicon.svg" } }
     }
@@ -42,7 +42,7 @@
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://productifyapp.org/" },
             { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://productifyapp.org/#features" },
-            { "@type": "ListItem", "position": 3, "name": "Minimalist Design", "item": "https://productifyapp.org/features/minimalist-design/" }
+            { "@type": "ListItem", "position": 3, "name": "AI Habit Analyser", "item": "https://productifyapp.org/features/ai-analyser/" }
         ]
     }
     </script>
@@ -56,9 +56,11 @@
     <a href="/">Home</a>
     <div class="mobile-nav__group">
         <span class="mobile-nav__group-label">Features</span>
-        <a href="/features/habit-streaks/" class="mobile-nav__sub">Habit Streaks</a>
-        <a href="/features/minimalist-design/" class="mobile-nav__sub">Minimalist Design</a>
-        <a href="/features/smart-reminders/" class="mobile-nav__sub">Smart Reminders</a>
+        <a href="/features/habit-duo/" class="mobile-nav__sub">Habit Duo</a>
+        <a href="/features/ai-analyser/" class="mobile-nav__sub">AI Habit Analyser</a>
+        <a href="/features/habit-templates/" class="mobile-nav__sub">Habit Templates</a>
+        <a href="/features/measurable-goals/" class="mobile-nav__sub">Measurable Goals</a>
+        <a href="/features/streak-tracking/" class="mobile-nav__sub">Streak Tracking</a>
     </div>
     <div class="mobile-nav__group">
         <span class="mobile-nav__group-label">Blog</span>
@@ -150,7 +152,7 @@
             <li class="breadcrumb__sep" aria-hidden="true">›</li>
             <li><a href="/#features">Features</a></li>
             <li class="breadcrumb__sep" aria-hidden="true">›</li>
-            <li><span class="breadcrumb__current">Minimalist Design</span></li>
+            <li><span class="breadcrumb__current">AI Habit Analyser</span></li>
         </ol>
     </div>
 </div>
@@ -159,13 +161,13 @@
 <section class="page-hero" aria-labelledby="page-hero-heading">
     <div class="container">
         <div class="page-hero__inner">
-            <div class="eyebrow">Feature · Design</div>
+            <div class="eyebrow">Feature · Insights</div>
             <h1 id="page-hero-heading">
-                A calmer app makes<br>
-                <span>habits easier to keep</span>
+                Your habits have patterns.<br>
+                <span>The AI Analyser finds them.</span>
             </h1>
             <p class="lead">
-                Every design decision in Productify was made to reduce friction, not add to it. When your daily routine tool is clean and quiet, opening it becomes a habit in itself.
+                Streaks tell you <em>whether</em> you showed up. The AI Habit Analyser tells you <em>why</em> you did — and why you didn't. It reads your history quietly and surfaces what it notices, without lectures or fake enthusiasm.
             </p>
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                class="appstore-badge-link" aria-label="Download Productify free on the App Store">
@@ -177,72 +179,83 @@
 </section>
 
 <!-- MAIN CONTENT -->
-<section class="section" aria-labelledby="design-heading">
+<section class="section" aria-labelledby="analyser-how-heading">
     <div class="container">
         <div class="article">
             <div class="eyebrow">How It Works</div>
-            <h2 id="design-heading">Why interface design is a habit tool, not decoration</h2>
+            <h2 id="analyser-how-heading">What "AI analysis" actually means here</h2>
             <p>
-                There's a reason most people download a productivity or habit app and abandon it within two weeks. It's rarely about motivation. It's about friction. If the app is cluttered, slow, or bombards you with notifications and gamification elements, opening it starts to feel like work — and you stop.
+                There's a lot of AI washing in productivity apps right now — features that are called "AI" but are really just a static motivational quote. The AI Habit Analyser in Productify is different: it reads your actual completion data across time, identifies real patterns, and generates observations that are specific to your behaviour.
             </p>
             <p>
-                Productify was designed with one guiding question: <em>what is the minimum a person needs to see to track their habit today?</em> The answer is: their habits, their progress, and a way to log completion. Everything else — badges, leaderboards, social feeds, streaks of streaks — is noise that gradually erodes the calm you came here to build.
+                It might notice that you complete your morning meditation 94% of the time on weekdays, but only 41% on weekends — and surface that asymmetry for you to consider. It might observe that your water intake habit dips significantly in the week before your monthly review at work. These are patterns a streak counter can't show you. They require looking across time at the context around your completions and misses.
             </p>
 
             <div class="highlight-box">
                 <p>
-                    <strong>Cognitive load matters.</strong> Every element on a screen competes for your attention. A minimal interface means fewer decisions, less distraction, and a lower barrier to opening the app when you're tired, rushed, or just waking up. That's when habits are most fragile — and most important.
+                    <strong>Meet TempO, your AI companion.</strong> TempO (Temp Owl) is Productify's AI character — a calm, thoughtful presence who delivers insights without drama. No aggressive nudges, no guilt-inducing language. Just honest observations, offered gently, that help you understand yourself a little better.
                 </p>
             </div>
 
-            <h2>The design principles behind Productify</h2>
+            <h2>What the analyser looks for</h2>
 
-            <h3>One action per screen</h3>
+            <h3>Day-of-week patterns</h3>
             <p>
-                When you open Productify, you see today's habits. You tap to log one. That's it. There's no dashboard to configure, no notifications demanding attention, no pop-ups asking you to rate the app. The primary action — checking in on your routine — takes one tap. This frictionless check-in is one of the single biggest predictors of long-term habit success: how easy it is to do the thing.
+                Your habits don't perform equally across all seven days. Most people have a significantly different completion rate on weekdays versus weekends, and within the working week, certain days (often Wednesdays or Fridays) tend to be weaker. The analyser maps this and can tell you your strongest and most vulnerable days — useful information for deciding whether to lower your target on certain days or protect your routine more deliberately.
             </p>
 
-            <h3>Clean typography and a calm colour palette</h3>
+            <h3>Streak recovery behaviour</h3>
             <p>
-                Productify uses a restrained colour palette — primarily white, soft grays, and a single accent blue. There are no aggressive reds, alarming oranges, or high-contrast elements designed to spike your cortisol. The typography is set in a clean sans-serif at comfortable reading sizes, with generous line height and spacing. Reading your habit list feels like reading a calm note to yourself, not a priority queue.
+                How you respond after breaking a streak is more predictive of long-term success than the streak length itself. The analyser tracks your "return rate" — how quickly you get back to the habit after a missed day. If your return rate is high (you almost always come back the next day), that's a sign of resilience worth noticing. If you tend to abandon habits after a first miss, that's a pattern worth addressing.
             </p>
 
-            <h3>Progress without pressure</h3>
+            <h3>Habit cluster correlations</h3>
             <p>
-                Showing progress is important. But <em>how</em> you show it shapes how you feel about yourself. Productify presents your completion history and streaks as information — not as a judgement. When you've had a good week, it's visible. When you haven't, it's also visible — but without shame-inducing indicators, streaks counting down, or "you missed 3 days" warnings. Your data belongs to you, and it's presented with the respect that implies.
+                If you track multiple habits, the analyser looks for correlations between them. It might notice that on days when you exercise, you're also significantly more likely to complete your evening reading habit — or that skipping sleep consistently correlates with skipping morning habits the following day. These connections, once visible, give you useful leverage points.
             </p>
 
-            <h3>Dark mode that doesn't fight your eyes</h3>
+            <h3>Progress trajectory</h3>
             <p>
-                Many people track habits in the morning before they're fully awake, or in the evening before sleep. Productify's interface — both light and dark — is optimised for low cognitive effort at these moments. Low contrast demands, no bright flashes, and a layout that you can navigate half-asleep. That might sound like a small detail, but it's the kind of thing that determines whether you actually use the app at 7am.
+                Beyond current streak, the analyser calculates your rolling 30-day and 90-day completion rate per habit, so you can see whether a habit is genuinely getting stronger over time — or whether a good recent streak is masking a longer-term plateau. A rising trajectory is meaningful. A flat one is information.
             </p>
 
-            <h2>How minimalist design supports self-improvement</h2>
+            <h2>What the analyser doesn't do</h2>
             <ul class="check-list">
-                <li>Less to look at means less decision fatigue when you open the app</li>
-                <li>A calm interface reduces the psychological cost of daily check-ins</li>
-                <li>No gamification means your motivation stays intrinsic, not dependent on external rewards</li>
-                <li>One-tap logging removes the friction that causes people to defer and forget</li>
-                <li>Clean data presentation makes patterns easier to read without interpretation overhead</li>
+                <li>It doesn't shame you for missed days or use language designed to induce guilt</li>
+                <li>It doesn't make predictions about your future — only observations about your past</li>
+                <li>It doesn't send push notifications demanding you act on its findings</li>
+                <li>It doesn't invent patterns that aren't there — it only reports what the data shows</li>
+                <li>It doesn't replace your own judgement — insights are offered, never prescribed</li>
             </ul>
         </div>
 
         <div class="use-case-grid">
             <div class="use-case-card">
-                <div class="use-case-card__icon">🌅</div>
-                <h3>Morning check-ins</h3>
-                <p>Open the app half-awake, log your morning habits in under 10 seconds, close it. That's the experience Productify is optimised for.</p>
+                <div class="use-case-card__icon">📊</div>
+                <h3>Identifying weak spots</h3>
+                <p>Find the specific days or contexts where your habits consistently slip — so you can plan around them rather than being surprised by them.</p>
             </div>
             <div class="use-case-card">
-                <div class="use-case-card__icon">🌙</div>
-                <h3>Evening wind-down</h3>
-                <p>A calming interface that doesn't spike your attention before bed. Log, reflect briefly, close. No rabbit holes.</p>
+                <div class="use-case-card__icon">🔁</div>
+                <h3>Understanding recovery</h3>
+                <p>See how quickly you return after breaks. A fast recovery rate matters more than an unbroken streak for sustainable long-term habits.</p>
             </div>
             <div class="use-case-card">
-                <div class="use-case-card__icon">🧠</div>
-                <h3>Low-energy days</h3>
-                <p>On hard days, the app shouldn't add to the weight. A minimal UI means checking in still feels possible when motivation is low.</p>
+                <div class="use-case-card__icon">🔗</div>
+                <h3>Finding keystone habits</h3>
+                <p>Discover which habits, when completed, tend to pull other habits along with them. Focus your energy on the ones that do the most work.</p>
             </div>
+            <div class="use-case-card">
+                <div class="use-case-card__icon">📈</div>
+                <h3>Measuring real progress</h3>
+                <p>A 90-day completion rate tells you more than a current streak. Watch your rate climb over months and you'll see the actual evidence of change.</p>
+            </div>
+        </div>
+
+        <div class="article" style="margin-top: 48px;">
+            <p>
+                The AI Habit Analyser is available after you've built up a few weeks of data. The more history Productify has, the more specific and useful its observations become. It works quietly in the background — you open it when you're ready to reflect, not because it demanded your attention.
+            </p>
         </div>
     </div>
 </section>
@@ -251,16 +264,16 @@
 <section class="cta-banner section--dark" aria-labelledby="cta-heading">
     <div class="container">
         <div class="eyebrow" style="background: rgba(255,255,255,.1); color: #93C5FD; border-color: rgba(255,255,255,.1);">Ready to start?</div>
-        <h2 id="cta-heading">Experience calm, distraction-free habit tracking.</h2>
+        <h2 id="cta-heading">Start tracking. Let TempO find your patterns.</h2>
         <p class="lead">
-            Download Productify free and see what a habit app looks like when it's designed to stay out of your way.
+            Download Productify free and begin building the history the AI Analyser needs to give you something genuinely useful.
         </p>
         <div class="cta-banner__btns">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                class="appstore-badge-link" aria-label="Download Productify on the App Store">
                 <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="170" height="50">
             </a>
-            <a href="/features/smart-reminders/" class="btn btn-ghost">See Smart Reminders →</a>
+            <a href="/features/habit-templates/" class="btn btn-ghost">Browse Habit Templates →</a>
         </div>
     </div>
 </section>
@@ -283,10 +296,11 @@
             <div class="footer__col">
                 <h4>Features</h4>
                 <ul>
-                    <li><a href="/features/habit-streaks/">Habit Streaks</a></li>
-                    <li><a href="/features/minimalist-design/">Minimalist Design</a></li>
-                    <li><a href="/features/smart-reminders/">Smart Reminders</a></li>
-                    <li><a href="/#features">All Features</a></li>
+                    <li><a href="/features/habit-duo/">Habit Duo</a></li>
+                    <li><a href="/features/ai-analyser/">AI Habit Analyser</a></li>
+                    <li><a href="/features/habit-templates/">Habit Templates</a></li>
+                    <li><a href="/features/measurable-goals/">Measurable Goals</a></li>
+                    <li><a href="/features/streak-tracking/">Streak Tracking</a></li>
                 </ul>
             </div>
             <div class="footer__col">
@@ -328,7 +342,6 @@
     closeBtn.addEventListener('click', closeMobileNav);
     mobileNav.addEventListener('click', function(e) { if (e.target === mobileNav) closeMobileNav(); });
 
-    // Nav dropdowns — hover on desktop, click-toggle on touch
     var isTouchDevice = false;
     window.addEventListener('touchstart', function() { isTouchDevice = true; }, { once: true });
     function openDropdown(dd) {
