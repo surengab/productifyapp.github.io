@@ -59,10 +59,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <!-- font-display:swap baked into Google Fonts URL to prevent render-blocking -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts loaded async — eliminates render-blocking, font-display:swap prevents invisible text -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     <!-- Preconnect to App Store CDN for badge/link performance -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
+    <!-- Preload LCP hero image — browser fetches it during HTML parse, before CSS is processed -->
+    <link rel="preload" as="image" href="screenshot_daily.png" fetchpriority="high">
 
     <style>
         /* ─── TOKENS ─────────────────────────────────────── */
@@ -1131,7 +1134,9 @@
                      class="hero__phone"
                      alt="Productify daily habit list — Walk 7900/12000 steps, Learn new things, Read 0s/45m timer, Drink water completed"
                      width="390" height="844"
-                     loading="eager">
+                     loading="eager"
+                     fetchpriority="high"
+                     decoding="sync">
                 <img src="screenshot_templates_browse.png"
                      class="hero__phone hero__phone--secondary"
                      alt="Productify habit templates — Minimalist Morning, High Performance, Priority Protocol and Franklin Schedule routines"
