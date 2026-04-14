@@ -1038,6 +1038,14 @@
         "publisher": { "@type": "Organization", "name": "Productify" }
     }
     </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3DE9J4KYW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M3DE9J4KYW');
+    </script>
 </head>
 
 <body>
@@ -1047,11 +1055,11 @@
     <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
     <div class="mobile-nav__group">
         <span class="mobile-nav__group-label">Features</span>
-        <a href="#habit-duo" class="mobile-nav__sub" onclick="closeMobileNav()">Habit Duo</a>
-        <a href="#ai-analyser" class="mobile-nav__sub" onclick="closeMobileNav()">AI Habit Analyser</a>
-        <a href="#habit-templates" class="mobile-nav__sub" onclick="closeMobileNav()">Habit Templates</a>
-        <a href="#measurable-goals" class="mobile-nav__sub" onclick="closeMobileNav()">Measurable Goals</a>
-        <a href="#streak-tracking" class="mobile-nav__sub" onclick="closeMobileNav()">Streak Tracking</a>
+        <a href="/features/habit-duo/" class="mobile-nav__sub" onclick="closeMobileNav()">Habit Duo</a>
+        <a href="/features/ai-analyser/" class="mobile-nav__sub" onclick="closeMobileNav()">AI Habit Analyser</a>
+        <a href="/features/habit-templates/" class="mobile-nav__sub" onclick="closeMobileNav()">Habit Templates</a>
+        <a href="/features/measurable-goals/" class="mobile-nav__sub" onclick="closeMobileNav()">Measurable Goals</a>
+        <a href="/features/streak-tracking/" class="mobile-nav__sub" onclick="closeMobileNav()">Streak Tracking</a>
     </div>
     <div class="mobile-nav__group">
         <span class="mobile-nav__group-label">Solutions</span>
@@ -1084,27 +1092,27 @@
                     </button>
                     <div class="nav-dropdown__menu">
                         <div class="nav-dropdown__menu-inner">
-                            <a href="/features/habit-tracker/" class="nav-dropdown__item">
+                            <a href="/features/habit-tracker/" class="nav-dropdown__item" aria-label="Habit Tracker">
                                 <div class="nav-dropdown__item-icon">✅</div>
                                 <div class="nav-dropdown__item-text"><strong>Habit Tracker</strong><span>Track daily habits with clarity</span></div>
                             </a>
-                            <a href="/features/habit-duo/" class="nav-dropdown__item">
+                            <a href="/features/habit-duo/" class="nav-dropdown__item" aria-label="Habit Duo">
                                 <div class="nav-dropdown__item-icon">🤝</div>
                                 <div class="nav-dropdown__item-text"><strong>Habit Duo</strong><span>Build one habit with a friend</span></div>
                             </a>
-                            <a href="/features/ai-analyser/" class="nav-dropdown__item">
+                            <a href="/features/ai-analyser/" class="nav-dropdown__item" aria-label="AI Habit Analyser">
                                 <div class="nav-dropdown__item-icon">🧠</div>
                                 <div class="nav-dropdown__item-text"><strong>AI Habit Analyser</strong><span>Personalised pattern insights</span></div>
                             </a>
-                            <a href="/features/habit-templates/" class="nav-dropdown__item">
+                            <a href="/features/habit-templates/" class="nav-dropdown__item" aria-label="Habit Templates">
                                 <div class="nav-dropdown__item-icon">📋</div>
                                 <div class="nav-dropdown__item-text"><strong>Habit Templates</strong><span>Start in seconds, not hours</span></div>
                             </a>
-                            <a href="/features/measurable-goals/" class="nav-dropdown__item">
+                            <a href="/features/measurable-goals/" class="nav-dropdown__item" aria-label="Measurable Goals">
                                 <div class="nav-dropdown__item-icon">📏</div>
                                 <div class="nav-dropdown__item-text"><strong>Measurable Goals</strong><span>Clear targets, less friction</span></div>
                             </a>
-                            <a href="/features/streak-tracking/" class="nav-dropdown__item">
+                            <a href="/features/streak-tracking/" class="nav-dropdown__item" aria-label="Streak Tracking">
                                 <div class="nav-dropdown__item-icon">🔥</div>
                                 <div class="nav-dropdown__item-text"><strong>Streak Tracking</strong><span>Momentum without the guilt</span></div>
                             </a>
@@ -1118,19 +1126,19 @@
                     </button>
                     <div class="nav-dropdown__menu">
                         <div class="nav-dropdown__menu-inner">
-                            <a href="/solutions/morning-routine/" class="nav-dropdown__item">
+                            <a href="/solutions/morning-routine/" class="nav-dropdown__item" aria-label="Morning Routine guide">
                                 <div class="nav-dropdown__item-icon">🌅</div>
                                 <div class="nav-dropdown__item-text"><strong>Build a Morning Routine</strong><span>Start your day with intention</span></div>
                             </a>
-                            <a href="/solutions/productivity-at-work/" class="nav-dropdown__item">
+                            <a href="/solutions/productivity-at-work/" class="nav-dropdown__item" aria-label="Productivity at Work guide">
                                 <div class="nav-dropdown__item-icon">💼</div>
                                 <div class="nav-dropdown__item-text"><strong>Productivity at Work</strong><span>Habits that improve performance</span></div>
                             </a>
-                            <a href="/blog/best-habit-tracker-apps-2026/" class="nav-dropdown__item">
+                            <a href="/blog/best-habit-tracker-apps-2026/" class="nav-dropdown__item" aria-label="Best Habit Tracker Apps 2026">
                                 <div class="nav-dropdown__item-icon">📝</div>
                                 <div class="nav-dropdown__item-text"><strong>Best Habit Tracker Apps 2026</strong><span>Free &amp; paid comparison guide</span></div>
                             </a>
-                            <a href="/blog/" class="nav-dropdown__item">
+                            <a href="/blog/" class="nav-dropdown__item" aria-label="All Articles">
                                 <div class="nav-dropdown__item-icon">📚</div>
                                 <div class="nav-dropdown__item-text"><strong>All Articles</strong><span>Habit tips &amp; productivity guides</span></div>
                             </a>
@@ -1230,43 +1238,43 @@
             </p>
         </div>
         <div class="features-grid">
-            <a href="/features/habit-tracker/" class="feature-card feature-card--link" aria-label="Learn more about the Habit Tracker">
+            <a href="/features/habit-tracker/" class="feature-card feature-card--link" aria-label="Habit Tracker feature">
                 <div class="feature-card__icon">✅</div>
                 <h3>Habit Tracker</h3>
                 <p class="text-muted">Your daily habit tracker. Fast check-ins, streak history, and a minimalist design that makes showing up effortless.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="#habit-duo" class="feature-card feature-card--link" aria-label="Learn more about Habit Duo">
+            <a href="/features/habit-duo/" class="feature-card feature-card--link" aria-label="Habit Duo feature">
                 <div class="feature-card__icon">🤝</div>
                 <h3>Habit Duo</h3>
                 <p class="text-muted">The feeling of not being alone in it. Share one routine with one friend, no rankings, just quiet mutual accountability.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="#ai-analyser" class="feature-card feature-card--link" aria-label="Learn more about AI Habit Analyser">
+            <a href="/features/ai-analyser/" class="feature-card feature-card--link" aria-label="AI Habit Analyser feature">
                 <div class="feature-card__icon">🧠</div>
                 <h3>AI Habit Analyser</h3>
                 <p class="text-muted">A calm coach, not a dashboard. TempO surfaces honest patterns from your real data, without the generic pep talks.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="#habit-templates" class="feature-card feature-card--link" aria-label="Learn more about Habit Templates">
+            <a href="/features/habit-templates/" class="feature-card feature-card--link" aria-label="Habit Templates feature">
                 <div class="feature-card__icon">📋</div>
                 <h3>Habit Templates</h3>
                 <p class="text-muted">Frictionless from day one. Pre-built routines for sleep, fitness, focus, and more. Adopt in a tap, customise as you grow.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="#measurable-goals" class="feature-card feature-card--link" aria-label="Learn more about Measurable Goals">
+            <a href="/features/measurable-goals/" class="feature-card feature-card--link" aria-label="Measurable Goals feature">
                 <div class="feature-card__icon">📏</div>
                 <h3>Measurable Goals</h3>
                 <p class="text-muted">Clarity removes hesitation. Attach a real number to every routine (steps, minutes, glasses) so you always know you're done.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="#streak-tracking" class="feature-card feature-card--link" aria-label="Learn more about Streak Tracking">
+            <a href="/features/streak-tracking/" class="feature-card feature-card--link" aria-label="Streak Tracking feature">
                 <div class="feature-card__icon">🔥</div>
                 <h3>Streak Tracking</h3>
                 <p class="text-muted">Visualising progress builds momentum. A missed day resets the count, but it doesn't erase the work you've already done.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="/features/smart-reminders/" class="feature-card feature-card--link" aria-label="Learn more about Smart Reminders">
+            <a href="/features/smart-reminders/" class="feature-card feature-card--link" aria-label="Smart Reminders feature">
                 <div class="feature-card__icon">🔔</div>
                 <h3>Smart Reminders</h3>
                 <p class="text-muted">A gentle nudge at the right moment, timed to your routine rather than your phone's notification queue.</p>
@@ -1285,19 +1293,19 @@
             <p class="lead">Practical, psychology-backed guides on habit tracking, productivity, and building routines that outlast motivation.</p>
         </div>
         <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-            <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link" aria-label="Read the best habit tracker apps guide">
+            <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link" aria-label="Best habit tracker apps 2026 guide">
                 <div class="feature-card__icon">📝</div>
                 <h3>Best Habit Tracker Apps 2026</h3>
                 <p class="text-muted">An honest comparison of the top free and paid habit tracker apps, with a clear look at how Productify stacks up.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
-            <a href="/solutions/morning-routine/" class="feature-card feature-card--link" aria-label="Read the Morning Routine guide">
+            <a href="/solutions/morning-routine/" class="feature-card feature-card--link" aria-label="Build a morning routine guide">
                 <div class="feature-card__icon">🌅</div>
                 <h3>Build a Morning Routine</h3>
                 <p class="text-muted">The psychology of starting small, and how to design a morning that survives even your worst days.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
-            <a href="/solutions/productivity-at-work/" class="feature-card feature-card--link" aria-label="Read the Productivity at Work guide">
+            <a href="/solutions/productivity-at-work/" class="feature-card feature-card--link" aria-label="Productivity at work guide">
                 <div class="feature-card__icon">💼</div>
                 <h3>Productivity at Work</h3>
                 <p class="text-muted">Which daily habits compound into real professional growth, and how to track them without adding overhead.</p>
