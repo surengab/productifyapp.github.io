@@ -10,7 +10,7 @@
     <title>Productify – Best Daily Habit Tracker for iOS | Free</title>
     <meta name="title" content="Productify – Best Daily Habit Tracker for iOS | Free">
     <!-- Description: 152 chars — within Google's ~155-char sweet spot -->
-    <meta name="description" content="Productify is the best free daily habit tracker for iOS. AI insights, streak tracking, Habit Duo accountability, and 50+ templates. Download free — no account required.">
+    <meta name="description" content="Productify is the best free daily habit tracker for iOS. AI insights, streak tracking, Habit Duo accountability, and 50+ templates. Download free, no account required.">
     <meta name="keywords" content="habit tracker, best habit tracker app, daily habit tracker, productivity tracker, minimalist habit tracker, habit tracker app, routine building, build better habits, habit streak app, AI habit tracker, habit templates">
     <meta name="author" content="Productify">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -21,7 +21,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://productifyapp.org/">
     <meta property="og:title" content="Productify – Best Daily Habit Tracker for iOS | Free">
-    <meta property="og:description" content="The best free daily habit tracker for iOS. AI insights, streak tracking, Habit Duo accountability, and 50+ templates — no account required.">
+    <meta property="og:description" content="The best free daily habit tracker for iOS. AI insights, streak tracking, Habit Duo accountability, and 50+ templates. No account required.">
     <meta property="og:image" content="https://productifyapp.org/image_2.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://productifyapp.org/">
     <meta name="twitter:title" content="Productify – Best Daily Habit Tracker for iOS | Free">
-    <meta name="twitter:description" content="The best free daily habit tracker for iOS. AI insights, streak tracking, Habit Duo accountability, and 50+ templates — no account required.">
+    <meta name="twitter:description" content="The best free daily habit tracker for iOS. AI insights, streak tracking, Habit Duo accountability, and 50+ templates. No account required.">
     <meta name="twitter:image" content="https://productifyapp.org/image_2.png">
     <meta name="twitter:image:alt" content="Productify – best daily habit tracker app for iOS showing daily routine screen">
     <meta name="twitter:creator" content="@Productify_app">
@@ -45,6 +45,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Sitemap -->
@@ -496,24 +497,17 @@
             position: relative; overflow: hidden;
         }
         .spotlight__visual--phone {
-            background: #0D1117;
-            border-color: rgba(255,255,255,.06);
-            padding: 40px 28px;
-            box-shadow: var(--shadow-lg);
+            background: transparent;
+            border-color: transparent;
+            box-shadow: none;
+            padding: 20px 12px;
             position: relative;
         }
-        /* Ambient blue glow */
-        .spotlight__visual--phone::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 60% 50% at 50% 90%, rgba(37,99,235,.18) 0%, transparent 70%);
-            pointer-events: none;
-        }
+        .spotlight__visual--phone::before { display: none; }
         .spotlight__phone-img {
             max-height: 520px; width: auto; max-width: 100%;
-            border-radius: 32px;
-            box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06);
+            border-radius: 0;
+            box-shadow: none;
             display: block; margin: 0 auto;
             position: relative; z-index: 1;
         }
@@ -920,7 +914,7 @@
                 "name": "What is Habit Duo?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Habit Duo lets you build one habit alongside one friend. You share progress side by side, stay accountable to each other, and focus on consistency — not competition."
+                    "text": "Habit Duo lets you build one habit alongside one friend. You share progress side by side, stay accountable to each other, and focus on consistency, not competition."
                 }
             },
             {
@@ -928,7 +922,7 @@
                 "name": "How does the AI Habit Analyser work?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "TempO (Temp Owl) is Productify's AI habit companion. TempO reviews your habit patterns over time and surfaces personalised insights, encouragement, and practical suggestions — helping you understand when, why, and how your habits succeed or struggle."
+                    "text": "TempO (Temp Owl) is Productify's AI habit companion. TempO reviews your habit patterns over time and surfaces personalised insights, encouragement, and practical suggestions to help you understand when, why, and how your habits succeed or struggle."
                 }
             },
             {
@@ -944,7 +938,7 @@
                 "name": "Is Productify good for building routines based on Atomic Habits principles?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Productify is built around the same core ideas popularised by Atomic Habits: small, measurable actions done consistently over time. The app encourages habit stacking, clear goal measurement, and recovery after missed days — all of which align with the principle that tiny habits compound into meaningful self-improvement."
+                    "text": "Yes. Productify is built around the same core ideas popularised by Atomic Habits: small, measurable actions done consistently over time. The app encourages habit stacking, clear goal measurement, and recovery after missed days, all of which align with the principle that tiny habits compound into meaningful self-improvement."
                 }
             },
             {
@@ -952,7 +946,7 @@
                 "name": "Can I use Productify as a daily planner?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Productify works as a focused daily routine companion. Each day you see exactly which habits are scheduled, can log your progress with a single tap, and review your completion history. It is designed to be a lightweight, distraction-free part of your morning or evening routine — not a full calendar or task manager."
+                    "text": "Productify works as a focused daily routine companion. Each day you see exactly which habits are scheduled, can log your progress with a single tap, and review your completion history. It is designed to be a lightweight, distraction-free part of your morning or evening routine, not a full calendar or task manager."
                 }
             }
         ]
@@ -1137,11 +1131,7 @@
                      loading="eager"
                      fetchpriority="high"
                      decoding="sync">
-                <img src="screenshot_templates_browse.png"
-                     class="hero__phone hero__phone--secondary"
-                     alt="Productify habit templates — Minimalist Morning, High Performance, Priority Protocol and Franklin Schedule routines"
-                     width="390" height="844"
-                     loading="eager">
+                
             </div>
         </div>
     </div>
@@ -1178,50 +1168,50 @@
             <div class="eyebrow">What's inside your habit tracker</div>
             <h2 id="features-heading">A productivity tracker designed for consistency, not complexity</h2>
             <p class="lead">
-                Every part of Productify's <strong>daily habit tracker</strong> is built around behavioural design principles — reducing friction, visualising progress, and making it genuinely easy to show up again after a missed day.
+                Every part of Productify's <strong>daily habit tracker</strong> is built around behavioural design principles: reducing friction, visualising progress, and making it genuinely easy to show up again after a missed day.
             </p>
         </div>
         <div class="features-grid">
             <a href="/features/habit-tracker/" class="feature-card feature-card--link" aria-label="Learn more about the Habit Tracker">
                 <div class="feature-card__icon">✅</div>
                 <h3>Habit Tracker</h3>
-                <p class="text-muted">Your daily habit tracker — fast check-ins, streak history, and a minimalist design that makes showing up effortless.</p>
+                <p class="text-muted">Your daily habit tracker. Fast check-ins, streak history, and a minimalist design that makes showing up effortless.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#habit-duo" class="feature-card feature-card--link" aria-label="Learn more about Habit Duo">
                 <div class="feature-card__icon">🤝</div>
                 <h3>Habit Duo</h3>
-                <p class="text-muted">The feeling of not being alone in it. Share one routine with one friend — no rankings, just quiet mutual accountability.</p>
+                <p class="text-muted">The feeling of not being alone in it. Share one routine with one friend, no rankings, just quiet mutual accountability.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#ai-analyser" class="feature-card feature-card--link" aria-label="Learn more about AI Habit Analyser">
                 <div class="feature-card__icon">🧠</div>
                 <h3>AI Habit Analyser</h3>
-                <p class="text-muted">A calm coach, not a dashboard. TempO surfaces honest patterns from your real data — without the generic pep talks.</p>
+                <p class="text-muted">A calm coach, not a dashboard. TempO surfaces honest patterns from your real data, without the generic pep talks.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#habit-templates" class="feature-card feature-card--link" aria-label="Learn more about Habit Templates">
                 <div class="feature-card__icon">📋</div>
                 <h3>Habit Templates</h3>
-                <p class="text-muted">Frictionless from day one. Pre-built routines for sleep, fitness, focus, and more — adopt in a tap, customise as you grow.</p>
+                <p class="text-muted">Frictionless from day one. Pre-built routines for sleep, fitness, focus, and more. Adopt in a tap, customise as you grow.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#measurable-goals" class="feature-card feature-card--link" aria-label="Learn more about Measurable Goals">
                 <div class="feature-card__icon">📏</div>
                 <h3>Measurable Goals</h3>
-                <p class="text-muted">Clarity removes hesitation. Attach a real number to every routine — steps, minutes, glasses — so you always know you're done.</p>
+                <p class="text-muted">Clarity removes hesitation. Attach a real number to every routine (steps, minutes, glasses) so you always know you're done.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="#streak-tracking" class="feature-card feature-card--link" aria-label="Learn more about Streak Tracking">
                 <div class="feature-card__icon">🔥</div>
                 <h3>Streak Tracking</h3>
-                <p class="text-muted">Visualising progress builds momentum. A missed day resets the count — it doesn't erase the work you've already done.</p>
+                <p class="text-muted">Visualising progress builds momentum. A missed day resets the count, but it doesn't erase the work you've already done.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="/features/smart-reminders/" class="feature-card feature-card--link" aria-label="Learn more about Smart Reminders">
                 <div class="feature-card__icon">🔔</div>
                 <h3>Smart Reminders</h3>
-                <p class="text-muted">A gentle nudge at the right moment — timed to your routine, not your phone's notification queue.</p>
+                <p class="text-muted">A gentle nudge at the right moment, timed to your routine rather than your phone's notification queue.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
         </div>
@@ -1240,19 +1230,19 @@
             <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link" aria-label="Read the best habit tracker apps guide">
                 <div class="feature-card__icon">📝</div>
                 <h3>Best Habit Tracker Apps 2026</h3>
-                <p class="text-muted">An honest comparison of the top free and paid habit tracker apps — and how Productify stacks up against the competition.</p>
+                <p class="text-muted">An honest comparison of the top free and paid habit tracker apps, with a clear look at how Productify stacks up.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
             <a href="/solutions/morning-routine/" class="feature-card feature-card--link" aria-label="Read the Morning Routine guide">
                 <div class="feature-card__icon">🌅</div>
                 <h3>Build a Morning Routine</h3>
-                <p class="text-muted">The psychology of starting small — and how to design a morning that survives even your worst days.</p>
+                <p class="text-muted">The psychology of starting small, and how to design a morning that survives even your worst days.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
             <a href="/solutions/productivity-at-work/" class="feature-card feature-card--link" aria-label="Read the Productivity at Work guide">
                 <div class="feature-card__icon">💼</div>
                 <h3>Productivity at Work</h3>
-                <p class="text-muted">Which daily habits compound into real professional growth — and how to track them without adding overhead.</p>
+                <p class="text-muted">Which daily habits compound into real professional growth, and how to track them without adding overhead.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
         </div>
@@ -1270,10 +1260,10 @@
                     <div class="eyebrow">Shared Accountability</div>
                     <h2 id="habit-duo-heading">You're more consistent when someone shows up with you</h2>
                     <p class="lead mt-16">
-                        Habit Duo is built on a simple truth from behavioural science: when someone you trust knows whether you showed up today, you're significantly more likely to show up. Not because you're competing — because you're not alone.
+                        Habit Duo is built on a simple truth from behavioural science: when someone you trust knows whether you showed up today, you're significantly more likely to show up. Not because you're competing, but because you're not alone.
                     </p>
                     <ul class="check-list">
-                        <li>One friend, one shared routine — no group dynamics, no noise</li>
+                        <li>One friend, one shared routine. No group dynamics, no noise.</li>
                         <li>Side-by-side progress with no scores or rankings</li>
                         <li>A quiet notification when your partner completes the day</li>
                         <li>The accountability of a gym buddy, without the scheduling</li>
@@ -1300,26 +1290,26 @@
         <div class="container">
             <div class="feature-deep__inner">
                 <div class="feature-deep__body">
-                    <div class="eyebrow">Habit Duo — In Depth</div>
+                    <div class="eyebrow">Habit Duo: In Depth</div>
                     <h2 id="habit-duo-deep-heading">The quiet power of doing it together</h2>
                     <p>
-                        Skipping a solo habit is easy. It's a private decision with no social weight. Habit Duo changes that dynamic — not by adding pressure, but by making the act of showing up feel shared. When your friend completes their walk and you see it in the app, skipping yours becomes a deliberate choice rather than a passive drift.
+                        Skipping a solo habit is easy. It's a private decision with no social weight. Habit Duo changes that dynamic, not by adding pressure, but by making the act of showing up feel shared. When your friend completes their walk and you see it in the app, skipping yours becomes a deliberate choice rather than a passive drift.
                     </p>
                     <p>
-                        This is the core insight behind Habit Duo's design. It's a single focused pairing — one friend, one routine — rather than a group challenge or social feed. You track your own progress independently; your partner does the same. You can see each other's completion side by side. No score, no ranking. Just a quiet reminder that you're not doing this alone.
+                        This is the core insight behind Habit Duo's design. It's a single focused pairing (one friend, one routine) rather than a group challenge or social feed. You track your own progress independently; your partner does the same. You can see each other's completion side by side. No score, no ranking. Just a quiet reminder that you're not doing this alone.
                     </p>
                     <p>
-                        It works particularly well for the habits that feel easiest to skip in isolation: morning walks, daily hydration, evening reading, weekend workouts. These are routines where the effort is low but the activation energy — actually starting — is the real barrier. Shared accountability lowers that barrier without adding social pressure or gamification.
+                        It works particularly well for the habits that feel easiest to skip in isolation: morning walks, daily hydration, evening reading, weekend workouts. These are routines where the effort is low but the activation energy (actually starting) is the real barrier. Shared accountability lowers that barrier without adding social pressure or gamification.
                     </p>
                     <p>
-                        Atomic Habits author James Clear calls this "the social norm effect" — we align our behaviour with the people around us. Habit Duo brings that principle directly into your daily routine. Available on Pro.
+                        Atomic Habits author James Clear calls this "the social norm effect": we align our behaviour with the people around us. Habit Duo brings that principle directly into your daily routine. Available on Pro.
                     </p>
                     <ul class="check-list">
-                        <li>Focused pairing — one friend, one routine, zero noise</li>
-                        <li>No leaderboards or public feeds — completely private</li>
+                        <li>Focused pairing: one friend, one routine, zero noise</li>
+                        <li>No leaderboards or public feeds, completely private</li>
                         <li>Works for any routine: fitness, sleep, focus, creativity, hydration</li>
                         <li>Encouragement notifications that feel supportive, not demanding</li>
-                        <li>Available on Pro — <a href="#pricing" style="color: var(--blue);">see pricing</a></li>
+                        <li>Available on Pro. <a href="#pricing" style="color: var(--blue);">see pricing</a></li>
                     </ul>
                     <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                        class="feature-deep__link"
@@ -1372,13 +1362,13 @@
                     <div class="eyebrow">AI · Behavioural Insights</div>
                     <h2 id="ai-analyser-heading">A coach that reads your data, not a script</h2>
                     <p class="lead mt-16">
-                        Meet TempO — Productify's AI companion. Rather than counting completions and showing you a bar chart, TempO looks for patterns in your behaviour over time: when you succeed, when you slip, and what the context might mean. More reflective mirror than motivational poster.
+                        Meet TempO, Productify's AI companion. Rather than counting completions and showing you a bar chart, TempO looks for patterns in your behaviour over time: when you succeed, when you slip, and what the context might mean. More reflective mirror than motivational poster.
                     </p>
                     <ul class="check-list">
-                        <li>Spot day-of-week patterns — when you're strong, when you drift</li>
+                        <li>Spot day-of-week patterns: when you're strong, when you drift</li>
                         <li>See which routines reinforce each other through correlation analysis</li>
                         <li>Receive suggestions grounded in your actual data, not generic advice</li>
-                        <li>Tone that's calm, honest, and non-judgmental — always</li>
+                        <li>Tone that's calm, honest, and non-judgmental</li>
                     </ul>
                     <p class="lead" style="margin-top: 20px; font-size: .9rem;">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></p>
                 </div>
@@ -1396,16 +1386,16 @@
         <div class="container">
             <div class="feature-deep__inner">
                 <div class="feature-deep__body">
-                    <div class="eyebrow">AI Habit Analyser — In Depth</div>
+                    <div class="eyebrow">AI Habit Analyser: In Depth</div>
                     <h2 id="ai-analyser-deep-heading">Data as a mirror, not a scoreboard</h2>
                     <p>
-                        Most apps surface your completion count and leave you to figure out what it means. TempO goes further. Rather than showing you how many days you hit your goal, the analyser looks at the shape of your behaviour over time — which days you tend to slip, which routines have stayed consistent the longest, and whether changes in one area correlate with changes in another.
+                        Most apps surface your completion count and leave you to figure out what it means. TempO goes further. Rather than showing you how many days you hit your goal, the analyser looks at the shape of your behaviour over time: which days you tend to slip, which routines have stayed consistent the longest, and whether changes in one area correlate with changes in another.
                     </p>
                     <p>
-                        This is behavioural design applied to self-reflection. If you consistently miss your evening reading on Thursdays and Fridays, TempO will notice and might suggest a small adjustment — shifting the reminder earlier, reducing the target for those days, or pairing the routine with something already established. These micro-adjustments are exactly what compound into lasting change.
+                        This is behavioural design applied to self-reflection. If you consistently miss your evening reading on Thursdays and Fridays, TempO will notice and might suggest a small adjustment, like shifting the reminder earlier, reducing the target for those days, or pairing the routine with something already established. These micro-adjustments are exactly what compound into lasting change.
                     </p>
                     <p>
-                        TempO is intentionally restrained in tone. No confetti for a 10-day streak. No shame spiral for a missed week. If something isn't working, it's surfaced plainly and quietly. That kind of honest, non-judgmental feedback is harder to build than a dashboard — and far more useful for long-term digital wellness.
+                        TempO is intentionally restrained in tone. No confetti for a 10-day streak. No shame spiral for a missed week. If something isn't working, it's surfaced plainly and quietly. That kind of honest, non-judgmental feedback is harder to build than a dashboard, and far more useful for long-term digital wellness.
                     </p>
                     <p>
                         The result is an AI that earns trust by being accurate, not enthusiastic.
@@ -1413,9 +1403,9 @@
                     <ul class="check-list">
                         <li>Weekly and monthly pattern analysis across all your habits</li>
                         <li>Personalised suggestions based on your specific completion data</li>
-                        <li>Cross-habit correlation — see which habits support each other</li>
+                        <li>Cross-habit correlation: see which habits support each other</li>
                         <li>Tone-appropriate insights: calm, direct, and non-judgmental</li>
-                        <li>Available on the Pro plan — no data shared with third parties</li>
+                        <li>Available on the Pro plan. No data shared with third parties.</li>
                     </ul>
                     <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                        class="feature-deep__link"
@@ -1451,7 +1441,7 @@
                             <div class="feature-deep__stat-icon">💡</div>
                             <div>
                                 <div class="feature-deep__stat-value">Actionable suggestions</div>
-                                <div class="feature-deep__stat-label">Specific, practical — not generic motivational tips</div>
+                                <div class="feature-deep__stat-label">Specific and practical, not generic motivational tips</div>
                             </div>
                         </div>
                     </div>
@@ -1468,7 +1458,7 @@
                     <div class="eyebrow">Frictionless Start</div>
                     <h2 id="templates-heading">The best routine is the one you actually begin</h2>
                     <p class="lead mt-16">
-                        Setup friction is one of the quietest habit killers. Productify's template library gives you fully configured routines — goal, frequency, and reminder already set — so you can go from intention to action in a single tap.
+                        Setup friction is one of the quietest habit killers. Productify's template library gives you fully configured routines (goal, frequency, and reminder already set) so you can go from intention to action in a single tap.
                     </p>
                     <ul class="check-list">
                         <li>Hydration – 8 glasses · daily</li>
@@ -1494,22 +1484,22 @@
         <div class="container">
             <div class="feature-deep__inner">
                 <div class="feature-deep__body">
-                    <div class="eyebrow">Habit Templates — In Depth</div>
+                    <div class="eyebrow">Habit Templates: In Depth</div>
                     <h2 id="templates-deep-heading">Start well-designed. Adjust as you go.</h2>
                     <p>
-                        Behavioural design research consistently shows that the hardest part of building a new routine isn't maintaining it — it's starting well. When you have to define the goal, choose the measurement, set the frequency, and create a reminder before you've completed a single day, the overhead quietly drains the motivation that brought you here.
+                        Behavioural design research consistently shows that the hardest part of building a new routine isn't maintaining it; it's starting well. When you have to define the goal, choose the measurement, set the frequency, and create a reminder before you've completed a single day, the overhead quietly drains the motivation that brought you here.
                     </p>
                     <p>
-                        Each template in Productify is fully pre-configured: a name, a measurable target, a suggested frequency, and a sensible default reminder. Adopt it exactly as-is, or adjust any detail to fit your actual life. The point is that you're building on day one — not planning to build.
+                        Each template in Productify is fully pre-configured: a name, a measurable target, a suggested frequency, and a sensible default reminder. Adopt it exactly as-is, or adjust any detail to fit your actual life. The point is that you're building on day one, not planning to build.
                     </p>
                     <p>
-                        The library spans physical health (hydration, walking, strength training), mental wellbeing (mindfulness, journalling, sleep), and focus-based productivity (deep work sessions, reading, learning). These aren't aspirational extremes — they're routines that real people build and maintain when the friction is low enough.
+                        The library spans physical health (hydration, walking, strength training), mental wellbeing (mindfulness, journalling, sleep), and focus-based productivity (deep work sessions, reading, learning). These aren't aspirational extremes; they're routines that real people build and maintain when the friction is low enough.
                     </p>
                     <p>
-                        James Clear writes in Atomic Habits that environment design — making the right action the easy action — is more reliable than willpower. Templates are Productify's version of that principle: the routine is already designed. You just have to show up.
+                        James Clear writes in Atomic Habits that environment design (making the right action the easy action) is more reliable than willpower. Templates are Productify's version of that principle: the routine is already designed. You just have to show up.
                     </p>
                     <ul class="check-list">
-                        <li>Fully configured habits — goal, frequency, and reminder included</li>
+                        <li>Fully configured habits: goal, frequency, and reminder included</li>
                         <li>Customisable at any point without losing existing progress</li>
                         <li>Covers health, fitness, sleep, focus, mindfulness, and more</li>
                         <li>5 starter templates free · full library on Pro</li>
@@ -1572,12 +1562,12 @@
                     <div class="eyebrow">Clarity · Progress</div>
                     <h2 id="goals-heading">When the target is clear, the decision is easy</h2>
                     <p class="lead mt-16">
-                        "Exercise more" is not a goal — it's an intention. Productify turns every routine into something concrete: 7,900 steps walked, 31 minutes read, 8 glasses tracked. A clear number removes the friction of deciding whether you've done enough.
+                        "Exercise more" is not a goal; it's an intention. Productify turns every routine into something concrete: 7,900 steps walked, 31 minutes read, 8 glasses tracked. A clear number removes the friction of deciding whether you've done enough.
                     </p>
                     <ul class="check-list">
                         <li>Steps, reps, minutes, glasses, sessions, or your own custom unit</li>
-                        <li>Daily targets or weekly frequency — whatever fits the routine</li>
-                        <li>Partial progress is recorded, not ignored — 5 of 8 glasses still counts</li>
+                        <li>Daily targets or weekly frequency, whatever fits the routine</li>
+                        <li>Partial progress is recorded, not ignored. 5 of 8 glasses still counts.</li>
                         <li>Less decision fatigue. More showing up.</li>
                     </ul>
                 </div>
@@ -1595,19 +1585,19 @@
         <div class="container">
             <div class="feature-deep__inner">
                 <div class="feature-deep__body">
-                    <div class="eyebrow">Measurable Goals — In Depth</div>
+                    <div class="eyebrow">Measurable Goals: In Depth</div>
                     <h2 id="goals-deep-heading">The underrated power of knowing you're done</h2>
                     <p>
-                        There is a meaningful difference between a goal and an intention. "Drink more water" is an intention. "8 glasses per day" is a goal. The difference isn't just semantic — it changes the cognitive load of the check-in moment. A clear number removes ambiguity. You either hit it or you didn't, and either way the decision is instant.
+                        There is a meaningful difference between a goal and an intention. "Drink more water" is an intention. "8 glasses per day" is a goal. The difference isn't just semantic; it changes the cognitive load of the check-in moment. A clear number removes ambiguity. You either hit it or you didn't, and either way the decision is instant.
                     </p>
                     <p>
-                        Productify treats measurement as foundational, not optional. Every routine you track has a unit: steps, minutes, glasses, reps, sessions, kilometres, or a label you define yourself. When you log for the day, you record the actual value — not just a binary tick. This creates a richer history and makes partial effort visible rather than invisible.
+                        Productify treats measurement as foundational, not optional. Every routine you track has a unit: steps, minutes, glasses, reps, sessions, kilometres, or a label you define yourself. When you log for the day, you record the actual value, not just a binary tick. This creates a richer history and makes partial effort visible rather than invisible.
                     </p>
                     <p>
-                        That matters more than it might seem. Five of eight glasses isn't failure — it's 62% of the way there and a genuine data point. Productify records it, reflects it in your trends, and doesn't penalise you for it. Over time, this fuller picture gives TempO the context it needs to surface accurate insights rather than a simplified pass/fail story.
+                        That matters more than it might seem. Five of eight glasses isn't failure; it's 62% of the way there and a genuine data point. Productify records it, reflects it in your trends, and doesn't penalise you for it. Over time, this fuller picture gives TempO the context it needs to surface accurate insights rather than a simplified pass/fail story.
                     </p>
                     <p>
-                        You can also set routines by weekly frequency rather than daily targets — three workouts this week rather than one per day — which is often a more sustainable approach for things that don't need to happen every single day without exception.
+                        You can also set routines by weekly frequency rather than daily targets, like three workouts this week instead of one per day, which is often a more sustainable approach for things that don't need to happen every single day without exception.
                     </p>
                     <ul class="check-list">
                         <li>Units: steps, minutes, glasses, reps, km, sessions, or custom</li>
@@ -1674,13 +1664,13 @@
                     <div class="eyebrow">Visualising Progress</div>
                     <h2 id="streaks-heading">Build momentum. Recover without shame.</h2>
                     <p class="lead mt-16">
-                        Visualising your streak works — not as pressure, but as proof. Seeing 14 consecutive days reminds you that you're building something real. And when a day slips, Productify keeps your full history intact, so one bad week doesn't erase weeks of genuine effort.
+                        Visualising your streak works, not as pressure but as proof. Seeing 14 consecutive days reminds you that you're building something real. And when a day slips, Productify keeps your full history intact, so one bad week doesn't erase weeks of genuine effort.
                     </p>
                     <ul class="check-list">
-                        <li>Current streak and personal best — always visible at a glance</li>
+                        <li>Current streak and personal best, always visible at a glance</li>
                         <li>Long-term trend view to put a bad week in perspective</li>
-                        <li>No shame spiral after a missed day — your history stays intact</li>
-                        <li>Milestone recognition at 7, 30, and 90 days — earned, not manufactured</li>
+                        <li>No shame spiral after a missed day. Your history stays intact.</li>
+                        <li>Milestone recognition at 7, 30, and 90 days, earned rather than manufactured</li>
                     </ul>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
@@ -1697,16 +1687,16 @@
         <div class="container">
             <div class="feature-deep__inner">
                 <div class="feature-deep__body">
-                    <div class="eyebrow">Streak Tracking — In Depth</div>
-                    <h2 id="streaks-deep-heading">Why streaks work — and when they don't</h2>
+                    <div class="eyebrow">Streak Tracking: In Depth</div>
+                    <h2 id="streaks-deep-heading">Why streaks work, and when they don't</h2>
                     <p>
-                        Visualising a consecutive run of completed days is genuinely motivating. Psychologists call it the "don't break the chain" effect — each day you show up adds weight to the next, making the routine feel like part of something larger than a single effort. That's a real and useful force, and Productify leans into it.
+                        Visualising a consecutive run of completed days is genuinely motivating. Psychologists call it the "don't break the chain" effect: each day you show up adds weight to the next, making the routine feel like part of something larger than a single effort. That's a real and useful force, and Productify leans into it.
                     </p>
                     <p>
-                        But streaks have a well-documented flaw. Many people abandon a routine entirely after missing a single day — not because the routine stopped mattering, but because the broken chain made continuing feel pointless. This all-or-nothing pattern is one of the most common ways digital wellness tools fail the people using them.
+                        But streaks have a well-documented flaw. Many people abandon a routine entirely after missing a single day, not because the routine stopped mattering, but because the broken chain made continuing feel pointless. This all-or-nothing pattern is one of the most common ways digital wellness tools fail the people using them.
                     </p>
                     <p>
-                        Productify separates the streak counter from the underlying history. When you miss a day, the current count resets — but every completed day you've logged is permanently preserved. You can always see your personal best, your completion rate across any timeframe, and your long-term trend across months. That wider view keeps a bad week in its proper context.
+                        Productify separates the streak counter from the underlying history. When you miss a day, the current count resets, but every completed day you've logged is permanently preserved. You can always see your personal best, your completion rate across any timeframe, and your long-term trend across months. That wider view keeps a bad week in its proper context.
                     </p>
                     <p>
                         After a missed day, the tone is neutral. No warning screens, no guilt-charged notifications. Just your data, waiting calmly whenever you're ready to pick up again. Routines that last years are built on that kind of quiet resilience.
@@ -1738,7 +1728,7 @@
                             <div class="feature-deep__stat-icon">🏆</div>
                             <div>
                                 <div class="feature-deep__stat-value">Best streak</div>
-                                <div class="feature-deep__stat-label">Your personal record — always visible</div>
+                                <div class="feature-deep__stat-label">Your personal record, always visible</div>
                             </div>
                         </div>
                         <div class="feature-deep__stat">
@@ -1775,7 +1765,7 @@
             <div class="step-card">
                 <div class="step-card__num">1</div>
                 <h3>Choose a routine</h3>
-                <p>Pick from a curated template library or create your own — with a measurable goal that removes all ambiguity.</p>
+                <p>Pick from a curated template library or create your own, with a measurable goal that removes all ambiguity.</p>
             </div>
             <div class="step-card">
                 <div class="step-card__num">2</div>
@@ -1790,7 +1780,7 @@
             <div class="step-card">
                 <div class="step-card__num">4</div>
                 <h3>Let TempO reflect</h3>
-                <p>Productify's AI companion surfaces small, honest observations from your patterns. You stay curious — not self-critical.</p>
+                <p>Productify's AI companion surfaces small, honest observations from your patterns. You stay curious, not self-critical.</p>
             </div>
         </div>
     </div>
@@ -1879,10 +1869,10 @@
                 <div class="eyebrow">About Productify</div>
                 <h2 id="about-heading">Built around consistency. Not perfection.</h2>
                 <p class="lead mt-16">
-                    Most wellness apps reward streaks and punish breaks. We built something different. Productify is designed around the belief that a routine practised imperfectly for years is worth more than a perfect system abandoned in weeks. Your daily companion should work <em>with</em> you — not turn every missed day into a verdict.
+                    Most wellness apps reward streaks and punish breaks. We built something different. Productify is designed around the belief that a routine practised imperfectly for years is worth more than a perfect system abandoned in weeks. Your daily companion should work <em>with</em> you, not turn every missed day into a verdict.
                 </p>
                 <p class="lead mt-16" style="margin-top: 16px;">
-                    Productify started as a personal project — a distraction-free tool for iOS rooted in Atomic Habits-style thinking: small, measurable actions done with intention over time. It's grown entirely on user feedback, and the core philosophy hasn't changed: calm, clear, and built for real people living real lives.
+                    Productify started as a personal project, a distraction-free tool for iOS rooted in Atomic Habits-style thinking: small, measurable actions done with intention over time. It's grown entirely on user feedback, and the core philosophy hasn't changed: calm, clear, and built for real people living real lives.
                 </p>
                 <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                    class="appstore-badge-link"
@@ -1938,7 +1928,7 @@
                 <h3>Pro</h3>
                 <div class="price">$3.99</div>
                 <div class="price-period">per month · or $24.99/year (save 48%)</div>
-                <p class="pricing-desc">For people serious about making habits last — with every tool Productify offers.</p>
+                <p class="pricing-desc">For people serious about making habits last, with every tool Productify offers.</p>
                 <hr class="pricing-divider">
                 <ul class="check-list">
                     <li>Unlimited habits</li>
@@ -1980,7 +1970,7 @@
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Productify is a minimalist daily routine companion for iOS — and yes, a habit tracker app, but one built around a different philosophy. Instead of guilt and gamification, it focuses on frictionless tracking, honest AI insights, and the kind of quiet accountability that actually sustains behaviour change over time. Calm design, real data, no pressure.</p>
+                    <p>Productify is a minimalist daily routine companion for iOS (yes, a habit tracker app) but one built around a different philosophy. Instead of guilt and gamification, it focuses on frictionless tracking, honest AI insights, and the kind of quiet accountability that actually sustains behaviour change over time. Calm design, real data, no pressure.</p>
                 </div>
             </div>
 
@@ -2000,7 +1990,7 @@
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Habit Duo lets you build one habit alongside one friend. You each track your own progress, and you can see each other's completion side by side. It's not a competition — it's mutual accountability. When your friend completes the day's habit, you'll see it. When you do, so will they.</p>
+                    <p>Habit Duo lets you build one habit alongside one friend. You each track your own progress, and you can see each other's completion side by side. It's not a competition; it's mutual accountability. When your friend completes the day's habit, you'll see it. When you do, so will they.</p>
                 </div>
             </div>
 
@@ -2010,7 +2000,7 @@
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>TempO — Productify's AI habit companion — reviews your habit completion patterns over time and surfaces personalised insights. TempO notices things like which days you tend to skip, which habits you've been most consistent with, and how your habits relate to one another. It's designed to be supportive and honest, not preachy or overly positive.</p>
+                    <p>TempO, Productify's AI habit companion, reviews your habit completion patterns over time and surfaces personalised insights. TempO notices things like which days you tend to skip, which habits you've been most consistent with, and how your habits relate to one another. It's designed to be supportive and honest, not preachy or overly positive.</p>
                 </div>
             </div>
 
@@ -2050,7 +2040,7 @@
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Productify works as a focused daily routine companion. Each day you see exactly which habits are scheduled, log your progress with a single tap, and review your completion history at a glance. It's designed to be a lightweight, distraction-free part of your morning or evening routine — not a full calendar or task manager.</p>
+                    <p>Productify works as a focused daily routine companion. Each day you see exactly which habits are scheduled, log your progress with a single tap, and review your completion history at a glance. It's designed to be a lightweight, distraction-free part of your morning or evening routine, not a full calendar or task manager.</p>
                 </div>
             </div>
 
@@ -2160,7 +2150,7 @@
         <div class="footer__grid">
             <div class="footer__brand">
                 <span class="logo" style="-webkit-text-fill-color: #fff; background: none; color: #fff;">Productify</span>
-                <p>A distraction-free daily companion for iOS. Small, consistent actions — done your way, without the pressure of perfection.</p>
+                <p>A distraction-free daily companion for iOS. Small, consistent actions, done your way, without the pressure of perfection.</p>
                 <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                    class="appstore-badge-link"
                    style="margin-top: 18px; display: inline-block;"
