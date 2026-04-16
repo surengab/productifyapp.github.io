@@ -83,8 +83,18 @@
         <span class="mobile-nav__group-label">Solutions</span>
         <a href="/solutions/morning-routine/" class="mobile-nav__sub">Build a Morning Routine</a>
         <a href="/solutions/productivity-at-work/" class="mobile-nav__sub">Productivity at Work</a>
-        <a href="/blog/best-habit-tracker-apps-2026/" class="mobile-nav__sub">Best Habit Tracker Apps 2026</a>
+    </div>
+    <div class="mobile-nav__group">
+        <span class="mobile-nav__group-label">Blog</span>
         <a href="/blog/" class="mobile-nav__sub">All Articles</a>
+        <a href="/blog/best-habit-tracker-apps-2026/" class="mobile-nav__sub">Best Habit Tracker Apps 2026</a>
+        <a href="/blog/how-to-start-a-daily-habit/" class="mobile-nav__sub">How to Start a Daily Habit</a>
+        <a href="/blog/how-to-build-habits-that-stick/" class="mobile-nav__sub">Habits That Actually Stick</a>
+        <a href="/blog/how-to-break-bad-habits/" class="mobile-nav__sub">How to Break Bad Habits</a>
+        <a href="/blog/how-long-to-build-a-habit/" class="mobile-nav__sub">How Long to Build a Habit</a>
+        <a href="/blog/what-habits-to-track/" class="mobile-nav__sub">What Habits to Track</a>
+        <a href="/blog/how-to-use-a-habit-tracker/" class="mobile-nav__sub">How to Use a Habit Tracker</a>
+        <a href="/blog/habit-tracker-vs-to-do-list/" class="mobile-nav__sub">Habit Tracker vs To-Do List</a>
     </div>
     <a href="/#pricing">Pricing</a>
     <a href="/#contact">Contact</a>
@@ -137,24 +147,62 @@
                     </button>
                     <div class="nav-dropdown__menu">
                         <div class="nav-dropdown__menu-inner">
-                            <a href="/solutions/morning-routine/" class="nav-dropdown__item">
+                            <a href="/solutions/morning-routine/" class="nav-dropdown__item" aria-label="Morning Routine guide">
                                 <div class="nav-dropdown__item-icon">🌅</div>
                                 <div class="nav-dropdown__item-text"><strong>Build a Morning Routine</strong><span>Start your day with intention</span></div>
                             </a>
-                            <a href="/solutions/productivity-at-work/" class="nav-dropdown__item">
+                            <a href="/solutions/productivity-at-work/" class="nav-dropdown__item" aria-label="Productivity at Work guide">
                                 <div class="nav-dropdown__item-icon">💼</div>
                                 <div class="nav-dropdown__item-text"><strong>Productivity at Work</strong><span>Habits that improve performance</span></div>
                             </a>
-                            <a href="/blog/best-habit-tracker-apps-2026/" class="nav-dropdown__item">
-                                <div class="nav-dropdown__item-icon">📝</div>
-                                <div class="nav-dropdown__item-text"><strong>Best Habit Tracker Apps 2026</strong><span>Free &amp; paid comparison guide</span></div>
-                            </a>
-                            <a href="/blog/" class="nav-dropdown__item">
-                                <div class="nav-dropdown__item-icon">📚</div>
-                                <div class="nav-dropdown__item-text"><strong>All Articles</strong><span>Habit tips &amp; productivity guides</span></div>
-                            </a>
                         </div>
                     </div>
+                </div>
+                <div class="nav-dropdown" id="dd-blog">
+                    <button class="nav-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
+                        Blog
+                        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+                    </button>
+                    <div class="nav-dropdown__menu" style="left: auto; right: 0;">
+                        <div class="nav-dropdown__menu-inner" style="min-width: 280px;">
+                            <a href="/blog/" class="nav-dropdown__item" aria-label="All Articles" style="border-bottom: 1px solid var(--border); margin-bottom: 4px; padding-bottom: 12px;">
+                                <div class="nav-dropdown__item-icon">📚</div>
+                                <div class="nav-dropdown__item-text"><strong>All Articles</strong><span>Browse the full blog</span></div>
+                            </a>
+                            <a href="/blog/best-habit-tracker-apps-2026/" class="nav-dropdown__item" aria-label="Best Habit Tracker Apps 2026">
+                                <div class="nav-dropdown__item-icon">🏆</div>
+                                <div class="nav-dropdown__item-text"><strong>Best Habit Tracker Apps 2026</strong><span>Free &amp; paid comparison</span></div>
+                            </a>
+                            <a href="/blog/how-to-start-a-daily-habit/" class="nav-dropdown__item" aria-label="How to Start a Daily Habit">
+                                <div class="nav-dropdown__item-icon">🌱</div>
+                                <div class="nav-dropdown__item-text"><strong>How to Start a Daily Habit</strong><span>Build from scratch</span></div>
+                            </a>
+                            <a href="/blog/how-to-build-habits-that-stick/" class="nav-dropdown__item" aria-label="How to Build Habits That Stick">
+                                <div class="nav-dropdown__item-icon">🔗</div>
+                                <div class="nav-dropdown__item-text"><strong>Habits That Actually Stick</strong><span>Science-backed strategies</span></div>
+                            </a>
+                            <a href="/blog/how-to-break-bad-habits/" class="nav-dropdown__item" aria-label="How to Break Bad Habits">
+                                <div class="nav-dropdown__item-icon">🚫</div>
+                                <div class="nav-dropdown__item-text"><strong>How to Break Bad Habits</strong><span>Replace, don't resist</span></div>
+                            </a>
+                            <a href="/blog/how-long-to-build-a-habit/" class="nav-dropdown__item" aria-label="How Long Does It Take to Build a Habit">
+                                <div class="nav-dropdown__item-icon">⏳</div>
+                                <div class="nav-dropdown__item-text"><strong>How Long to Build a Habit</strong><span>The real timeline</span></div>
+                            </a>
+                            <a href="/blog/what-habits-to-track/" class="nav-dropdown__item" aria-label="What Habits to Track">
+                                <div class="nav-dropdown__item-icon">📋</div>
+                                <div class="nav-dropdown__item-text"><strong>What Habits to Track</strong><span>Best habits to start with</span></div>
+                            </a>
+                            <a href="/blog/how-to-use-a-habit-tracker/" class="nav-dropdown__item" aria-label="How to Use a Habit Tracker">
+                                <div class="nav-dropdown__item-icon">📱</div>
+                                <div class="nav-dropdown__item-text"><strong>How to Use a Habit Tracker</strong><span>Get the most from your app</span></div>
+                            </a>
+                            <a href="/blog/habit-tracker-vs-to-do-list/" class="nav-dropdown__item" aria-label="Habit Tracker vs To-Do List">
+                                <div class="nav-dropdown__item-icon">⚖️</div>
+                                <div class="nav-dropdown__item-text"><strong>Habit Tracker vs To-Do List</strong><span>Which one do you need?</span></div>
+                            </a>
+                        </div>
+                    </div
                 </div>
                 <a href="/#pricing">Pricing</a>
                 <a href="/#about">About</a>
