@@ -892,7 +892,8 @@
             { "@type": "Offer", "price": "6.99", "priceCurrency": "AUD", "name": "Pro Monthly", "eligibleRegion": { "@type": "Country", "name": "Australia" } },
             { "@type": "Offer", "price": "3.99", "priceCurrency": "USD", "name": "Pro Monthly", "eligibleRegion": { "@type": "Country", "name": "United States" } },
             { "@type": "Offer", "price": "39.99", "priceCurrency": "AUD", "name": "Pro Yearly", "eligibleRegion": { "@type": "Country", "name": "Australia" } },
-            { "@type": "Offer", "price": "24.99", "priceCurrency": "USD", "name": "Pro Yearly", "eligibleRegion": { "@type": "Country", "name": "United States" } }
+            { "@type": "Offer", "price": "24.99", "priceCurrency": "USD", "name": "Pro Yearly", "eligibleRegion": { "@type": "Country", "name": "United States" } },
+            { "@type": "Offer", "price": "34.99", "priceCurrency": "USD", "name": "Lifetime Pro", "description": "One-time purchase, all Pro features forever" }
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
@@ -2027,7 +2028,7 @@
             <h2 id="pricing-heading">Simple, transparent pricing</h2>
             <p class="lead">Start free. Upgrade when you want more. No hidden costs.</p>
         </div>
-        <div class="pricing-grid">
+        <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <!-- Free -->
             <article class="pricing-card">
                 <h3>Free</h3>
@@ -2042,7 +2043,7 @@
                     <li>Habit templates (5 starter)</li>
                     <li>Basic progress view</li>
                 </ul>
-                <div style="margin-top: 28px; display: flex; justify-content: center;">
+                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
                     <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                        class="appstore-badge-link"
                        aria-label="Download Productify free on the App Store">
@@ -2067,7 +2068,7 @@
                     <li>Custom habit units</li>
                     <li>Priority support</li>
                 </ul>
-                <div style="margin-top: 28px; display: flex; justify-content: center;">
+                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
                     <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                        class="appstore-badge-link"
                        aria-label="Start Productify Pro free trial on the App Store">
@@ -2075,9 +2076,34 @@
                     </a>
                 </div>
             </article>
+            <!-- Lifetime -->
+            <article class="pricing-card" style="border-color: #7C3AED; box-shadow: 0 0 0 1px rgba(124,58,237,.15), var(--shadow-md); position: relative;">
+                <div class="pricing-badge" style="background: #7C3AED;">Best Value</div>
+                <h3>Lifetime</h3>
+                <div class="price" style="font-size: 2.4rem;">$34.99</div>
+                <div class="price-period">one-time · pay once, own forever</div>
+                <p class="pricing-desc">Everything in Pro, with no recurring charges. Ever.</p>
+                <hr class="pricing-divider">
+                <ul class="check-list">
+                    <li>All Pro features included</li>
+                    <li>Unlimited habits</li>
+                    <li>Habit Duo (shared accountability)</li>
+                    <li>AI Habit Analyser</li>
+                    <li>All habit templates</li>
+                    <li>All future updates included</li>
+                    <li>Priority support</li>
+                </ul>
+                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="appstore-badge-link"
+                       aria-label="Get Productify Lifetime on the App Store">
+                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44">
+                    </a>
+                </div>
+            </article>
         </div>
         <p class="text-center text-muted mt-32" style="font-size: .85rem; margin-top: 28px;">
-            All plans include a 7-day free trial for Pro features. Cancel anytime from the App Store.
+            Pro plan includes a 7-day free trial. Cancel anytime from the App Store. Lifetime is a one-time in-app purchase.
         </p>
     </div>
 </section>
