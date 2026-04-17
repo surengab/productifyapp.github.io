@@ -267,6 +267,25 @@ h3 {
     font-size: .65rem; font-weight: 700; margin-top: 3px;
 }
 
+/* ─── NEXT STEP BOX ───────────────────────────────────────────────────────── */
+.next-step-box {
+    background: var(--blue-dim); border: 1px solid var(--blue); border-radius: 12px;
+    padding: 24px 28px; margin: 40px 0 32px;
+}
+.next-step-box h3 {
+    font-size: 1rem; font-weight: 700; color: var(--blue); margin: 0 0 14px;
+    text-transform: uppercase; letter-spacing: .05em;
+}
+.next-step-box ol {
+    margin: 0 0 12px; padding-left: 20px;
+}
+.next-step-box li {
+    font-size: .95rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 6px;
+}
+.next-step-box p {
+    font-size: .9rem; color: var(--ink-muted); margin: 12px 0 0; font-style: italic;
+}
+
 /* ─── USE CASE CARDS ──────────────────────────────────────────────────────── */
 .use-case-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;

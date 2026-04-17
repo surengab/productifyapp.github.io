@@ -116,6 +116,12 @@
         .habit-loop-step__name { font-size: 1rem; font-weight: 700; color: var(--ink); }
         .habit-loop-arrow { font-size: 1.4rem; color: var(--ink-muted); padding: 0 8px; }
         @media (max-width: 520px) { .habit-loop-arrow { display: none; } .habit-loop-step { width: 100%; } }
+        .step-plan { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin: 24px 0; }
+        .step-plan__row { display: grid; grid-template-columns: 100px 1fr; gap: 0; border-bottom: 1px solid var(--border); }
+        .step-plan__row:last-child { border-bottom: none; }
+        .step-plan__day { background: var(--bg-alt); padding: 16px 18px; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--blue); display: flex; align-items: center; }
+        .step-plan__content { padding: 16px 20px; font-size: .95rem; color: var(--ink-2); line-height: 1.7; }
+        @media (max-width: 520px) { .step-plan__row { grid-template-columns: 1fr; } .step-plan__day { padding: 10px 16px; } }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3DE9J4KYW"></script>
@@ -326,6 +332,7 @@
                     <li><a href="#habit-stacking">Habit stacking: attach new habits to existing ones</a></li>
                     <li><a href="#environment-design">Design your environment for automatic behaviour</a></li>
                     <li><a href="#track-your-progress">Track your progress: why streaks work</a></li>
+                    <li><a href="#week-one-plan">Putting it all together: your first week</a></li>
                     <li><a href="#faq">Frequently asked questions</a></li>
                 </ol>
             </nav>
@@ -449,6 +456,45 @@
                 One caution: don't let the streak become the goal. The goal is the habit. If you break a streak, the most important rule is: <strong>never miss twice.</strong> One miss is an accident. Two misses is the start of a new habit, the habit of not doing it.
             </p>
 
+            <h2 id="week-one-plan">Putting it all together: your first week</h2>
+            <p>
+                The five techniques above work best as a system, not as a menu. Here's how to apply all of them to a single habit from day one, using "read every evening" as the example.
+            </p>
+
+            <div class="step-plan">
+                <div class="step-plan__row">
+                    <div class="step-plan__day">Day 1</div>
+                    <div class="step-plan__content">
+                        <strong>Design the loop.</strong> Identify your cue (brushing your teeth), your minimum routine (read one page), and your immediate reward (mark it done in a tracker). Put your book on your pillow so it's the first thing you see. Put your phone in another room.
+                    </div>
+                </div>
+                <div class="step-plan__row">
+                    <div class="step-plan__day">Days 2–3</div>
+                    <div class="step-plan__content">
+                        <strong>Run the minimum.</strong> After brushing your teeth, read one page only. No more. The goal this week is not reading — it's the trigger-action link. Log it in the tracker regardless of how little you read.
+                    </div>
+                </div>
+                <div class="step-plan__row">
+                    <div class="step-plan__day">Days 4–5</div>
+                    <div class="step-plan__content">
+                        <strong>Notice what you actually want to do.</strong> After the one page, do you want to keep reading? Good. Do. But don't extend the requirement yet. The impulse to continue is the habit starting to form.
+                    </div>
+                </div>
+                <div class="step-plan__row">
+                    <div class="step-plan__day">Days 6–7</div>
+                    <div class="step-plan__content">
+                        <strong>Check your streak and review.</strong> Seven days in, look at your tracker. Did you miss a day? One miss is fine — resume tonight. Two misses means the cue isn't reliable: adjust when or where you do it. If all seven are checked: the loop is working. Hold the minimum for another week before expanding.
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                The same pattern applies to any habit. The first week is never about performance — it's about proving to your brain that the cue reliably leads to the routine. Once that connection is solid, duration and intensity can grow on their own.
+            </p>
+            <div class="highlight-box">
+                <p><strong>This week's action:</strong> Pick one habit. Write out your cue, your minimum version, and your reward. Set up one environmental cue. Open a habit tracker and log day one tonight.</p>
+            </div>
+
             <h2 id="faq">Frequently asked questions</h2>
 
             <div class="faq-item">
@@ -484,6 +530,18 @@
                 <div class="faq-answer">
                     <p>Yes. Research shows that self-monitoring significantly increases goal achievement. Habit tracking apps like Productify make the streak visible, creating a "don't break the chain" effect where the streak itself becomes a motivating reward. This visual feedback loop is one of the most evidence-backed habit-formation tools available.</p>
                 </div>
+            </div>
+
+            <div class="next-step-box">
+                <h3>Start today</h3>
+                <ol>
+                    <li>Pick one habit you've been meaning to build. Write it down.</li>
+                    <li>Shrink it to under 2 minutes. Write the minimum version next to it.</li>
+                    <li>Identify the existing habit you'll stack it after.</li>
+                    <li>Make one environmental change that removes friction (put something visible, remove something distracting).</li>
+                    <li>Open a habit tracker and log day one tonight.</li>
+                </ol>
+                <p>That's the full system. Everything else is refinement.</p>
             </div>
 
             <h2>Related reading</h2>
