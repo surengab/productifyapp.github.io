@@ -864,6 +864,31 @@
             .pricing-grid { grid-template-columns: 1fr; }
         }
 
+        /* ─── PLATFORM STRIP ────────────────────────────── */
+        .platform-strip {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+        }
+        .platform-strip__inner {
+            display: flex; align-items: center; justify-content: center;
+            flex-wrap: wrap; gap: 0;
+        }
+        .platform-item {
+            display: flex; align-items: center; gap: 7px;
+            font-size: .82rem; font-weight: 500; color: var(--ink-muted);
+            padding: 6px 20px;
+        }
+        .platform-item__icon { font-size: 1rem; }
+        .platform-divider {
+            width: 1px; height: 20px; background: var(--border); flex-shrink: 0;
+        }
+        @media (max-width: 640px) {
+            .platform-divider { display: none; }
+            .platform-item { padding: 4px 14px; }
+        }
+
         /* ─── UTILITY ────────────────────────────────────── */
         .mt-8  { margin-top: 8px; }
         .mt-16 { margin-top: 16px; }
@@ -1029,16 +1054,6 @@
             "contactType": "Customer Support",
             "email": "contact@deductify.org"
         }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Productify",
-        "url": "https://productifyapp.org/",
-        "description": "Minimalist daily routine app for iOS. AI insights, Habit Duo accountability, templates, streak tracking.",
-        "publisher": { "@type": "Organization", "name": "Productify" }
     }
     </script>
     <!-- Google Analytics -->
@@ -1222,13 +1237,13 @@
     <div class="container">
         <div class="hero__inner">
             <div class="hero__text">
-                <div class="eyebrow">Free Habit Tracker App · iOS 15+</div>
+                <div class="eyebrow">Free Habit Tracker App for iPhone · iOS 15+</div>
                 <h1 id="hero-heading">
                     The daily habit tracker<br>
                     <span>built for real life.</span>
                 </h1>
                 <p class="lead">
-                    Productify is a minimalist <strong>habit tracker</strong> for iOS built around one idea: consistency beats perfection, every time. Track your habits, build streaks, stay accountable with a friend, and let AI surface what's quietly working.
+                    Productify is a <strong>habit tracker app for iPhone</strong> built around one idea: consistency beats perfection, every time. Track habits, build streaks, stay accountable with a friend via <a href="/features/habit-duo/" style="color: var(--blue); font-weight: 600;">Habit Duo</a>, and let AI surface what's quietly working.
                 </p>
                 <div class="hero__cta-group">
                     <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
@@ -1273,6 +1288,38 @@
             <div class="trust-item">
                 <span class="trust-item__icon">🆓</span>
                 <span><strong>Free</strong> to start, no credit card</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== PLATFORM STRIP ===================== -->
+<div class="platform-strip" aria-label="Platform support">
+    <div class="container">
+        <div class="platform-strip__inner">
+            <div class="platform-item">
+                <span class="platform-item__icon">📱</span>
+                <span>iPhone &amp; iPad</span>
+            </div>
+            <div class="platform-divider" aria-hidden="true"></div>
+            <div class="platform-item">
+                <span class="platform-item__icon">⌚</span>
+                <span>Apple Watch</span>
+            </div>
+            <div class="platform-divider" aria-hidden="true"></div>
+            <div class="platform-item">
+                <span class="platform-item__icon">🟦</span>
+                <span>Home Screen Widgets</span>
+            </div>
+            <div class="platform-divider" aria-hidden="true"></div>
+            <div class="platform-item">
+                <span class="platform-item__icon">🔔</span>
+                <span>Live Activities</span>
+            </div>
+            <div class="platform-divider" aria-hidden="true"></div>
+            <div class="platform-item">
+                <span class="platform-item__icon">🔒</span>
+                <span>Privacy first · no account needed</span>
             </div>
         </div>
     </div>
@@ -1385,7 +1432,10 @@
                         <li>A quiet notification when your partner completes the day</li>
                         <li>The accountability of a gym buddy, without the scheduling</li>
                     </ul>
-                    <p class="lead" style="margin-top: 20px; font-size: .9rem;">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; align-items: center;">
+                        <a href="/features/habit-duo/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Learn about Habit Duo →</a>
+                        <span style="font-size: .87rem; color: var(--ink-muted);">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
+                    </div>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone" style="gap: 16px; display: flex; align-items: flex-end; justify-content: center; padding: 24px 16px;">
                     <img src="screenshot_habit_duo_choose.png"
@@ -1487,7 +1537,10 @@
                         <li>Receive suggestions grounded in your actual data, not generic advice</li>
                         <li>Tone that's calm, honest, and non-judgmental</li>
                     </ul>
-                    <p class="lead" style="margin-top: 20px; font-size: .9rem;">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; align-items: center;">
+                        <a href="/features/ai-analyser/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Learn about AI Analyser →</a>
+                        <span style="font-size: .87rem; color: var(--ink-muted);">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
+                    </div>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
                     <img src="screenshot_ai_analyser.png"
@@ -1986,6 +2039,40 @@
                     </div>
                 </div>
             </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== BLOG TEASER ===================== -->
+<section class="section section--alt" aria-labelledby="blog-teaser-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">From the Blog</div>
+            <h2 id="blog-teaser-heading">Guides that actually help you build habits</h2>
+            <p class="lead">Practical, evidence-based advice on habit tracking, daily routines, and making behaviour change last.</p>
+        </div>
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <a href="/blog/how-to-build-habits-that-stick/" class="feature-card feature-card--link" aria-label="How to build habits that stick">
+                <div class="feature-card__icon">🔗</div>
+                <h3>How to Build Habits That Stick</h3>
+                <p class="text-muted">The five tactics backed by habit research — cue, routine, reward, environment, and accountability — and how to combine them.</p>
+                <span class="feature-card__cta">Read the guide →</span>
+            </a>
+            <a href="/blog/how-to-start-a-daily-habit/" class="feature-card feature-card--link" aria-label="How to start a daily habit">
+                <div class="feature-card__icon">🌱</div>
+                <h3>How to Start a Daily Habit</h3>
+                <p class="text-muted">Why starting small beats starting strong — and a clear framework for building a daily routine from scratch, even if you've tried before.</p>
+                <span class="feature-card__cta">Read the guide →</span>
+            </a>
+            <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link" aria-label="Best habit tracker apps 2026">
+                <div class="feature-card__icon">🏆</div>
+                <h3>Best Habit Tracker Apps 2026</h3>
+                <p class="text-muted">An honest side-by-side comparison of the top free and paid habit tracker apps for iPhone — including what each one does best.</p>
+                <span class="feature-card__cta">Read the guide →</span>
+            </a>
+        </div>
+        <div style="text-align: center; margin-top: 36px;">
+            <a href="/blog/" class="btn btn-secondary">Browse all articles →</a>
         </div>
     </div>
 </section>
