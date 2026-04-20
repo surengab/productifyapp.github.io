@@ -251,6 +251,25 @@ h3 {
 .article h3 { margin: 32px 0 10px; font-size: 1.05rem; }
 .article p { font-size: .97rem; color: var(--ink-2); line-height: 1.9; margin-bottom: 16px; }
 .article p:last-child { margin-bottom: 0; }
+.article a,
+.article .check-list a,
+.article .highlight-box a,
+.article .next-step-box a,
+.lead a,
+p a,
+li a {
+    color: var(--blue);
+    text-decoration: none;
+}
+.article a:hover,
+.article .check-list a:hover,
+.article .highlight-box a:hover,
+.article .next-step-box a:hover,
+.lead a:hover,
+p a:hover,
+li a:hover {
+    color: var(--blue-dark);
+}
 
 /* ─── CHECK LIST ──────────────────────────────────────────────────────────── */
 .check-list { display: flex; flex-direction: column; gap: 11px; margin: 20px 0; }
