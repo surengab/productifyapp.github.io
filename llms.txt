@@ -1,0 +1,65 @@
+# Productify
+
+> Productify is the best free daily habit tracker app for iPhone. Build lasting routines with AI insights, streak tracking, Habit Duo accountability, and 50+ templates. Free to download, no account required.
+
+This file lists all pages on productifyapp.org with their markdown companion URLs, for use by AI agents and language models. Each HTML page has a corresponding `.md` file that returns the same content as `Content-Type: text/markdown`.
+
+---
+
+## How to access markdown versions
+
+Replace the trailing `/` of any URL with `/index.md`, or append `index.md` to any page path:
+
+- HTML: `https://productifyapp.org/blog/best-habit-tracker-apps-2026/`
+- Markdown: `https://productifyapp.org/blog/best-habit-tracker-apps-2026/index.md`
+
+All markdown files are signalled in each page's `<head>` via:
+```html
+<link rel="alternate" type="text/markdown" href="index.md">
+```
+
+---
+
+## Pages
+
+### Homepage
+- [Productify – Best Daily Habit Tracker App for iOS](https://productifyapp.org/index.md)
+
+### Blog
+- [Blog index – All articles](https://productifyapp.org/blog/index.md)
+- [6 Best Habit Tracker Apps to Use in 2026 (Free & Paid)](https://productifyapp.org/blog/best-habit-tracker-apps-2026/index.md)
+- [How to Build Habits That Actually Stick (Science-Backed)](https://productifyapp.org/blog/how-to-build-habits-that-stick/index.md)
+- [How to Start a Daily Habit (Even If You've Failed Before)](https://productifyapp.org/blog/how-to-start-a-daily-habit/index.md)
+- [How to Break Bad Habits: A Step-by-Step Guide](https://productifyapp.org/blog/how-to-break-bad-habits/index.md)
+- [Habit Tracker vs To-Do List: Which Do You Actually Need?](https://productifyapp.org/blog/habit-tracker-vs-to-do-list/index.md)
+- [How to Use a Habit Tracker: A Complete Beginner's Guide](https://productifyapp.org/blog/how-to-use-a-habit-tracker/index.md)
+- [How Long Does It Take to Build a Habit? (The Real Science)](https://productifyapp.org/blog/how-long-to-build-a-habit/index.md)
+- [What Habits Should I Track? 30 Daily Habits Worth Building](https://productifyapp.org/blog/what-habits-to-track/index.md)
+
+### Features
+- [Habit Tracker – Best Daily Habit Tracker for iOS 2026](https://productifyapp.org/features/habit-tracker/index.md)
+- [Habit Duo – Accountability Habit Tracker With a Friend](https://productifyapp.org/features/habit-duo/index.md)
+- [AI Habit Analyser – Personalised Habit Insights](https://productifyapp.org/features/ai-analyser/index.md)
+- [Habit Templates – 50+ Ready-Made Daily Habits](https://productifyapp.org/features/habit-templates/index.md)
+- [Streak Tracking – Build Momentum Without the Guilt](https://productifyapp.org/features/streak-tracking/index.md)
+- [Habit Streaks – Visualizing Your Consistency](https://productifyapp.org/features/habit-streaks/index.md)
+- [Smart Reminders – Daily Cues That Help, Not Nag](https://productifyapp.org/features/smart-reminders/index.md)
+- [Measurable Goals – Track Steps, Minutes & More](https://productifyapp.org/features/measurable-goals/index.md)
+- [Minimalist Design – Why Calm UI Builds Better Habits](https://productifyapp.org/features/minimalist-design/index.md)
+
+### Solutions
+- [How to Build a Morning Routine That Actually Sticks](https://productifyapp.org/solutions/morning-routine/index.md)
+- [Productivity Habits at Work – Build Routines That Improve Performance](https://productifyapp.org/solutions/productivity-at-work/index.md)
+
+---
+
+## About Productify
+
+- **App:** [Download on the App Store](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237)
+- **Platform:** iOS 15+, Apple Watch
+- **Price:** Free to start · Pro subscription available
+- **Account required:** No
+- **App Store rating:** 4.9 stars
+- **Website:** https://productifyapp.org/
+- **Contact:** https://productifyapp.org/#contact
+- **Twitter/X:** https://x.com/Productify_app
