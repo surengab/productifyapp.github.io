@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 
+# Raw markdown sources are non-canonical; HTML pages are indexable
+Disallow: /*.md$
+
 # Block internal/build artefacts
 Disallow: /.git/
 Disallow: /node_modules/
