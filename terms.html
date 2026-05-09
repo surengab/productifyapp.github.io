@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use – Productify</title>
+    <meta name="description" content="Terms of Use for Productify and Productify Pro subscriptions, auto-renewal, cancellations, and policies from DEDUCTIFY LLC.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://productifyapp.org/terms.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="theme-color" content="#6B6FD4">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3DE9J4KYW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M3DE9J4KYW');
+    </script>
+
+    <style>
+        :root {
+            --blue:       #2563EB;
+            --blue-dim:   rgba(37,99,235,0.08);
+            --bg:         #ffffff;
+            --bg-alt:     #F7F8FA;
+            --border:     #E5E7EB;
+            --ink:        #111827;
+            --ink-2:      #374151;
+            --ink-muted:  #6B7280;
+            --dark-bg:    #0F172A;
+            --dark-border:rgba(255,255,255,0.08);
+            --radius-card:16px;
+            --shadow-xs:  0 1px 3px rgba(0,0,0,0.07);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--ink-2);
+            background: var(--bg);
+            line-height: 1.75;
+        }
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── NAV ─────────────────────────────────── */
+        .navbar {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .navbar__inner {
+            max-width: 860px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 60px;
+        }
+        .logo { font-size: 1.25rem; font-weight: 800; color: var(--ink); letter-spacing: -.5px; }
+        .nav-back {
+            font-size: .88rem; font-weight: 500; color: var(--ink-muted);
+            display: flex; align-items: center; gap: 6px;
+        }
+        .nav-back:hover { color: var(--ink); text-decoration: none; }
+
+        /* ── HERO ────────────────────────────────── */
+        .page-hero {
+            background: var(--bg-alt);
+            border-bottom: 1px solid var(--border);
+            padding: 52px 24px 44px;
+            text-align: center;
+        }
+        .page-hero .eyebrow {
+            display: inline-block;
+            font-size: .71rem; font-weight: 600; letter-spacing: .13em;
+            text-transform: uppercase; color: var(--blue);
+            background: var(--blue-dim); border: 1px solid rgba(37,99,235,.15);
+            padding: 4px 14px; border-radius: 50px; margin-bottom: 16px;
+        }
+        .page-hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800; color: var(--ink); letter-spacing: -1px;
+            line-height: 1.15; margin-bottom: 12px;
+        }
+        .page-hero p {
+            font-size: .95rem; color: var(--ink-muted); max-width: 480px; margin: 0 auto;
+        }
+
+        /* ── CONTENT ─────────────────────────────── */
+        .content {
+            max-width: 860px; margin: 0 auto;
+            padding: 56px 24px 96px;
+        }
+        .policy-section {
+            margin-bottom: 48px;
+        }
+        .policy-section h2 {
+            font-size: 1.15rem; font-weight: 700; color: var(--ink);
+            margin-bottom: 14px; padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .policy-section p {
+            font-size: .95rem; color: var(--ink-2); margin-bottom: 12px;
+        }
+        .policy-section ul {
+            list-style: none; display: flex; flex-direction: column; gap: 8px;
+            margin: 12px 0;
+        }
+        .policy-section ul li {
+            font-size: .95rem; color: var(--ink-2);
+            display: flex; align-items: flex-start; gap: 10px;
+        }
+        .policy-section ul li::before {
+            content: '•'; color: var(--blue); font-weight: 700;
+            flex-shrink: 0; margin-top: 2px;
+        }
+        .policy-section a { color: var(--blue); }
+
+        .info-box {
+            background: var(--bg-alt); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px 24px; margin: 16px 0;
+        }
+        .info-box strong { display: block; font-size: .88rem; font-weight: 700;
+            color: var(--ink); margin-bottom: 8px; text-transform: uppercase;
+            letter-spacing: .05em; }
+
+        .last-updated {
+            font-size: .82rem; color: var(--ink-muted);
+            background: var(--bg-alt); border: 1px solid var(--border);
+            border-radius: 8px; padding: 10px 16px;
+            margin-bottom: 40px; display: inline-block;
+        }
+
+        /* ── FOOTER ──────────────────────────────── */
+        .footer {
+            background: var(--dark-bg);
+            border-top: 1px solid var(--dark-border);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .footer p { font-size: .82rem; color: rgba(248,250,252,.4); }
+        .footer a { color: rgba(248,250,252,.55); }
+        .footer a:hover { color: #F8FAFC; }
+        .footer__links { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; flex-wrap: wrap; }
+    </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="navbar">
+    <div class="navbar__inner">
+        <a href="/" class="logo">Productify</a>
+        <a href="/" class="nav-back">
+            ← Back to home
+        </a>
+    </div>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of Use</h1>
+    <p>Subscriptions, the App, and optional features — in one place.</p>
+</div>
+
+<!-- CONTENT -->
+<main class="content">
+
+    <span class="last-updated">Last updated: April 2026</span>
+
+    <div class="policy-section">
+        <h2>Acceptance of Terms</h2>
+        <p>The Productify mobile application (“App”) and related services are owned and operated by DEDUCTIFY LLC (“we,” “us,” or “our”). These Terms of Use (“Terms”), together with any general terms and conditions that apply to services we provide through the App, govern your relationship with DEDUCTIFY LLC. They remain in effect for your current use and for future transactions unless replaced as described below.</p>
+        <p>By downloading, installing, establishing an account for, or using the App, you confirm that you accept these Terms. If you do not agree, do not use the App.</p>
+        <p>Our <a href="/privacy.html">Privacy Policy</a> describes how we collect, use, and process your data and is incorporated by reference where applicable.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Auto-renewable subscriptions (Productify Pro)</h2>
+        <div class="info-box">
+            <strong>How Productify Pro billing works</strong>
+            <p>Productify Pro is an optional subscription. Payment is charged to your Apple ID account at confirmation of purchase.</p>
+            <p style="margin-top:10px;">The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period.</p>
+            <p style="margin-top:10px;">Your account will be charged for renewal within 24 hours prior to the end of the current period, at the price of the plan you selected (for example, $17.99 per year where that plan is offered—actual prices are shown in the App at purchase).</p>
+            <p style="margin-top:10px;">You can manage your subscription and turn off auto-renewal in your Apple ID account Settings after purchase.</p>
+            <p style="margin-top:10px;">You cannot cancel the current subscription period before it expires; you retain access until the end of the paid period. Thank you for your support.</p>
+        </div>
+        <p>For purchases made through Google Play or other platforms we may support, renewal and cancellation follow that platform’s rules and are shown at checkout.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Availability, errors, and inaccuracies</h2>
+        <p>We continually update our products and services. Information in the App, on our website, or in advertising elsewhere may be delayed, incomplete, out of date, or contain errors. Descriptions or prices may be inaccurate or offerings may be unavailable. We do not warrant that any information is complete or current.</p>
+        <p>We may change or update information and correct errors, inaccuracies, or omissions at any time without prior notice.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Paid subscription (Productify Pro)</h2>
+        <p>After you register or start using the App, optional paid packages (“subscription access”) may be offered for different periods, as shown in the App’s subscription options.</p>
+        <p>Productify Pro is a paid subscription that unlocks additional features in our mobile application. Premium plans offer the same set of premium features, including:</p>
+        <ul>
+            <li>Unlimited habits</li>
+            <li>Habit Duo (one friend, one habit)</li>
+            <li>AI habit assistant</li>
+            <li>Multiple themes</li>
+            <li>Export data as CSV</li>
+            <li>Mood tracker</li>
+            <li>Smart reminders</li>
+        </ul>
+        <p style="margin-top:14px;">We may offer plans such as:</p>
+        <ul>
+            <li><strong>Monthly Premium</strong> — billed each month</li>
+            <li><strong>Yearly Premium</strong> — billed once per year</li>
+            <li><strong>Lifetime Premium</strong> — a one-time purchase for ongoing Premium access without a subscription renewal, as described at purchase</li>
+        </ul>
+        <p style="margin-top:14px;">You have access to the corresponding services for as long as your subscription or lifetime entitlement remains valid under these Terms and the applicable app store.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Purchase agreement</h2>
+        <p>When you subscribe through the App, you submit a binding offer by selecting a plan and completing the in-app purchase flow (for example, confirming with your Apple ID or Google account password when prompted). The contract for a paid subscription is formed when the platform accepts the transaction and we make Premium available to you.</p>
+        <p>If we offer purchases through a web checkout, any order confirmation or receipt we send by email may serve as confirmation of the agreement on a durable medium, together with these Terms. Agreement text is retained subject to our Privacy Policy.</p>
+        <p>Before completing a purchase, you can review the price, term, and renewal terms shown in the App or checkout screen.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Cancellation policy and statutory withdrawal (consumers)</h2>
+        <p>If you are a consumer under applicable law (you use the App mainly for personal, non-business purposes), you may have a statutory right to withdraw from a distance contract for a paid subscription, as required in your jurisdiction.</p>
+        <p><strong>In-app purchases.</strong> For subscriptions started through the Apple App Store or Google Play, withdrawal and refund requests are often handled by Apple or Google under their policies and local law. Please check the platform’s terms for your region.</p>
+
+        <h3 style="font-size:1rem;font-weight:700;color:var(--ink);margin:20px 0 10px;">Withdrawal right (where applicable)</h3>
+        <p>Where this right applies to a direct agreement with DEDUCTIFY LLC, you may have the right to withdraw within seven days from the date the agreement was executed, without giving a reason. Some jurisdictions require a longer period; if mandatory law in your country provides more time, that law applies.</p>
+        <p>To exercise your right of withdrawal against us where it applies, notify us at <a href="mailto:contact@deductify.org">contact@deductify.org</a> with a clear statement (for example by email) of your decision to cancel the agreement.</p>
+
+        <h3 style="font-size:1rem;font-weight:700;color:var(--ink);margin:20px 0 10px;">Cancellation consequences</h3>
+        <p>If you cancel this agreement in accordance with applicable law, we will refund all payments we received from you without undue delay and at the latest within fourteen days from the day we received your notice of cancellation. We will use the same payment method you used for the original transaction unless we expressly agree otherwise; you will not be charged fees for this refund beyond what applicable law allows.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Managing and cancelling subscriptions</h2>
+        <p>You may use a free tier of the App where offered, subject to these Terms. You may stop using the free tier at any time by discontinuing use or deleting the App (and your account, if any, where the App provides that option).</p>
+        <p>Paid subscription access runs for at least the term you selected and renews automatically unless you cancel at least 24 hours before the end of the current period, as described above.</p>
+        <p>You may cancel as follows:</p>
+        <ul>
+            <li><strong>Web or account settings (if available):</strong> where we offer account management in the App or on the web, use the subscription or billing section in Settings to cancel.</li>
+            <li><strong>Apple App Store:</strong> cancel in your Apple ID subscription settings.</li>
+            <li><strong>Google Play:</strong> cancel in your Google Play subscription settings.</li>
+        </ul>
+        <p style="margin-top:14px;">Cancellation typically takes effect after the last day of the current paid period; you may then return to a free tier where available. If you subscribe again later, you may regain access to Premium features according to your new plan. If you delete your account where the App allows it, data may be removed as described in the App or our Privacy Policy. Our right to suspend or terminate for good cause remains unaffected.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>License to use the App</h2>
+        <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to install and use the App for personal, non-commercial purposes on devices you own or control, in line with the app store terms from which you obtained the App.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Eligibility</h2>
+        <p>The App is not directed to children under 13. If you are between 13 and the age of majority where you live, you may use the App only with a parent or guardian’s consent and supervision.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Acceptable use</h2>
+        <p>You agree not to:</p>
+        <ul>
+            <li>Use the App in any way that violates applicable law or third-party rights</li>
+            <li>Attempt to reverse engineer, decompile, or disassemble the App except where applicable law allows</li>
+            <li>Interfere with or disrupt the App, our systems, or other users’ use of the service</li>
+            <li>Use automated means to access the App in a manner that imposes an unreasonable load on our infrastructure</li>
+            <li>Remove or alter any proprietary notices or branding</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>Optional AI features</h2>
+        <p>The App may include optional AI-powered habit coaching or analysis. If you use those features:</p>
+        <ul>
+            <li>Output is generated automatically and may be inaccurate, incomplete, or unsuitable for your situation</li>
+            <li>AI output is not medical, legal, financial, or professional advice</li>
+            <li>You are responsible for how you interpret and act on suggestions</li>
+        </ul>
+        <p style="margin-top:14px;">Third-party AI providers may process content you submit, as described in our Privacy Policy.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Intellectual property</h2>
+        <p>The App and its original content, features, and functionality are and will remain the exclusive property of DEDUCTIFY LLC and its licensors. The App is protected by copyright, trademark, and other laws of the United States and other countries. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.</p>
+        <p>You retain ownership of content you create in the App (such as habit data stored on your device). You grant us no license to that content except as needed to operate the service as described in our Privacy Policy.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Disclaimer of warranties</h2>
+        <p>THE APP IS PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Limitation of liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL DEDUCTIFY LLC, NOR ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES, BE LIABLE FOR ANY INDIRECT, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (I) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE APP OR RELATED SERVICES; (II) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY; (III) ANY CONTENT OBTAINED FROM THE APP OR SERVICE; OR (IV) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, WHETHER OR NOT WE HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, AND EVEN IF A REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE.</p>
+        <p>OUR TOTAL LIABILITY FOR ANY CLAIM ARISING OUT OF OR RELATING TO THESE TERMS OR THE APP SHALL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID US FOR THE APP OR IN-APP PURCHASES IN THE TWELVE MONTHS BEFORE THE CLAIM, OR (B) FIFTY U.S. DOLLARS (USD $50), IF NO SUCH PAYMENTS APPLY. SOME JURISDICTIONS DO NOT ALLOW CERTAIN LIMITATIONS; IN THOSE CASES, OUR LIABILITY IS LIMITED TO THE FULLEST EXTENT PERMITTED BY LAW.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Indemnification</h2>
+        <p>You agree to defend, indemnify, and hold harmless DEDUCTIFY LLC and its licensees and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including reasonable attorneys’ fees) arising from or related to (a) your use and access of the App or services, by you or anyone using your account, or (b) your breach of these Terms.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Changes to these Terms</h2>
+        <p>We may modify or replace these Terms at any time at our sole discretion. If a revision is material, we will provide at least 30 days’ notice before new terms take effect where we reasonably can. What constitutes a material change will be determined at our sole discretion.</p>
+        <p>When these Terms change, we may notify you via email or other contact information you have provided, or through the App or website. By continuing to access or use the App after revisions become effective, you agree to the updated Terms. If you do not agree, you must stop using the App.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Governing law and general</h2>
+        <p>These Terms are governed by the laws of the United States, without regard to conflict-of-law principles that would require application of another jurisdiction’s laws, except where mandatory consumer protections in your country of residence apply.</p>
+        <p>Disputes shall be brought in courts located in the United States where permitted by law, unless applicable law requires otherwise. If any provision is held unenforceable, the remainder remains in effect. Failure to enforce a provision is not a waiver. These Terms are the entire agreement between you and DEDUCTIFY LLC regarding the App, subject to mandatory app store terms where applicable.</p>
+        <p>We may suspend or terminate your access to the App if you materially breach these Terms or for other good cause where permitted by law.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>Contact us</h2>
+        <p>If you have questions about these Terms, email us at <a href="mailto:contact@deductify.org">contact@deductify.org</a>.</p>
+        <div class="info-box" style="margin-top:16px;">
+            <strong>DEDUCTIFY LLC</strong>
+            <p>Support: <a href="mailto:contact@deductify.org">contact@deductify.org</a></p>
+        </div>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__links">
+        <a href="/">Home</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="mailto:contact@deductify.org">Contact</a>
+    </div>
+    <p>&copy; 2026 Productify / DEDUCTIFY LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
