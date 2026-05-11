@@ -68,7 +68,7 @@
     <!-- Preconnect to App Store CDN for badge/link performance -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     <!-- Preload LCP hero image , browser fetches it during HTML parse, before CSS is processed -->
-    <link rel="preload" as="image" href="screenshot_daily.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/productify-home-screen.webp" fetchpriority="high" type="image/webp">
 
     <style>
         /* ─── TOKENS ─────────────────────────────────────── */
@@ -238,9 +238,6 @@
         }
         .appstore-badge:hover { opacity: .85; transform: translateY(-2px); }
         .appstore-badge--hero { width: 180px; }
-        @media (max-width: 480px) {
-            .appstore-badge--hero { width: 155px; }
-        }
 
         /* ─── NAV DROPDOWN ───────────────────────────────── */
         .nav-dropdown { position: relative; }
@@ -295,11 +292,6 @@
             display: block; font-size: .86rem; font-weight: 600; color: var(--ink);
         }
         .nav-dropdown__item-text span { font-size: .78rem; color: var(--ink-muted); }
-        /* mobile nav groups */
-        .mobile-nav__group { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .mobile-nav__group-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
-        .mobile-nav__sub { font-size: 1rem !important; }
-
         /* ─── NAVBAR ─────────────────────────────────────── */
         .navbar {
             position: sticky; top: 0; z-index: 100;
@@ -334,84 +326,207 @@
         /* ─── HERO ───────────────────────────────────────── */
         .hero {
             padding: 80px 0 0;
-            background: var(--bg);
+            background: linear-gradient(160deg, #ffffff 0%, #f5f0ff 100%);
             position: relative;
             overflow: hidden;
         }
         .hero::before {
             content: '';
             position: absolute; inset: 0;
-            background: radial-gradient(ellipse 1100px 480px at 50% -40px, rgba(37,99,235,.05) 0%, transparent 68%);
+            background: radial-gradient(ellipse 900px 400px at 70% 0%, rgba(123,78,230,.07) 0%, transparent 65%);
             pointer-events: none;
         }
         .hero__bg-orb { display: none; }
         .hero__inner {
             position: relative; z-index: 1;
             display: grid;
-            grid-template-columns: 52% 48%;
-            gap: 40px;
-            align-items: flex-end;
-            min-height: 540px;
+            grid-template-columns: 1fr 360px;
+            gap: 56px;
+            align-items: center;
+            padding: 0 0 72px;
         }
         .hero__text {
-            padding-bottom: 80px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
+        /* Prevent flex children from stretching to full column width */
+        .hero .eyebrow { align-self: flex-start; }
         .hero h1 { margin-bottom: 20px; text-align: left; }
-        .hero h1 span { color: var(--blue); }
-        .hero .lead { margin: 0 0 32px; text-align: left; }
+        .hero h1 span { color: #7b4ee6; }
+        .hero .lead { margin: 0 0 32px; text-align: left; max-width: 500px; }
         .hero__cta-group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .hero__note { margin-top: 12px; font-size: .8rem; color: var(--ink-faint); }
         .hero__visual {
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
-            gap: 16px;
-            height: 100%;
-            /* clip phones to a comfortable max so they don't overflow viewport */
-            max-height: 580px;
-            overflow: visible;
         }
-        .hero__phone {
-            border-radius: 38px;
-            box-shadow: var(--shadow-phone);
-            /* height-based sizing so they scale with the column, not overflow it */
-            height: min(520px, 58vw);
-            width: auto;
+        .phone-preview {
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 44px;
+            box-shadow: 0 24px 64px rgba(43, 28, 90, 0.16);
+            border: 1px solid rgba(123, 78, 230, 0.12);
+            max-width: 360px;
+            width: 100%;
+        }
+        .phone-preview img {
+            width: 100%;
+            display: block;
+            border-radius: 34px;
+            /* Show the top of the screen; intentionally clip the bottom */
+            max-height: 700px;
             object-fit: cover;
             object-position: top;
-            animation: float 7s ease-in-out infinite;
-            flex-shrink: 0;
-        }
-        .hero__phone--secondary {
-            height: min(460px, 50vw);
-            animation-delay: -3.5s;
-            margin-bottom: 32px;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(-12px); }
         }
         /* Tablet */
         @media (max-width: 960px) {
-            .hero__phone       { height: min(440px, 42vw); }
-            .hero__phone--secondary { height: min(390px, 36vw); }
+            .hero__inner { grid-template-columns: 1fr 300px; gap: 40px; }
+            .phone-preview { max-width: 300px; }
+            .phone-preview img { max-height: 600px; }
         }
-        /* single-column hero on mobile */
+        /* Hide header App Store badge on mobile — hero badge is enough */
+        @media (max-width: 768px) {
+            .nav-cta .appstore-badge-link { display: none; }
+        }
+        /* Single-column compact hero on mobile */
         @media (max-width: 720px) {
-            .hero { padding: 64px 0 0; text-align: center; }
-            .hero__inner { grid-template-columns: 1fr; gap: 40px; min-height: unset; }
-            .hero__text { padding-bottom: 0; }
+            .hero {
+                padding: 36px 0 32px;
+                text-align: center;
+                min-height: auto;
+            }
+            .hero__inner {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding-bottom: 0;
+            }
+            .hero .eyebrow { align-self: center; }
+            .hero h1 { margin-bottom: 14px; text-align: center; }
             .hero h1, .hero .lead { text-align: center; }
-            .hero .lead { margin: 0 auto 32px; }
-            .hero__cta-group { justify-content: center; }
-            .hero__visual { max-height: 360px; justify-content: center; }
-            .hero__phone { height: 320px; }
-            .hero__phone--secondary { display: none; }
+            .hero .lead { margin: 0 auto 22px; max-width: 100%; }
+            .hero__cta-group { justify-content: center; gap: 10px; }
+            .hero__note {
+                margin-top: 10px;
+                font-size: .78rem;
+                line-height: 1.4;
+            }
+            .appstore-badge--hero { width: 190px; max-width: 68vw; }
+            /* Shrink the "Explore features" btn-lg inside the hero */
+            .hero__cta-group .btn-lg {
+                padding: 13px 24px;
+                font-size: .95rem;
+                max-width: 280px;
+                width: auto;
+                margin-inline: auto;
+            }
+            .phone-preview {
+                max-width: min(88vw, 300px);
+                margin: 0 auto;
+                border-radius: 36px;
+                padding: 10px;
+            }
+            .phone-preview img {
+                max-height: 440px;
+                border-radius: 28px;
+                object-fit: cover;
+                object-position: top center;
+            }
+        }
+        /* Extra compact on small phones (≤480px / iPhone SE) */
+        @media (max-width: 480px) {
+            .hero { padding: 28px 0 28px; }
+            .appstore-badge--hero { width: 170px; }
+            .phone-preview { max-width: min(90vw, 280px); }
+            .phone-preview img { max-height: 400px; }
         }
 
+        /* ─── BENEFIT CHIPS (spotlight sections) ─────────── */
+        .benefit-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 24px;
+        }
+        .benefit-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #f5f0ff;
+            border: 1px solid rgba(123,78,230,.15);
+            border-radius: 50px;
+            padding: 7px 16px;
+            font-size: .85rem;
+            font-weight: 500;
+            color: #4a2fa0;
+        }
+        .benefit-chip__icon { font-size: 1rem; }
+
+        /* ─── MINI FEATURE GRID ───────────────────────────── */
+        .mini-features { padding: 80px 0; background: var(--bg); }
+        .mini-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+        }
+        .mini-feature-card {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px 20px;
+            transition: box-shadow .2s, border-color .2s;
+        }
+        .mini-feature-card:hover { border-color: rgba(123,78,230,.25); box-shadow: var(--shadow-sm); }
+        .mini-feature-card a { text-decoration: none; color: inherit; }
+        .mini-feature-card__icon { font-size: 1.6rem; margin-bottom: 12px; }
+        .mini-feature-card h3 { font-size: .97rem; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+        .mini-feature-card p { font-size: .84rem; color: var(--ink-muted); margin: 0; line-height: 1.55; }
+        .mini-feature-card__link {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: .8rem;
+            font-weight: 600;
+            color: #7b4ee6;
+        }
+
+        /* ─── MID-PAGE CTA STRIP ─────────────────────────── */
+        .mid-cta {
+            background: linear-gradient(135deg, #f5f0ff 0%, #eef3ff 100%);
+            border-top: 1px solid rgba(123,78,230,.1);
+            border-bottom: 1px solid rgba(123,78,230,.1);
+            padding: 40px 0;
+        }
+        .mid-cta__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .mid-cta__text h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+        .mid-cta__text p {
+            font-size: .92rem;
+            color: var(--ink-muted);
+            margin: 0;
+        }
+        .mid-cta__actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+        @media (max-width: 640px) {
+            .mid-cta__inner { flex-direction: column; text-align: center; }
+            .mid-cta__actions { justify-content: center; }
+        }
         /* ─── TRUST BAR ──────────────────────────────────── */
         .trust-bar {
             padding: 22px 0;
@@ -515,6 +630,29 @@
             position: relative; z-index: 1;
         }
         .spotlight__visual--phone::after { display: none; }
+        .duo-screenshots {
+            gap: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+        .habit-duo-screenshot {
+            flex: 1;
+            width: auto;
+            max-width: 100%;
+            max-height: 480px;
+            border-radius: 36px;
+            border: 1px solid rgba(123, 78, 230, 0.14);
+            box-shadow: 0 16px 48px rgba(43, 28, 90, 0.16), 0 2px 8px rgba(43, 28, 90, 0.08);
+            display: block;
+            object-fit: contain;
+            background: #f5f0ff;
+        }
+        @media (max-width: 480px) {
+            .duo-screenshots { flex-direction: column; align-items: center; }
+            .habit-duo-screenshot { flex: none; width: 100%; max-width: 320px; max-height: none; }
+        }
 
         .spotlight__visual--emoji {
             font-size: 5rem;
@@ -787,18 +925,86 @@
         .footer__social a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
 
         /* ─── MOBILE NAV ─────────────────────────────────── */
+        /* Mobile nav backdrop */
+        .mobile-nav-backdrop {
+            display: none; position: fixed; inset: 0; z-index: 190;
+            background: rgba(20,10,40,.4);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
+        .mobile-nav-backdrop.open { display: block; }
+
+        /* Slide-in drawer from right */
         .mobile-nav {
-            display: none; position: fixed; inset: 0; z-index: 200;
-            background: rgba(255,255,255,.97);
-            backdrop-filter: blur(16px);
-            flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+            display: flex; position: fixed; top: 0; right: 0; bottom: 0; z-index: 200;
+            width: min(320px, 88vw);
+            background: #ffffff;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform .28s cubic-bezier(.4,0,.2,1);
+            box-shadow: -4px 0 32px rgba(43,28,90,.12);
+            overflow-y: auto;
+            overscroll-behavior: contain;
         }
-        .mobile-nav a { font-size: 1.3rem; font-weight: 600; color: var(--ink-muted); }
-        .mobile-nav a:hover { color: var(--ink); }
+        .mobile-nav.open { transform: translateX(0); }
+
+        /* Drawer header */
+        .mobile-nav__header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 20px 16px;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        .mobile-nav__brand {
+            font-size: 1.15rem; font-weight: 800; color: var(--ink);
+            letter-spacing: -.4px; text-decoration: none;
+            -webkit-text-fill-color: var(--ink);
+        }
         .mobile-nav__close {
-            position: absolute; top: 24px; right: 24px; font-size: 1.5rem;
-            background: none; border: none; cursor: pointer; color: var(--ink-muted);
+            display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--bg-alt); border: none; cursor: pointer;
+            font-size: 1.1rem; color: var(--ink-muted);
+            transition: background .15s;
         }
+        .mobile-nav__close:hover { background: var(--border); }
+
+        /* Drawer body */
+        .mobile-nav__body {
+            display: flex; flex-direction: column;
+            padding: 12px 0 24px;
+            flex: 1;
+        }
+        .mobile-nav__section {
+            padding: 16px 20px 8px;
+        }
+        .mobile-nav__section + .mobile-nav__section {
+            border-top: 1px solid var(--border);
+            margin-top: 4px;
+        }
+        .mobile-nav__group-label {
+            font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+            text-transform: uppercase; color: var(--ink-faint);
+            margin-bottom: 8px; display: block;
+        }
+        .mobile-nav__link {
+            display: block; padding: 9px 8px; border-radius: 10px;
+            font-size: .96rem; font-weight: 500; color: var(--ink-muted);
+            text-decoration: none; transition: background .15s, color .15s;
+            margin-bottom: 1px;
+        }
+        .mobile-nav__link:hover { background: var(--bg-alt); color: var(--ink); }
+        .mobile-nav__link--primary {
+            font-size: 1.05rem; font-weight: 700; color: var(--ink);
+        }
+
+        /* App Store CTA at bottom of drawer */
+        .mobile-nav__footer {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        .mobile-nav__footer .appstore-badge { width: 150px; }
 
         /* ─── FEATURE DEEP CONTENT ───────────────────────── */
         .feature-deep { padding: 80px 0 96px; }
@@ -851,7 +1057,8 @@
         }
         @media (max-width: 600px) {
             .section { padding: 72px 0; }
-            .hero { padding: 72px 0 48px; }
+            /* hero padding is intentionally NOT overridden here — the 720px breakpoint already
+               sets it correctly. Keeping 72px here was causing the hero to be taller on mobile. */
             .trust-bar__inner { gap: 20px; }
             .footer__grid { grid-template-columns: 1fr; }
             .footer__bottom { flex-direction: column; align-items: flex-start; }
@@ -1040,42 +1247,49 @@
 <body>
 
 <!-- ===================== MOBILE NAV ===================== -->
-<nav class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation">
-    <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
-    <div class="mobile-nav__group">
-        <span class="mobile-nav__group-label">Features</span>
-        <a href="/features/habit-duo/" class="mobile-nav__sub" onclick="closeMobileNav()">Habit Duo</a>
-        <a href="/features/ai-analyser/" class="mobile-nav__sub" onclick="closeMobileNav()">AI Habit Analyser</a>
-        <a href="/features/habit-templates/" class="mobile-nav__sub" onclick="closeMobileNav()">Habit Templates</a>
-        <a href="/features/measurable-goals/" class="mobile-nav__sub" onclick="closeMobileNav()">Measurable Goals</a>
-        <a href="/features/streak-tracking/" class="mobile-nav__sub" onclick="closeMobileNav()">Streak Tracking</a>
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-nav__header">
+        <a href="/" class="mobile-nav__brand" onclick="closeMobileNav()">Productify</a>
+        <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
     </div>
-    <div class="mobile-nav__group">
-        <span class="mobile-nav__group-label">Solutions</span>
-        <a href="/solutions/morning-routine/" class="mobile-nav__sub" onclick="closeMobileNav()">Build a Morning Routine</a>
-        <a href="/solutions/productivity-at-work/" class="mobile-nav__sub" onclick="closeMobileNav()">Productivity at Work</a>
+
+    <div class="mobile-nav__body">
+        <!-- Features -->
+        <div class="mobile-nav__section">
+            <span class="mobile-nav__group-label">Features</span>
+            <a href="/features/habit-tracker/" class="mobile-nav__link" onclick="closeMobileNav()">Habit Tracker</a>
+            <a href="/features/habit-duo/" class="mobile-nav__link" onclick="closeMobileNav()">Habit Duo</a>
+            <a href="/features/ai-analyser/" class="mobile-nav__link" onclick="closeMobileNav()">AI Habit Analyser</a>
+            <a href="/features/habit-templates/" class="mobile-nav__link" onclick="closeMobileNav()">Templates</a>
+            <a href="/features/streak-tracking/" class="mobile-nav__link" onclick="closeMobileNav()">Streak Tracking</a>
+        </div>
+
+        <!-- Main links -->
+        <div class="mobile-nav__section">
+            <a href="#how-it-works" class="mobile-nav__link mobile-nav__link--primary" onclick="closeMobileNav()">How It Works</a>
+            <a href="#pricing" class="mobile-nav__link mobile-nav__link--primary" onclick="closeMobileNav()">Pricing</a>
+            <a href="#about" class="mobile-nav__link" onclick="closeMobileNav()">About</a>
+            <a href="#contact" class="mobile-nav__link" onclick="closeMobileNav()">Contact</a>
+        </div>
+
+        <!-- Blog — trimmed to 3 key links -->
+        <div class="mobile-nav__section">
+            <span class="mobile-nav__group-label">Blog</span>
+            <a href="/blog/" class="mobile-nav__link" onclick="closeMobileNav()">All Articles</a>
+            <a href="/blog/best-habit-tracker-apps-2026/" class="mobile-nav__link" onclick="closeMobileNav()">Best Habit Tracker Apps 2026</a>
+            <a href="/blog/how-to-start-a-daily-habit/" class="mobile-nav__link" onclick="closeMobileNav()">How to Start a Daily Habit</a>
+        </div>
     </div>
-    <div class="mobile-nav__group">
-        <span class="mobile-nav__group-label">Blog</span>
-        <a href="/blog/" class="mobile-nav__sub" onclick="closeMobileNav()">All Articles</a>
-        <a href="/blog/best-habit-tracker-apps-2026/" class="mobile-nav__sub" onclick="closeMobileNav()">6 Best Habit Tracker Apps 2026</a>
-        <a href="/blog/how-to-start-a-daily-habit/" class="mobile-nav__sub" onclick="closeMobileNav()">How to Start a Daily Habit</a>
-        <a href="/blog/how-to-build-habits-that-stick/" class="mobile-nav__sub" onclick="closeMobileNav()">Habits That Actually Stick</a>
-        <a href="/blog/how-to-break-bad-habits/" class="mobile-nav__sub" onclick="closeMobileNav()">How to Break Bad Habits</a>
-        <a href="/blog/how-long-to-build-a-habit/" class="mobile-nav__sub" onclick="closeMobileNav()">How Long to Build a Habit</a>
-        <a href="/blog/what-habits-to-track/" class="mobile-nav__sub" onclick="closeMobileNav()">What Habits to Track</a>
-        <a href="/blog/how-to-use-a-habit-tracker/" class="mobile-nav__sub" onclick="closeMobileNav()">How to Use a Habit Tracker</a>
-        <a href="/blog/habit-tracker-vs-to-do-list/" class="mobile-nav__sub" onclick="closeMobileNav()">Habit Tracker vs To-Do List</a>
+
+    <!-- App Store CTA pinned to bottom -->
+    <div class="mobile-nav__footer">
+        <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+           class="appstore-badge-link"
+           aria-label="Download Productify on the App Store">
+            <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44">
+        </a>
     </div>
-    <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
-    <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
-    <a href="#about" onclick="closeMobileNav()">About</a>
-    <a href="#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-       class="appstore-badge-link"
-       aria-label="Download Productify on the App Store">
-        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="140" height="41">
-    </a>
 </nav>
 
 <!-- ===================== NAVBAR ===================== -->
@@ -1208,13 +1422,13 @@
     <div class="container">
         <div class="hero__inner">
             <div class="hero__text">
-                <div class="eyebrow">Free Habit Tracker App for iPhone · iOS 15+</div>
+                <div class="eyebrow">Habit Tracker App for iPhone</div>
                 <h1 id="hero-heading">
-                    The daily habit tracker<br>
-                    <span>built for real life.</span>
+                    Build habits that<br>
+                    <span>survive bad days.</span>
                 </h1>
                 <p class="lead">
-                    Productify is a <strong>habit tracker app for iPhone</strong> built around one idea: consistency beats perfection, every time. Track habits, build streaks, stay accountable with a friend via <a href="/features/habit-duo/" style="color: var(--blue); font-weight: 600;">Habit Duo</a>, and let AI surface what's quietly working.
+                    A calm <strong>habit tracker for iPhone</strong> that helps you stay consistent without guilt, pressure, or complicated setup.
                 </p>
                 <div class="hero__cta-group">
                     <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
@@ -1222,19 +1436,19 @@
                        aria-label="Download Productify on the App Store">
                         <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180" height="53">
                     </a>
-                    <a href="#how-it-works" class="btn btn-secondary btn-lg">See how Productify works</a>
+                    <a href="#features" class="btn btn-secondary btn-lg">Explore features</a>
                 </div>
-                <p class="hero__note">Free to download · No account required · iOS 15+</p>
+                <p class="hero__note">Free to start · No account required · Privacy first</p>
             </div>
             <div class="hero__visual">
-                <img src="screenshot_daily.png"
-                     class="hero__phone"
-                     alt="Productify daily habit list, Walk 7900/12000 steps, Learn new things, Read 0s/45m timer, Drink water completed"
-                     width="390" height="844"
-                     loading="eager"
-                     fetchpriority="high"
-                     decoding="sync">
-                
+                <div class="phone-preview">
+                    <img src="assets/productify-home-screen.webp"
+                         alt="Productify habit tracker app home screen"
+                         width="390" height="844"
+                         loading="eager"
+                         fetchpriority="high"
+                         decoding="sync">
+                </div>
             </div>
         </div>
     </div>
@@ -1353,33 +1567,69 @@
     </div>
 </section>
 
-<!-- ===================== SOLUTIONS TEASER ===================== -->
-<section class="section section--alt" aria-labelledby="solutions-teaser-heading">
+<!-- ===================== MID CTA #1 ===================== -->
+<div class="mid-cta" aria-label="Download Productify">
+    <div class="container">
+        <div class="mid-cta__inner">
+            <div class="mid-cta__text">
+                <h3>Ready to track your first habit?</h3>
+                <p>Free to download · No account needed · Works on iPhone, iPad &amp; Apple Watch</p>
+            </div>
+            <div class="mid-cta__actions">
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="appstore-badge-link"
+                   aria-label="Download Productify on the App Store">
+                    <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy">
+                </a>
+                <a href="#how-it-works" class="btn btn-secondary" style="font-size:.9rem;">See how it works</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== MINI FEATURES GRID ===================== -->
+<section class="mini-features" aria-labelledby="mini-features-heading">
     <div class="container">
         <div class="section-header text-center">
-            <div class="eyebrow">Solutions &amp; Guides</div>
-            <h2 id="solutions-teaser-heading">Guides for showing up consistently</h2>
-            <p class="lead">Practical guides on habit tracking, productivity, and building routines that outlast motivation.</p>
+            <div class="eyebrow">Everything you need, nothing you don't</div>
+            <h2 id="mini-features-heading">Built around real habits, not ideal ones</h2>
+            <p class="lead">Every feature in Productify is designed to reduce friction and help you show up again after a missed day.</p>
         </div>
-        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-            <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link" aria-label="6 Best habit tracker apps 2026 guide">
-                <div class="feature-card__icon">📝</div>
-                <h3>6 Best Habit Tracker Apps 2026</h3>
-                <p class="text-muted">An honest comparison of the top free and paid habit tracker apps, with a clear look at how Productify stacks up.</p>
-                <span class="feature-card__cta">Read the guide →</span>
-            </a>
-            <a href="/solutions/morning-routine/" class="feature-card feature-card--link" aria-label="Build a morning routine guide">
-                <div class="feature-card__icon">🌅</div>
-                <h3>Build a Morning Routine</h3>
-                <p class="text-muted">Starting small, and how to design a morning that survives even your worst days.</p>
-                <span class="feature-card__cta">Read the guide →</span>
-            </a>
-            <a href="/solutions/productivity-at-work/" class="feature-card feature-card--link" aria-label="Productivity at work guide">
-                <div class="feature-card__icon">💼</div>
-                <h3>Productivity at Work</h3>
-                <p class="text-muted">Which daily habits compound into real professional growth, and how to track them without adding overhead.</p>
-                <span class="feature-card__cta">Read the guide →</span>
-            </a>
+        <div class="mini-features-grid">
+            <div class="mini-feature-card">
+                <div class="mini-feature-card__icon">🔥</div>
+                <h3>Guilt-free streak tracking</h3>
+                <p>See your current run and personal best. A missed day resets the count — but never erases your history.</p>
+                <a href="/features/streak-tracking/" class="mini-feature-card__link">Learn more →</a>
+            </div>
+            <div class="mini-feature-card">
+                <div class="mini-feature-card__icon">🔔</div>
+                <h3>Smart reminders</h3>
+                <p>Gentle nudges timed to your routine. Set once, adjust anytime, skip without guilt.</p>
+                <a href="/features/smart-reminders/" class="mini-feature-card__link">Learn more →</a>
+            </div>
+            <div class="mini-feature-card">
+                <div class="mini-feature-card__icon">📋</div>
+                <h3>Habit templates</h3>
+                <p>50+ pre-built routines for sleep, fitness, focus, and more. Start in one tap, customize as you go.</p>
+                <a href="/features/habit-templates/" class="mini-feature-card__link">Browse templates →</a>
+            </div>
+            <div class="mini-feature-card">
+                <div class="mini-feature-card__icon">📏</div>
+                <h3>Measurable goals</h3>
+                <p>Attach real numbers to every habit — steps, glasses, minutes, reps. Know exactly when you're done.</p>
+                <a href="/features/measurable-goals/" class="mini-feature-card__link">Learn more →</a>
+            </div>
+            <div class="mini-feature-card">
+                <div class="mini-feature-card__icon">⌚</div>
+                <h3>Apple Watch &amp; widgets</h3>
+                <p>Check in from your wrist or home screen. Live Activities keep your habits visible without opening the app.</p>
+            </div>
+            <div class="mini-feature-card">
+                <div class="mini-feature-card__icon">🔒</div>
+                <h3>Privacy first, always</h3>
+                <p>No account required. Your habit data stays on your device by default. No sign-up, no cloud required.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -1392,130 +1642,61 @@
         <div class="container">
             <div class="spotlight">
                 <div class="spotlight__text">
-                    <div class="eyebrow">Shared Accountability</div>
-                    <h2 id="habit-duo-heading">You're more consistent when someone shows up with you</h2>
+                    <div class="eyebrow">Shared Accountability · Pro</div>
+                    <h2 id="habit-duo-heading">Build one habit with one friend</h2>
                     <p class="lead mt-16">
-                        Habit Duo is based on a simple idea: when someone you trust can see whether you showed up, many people find it easier to stay consistent. Not because you're competing, but because you're not alone.
+                        Habit Duo gives you a private, calm accountability space for one shared habit — no leaderboards, no pressure, just progress together.
                     </p>
-                    <ul class="check-list">
-                        <li>One friend, one shared routine. No group dynamics, no noise.</li>
-                        <li>Side-by-side progress with no scores or rankings</li>
-                        <li>A quiet notification when your partner completes the day</li>
-                        <li>The accountability of a gym buddy, without the scheduling</li>
-                    </ul>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; align-items: center;">
-                        <a href="/features/habit-duo/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Learn about Habit Duo →</a>
+                    <div class="benefit-chips">
+                        <span class="benefit-chip"><span class="benefit-chip__icon">🤝</span>One friend, one habit</span>
+                        <span class="benefit-chip"><span class="benefit-chip__icon">📊</span>Shared progress view</span>
+                        <span class="benefit-chip"><span class="benefit-chip__icon">🔕</span>No rankings or scores</span>
+                        <span class="benefit-chip"><span class="benefit-chip__icon">🔒</span>Completely private</span>
+                    </div>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+                        <a href="/features/habit-duo/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Explore Habit Duo →</a>
                         <span style="font-size: .87rem; color: var(--ink-muted);">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
                     </div>
                 </div>
-                <div class="spotlight__visual spotlight__visual--phone" style="gap: 16px; display: flex; align-items: flex-end; justify-content: center; padding: 24px 16px;">
-                    <img src="screenshot_habit_duo_choose.png"
-                         alt="Habit Duo choose habit screen, showing Squats and Read active duos, each with You and Friend avatars connected"
-                         class="spotlight__phone-img"
-                         style="max-height: 440px; flex: 1;"
+                <div class="spotlight__visual spotlight__visual--phone duo-screenshots">
+                    <img src="assets/productify-habit-duo-progress-view.webp"
+                         alt="Productify Habit Duo progress view showing a line chart comparing your streak and your friend's, with current and best streak stats"
+                         class="habit-duo-screenshot"
                          loading="lazy">
-                    <img src="screenshot_habit_duo_streak.webp"
-                         alt="Habit Duo streak view, side-by-side line chart comparing your progress and your partner's with current and best streak stats"
-                         class="spotlight__phone-img"
-                         style="max-height: 480px; flex: 1;"
+                    <img src="assets/productify-habit-duo-streak-view.webp"
+                         alt="Productify Habit Duo screen showing Push Ups and Walk active duos, each connecting you and a friend"
+                         class="habit-duo-screenshot"
                          loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="feature-deep" aria-labelledby="habit-duo-deep-heading">
-        <div class="container">
-            <div class="feature-deep__inner">
-                <div class="feature-deep__body">
-                    <div class="eyebrow">Habit Duo: In Depth</div>
-                    <h2 id="habit-duo-deep-heading">The quiet power of doing it together</h2>
-                    <p>
-                        Skipping a solo habit is easy. It's a private decision with no social weight. Habit Duo changes that dynamic, not by adding pressure, but by making the act of showing up feel shared. When your friend completes their walk and you see it in the app, skipping yours becomes a deliberate choice rather than a passive drift.
-                    </p>
-                    <p>
-                        This is the core insight behind Habit Duo's design. It's a single focused pairing (one friend, one routine) rather than a group challenge or social feed. You track your own progress independently; your partner does the same. You can see each other's completion side by side. No score, no ranking. Just a quiet reminder that you're not doing this alone.
-                    </p>
-                    <p>
-                        It works particularly well for the habits that feel easiest to skip in isolation: morning walks, daily hydration, evening reading, weekend workouts. These are routines where the effort is low but the activation energy (actually starting) is the real barrier. Shared accountability lowers that barrier without adding social pressure or gamification.
-                    </p>
-                    <p>
-                        James Clear writes about how social norms influence habits; Habit Duo applies that idea in a lightweight way: shared visibility for one routine, without turning habits into a competition. Available on Pro.
-                    </p>
-                    <ul class="check-list">
-                        <li>Focused pairing: one friend, one routine, zero noise</li>
-                        <li>No leaderboards or public feeds, completely private</li>
-                        <li>Works for any routine: fitness, sleep, focus, creativity, hydration</li>
-                        <li>Encouragement notifications that feel supportive, not demanding</li>
-                        <li>Available on Pro. <a href="#pricing" style="color: var(--blue);">see pricing</a></li>
-                    </ul>
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="feature-deep__link"
-                       aria-label="Download Productify to use Habit Duo">
-                        Try Habit Duo free for 7 days →
-                    </a>
-                </div>
-                <div class="feature-deep__aside">
-                    <div class="feature-deep__card">
-                        <h3>Why Habit Duo can help</h3>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🤝</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Shared accountability</div>
-                                <div class="feature-deep__stat-label">One friend, one habit, side-by-side progress</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🚫</div>
-                            <div>
-                                <div class="feature-deep__stat-value">No competition</div>
-                                <div class="feature-deep__stat-label">No rankings, scores, or public feeds</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">💬</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Encouragement, not pressure</div>
-                                <div class="feature-deep__stat-label">Notifications that feel supportive, not demanding</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🔒</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Private by design</div>
-                                <div class="feature-deep__stat-label">Only you and your partner see the shared habit</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ── AI HABIT ANALYSER ──────────────────────────────── -->
     <section class="section section--alt" id="ai-analyser" aria-labelledby="ai-analyser-heading">
         <div class="container">
             <div class="spotlight spotlight--reverse">
                 <div class="spotlight__text">
-                    <div class="eyebrow">AI · Behavioral insights</div>
-                    <h2 id="ai-analyser-heading">A coach that reads your data, not a script</h2>
+                    <div class="eyebrow">AI Insights · Pro</div>
+                    <h2 id="ai-analyser-heading">Understand your habits with AI insights</h2>
                     <p class="lead mt-16">
-                        Meet TempO, Productify's AI companion. Rather than counting completions and showing you a bar chart, TempO looks for patterns in your behavior over time: when you succeed, when you slip, and what the context might mean. More reflective mirror than motivational poster.
+                        Productify can help you reflect on your habit patterns and find small, realistic improvements — through TempO, a calm AI companion that reads your data, not a script.
                     </p>
-                    <ul class="check-list">
-                        <li>Spot day-of-week patterns: when you're strong, when you drift</li>
-                        <li>See which routines reinforce each other through correlation analysis</li>
-                        <li>Receive suggestions grounded in your actual data, not generic advice</li>
-                        <li>Tone that's calm, honest, and non-judgmental</li>
-                    </ul>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; align-items: center;">
-                        <a href="/features/ai-analyser/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Learn about AI Analyser →</a>
+                    <div class="benefit-chips">
+                        <span class="benefit-chip"><span class="benefit-chip__icon">📅</span>Spot consistency patterns</span>
+                        <span class="benefit-chip"><span class="benefit-chip__icon">💡</span>Get realistic suggestions</span>
+                        <span class="benefit-chip"><span class="benefit-chip__icon">🎯</span>Stay focused on small wins</span>
+                        <span class="benefit-chip"><span class="benefit-chip__icon">🔒</span>Your data, your control</span>
+                    </div>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+                        <a href="/features/ai-analyser/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Explore AI Analyser →</a>
                         <span style="font-size: .87rem; color: var(--ink-muted);">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
                     </div>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
                     <img src="screenshot_ai_analyser.png"
-                         alt="TempO AI Habit Analyser — Productify owl character showing quick stats, weekly completion, active streaks, and generating personalized habit insights"
+                         alt="TempO AI Habit Analyser — Productify owl character showing weekly completion, active streaks, and personalized habit insights"
                          class="spotlight__phone-img"
                          loading="lazy">
                 </div>
@@ -1523,73 +1704,6 @@
         </div>
     </section>
 
-    <section class="feature-deep section--purple" aria-labelledby="ai-analyser-deep-heading">
-        <div class="container">
-            <div class="feature-deep__inner">
-                <div class="feature-deep__body">
-                    <div class="eyebrow">AI Habit Analyser: In Depth</div>
-                    <h2 id="ai-analyser-deep-heading">Data as a mirror, not a scoreboard</h2>
-                    <p>
-                        Most apps surface your completion count and leave you to figure out what it means. TempO goes further. Rather than showing you how many days you hit your goal, it looks at the shape of your behavior over time: which days you tend to slip, which routines have stayed consistent the longest, and whether changes in one area correlate with changes in another.
-                    </p>
-                    <p>
-                        This is practical reflection applied to habit tracking. If you consistently miss your evening reading on Thursdays and Fridays, TempO may notice and suggest a small adjustment—like shifting the reminder earlier, reducing the target for those days, or pairing the routine with something already established. Small adjustments can compound into lasting change.
-                    </p>
-                    <p>
-                        TempO is intentionally restrained in tone. No confetti for a 10-day streak. No shame spiral for a missed week. If something isn't working, it's surfaced plainly and quietly. That kind of honest, non-judgmental feedback is harder to build than a dashboard, and far more useful for long-term digital wellness.
-                    </p>
-                    <p>
-                        The result is an AI that earns trust by being accurate, not enthusiastic.
-                    </p>
-                    <ul class="check-list">
-                        <li>Weekly and monthly pattern analysis across all your habits</li>
-                        <li>Personalized suggestions based on your specific completion data</li>
-                        <li>Cross-habit correlation: see which habits support each other</li>
-                        <li>Tone-appropriate insights: calm, direct, and non-judgmental</li>
-                        <li>Available on the Pro plan. AI features only use the information needed for each insight, as described in our <a href="/privacy.html" style="color: var(--blue);">Privacy Policy</a>.</li>
-                    </ul>
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="feature-deep__link"
-                       aria-label="Download Productify to try the AI Habit Analyser">
-                        Try the AI Habit Analyser →
-                    </a>
-                </div>
-                <div class="feature-deep__aside">
-                    <div class="feature-deep__card">
-                        <h3>What TempO analyzes</h3>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">📅</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Day-of-week patterns</div>
-                                <div class="feature-deep__stat-label">Spots when you're most and least consistent</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🔗</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Habit correlations</div>
-                                <div class="feature-deep__stat-label">Shows which habits tend to rise and fall together</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">📈</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Long-term trends</div>
-                                <div class="feature-deep__stat-label">Monthly view so single bad weeks don't distort the picture</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">💡</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Actionable suggestions</div>
-                                <div class="feature-deep__stat-label">Specific and practical, not generic motivational tips</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ── HABIT TEMPLATES ───────────────────────────────── -->
     <section class="section" id="habit-templates" aria-labelledby="templates-heading">
@@ -1609,7 +1723,13 @@
                         <li>Deep work – 90-minute focus session</li>
                         <li>Sleep schedule – in bed by 10:30 PM</li>
                     </ul>
-                    <p class="lead" style="margin-top: 20px; font-size: .9rem;">5 templates free · full library on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; align-items: center;">
+                        <a href="/features/habit-templates/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">See all templates →</a>
+                        <span style="font-size: .87rem; color: var(--ink-muted);">5 free · full library on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
+                    </div>
+                    <p style="margin-top: 16px; font-size: .85rem; color: var(--ink-muted);">
+                        Related: <a href="/blog/how-to-start-a-daily-habit/" style="color: var(--blue);">How to start a daily habit</a> · <a href="/solutions/morning-routine/" style="color: var(--blue);">Build a morning routine</a>
+                    </p>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
                     <img src="screenshot_templates_browse.png"
@@ -1621,79 +1741,6 @@
         </div>
     </section>
 
-    <section class="feature-deep section--alt" aria-labelledby="templates-deep-heading">
-        <div class="container">
-            <div class="feature-deep__inner">
-                <div class="feature-deep__body">
-                    <div class="eyebrow">Habit Templates: In Depth</div>
-                    <h2 id="templates-deep-heading">Start well-designed. Adjust as you go.</h2>
-                    <p>
-                        Many people find the hardest part of building a new routine isn't maintaining it; it's starting well. When you have to define the goal, choose the measurement, set the frequency, and create a reminder before you've completed a single day, the overhead quietly drains the motivation that brought you here.
-                    </p>
-                    <p>
-                        Each template in Productify is fully pre-configured: a name, a measurable target, a suggested frequency, and a sensible default reminder. Adopt it exactly as-is, or adjust any detail to fit your actual life. The point is that you're building on day one, not planning to build.
-                    </p>
-                    <p>
-                        The library spans physical health (hydration, walking, strength training), mental wellbeing (mindfulness, journaling, sleep), and focus-based productivity (deep work sessions, reading, learning). These aren't aspirational extremes; they're routines that real people build and maintain when the friction is low enough.
-                    </p>
-                    <p>
-                        James Clear emphasizes environment design in <em>Atomic Habits</em>—making the right action the easier action. Templates apply that idea by giving you a ready-made routine you can adopt in a tap and adjust as you go.
-                    </p>
-                    <ul class="check-list">
-                        <li>Fully configured habits: goal, frequency, and reminder included</li>
-                        <li>Customizable at any point without losing existing progress</li>
-                        <li>Covers health, fitness, sleep, focus, mindfulness, and more</li>
-                        <li>5 starter templates free · full library on Pro</li>
-                    </ul>
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="feature-deep__link"
-                       aria-label="Download Productify to browse habit templates">
-                        Browse all habit templates →
-                    </a>
-                </div>
-                <div class="feature-deep__aside">
-                    <div class="feature-deep__card">
-                        <h3>Example templates</h3>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">💧</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Hydration</div>
-                                <div class="feature-deep__stat-label">8 glasses of water · daily</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🚶</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Morning Walk</div>
-                                <div class="feature-deep__stat-label">20 min · before 9 AM · weekdays</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">📖</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Evening Reading</div>
-                                <div class="feature-deep__stat-label">30 min · before bed · daily</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🏋️</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Strength Training</div>
-                                <div class="feature-deep__stat-label">3 sessions per week</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🧘</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Mindfulness</div>
-                                <div class="feature-deep__stat-label">10 min · morning · daily</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ── MEASURABLE GOALS ──────────────────────────────── -->
     <section class="section section--purple" id="measurable-goals" aria-labelledby="goals-heading">
@@ -1713,8 +1760,8 @@
                     </ul>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="screenshot_daily.png"
-                         alt="Productify daily view, Walk habit showing 7900 out of 12000 steps progress bar, Read habit with 45-minute timer, Drink water completed"
+                    <img src="assets/productify-home-screen.webp"
+                         alt="Productify daily habit list showing Read, Drink water, Play Chess, Stretch, Workout, and Push Ups with measurable goals"
                          class="spotlight__phone-img"
                          loading="lazy">
                 </div>
@@ -1722,80 +1769,6 @@
         </div>
     </section>
 
-    <section class="feature-deep" aria-labelledby="goals-deep-heading">
-        <div class="container">
-            <div class="feature-deep__inner">
-                <div class="feature-deep__body">
-                    <div class="eyebrow">Measurable Goals: In Depth</div>
-                    <h2 id="goals-deep-heading">The underrated power of knowing you're done</h2>
-                    <p>
-                        There is a meaningful difference between a goal and an intention. "Drink more water" is an intention. "8 glasses per day" is a goal. The difference isn't just semantic; it changes the cognitive load of the check-in moment. A clear number removes ambiguity. You either hit it or you didn't, and either way the decision is instant.
-                    </p>
-                    <p>
-                        Productify treats measurement as foundational, not optional. Every routine you track has a unit: steps, minutes, glasses, reps, sessions, kilometres, or a label you define yourself. When you log for the day, you record the actual value, not just a binary tick. This creates a richer history and makes partial effort visible rather than invisible.
-                    </p>
-                    <p>
-                        That matters more than it might seem. Five of eight glasses isn't failure; it's 62% of the way there and a genuine data point. Productify records it, reflects it in your trends, and doesn't penalise you for it. Over time, this fuller picture gives TempO the context it needs to surface accurate insights rather than a simplified pass/fail story.
-                    </p>
-                    <p>
-                        You can also set routines by weekly frequency rather than daily targets, like three workouts this week instead of one per day, which is often a more sustainable approach for things that don't need to happen every single day without exception.
-                    </p>
-                    <ul class="check-list">
-                        <li>Units: steps, minutes, glasses, reps, km, sessions, or custom</li>
-                        <li>Daily targets or weekly frequency goals</li>
-                        <li>Partial completions recorded and respected</li>
-                        <li>Progress view shows your actual values, not just streaks</li>
-                        <li>Ties directly into AI Habit Analyser trend data</li>
-                    </ul>
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="feature-deep__link"
-                       aria-label="Download Productify to set measurable habit goals">
-                        Start tracking with clear goals →
-                    </a>
-                </div>
-                <div class="feature-deep__aside">
-                    <div class="feature-deep__card">
-                        <h3>Supported goal types</h3>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🏃</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Steps &amp; distance</div>
-                                <div class="feature-deep__stat-label">10,000 steps · 5 km · daily</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">⏱️</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Duration</div>
-                                <div class="feature-deep__stat-label">30 min reading · 90 min deep work</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🔁</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Repetitions</div>
-                                <div class="feature-deep__stat-label">50 push-ups · 10 pull-ups</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">📆</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Weekly frequency</div>
-                                <div class="feature-deep__stat-label">3× per week · 5× per week</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">✏️</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Custom units</div>
-                                <div class="feature-deep__stat-label">Pages read, gratitude entries, cold showers</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ── STREAK TRACKING ───────────────────────────────── -->
     <section class="section section--alt" id="streak-tracking" aria-labelledby="streaks-heading">
@@ -1813,6 +1786,9 @@
                         <li>No shame spiral after a missed day. Your history stays intact.</li>
                         <li>Milestone recognition at 7, 30, and 90 days, earned rather than manufactured</li>
                     </ul>
+                    <p style="margin-top: 20px; font-size: .85rem; color: var(--ink-muted);">
+                        Related: <a href="/features/streak-tracking/" style="color: var(--blue);">Streak Tracking feature →</a> · <a href="/blog/how-to-use-a-habit-tracker/" style="color: var(--blue);">How to use a habit tracker</a>
+                    </p>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
                     <img src="screenshot_streak_detail.png"
@@ -1824,75 +1800,28 @@
         </div>
     </section>
 
-    <section class="feature-deep section--purple" aria-labelledby="streaks-deep-heading">
-        <div class="container">
-            <div class="feature-deep__inner">
-                <div class="feature-deep__body">
-                    <div class="eyebrow">Streak Tracking: In Depth</div>
-                    <h2 id="streaks-deep-heading">Why streaks can help—and how Productify avoids all-or-nothing pressure</h2>
-                    <p>
-                        Visualizing a consecutive run of completed days can be motivating. Many people recognize the &quot;don't break the chain&quot; idea: each day you show up adds weight to the next. That's a useful nudge when it stays supportive—and Productify keeps your full history visible so a missed day isn't treated like a total reset.
-                    </p>
-                    <p>
-                        But streaks have a well-documented flaw. Many people abandon a routine entirely after missing a single day, not because the routine stopped mattering, but because the broken chain made continuing feel pointless. This all-or-nothing pattern is one of the most common ways digital wellness tools fail the people using them.
-                    </p>
-                    <p>
-                        Productify separates the streak counter from the underlying history. When you miss a day, the current count resets, but every completed day you've logged is permanently preserved. You can always see your personal best, your completion rate across any timeframe, and your long-term trend across months. That wider view keeps a bad week in its proper context.
-                    </p>
-                    <p>
-                        After a missed day, the tone is neutral. No warning screens, no guilt-charged notifications. Just your data, waiting calmly whenever you're ready to pick up again. Routines that last years are built on that kind of quiet resilience.
-                    </p>
-                    <ul class="check-list">
-                        <li>Current streak and personal best always visible</li>
-                        <li>Full history preserved regardless of current streak status</li>
-                        <li>Monthly and long-term trend view for perspective</li>
-                        <li>No punitive messaging for missed days</li>
-                        <li>Milestone celebrations at meaningful thresholds (7, 30, 90 days)</li>
-                    </ul>
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="feature-deep__link"
-                       aria-label="Download Productify to start building your streak">
-                        Start your first streak today →
-                    </a>
-                </div>
-                <div class="feature-deep__aside">
-                    <div class="feature-deep__card">
-                        <h3>How streaks work in Productify</h3>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🔥</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Current streak</div>
-                                <div class="feature-deep__stat-label">Consecutive days of completing the habit</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🏆</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Best streak</div>
-                                <div class="feature-deep__stat-label">Your personal record, always visible</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">📊</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Completion rate</div>
-                                <div class="feature-deep__stat-label">% of days completed over 30 or 90 days</div>
-                            </div>
-                        </div>
-                        <div class="feature-deep__stat">
-                            <div class="feature-deep__stat-icon">🔄</div>
-                            <div>
-                                <div class="feature-deep__stat-value">Recovery-friendly</div>
-                                <div class="feature-deep__stat-label">History stays intact after a missed day</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 </div><!-- /solutions -->
+
+<!-- ===================== MID CTA #2 ===================== -->
+<div class="mid-cta" aria-label="Download Productify">
+    <div class="container">
+        <div class="mid-cta__inner">
+            <div class="mid-cta__text">
+                <h3>Start building habits that stick — for free.</h3>
+                <p>Calm tracking, guilt-free streaks, and one-tap check-ins. No account required.</p>
+            </div>
+            <div class="mid-cta__actions">
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="appstore-badge-link"
+                   aria-label="Download Productify on the App Store">
+                    <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy">
+                </a>
+                <a href="#pricing" class="btn btn-secondary" style="font-size:.9rem;">View pricing</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- ===================== HOW IT WORKS ===================== -->
 <section class="section" id="how-it-works" aria-labelledby="how-heading" style="background: linear-gradient(180deg, #fff 0%, #F0F4FF 100%);">
@@ -2324,9 +2253,9 @@
 <section class="section section--dark cta-banner" aria-labelledby="cta-heading">
     <div class="container">
         <div class="eyebrow" style="background: rgba(255,255,255,.12); color: #93C5FD;">Free on the App Store</div>
-        <h2 id="cta-heading">Ready to start small?<br>Today's a good day.</h2>
+        <h2 id="cta-heading">Start with one habit today.</h2>
         <p class="lead">
-            You don't need a perfect system or a clean Monday. Productify is free to download, takes seconds to set up, and works well when you begin with just one routine.
+            Productify helps you build routines that survive real life — with calm reminders, flexible goals, and guilt-free progress. Free to start, no account required.
         </p>
         <div class="cta-banner__btns">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
@@ -2336,6 +2265,7 @@
             </a>
             <a href="#features" class="btn btn-ghost btn-lg">Explore features</a>
         </div>
+        <p style="margin-top: 20px; font-size: .82rem; color: rgba(255,255,255,.5);">Free to start · No account required · Built for iPhone</p>
     </div>
 </section>
 
@@ -2401,25 +2331,29 @@
 </footer>
 
 <script>
-    // --- Mobile nav ---
-    const openBtn  = document.getElementById('openNav');
-    const closeBtn = document.getElementById('closeNav');
-    const mobileNav = document.getElementById('mobileNav');
+    // --- Mobile nav (slide-in drawer) ---
+    const openBtn       = document.getElementById('openNav');
+    const closeBtn      = document.getElementById('closeNav');
+    const mobileNav     = document.getElementById('mobileNav');
+    const navBackdrop   = document.getElementById('mobileNavBackdrop');
 
     function openMobileNav() {
-        mobileNav.style.display = 'flex';
+        mobileNav.classList.add('open');
+        navBackdrop.classList.add('open');
         document.body.style.overflow = 'hidden';
         openBtn.setAttribute('aria-expanded', 'true');
     }
     function closeMobileNav() {
-        mobileNav.style.display = 'none';
+        mobileNav.classList.remove('open');
+        navBackdrop.classList.remove('open');
         document.body.style.overflow = '';
         openBtn.setAttribute('aria-expanded', 'false');
     }
     openBtn.addEventListener('click', openMobileNav);
     closeBtn.addEventListener('click', closeMobileNav);
-    mobileNav.addEventListener('click', function(e) {
-        if (e.target === mobileNav) closeMobileNav();
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMobileNav();
     });
 
     // --- FAQ accordion ---

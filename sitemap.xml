@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://productifyapp.org/</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- Primary feature page -->
   <url>
     <loc>https://productifyapp.org/features/habit-tracker/</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
