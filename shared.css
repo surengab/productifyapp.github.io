@@ -196,23 +196,85 @@ h3 {
 .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink-muted); border-radius: 2px; margin: 5px 0; transition: all .3s; }
 
-/* ─── MOBILE NAV ──────────────────────────────────────────────────────────── */
+/* ─── MOBILE NAV DRAWER ───────────────────────────────────────────────────── */
+.mobile-nav-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 190;
+    background: rgba(20,10,40,.4);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+.mobile-nav-backdrop.open { display: block; }
+
 .mobile-nav {
-    display: none; position: fixed; inset: 0; z-index: 200;
-    background: rgba(255,255,255,.97); backdrop-filter: blur(16px);
-    flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+    display: flex; position: fixed; top: 0; right: 0; bottom: 0; z-index: 200;
+    width: min(320px, 88vw);
+    background: #ffffff;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform .28s cubic-bezier(.4,0,.2,1);
+    box-shadow: -4px 0 32px rgba(43,28,90,.12);
     overflow-y: auto;
+    overscroll-behavior: contain;
 }
-.mobile-nav a, .mobile-nav .mobile-nav__group-label {
-    font-size: 1.2rem; font-weight: 600; color: var(--ink-muted);
+.mobile-nav.open { transform: translateX(0); }
+
+.mobile-nav__header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px 16px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
 }
-.mobile-nav a:hover { color: var(--ink); }
-.mobile-nav__group { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.mobile-nav__group-label { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
-.mobile-nav__sub { font-size: 1rem !important; }
+.mobile-nav__brand {
+    font-size: 1.15rem; font-weight: 800; color: var(--ink);
+    letter-spacing: -.4px; text-decoration: none;
+    -webkit-text-fill-color: var(--ink);
+}
 .mobile-nav__close {
-    position: absolute; top: 24px; right: 24px; font-size: 1.5rem;
-    background: none; border: none; cursor: pointer; color: var(--ink-muted);
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--bg-alt); border: none; cursor: pointer;
+    font-size: 1.1rem; color: var(--ink-muted);
+    transition: background .15s;
+}
+.mobile-nav__close:hover { background: var(--border); }
+
+.mobile-nav__body {
+    display: flex; flex-direction: column;
+    padding: 12px 0 24px;
+    flex: 1;
+}
+.mobile-nav__section {
+    padding: 16px 20px 8px;
+}
+.mobile-nav__section + .mobile-nav__section {
+    border-top: 1px solid var(--border);
+    margin-top: 4px;
+}
+.mobile-nav__group-label {
+    font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-faint);
+    margin-bottom: 8px; display: block;
+}
+.mobile-nav__link {
+    display: block; padding: 9px 8px; border-radius: 10px;
+    font-size: .96rem; font-weight: 500; color: var(--ink-muted);
+    text-decoration: none; transition: background .15s, color .15s;
+    margin-bottom: 1px;
+}
+.mobile-nav__link:hover { background: var(--bg-alt); color: var(--ink); }
+.mobile-nav__link--primary {
+    font-size: 1.05rem; font-weight: 700; color: var(--ink);
+}
+.mobile-nav__footer {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+}
+.mobile-nav__footer .appstore-badge { width: 150px; }
+
+/* Hide header App Store badge on mobile — hero badge is enough */
+@media (max-width: 768px) {
+    .nav-cta .appstore-badge-link { display: none; }
 }
 
 /* ─── BREADCRUMB ──────────────────────────────────────────────────────────── */

@@ -11,12 +11,13 @@
     <link rel="alternate" hreflang="en" href="https://productifyapp.org/features/habit-templates/">
     <link rel="alternate" hreflang="x-default" href="https://productifyapp.org/features/habit-templates/">
 
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://productifyapp.org/features/habit-templates/">
     <meta property="og:title" content="Habit Templates – Start Building Your Routine in Seconds">
     <meta property="og:description" content="Skip the blank-page problem. Productify's template library gives you expertly designed habits across health, focus, sleep, and more, ready to customise and start today.">
     <meta property="og:image" content="https://productifyapp.org/image_2.png">
     <meta property="og:site_name" content="Productify">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Habit Templates – 50+ Ready-Made Daily Habits for iPhone | Productify">
     <meta name="twitter:description" content="50+ pre-configured daily habits across health, focus, sleep, and more. Pick one, personalise it, start today.">
@@ -65,41 +66,78 @@
         gtag('js', new Date());
         gtag('config', 'G-M3DE9J4KYW');
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many habit templates does Productify include?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Productify includes 50+ ready-made habit templates across health, fitness, focus, sleep, and mindfulness categories. All templates are customisable." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I edit a habit template after I start using it?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every template in Productify is fully editable — you can change the name, icon, reminder time, target, and frequency to match your own routine." }
+            },
+            {
+                "@type": "Question",
+                "name": "Are habit templates available on the free plan?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Habit templates are available to all Productify users, including the free tier. No subscription required to access and use templates." }
+            },
+            {
+                "@type": "Question",
+                "name": "What categories of habits are available in templates?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Productify's template library covers health and fitness (walking, water, workouts), mental wellness (journalling, meditation), focus and learning (reading, deep work), sleep hygiene, and more." }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
 
 <!-- MOBILE NAV -->
-<nav class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation">
-    <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
-    <a href="/">Home</a>
-    <div class="mobile-nav__group">
-        <span class="mobile-nav__group-label">Features</span>
-        <a href="/features/habit-duo/" class="mobile-nav__sub">Habit Duo</a>
-        <a href="/features/ai-analyser/" class="mobile-nav__sub">AI Habit Analyser</a>
-        <a href="/features/habit-templates/" class="mobile-nav__sub">Habit Templates</a>
-        <a href="/features/measurable-goals/" class="mobile-nav__sub">Measurable Goals</a>
-        <a href="/features/streak-tracking/" class="mobile-nav__sub">Streak Tracking</a>
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-nav__header">
+        <a href="/" class="mobile-nav__brand">Productify</a>
+        <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
     </div>
-    <div class="mobile-nav__group">
-        <span class="mobile-nav__group-label">Solutions</span>
-        <a href="/solutions/morning-routine/" class="mobile-nav__sub">Build a Morning Routine</a>
-        <a href="/solutions/productivity-at-work/" class="mobile-nav__sub">Productivity at Work</a>
+
+    <div class="mobile-nav__body">
+        <div class="mobile-nav__section">
+            <span class="mobile-nav__group-label">Features</span>
+            <a href="/features/habit-tracker/" class="mobile-nav__link">Habit Tracker</a>
+            <a href="/features/habit-duo/" class="mobile-nav__link">Habit Duo</a>
+            <a href="/features/ai-analyser/" class="mobile-nav__link">AI Habit Analyser</a>
+            <a href="/features/habit-templates/" class="mobile-nav__link">Templates</a>
+            <a href="/features/streak-tracking/" class="mobile-nav__link">Streak Tracking</a>
+        </div>
+
+        <div class="mobile-nav__section">
+            <a href="/#how-it-works" class="mobile-nav__link mobile-nav__link--primary">How It Works</a>
+            <a href="/#pricing" class="mobile-nav__link mobile-nav__link--primary">Pricing</a>
+            <a href="/#about" class="mobile-nav__link">About</a>
+            <a href="/#contact" class="mobile-nav__link">Contact</a>
+        </div>
+
+        <div class="mobile-nav__section">
+            <span class="mobile-nav__group-label">Blog</span>
+            <a href="/blog/" class="mobile-nav__link">All Articles</a>
+            <a href="/blog/best-habit-tracker-apps-2026/" class="mobile-nav__link">Best Habit Tracker Apps 2026</a>
+            <a href="/blog/how-to-start-a-daily-habit/" class="mobile-nav__link">How to Start a Daily Habit</a>
+        </div>
     </div>
-    <div class="mobile-nav__group">
-        <span class="mobile-nav__group-label">Blog</span>
-        <a href="/blog/" class="mobile-nav__sub">All Articles</a>
-        <a href="/blog/best-habit-tracker-apps-2026/" class="mobile-nav__sub">Best Habit Tracker Apps 2026</a>
-        <a href="/blog/how-to-start-a-daily-habit/" class="mobile-nav__sub">How to Start a Daily Habit</a>
-        <a href="/blog/how-to-build-habits-that-stick/" class="mobile-nav__sub">Habits That Actually Stick</a>
-        <a href="/blog/how-to-break-bad-habits/" class="mobile-nav__sub">How to Break Bad Habits</a>
-        <a href="/blog/how-long-to-build-a-habit/" class="mobile-nav__sub">How Long to Build a Habit</a>
-        <a href="/blog/what-habits-to-track/" class="mobile-nav__sub">What Habits to Track</a>
-        <a href="/blog/how-to-use-a-habit-tracker/" class="mobile-nav__sub">How to Use a Habit Tracker</a>
-        <a href="/blog/habit-tracker-vs-to-do-list/" class="mobile-nav__sub">Habit Tracker vs To-Do List</a>
+
+    <div class="mobile-nav__footer">
+        <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+           class="appstore-badge-link"
+           aria-label="Download Productify on the App Store">
+            <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44">
+        </a>
     </div>
-    <a href="/#pricing">Pricing</a>
-    <a href="/#contact">Contact</a>
 </nav>
 
 <!-- NAVBAR -->
@@ -420,14 +458,25 @@
 </footer>
 
 <script>
-    const openBtn = document.getElementById('openNav');
-    const closeBtn = document.getElementById('closeNav');
-    const mobileNav = document.getElementById('mobileNav');
-    function openMobileNav() { mobileNav.style.display = 'flex'; document.body.style.overflow = 'hidden'; openBtn.setAttribute('aria-expanded','true'); }
-    function closeMobileNav() { mobileNav.style.display = 'none'; document.body.style.overflow = ''; openBtn.setAttribute('aria-expanded','false'); }
+    const openBtn     = document.getElementById('openNav');
+    const closeBtn    = document.getElementById('closeNav');
+    const mobileNav   = document.getElementById('mobileNav');
+    const navBackdrop = document.getElementById('mobileNavBackdrop');
+    function openMobileNav() {
+        mobileNav.classList.add('open');
+        navBackdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        openBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closeMobileNav() {
+        mobileNav.classList.remove('open');
+        navBackdrop.classList.remove('open');
+        document.body.style.overflow = '';
+        openBtn.setAttribute('aria-expanded', 'false');
+    }
     openBtn.addEventListener('click', openMobileNav);
     closeBtn.addEventListener('click', closeMobileNav);
-    mobileNav.addEventListener('click', function(e) { if (e.target === mobileNav) closeMobileNav(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
 
     var isTouchDevice = false;
     window.addEventListener('touchstart', function() { isTouchDevice = true; }, { once: true });
