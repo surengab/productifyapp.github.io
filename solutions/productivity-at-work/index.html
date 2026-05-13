@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Productivity Habits at Work – Build Routines That Improve Performance | Productify</title>
-    <meta name="description" content="Which daily work habits compound into real professional growth? A practical, psychology-backed guide to productive routines — and how to track them without adding overhead.">
+    <title>Build Better Productivity Habits at Work That Compound Over Time | Productify</title>
+    <meta name="description" content="Which daily work habits actually improve professional performance? A practical guide to productivity habits at work, and how to track them consistently without adding overhead.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://productifyapp.org/solutions/productivity-at-work/">
     <link rel="alternate" hreflang="en" href="https://productifyapp.org/solutions/productivity-at-work/">
@@ -13,14 +13,14 @@
 
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://productifyapp.org/solutions/productivity-at-work/">
-    <meta property="og:title" content="Productivity Habits at Work – Build Routines That Improve Your Performance">
-    <meta property="og:description" content="Discover which daily work habits compound into real professional growth. Practical, psychology-backed advice with Productify as your low-friction tracking companion.">
+    <meta property="og:title" content="Productivity Habits at Work That Compound Over Time | Productify">
+    <meta property="og:description" content="Discover which daily work habits compound into real professional growth. Practical advice on building better work routines and tracking them with Productify.">
     <meta property="og:image" content="https://productifyapp.org/image_2.png">
     <meta property="og:site_name" content="Productify">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Productivity Habits at Work – Build Routines That Improve Performance | Productify">
-    <meta name="twitter:description" content="The highest-ROI daily work habits, and how to track them without adding to your workload. A practical guide from Productify.">
+    <meta name="twitter:title" content="Build Better Productivity Habits at Work | Productify">
+    <meta name="twitter:description" content="The daily work habits that compound over time, and how to track them without adding to your workload.">
     <meta name="twitter:image" content="https://productifyapp.org/image_2.png">
     <meta name="twitter:site" content="@Productify_app">
 
@@ -36,13 +36,175 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/shared.css">
 
+    <style>
+        /* ── Hero two-column layout ───────────────────────── */
+        .hero-work {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+        @media (max-width: 760px) {
+            .hero-work { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        /* ── CSS work habit mockup ────────────────────────── */
+        .work-mockup {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 24px 64px rgba(43,28,90,.14), 0 2px 8px rgba(43,28,90,.05);
+            border: 1px solid rgba(107,111,212,.14);
+            padding: 20px 20px 12px;
+            max-width: 320px;
+            width: 100%;
+        }
+        @media (max-width: 760px) {
+            .work-mockup { max-width: 100%; margin: 0 auto; }
+        }
+        .work-mockup__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(107,111,212,.1);
+        }
+        .work-mockup__title {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+        }
+        .work-mockup__date {
+            font-size: .72rem;
+            color: var(--ink-faint);
+        }
+        .work-habit-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(107,111,212,.07);
+        }
+        .work-habit-row:last-of-type { border-bottom: none; }
+        .work-habit-row__check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid rgba(107,111,212,.3);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .65rem;
+            color: transparent;
+            transition: all .2s;
+        }
+        .work-habit-row--done .work-habit-row__check {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: #fff;
+        }
+        .work-habit-row__label {
+            flex: 1;
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--ink);
+        }
+        .work-habit-row--done .work-habit-row__label {
+            color: var(--ink-muted);
+        }
+        .work-habit-row__target {
+            font-size: .78rem;
+            color: var(--ink-faint);
+            font-weight: 500;
+        }
+        .work-habit-row__freq {
+            font-size: .72rem;
+            background: rgba(107,111,212,.1);
+            color: var(--blue);
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-weight: 600;
+        }
+        .work-mockup__footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(107,111,212,.08);
+        }
+        .work-mockup__streak {
+            font-size: .72rem;
+            color: var(--ink-faint);
+        }
+        .work-mockup__streak strong {
+            color: var(--blue);
+        }
+        .work-mockup__app-label {
+            font-size: .68rem;
+            color: var(--ink-faint);
+            opacity: .6;
+        }
+
+        /* ── Habit tracker vs to-do section ─────────────── */
+        .vs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 28px 0;
+        }
+        .vs-card {
+            padding: 22px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+        .vs-card--highlight {
+            border-color: rgba(107,111,212,.3);
+            background: rgba(107,111,212,.04);
+        }
+        .vs-card__label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            margin-bottom: 8px;
+        }
+        .vs-card h3 { font-size: 1rem; margin-bottom: 8px; color: var(--ink); }
+        .vs-card p { font-size: .88rem; color: var(--ink-muted); line-height: 1.6; margin: 0; }
+        @media (max-width: 560px) {
+            .vs-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── FAQ ──────────────────────────────────────────── */
+        .faq-item { border-bottom: 1px solid var(--border); padding: 4px 0; }
+        .faq-question {
+            width: 100%; text-align: left; background: none; border: none;
+            padding: 16px 0; font-size: 1rem; font-weight: 600; color: var(--ink);
+            cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; gap: 12px; font-family: 'Inter', sans-serif;
+        }
+        .faq-question__icon { flex-shrink: 0; transition: transform .2s; }
+        .faq-item.open .faq-question .faq-question__icon { transform: rotate(45deg); }
+        .faq-answer { display: none; padding: 0 0 16px; color: var(--ink-2); line-height: 1.7; }
+        .faq-item.open .faq-answer { display: block; }
+    </style>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Productivity Habits at Work – Build Routines That Improve Your Performance",
-        "description": "A practical guide to building work habits that compound over time, with Productify as a low-friction daily tracking tool.",
+        "headline": "Build Better Productivity Habits at Work That Compound Over Time",
+        "description": "A practical guide to building daily work habits that improve professional performance over time, and how to track them with Productify.",
         "url": "https://productifyapp.org/solutions/productivity-at-work/",
+        "datePublished": "2026-04-08",
+        "dateModified": "2026-05-13",
+        "image": "https://productifyapp.org/image_2.png",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://productifyapp.org/solutions/productivity-at-work/" },
         "author": { "@type": "Organization", "name": "Productify" },
         "publisher": { "@type": "Organization", "name": "Productify", "logo": { "@type": "ImageObject", "url": "https://productifyapp.org/favicon.svg" } }
     }
@@ -55,6 +217,39 @@
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://productifyapp.org/" },
             { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://productifyapp.org/#solutions" },
             { "@type": "ListItem", "position": 3, "name": "Productivity at Work", "item": "https://productifyapp.org/solutions/productivity-at-work/" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What are the best productivity habits at work?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The highest-value work habits tend to be: a daily focused work session (60–90 minutes of uninterrupted deep work), professional reading (15–20 minutes daily), a weekly planning review, and an end-of-day shutdown ritual. These are small in time but significant in compound effect over months and years." }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I build better work routines?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Start with one routine, not five. Pick the habit that has the highest return for your specific work, usually focused work time or daily learning. Make the initial version small enough to do even on bad days, track it consistently, and add more routines only once the first is genuinely automatic." }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I track productivity habits daily or weekly?",
+                "acceptedAnswer": { "@type": "Answer", "text": "It depends on the habit. Daily habits like deep work sessions or reading work well as everyday routines. Weekly habits like planning reviews or one-on-one notes are better tracked at a weekly frequency. Productify supports both. You set the schedule that matches the behavior." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can a habit tracker help with work productivity?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. A habit tracker makes your consistency visible over time, which is particularly useful for work habits whose benefits are delayed. Seeing 18 out of 21 days completed for your reading habit gives you concrete feedback that a to-do list does not. Productify supports measurable targets (minutes, sessions, pages) so you can track quantity, not just completion." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best productivity habit to start with?",
+                "acceptedAnswer": { "@type": "Answer", "text": "For most people, a daily focused work session is the highest-return first habit. Even 45–60 minutes of distraction-free work on your most important project each morning creates meaningful progress. It's specific, measurable, and creates immediate feedback. Start with that before adding anything else." }
+            }
         ]
     }
     </script>
@@ -252,20 +447,62 @@
 <!-- PAGE HERO -->
 <section class="page-hero" aria-labelledby="page-hero-heading">
     <div class="container">
-        <div class="page-hero__inner">
-            <div class="eyebrow">Solution · Self-Improvement</div>
-            <h1 id="page-hero-heading">
-                Build work habits that<br>
-                <span>compound over time</span>
-            </h1>
-            <p class="lead">
-                The difference between good performance and great performance is rarely talent. It's the accumulation of small, consistent habits, things you do daily that most people skip. Here's how to build them.
-            </p>
-            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="appstore-badge-link" aria-label="Download Productify free on the App Store">
-                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
-            </a>
-            <p style="margin-top: 12px; font-size: .8rem; color: var(--ink-faint);">Free to download · iOS 15+ · No account required</p>
+        <div class="hero-work">
+            <div class="page-hero__inner" style="max-width:100%;">
+                <div class="eyebrow">Work Habits · Professional Growth</div>
+                <p style="font-size:.85rem; color:var(--ink-muted); margin:0 0 16px;">Updated May 2026</p>
+                <h1 id="page-hero-heading">
+                    Build better productivity<br>
+                    <span>habits at work</span>
+                </h1>
+                <p class="lead">
+                    The difference between good performance and great performance is rarely talent. It's the accumulation of small, consistent habits: the things you do daily that most people skip. Here's how to build them.
+                </p>
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="appstore-badge-link" aria-label="Download Productify free on the App Store">
+                    <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
+                </a>
+                <p style="margin-top:12px; font-size:.8rem; color:var(--ink-faint);">Free to download · iOS 15+ · No account required</p>
+            </div>
+
+            <!-- CSS work habit mockup -->
+            <div aria-label="Example work habits in Productify: Deep Work, Reading, Weekly Review, and Shutdown Ritual" role="img">
+                <div class="work-mockup">
+                    <div class="work-mockup__header">
+                        <span class="work-mockup__title">Today's work habits</span>
+                        <span class="work-mockup__date">Mon, May 13</span>
+                    </div>
+
+                    <div class="work-habit-row work-habit-row--done">
+                        <div class="work-habit-row__check" aria-hidden="true">✓</div>
+                        <span class="work-habit-row__label">Deep Work</span>
+                        <span class="work-habit-row__target">90 min</span>
+                    </div>
+
+                    <div class="work-habit-row work-habit-row--done">
+                        <div class="work-habit-row__check" aria-hidden="true">✓</div>
+                        <span class="work-habit-row__label">Professional Reading</span>
+                        <span class="work-habit-row__target">20 min</span>
+                    </div>
+
+                    <div class="work-habit-row">
+                        <div class="work-habit-row__check" aria-hidden="true"></div>
+                        <span class="work-habit-row__label">Weekly Review</span>
+                        <span class="work-habit-row__freq">1×/week</span>
+                    </div>
+
+                    <div class="work-habit-row">
+                        <div class="work-habit-row__check" aria-hidden="true"></div>
+                        <span class="work-habit-row__label">Shutdown Ritual</span>
+                        <span class="work-habit-row__target">daily</span>
+                    </div>
+
+                    <div class="work-mockup__footer">
+                        <span class="work-mockup__streak">Deep Work streak: <strong>14 days</strong></span>
+                        <span class="work-mockup__app-label">Productify</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -280,12 +517,12 @@
                 Most people approach work improvement the same way they approach fitness: in bursts. A week of intense effort, followed by a return to old patterns. This works fine for a sprint, but professional growth operates on a different timescale. The skills, knowledge, and relationships that define a career are built over years, which means the daily habits that build them need to be sustainable, not heroic.
             </p>
             <p>
-                Work-related habits also have a subtler return on investment than health habits. Drinking water gives you feedback within hours. Reading for 20 minutes a day gives you a new idea once a week, a changed perspective once a month, and a meaningfully broader worldview over two years. That delayed return makes them easier to skip, and more valuable to maintain.
+                Work-related habits also have a subtler return on investment than health habits. Drinking water gives you feedback within hours. Reading for 20 minutes a day gives you a new idea once a week, a changed perspective once a month, and a meaningfully broader worldview over two years. That delayed return makes them easier to skip, and more valuable to maintain. For the science behind why habits form and stick, see our guide on <a href="/blog/how-to-build-habits-that-stick/">how to build habits that actually stick</a>.
             </p>
 
             <div class="highlight-box">
                 <p>
-                    <strong>1% better every day compounds to 37x better over a year</strong>, a formulation popularised in Atomic Habits. Applied to work, a 20-minute daily learning habit doesn't just add up linearly. It creates connections between ideas, builds confidence, and compounds with everything else you know. That's the return that's hard to see until you look back.
+                    <strong>Small improvements, compounded:</strong> A formulation popularised in <em>Atomic Habits</em> describes how consistent 1% improvements accumulate over time. Applied to work, a 20-minute daily learning habit doesn't just add up linearly; it creates connections between ideas, builds confidence, and compounds with everything else you know. The return is hard to see until you look back.
                 </p>
             </div>
 
@@ -293,25 +530,31 @@
 
             <h3>Daily focused work sessions</h3>
             <p>
-                A single 90-minute block of uninterrupted, high-quality work each day, no notifications, no context-switching, produces more than three hours of scattered effort. The research on deep work (popularised by Cal Newport) is consistent: cognitive quality and output degrade sharply with interruptions. Building a daily deep work habit is one of the highest-return professional investments you can make.
+                A single 60–90 minute block of uninterrupted, high-quality work each day (no notifications, no context-switching) can often create more meaningful progress than several hours of scattered effort. The research on deep work (explored thoroughly by Cal Newport) is consistent: cognitive quality and output degrade sharply with frequent interruptions. Building a daily deep work habit is one of the highest-return professional investments you can make.
             </p>
             <p>
-                In Productify, this is a habit with a clear measurable target: 90 minutes. You log your completion each day and build a streak. Over weeks, the pattern becomes clear, which days you protect the time, which days you don't, and what the correlations are.
+                In Productify, this is a habit with a clear <a href="/features/measurable-goals/">measurable target</a>: 90 minutes. You log your completion each day and build a streak. Over weeks, the pattern becomes clear: which days you protect the time, which days you don't, and what the correlations are. The <a href="/features/ai-analyser/">AI Habit Analyser</a> can surface those patterns once you have a few weeks of data.
             </p>
 
             <h3>Daily learning and reading</h3>
             <p>
-                Twenty minutes of reading per day in your field adds up to roughly 12 books a year. Most professionals read fewer than three. This isn't a talent gap, it's a habit gap. A daily reading habit, tracked consistently, is one of the simplest forms of professional self-improvement available to anyone. It requires nothing except the time and the intention to show up for it.
+                Over a year, 20 minutes of focused professional reading per day can add up to several books' worth of learning, far more than most people manage through occasional bursts. This isn't a talent gap; it's a habit gap. A daily reading habit, tracked consistently, is one of the simplest forms of professional self-improvement available to anyone. It requires nothing except the time and the intention to show up for it.
+            </p>
+            <p>
+                Setting a <a href="/features/measurable-goals/">measurable goal</a> of pages or minutes rather than just "read something" makes the habit concrete. Productify lets you choose the unit that makes most sense for how you actually work.
             </p>
 
             <h3>Weekly review and planning</h3>
             <p>
-                A 30-minute weekly review, looking at what you completed, what you didn't, and what matters next week, is perhaps the single most effective productivity habit for reducing anxiety and improving output. It transforms your week from reactive to intentional. In Productify, this is a weekly-frequency habit (once per week) rather than a daily one, which means it won't count against your daily streak if you do it on any day of the seven.
+                A 30-minute weekly review (what you completed, what you didn't, and what matters next week) is one of the most effective productivity habits for reducing anxiety and improving output. It transforms your week from reactive to intentional. In Productify, this is a weekly-frequency habit (once per week) rather than a daily one, so it won't pressure your daily streak if you do it on any day of the seven.
             </p>
 
             <h3>End-of-day shutdown ritual</h3>
             <p>
-                The inability to psychologically disengage from work is one of the most damaging modern workplace patterns. A consistent end-of-day habit, reviewing your open tasks, writing tomorrow's single most important priority, and then physically closing the apps, creates a cognitive boundary that protects your recovery time and improves tomorrow's focus. Small ritual, large return.
+                The inability to psychologically disengage from work is one of the most damaging modern workplace patterns. A consistent end-of-day habit, reviewing your open tasks, writing tomorrow's single most important priority, and then closing your apps, creates a cognitive boundary that protects your recovery time and sharpens tomorrow's focus. Small ritual, meaningful return.
+            </p>
+            <p>
+                If you're building a consistent shutdown habit, <a href="/features/streak-tracking/">streak tracking</a> makes the invisible progress of daily discipline visible over weeks and months.
             </p>
 
             <h2>Work habit use cases</h2>
@@ -319,22 +562,22 @@
 
         <div class="use-case-grid">
             <div class="use-case-card">
-                <div class="use-case-card__icon">🎯</div>
+                <div class="use-case-card__icon" aria-hidden="true">🎯</div>
                 <h3>Deep work sessions</h3>
-                <p>Track 60–90 minute focused work blocks daily. The streak shows you how many consecutive days you've protected time for your best work.</p>
+                <p>Track 60–90 minute focused work blocks daily. The streak shows how many consecutive days you've protected time for your best work.</p>
             </div>
             <div class="use-case-card">
-                <div class="use-case-card__icon">📚</div>
+                <div class="use-case-card__icon" aria-hidden="true">📚</div>
                 <h3>Professional reading</h3>
-                <p>20 minutes per day on books, papers, or articles in your field. Track pages or minutes, Productify lets you choose the unit that makes most sense.</p>
+                <p>20 minutes per day on books, papers, or articles in your field. Track pages or minutes. Productify lets you choose the unit that fits your style.</p>
             </div>
             <div class="use-case-card">
-                <div class="use-case-card__icon">✍️</div>
+                <div class="use-case-card__icon" aria-hidden="true">✍️</div>
                 <h3>Writing and journalling</h3>
                 <p>Whether you're writing for your career or just for clarity, a daily writing habit tracked by minutes or word count builds creative stamina over time.</p>
             </div>
             <div class="use-case-card">
-                <div class="use-case-card__icon">📋</div>
+                <div class="use-case-card__icon" aria-hidden="true">📋</div>
                 <h3>Weekly planning</h3>
                 <p>A 30-minute weekly review set as a once-per-week habit. Consistent planning reduces anxiety and keeps your work directionally correct.</p>
             </div>
@@ -343,13 +586,113 @@
         <div class="article" style="margin-top: 48px;">
             <h2>How Productify supports work habit building</h2>
             <ul class="check-list">
-                <li>Measurable goals let you track exact minutes, sessions, or pages: not just binary completion</li>
+                <li><a href="/features/measurable-goals/">Measurable goals</a> let you track exact minutes, sessions, or pages, not just binary completion</li>
                 <li>Weekly frequency habits for things that don't need to happen every single day</li>
-                <li>TempO (AI Habit Analyser) identifies which work habits you maintain most consistently and when</li>
-                <li>Habit Duo lets a colleague or accountability partner track the same professional habit with you</li>
+                <li>The <a href="/features/ai-analyser/">AI Habit Analyser</a> identifies which work habits you maintain most consistently and when your patterns shift</li>
+                <li><a href="/features/habit-duo/">Habit Duo</a> lets a colleague or accountability partner track the same professional habit alongside you</li>
                 <li>Smart reminders anchor your focus sessions to the right window in your workday</li>
-                <li>Streak tracking makes the invisible progress of daily learning visible over months</li>
+                <li><a href="/features/streak-tracking/">Streak tracking</a> makes the invisible progress of daily learning visible over months</li>
             </ul>
+            <p>
+                If you're new to habit tracking, <a href="/blog/how-to-use-a-habit-tracker/">this guide on how to use a habit tracker</a> walks you through setting up your first work habits from scratch.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- HABIT TRACKER VS TO-DO LIST SECTION -->
+<section class="section section--alt" aria-labelledby="vs-todoist-heading">
+    <div class="container">
+        <div class="article" style="max-width:100%;">
+            <div class="eyebrow">Habit Tracker vs To-Do List</div>
+            <h2 id="vs-todoist-heading">Why a habit tracker works better than a to-do list for work routines</h2>
+            <p style="max-width:680px;">
+                Both are useful tools, but they solve different problems. Understanding the difference helps you use each one well.
+                See the <a href="/blog/habit-tracker-vs-to-do-list/">full comparison of habit trackers vs to-do lists</a> for a deeper breakdown.
+            </p>
+
+            <div class="vs-grid">
+                <div class="vs-card">
+                    <div class="vs-card__label">To-Do List</div>
+                    <h3>Good for one-time tasks</h3>
+                    <p>To-do lists excel at capturing discrete, non-repeating work: send the proposal, book the flight, finish the report. Once done, that item disappears, as it should. But if "read for 20 minutes" reappears every day, a to-do list makes it feel like an ongoing burden rather than a building routine.</p>
+                </div>
+                <div class="vs-card vs-card--highlight">
+                    <div class="vs-card__label">Habit Tracker</div>
+                    <h3>Better for repeated behaviors</h3>
+                    <p>A habit tracker is designed for exactly the opposite: things you do repeatedly that build up over time. It shows you your history, your streak, your completion rate. It makes consistency visible, which is precisely what creates momentum for professional growth habits like deep work or daily reading.</p>
+                </div>
+            </div>
+
+            <p>
+                Professional growth depends on repeated patterns, not one-time actions. Reading one book won't change your thinking. Reading for 20 minutes every day for a year might. Productify makes those repeated patterns visible. You can see at a glance how consistent you've been with your deep work sessions or your weekly review, which a task list simply doesn't track.
+            </p>
+            <p>
+                The practical suggestion: use a to-do list for one-time tasks and project work, and use a habit tracker for the repeating routines that underpin your long-term performance. They work best together, not as substitutes.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section" aria-labelledby="faq-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">FAQ</div>
+            <h2 id="faq-heading">Productivity habits at work: common questions</h2>
+        </div>
+        <div class="faq-list" style="max-width:720px; margin:0 auto;">
+
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-a1">
+                    What are the best productivity habits at work?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" id="faq-a1" role="region">
+                    <p>The highest-value work habits tend to be: a daily focused work session (60–90 minutes of uninterrupted deep work), professional reading (15–20 minutes daily), a weekly planning review, and an end-of-day shutdown ritual. These are modest in time but significant in compound effect over months and years.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-a2">
+                    How do I build better work routines?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" id="faq-a2" role="region">
+                    <p>Start with one routine, not five. Pick the habit that has the highest return for your specific work, usually focused work time or daily learning. Make the initial version small enough to do even on difficult days, track it consistently, and add more routines only once the first is genuinely automatic. For the research behind this, see our guide on <a href="/blog/how-to-build-habits-that-stick/">how to build habits that actually stick</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-a3">
+                    Should I track productivity habits daily or weekly?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" id="faq-a3" role="region">
+                    <p>It depends on the habit. Daily habits like deep work sessions or reading work well as everyday routines. Weekly habits like planning reviews or team check-ins are better tracked at a weekly frequency. Productify supports both. You set the schedule that matches the actual behavior, not a one-size-fits-all daily template.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-a4">
+                    Can a habit tracker help with work productivity?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" id="faq-a4" role="region">
+                    <p>Yes. A habit tracker makes your consistency visible over time, which matters particularly for work habits whose benefits are delayed. Seeing 18 out of 21 days completed for your reading habit gives you concrete feedback that a to-do list doesn't provide. Productify's <a href="/features/measurable-goals/">measurable goals</a> let you track quantity (minutes, sessions, pages) so you see how much, not just whether you did it.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-a5">
+                    What is the best productivity habit to start with?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" id="faq-a5" role="region">
+                    <p>For most people, a daily focused work session is the highest-return first habit. Even 45–60 minutes of distraction-free work on your most important project each morning creates meaningful progress. It's specific, measurable, and creates immediate feedback. Start with that before adding anything else. Once it's automatic, layer in the weekly review.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -358,17 +701,18 @@
 <section class="cta-banner section--dark" aria-labelledby="cta-heading">
     <div class="container">
         <div class="eyebrow" style="background: rgba(255,255,255,.1); color: #93C5FD; border-color: rgba(255,255,255,.1);">Ready to start?</div>
-        <h2 id="cta-heading">Start one work habit today.</h2>
+        <h2 id="cta-heading">Start building your first productivity habit today.</h2>
         <p class="lead">
-            Download Productify free, pick your highest-value daily routine, and start building the compound return that shows up in six months.
+            Productify is free on iOS and requires no account. Set a measurable goal, add a gentle reminder, and let your <a href="/features/streak-tracking/" style="color:rgba(248,250,252,.8); text-decoration:underline;">streak</a> do the rest. No pressure, no complexity. Just a clean, honest record of the work you're putting in.
         </p>
         <div class="cta-banner__btns">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="appstore-badge-link" aria-label="Download Productify on the App Store">
+               class="appstore-badge-link" aria-label="Download Productify free on the App Store">
                 <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="170" height="50">
             </a>
-            <a href="/solutions/morning-routine/" class="btn btn-ghost">See Morning Routine guide →</a>
+            <a href="/solutions/morning-routine/" class="btn btn-ghost">Build a morning routine →</a>
         </div>
+        <p style="margin-top:16px; font-size:.8rem; color:rgba(248,250,252,.5);">Free to download · Measurable goals · iOS 15+ · No account required</p>
     </div>
 </section>
 
@@ -391,17 +735,19 @@
                 <h4>Features</h4>
                 <ul>
                     <li><a href="/features/habit-tracker/">Habit Tracker</a></li>
+                    <li><a href="/features/measurable-goals/">Measurable Goals</a></li>
                     <li><a href="/features/streak-tracking/">Streak Tracking</a></li>
-                    <li><a href="/features/smart-reminders/">Smart Reminders</a></li>
-                    <li><a href="/#features">All Features</a></li>
+                    <li><a href="/features/ai-analyser/">AI Habit Analyser</a></li>
+                    <li><a href="/features/habit-duo/">Habit Duo</a></li>
                 </ul>
             </div>
             <div class="footer__col">
                 <h4>Solutions</h4>
                 <ul>
-                    <li><a href="/blog/best-habit-tracker-apps-2026/">Best Habit Tracker Apps 2026</a></li>
-                    <li><a href="/solutions/morning-routine/">Build a Morning Routine</a></li>
                     <li><a href="/solutions/productivity-at-work/">Productivity at Work</a></li>
+                    <li><a href="/solutions/morning-routine/">Build a Morning Routine</a></li>
+                    <li><a href="/blog/habit-tracker-vs-to-do-list/">Habit Tracker vs To-Do List</a></li>
+                    <li><a href="/blog/best-habit-tracker-apps-2026/">Best Habit Tracker Apps 2026</a></li>
                     <li><a href="/#pricing">Pricing</a></li>
                 </ul>
             </div>
@@ -447,7 +793,6 @@
     closeBtn.addEventListener('click', closeMobileNav);
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
 
-    // Nav dropdowns , hover on desktop, click-toggle on touch
     var isTouchDevice = false;
     window.addEventListener('touchstart', function() { isTouchDevice = true; }, { once: true });
     function openDropdown(dd) {
@@ -490,6 +835,21 @@
     });
     document.addEventListener('click', function() { closeAllDropdowns(); });
     document.addEventListener('keydown', function(e) { if (e.key==='Escape') closeAllDropdowns(); });
+
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function(i) {
+                i.classList.remove('open');
+                i.querySelector('.faq-question').setAttribute('aria-expanded','false');
+            });
+            if (!isOpen) {
+                item.classList.add('open');
+                this.setAttribute('aria-expanded','true');
+            }
+        });
+    });
 </script>
 
 </body>
