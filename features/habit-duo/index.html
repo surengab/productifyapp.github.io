@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Habit Duo – Accountability Habit Tracker With a Friend | Productify</title>
-    <meta name="description" content="Habit Duo is a shared habit tracker that pairs you with one friend to build a single routine together. Accountability without competition — available on Productify for iPhone.">
+    <title>HabitDuo — Habit Tracker With Friends &amp; Couples | Productify</title>
+    <meta name="description" content="Build habits with a friend using HabitDuo in Productify. Pick one habit, invite one person, and track it together — privately, calmly, and without a leaderboard. Free to download.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://productifyapp.org/features/habit-duo/">
     <link rel="alternate" hreflang="en" href="https://productifyapp.org/features/habit-duo/">
@@ -13,15 +13,15 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://productifyapp.org/features/habit-duo/">
-    <meta property="og:title" content="Habit Duo – Accountability Habit Tracker With a Friend | Productify">
-    <meta property="og:description" content="Shared accountability without the pressure. Habit Duo in Productify lets you and a friend track one habit together, stay consistent, and support each other — not compete.">
-    <meta property="og:image" content="https://productifyapp.org/image_2.png">
+    <meta property="og:title" content="HabitDuo — Habit Tracker With Friends &amp; Couples | Productify">
+    <meta property="og:description" content="One habit. One friend. No pressure. HabitDuo lets two people build one shared habit together — with private progress and supportive streaks. Download Productify free.">
+    <meta property="og:image" content="https://productifyapp.org/assets/productify-habit-duo-progress-view.webp">
     <meta property="og:site_name" content="Productify">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Habit Duo – Accountability Habit Tracker With a Friend | Productify">
-    <meta name="twitter:description" content="Build one habit alongside one friend. Shared accountability, no rankings, no pressure — just quiet mutual support.">
-    <meta name="twitter:image" content="https://productifyapp.org/image_2.png">
+    <meta name="twitter:title" content="HabitDuo — Habit Tracker With Friends &amp; Couples | Productify">
+    <meta name="twitter:description" content="One habit. One friend. No pressure. Quiet accountability that actually works. Download Productify free.">
+    <meta name="twitter:image" content="https://productifyapp.org/assets/productify-habit-duo-progress-view.webp">
     <meta name="twitter:site" content="@Productify_app">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -37,19 +37,270 @@
     <link rel="stylesheet" href="/shared.css">
 
     <style>
+        /* ── HERO (two-column) ───────────────────────────────────────── */
+        .duo-hero {
+            padding: 72px 0 80px;
+            background: var(--bg);
+            position: relative; overflow: hidden;
+        }
+        .duo-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 900px 500px at 60% 0%, rgba(37,99,235,.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .duo-hero__inner {
+            position: relative; z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .duo-hero__text .eyebrow { margin-bottom: 20px; }
+        .duo-hero__text h1 { margin-bottom: 20px; }
+        .duo-hero__text h1 span { color: var(--blue); }
+        .duo-hero__text .lead { margin-bottom: 36px; }
+        .duo-hero__badge-row {
+            display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+        }
+        .duo-hero__note {
+            font-size: .78rem; color: var(--ink-faint); line-height: 1.5;
+        }
+        .duo-hero__visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+        .duo-phone {
+            border-radius: 28px;
+            box-shadow: 0 20px 56px rgba(0,0,0,.13), 0 4px 16px rgba(0,0,0,.07);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .duo-phone--primary {
+            width: 180px;
+            transform: translateY(0);
+        }
+        .duo-phone--secondary {
+            width: 160px;
+            transform: translateY(24px);
+            opacity: .9;
+        }
+        @media (max-width: 860px) {
+            .duo-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+            .duo-hero__visual { justify-content: flex-start; }
+            .duo-phone--primary { width: 150px; }
+            .duo-phone--secondary { width: 136px; }
+        }
+        @media (max-width: 600px) {
+            .duo-hero { padding: 52px 0 60px; }
+        }
+
+        /* ── HOW IT WORKS ────────────────────────────────────────────── */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--bg-alt);
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .step-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-card);
+            padding: 32px 28px;
+            box-shadow: var(--shadow-xs);
+            position: relative;
+        }
+        .step-card__num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--blue); color: #fff;
+            font-size: .8rem; font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .step-card__img {
+            width: 100%; border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-xs);
+            margin-bottom: 20px;
+        }
+        .step-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .step-card p { font-size: .88rem; color: var(--ink-muted); line-height: 1.72; margin: 0; }
+        @media (max-width: 760px) {
+            .steps-grid { grid-template-columns: 1fr; gap: 16px; }
+        }
+
+        /* ── COMPARISON TABLE ────────────────────────────────────────── */
+        .duo-compare {
+            padding: 80px 0;
+            background: var(--bg);
+        }
+        .compare-table-wrap {
+            margin-top: 48px;
+            overflow-x: auto;
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-xs);
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .93rem;
+        }
+        .compare-table thead tr {
+            background: var(--bg-alt);
+        }
+        .compare-table th {
+            padding: 16px 24px;
+            font-weight: 700;
+            color: var(--ink);
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: .85rem;
+        }
+        .compare-table th:first-child { color: var(--ink-muted); font-weight: 500; }
+        .compare-table th.col-duo { color: var(--blue); }
+        .compare-table td {
+            padding: 14px 24px;
+            color: var(--ink-2);
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        .compare-table td:first-child {
+            font-weight: 500; color: var(--ink);
+        }
+        .compare-table td.col-solo { color: var(--ink-muted); }
+        .compare-table td.col-duo { color: var(--ink-2); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr:nth-child(even) td { background: rgba(247,248,250,.5); }
+        .tag-x { color: #9CA3AF; }
+        .tag-check { color: var(--blue); font-weight: 600; }
+        @media (max-width: 600px) {
+            .compare-table th, .compare-table td { padding: 12px 16px; }
+        }
+
+        /* ── TRACK GRID ──────────────────────────────────────────────── */
+        .track-section {
+            padding: 80px 0;
+            background: var(--bg-alt);
+        }
+        .track-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 36px;
+        }
+        .track-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-pill);
+            font-size: .89rem;
+            font-weight: 500;
+            color: var(--ink-2);
+            box-shadow: var(--shadow-xs);
+        }
+        .track-chip span { font-size: 1rem; }
+
+        /* ── QUOTE BLOCK ─────────────────────────────────────────────── */
+        .duo-quote-section {
+            padding: 80px 0;
+            background: var(--bg);
+        }
+        .duo-quote-inner {
+            max-width: 740px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .duo-quote-mark {
+            font-size: 3rem;
+            line-height: 1;
+            color: var(--blue);
+            opacity: .35;
+            margin-bottom: 8px;
+        }
+        .duo-quote-text {
+            font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.55;
+            letter-spacing: -.3px;
+            margin-bottom: 28px;
+        }
+        .duo-quote-sub {
+            font-size: .94rem;
+            color: var(--ink-muted);
+            line-height: 1.85;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .duo-screenshot-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-end;
+            margin-top: 48px;
+        }
+        .duo-screenshot-row img {
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+        .duo-screenshot-row img:first-child { width: 220px; }
+        .duo-screenshot-row img:last-child  { width: 195px; transform: translateY(16px); }
+        @media (max-width: 600px) {
+            .duo-screenshot-row { gap: 12px; }
+            .duo-screenshot-row img:first-child { width: 150px; }
+            .duo-screenshot-row img:last-child  { width: 136px; }
+        }
+
+        /* ── SEND-THIS CTA ───────────────────────────────────────────── */
+        .send-cta-section {
+            padding: 80px 0;
+            background: var(--bg-alt);
+        }
+        .send-cta-box {
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 48px 44px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .send-cta-box h2 { margin-bottom: 14px; }
+        .send-cta-box p  { font-size: .97rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 32px; }
+        .send-cta-box .btn-row {
+            display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+        }
+        @media (max-width: 600px) {
+            .send-cta-box { padding: 36px 24px; }
+        }
+
+        /* ── SMALL TWEAKS ────────────────────────────────────────────── */
         .feature-page-meta-date { font-size: .85rem; color: var(--ink-muted); margin: 0 0 16px; }
+        .section-spacer { height: 48px; }
     </style>
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Habit Duo – Accountability Habit Tracker With a Friend",
-        "description": "How Productify's Habit Duo feature uses shared accountability to help two people build a single habit together, with encouragement, not competition.",
+        "headline": "HabitDuo — Habit Tracker With Friends & Couples",
+        "description": "Build one habit with one friend using HabitDuo in Productify. Private progress, supportive streaks, no leaderboard.",
         "url": "https://productifyapp.org/features/habit-duo/",
         "datePublished": "2026-05-10",
-        "dateModified": "2026-05-10",
-        "image": "https://productifyapp.org/image_2.png",
+        "dateModified": "2026-05-13",
+        "image": "https://productifyapp.org/assets/productify-habit-duo-progress-view.webp",
         "mainEntityOfPage": { "@type": "WebPage", "@id": "https://productifyapp.org/features/habit-duo/" },
         "author": { "@type": "Organization", "name": "Productify" },
         "publisher": { "@type": "Organization", "name": "Productify", "logo": { "@type": "ImageObject", "url": "https://productifyapp.org/favicon.svg" } }
@@ -62,7 +313,7 @@
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://productifyapp.org/" },
             { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://productifyapp.org/#features" },
-            { "@type": "ListItem", "position": 3, "name": "Habit Duo", "item": "https://productifyapp.org/features/habit-duo/" }
+            { "@type": "ListItem", "position": 3, "name": "HabitDuo", "item": "https://productifyapp.org/features/habit-duo/" }
         ]
     }
     </script>
@@ -73,7 +324,7 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "How many friends can I add to Habit Duo?",
+                "name": "How many friends can I add to HabitDuo?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "One friend per habit. The one-to-one pairing is intentional — it keeps the relationship focused and avoids the noise of group challenges or social feeds."
@@ -81,26 +332,42 @@
             },
             {
                 "@type": "Question",
-                "name": "Does my friend need a Productify account?",
+                "name": "Does my friend need to download Productify too?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, your friend will need to have Productify installed on their iPhone to join a Duo. You invite them via a simple link or code. Both users track independently in their own app."
+                    "text": "Yes — both people need the app. Your friend will receive an invite notification, and can download and join in one tap. Both accounts are free to start."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Can my partner see all of my habits?",
+                "name": "Can we see each other's other habits?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No. Your partner only sees the single shared Duo habit — not your full habit list. Your other habits remain completely private."
+                    "text": "No. HabitDuo only shows the shared habit you've chosen together. Your other habits remain completely private to you."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Is Habit Duo on the free plan?",
+                "name": "What happens if one of us misses a day?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Habit Duo is a Pro feature. Check the app for current Productify Pro pricing and available plans."
+                    "text": "Nothing dramatic. Productify uses supportive streaks — a missed day doesn't erase your progress or end the streak. You both just pick back up the next day."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can we have more than one HabitDuo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each HabitDuo is one habit with one friend. You can have multiple HabitDuos with different people for different habits — though starting with just one is usually the better approach."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is HabitDuo private?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Completely. Your HabitDuo is only visible to you and the friend you invited. There is no public feed, no social profile, and no sharing unless you choose to."
                 }
             }
         ]
@@ -292,178 +559,362 @@
             <li class="breadcrumb__sep" aria-hidden="true">›</li>
             <li><a href="/#features">Features</a></li>
             <li class="breadcrumb__sep" aria-hidden="true">›</li>
-            <li><span class="breadcrumb__current">Habit Duo</span></li>
+            <li><span class="breadcrumb__current">HabitDuo</span></li>
         </ol>
     </div>
 </div>
 
-<!-- PAGE HERO -->
-<section class="page-hero" aria-labelledby="page-hero-heading">
+<!-- HERO -->
+<section class="duo-hero" aria-labelledby="duo-hero-heading">
     <div class="container">
-        <div class="page-hero__inner">
-            <div class="eyebrow">Feature · Accountability</div>
-            <p class="feature-page-meta-date">Updated May 10, 2026</p>
-            <h1 id="page-hero-heading">
-                Build one habit<br>
-                <span>with a friend by your side</span>
-            </h1>
-            <p class="lead">
-                Habit Duo pairs you with one person, a friend, partner, or colleague, to build a single shared habit together. Not a leaderboard, not a competition. Just quiet, mutual accountability that makes showing up a little easier.
-            </p>
-            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="appstore-badge-link" aria-label="Download Productify free on the App Store">
-                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
-            </a>
-            <p style="margin-top: 12px; font-size: .8rem; color: var(--ink-faint);">Free to download · iOS 15+ · No account required</p>
+        <div class="duo-hero__inner">
+            <div class="duo-hero__text">
+                <div class="eyebrow">Feature · Accountability</div>
+                <h1 id="duo-hero-heading">
+                    One habit.<br>
+                    One friend.<br>
+                    <span>No pressure.</span>
+                </h1>
+                <p class="lead">
+                    HabitDuo is the simplest way to build a habit with someone you trust. Pick anything — steps, reading, water, movement. Track it together, privately, with no leaderboard and no shame when life gets in the way.
+                </p>
+                <div class="duo-hero__badge-row">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="appstore-badge-link" aria-label="Download Productify free on the App Store">
+                        <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
+                    </a>
+                    <p class="duo-hero__note">Free to download · iOS 15+ · No account required</p>
+                </div>
+            </div>
+            <div class="duo-hero__visual" aria-hidden="true">
+                <img
+                    src="/screenshot_habit_duo_2.png"
+                    alt="HabitDuo shared habit view in Productify"
+                    class="duo-phone duo-phone--primary"
+                    width="180"
+                    loading="eager">
+                <img
+                    src="/assets/productify-habit-duo-streak-view.webp"
+                    alt="HabitDuo shared streak view"
+                    class="duo-phone duo-phone--secondary"
+                    width="160"
+                    loading="eager">
+            </div>
         </div>
     </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<section class="section" aria-labelledby="duo-why-heading">
+<!-- HOW IT WORKS -->
+<section class="how-it-works" aria-labelledby="how-heading">
     <div class="container">
-        <div class="article">
+        <div class="section-header text-center">
             <div class="eyebrow">How It Works</div>
-            <h2 id="duo-why-heading">Why doing it together can help</h2>
-            <p>
-                Most people who struggle to build habits aren't lacking willpower. They're lacking a witness. Research suggests that sharing a goal with even one other person, and knowing they can see your progress, can improve follow-through. It's not about pressure. It's about the simple human instinct to not let someone down.
-            </p>
-            <p>
-                Habit Duo in Productify takes this principle and builds it into the app in the quietest, least intrusive way possible. You pick one habit. You invite one person. You both track it, separately, in your own Productify app. And you can see each other's progress, a calm, non-judgmental view of whether the other person showed up today.
-            </p>
-
-            <div class="highlight-box">
-                <p>
-                    <strong>Goal-sharing and accountability:</strong> Goal-sharing research suggests that writing down a goal and sharing progress with another person can improve follow-through. Habit Duo applies that idea in a lightweight way, without turning it into a public challenge.
-                </p>
-            </div>
-
-            <h2>What makes Habit Duo different from social fitness apps</h2>
-            <p>
-                Most accountability features in apps are built around competition: who has the longer streak, who has more points, who "won" the challenge. That model works for some people. But for many, especially those building quieter, personal habits like journaling, sleep routines, or mindfulness, a competitive framing adds the wrong kind of pressure.
-            </p>
-            <p>
-                Habit Duo is intentionally non-competitive. There are no scores, no rankings, no notifications telling you that your partner just extended their streak past yours. Just a shared view of mutual effort. The goal is encouragement, not one-upmanship.
-            </p>
-
-            <h3>One habit, one partner</h3>
-            <p>
-                The constraint is the feature. By limiting each Duo to a single habit, Productify forces a clarity that broader accountability apps miss: you're not managing a shared dashboard of ten things, you're focused on one thing that matters to both of you. This shared focus makes it easier to check in, easier to encourage, and easier to talk about without the conversation becoming overwhelming.
-            </p>
-
-            <h3>Progress side by side, not head to head</h3>
-            <p>
-                When you open the Duo view, you see your completion history next to your partner's, presented identically, with no winner or loser framing. A good week for both of you looks like two consistent rows of check marks. A harder week shows gaps for both of you, which is often a relief: you're not falling behind your partner, you're both navigating the same reality.
-            </p>
-
-            <h3>The subtle power of being seen</h3>
-            <p>
-                You don't need your partner to message you every day. You don't need a notification that says "your friend completed their habit, will you?" What changes behavior is simply knowing that someone you care about will see whether you showed up. That awareness alone, that your effort (or non-effort) is visible to one person who matters, can help tip the balance on a borderline day.
-            </p>
-
-            <h2>Good habits to build with Habit Duo</h2>
+            <h2 id="how-heading">Set up in 30 seconds. Keep going for months.</h2>
+            <p class="lead">Three steps. That's it.</p>
         </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-card__num">1</div>
+                <img
+                    src="/screenshot_habit_duo_choose.png"
+                    alt="HabitDuo habit selection screen"
+                    class="step-card__img"
+                    loading="lazy">
+                <h3>Pick a habit</h3>
+                <p>Choose from <a href="/features/habit-templates/">habit templates</a> or create your own. Set a <a href="/features/measurable-goals/">measurable goal</a> — steps, minutes, pages, glasses of water, reps. Whatever fits.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-card__num">2</div>
+                <img
+                    src="/screenshot_habit_duo_2.png"
+                    alt="Invite a friend to HabitDuo"
+                    class="step-card__img"
+                    loading="lazy">
+                <h3>Invite one friend</h3>
+                <p>Tap invite, type your friend's name, send a link. They accept in one tap — no complicated setup. Both of you are in. You can invite a partner, a sibling, a friend across the country.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-card__num">3</div>
+                <img
+                    src="/assets/productify-habit-duo-progress-view.webp"
+                    alt="HabitDuo shared progress view"
+                    class="step-card__img"
+                    loading="lazy">
+                <h3>Track together</h3>
+                <p>Every day, you both see whether the other checked in. Quiet. Private. Just the two of you — with a shared streak that supports you through bad days and celebrates the good ones.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- COMPARISON -->
+<section class="duo-compare" aria-labelledby="compare-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">Why It Works</div>
+            <h2 id="compare-heading">Groups are loud. Two people are enough.</h2>
+            <p class="lead" style="margin: 10px auto 0;">Most habit challenges give you a crowd. HabitDuo gives you one person who actually notices.</p>
+        </div>
+        <div class="compare-table-wrap">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="col-solo">Tracking alone</th>
+                        <th class="col-duo">HabitDuo with one friend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>When you miss a day</td>
+                        <td class="col-solo"><span class="tag-x">—</span> Easy to disappear, no one notices</td>
+                        <td class="col-duo"><span class="tag-check">✓</span> One person notices. You come back.</td>
+                    </tr>
+                    <tr>
+                        <td>Accountability style</td>
+                        <td class="col-solo"><span class="tag-x">—</span> No visibility, rely on willpower alone</td>
+                        <td class="col-duo"><span class="tag-check">✓</span> Quiet mutual visibility, no pressure</td>
+                    </tr>
+                    <tr>
+                        <td>Big group challenges</td>
+                        <td class="col-solo"><span class="tag-x">—</span> Noisy, easy to fade into the crowd</td>
+                        <td class="col-duo"><span class="tag-check">✓</span> Two people — signal, not noise</td>
+                    </tr>
+                    <tr>
+                        <td>When you have a bad week</td>
+                        <td class="col-solo"><span class="tag-x">—</span> Streak breaks, motivation crashes</td>
+                        <td class="col-duo"><span class="tag-check">✓</span> <a href="/features/habit-streaks/">Supportive streaks</a> — pick back up, no shame</td>
+                    </tr>
+                    <tr>
+                        <td>Long-term consistency</td>
+                        <td class="col-solo"><span class="tag-x">—</span> Abandoned after week 2 on average</td>
+                        <td class="col-duo"><span class="tag-check">✓</span> Month 3 and still going</td>
+                    </tr>
+                    <tr>
+                        <td>Privacy</td>
+                        <td class="col-solo"><span class="tag-x">—</span> Either fully public or fully solo</td>
+                        <td class="col-duo"><span class="tag-check">✓</span> Completely private — just the two of you</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT YOU CAN TRACK -->
+<section class="track-section" aria-labelledby="track-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">Flexible Goals</div>
+            <h2 id="track-heading">Any habit. Any goal. Any two people.</h2>
+            <p class="lead" style="margin: 10px auto 0;">
+                HabitDuo works with Productify's <a href="/features/measurable-goals/">flexible measurable goals</a> — set your own target and track it together.
+            </p>
+        </div>
+        <div class="track-grid" role="list" aria-label="Trackable habits">
+            <div class="track-chip" role="listitem"><span>🚶</span> Daily steps</div>
+            <div class="track-chip" role="listitem"><span>💧</span> Glasses of water</div>
+            <div class="track-chip" role="listitem"><span>📖</span> Pages read</div>
+            <div class="track-chip" role="listitem"><span>⏱️</span> Minutes of movement</div>
+            <div class="track-chip" role="listitem"><span>🧘</span> Meditation minutes</div>
+            <div class="track-chip" role="listitem"><span>✍️</span> Journaling</div>
+            <div class="track-chip" role="listitem"><span>🏃</span> Morning run</div>
+            <div class="track-chip" role="listitem"><span>😴</span> Sleep schedule</div>
+            <div class="track-chip" role="listitem"><span>💪</span> Workout reps</div>
+            <div class="track-chip" role="listitem"><span>📵</span> No screens after 10pm</div>
+            <div class="track-chip" role="listitem"><span>🌿</span> Stretching</div>
+            <div class="track-chip" role="listitem"><span>✏️</span> Custom habit</div>
+        </div>
+        <p style="margin-top: 28px; font-size: .88rem; color: var(--ink-muted); text-align: center;">
+            Not sure where to start? Browse <a href="/features/habit-templates/">habit templates</a> or read <a href="/blog/what-habits-to-track/">what habits to track first</a>.
+        </p>
+    </div>
+</section>
+
+<!-- QUOTE + SCREENSHOT -->
+<section class="duo-quote-section" aria-labelledby="quote-heading">
+    <div class="container">
+        <div class="duo-quote-inner">
+            <div class="duo-quote-mark" aria-hidden="true">"</div>
+            <p class="duo-quote-text" id="quote-heading">
+                No leaderboard. No public feed. No streak that screams at you when you miss a day. Just your habit, your friend's habit, and a quiet check each morning.
+            </p>
+            <p class="duo-quote-sub">
+                HabitDuo is built on Productify's core principle — <a href="/features/habit-streaks/">habits should survive real life</a>. That means no shame spirals, no punishment for a hard week, and no pressure to perform publicly. Just two people, showing up for the same thing.
+            </p>
+            <div class="duo-screenshot-row" aria-hidden="true">
+                <img
+                    src="/assets/productify-habit-duo-streak-view.webp"
+                    alt="HabitDuo shared streak view in Productify"
+                    loading="lazy">
+                <img
+                    src="/assets/productify-habit-duo-progress-view.webp"
+                    alt="HabitDuo progress comparison view"
+                    loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GOOD HABITS + USE CASES -->
+<section class="section section--alt" aria-labelledby="use-cases-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">Real Examples</div>
+            <h2 id="use-cases-heading">Good habits to build with HabitDuo</h2>
+            <p class="lead" style="margin: 10px auto 0;">The constraint is the feature. One habit, one person. That focus is what makes it work.</p>
+        </div>
         <div class="use-case-grid">
             <div class="use-case-card">
                 <div class="use-case-card__icon">🏃</div>
                 <h3>Morning movement</h3>
-                <p>A friend who's also trying to exercise more. You both commit to 20 minutes of movement before 9am. Knowing they're doing it too makes the alarm a little easier to answer.</p>
+                <p>A friend who's also trying to move more. You both commit to 20 minutes before 9am. Knowing they're doing it too makes the alarm a little easier to answer.</p>
             </div>
             <div class="use-case-card">
                 <div class="use-case-card__icon">📖</div>
                 <h3>Daily reading</h3>
-                <p>A reading partner gives even a solitary habit a shared quality. You're both making time for it. You might even end up reading the same book.</p>
+                <p>A reading partner gives a solitary habit a shared quality. Ten pages a day, both tracking. You might even end up reading the same book.</p>
             </div>
             <div class="use-case-card">
                 <div class="use-case-card__icon">💧</div>
-                <h3>Hydration goals</h3>
+                <h3>Hydration</h3>
                 <p>Simple, measurable, and easy to compare. Knowing your partner is also trying to drink more water turns a forgettable goal into a shared ritual.</p>
             </div>
             <div class="use-case-card">
                 <div class="use-case-card__icon">🛌</div>
-                <h3>Consistent sleep schedule</h3>
-                <p>One of the hardest habits to keep. A partner with the same goal creates a gentle social contract: you both agreed to be in bed by 10:30. That agreement has real weight.</p>
+                <h3>Consistent sleep</h3>
+                <p>One of the hardest habits to maintain. A partner with the same goal creates a gentle social contract: you both agreed to be offline by 10:30. That agreement has real weight.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-card__icon">🧘</div>
+                <h3>Meditation or journaling</h3>
+                <p>Private habits that are easy to skip alone. With HabitDuo, there's a quiet reason to show up — not performance, just presence.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-card__icon">📵</div>
+                <h3>Screen-free mornings</h3>
+                <p>A habit couples and friends try together most often. No phones for 30 minutes after waking. Both of you tracking it makes the rule feel shared, not self-imposed.</p>
             </div>
         </div>
 
-        <div class="article" style="margin-top: 48px;">
-            <h2>How Habit Duo is designed</h2>
-            <ul class="check-list">
-                <li>Invite one friend via a simple link or code: no new account needed on their end</li>
-                <li>Both users track the same habit independently in their own app</li>
-                <li>A shared view shows both completion histories side by side</li>
-                <li>No competitive scoring, no streak comparisons, no pressure notifications</li>
-                <li>Either partner can pause, adjust, or end the Duo at any time</li>
-                <li>Works across any habit type: binary, measurable, or timed</li>
-            </ul>
-
-            <p style="margin-top: 32px;">
-                Habit Duo isn't about gamifying your relationships. It's about using the people you already trust to make the habits you already want to build a little more achievable. One habit. One person. A quiet commitment that can be easier to keep. For tracking habits beyond Duo, Productify's <a href="/features/habit-tracker/">habit tracker</a>, <a href="/features/measurable-goals/">measurable goals</a>, <a href="/features/streak-tracking/">streak tracking</a>, and <a href="/features/ai-analyser/">AI Habit Analyser</a> can complement what you do with a partner.
+        <div class="article" style="margin-top: 56px;">
+            <h2>Why doing it together matters</h2>
+            <p>
+                Most people who struggle to build <a href="/features/habit-tracker/">habits</a> aren't lacking willpower — they're lacking a witness. Research on goal accountability suggests that sharing progress with even one person can meaningfully improve follow-through. It's not about pressure. It's about the simple human instinct to not let someone down.
             </p>
-        </div>
-    </div>
-</section>
+            <p>
+                HabitDuo takes this principle and builds it into the app in the quietest, least intrusive way possible. You pick one habit. You invite one person. You both track it independently in your own Productify app. And you can see each other's progress — a calm, private view of whether the other person showed up today.
+            </p>
+            <p>
+                Most accountability features in apps are built around competition: who has the longer streak, who has more points, who won the week. That model works for some people. But for many — especially those building quieter, personal habits like journaling, sleep routines, or mindfulness — competition adds the wrong kind of pressure. HabitDuo is intentionally non-competitive. No scores, no rankings, no notifications about your partner's lead. Just a shared view of mutual effort.
+            </p>
+            <p>
+                To go deeper on habit science, read <a href="/blog/how-long-to-build-a-habit/">how long it takes to build a habit</a> or <a href="/blog/how-to-build-habits-that-stick/">how to build habits that stick</a>.
+            </p>
 
-<!-- SOURCES -->
-<section class="section section--alt" aria-labelledby="sources">
-    <div class="container">
-        <div class="article" style="max-width: 780px; margin: 0 auto;">
-            <h2 id="sources">Sources and further reading</h2>
-            <p>A few references if you want to read more about accountability and habits — kept short on purpose.</p>
+            <h3>Works across any distance</h3>
+            <p>
+                HabitDuo doesn't require you to be in the same city — or even the same timezone. A shared habit is something you can both do on your own schedule, in your own space. Many people use it with a friend who moved away, a sibling across the country, or a partner with a different daily routine.
+            </p>
+
+            <h3>Apple Watch, widgets, and Live Activities</h3>
+            <p>
+                HabitDuo works with the full Productify ecosystem. Check off your shared habit from your Apple Watch, glance at both your statuses from the Lock Screen Live Activity, or add a widget to your home screen. Your friend's progress is always nearby — never intrusive, always visible when you want it.
+            </p>
+
             <ul class="check-list">
-                <li><span>General background on writing down goals and accountability: <a href="https://www.psychologytoday.com/us/blog/how-to-be-week/202303/the-power-writing-down-your-goals" target="_blank" rel="noopener noreferrer">Psychology Today overview</a> (popular summary, not a substitute for reading primary research).</span></li>
-                <li><span><a href="/blog/how-to-build-habits-that-stick/">How to build habits that stick</a> — cues, routines, and realistic expectations.</span></li>
-                <li><span><a href="/blog/how-to-use-a-habit-tracker/">How to use a habit tracker</a> — logging habits without overwhelm.</span></li>
+                <li>Invite one friend via link — no complicated setup required</li>
+                <li>Both track independently in your own app, on your own schedule</li>
+                <li>Shared view shows both completion histories, side by side</li>
+                <li>No competitive scoring, no streak comparisons, no pressure notifications</li>
+                <li>Works across any <a href="/features/measurable-goals/">measurable goal type</a>: steps, minutes, pages, reps, glasses</li>
+                <li>Completely private — only visible to you and your HabitDuo partner</li>
+                <li><a href="/features/habit-streaks/">Supportive streaks</a> — a missed day doesn't end things for either of you</li>
             </ul>
         </div>
     </div>
 </section>
 
 <!-- FAQ -->
-<section class="section section--alt" aria-labelledby="duo-faq-heading">
+<section class="section" aria-labelledby="duo-faq-heading">
     <div class="container">
         <div class="section-header text-center">
             <div class="eyebrow">FAQ</div>
-            <h2 id="duo-faq-heading">Questions about Habit Duo</h2>
+            <h2 id="duo-faq-heading">Questions about HabitDuo</h2>
         </div>
         <div class="faq-list" id="duo-faq">
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    How many friends can I add to Habit Duo?
+                    Does my friend need to download Productify too?
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer" role="region">
-                    <p>One friend per habit. The one-to-one pairing is intentional — it keeps the relationship focused and avoids the noise of group challenges or social feeds.</p>
+                    <p>Yes — both people need the app. Your friend receives an invite notification and can download and join in one tap. Both accounts are free to start.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    Does my friend need a Productify account?
+                    How many friends can I add to HabitDuo?
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer" role="region">
-                    <p>Yes, your friend will need to have Productify installed on their iPhone to join a Duo. You invite them via a simple link or code. Both users track independently in their own app.</p>
+                    <p>One friend per habit. The one-to-one pairing is intentional — it keeps the relationship focused and avoids the noise of group challenges or social feeds. You can have multiple HabitDuos with different people for different habits, though we'd recommend starting with just one.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    Can my partner see all of my habits?
+                    Can we see each other's other habits?
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer" role="region">
-                    <p>No. Your partner only sees the single shared Duo habit — not your full habit list. Your other habits remain completely private.</p>
+                    <p>No. HabitDuo only shows the shared habit you've chosen together. Your other habits remain completely private. There's no social profile and no public feed.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    Is Habit Duo on the free plan?
+                    What happens if one of us misses a day?
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer" role="region">
-                    <p>Habit Duo is a Pro feature. Check the app for current Productify Pro pricing and available plans.</p>
+                    <p>Nothing dramatic. Productify uses <a href="/features/habit-streaks/">supportive streaks</a> — a missed day doesn't erase your progress or end the streak. You both just pick back up the next day. Habits should survive bad days, and HabitDuo is designed around that.</p>
                 </div>
             </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Is HabitDuo completely private?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>Completely. Your HabitDuo is only visible to you and the friend you invited. There's no public feed, no social profile, and no sharing unless you choose to. It's just the two of you.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Is HabitDuo on the free plan?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>HabitDuo is a Pro feature. Check the app for current Productify Pro pricing and available plans.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SEND THIS TO A FRIEND CTA -->
+<section class="send-cta-section" aria-labelledby="send-cta-heading">
+    <div class="container">
+        <div class="send-cta-box">
+            <div class="eyebrow">One more thing</div>
+            <h2 id="send-cta-heading">You already know who to send this to.</h2>
+            <p>That friend you keep saying "we should start this together" to. Send them this page. Pick one habit. Send one invite. The setup takes 30 seconds — the habit can last much longer.</p>
+            <div class="btn-row">
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="appstore-badge-link" aria-label="Download Productify on the App Store">
+                    <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
+                </a>
+            </div>
+            <p style="margin: 20px 0 0; font-size: .8rem; color: var(--ink-faint);">Free to download · No account required · iOS 15+</p>
         </div>
     </div>
 </section>
@@ -476,41 +927,41 @@
             <h2>More from Productify</h2>
         </div>
         <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            <a href="/features/habit-streaks/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">🔥</div>
+                <h3>Supportive Streaks</h3>
+                <p class="text-muted">Build momentum without the all-or-nothing pressure. Your streak history stays intact after a missed day.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a href="/features/measurable-goals/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">📏</div>
+                <h3>Measurable Goals</h3>
+                <p class="text-muted">Track steps, minutes, pages, glasses, reps — set the exact target that fits you and your HabitDuo partner.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
             <a href="/features/ai-analyser/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🧠</div>
                 <h3>AI Habit Analyser</h3>
                 <p class="text-muted">See the patterns behind your habits — personalized, calm, and grounded in your real data.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="/features/streak-tracking/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">🔥</div>
-                <h3>Streak Tracking</h3>
-                <p class="text-muted">Build momentum without the all-or-nothing pressure. Your history stays intact after a missed day.</p>
-                <span class="feature-card__cta">Learn more →</span>
+            <a href="/features/habit-templates/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">📋</div>
+                <h3>Habit Templates</h3>
+                <p class="text-muted">Not sure what habit to pick? Browse pre-built templates and start your HabitDuo in seconds.</p>
+                <span class="feature-card__cta">Browse templates →</span>
             </a>
             <a href="/blog/how-to-build-habits-that-stick/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🔗</div>
                 <h3>How to Build Habits That Stick</h3>
-                <p class="text-muted">Ideas on cues, accountability, and sticking with habits — plus related guides from our blog.</p>
-                <span class="feature-card__cta">Read the guide →</span>
-            </a>
-            <a href="/blog/how-to-use-a-habit-tracker/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">📱</div>
-                <h3>How to Use a Habit Tracker</h3>
-                <p class="text-muted">Setup tips and daily habits so tracking stays useful — alone or with a partner.</p>
+                <p class="text-muted">Cues, accountability, and realistic expectations — the foundation under everything HabitDuo is built on.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
             <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🏆</div>
                 <h3>Best Habit Tracker Apps 2026</h3>
-                <p class="text-muted">Compare Productify with other popular trackers if you're choosing an app.</p>
+                <p class="text-muted">Compare Productify with other popular trackers if you're still deciding on an app.</p>
                 <span class="feature-card__cta">See the comparison →</span>
-            </a>
-            <a href="/features/habit-tracker/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">✅</div>
-                <h3>Habit Tracker</h3>
-                <p class="text-muted">The core Productify experience — habits, reminders, and clarity in one place.</p>
-                <span class="feature-card__cta">Learn more →</span>
             </a>
         </div>
     </div>
@@ -520,9 +971,9 @@
 <section class="cta-banner section--dark" aria-labelledby="cta-heading">
     <div class="container">
         <div class="eyebrow" style="background: rgba(255,255,255,.1); color: #93C5FD; border-color: rgba(255,255,255,.1);">Ready to start?</div>
-        <h2 id="cta-heading">Find your Duo partner today.</h2>
+        <h2 id="cta-heading">Pick one habit. Pick one person.</h2>
         <p class="lead">
-            Download Productify free, pick one habit, and invite someone who'll make showing up a little easier.
+            Download Productify free and start your first HabitDuo today. The setup takes 30 seconds. The habit can last much longer.
         </p>
         <div class="cta-banner__btns">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
@@ -612,7 +1063,7 @@
     closeBtn.addEventListener('click', closeMobileNav);
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
 
-    // Nav dropdowns , hover on desktop, click-toggle on touch
+    // Nav dropdowns — hover on desktop, click-toggle on touch
     var isTouchDevice = false;
     window.addEventListener('touchstart', function() { isTouchDevice = true; }, { once: true });
     function openDropdown(dd) {
