@@ -87,6 +87,27 @@
   </url>
 
   <url>
+    <loc>https://productifyapp.org/blog/areas-of-life/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://productifyapp.org/blog/bad-habits-list/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://productifyapp.org/blog/how-many-goals-should-i-set/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
     <loc>https://productifyapp.org/blog/habit-tracker-vs-to-do-list/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
