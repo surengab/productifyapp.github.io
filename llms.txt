@@ -29,9 +29,7 @@ This file provides a curated index of the most important pages on productifyapp.
 - [AI Habit Analyser](https://productifyapp.org/features/ai-analyser/)
 - [Habit Templates](https://productifyapp.org/features/habit-templates/)
 - [Streak Tracking](https://productifyapp.org/features/streak-tracking/)
-- [Smart Reminders](https://productifyapp.org/features/smart-reminders/)
 - [Measurable Goals](https://productifyapp.org/features/measurable-goals/)
-- [Minimalist Design](https://productifyapp.org/features/minimalist-design/)
 
 ## Solutions
 
