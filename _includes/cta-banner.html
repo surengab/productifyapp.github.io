@@ -9,7 +9,7 @@
         <div class="cta-banner__btns">
             <a href="{{ site.appstore_url }}"
                class="appstore-badge-link" aria-label="Download Productify on the App Store">
-                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="170" height="50">
+                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="170" height="50" loading="lazy" decoding="async">
             </a>
             {%- if cta.link_href %}
             <a href="{{ cta.link_href }}" class="btn btn-ghost">{{ cta.link_label }}</a>
