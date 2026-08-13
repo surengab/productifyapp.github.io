@@ -30,6 +30,8 @@ REQUIRED = %w[
   /habit-tracker/
   /measurable-goals/
   /streak-tracking/
+  /evening-routine/
+  /habit-tracker-for-adhd/
   /morning-routine/
   /productivity-at-work/
   /pricing/

@@ -19,6 +19,7 @@ contextual:
   links:
     - { href: /blog/best-habit-tracker-apps-2026/, label: "Best Habit Tracker Apps 2026" }
     - { href: /morning-routine/,         label: "Build a Morning Routine" }
+    - { href: /evening-routine/,         label: "Build an Evening Routine" }
     - { href: /productivity-at-work/,    label: "Productivity at Work" }
     - { href: /blog/,                              label: "All Articles" }
 

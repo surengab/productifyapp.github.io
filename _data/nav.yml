@@ -15,7 +15,9 @@ dropdowns:
   - label: Solutions
     items:
       - { href: /morning-routine/,      icon: "🌅", title: "Build a Morning Routine", blurb: "Start your day with intention",   aria: "Morning Routine guide" }
+      - { href: /evening-routine/,      icon: "🌙", title: "Build an Evening Routine", blurb: "Wind down and sleep better",     mobile: "Evening Routine" }
       - { href: /productivity-at-work/, icon: "💼", title: "Productivity at Work",    blurb: "Habits that improve performance", aria: "Productivity at Work guide" }
+      - { href: /habit-tracker-for-adhd/, icon: "🧩", title: "Habit Tracking with ADHD", blurb: "What helps, what backfires",  mobile: "Habit Tracking with ADHD" }
 
   - label: Blog
     id: dd-blog
