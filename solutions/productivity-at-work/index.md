@@ -1,6 +1,6 @@
 # Productivity Habits at Work – Build Routines That Improve Performance | Productify
 
-**URL:** https://productifyapp.org/solutions/productivity-at-work/  
+**URL:** https://productifyapp.org/productivity-at-work/  
 **Type:** Solution guide
 
 Which daily work habits compound into real professional growth? A practical, psychology-backed guide to productive routines — and how to track them without adding overhead.
@@ -91,4 +91,4 @@ Writing top 3 priorities first protects this window and ensures you're working o
 - [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
 - [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
 - [How to Use a Habit Tracker](https://productifyapp.org/blog/how-to-use-a-habit-tracker/)
-- [Habit Templates](https://productifyapp.org/features/habit-templates/)
+- [Habit Templates](https://productifyapp.org/habit-templates/)

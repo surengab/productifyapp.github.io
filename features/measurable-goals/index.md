@@ -1,6 +1,6 @@
 # Measurable Habit Goals – Track Steps, Minutes & More | Productify
 
-**URL:** https://productifyapp.org/features/measurable-goals/  
+**URL:** https://productifyapp.org/measurable-goals/  
 **Type:** Feature page
 
 Vague goals don't stick. Productify lets you set measurable targets for every habit — steps, minutes, glasses, reps — so you always know exactly what done looks like.
@@ -68,6 +68,6 @@ Productify supports two types of habit tracking:
 
 ## Related
 
-- [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
+- [Habit Tracker](https://productifyapp.org/habit-tracker/)
 - [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
-- [Habit Templates](https://productifyapp.org/features/habit-templates/)
+- [Habit Templates](https://productifyapp.org/habit-templates/)

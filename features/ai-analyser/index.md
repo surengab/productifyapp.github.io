@@ -1,6 +1,6 @@
 # AI Habit Analyser – Personalised Habit Insights for iPhone | Productify
 
-**URL:** https://productifyapp.org/features/ai-analyser/  
+**URL:** https://productifyapp.org/ai-analyser/  
 **Type:** Feature page
 
 Productify's AI Habit Analyser reads your completion history to surface real behavioural patterns and calm, personalised suggestions — not generic advice. Available on Pro.
@@ -51,6 +51,6 @@ AI Habit Analyser is available on **Productify Pro** (subscription).
 
 ## Related
 
-- [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
-- [Habit Duo](https://productifyapp.org/features/habit-duo/)
-- [Streak Tracking](https://productifyapp.org/features/streak-tracking/)
+- [Habit Tracker](https://productifyapp.org/habit-tracker/)
+- [Habit Duo](https://productifyapp.org/habit-duo/)
+- [Streak Tracking](https://productifyapp.org/streak-tracking/)

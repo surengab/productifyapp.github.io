@@ -1,6 +1,6 @@
 # How to Build a Morning Routine That Actually Sticks | Productify
 
-**URL:** https://productifyapp.org/solutions/morning-routine/  
+**URL:** https://productifyapp.org/morning-routine/  
 **Type:** Solution guide
 
 A practical guide to building a sustainable morning routine using habit science. Learn why starting small works, how to design your first 30 minutes, and how to stay consistent.
@@ -104,4 +104,4 @@ The rule: never add a new element until all existing elements feel automatic.
 - [How to Start a Daily Habit](https://productifyapp.org/blog/how-to-start-a-daily-habit/)
 - [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
 - [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
-- [Habit Templates](https://productifyapp.org/features/habit-templates/)
+- [Habit Templates](https://productifyapp.org/habit-templates/)

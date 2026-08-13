@@ -40,8 +40,8 @@ if any previously published URL stops resolving.
 - **`heading`** overrides the visible `<h1>` where it deliberately differs from
   the `title` used for `og:title` and search results.
 - **`sitemap: false`** keeps a page out of `sitemap.xml`;
-  `/features/habit-streaks/` uses it, being a `noindex` alias that canonicalises
-  to `/features/streak-tracking/`.
+  `/habit-streaks/` uses it, being a `noindex` alias that canonicalises
+  to `/streak-tracking/`.
 
 ## Local development
 

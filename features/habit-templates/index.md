@@ -1,6 +1,6 @@
 # Habit Templates — Ready-Made Routines | Productify
 
-**URL:** https://productifyapp.org/features/habit-templates/  
+**URL:** https://productifyapp.org/habit-templates/  
 **Type:** Feature page  
 **Meta description:** 30+ expert-designed habit templates for morning routines, deep work, sleep, and more. Start tracking in seconds — fully customizable in Productify.
 
@@ -104,6 +104,6 @@ Many do — Deep Work, Pomodoro, The Ivy Lee Method, SAVERS, the 20/20/20 Formul
 ## Related
 
 - [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
-- [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
+- [Habit Tracker](https://productifyapp.org/habit-tracker/)
 - [How to Start a Daily Habit](https://productifyapp.org/blog/how-to-start-a-daily-habit/)
-- [Build a Morning Routine](https://productifyapp.org/solutions/morning-routine/)
+- [Build a Morning Routine](https://productifyapp.org/morning-routine/)

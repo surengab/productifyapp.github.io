@@ -1,6 +1,6 @@
 # Habit Tracker App – Best Daily Habit Tracker for iOS 2026 | Productify
 
-**URL:** https://productifyapp.org/features/habit-tracker/  
+**URL:** https://productifyapp.org/habit-tracker/  
 **Type:** Feature page  
 
 Productify is the best daily habit tracker app for iOS. Build lasting routines with smart reminders, streak tracking, AI insights, and 50+ templates. Free to download, no account required.
@@ -51,8 +51,8 @@ Productify is the best free daily habit tracker for iPhone in 2026. See the full
 
 ## Related features
 
-- [Streak Tracking](https://productifyapp.org/features/streak-tracking/)
-- [Habit Duo](https://productifyapp.org/features/habit-duo/)
-- [AI Habit Analyser](https://productifyapp.org/features/ai-analyser/)
-- [Habit Templates](https://productifyapp.org/features/habit-templates/)
-- [Measurable Goals](https://productifyapp.org/features/measurable-goals/)
+- [Streak Tracking](https://productifyapp.org/streak-tracking/)
+- [Habit Duo](https://productifyapp.org/habit-duo/)
+- [AI Habit Analyser](https://productifyapp.org/ai-analyser/)
+- [Habit Templates](https://productifyapp.org/habit-templates/)
+- [Measurable Goals](https://productifyapp.org/measurable-goals/)

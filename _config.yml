@@ -13,20 +13,23 @@ ga_id: G-M3DE9J4KYW
 facebook_domain_verification: t80j6c2w3dtbodjnxkg283562wp4ud
 
 # --- Collections -------------------------------------------------------------
-# permalinks reproduce the pre-Jekyll URLs exactly: _blog/foo.md -> /blog/foo/
+# Blog keeps its prefix; features/compare/solutions live at the site root.
+# The former /features/... /compare/... /solutions/... URLs are kept alive as
+# redirect stubs under redirects/ -- GitHub Pages serves static files only, so
+# a meta refresh plus rel=canonical is the strongest redirect available.
 collections:
   blog:
     output: true
     permalink: /blog/:path/
   features:
     output: true
-    permalink: /features/:path/
+    permalink: /:path/
   compare:
     output: true
-    permalink: /compare/:path/
+    permalink: /:path/
   solutions:
     output: true
-    permalink: /solutions/:path/
+    permalink: /:path/
 
 # --- Front matter defaults ---------------------------------------------------
 defaults:

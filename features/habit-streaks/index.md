@@ -1,6 +1,6 @@
 # Habit Streaks – Stay Motivated by Visualizing Your Consistency | Productify
 
-**URL:** https://productifyapp.org/features/habit-streaks/  
+**URL:** https://productifyapp.org/habit-streaks/  
 **Type:** Feature page
 
 Learn how habit streaks in Productify help you build momentum without guilt. The psychology of consistency tracking and why seeing your progress matters for lasting routine building.
@@ -54,6 +54,6 @@ Productify's approach:
 
 ## Related
 
-- [Streak Tracking feature](https://productifyapp.org/features/streak-tracking/)
-- [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
+- [Streak Tracking feature](https://productifyapp.org/streak-tracking/)
+- [Habit Tracker](https://productifyapp.org/habit-tracker/)
 - [How Long Does It Take to Build a Habit?](https://productifyapp.org/blog/how-long-to-build-a-habit/)

@@ -6,20 +6,20 @@ blurb: "A calm daily habit tracker for iOS. Build lasting routines your way, con
 features:
   title: Features
   links:
-    - { href: /features/habit-tracker/,    label: "Habit Tracker" }
-    - { href: /features/habit-duo/,        label: "Habit Duo" }
-    - { href: /features/ai-analyser/,      label: "AI Habit Analyser" }
-    - { href: /features/habit-templates/,  label: "Habit Templates" }
-    - { href: /features/measurable-goals/, label: "Measurable Goals" }
-    - { href: /features/streak-tracking/,  label: "Streak Tracking" }
+    - { href: /habit-tracker/,    label: "Habit Tracker" }
+    - { href: /habit-duo/,        label: "Habit Duo" }
+    - { href: /ai-analyser/,      label: "AI Habit Analyser" }
+    - { href: /habit-templates/,  label: "Habit Templates" }
+    - { href: /measurable-goals/, label: "Measurable Goals" }
+    - { href: /streak-tracking/,  label: "Streak Tracking" }
 
 # Default third column, used when a page does not set `footer_col`.
 contextual:
   title: Solutions
   links:
     - { href: /blog/best-habit-tracker-apps-2026/, label: "Best Habit Tracker Apps 2026" }
-    - { href: /solutions/morning-routine/,         label: "Build a Morning Routine" }
-    - { href: /solutions/productivity-at-work/,    label: "Productivity at Work" }
+    - { href: /morning-routine/,         label: "Build a Morning Routine" }
+    - { href: /productivity-at-work/,    label: "Productivity at Work" }
     - { href: /blog/,                              label: "All Articles" }
 
 company:

@@ -17,7 +17,7 @@ Use a to-do list for one-time tasks with a clear finish line. Use a habit tracke
 
 ## The core difference
 
-The clearest way to understand the difference: **a to-do list tracks tasks you need to complete once. A [habit tracker](/features/habit-tracker/) tracks behaviors you want to repeat on a schedule.**
+The clearest way to understand the difference: **a to-do list tracks tasks you need to complete once. A [habit tracker](/habit-tracker/) tracks behaviors you want to repeat on a schedule.**
 
 "Submit the quarterly report" goes on a to-do list. Once it's done, you cross it off and never see it again. "Read for 30 minutes" belongs in a habit tracker — you'll do it again tomorrow, and the day after, and the tracker helps you build consistency. If you're setting one up for the first time, see [how to use a habit tracker](/blog/how-to-use-a-habit-tracker/). For habit ideas, see [what habits to track](/blog/what-habits-to-track/).
 
@@ -40,15 +40,15 @@ The satisfaction of a to-do list comes from *completion*: the task disappears wh
 
 ## What a habit tracker is actually for
 
-A **[daily habit tracker](/features/habit-tracker/)** is designed for behaviors you want to perform repeatedly, on a schedule, usually daily or weekly. Instead of crossing items off, you mark them as done each day, building [streaks](/features/streak-tracking/) that become their own source of motivation.
+A **[daily habit tracker](/habit-tracker/)** is designed for behaviors you want to perform repeatedly, on a schedule, usually daily or weekly. Instead of crossing items off, you mark them as done each day, building [streaks](/streak-tracking/) that become their own source of motivation.
 
 - **Daily routines:** morning walk, journaling, meditation, cold shower  
 - **Health behaviors:** hydration, sleep consistency, vitamin supplements  
 - **Skill building:** language practice, instrument, coding, writing  
 - **Wellness habits:** no social media before 9am, stretching, breathwork  
-- **[Measurable goals](/features/measurable-goals/):** 10,000 steps, 45-minute focus session, 8 glasses of water  
+- **[Measurable goals](/measurable-goals/):** 10,000 steps, 45-minute focus session, 8 glasses of water  
 
-The key advantage of a habit tracker is what it adds around the behavior: smart reminders to nudge you at the right moment, [streak tracking](/features/streak-tracking/) to build momentum, and progress visualization that makes long-term effort visible.
+The key advantage of a habit tracker is what it adds around the behavior: smart reminders to nudge you at the right moment, [streak tracking](/streak-tracking/) to build momentum, and progress visualization that makes long-term effort visible.
 
 Putting daily habits into a to-do list is a common mistake. The habit "exercise for 30 minutes" clutters your task list, rolls over every day when not completed, and creates a false sense of backlog. It's not a task, it's a routine, and it needs a different tool.
 
@@ -88,7 +88,7 @@ Putting daily habits into a to-do list is a common mistake. The habit "exercise 
 
 Yes, and many people do. They're complementary tools, not competitors. The key is keeping them separate.
 
-A common and effective setup: use a to-do list app (Todoist, Things, Apple Reminders) for projects and one-off tasks, and use a dedicated habit tracker app like [Productify](/features/habit-tracker/) for your daily routines. Your morning check-in takes 10 seconds in the habit tracker; your project work lives in the task manager.
+A common and effective setup: use a to-do list app (Todoist, Things, Apple Reminders) for projects and one-off tasks, and use a dedicated habit tracker app like [Productify](/habit-tracker/) for your daily routines. Your morning check-in takes 10 seconds in the habit tracker; your project work lives in the task manager.
 
 The mistake is trying to do both in one tool. If you put daily habits in your to-do list, they pile up, roll over, and eventually get ignored. If you put one-time tasks in your habit tracker, you can mix completion history in a way that is harder to read at a glance. When the two roles blur, the workflow usually gets noisier.
 
@@ -102,7 +102,7 @@ Ask yourself one question: **do I want to do this once, or every day?**
 - If **repeatedly** → habit tracker  
 - If **both** → use both, separately  
 
-If you've been struggling to "stick to" a habit that you put on a to-do list — daily exercise, reading, journaling — the tool mismatch is likely part of the problem. A dedicated [habit tracker](/features/habit-tracker/) like Productify is built for recurring behaviors, [streaks](/features/streak-tracking/), reminders, [measurable goals](/features/measurable-goals/), and long-term consistency. For habits that last, see [how to build habits that stick](/blog/how-to-build-habits-that-stick/). For a wider landscape view, see our [best habit tracker apps](/blog/best-habit-tracker-apps-2026/) guide.
+If you've been struggling to "stick to" a habit that you put on a to-do list — daily exercise, reading, journaling — the tool mismatch is likely part of the problem. A dedicated [habit tracker](/habit-tracker/) like Productify is built for recurring behaviors, [streaks](/streak-tracking/), reminders, [measurable goals](/measurable-goals/), and long-term consistency. For habits that last, see [how to build habits that stick](/blog/how-to-build-habits-that-stick/). For a wider landscape view, see our [best habit tracker apps](/blog/best-habit-tracker-apps-2026/) guide.
 
 **Bottom line:** You probably need both, but for different things. Keep one-off work in a to-do list and repeating behaviors in a habit tracker. When those roles blur, both views tend to get noisier and less reliable.
 
@@ -164,7 +164,7 @@ If you already use a to-do app for tasks, Productify can sit beside it as your d
 - [How to use a habit tracker: a complete beginner's guide](/blog/how-to-use-a-habit-tracker/)  
 - [What habits should I track? 30 daily habits worth building](/blog/what-habits-to-track/)  
 - [How to build habits that actually stick](/blog/how-to-build-habits-that-stick/)  
-- [Habit tracker features (Productify)](/features/habit-tracker/)  
-- [Streak tracking](/features/streak-tracking/)  
-- [Measurable goals](/features/measurable-goals/)  
+- [Habit tracker features (Productify)](/habit-tracker/)  
+- [Streak tracking](/streak-tracking/)  
+- [Measurable goals](/measurable-goals/)  
 - [Best habit tracker apps in 2026: compared](/blog/best-habit-tracker-apps-2026/)  

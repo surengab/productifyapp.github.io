@@ -25,8 +25,8 @@ Practical, research-backed guides on habit tracking, productivity, morning routi
 - [What Habits Should I Track? 30 Daily Habits Worth Building](https://productifyapp.org/blog/what-habits-to-track/) – 30 evidence-backed habits organised by health, focus, mindset, morning routine, and relationships.
 
 ### Solutions
-- [How to Build a Morning Routine That Actually Sticks](https://productifyapp.org/solutions/morning-routine/) – The psychology of starting small and how to design a morning routine that survives your worst days.
-- [The Best Productivity Habits to Track at Work in 2026](https://productifyapp.org/solutions/productivity-at-work/) – Which daily habits compound into real professional growth.
+- [How to Build a Morning Routine That Actually Sticks](https://productifyapp.org/morning-routine/) – The psychology of starting small and how to design a morning routine that survives your worst days.
+- [The Best Productivity Habits to Track at Work in 2026](https://productifyapp.org/productivity-at-work/) – Which daily habits compound into real professional growth.
 
 ---
 

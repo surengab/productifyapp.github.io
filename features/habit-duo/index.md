@@ -1,6 +1,6 @@
 # Habit Duo – Accountability Habit Tracker With a Friend | Productify
 
-**URL:** https://productifyapp.org/features/habit-duo/  
+**URL:** https://productifyapp.org/habit-duo/  
 **Type:** Feature page
 
 Habit Duo is a shared habit tracker that pairs you with one friend to build a single routine together. Accountability without competition — available on Productify for iPhone.
@@ -59,6 +59,6 @@ Habit Duo is available on **Productify Pro** (subscription).
 
 ## Related
 
-- [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
-- [AI Habit Analyser](https://productifyapp.org/features/ai-analyser/)
-- [Streak Tracking](https://productifyapp.org/features/streak-tracking/)
+- [Habit Tracker](https://productifyapp.org/habit-tracker/)
+- [AI Habit Analyser](https://productifyapp.org/ai-analyser/)
+- [Streak Tracking](https://productifyapp.org/streak-tracking/)

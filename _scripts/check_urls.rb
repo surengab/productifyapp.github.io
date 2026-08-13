@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
-# Fails the build if any URL that the pre-Jekyll site published stops resolving.
+# Fails the build if any URL the site has ever published stops resolving. That
+# includes the pre-Jekyll paths and the /features/ /compare/ /solutions/ URLs
+# retired in the flattening, which must keep serving their redirect stubs.
 # Run after `jekyll build`; the deploy workflow gates on it.
 require "set"
 
@@ -19,8 +21,23 @@ REQUIRED = %w[
   /blog/how-to-start-a-daily-habit/
   /blog/how-to-use-a-habit-tracker/
   /blog/what-habits-to-track/
-  /compare/productify-vs-habitica/
-  /compare/productify-vs-habitify/
+  /productify-vs-habitica/
+  /productify-vs-habitify/
+  /ai-analyser/
+  /habit-duo/
+  /habit-streaks/
+  /habit-templates/
+  /habit-tracker/
+  /measurable-goals/
+  /streak-tracking/
+  /morning-routine/
+  /productivity-at-work/
+  /privacy.html
+  /terms.html
+  /sitemap.xml
+  /robots.txt
+  /llms.txt
+  /shared.css
   /features/ai-analyser/
   /features/habit-duo/
   /features/habit-streaks/
@@ -28,14 +45,10 @@ REQUIRED = %w[
   /features/habit-tracker/
   /features/measurable-goals/
   /features/streak-tracking/
+  /compare/productify-vs-habitica/
+  /compare/productify-vs-habitify/
   /solutions/morning-routine/
   /solutions/productivity-at-work/
-  /privacy.html
-  /terms.html
-  /sitemap.xml
-  /robots.txt
-  /llms.txt
-  /shared.css
 ].freeze
 
 missing = REQUIRED.reject do |url|

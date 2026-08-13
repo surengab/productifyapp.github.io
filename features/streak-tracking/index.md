@@ -1,6 +1,6 @@
 # Habit Streak Tracker – Build Momentum Without the Guilt | Productify
 
-**URL:** https://productifyapp.org/features/streak-tracking/  
+**URL:** https://productifyapp.org/streak-tracking/  
 **Type:** Feature page
 
 Productify's habit streak tracker shows your consistency without the all-or-nothing pressure. See your current run, personal best, and full history — one missed day doesn't erase your progress.
@@ -53,6 +53,6 @@ Why does tracking streaks work?
 
 ## Related
 
-- [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
+- [Habit Tracker](https://productifyapp.org/habit-tracker/)
 - [How Long Does It Take to Build a Habit?](https://productifyapp.org/blog/how-long-to-build-a-habit/)
 - [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)

@@ -5,17 +5,17 @@ dropdowns:
   - label: Features
     mobile_label: Features
     items:
-      - { href: /features/habit-tracker/,   icon: "✅", title: "Habit Tracker",     blurb: "Track daily habits with clarity",  mobile: "Habit Tracker" }
-      - { href: /features/habit-duo/,       icon: "🤝", title: "Habit Duo",         blurb: "Build one habit with a friend",    mobile: "Habit Duo" }
-      - { href: /features/ai-analyser/,     icon: "🧠", title: "AI Habit Analyser", blurb: "Personalized pattern insights",    mobile: "AI Habit Analyser" }
-      - { href: /features/habit-templates/, icon: "📋", title: "Habit Templates",   blurb: "Start in seconds, not hours",      mobile: "Templates" }
-      - { href: /features/measurable-goals/,icon: "📏", title: "Measurable Goals",  blurb: "Clear targets, less friction" }
-      - { href: /features/streak-tracking/, icon: "🔥", title: "Streak Tracking",   blurb: "Momentum without the guilt",       mobile: "Streak Tracking" }
+      - { href: /habit-tracker/,   icon: "✅", title: "Habit Tracker",     blurb: "Track daily habits with clarity",  mobile: "Habit Tracker" }
+      - { href: /habit-duo/,       icon: "🤝", title: "Habit Duo",         blurb: "Build one habit with a friend",    mobile: "Habit Duo" }
+      - { href: /ai-analyser/,     icon: "🧠", title: "AI Habit Analyser", blurb: "Personalized pattern insights",    mobile: "AI Habit Analyser" }
+      - { href: /habit-templates/, icon: "📋", title: "Habit Templates",   blurb: "Start in seconds, not hours",      mobile: "Templates" }
+      - { href: /measurable-goals/,icon: "📏", title: "Measurable Goals",  blurb: "Clear targets, less friction" }
+      - { href: /streak-tracking/, icon: "🔥", title: "Streak Tracking",   blurb: "Momentum without the guilt",       mobile: "Streak Tracking" }
 
   - label: Solutions
     items:
-      - { href: /solutions/morning-routine/,      icon: "🌅", title: "Build a Morning Routine", blurb: "Start your day with intention",   aria: "Morning Routine guide" }
-      - { href: /solutions/productivity-at-work/, icon: "💼", title: "Productivity at Work",    blurb: "Habits that improve performance", aria: "Productivity at Work guide" }
+      - { href: /morning-routine/,      icon: "🌅", title: "Build a Morning Routine", blurb: "Start your day with intention",   aria: "Morning Routine guide" }
+      - { href: /productivity-at-work/, icon: "💼", title: "Productivity at Work",    blurb: "Habits that improve performance", aria: "Productivity at Work guide" }
 
   - label: Blog
     id: dd-blog
@@ -39,8 +39,8 @@ dropdowns:
     align: right
     min_width: 240px
     items:
-      - { href: /compare/productify-vs-habitify/, icon: "⚖️", title: "Productify vs Habitify", blurb: "Which is better for iPhone?", mobile: "Productify vs Habitify" }
-      - { href: /compare/productify-vs-habitica/, icon: "⚔️", title: "Productify vs Habitica", blurb: "Minimalist vs gamified RPG",  mobile: "Productify vs Habitica" }
+      - { href: /productify-vs-habitify/, icon: "⚖️", title: "Productify vs Habitify", blurb: "Which is better for iPhone?", mobile: "Productify vs Habitify" }
+      - { href: /productify-vs-habitica/, icon: "⚔️", title: "Productify vs Habitica", blurb: "Minimalist vs gamified RPG",  mobile: "Productify vs Habitica" }
 
 # Plain links after the dropdowns, desktop navbar.
 links:

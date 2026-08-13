@@ -24,17 +24,17 @@ This file provides a curated index of the most important pages on productifyapp.
 
 ## Features
 
-- [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
-- [Habit Duo](https://productifyapp.org/features/habit-duo/)
-- [AI Habit Analyser](https://productifyapp.org/features/ai-analyser/)
-- [Habit Templates](https://productifyapp.org/features/habit-templates/)
-- [Streak Tracking](https://productifyapp.org/features/streak-tracking/)
-- [Measurable Goals](https://productifyapp.org/features/measurable-goals/)
+- [Habit Tracker](https://productifyapp.org/habit-tracker/)
+- [Habit Duo](https://productifyapp.org/habit-duo/)
+- [AI Habit Analyser](https://productifyapp.org/ai-analyser/)
+- [Habit Templates](https://productifyapp.org/habit-templates/)
+- [Streak Tracking](https://productifyapp.org/streak-tracking/)
+- [Measurable Goals](https://productifyapp.org/measurable-goals/)
 
 ## Solutions
 
-- [Morning Routine](https://productifyapp.org/solutions/morning-routine/)
-- [Productivity at Work](https://productifyapp.org/solutions/productivity-at-work/)
+- [Morning Routine](https://productifyapp.org/morning-routine/)
+- [Productivity at Work](https://productifyapp.org/productivity-at-work/)
 
 ## Product information
 

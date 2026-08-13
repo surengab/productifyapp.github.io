@@ -56,10 +56,10 @@ It is free to start and requires no account.
 ## Related pages
 
 - [6 Best Habit Tracker Apps 2026](https://productifyapp.org/blog/best-habit-tracker-apps-2026/)
-- [Habit Tracker feature](https://productifyapp.org/features/habit-tracker/)
-- [Habit Duo feature](https://productifyapp.org/features/habit-duo/)
-- [AI Habit Analyser](https://productifyapp.org/features/ai-analyser/)
-- [Streak Tracking](https://productifyapp.org/features/streak-tracking/)
-- [Habit Templates](https://productifyapp.org/features/habit-templates/)
-- [Morning Routine guide](https://productifyapp.org/solutions/morning-routine/)
-- [Productivity at Work guide](https://productifyapp.org/solutions/productivity-at-work/)
+- [Habit Tracker feature](https://productifyapp.org/habit-tracker/)
+- [Habit Duo feature](https://productifyapp.org/habit-duo/)
+- [AI Habit Analyser](https://productifyapp.org/ai-analyser/)
+- [Streak Tracking](https://productifyapp.org/streak-tracking/)
+- [Habit Templates](https://productifyapp.org/habit-templates/)
+- [Morning Routine guide](https://productifyapp.org/morning-routine/)
+- [Productivity at Work guide](https://productifyapp.org/productivity-at-work/)
