@@ -25,6 +25,8 @@ contextual:
 company:
   title: Company
   links:
+    - { href: /pricing/,      label: "Pricing" }
+    - { href: /download/,     label: "Download" }
     - { href: /#about,        label: "About" }
     - { href: /#contact,      label: "Contact" }
     - { href: /#faq,          label: "FAQ" }

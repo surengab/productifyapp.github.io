@@ -1,0 +1,240 @@
+---
+layout: page
+permalink: /pricing/
+title: Productify Pricing — Free Habit Tracker, Pro and Lifetime Plans
+seo_title: Productify Pricing — Free, Pro & Lifetime Plans
+description: 'Productify pricing: free forever for up to 5 habits, or unlimited habits, Habit Duo and AI insights with Pro from $3.99/month or $34.99 once.'
+og_description: Free forever for up to 5 habits. Pro from $3.99/month, or pay $34.99 once for lifetime access. No account required to start.
+changefreq: monthly
+priority: 0.9
+robots: index, follow
+breadcrumbs:
+- label: Home
+  href: /
+- label: Pricing
+extra_jsonld:
+- |
+  {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Productify",
+      "operatingSystem": "iOS 15.0 or later",
+      "applicationCategory": "LifestyleApplication",
+      "url": "https://productifyapp.org/",
+      "downloadUrl": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
+      "offers": [
+          {
+              "@type": "Offer",
+              "name": "Free",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Track up to 5 habits with streaks, reminders and starter templates. Free forever, no account required."
+          },
+          {
+              "@type": "Offer",
+              "name": "Pro (monthly)",
+              "price": "3.99",
+              "priceCurrency": "USD",
+              "description": "Unlimited habits, Habit Duo, AI Habit Analyser and advanced analytics, billed monthly."
+          },
+          {
+              "@type": "Offer",
+              "name": "Pro (yearly)",
+              "price": "24.99",
+              "priceCurrency": "USD",
+              "description": "All Pro features billed once a year."
+          },
+          {
+              "@type": "Offer",
+              "name": "Lifetime",
+              "price": "34.99",
+              "priceCurrency": "USD",
+              "description": "All Pro features and future updates as a single one-time purchase."
+          }
+      ]
+  }
+faq:
+- q: Is Productify free?
+  a: Yes. Productify is free forever for up to 5 habits, with streak tracking, per-habit reminders and 5 starter templates included. It is not a trial — there is no expiry date, and no account or card is required to start.
+- q: How much does Productify Pro cost?
+  a: Pro is $3.99 per month or $24.99 per year, which works out at about $2.08 a month. There is also a Lifetime option at $34.99 as a single one-time purchase. Prices are in USD and may vary by region and local taxes.
+- q: What is the difference between Pro and Lifetime?
+  a: The features are identical. Pro is a subscription billed monthly or yearly; Lifetime is one payment that includes all future updates with no recurring charge. Lifetime costs roughly the same as seventeen months of yearly Pro.
+- q: Is there a free trial for Pro?
+  a: Yes, Pro includes a 7-day free trial. You can cancel during the trial from the App Store and you will not be charged.
+- q: How do I cancel my subscription?
+  a: Subscriptions are managed by Apple, not by Productify. Open the Settings app on your iPhone, tap your name, then Subscriptions, and cancel Productify there. Access continues until the end of the period you have already paid for.
+- q: Do I need an account to use Productify?
+  a: No. You can install the app and start tracking habits immediately. Your habit data stays on your device by default. An account is only needed for features that sync between devices or involve another person, such as Habit Duo.
+- q: What happens to my habits if I stop paying for Pro?
+  a: Your data is not deleted. You keep full history and return to the free plan limits, so you can continue tracking up to 5 habits.
+extra_css: |-
+  .plan-grid { display: grid; gap: 20px; margin: 32px 0 8px; }
+  @media (min-width: 780px) { .plan-grid { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+  .plan { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 26px 24px; position: relative; }
+  .plan--featured { border-color: var(--blue); box-shadow: 0 6px 24px var(--blue-dim); }
+  .plan__tag { position: absolute; top: -11px; left: 24px; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--blue); padding: 3px 10px; border-radius: var(--radius-pill); }
+  .plan__name { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .plan__price { font-size: 2.1rem; font-weight: 800; color: var(--ink); letter-spacing: -1px; line-height: 1.1; }
+  .plan__period { font-size: .82rem; color: var(--ink-muted); margin-bottom: 14px; display: block; }
+  .plan__blurb { font-size: .9rem; color: var(--ink-2); margin-bottom: 16px; }
+  .plan ul { display: flex; flex-direction: column; gap: 9px; margin: 0; }
+  .plan li { position: relative; padding-left: 26px; font-size: .9rem; color: var(--ink-2); }
+  .plan li::before { content: '✓'; position: absolute; left: 0; top: 1px; width: 18px; height: 18px; background: var(--blue-dim); color: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 700; }
+  .price-note { font-size: .82rem; color: var(--ink-muted); margin-top: 18px; }
+  .compare-note { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; margin: 28px 0; font-size: .9rem; color: var(--ink-2); }
+---
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="page-hero-heading">
+    <div class="container">
+        <div class="page-hero__inner">
+            <div class="eyebrow">Pricing · iOS</div>
+            <h1 id="page-hero-heading">
+                Start free.<br>
+                <span>Pay only if it sticks.</span>
+            </h1>
+            <p class="lead">
+                Productify is free forever for up to 5 habits — no account, no trial countdown, no card. Pro unlocks unlimited habits and the tools that help when you are tracking a full routine.
+            </p>
+            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+               class="appstore-badge-link" aria-label="Download Productify free on the App Store">
+                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
+            </a>
+            <p style="margin-top: 12px; font-size: .8rem; color: var(--ink-faint);">Free to download · iOS 15+ · No account required</p>
+        </div>
+    </div>
+</section>
+
+<!-- PLANS -->
+<section class="section" aria-labelledby="plans-heading">
+    <div class="container">
+        <div class="article">
+            <div class="eyebrow">Plans</div>
+            <h2 id="plans-heading">Productify pricing at a glance</h2>
+            <p>
+                Three options: stay on the free plan indefinitely, subscribe to Pro, or buy Pro once and keep it. Everything is an in-app purchase through the App Store, so cancelling and refunds are handled by Apple rather than by us.
+            </p>
+        </div>
+
+        <div class="container" style="padding: 0;">
+            <div class="plan-grid">
+                <div class="plan">
+                    <div class="plan__name">Free</div>
+                    <div class="plan__price">$0</div>
+                    <span class="plan__period">forever</span>
+                    <p class="plan__blurb">Enough to start building your first habits.</p>
+                    <ul>
+                        <li>Up to 5 habits</li>
+                        <li>Streak tracking</li>
+                        <li>Smart reminders</li>
+                        <li>Habit templates (5 starter)</li>
+                        <li>Basic progress view</li>
+                    </ul>
+                </div>
+
+                <div class="plan plan--featured">
+                    <span class="plan__tag">Most popular</span>
+                    <div class="plan__name">Pro</div>
+                    <div class="plan__price">$3.99</div>
+                    <span class="plan__period">per month · or $24.99/year (save 48%)</span>
+                    <p class="plan__blurb">For people serious about making habits last, with every tool Productify offers.</p>
+                    <ul>
+                        <li>Unlimited habits</li>
+                        <li>Habit Duo (shared accountability)</li>
+                        <li>AI Habit Analyser</li>
+                        <li>All habit templates</li>
+                        <li>Advanced analytics &amp; trends</li>
+                        <li>Custom habit units</li>
+                        <li>Priority support</li>
+                    </ul>
+                </div>
+
+                <div class="plan">
+                    <span class="plan__tag" style="background: var(--ink);">Best value</span>
+                    <div class="plan__name">Lifetime</div>
+                    <div class="plan__price">$34.99</div>
+                    <span class="plan__period">one-time · pay once, own forever</span>
+                    <p class="plan__blurb">Everything in Pro, with no recurring charges. Ever.</p>
+                    <ul>
+                        <li>All Pro features included</li>
+                        <li>Unlimited habits</li>
+                        <li>Habit Duo (shared accountability)</li>
+                        <li>AI Habit Analyser</li>
+                        <li>All habit templates</li>
+                        <li>All future updates included</li>
+                        <li>Priority support</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="price-note">
+                Pro includes a 7-day free trial. Cancel anytime from the App Store. Lifetime is a one-time in-app purchase. Prices are in USD and may vary by region and local taxes.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT THE FREE PLAN REALLY GIVES -->
+<section class="section section--alt" aria-labelledby="free-heading">
+    <div class="container">
+        <div class="article">
+            <div class="eyebrow">The free plan</div>
+            <h2 id="free-heading">What you actually get for free</h2>
+            <p>
+                Plenty of habit trackers describe themselves as free and then cap you at three habits or hide reminders behind a subscription. Productify's free plan covers a real routine: five habits, unlimited history, per-habit <a href="/habit-tracker/">daily tracking</a>, and <a href="/streak-tracking/">streak tracking</a> that survives a missed day.
+            </p>
+            <ul class="check-list">
+                <li><span><strong>No account required</strong> — install the app and start tracking; your data stays on your device by default</span></li>
+                <li><span><strong>No time limit</strong> — the free plan is not a trial that expires after a week</span></li>
+                <li><span><strong>No ads</strong> — the free tier is funded by people who upgrade, not by advertising</span></li>
+                <li><span><strong>Reminders included</strong> — per-habit notifications are part of the free plan, not a paid add-on</span></li>
+            </ul>
+            <div class="compare-note">
+                Five habits is usually enough for a morning routine or a focused set of daily targets. If you are tracking a whole week's worth of areas — see our guide to <a href="/blog/areas-of-life/">areas of life</a> — that is where the habit limit starts to bite.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHEN PRO IS WORTH IT -->
+<section class="section" aria-labelledby="pro-heading">
+    <div class="container">
+        <div class="article">
+            <div class="eyebrow">Upgrading</div>
+            <h2 id="pro-heading">When Pro is worth paying for</h2>
+            <p>
+                Pro is not a better version of the same thing — it adds capabilities the free plan does not have at all. It is worth it if one of these describes you:
+            </p>
+            <ul class="check-list">
+                <li><span>You want to track more than five habits at once</span></li>
+                <li><span>You want <a href="/habit-duo/">Habit Duo</a> — one shared habit with one friend, for accountability without leaderboards</span></li>
+                <li><span>You want the <a href="/ai-analyser/">AI Habit Analyser</a> to surface which cues and days actually predict your slips</span></li>
+                <li><span>You want <a href="/measurable-goals/">measurable goals</a> in custom units rather than simple yes/no check-ins</span></li>
+                <li><span>You want the full <a href="/habit-templates/">habit template</a> library rather than the five starters</span></li>
+            </ul>
+            <p>
+                If none of those apply, the free plan is genuinely the right choice, and we would rather you stayed on it than paid for something you do not use.
+            </p>
+            <h3>Monthly, yearly, or lifetime?</h3>
+            <p>
+                Yearly works out at about $2.08 a month, so it pays for itself against monthly in roughly seven months. Lifetime costs about the same as seventeen months of Pro billed yearly — worth it if you expect to keep tracking habits for more than a year and a half, and a poor deal if you are still deciding whether habit tracking suits you at all. Starting monthly and switching later is a reasonable path.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" aria-labelledby="pricing-faq-heading">
+    <div class="container">
+        <div class="article">
+            <div class="eyebrow">Questions</div>
+            {%- comment -%}
+            Rendered from the `faq` front matter, which also feeds the FAQPage
+            schema in jsonld.html — one list, so the markup and the structured
+            data cannot drift apart.
+            {%- endcomment -%}
+            <h2 id="pricing-faq-heading">Pricing questions</h2>
+{% include faq.html %}
+        </div>
+    </div>
+</section>

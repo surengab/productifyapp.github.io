@@ -44,13 +44,13 @@ dropdowns:
 
 # Plain links after the dropdowns, desktop navbar.
 links:
-  - { href: /#pricing, label: Pricing }
+  - { href: /pricing/, label: Pricing }
   - { href: /#about,   label: About }
   - { href: /#contact, label: Contact }
 
 # The un-grouped block in the middle of the mobile drawer.
 mobile_primary:
   - { href: /#how-it-works, label: "How It Works", primary: true }
-  - { href: /#pricing,      label: "Pricing",      primary: true }
+  - { href: /pricing/,      label: "Pricing",      primary: true }
   - { href: /#about,        label: "About" }
   - { href: /#contact,      label: "Contact" }

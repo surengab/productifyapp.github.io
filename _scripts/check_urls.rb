@@ -32,6 +32,8 @@ REQUIRED = %w[
   /streak-tracking/
   /morning-routine/
   /productivity-at-work/
+  /pricing/
+  /download/
   /privacy.html
   /terms.html
   /sitemap.xml
