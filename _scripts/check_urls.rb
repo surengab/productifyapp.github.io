@@ -36,22 +36,6 @@ REQUIRED = %w[
   /robots.txt
   /llms.txt
   /shared.css
-  /index.md
-  /blog/index.md
-  /blog/habit-tracker-vs-to-do-list/index.md
-  /blog/how-long-to-build-a-habit/index.md
-  /blog/how-to-start-a-daily-habit/index.md
-  /blog/how-to-use-a-habit-tracker/index.md
-  /blog/what-habits-to-track/index.md
-  /features/ai-analyser/index.md
-  /features/habit-duo/index.md
-  /features/habit-streaks/index.md
-  /features/habit-templates/index.md
-  /features/habit-tracker/index.md
-  /features/measurable-goals/index.md
-  /features/streak-tracking/index.md
-  /solutions/morning-routine/index.md
-  /solutions/productivity-at-work/index.md
 ].freeze
 
 missing = REQUIRED.reject do |url|

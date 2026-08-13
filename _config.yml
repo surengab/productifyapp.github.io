@@ -71,9 +71,20 @@ kramdown:
 sass:
   style: compressed
 
-# index.md is intentionally NOT excluded: it has no front matter, so Jekyll
-# copies it verbatim, exactly as GitHub Pages already serves it at /index.md.
+# The plain-markdown companions (index.md next to each page) are excluded while
+# the site is served by GitHub's legacy Pages build. That build enables
+# jekyll-optional-front-matter, which promotes a front-matter-less .md file to a
+# page; index.md then renders to index.html and clobbers the real page, which is
+# what replaced the homepage with the LLM index. Jekyll 4 in .github/workflows
+# has no such plugin and copies them verbatim, so once Settings -> Pages ->
+# Source is "GitHub Actions" these five lines can be deleted to restore the
+# /index.md URLs.
 exclude:
+  - index.md
+  - blog/index.md
+  - blog/*/index.md
+  - features/*/index.md
+  - solutions/*/index.md
   - Gemfile
   - Gemfile.lock
   - vendor
