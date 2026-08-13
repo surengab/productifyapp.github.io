@@ -112,7 +112,7 @@ h3 {
     color: var(--ink); line-height: 1.4; margin-bottom: 8px;
 }
 .lead {
-    font-size: clamp(.97rem, 2vw, 1.1rem);
+    font-size: clamp(1.06rem, 2vw, 1.1rem);
     color: var(--ink-muted); line-height: 1.84; max-width: 640px;
 }
 .text-center { text-align: center; }
@@ -339,8 +339,8 @@ h3 {
 /* ─── ARTICLE BODY ────────────────────────────────────────────────────────── */
 .article { max-width: 760px; }
 .article h2 { margin: 48px 0 16px; }
-.article h3 { margin: 32px 0 10px; font-size: 1.05rem; }
-.article p { font-size: .97rem; color: var(--ink-2); line-height: 1.9; margin-bottom: 16px; }
+.article h3 { margin: 32px 0 10px; font-size: 1.15rem; }
+.article p { font-size: 1.06rem; color: var(--ink-2); line-height: 1.9; margin-bottom: 16px; }
 .article p:last-child { margin-bottom: 0; }
 .article a,
 .article .check-list a,
@@ -371,7 +371,7 @@ li a:hover {
        as separate columns with the comma stranded. Absolute-positioning the
        tick lets the content flow as normal inline text however it is authored. */
     position: relative; padding-left: 30px;
-    font-size: .95rem; color: var(--ink-2);
+    font-size: 1.03rem; color: var(--ink-2);
 }
 .check-list li::before {
     content: '✓'; flex-shrink: 0;
