@@ -1,0 +1,92 @@
+<script>
+    (function () {
+        var openBtn     = document.getElementById('openNav');
+        var closeBtn    = document.getElementById('closeNav');
+        var mobileNav   = document.getElementById('mobileNav');
+        var navBackdrop = document.getElementById('mobileNavBackdrop');
+
+        function openMobileNav() {
+            mobileNav.classList.add('open');
+            navBackdrop.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            openBtn.setAttribute('aria-expanded', 'true');
+        }
+        function closeMobileNav() {
+            mobileNav.classList.remove('open');
+            navBackdrop.classList.remove('open');
+            document.body.style.overflow = '';
+            openBtn.setAttribute('aria-expanded', 'false');
+        }
+        window.closeMobileNav = closeMobileNav;
+
+        if (openBtn && mobileNav && navBackdrop) {
+            openBtn.addEventListener('click', openMobileNav);
+            if (closeBtn) closeBtn.addEventListener('click', closeMobileNav);
+            navBackdrop.addEventListener('click', closeMobileNav);
+            // Following any link inside the drawer should also dismiss it. The old
+            // per-link onclick="closeMobileNav()" attributes did this on the
+            // homepage only; delegating covers every page.
+            mobileNav.addEventListener('click', function (e) {
+                if (e.target.closest('a')) closeMobileNav();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMobileNav();
+            });
+        }
+
+        document.querySelectorAll('.faq-question').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var item = this.closest('.faq-item');
+                var isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(function (el) {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) { item.classList.add('open'); this.setAttribute('aria-expanded', 'true'); }
+            });
+        });
+
+        var isTouchDevice = false;
+        window.addEventListener('touchstart', function () { isTouchDevice = true; }, { once: true });
+        function closeAllDropdowns(except) {
+            document.querySelectorAll('.nav-dropdown.open').forEach(function (dd) {
+                if (dd !== except) {
+                    dd.classList.remove('open');
+                    dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+        function openDropdown(dd) {
+            closeAllDropdowns(dd);
+            dd.classList.add('open');
+            dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded', 'true');
+        }
+        document.querySelectorAll('.nav-dropdown').forEach(function (dd) {
+            var leaveTimer;
+            dd.addEventListener('mouseenter', function () {
+                if (isTouchDevice) return;
+                clearTimeout(leaveTimer);
+                openDropdown(dd);
+            });
+            dd.addEventListener('mouseleave', function () {
+                if (isTouchDevice) return;
+                leaveTimer = setTimeout(function () {
+                    dd.classList.remove('open');
+                    dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded', 'false');
+                }, 120);
+            });
+            dd.querySelector('.nav-dropdown__toggle').addEventListener('click', function (e) {
+                e.stopPropagation();
+                var isOpen = dd.classList.contains('open');
+                closeAllDropdowns(dd);
+                if (!isOpen) { dd.classList.add('open'); this.setAttribute('aria-expanded', 'true'); }
+                else { dd.classList.remove('open'); this.setAttribute('aria-expanded', 'false'); }
+            });
+        });
+        document.querySelectorAll('.nav-dropdown__menu').forEach(function (m) {
+            m.addEventListener('click', function (e) { e.stopPropagation(); });
+        });
+        document.addEventListener('click', function () { closeAllDropdowns(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAllDropdowns(); });
+    })();
+</script>

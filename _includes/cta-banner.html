@@ -1,0 +1,19 @@
+{%- assign cta = page.cta -%}
+<section class="cta-banner section--dark" aria-labelledby="cta-heading">
+    <div class="container">
+        <div class="eyebrow" style="background: rgba(255,255,255,.1); color: #93C5FD; border-color: rgba(255,255,255,.1);">{{ cta.eyebrow | default: 'Free Habit Tracker App · iOS' }}</div>
+        <h2 id="cta-heading">{{ cta.heading }}</h2>
+        <p class="lead">
+            {{ cta.lead }}
+        </p>
+        <div class="cta-banner__btns">
+            <a href="{{ site.appstore_url }}"
+               class="appstore-badge-link" aria-label="Download Productify on the App Store">
+                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="170" height="50">
+            </a>
+            {%- if cta.link_href %}
+            <a href="{{ cta.link_href }}" class="btn btn-ghost">{{ cta.link_label }}</a>
+            {%- endif %}
+        </div>
+    </div>
+</section>

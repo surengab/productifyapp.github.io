@@ -1,0 +1,282 @@
+# Pages CMS configuration — https://pagescms.org
+# Sign in at https://app.pagescms.org with GitHub, authorise this repo, and this
+# file defines the editing panel. Saving writes a commit to `main`, which the
+# Actions workflow builds and deploys.
+
+media:
+  input: assets
+  output: /assets
+
+settings:
+  content:
+    merge: false
+
+content:
+  - name: blog
+    label: Blog posts
+    type: collection
+    path: _blog
+    view:
+      fields: [title, category, date, last_modified]
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - { name: title, label: Title, type: string, required: true, description: "Used for the <h1>, og:title and the JSON-LD headline." }
+      - { name: heading, label: On-page heading override, type: string, description: "Only set this if the visible <h1> should differ from the title above." }
+      - { name: seo_title, label: Browser/search title, type: string, description: "Defaults to “<title> | Productify” when left empty." }
+      - { name: description, label: Meta description, type: text, required: true, description: "Shown in search results. Aim for 140–160 characters." }
+      - { name: og_description, label: Social description, type: text, description: "Optional. Falls back to the meta description." }
+      - { name: lead, label: Lead paragraph, type: rich-text, description: "The intro paragraph above the table of contents." }
+      - { name: category, label: Category tag, type: string, description: "e.g. How-To Guide, Comparison Guide." }
+      - { name: read_time, label: Read time, type: string, description: "e.g. 11 min read." }
+      - { name: date, label: Published, type: date, options: { format: "yyyy-MM-dd" }, required: true }
+      - { name: last_modified, label: Updated, type: date, options: { format: "yyyy-MM-dd" }, description: "Adds a visible “Updated …” line. Leave empty if unchanged." }
+      - { name: image, label: Social image, type: image, description: "Defaults to the site-wide og-image.jpg." }
+      - name: body
+        label: Article body
+        type: code
+        options: { language: html }
+        description: "Section headings (h2 with an id) become the table of contents automatically. Kept as HTML because the articles use custom blocks — check-lists, comparison rows, tables — that a WYSIWYG editor would rewrite on save. Switch this field to `type: rich-text` if you would rather have the visual editor and accept that reformatting."
+      - name: faq
+        label: FAQ
+        type: object
+        list: true
+        description: "Drives both the on-page accordion and the FAQPage structured data. Google requires these to match, so keep them here rather than in the body."
+        fields:
+          - { name: q, label: Question, type: string }
+          - { name: a, label: Answer, type: rich-text }
+      - name: next_step
+        label: "“Start today” box"
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: steps, label: Steps, type: string, list: true }
+          - { name: note, label: Closing note, type: text }
+      - name: related
+        label: Related reading
+        type: object
+        list: true
+        fields:
+          - { name: href, label: URL, type: string }
+          - { name: label, label: Link text, type: string }
+      - name: cta
+        label: Closing call to action
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: lead, label: Text, type: text }
+          - { name: link_href, label: Secondary link URL, type: string }
+          - { name: link_label, label: Secondary link text, type: string }
+      - name: breadcrumbs
+        label: Breadcrumbs
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: href, label: Link, type: string }
+          - { name: item, label: "Structured-data URL (advanced)", type: string }
+      - { name: priority, label: "Sitemap priority", type: number, options: { min: 0, max: 1, step: 0.05 } }
+      - { name: changefreq, label: "Sitemap change frequency", type: select, options: { values: [daily, weekly, monthly, yearly] } }
+      - { name: sitemap, label: Include in sitemap, type: boolean }
+      - { name: robots, label: "Robots meta (advanced)", type: string }
+      - { name: canonical_override, label: "Canonical URL override (advanced)", type: string }
+      - { name: toc, label: Show table of contents, type: boolean }
+      - name: toc_items
+        label: "Manual table of contents (advanced)"
+        type: object
+        list: true
+        description: "Only needed where entries point at section wrappers rather than headings. Leave empty to generate it from the headings."
+        fields:
+          - { name: href, label: Anchor, type: string }
+          - { name: label, label: Label, type: string }
+      - { name: extra_css, label: "Page CSS (advanced)", type: code, options: { language: css } }
+      - name: footer_col
+        label: "Footer column (advanced)"
+        type: object
+        fields:
+          - { name: title, label: Heading, type: string }
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: href, label: URL, type: string }
+              - { name: label, label: Text, type: string }
+
+  - name: features
+    label: Feature pages
+    type: collection
+    path: _features
+    view:
+      fields: [title, description]
+    fields: &page_fields
+      - { name: title, label: Title, type: string, required: true }
+      - { name: seo_title, label: Browser/search title, type: string }
+      - { name: description, label: Meta description, type: text, required: true }
+      - { name: og_description, label: Social description, type: text }
+      - { name: image, label: Social image, type: image }
+      - name: body
+        label: Page content
+        type: code
+        options: { language: html }
+        description: "These are layout-heavy marketing pages, so the content is edited as HTML."
+      - name: breadcrumbs
+        label: Breadcrumbs
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: href, label: Link, type: string }
+          - { name: item, label: "Structured-data URL (advanced)", type: string }
+      - { name: priority, label: "Sitemap priority", type: number, options: { min: 0, max: 1, step: 0.05 } }
+      - { name: changefreq, label: "Sitemap change frequency", type: select, options: { values: [daily, weekly, monthly, yearly] } }
+      - { name: sitemap, label: Include in sitemap, type: boolean }
+      - { name: robots, label: "Robots meta (advanced)", type: string }
+      - { name: canonical_override, label: "Canonical URL override (advanced)", type: string }
+      - { name: extra_css, label: "Page CSS (advanced)", type: code, options: { language: css } }
+      - name: footer_col
+        label: "Footer column (advanced)"
+        type: object
+        fields:
+          - { name: title, label: Heading, type: string }
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: href, label: URL, type: string }
+              - { name: label, label: Text, type: string }
+
+  - name: compare
+    label: Comparison pages
+    type: collection
+    path: _compare
+    view:
+      fields: [title, description]
+    fields: *page_fields
+
+  - name: solutions
+    label: Solution pages
+    type: collection
+    path: _solutions
+    view:
+      fields: [title, description]
+    fields: *page_fields
+
+  - name: homepage
+    label: Homepage
+    type: file
+    path: index.html
+    fields: *page_fields
+
+  - name: navigation
+    label: Navigation menu
+    type: file
+    path: _data/nav.yml
+    format: yaml
+    fields:
+      - name: dropdowns
+        label: Dropdown menus
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Menu label, type: string }
+          - { name: mobile_label, label: Mobile label, type: string }
+          - { name: id, label: "Element id (advanced)", type: string }
+          - { name: align, label: Alignment, type: select, options: { values: [left, right] } }
+          - { name: min_width, label: Menu width, type: string }
+          - name: items
+            label: Menu items
+            type: object
+            list: true
+            fields:
+              - { name: href, label: URL, type: string }
+              - { name: icon, label: Icon (emoji), type: string }
+              - { name: title, label: Title, type: string }
+              - { name: blurb, label: Subtitle, type: string }
+              - { name: aria, label: "Accessible label", type: string }
+              - { name: mobile, label: "Mobile drawer label", type: string, description: "Leave empty to hide this item on mobile." }
+              - { name: divider, label: Divider below, type: boolean }
+      - name: links
+        label: Plain links
+        type: object
+        list: true
+        fields:
+          - { name: href, label: URL, type: string }
+          - { name: label, label: Text, type: string }
+      - name: mobile_primary
+        label: Mobile primary links
+        type: object
+        list: true
+        fields:
+          - { name: href, label: URL, type: string }
+          - { name: label, label: Text, type: string }
+          - { name: primary, label: Emphasised, type: boolean }
+
+  - name: footer
+    label: Footer
+    type: file
+    path: _data/footer.yml
+    format: yaml
+    fields:
+      - { name: blurb, label: Blurb, type: text }
+      - name: features
+        label: Features column
+        type: object
+        fields:
+          - { name: title, label: Heading, type: string }
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: href, label: URL, type: string }
+              - { name: label, label: Text, type: string }
+      - name: contextual
+        label: Default third column
+        type: object
+        fields:
+          - { name: title, label: Heading, type: string }
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: href, label: URL, type: string }
+              - { name: label, label: Text, type: string }
+      - name: company
+        label: Company column
+        type: object
+        fields:
+          - { name: title, label: Heading, type: string }
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: href, label: URL, type: string }
+              - { name: label, label: Text, type: string }
+      - { name: copyright, label: Copyright line, type: string }
+      - name: social
+        label: Social links
+        type: object
+        list: true
+        fields:
+          - { name: href, label: URL, type: string }
+          - { name: icon, label: Icon (emoji), type: string }
+          - { name: aria, label: "Accessible label", type: string }
+      - name: legal
+        label: Legal-page footer
+        type: object
+        fields:
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: href, label: URL, type: string }
+              - { name: label, label: Text, type: string }
+          - { name: copyright, label: Copyright line, type: string }

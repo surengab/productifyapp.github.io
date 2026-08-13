@@ -1,0 +1,11 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/
+.DS_Store
+
+# Internal working files — not part of the site build
+marketing/
+concurents/

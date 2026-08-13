@@ -1,0 +1,57 @@
+{%- comment -%}
+Structured data. Everything here is derived from front matter, so the JSON-LD
+and the visible page can no longer drift apart (they did, before the migration).
+{%- endcomment -%}
+{%- if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.og_title | default: page.title | jsonify }},
+    "description": {{ page.description | strip_newlines | jsonify }},
+    "url": "{{ include.canonical }}",
+    "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+    "dateModified": "{{ page.last_modified | default: page.date | date: '%Y-%m-%d' }}",
+    "author": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ '/' | absolute_url }}" },
+    "publisher": { "@type": "Organization", "name": "{{ site.title }}", "logo": { "@type": "ImageObject", "url": "{{ '/favicon.svg' | absolute_url }}" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ include.canonical }}" },
+    "image": "{{ include.img }}"
+}
+</script>
+{%- endif %}
+{%- if page.breadcrumbs %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {%- for crumb in page.breadcrumbs %}
+        {%- assign crumb_item = crumb.item | default: crumb.href | default: page.url %}
+        { "@type": "ListItem", "position": {{ forloop.index }}, "name": {{ crumb.label | jsonify }}, "item": "{{ crumb_item | absolute_url }}" }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+    ]
+}
+</script>
+{%- endif %}
+{%- if page.faq and page.faq.size > 0 %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {%- for item in page.faq %}
+        {
+            "@type": "Question",
+            "name": {{ item.q | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | strip_html | strip_newlines | jsonify }} }
+        }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+    ]
+}
+</script>
+{%- endif %}
+{%- for raw in page.extra_jsonld %}
+<script type="application/ld+json">
+{{ raw }}
+</script>
+{%- endfor %}

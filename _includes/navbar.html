@@ -1,0 +1,40 @@
+<header class="navbar" role="banner">
+    <div class="container">
+        <div class="navbar__inner">
+            <a href="/" class="logo" aria-label="Productify – Home">Productify</a>
+            <nav class="nav-links" role="navigation" aria-label="Main navigation">
+                {%- for dd in site.data.nav.dropdowns %}
+                <div class="nav-dropdown"{% if dd.id %} id="{{ dd.id }}"{% endif %}>
+                    <button class="nav-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
+                        {{ dd.label }}
+                        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+                    </button>
+                    <div class="nav-dropdown__menu"{% if dd.align == 'right' %} style="left: auto; right: 0;"{% endif %}>
+                        <div class="nav-dropdown__menu-inner"{% if dd.min_width %} style="min-width: {{ dd.min_width }};"{% endif %}>
+                            {%- for item in dd.items %}
+                            <a href="{{ item.href }}" class="nav-dropdown__item" aria-label="{{ item.aria | default: item.title }}"{% if item.divider %} style="border-bottom: 1px solid var(--border); margin-bottom: 4px; padding-bottom: 12px;"{% endif %}>
+                                <div class="nav-dropdown__item-icon">{{ item.icon }}</div>
+                                <div class="nav-dropdown__item-text"><strong>{{ item.title }}</strong><span>{{ item.blurb }}</span></div>
+                            </a>
+                            {%- endfor %}
+                        </div>
+                    </div>
+                </div>
+                {%- endfor %}
+                {%- for link in site.data.nav.links %}
+                <a href="{{ link.href }}">{{ link.label }}</a>
+                {%- endfor %}
+            </nav>
+            <div class="nav-cta">
+                <a href="{{ site.appstore_url }}"
+                   class="appstore-badge-link"
+                   aria-label="Download Productify on the App Store">
+                    <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="140" height="41">
+                </a>
+                <button class="hamburger" id="openNav" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

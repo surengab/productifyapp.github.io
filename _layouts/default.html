@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+{% include head.html %}
+</head>
+
+<body>
+{%- if page.body_prepend %}
+
+{{ page.body_prepend }}
+{%- endif %}
+
+{% include mobile-nav.html %}
+{% include navbar.html %}
+
+{{ content }}
+
+{% include footer.html %}
+{% include scripts.html %}
+{%- if page.page_scripts %}
+<script>
+{{ page.page_scripts }}
+</script>
+{%- endif %}
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<main>
+
+{%- if page.breadcrumbs %}
+{% include breadcrumb.html %}
+{%- endif %}
+
+{{ content }}
+
+{%- if page.cta %}
+{% include cta-banner.html %}
+{%- endif %}
+
+</main>

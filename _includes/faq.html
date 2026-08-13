@@ -1,0 +1,11 @@
+{%- comment -%}
+Renders the visible accordion from page.faq — the same list that feeds the
+FAQPage JSON-LD in jsonld.html, so the two cannot drift apart. Answers hold
+inline HTML (links, emphasis); jsonld.html strips it for the structured data.
+{%- endcomment -%}
+{%- for item in page.faq %}
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">{{ item.q }}</button>
+    <div class="faq-answer">{{ item.a }}</div>
+</div>
+{%- endfor %}

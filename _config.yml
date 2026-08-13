@@ -1,0 +1,87 @@
+title: Productify
+tagline: Best Daily Habit Tracker App for iOS
+url: https://productifyapp.org
+baseurl: ""
+lang: en
+locale: en_US
+twitter: "@Productify_app"
+appstore_url: https://apps.apple.com/us/app/habit-tracker-productify/id1389900237
+default_image: /og-image.jpg
+ga_id: G-M3DE9J4KYW
+
+# --- Collections -------------------------------------------------------------
+# permalinks reproduce the pre-Jekyll URLs exactly: _blog/foo.md -> /blog/foo/
+collections:
+  blog:
+    output: true
+    permalink: /blog/:path/
+  features:
+    output: true
+    permalink: /features/:path/
+  compare:
+    output: true
+    permalink: /compare/:path/
+  solutions:
+    output: true
+    permalink: /solutions/:path/
+
+# --- Front matter defaults ---------------------------------------------------
+defaults:
+  - scope: { path: "" }
+    values:
+      image: /og-image.jpg
+      changefreq: monthly
+      priority: 0.5
+      sitemap: true
+  - scope: { path: "", type: blog }
+    values:
+      layout: post
+      section: blog
+      changefreq: monthly
+      priority: 0.8
+      toc: true
+  - scope: { path: "", type: features }
+    values:
+      layout: page
+      section: features
+      changefreq: monthly
+      priority: 0.9
+  - scope: { path: "", type: compare }
+    values:
+      layout: page
+      section: compare
+      changefreq: monthly
+      priority: 0.85
+  - scope: { path: "", type: solutions }
+    values:
+      layout: page
+      section: solutions
+      changefreq: monthly
+      priority: 0.8
+
+# --- Build -------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+sass:
+  style: compressed
+
+# index.md is intentionally NOT excluded: it has no front matter, so Jekyll
+# copies it verbatim, exactly as GitHub Pages already serves it at /index.md.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - README.md
+  - CLAUDE.md
+  - _scripts
+  - marketing
+  - concurents
+  - "**/.DS_Store"
+  - node_modules

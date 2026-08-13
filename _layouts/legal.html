@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+{% include head.html %}
+</head>
+
+<body>
+{%- if page.body_prepend %}
+
+{{ page.body_prepend }}
+{%- endif %}
+
+<header class="navbar">
+    <div class="navbar__inner">
+        <a href="/" class="logo">Productify</a>
+        <a href="/" class="nav-back">
+            ← Back to home
+        </a>
+    </div>
+</header>
+
+{{ content }}
+
+<footer class="footer">
+    <div class="footer__links">
+        {%- for link in site.data.footer.legal.links %}
+        <a href="{{ link.href }}">{{ link.label }}</a>
+        {%- endfor %}
+    </div>
+    <p>{{ site.data.footer.legal.copyright }}</p>
+</footer>
+
+</body>
+</html>

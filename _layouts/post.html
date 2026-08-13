@@ -1,0 +1,105 @@
+---
+layout: default
+---
+{%- comment -%}
+Body, FAQ, next-step box and related list are captured together so the table of
+contents is derived from exactly the HTML the reader gets. Headings without an
+id are skipped by the `toc` filter, which is what keeps the generated contents
+matching the hand-written ones.
+{%- endcomment -%}
+{%- capture article_body -%}
+{{ content }}
+{%- if page.faq and page.faq.size > 0 %}
+            <h2 id="{{ page.faq_id | default: 'faq' }}">{{ page.faq_heading | default: 'Frequently asked questions' }}</h2>
+{% include faq.html %}
+{%- endif -%}
+{%- if page.next_step %}
+            <div class="next-step-box">
+                <h3>{{ page.next_step.heading }}</h3>
+                <ol>
+                    {%- for step in page.next_step.steps %}
+                    <li>{{ step }}</li>
+                    {%- endfor %}
+                </ol>
+                {%- if page.next_step.note %}
+                <p>{{ page.next_step.note }}</p>
+                {%- endif %}
+            </div>
+{%- endif -%}
+{%- if page.related and page.related.size > 0 %}
+            <h2{% if page.related_id %} id="{{ page.related_id }}"{% endif %}>{{ page.related_heading | default: 'Related reading' }}</h2>
+            <ul>
+                {%- for item in page.related %}
+                <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+                {%- endfor %}
+            </ul>
+{%- endif -%}
+{%- endcapture -%}
+<main>
+
+{%- if page.breadcrumbs %}
+{% include breadcrumb.html %}
+{%- endif %}
+
+<article class="section" aria-labelledby="article-heading">
+    <div class="container">
+        <div class="article" style="max-width: 780px;">
+
+            <div class="article-meta">
+                {%- if page.category %}
+                <span class="article-meta__tag">{{ page.category }}</span>
+                {%- endif %}
+                <time class="article-meta__date" datetime="{{ page.date | date: '%Y-%m-%d' }}" itemprop="datePublished">Published {{ page.date | date: '%B %-d, %Y' }}</time>
+                {%- if page.last_modified and page.last_modified != page.date %}
+                <time class="article-meta__date" datetime="{{ page.last_modified | date: '%Y-%m-%d' }}" itemprop="dateModified">Updated {{ page.last_modified | date: '%B %-d, %Y' }}</time>
+                {%- endif %}
+                {%- if page.read_time %}
+                <span class="article-meta__read">{{ page.read_time }}</span>
+                {%- endif %}
+            </div>
+
+            {%- comment -%}
+            `heading` exists only where the on-page h1 deliberately differs from
+            the og:title used in search and social cards.
+            {%- endcomment -%}
+            <h1 id="article-heading">{{ page.heading | default: page.title }}</h1>
+
+            {%- if page.lead %}
+            <p class="lead">
+                {{ page.lead }}
+            </p>
+            {%- endif %}
+
+            {%- comment -%}
+            `toc_items` is an explicit list, used on the pages where some
+            entries point at section wrappers rather than headings, which the
+            generated contents cannot reproduce.
+            {%- endcomment -%}
+            {%- if page.toc_items %}
+            <nav class="toc" aria-label="Table of contents">
+                <h4>In this guide</h4>
+                <ol>
+                    {%- for item in page.toc_items %}
+                    <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+                    {%- endfor %}
+                </ol>
+            </nav>
+            {%- elsif page.toc %}
+            {{ article_body | toc }}
+            {%- endif %}
+
+{{ article_body }}
+
+        </div>
+    </div>
+</article>
+
+{%- if page.cta %}
+{% include cta-banner.html %}
+{%- endif %}
+{%- if page.after_article_html %}
+
+{{ page.after_article_html }}
+{%- endif %}
+
+</main>

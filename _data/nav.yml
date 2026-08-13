@@ -1,0 +1,56 @@
+# Single source of truth for the desktop navbar and the mobile drawer.
+# Editable from Pages CMS (Settings -> Navigation).
+
+dropdowns:
+  - label: Features
+    mobile_label: Features
+    items:
+      - { href: /features/habit-tracker/,   icon: "✅", title: "Habit Tracker",     blurb: "Track daily habits with clarity",  mobile: "Habit Tracker" }
+      - { href: /features/habit-duo/,       icon: "🤝", title: "Habit Duo",         blurb: "Build one habit with a friend",    mobile: "Habit Duo" }
+      - { href: /features/ai-analyser/,     icon: "🧠", title: "AI Habit Analyser", blurb: "Personalized pattern insights",    mobile: "AI Habit Analyser" }
+      - { href: /features/habit-templates/, icon: "📋", title: "Habit Templates",   blurb: "Start in seconds, not hours",      mobile: "Templates" }
+      - { href: /features/measurable-goals/,icon: "📏", title: "Measurable Goals",  blurb: "Clear targets, less friction" }
+      - { href: /features/streak-tracking/, icon: "🔥", title: "Streak Tracking",   blurb: "Momentum without the guilt",       mobile: "Streak Tracking" }
+
+  - label: Solutions
+    items:
+      - { href: /solutions/morning-routine/,      icon: "🌅", title: "Build a Morning Routine", blurb: "Start your day with intention",   aria: "Morning Routine guide" }
+      - { href: /solutions/productivity-at-work/, icon: "💼", title: "Productivity at Work",    blurb: "Habits that improve performance", aria: "Productivity at Work guide" }
+
+  - label: Blog
+    id: dd-blog
+    align: right
+    min_width: 280px
+    items:
+      - { href: /blog/, icon: "📚", title: "All Articles", blurb: "Browse the full blog", aria: "All Articles", divider: true, mobile: "All Articles" }
+      - { href: /blog/best-habit-tracker-apps-2026/, icon: "🏆", title: "Best Habit Tracker Apps 2026", blurb: "Free &amp; paid comparison", aria: "Best Habit Tracker Apps 2026", mobile: "Best Habit Tracker Apps 2026" }
+      - { href: /blog/how-to-start-a-daily-habit/,   icon: "🌱", title: "How to Start a Daily Habit", blurb: "Build from scratch", aria: "How to Start a Daily Habit", mobile: "How to Start a Daily Habit" }
+      - { href: /blog/how-to-build-habits-that-stick/, icon: "🔗", title: "Habits That Actually Stick", blurb: "Practical habit strategies", aria: "How to Build Habits That Stick" }
+      - { href: /blog/how-to-break-bad-habits/, icon: "🚫", title: "How to Break Bad Habits", blurb: "Replace, don't resist", aria: "How to Break Bad Habits" }
+      - { href: /blog/how-long-to-build-a-habit/, icon: "⏳", title: "How Long to Build a Habit", blurb: "The real timeline", aria: "How Long Does It Take to Build a Habit" }
+      - { href: /blog/what-habits-to-track/, icon: "📋", title: "What Habits to Track", blurb: "Best habits to start with", aria: "What Habits to Track" }
+      - { href: /blog/how-to-use-a-habit-tracker/, icon: "📱", title: "How to Use a Habit Tracker", blurb: "Get the most from your app", aria: "How to Use a Habit Tracker" }
+      - { href: /blog/habit-tracker-vs-to-do-list/, icon: "⚖️", title: "Habit Tracker vs To-Do List", blurb: "Which one do you need?", aria: "Habit Tracker vs To-Do List" }
+      - { href: /blog/areas-of-life/, icon: "🧭", title: "Areas of Life", blurb: "Balance across life areas", mobile: "Areas of Life" }
+      - { href: /blog/bad-habits-list/, icon: "📉", title: "List of Bad Habits", blurb: "Common habits to replace", mobile: "List of Bad Habits" }
+      - { href: /blog/how-many-goals-should-i-set/, icon: "🎯", title: "How Many Goals to Set", blurb: "Focus beats volume", mobile: "How Many Goals to Set" }
+
+  - label: Compare
+    align: right
+    min_width: 240px
+    items:
+      - { href: /compare/productify-vs-habitify/, icon: "⚖️", title: "Productify vs Habitify", blurb: "Which is better for iPhone?", mobile: "Productify vs Habitify" }
+      - { href: /compare/productify-vs-habitica/, icon: "⚔️", title: "Productify vs Habitica", blurb: "Minimalist vs gamified RPG",  mobile: "Productify vs Habitica" }
+
+# Plain links after the dropdowns, desktop navbar.
+links:
+  - { href: /#pricing, label: Pricing }
+  - { href: /#about,   label: About }
+  - { href: /#contact, label: Contact }
+
+# The un-grouped block in the middle of the mobile drawer.
+mobile_primary:
+  - { href: /#how-it-works, label: "How It Works", primary: true }
+  - { href: /#pricing,      label: "Pricing",      primary: true }
+  - { href: /#about,        label: "About" }
+  - { href: /#contact,      label: "Contact" }

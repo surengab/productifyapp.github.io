@@ -1,0 +1,48 @@
+{%- assign col3 = page.footer_col | default: site.data.footer.contextual -%}
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <span class="logo" style="color:#F8FAFC;">Productify</span>
+                <p>{{ site.data.footer.blurb }}</p>
+                <a href="{{ site.appstore_url }}"
+                   class="appstore-badge-link" style="margin-top:18px; display:inline-block;"
+                   aria-label="Download Productify on the App Store">
+                    <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="130" height="38">
+                </a>
+            </div>
+            <div class="footer__col">
+                <h4>{{ site.data.footer.features.title }}</h4>
+                <ul>
+                    {%- for link in site.data.footer.features.links %}
+                    <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+                    {%- endfor %}
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>{{ col3.title }}</h4>
+                <ul>
+                    {%- for link in col3.links %}
+                    <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+                    {%- endfor %}
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>{{ site.data.footer.company.title }}</h4>
+                <ul>
+                    {%- for link in site.data.footer.company.links %}
+                    <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+                    {%- endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>{{ site.data.footer.copyright }}</span>
+            <div class="footer__social">
+                {%- for s in site.data.footer.social %}
+                <a href="{{ s.href }}" target="_blank" rel="noopener noreferrer" aria-label="{{ s.aria }}">{{ s.icon }}</a>
+                {%- endfor %}
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,47 @@
+# Site footer. The third column is contextual: a page can override it with a
+# `footer_col:` block in its front matter (see _includes/footer.html).
+
+blurb: "A calm daily habit tracker for iOS. Build lasting routines your way, consistent and free to start."
+
+features:
+  title: Features
+  links:
+    - { href: /features/habit-tracker/,    label: "Habit Tracker" }
+    - { href: /features/habit-duo/,        label: "Habit Duo" }
+    - { href: /features/ai-analyser/,      label: "AI Habit Analyser" }
+    - { href: /features/habit-templates/,  label: "Habit Templates" }
+    - { href: /features/measurable-goals/, label: "Measurable Goals" }
+    - { href: /features/streak-tracking/,  label: "Streak Tracking" }
+
+# Default third column, used when a page does not set `footer_col`.
+contextual:
+  title: Solutions
+  links:
+    - { href: /blog/best-habit-tracker-apps-2026/, label: "Best Habit Tracker Apps 2026" }
+    - { href: /solutions/morning-routine/,         label: "Build a Morning Routine" }
+    - { href: /solutions/productivity-at-work/,    label: "Productivity at Work" }
+    - { href: /blog/,                              label: "All Articles" }
+
+company:
+  title: Company
+  links:
+    - { href: /#about,        label: "About" }
+    - { href: /#contact,      label: "Contact" }
+    - { href: /#faq,          label: "FAQ" }
+    - { href: /privacy.html,  label: "Privacy Policy" }
+    - { href: /terms.html,    label: "Terms of Use" }
+
+copyright: "&copy; 2026 Productify. All rights reserved."
+
+social:
+  - { href: "https://x.com/Productify_app",                 icon: "🐦", aria: "Productify on X" }
+  - { href: "https://www.instagram.com/productify.habits",  icon: "📸", aria: "Productify on Instagram" }
+
+# Minimal footer used by the legal pages.
+legal:
+  links:
+    - { href: /,             label: "Home" }
+    - { href: /privacy.html, label: "Privacy Policy" }
+    - { href: /terms.html,   label: "Terms of Use" }
+    - { href: "mailto:contact@deductify.org", label: "Contact" }
+  copyright: "&copy; 2026 Productify / DEDUCTIFY LLC. All rights reserved."

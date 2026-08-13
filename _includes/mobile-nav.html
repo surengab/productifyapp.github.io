@@ -1,0 +1,36 @@
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+<nav class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-nav__header">
+        <a href="/" class="mobile-nav__brand">Productify</a>
+        <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="mobile-nav__body">
+        {%- for dd in site.data.nav.dropdowns %}
+        {%- assign shown = dd.items | where_exp: "i", "i.mobile" %}
+        {%- if shown.size > 0 %}
+        <div class="mobile-nav__section">
+            <span class="mobile-nav__group-label">{{ dd.mobile_label | default: dd.label }}</span>
+            {%- for item in shown %}
+            <a href="{{ item.href }}" class="mobile-nav__link">{{ item.mobile }}</a>
+            {%- endfor %}
+        </div>
+        {%- endif %}
+        {%- if dd.label == 'Features' %}
+        <div class="mobile-nav__section">
+            {%- for link in site.data.nav.mobile_primary %}
+            <a href="{{ link.href }}" class="mobile-nav__link{% if link.primary %} mobile-nav__link--primary{% endif %}">{{ link.label }}</a>
+            {%- endfor %}
+        </div>
+        {%- endif %}
+        {%- endfor %}
+    </div>
+
+    <div class="mobile-nav__footer">
+        <a href="{{ site.appstore_url }}"
+           class="appstore-badge-link"
+           aria-label="Download Productify on the App Store">
+            <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44">
+        </a>
+    </div>
+</nav>

@@ -1,0 +1,38 @@
+# Builds the "In this guide" table of contents from the <h2 id="..."> elements
+# kramdown generates for the post body, so adding a section to an article no
+# longer means hand-editing a second list that can silently fall out of sync.
+#
+# Opt out per page with `toc: false`. Exclude a single heading with
+# {: .no-toc} on the kramdown heading.
+module Jekyll
+  module TocFilter
+    HEADING = %r{<h2[^>]*\sid="([^"]+)"[^>]*>(.*?)</h2>}m
+
+    def toc(html)
+      return "" if html.nil?
+
+      entries = html.to_s.scan(HEADING).reject do |id, inner|
+        inner =~ /class="no-toc"/ || id.empty?
+      end
+      return "" if entries.empty?
+
+      items = entries.map do |id, inner|
+        label = inner.gsub(%r{<a\s[^>]*class="[^"]*anchor[^"]*".*?</a>}m, "")
+                     .gsub(%r{<[^>]+>}, "")
+                     .strip
+        %(                    <li><a href="##{id}">#{label}</a></li>)
+      end
+
+      <<~HTML.rstrip
+        <nav class="toc" aria-label="Table of contents">
+                        <h4>In this guide</h4>
+                        <ol>
+        #{items.join("\n")}
+                        </ol>
+                    </nav>
+      HTML
+    end
+  end
+end
+
+Liquid::Template.register_filter(Jekyll::TocFilter)

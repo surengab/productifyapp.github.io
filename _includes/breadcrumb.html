@@ -1,0 +1,21 @@
+{%- comment -%}
+`href` is the visible link (omitted where the original rendered plain text);
+`item` is the URL used for the BreadcrumbList entry, which on some pages
+deliberately differs from the visible link.
+{%- endcomment -%}
+<div class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb__list">
+            {%- for crumb in page.breadcrumbs %}
+            {%- if forloop.last or crumb.href == nil %}
+            <li><span class="breadcrumb__current">{{ crumb.label }}</span></li>
+            {%- else %}
+            <li><a href="{{ crumb.href }}">{{ crumb.label }}</a></li>
+            {%- endif %}
+            {%- unless forloop.last %}
+            <li class="breadcrumb__sep" aria-hidden="true">›</li>
+            {%- endunless %}
+            {%- endfor %}
+        </ol>
+    </div>
+</div>
