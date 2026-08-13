@@ -16,6 +16,9 @@ content:
     label: Blog posts
     type: collection
     path: _blog
+    extension: html
+    format: yaml-frontmatter
+    filename: '{primary}.html'
     view:
       fields: [title, category, date, last_modified]
       sort: [date, title]
@@ -110,6 +113,9 @@ content:
     label: Feature pages
     type: collection
     path: _features
+    extension: html
+    format: yaml-frontmatter
+    filename: '{primary}.html'
     view:
       fields: [title, description]
     fields: &page_fields
@@ -154,6 +160,9 @@ content:
     label: Comparison pages
     type: collection
     path: _compare
+    extension: html
+    format: yaml-frontmatter
+    filename: '{primary}.html'
     view:
       fields: [title, description]
     fields: *page_fields
@@ -162,6 +171,9 @@ content:
     label: Solution pages
     type: collection
     path: _solutions
+    extension: html
+    format: yaml-frontmatter
+    filename: '{primary}.html'
     view:
       fields: [title, description]
     fields: *page_fields
@@ -170,6 +182,7 @@ content:
     label: Homepage
     type: file
     path: index.html
+    format: yaml-frontmatter
     fields: *page_fields
 
   - name: navigation
