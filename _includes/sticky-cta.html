@@ -1,0 +1,18 @@
+{%- comment -%}
+Mobile-only download bar. Slides up once the reader is past the hero, hides
+again while the footer is on screen so it never covers the footer's own badge.
+Deliberately a slim bar rather than an overlay: Google treats interstitials that
+cover the content on mobile as intrusive, while a small banner is fine.
+{%- endcomment -%}
+<div class="sticky-cta" id="stickyCta" hidden>
+    <div class="sticky-cta__text">
+        <strong>Productify</strong>
+        <span>Free habit tracker for iPhone</span>
+    </div>
+    <a href="{{ site.appstore_url }}"
+       class="appstore-badge-link"
+       aria-label="Download Productify on the App Store">
+        <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="112" height="33" loading="lazy" decoding="async">
+    </a>
+    <button type="button" class="sticky-cta__close" id="stickyCtaClose" aria-label="Dismiss download banner">✕</button>
+</div>

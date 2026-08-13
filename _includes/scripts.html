@@ -83,6 +83,43 @@
                 else { dd.classList.remove('open'); this.setAttribute('aria-expanded', 'false'); }
             });
         });
+        // Mobile download bar: reveal once the reader is past the hero, and pull
+        // it back while the footer is on screen so it never sits on top of the
+        // footer's own App Store badge. Dismissal lasts for the session only.
+        var cta = document.getElementById('stickyCta');
+        if (cta && !sessionStorage.getItem('ctaDismissed')) {
+            cta.hidden = false;
+            var ctaClose = document.getElementById('stickyCtaClose');
+            var footer = document.querySelector('footer');
+            var footerVisible = false;
+
+            if (footer && 'IntersectionObserver' in window) {
+                new IntersectionObserver(function (entries) {
+                    footerVisible = entries[0].isIntersecting;
+                }, { rootMargin: '0px 0px -40px 0px' }).observe(footer);
+            }
+
+            var ctaTicking = false;
+            var syncCta = function () {
+                ctaTicking = false;
+                // one viewport down clears the hero and its existing CTA
+                var past = window.scrollY > window.innerHeight * 0.9;
+                cta.classList.toggle('is-visible', past && !footerVisible);
+            };
+            window.addEventListener('scroll', function () {
+                if (!ctaTicking) { ctaTicking = true; window.requestAnimationFrame(syncCta); }
+            }, { passive: true });
+
+            if (ctaClose) {
+                ctaClose.addEventListener('click', function () {
+                    cta.classList.remove('is-visible');
+                    sessionStorage.setItem('ctaDismissed', '1');
+                    window.setTimeout(function () { cta.hidden = true; }, 300);
+                });
+            }
+            syncCta();
+        }
+
         // Contents rail: highlight the section currently being read. Falls back
         // to a plain link list if this never runs.
         var rail = document.querySelector('.toc-rail');
