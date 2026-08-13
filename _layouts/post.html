@@ -85,7 +85,17 @@ matching the hand-written ones.
                 </ol>
             </nav>
             {%- elsif page.toc %}
-            {{ article_body | toc }}
+            {%- comment -%}
+            Guarded on purpose. GitHub's built-in Pages build runs Jekyll in safe
+            mode and ignores _plugins/, and Liquid's lax parsing makes an unknown
+            filter return its input untouched — which silently printed the whole
+            article a second time. Emitting only when the filter actually
+            produced a <nav class="toc"> degrades to "no contents" instead.
+            {%- endcomment -%}
+            {%- assign generated_toc = article_body | toc %}
+            {%- if generated_toc contains '<nav class="toc"' %}
+            {{ generated_toc }}
+            {%- endif %}
             {%- endif %}
 
 {{ article_body }}
