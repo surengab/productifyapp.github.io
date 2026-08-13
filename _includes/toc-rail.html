@@ -1,0 +1,20 @@
+{%- comment -%}
+Desktop-only contents rail for long posts. Renders the same entries as the
+in-flow "In this guide" block, which CSS hides once the rail is showing, so
+there is one source of truth and no visible duplication.
+{%- endcomment -%}
+{%- comment -%}
+Deliberately not aria-hidden: on desktop the in-flow block is display:none,
+which removes it from assistive tech too, so this must remain the accessible
+copy rather than a decorative duplicate.
+{%- endcomment -%}
+<aside class="toc-rail-outer">
+    <nav class="toc-rail" aria-label="Article sections">
+        <p class="toc-rail__title">On this page</p>
+        <ol>
+            {%- for item in page.toc_items %}
+            <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+            {%- endfor %}
+        </ol>
+    </nav>
+</aside>

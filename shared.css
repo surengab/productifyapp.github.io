@@ -508,3 +508,46 @@ li a:hover {
     .footer__bottom { flex-direction: column; align-items: flex-start; }
     .use-case-grid { grid-template-columns: 1fr; }
 }
+
+/* ─── STICKY CONTENTS RAIL (long articles) ────────────────────────────────── */
+/* Positioned alongside the article rather than wrapping it in a grid: long
+   posts break out of .article mid-way for full-width tables, so the column
+   layout has to leave the content flow untouched. Opt in per page with
+   `sticky_toc: true`. */
+.article-shell { position: relative; }
+.toc-rail-outer { display: none; }
+.article-shell [id] { scroll-margin-top: 92px; }
+
+@media (min-width: 1120px) {
+    .toc-rail-outer {
+        display: block;
+        position: absolute; top: 0; bottom: 0; right: 0;
+        width: 232px;
+    }
+    .toc-rail {
+        position: sticky; top: 96px;
+        max-height: calc(100vh - 132px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+    .toc-rail__title {
+        font-size: .72rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: .07em; color: var(--ink-muted);
+        margin: 0 0 12px; padding-left: 14px;
+    }
+    .toc-rail ol { list-style: none; margin: 0; padding: 0; }
+    .toc-rail li { margin: 0; }
+    .toc-rail a {
+        display: block; padding: 6px 0 6px 14px;
+        border-left: 2px solid var(--border);
+        color: var(--ink-muted); text-decoration: none;
+        font-size: .82rem; line-height: 1.4;
+        transition: color .15s, border-color .15s;
+    }
+    .toc-rail a:hover { color: var(--ink); border-left-color: var(--ink-muted); }
+    .toc-rail a.is-active {
+        color: var(--blue); border-left-color: var(--blue); font-weight: 600;
+    }
+    /* the in-flow contents block is redundant once the rail is visible */
+    .article-shell .toc { display: none; }
+}

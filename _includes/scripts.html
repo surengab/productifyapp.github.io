@@ -83,6 +83,39 @@
                 else { dd.classList.remove('open'); this.setAttribute('aria-expanded', 'false'); }
             });
         });
+        // Contents rail: highlight the section currently being read. Falls back
+        // to a plain link list if this never runs.
+        var rail = document.querySelector('.toc-rail');
+        if (rail) {
+            var links = Array.prototype.slice.call(rail.querySelectorAll('a[href^="#"]'));
+            var entries = links.map(function (a) {
+                return { link: a, target: document.getElementById(decodeURIComponent(a.hash.slice(1))) };
+            }).filter(function (e) { return e.target; });
+
+            if (entries.length) {
+                var current = null, ticking = false;
+                var sync = function () {
+                    ticking = false;
+                    var best = entries[0];
+                    for (var i = 0; i < entries.length; i++) {
+                        if (entries[i].target.getBoundingClientRect().top <= 140) best = entries[i];
+                    }
+                    if (best === current) return;
+                    if (current) current.link.classList.remove('is-active');
+                    best.link.classList.add('is-active');
+                    current = best;
+                    // keep the active item in view when the rail itself scrolls
+                    var lt = best.link.offsetTop, rs = rail.scrollTop, rh = rail.clientHeight;
+                    if (lt < rs || lt > rs + rh - 40) rail.scrollTop = lt - rh / 2;
+                };
+                window.addEventListener('scroll', function () {
+                    if (!ticking) { ticking = true; window.requestAnimationFrame(sync); }
+                }, { passive: true });
+                window.addEventListener('resize', sync, { passive: true });
+                sync();
+            }
+        }
+
         document.querySelectorAll('.nav-dropdown__menu').forEach(function (m) {
             m.addEventListener('click', function (e) { e.stopPropagation(); });
         });

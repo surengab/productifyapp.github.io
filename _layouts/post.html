@@ -42,7 +42,10 @@ matching the hand-written ones.
 {%- endif %}
 
 <article class="section" aria-labelledby="article-heading">
-    <div class="container">
+    <div class="container{% if page.sticky_toc and page.toc_items %} article-shell{% endif %}">
+        {%- if page.sticky_toc and page.toc_items %}
+        {% include toc-rail.html %}
+        {%- endif %}
         <div class="article" style="max-width: 780px;">
 
             <div class="article-meta">
