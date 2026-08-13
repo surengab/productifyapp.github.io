@@ -7,10 +7,17 @@ deliberately differs from the visible link.
     <div class="container">
         <ol class="breadcrumb__list">
             {%- for crumb in page.breadcrumbs %}
-            {%- if forloop.last or crumb.href == nil %}
+            {%- if forloop.last %}
             <li><span class="breadcrumb__current">{{ crumb.label }}</span></li>
-            {%- else %}
+            {%- elsif crumb.href %}
             <li><a href="{{ crumb.href }}">{{ crumb.label }}</a></li>
+            {%- else %}
+            {%- comment -%}
+            A middle crumb with no link is plain text, not breadcrumb__current —
+            that class marks the page you are on, and applying it here both
+            restyled the crumb and misstated which page is current.
+            {%- endcomment -%}
+            <li>{{ crumb.label }}</li>
             {%- endif %}
             {%- unless forloop.last %}
             <li class="breadcrumb__sep" aria-hidden="true">›</li>
