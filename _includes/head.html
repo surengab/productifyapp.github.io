@@ -11,6 +11,9 @@
 <link rel="canonical" href="{{ canonical }}">
 <link rel="alternate" hreflang="{{ site.lang }}" href="{{ canonical }}">
 <link rel="alternate" hreflang="x-default" href="{{ canonical }}">
+{%- if site.facebook_domain_verification %}
+<meta name="facebook-domain-verification" content="{{ site.facebook_domain_verification }}">
+{%- endif %}
 
 <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
 <meta property="og:url" content="{{ canonical }}">

@@ -8,6 +8,9 @@ twitter: "@Productify_app"
 appstore_url: https://apps.apple.com/us/app/habit-tracker-productify/id1389900237
 default_image: /og-image.jpg
 ga_id: G-M3DE9J4KYW
+# Meta Business domain verification. Checked against the homepage <head>;
+# emitted site-wide by _includes/head.html.
+facebook_domain_verification: t80j6c2w3dtbodjnxkg283562wp4ud
 
 # --- Collections -------------------------------------------------------------
 # permalinks reproduce the pre-Jekyll URLs exactly: _blog/foo.md -> /blog/foo/
