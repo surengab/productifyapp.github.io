@@ -11,6 +11,10 @@ ga_id: G-M3DE9J4KYW
 # Meta Business domain verification. Checked against the homepage <head>;
 # emitted site-wide by _includes/head.html.
 facebook_domain_verification: t80j6c2w3dtbodjnxkg283562wp4ud
+# Ahrefs Webmaster Tools. Checked against the homepage <head>; emitted
+# site-wide by _includes/head.html. The root ahrefs_<token> file verifies
+# the same property by the alternative file method.
+ahrefs_site_verification: fa4bb1ff66190ceaa3866dffe1adca9a9c0569b8b7ffdfd06263e47dc951ad27
 
 # --- Collections -------------------------------------------------------------
 # Blog keeps its prefix; features/compare/solutions live at the site root.
