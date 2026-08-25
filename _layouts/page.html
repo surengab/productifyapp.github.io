@@ -7,7 +7,24 @@ layout: default
 {% include breadcrumb.html %}
 {%- endif %}
 
+{%- comment -%}
+Mirrors the splice in _layouts/post.html: the mid-page CTA goes before the Nth
+<h2> so it lands inside the read rather than after it. `inline_cta.after_h2`
+defaults to 2. A page without `inline_cta` renders exactly as before.
+{%- endcomment -%}
+{%- if page.inline_cta -%}
+{%- assign cta_at = page.inline_cta.after_h2 | default: 2 | plus: 2 -%}
+{%- assign body_chunks = content | split: '<h2' -%}
+{%- for chunk in body_chunks -%}
+{%- if forloop.first -%}{{ chunk }}
+{%- else -%}
+{%- if forloop.index == cta_at %}{% include inline-cta.html %}{% endif -%}
+<h2{{ chunk }}
+{%- endif -%}
+{%- endfor -%}
+{%- else -%}
 {{ content }}
+{%- endif -%}
 
 {%- if page.cta %}
 {% include cta-banner.html %}

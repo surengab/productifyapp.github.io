@@ -53,8 +53,18 @@ matching the hand-written ones.
                 <span class="article-meta__tag">{{ page.category }}</span>
                 {%- endif %}
                 <time class="article-meta__date" datetime="{{ page.date | date: '%Y-%m-%d' }}" itemprop="datePublished">Published {{ page.date | date: '%B %-d, %Y' }}</time>
-                {%- if page.last_modified and page.last_modified != page.date %}
-                <time class="article-meta__date" datetime="{{ page.last_modified | date: '%Y-%m-%d' }}" itemprop="dateModified">Updated {{ page.last_modified | date: '%B %-d, %Y' }}</time>
+                {%- comment -%}
+                Same source of truth as the sitemap and the JSON-LD: the last
+                commit that touched the file (_plugins/lastmod.rb), with
+                `last_modified` front matter left as a deliberate override.
+                Compared by day, so a same-day edit does not print "Updated"
+                next to an identical publish date.
+                {%- endcomment -%}
+                {%- assign modified = page.last_modified | default: page.git_lastmod -%}
+                {%- assign mod_day = modified | date: '%Y-%m-%d' -%}
+                {%- assign pub_day = page.date | date: '%Y-%m-%d' -%}
+                {%- if modified and mod_day != pub_day %}
+                <time class="article-meta__date" datetime="{{ mod_day }}" itemprop="dateModified">Updated {{ modified | date: '%B %-d, %Y' }}</time>
                 {%- endif %}
                 {%- if page.read_time %}
                 <span class="article-meta__read">{{ page.read_time }}</span>

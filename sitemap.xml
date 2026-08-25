@@ -7,6 +7,9 @@ sitemap: false
 {%- comment -%}
 Generated from the collections. A page leaves the sitemap by setting
 `sitemap: false` in its front matter (used for the noindex alias page).
+<lastmod> comes from the last commit that touched the source file
+(_plugins/lastmod.rb), so it cannot drift the way the hand-maintained
+`sitemap_lastmod` front matter did. Set that key only to override deliberately.
 {%- endcomment -%}
 {%- assign pages = site.pages | where_exp: "p", "p.sitemap != false" | where_exp: "p", "p.title" -%}
 {%- assign docs = site.documents | where_exp: "d", "d.sitemap != false" -%}
@@ -19,7 +22,7 @@ Generated from the collections. A page leaves the sitemap by setting
 {% for p in sorted %}
   <url>
     <loc>{{ p.url | absolute_url }}</loc>
-    {%- assign lastmod = p.sitemap_lastmod | default: p.last_modified | default: p.date %}
+    {%- assign lastmod = p.sitemap_lastmod | default: p.last_modified | default: p.git_lastmod | default: p.date %}
     {%- if lastmod %}
     <lastmod>{{ lastmod | date: "%Y-%m-%d" }}</lastmod>
     {%- endif %}
