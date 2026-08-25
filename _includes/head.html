@@ -49,6 +49,14 @@
 </style>
 {%- endif %}
 
+{%- comment -%}
+Escape hatch for per-page <head> markup a stylesheet cannot express, such as a
+page that needs its own webfont. Raw HTML, emitted verbatim.
+{%- endcomment -%}
+{%- if page.extra_head %}
+{{ page.extra_head }}
+{%- endif %}
+
 {%- if page.head_scripts %}
 <script>
 {{ page.head_scripts }}
