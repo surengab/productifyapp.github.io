@@ -153,6 +153,62 @@
             }
         }
 
+
+
+        /* ── Desktop download routing ─────────────────────────────────────
+           Productify is an iPhone app, so an App Store link on a desktop
+           browser is a dead end: it opens a web listing that cannot install
+           anything. On non-iOS devices, send the badges to /download/ instead,
+           which states the requirements and what happens after install.
+           The markup keeps the App Store URL so crawlers and no-JS visitors
+           still get the canonical destination; this is enhancement only.
+           The sticky bar is excluded because it is mobile-only by CSS. */
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        var OUR_APP = 'id1389900237';
+        if (!isIOS && location.pathname !== '/download/') {
+            document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
+                if (a.closest('.sticky-cta')) return;
+                if (a.href.indexOf(OUR_APP) === -1) return;   // competitor listing
+                a.dataset.storeHref = a.href;
+                a.href = '/download/';
+            });
+        }
+
+        /* ── Download CTA tracking ────────────────────────────────────────
+           Every App Store link reports WHICH cta produced the click, so a
+           change to one placement can be judged on its own. Includes carry an
+           explicit data-cta; badges written inline in a page are inferred from
+           the block they sit in. Delegated, so CTAs added later are covered
+           without touching this. */
+        function ctaLocation(a) {
+            if (a.dataset.cta) return a.dataset.cta;
+            if (a.closest('.sticky-cta'))  return 'sticky';
+            if (a.closest('.cta-banner'))  return 'banner';
+            if (a.closest('.inline-cta'))  return 'inline';
+            if (a.closest('.mobile-nav'))  return 'mobile-nav';
+            if (a.closest('footer'))       return 'footer';
+            if (a.closest('.navbar, .nav-cta')) return 'nav';
+            if (a.closest('.hero'))        return 'hero';
+            return 'body';
+        }
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest('a[href*="apps.apple.com"], a[href*="play.google.com"], a[href="/download/"]');
+            if (!a || typeof window.gtag !== 'function') return;
+            var target = a.dataset.storeHref || a.href;
+            var ours = target.indexOf(OUR_APP) !== -1 || a.getAttribute('href') === '/download/';
+            var evt;
+            if (!ours)                                  evt = 'competitor_store_click';
+            else if (a.getAttribute('href') === '/download/' && !a.dataset.storeHref)
+                                                        evt = 'download_page_click';
+            else                                        evt = 'download_click';
+            gtag('event', evt, {
+                cta_location: ctaLocation(a),
+                page_path: location.pathname,
+                link_url: target
+            });
+        }, true);
+
         document.querySelectorAll('.nav-dropdown__menu').forEach(function (m) {
             m.addEventListener('click', function (e) { e.stopPropagation(); });
         });

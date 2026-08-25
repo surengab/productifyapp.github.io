@@ -101,7 +101,25 @@ matching the hand-written ones.
             {%- endif %}
             {%- endif %}
 
+{%- comment -%}
+The mid-article CTA is spliced in before the Nth <h2> so it lands inside the
+read rather than after it. `inline_cta.after_h2` defaults to 2; raise it on a
+post whose opening sections are short. A post without `inline_cta` front matter
+renders exactly as before.
+{%- endcomment -%}
+{%- if page.inline_cta -%}
+{%- assign cta_at = page.inline_cta.after_h2 | default: 2 | plus: 2 -%}
+{%- assign body_chunks = article_body | split: '<h2' -%}
+{%- for chunk in body_chunks -%}
+{%- if forloop.first -%}{{ chunk }}
+{%- else -%}
+{%- if forloop.index == cta_at %}{% include inline-cta.html %}{% endif -%}
+<h2{{ chunk }}
+{%- endif -%}
+{%- endfor -%}
+{%- else -%}
 {{ article_body }}
+{%- endif -%}
 
         </div>
     </div>

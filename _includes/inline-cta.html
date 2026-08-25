@@ -1,0 +1,16 @@
+{%- comment -%}
+Mid-article download prompt. Deliberately a slim band rather than a second
+copy of cta-banner.html: it interrupts the read, so it has to earn the space in
+one sentence. Placed by _layouts/post.html before the Nth <h2>, so it lands
+inside the article rather than after it. Copy comes from the post's
+`inline_cta` front matter; the location is picked up by the tracking listener
+in scripts.html via the .inline-cta class.
+{%- endcomment -%}
+<aside class="inline-cta" aria-label="Download Productify">
+    <p class="inline-cta__text">{{ page.inline_cta.text }}</p>
+    <a href="{{ site.appstore_url }}"
+       class="appstore-badge-link" data-cta="inline"
+       aria-label="Download Productify free on the App Store">
+        <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="130" height="38" loading="lazy" decoding="async">
+    </a>
+</aside>

@@ -587,6 +587,29 @@ li a:hover {
     .article-shell .toc { display: none; }
 }
 
+/* ─── MID-ARTICLE DOWNLOAD BAND ───────────────────────────────────────────── */
+/* Rendered by _includes/inline-cta.html, placed inside the article by
+   _layouts/post.html. Slim on purpose: it interrupts the read, so it stays one
+   line of copy plus a badge rather than a second full CTA banner. */
+.inline-cta {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap;
+    margin: 40px 0; padding: 18px 22px;
+    background: var(--blue-dim);
+    border: 1px solid var(--blue-mid);
+    border-radius: 12px;
+}
+.inline-cta__text {
+    margin: 0; flex: 1 1 260px; min-width: 0;
+    font-size: .97rem; line-height: 1.55; color: var(--ink-2); font-weight: 500;
+}
+.inline-cta .appstore-badge-link { flex: none; display: inline-block; line-height: 0; }
+.inline-cta .appstore-badge { width: 130px; height: auto; }
+
+@media (max-width: 560px) {
+    .inline-cta { flex-direction: column; align-items: flex-start; gap: 14px; padding: 16px 18px; }
+}
+
 /* ─── MOBILE STICKY DOWNLOAD BAR ──────────────────────────────────────────── */
 /* Desktop already shows a badge in the sticky navbar, so this is mobile-only.
    Kept to a slim bar: Google treats mobile interstitials that cover the content
