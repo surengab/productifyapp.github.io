@@ -318,9 +318,12 @@ footer_col:
   --ease:cubic-bezier(.22,.85,.3,1);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
-  font-size:17.5px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:17.5px;line-height:1.72;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;width:100%;max-width:100%}
+p,li,h1,h2,h3,h4,td,th,summary{overflow-wrap:break-word;word-break:break-word;hyphens:auto}
+img,svg,table{max-width:100%}
 
 /* ============ REVEAL ANIMATION ============ */
 .rv{opacity:0;transform:translateY(26px);
@@ -335,27 +338,12 @@ body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
 }
 
 /* ============ LAYOUT ============ */
-.shell{max-width:1320px;margin:0 auto;padding:0 40px;
-  display:grid;grid-template-columns:220px minmax(0,1fr) 280px;gap:56px;
+.shell{width:100%;max-width:1180px;margin:0 auto;padding:0 40px;
+  display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px;
   justify-content:center}
-.col{max-width:760px;margin:0 auto;padding-bottom:110px}
-aside{padding-top:60px}
-.rail{padding-top:60px}
+.col{width:100%;min-width:0;max-width:760px;padding-bottom:110px}
+aside{padding-top:60px;min-width:0}
 .sticky{position:sticky;top:40px}
-
-/* right rail card */
-.rcard{border:1px solid var(--lav-200);border-radius:16px;overflow:hidden;
-  background:linear-gradient(170deg,var(--lav-50),#fff 60%);box-shadow:var(--sh-sm)}
-.rcard .rh{padding:18px 20px 14px;border-bottom:1px solid var(--lav-200)}
-.rcard .rh .lbl{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--lav-600);margin-bottom:6px}
-.rcard .rh h4{font-size:19px;margin:0}
-.rcard ul{list-style:none;margin:0;padding:14px 20px 16px}
-.rcard li{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;
-  color:var(--ink-2);padding:6px 0}
-.rcard li b{color:var(--lav-700);white-space:nowrap}
-.rnote{font-size:12.5px;color:var(--ink-3);line-height:1.55;margin-top:18px;
-  padding-left:14px;border-left:2px solid var(--line)}
 
 /* ============ TYPE ============ */
 h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.018em;line-height:1.16}
@@ -567,12 +555,8 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 #prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:99;
   background:linear-gradient(90deg,var(--lav-400),var(--lav-700))}
 
-@media(max-width:1240px){
-  .shell{grid-template-columns:220px minmax(0,1fr);max-width:1040px;gap:64px}
-  .rail{display:none}
-}
-@media(max-width:960px){
-  .shell{grid-template-columns:1fr;gap:0;max-width:760px;padding:0 32px}
+@media(max-width:1040px){
+  .shell{grid-template-columns:1fr;gap:0;max-width:780px;padding:0 32px}
   aside{display:none}
   .hero-in{grid-template-columns:1fr}
   .hmap{display:none}
@@ -582,8 +566,10 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 }
 @media(max-width:600px){
   body{font-size:16.5px}
-  .hero-in{padding:56px 22px 44px}
-  .shell{padding:0 22px}
+  .hero-in{padding:52px 20px 40px;gap:0}
+  .shell{padding:0 20px;max-width:100%}
+  .figs{grid-template-columns:1fr}
+  .fig{padding:18px 0}
   h2{font-size:28px;margin-top:60px}
   .split,.pcs{grid-template-columns:1fr}
   .split > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
@@ -1046,25 +1032,6 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 </div>
 
 </main>
-
-<div class="rail">
-  <div class="sticky">
-    <div class="rcard">
-      <div class="rh">
-        <div class="lbl">Our pick</div>
-        <h4>Productify</h4>
-      </div>
-      <ul>
-        <li><span>Check-in speed</span><b>11 sec</b></li>
-        <li><span>Free habits</span><b>Unlimited</b></li>
-        <li><span>Streaks</span><b>Guilt-free</b></li>
-        <li><span>Account needed</span><b>No</b></li>
-        <li><span>Platform</span><b>iOS + Watch</b></li>
-      </ul>
-    </div>
-    <p class="rnote">Android? HabitNow is the better pick.<br>Apple Watch? Streaks wins there.</p>
-  </div>
-</div>
 
 </div>
 
