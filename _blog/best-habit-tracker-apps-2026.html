@@ -295,625 +295,363 @@ footer_col:
       label: Pricing
 ---
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>Best Habit Tracker Apps 2026 — What They Are &amp; How to Choose</title>
-
 <meta name="description" content="What a habit tracker app does, why most people quit by Wednesday, and the 6 best habit tracker apps of 2026 compared side by side.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-
 :root{
-
   --lav-50:#f8f5fe; --lav-100:#f0eafd; --lav-200:#ded2fa; --lav-300:#c4b0f4;
-
   --lav-400:#a68ce9; --lav-500:#8a6ade; --lav-600:#7050c9; --lav-700:#573ba4; --lav-900:#2b1a5e;
-
   --ink:#181321; --ink-2:#584f6e; --ink-3:#8d85a3;
-
   --line:#ece6f7; --bg:#fff;
-
   --rose:#c4577f; --gold:#c98a3c;
-
   --serif:"Fraunces",Georgia,serif;
-
   --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-
   --sh-sm:0 1px 2px rgba(43,26,94,.05),0 4px 14px rgba(43,26,94,.045);
-
   --sh-md:0 10px 34px rgba(43,26,94,.10),0 2px 8px rgba(43,26,94,.05);
-
   --ease:cubic-bezier(.22,.85,.3,1);
-
 }
-
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
-
 body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
-
   font-size:17.5px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* ============ REVEAL ANIMATION ============ */
-
 .rv{opacity:0;transform:translateY(26px);
-
     transition:opacity .75s var(--ease),transform .75s var(--ease)}
-
 .rv.in{opacity:1;transform:none}
-
 .rv.d1{transition-delay:.08s} .rv.d2{transition-delay:.16s}
-
 .rv.d3{transition-delay:.24s} .rv.d4{transition-delay:.32s}
-
 @media (prefers-reduced-motion:reduce){
-
   .rv{opacity:1!important;transform:none!important;transition:none!important}
-
   *{animation:none!important}
-
   html{scroll-behavior:auto}
-
 }
 
 /* ============ LAYOUT ============ */
-
-.shell{max-width:1160px;margin:0 auto;padding:0 28px;
-
-  display:grid;grid-template-columns:230px minmax(0,1fr);gap:70px}
-
-.col{max-width:668px;padding-bottom:110px}
-
+.shell{max-width:1320px;margin:0 auto;padding:0 40px;
+  display:grid;grid-template-columns:220px minmax(0,1fr) 280px;gap:56px;
+  justify-content:center}
+.col{max-width:760px;margin:0 auto;padding-bottom:110px}
 aside{padding-top:60px}
-
+.rail{padding-top:60px}
 .sticky{position:sticky;top:40px}
 
+/* right rail card */
+.rcard{border:1px solid var(--lav-200);border-radius:16px;overflow:hidden;
+  background:linear-gradient(170deg,var(--lav-50),#fff 60%);box-shadow:var(--sh-sm)}
+.rcard .rh{padding:18px 20px 14px;border-bottom:1px solid var(--lav-200)}
+.rcard .rh .lbl{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--lav-600);margin-bottom:6px}
+.rcard .rh h4{font-size:19px;margin:0}
+.rcard ul{list-style:none;margin:0;padding:14px 20px 16px}
+.rcard li{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;
+  color:var(--ink-2);padding:6px 0}
+.rcard li b{color:var(--lav-700);white-space:nowrap}
+.rcard .rf{padding:0 20px 20px}
+.rcard .rb{display:block;text-align:center;background:var(--lav-600);color:#fff;
+  text-decoration:none;padding:11px 16px;border-radius:9px;font-size:14.5px;font-weight:600;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s}
+.rcard .rb:hover{background:var(--lav-700);transform:translateY(-2px);box-shadow:var(--sh-md)}
+.rnote{font-size:12.5px;color:var(--ink-3);line-height:1.55;margin-top:18px;
+  padding-left:14px;border-left:2px solid var(--line)}
+
 /* ============ TYPE ============ */
-
 h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.018em;line-height:1.16}
-
 h2{font-size:34px;margin:82px 0 14px;position:relative}
-
 h2::before{content:"";position:absolute;left:-28px;top:16px;width:14px;height:2px;
-
   background:var(--lav-300);border-radius:2px;opacity:0;transform:scaleX(0);transform-origin:left;
-
   transition:opacity .6s .2s var(--ease),transform .6s .2s var(--ease)}
-
 h2.in::before{opacity:1;transform:none}
-
 h3{font-size:22px;margin:46px 0 10px;line-height:1.3}
-
 p{margin:0 0 19px}
-
 .lede{font-size:21px;line-height:1.6;color:var(--ink-2);margin-bottom:28px}
-
 .kicker{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;
-
   text-transform:uppercase;color:var(--lav-600);margin:0 0 24px}
-
 a{color:var(--lav-700)}
-
 strong{font-weight:650}
 
 /* ============ HERO ============ */
-
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
-
   background:linear-gradient(180deg,#fbf9ff,#fff)}
-
 .blob{position:absolute;border-radius:50%;filter:blur(78px);opacity:.55;pointer-events:none}
-
 .b1{width:520px;height:520px;background:#d9c7fb;top:-210px;right:-90px;animation:float1 22s ease-in-out infinite}
-
 .b2{width:420px;height:420px;background:#c9e0fb;top:60px;right:190px;animation:float2 28s ease-in-out infinite}
-
 .b3{width:340px;height:340px;background:#f6d5ec;top:-90px;right:400px;animation:float1 25s ease-in-out infinite reverse}
-
 @keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-38px,34px) scale(1.09)}}
-
 @keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-28px) scale(.93)}}
-
-.hero-in{position:relative;max-width:1160px;margin:0 auto;padding:84px 28px 62px;
-
-  display:grid;grid-template-columns:1fr 240px;gap:56px;align-items:center}
-
-.hero h1{font-size:clamp(38px,5.2vw,60px);margin:0 0 22px;max-width:15ch}
-
+.hero-in{position:relative;max-width:1320px;margin:0 auto;padding:96px 40px 76px;
+  display:grid;grid-template-columns:1fr 300px;gap:72px;align-items:center}
+.hero h1{font-size:clamp(38px,5vw,66px);margin:0 0 22px;max-width:15ch}
 .hero h1 .hl{position:relative;white-space:nowrap}
-
 .hero h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:12px;
-
   background:linear-gradient(90deg,var(--lav-200),#f6d5ec);z-index:-1;border-radius:3px;
-
   transform:scaleX(0);transform-origin:left;animation:swipe 1s .55s var(--ease) forwards}
-
 @keyframes swipe{to{transform:scaleX(1)}}
-
-.hero .sub{font-size:20px;color:var(--ink-2);max-width:54ch;margin:0 0 30px;line-height:1.6}
-
+.hero .sub{font-size:21px;color:var(--ink-2);max-width:56ch;margin:0 0 32px;line-height:1.6}
 .tagrow{display:flex;flex-wrap:wrap;gap:9px}
-
 .tag{font-size:12.5px;font-weight:600;color:var(--lav-700);background:rgba(255,255,255,.75);
-
   border:1px solid var(--lav-200);padding:7px 14px;border-radius:99px;backdrop-filter:blur(6px);
-
   transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-
 .tag:hover{transform:translateY(-2px);box-shadow:var(--sh-sm)}
-
 .fade-up{opacity:0;transform:translateY(22px);animation:fadeUp .85s var(--ease) forwards}
-
 .fade-up.a1{animation-delay:.05s}.fade-up.a2{animation-delay:.18s}
-
 .fade-up.a3{animation-delay:.31s}.fade-up.a4{animation-delay:.44s}
-
 @keyframes fadeUp{to{opacity:1;transform:none}}
 
 /* hero heatmap widget */
-
 .hmap{background:rgba(255,255,255,.82);border:1px solid var(--lav-200);border-radius:16px;
-
   padding:20px;box-shadow:var(--sh-md);backdrop-filter:blur(10px)}
-
 .hmap .t{font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
-
   color:var(--ink-3);margin-bottom:12px}
-
 .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
-
 .cell{aspect-ratio:1;border-radius:4px;background:var(--lav-100);
-
   transform:scale(.5);opacity:0;animation:pop .45s var(--ease) forwards}
-
 @keyframes pop{to{transform:scale(1);opacity:1}}
-
 .cell.l1{background:var(--lav-200)}.cell.l2{background:var(--lav-300)}
-
 .cell.l3{background:var(--lav-500)}.cell.l4{background:var(--lav-700)}
-
 .hmap .f{display:flex;justify-content:space-between;margin-top:13px;font-size:11.5px;color:var(--ink-3)}
-
 .hmap .f b{color:var(--lav-700);font-size:13px}
 
 /* ============ TOC ============ */
-
 .toc-t{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-
   color:var(--ink-3);margin:0 0 15px}
-
 .toc a{display:block;font-size:14px;color:var(--ink-2);text-decoration:none;
-
   padding:8px 0 8px 16px;border-left:2px solid var(--line);line-height:1.4;
-
   transition:color .25s,border-color .25s,padding-left .25s var(--ease)}
-
 .toc a:hover,.toc a.act{color:var(--lav-700);border-left-color:var(--lav-400);padding-left:20px}
 
 /* ============ PULL / NOTE ============ */
-
 .key{border-left:3px solid var(--lav-400);padding:6px 0 6px 24px;margin:32px 0;
-
   font-family:var(--serif);font-size:23px;line-height:1.42}
-
 .note{position:relative;background:linear-gradient(135deg,var(--lav-50),#fff);
-
   border:1px solid var(--lav-200);border-radius:14px;padding:20px 24px;margin:30px 0;
-
   font-size:16px;line-height:1.65;color:var(--ink-2);box-shadow:var(--sh-sm);overflow:hidden}
-
 .note::after{content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;
-
   border-radius:50%;background:radial-gradient(var(--lav-100),transparent 70%)}
-
 .note b{color:var(--ink)}
-
 .quote{font-family:var(--serif);font-size:21px;line-height:1.48;font-style:italic;
-
   border-left:3px solid var(--lav-200);padding-left:24px;margin:30px 0}
 
 /* ============ FIGURES ============ */
-
 .figs{display:grid;grid-template-columns:repeat(4,1fr);margin:38px 0;
-
   border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-
 .fig{padding:22px 16px 22px 0;transition:transform .35s var(--ease)}
-
 .fig:hover{transform:translateY(-3px)}
-
 .fig .n{font-family:var(--serif);font-size:32px;font-weight:600;line-height:1;
-
   background:linear-gradient(120deg,var(--lav-600),var(--lav-400));
-
   -webkit-background-clip:text;background-clip:text;color:transparent}
-
 .fig .l{font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.4}
 
 /* ============ SPLIT ============ */
-
 .split{display:grid;grid-template-columns:1fr 1fr;margin:32px 0;border:1px solid var(--line);
-
   border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm)}
-
 .split > div{padding:24px 26px;transition:background .4s}
-
 .split > div:first-child{border-right:1px solid var(--line);background:#fcfbfe}
-
 .split > div:last-child{background:linear-gradient(160deg,var(--lav-50),#fff)}
-
 .split h4{font-family:var(--sans);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
-
   margin:0 0 13px;color:var(--ink-3);font-weight:700}
-
 .split > div:last-child h4{color:var(--lav-600)}
-
 .split .q{font-family:var(--serif);font-size:20px;margin:0 0 16px;line-height:1.3}
-
 .split ul{margin:0;padding-left:18px;font-size:15px;color:var(--ink-2);line-height:1.6}
-
 .split li{margin-bottom:8px}
 
 /* ============ TABLE ============ */
-
 .tw{overflow-x:auto;margin:28px 0;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-sm)}
-
 table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:540px}
-
 th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
-
 thead th{background:#fbfafe;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-
   color:var(--ink-3);font-weight:700}
-
 tbody tr{transition:background .25s}
-
 tbody tr:hover{background:var(--lav-50)}
-
 tbody tr:last-child td{border-bottom:0}
-
 td:first-child{font-weight:600}
-
 .y{color:var(--lav-700);font-weight:600}.n{color:var(--ink-3)}
 
 /* ============ LISTS ============ */
-
 .rules{list-style:none;padding:0;margin:30px 0;counter-reset:r}
-
 .rules li{counter-increment:r;position:relative;padding:0 0 26px 50px;
-
   border-left:1px solid var(--line);margin-left:14px}
-
 .rules li:last-child{border-left-color:transparent;padding-bottom:0}
-
 .rules li::before{content:counter(r);position:absolute;left:-14px;top:-2px;width:28px;height:28px;
-
   border-radius:50%;background:#fff;border:1px solid var(--lav-200);color:var(--lav-700);
-
   font-family:var(--sans);font-size:12.5px;font-weight:700;display:flex;align-items:center;
-
   justify-content:center;transition:transform .35s var(--ease),background .35s,color .35s}
-
 .rules li:hover::before{transform:scale(1.14);background:var(--lav-600);color:#fff;border-color:var(--lav-600)}
-
 .rules h4{font-size:19px;margin:0 0 6px}
-
 .rules p{font-size:16px;color:var(--ink-2);margin:0 0 8px}
-
 .rules p:last-child{margin-bottom:0}
 
 .checks{list-style:none;padding:0;margin:24px 0}
-
 .checks li{position:relative;padding-left:30px;margin-bottom:12px;font-size:16.5px;color:var(--ink-2)}
-
 .checks li::before{content:"";position:absolute;left:3px;top:9px;width:10px;height:10px;
-
   border:2px solid var(--lav-400);border-right:0;border-top:0;transform:rotate(-45deg) scale(.4);
-
   opacity:0;transition:transform .4s var(--ease),opacity .4s}
-
 .checks.in li::before{transform:rotate(-45deg) scale(1);opacity:1}
-
 .checks.in li:nth-child(2)::before{transition-delay:.1s}
-
 .checks.in li:nth-child(3)::before{transition-delay:.2s}
-
 .checks.in li:nth-child(4)::before{transition-delay:.3s}
 
 /* ============ APP CARDS ============ */
-
 .app{position:relative;border:1px solid var(--line);border-radius:18px;padding:28px 30px;
-
   margin:22px 0;background:#fff;
-
   transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s}
-
 .app:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--lav-200)}
-
 .app.top{border-color:var(--lav-200);background:linear-gradient(170deg,var(--lav-50),#fff 45%);
-
   box-shadow:var(--sh-sm)}
-
 .app.top::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;
-
   background:linear-gradient(140deg,var(--lav-300),transparent 55%);
-
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-
   -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-
 .app-h{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap;margin-bottom:5px}
-
 .app-h .rk{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--lav-300)}
-
 .app-h h3{margin:0;font-size:25px}
-
 .app-h .for{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--lav-700);
-
   background:var(--lav-100);padding:5px 11px;border-radius:99px;letter-spacing:.01em}
-
 .plat{font-size:13.5px;color:var(--ink-3);margin:0 0 17px}
-
 .app p{font-size:16.5px}
-
 .pcs{display:grid;grid-template-columns:1fr 1fr;margin:22px 0 0;
-
   border-top:1px solid var(--line);font-size:14.5px;line-height:1.6}
-
 .pcs > div{padding:18px 22px 0 0}
-
 .pcs > div:last-child{padding-left:24px;border-left:1px solid var(--line)}
-
 .pcs h5{font-family:var(--sans);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
-
   margin:0 0 9px;font-weight:700}
-
 .pcs .p h5{color:var(--lav-600)}.pcs .c h5{color:var(--rose)}
-
 .pcs ul{margin:0;padding-left:17px;color:var(--ink-2)}
-
 .pcs li{margin-bottom:6px}
-
 .meta{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);
-
   font-size:14.5px;color:var(--ink-2);display:grid;gap:7px}
-
 .meta span{color:var(--ink-3);font-weight:600;margin-right:7px}
-
 .tnote{margin-top:18px;padding:14px 18px;background:#fbfafe;border-radius:11px;
-
   font-size:14.5px;color:var(--ink-2);line-height:1.6;border-left:2px solid var(--lav-200)}
 
 /* speed bar widget */
-
 .bars{margin:26px 0;display:grid;gap:12px}
-
 .bar-r{display:grid;grid-template-columns:96px 1fr 52px;align-items:center;gap:14px;font-size:14px}
-
 .bar-r .nm{font-weight:600}
-
 .track{height:9px;background:var(--lav-100);border-radius:99px;overflow:hidden}
-
 .fill{height:100%;border-radius:99px;width:0;
-
   background:linear-gradient(90deg,var(--lav-400),var(--lav-600));
-
   transition:width 1.15s var(--ease)}
-
 .bars.in .fill{width:var(--w)}
-
 .bar-r .v{color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
 
 /* ============ PICKER ============ */
-
 .pk{margin:28px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--sh-sm)}
-
 .pk div{display:flex;justify-content:space-between;align-items:center;gap:16px;
-
   padding:15px 22px;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink-2);
-
   transition:background .3s,padding-left .3s var(--ease)}
-
 .pk div:hover{background:var(--lav-50);padding-left:28px}
-
 .pk div:last-child{border-bottom:0}
-
 .pk b{color:var(--lav-700);white-space:nowrap;font-size:15px}
 
 /* ============ CTA ============ */
-
 .cta{position:relative;overflow:hidden;border-radius:20px;padding:40px 34px;margin:62px 0;
-
   text-align:center;color:#fff;background:linear-gradient(135deg,var(--lav-900),var(--lav-600) 62%,var(--lav-400))}
-
 .cta::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;
-
   background:rgba(255,255,255,.10);top:-160px;right:-80px;animation:float1 20s ease-in-out infinite}
-
 .cta > *{position:relative}
-
 .cta h3{margin:0 0 10px;font-size:27px;color:#fff}
-
 .cta p{color:rgba(255,255,255,.85);margin:0 0 24px;font-size:16px}
-
 .btn{display:inline-block;background:#fff;color:var(--lav-700);text-decoration:none;
-
   padding:14px 32px;border-radius:99px;font-weight:650;font-size:16px;
-
   transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-
 .btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 10px 26px rgba(0,0,0,.2)}
-
 .cta small{display:block;margin-top:15px;color:rgba(255,255,255,.62);font-size:13px}
 
 /* ============ FAQ ============ */
-
 details{border-bottom:1px solid var(--line)}
-
 summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font-weight:600;
-
   font-size:17px;position:relative;transition:color .25s}
-
 summary:hover{color:var(--lav-700)}
-
 summary::-webkit-details-marker{display:none}
-
 summary::after{content:"";position:absolute;right:6px;top:26px;width:10px;height:10px;
-
   border-right:2px solid var(--lav-400);border-bottom:2px solid var(--lav-400);
-
   transform:rotate(45deg);transition:transform .35s var(--ease)}
-
 details[open] summary::after{transform:rotate(-135deg);top:30px}
-
 details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
-
   animation:slideDown .4s var(--ease)}
-
 @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
 .disc{font-size:13.5px;color:var(--ink-3);line-height:1.65;border-top:1px solid var(--line);
-
   border-bottom:1px solid var(--line);padding:18px 0;margin:28px 0}
 
 /* progress bar */
-
 #prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:99;
-
   background:linear-gradient(90deg,var(--lav-400),var(--lav-700))}
 
+@media(max-width:1240px){
+  .shell{grid-template-columns:220px minmax(0,1fr);max-width:1040px;gap:64px}
+  .rail{display:none}
+}
 @media(max-width:960px){
-
-  .shell{grid-template-columns:1fr;gap:0}
-
+  .shell{grid-template-columns:1fr;gap:0;max-width:760px;padding:0 32px}
   aside{display:none}
-
   .hero-in{grid-template-columns:1fr}
-
   .hmap{display:none}
-
   h2::before{display:none}
-
   .figs{grid-template-columns:1fr 1fr}
-
   .fig{border-bottom:1px solid var(--line)}
-
 }
-
 @media(max-width:600px){
-
   body{font-size:16.5px}
-
   .hero-in{padding:56px 22px 44px}
-
   .shell{padding:0 22px}
-
   h2{font-size:28px;margin-top:60px}
-
   .split,.pcs{grid-template-columns:1fr}
-
   .split > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
-
   .pcs > div:last-child{padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:16px}
-
   .app{padding:24px 22px}
-
   .bar-r{grid-template-columns:80px 1fr 46px;gap:10px;font-size:13px}
-
 }
-
 </style>
-
 </head>
-
 <body>
-
 <div id="prog"></div>
 
 <header class="hero">
-
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-
   <div class="hero-in">
-
     <div>
-
       <p class="kicker fade-up a1">Habit tracking · 2026 guide</p>
-
       <h1 class="fade-up a2">What a habit tracker app <span class="hl">really does</span></h1>
-
       <p class="sub fade-up a3">It records whether you did what you said you'd do. That's it. Here's why that's enough, why most people quit by Wednesday, and which six apps are actually worth your home screen.</p>
-
       <div class="tagrow fade-up a4">
-
         <span class="tag">12 min read</span>
-
         <span class="tag">6 apps tested</span>
-
         <span class="tag">Updated August 2026</span>
-
       </div>
-
     </div>
-
     <div class="hmap fade-up a4">
-
       <div class="t">Your year, one habit</div>
-
       <div class="grid" id="hg"></div>
-
       <div class="f"><span>Consistency</span><b>74%</b></div>
-
     </div>
-
   </div>
-
 </header>
 
 <div class="shell">
 
 <aside>
-
   <div class="sticky">
-
     <p class="toc-t">Contents</p>
-
     <nav class="toc">
-
       <a href="#what">What it is</a>
-
       <a href="#vs">Tracker vs to-do list</a>
-
       <a href="#works">What makes one work</a>
-
       <a href="#choose">How to choose</a>
-
       <a href="#best">The 6 best apps</a>
-
       <a href="#pick">Which one for you</a>
-
       <a href="#verdict">The verdict</a>
-
       <a href="#faq">FAQ</a>
-
     </nav>
-
   </div>
-
 </aside>
 
 <main class="col">
@@ -933,15 +671,10 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 <p class="rv">What it <em>isn't</em> is a magic accountability system that works regardless of how you set it up. Most people abandon a habit tracker long before the habit is established, which means the app never gets the chance to help at all. Installing one often becomes a form of wishful thinking rather than a strategy — the download itself feels like progress, and for about nine days it is.</p>
 
 <div class="figs rv">
-
   <div class="fig"><div class="n">1</div><div class="l">Checkbox — the entire mechanic</div></div>
-
   <div class="fig"><div class="n">20s</div><div class="l">Check-in time in apps people keep</div></div>
-
   <div class="fig"><div class="n">3</div><div class="l">Habits to start with. Not eight.</div></div>
-
   <div class="fig"><div class="n">6wk</div><div class="l">The only real test: still using it?</div></div>
-
 </div>
 
 <p class="rv">The difference between wishful thinking and a working system is almost entirely in the setup. Get it right and tracking works. Get it wrong and you'll spend six months downloading and deleting apps, wondering what's wrong with you.</p>
@@ -951,15 +684,10 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 <p class="rv">Not the App Store rating. Not the feature list. Not the app your favourite YouTuber is sponsored by this month. The best habit tracker app is simply the one you're still opening in six weeks — and whether that happens comes down to four things:</p>
 
 <ul class="checks rv">
-
   <li>How fast it is to log a habit</li>
-
   <li>What the app does on the day you miss</li>
-
   <li>Whether the free version is genuinely usable</li>
-
   <li>Whether it fits the kind of habits you actually have</li>
-
 </ul>
 
 <p class="rv">Get those four right and almost any decent app works. Get them wrong and you'll spend a year convinced you lack discipline.</p>
@@ -975,55 +703,30 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 <p class="rv">A habit tracker is for things that <strong>repeat forever</strong>. "Meditate." "Walk 20 minutes." "No phone in bed." You'll never finish meditating. There's no version of your life where meditation is crossed off and never comes back. The point isn't completion — it's the pattern across weeks and months.</p>
 
 <div class="split rv">
-
   <div>
-
     <h4>To-do list</h4>
-
     <p class="q">Did you clear it?</p>
-
     <ul>
-
       <li>Built for one-off tasks</li>
-
       <li>Success = an empty list</li>
-
       <li>Completed items disappear</li>
-
       <li>A miss means you're behind</li>
-
       <li>Time frame: today, this week</li>
-
       <li>Main risk: overload and dread</li>
-
     </ul>
-
   </div>
-
   <div>
-
     <h4>Habit tracker</h4>
-
     <p class="q">How often do you do this?</p>
-
     <ul>
-
       <li>Built for repeating behaviours</li>
-
       <li>Success = a dense, consistent record</li>
-
       <li>Completed items are the whole point</li>
-
       <li>A miss is one dot in a pattern</li>
-
       <li>Time frame: weeks and months</li>
-
       <li>Main risk: streak obsession</li>
-
     </ul>
-
   </div>
-
 </div>
 
 <h3 class="rv">Why habits on a to-do list quietly fail</h3>
@@ -1047,15 +750,10 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 <p class="rv">Count the taps between picking up your phone and marking a habit done. If it's one — a home screen widget, a lock screen tap, a watch complication — you'll do it for months without thinking about it. If it's four — unlock, find app, open, scroll, confirm — you'll do it for about nine days.</p>
 
 <div class="bars rv">
-
   <div class="bar-r"><span class="nm">1 tap</span><span class="track"><span class="fill" style="--w:96%"></span></span><span class="v">~6 mo</span></div>
-
   <div class="bar-r"><span class="nm">2 taps</span><span class="track"><span class="fill" style="--w:62%"></span></span><span class="v">~7 wk</span></div>
-
   <div class="bar-r"><span class="nm">3 taps</span><span class="track"><span class="fill" style="--w:32%"></span></span><span class="v">~3 wk</span></div>
-
   <div class="bar-r"><span class="nm">4+ taps</span><span class="track"><span class="fill" style="--w:12%"></span></span><span class="v">~9 d</span></div>
-
 </div>
 
 <p class="rv">That sounds like an exaggeration of a small inconvenience. It isn't. Habit logging happens at the exact moments you're least willing to do anything extra: tired, rushed, already in bed. A tracker that requires deliberate effort to <em>record</em> the habit has just added a second habit on top of the one you're trying to build.</p>
@@ -1085,15 +783,10 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 <p class="rv">Habit trackers have some of the most aggressive paywalls in the app store, and the paywall usually lands on the exact features that make tracking work. Before you commit, check:</p>
 
 <ul class="checks rv">
-
   <li>How many habits before you hit the limit</li>
-
   <li>Whether reminders are free or premium</li>
-
   <li>How much history you can actually see</li>
-
   <li>Whether you can export your data if you leave</li>
-
 </ul>
 
 <p class="rv">There's nothing wrong with paying for an app you use daily. There is something wrong with paying $40 a year before you know whether you'll still be using it in March.</p>
@@ -1107,49 +800,27 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 <p class="rv">Knowing what to look for is the easy part. The hard part is that most people choose backwards — they pick the app first and figure out the habits later. That order is why the folder on page three of your phone has four habit trackers in it.</p>
 
 <ol class="rules">
-
   <li class="rv"><h4>Write the habits down first</h4>
-
     <p>Before you open the app store. Be specific: "20-minute walk," not "exercise." "10 pages before bed," not "read more." Not "be healthier," which isn't a habit at all — it's a mood.</p>
-
     <p>Then note the <em>shape</em> of each one: simple yes/no, a count, a timer, something you're quitting, daily or a few times a week. That's your requirements list, and it disqualifies half the apps you were about to compare in four minutes.</p>
-
   </li>
-
   <li class="rv"><h4>Cut the list to three</h4>
-
     <p>Everyone skips this, and it's the step that decides whether any of it survives past week two. Motivated-you wants eight habits. Tuesday-in-November-you does two, sees six red marks, and feels like a failure — which is exactly how the app gets deleted.</p>
-
     <p>Add more in a month, once the first three are boring and automatic. Boring is the goal. Boring means it worked.</p>
-
   </li>
-
   <li class="rv"><h4>Pick the lane before the app</h4>
-
     <p>Minimal checkbox tracker, data-focused, gamified, built into something you already use, or paper. Choosing the lane first means comparing three apps instead of thirty — and paper is a legitimate answer that costs nothing.</p>
-
   </li>
-
   <li class="rv"><h4>Two free weeks before you pay anything</h4>
-
     <p>Install your top pick, add your three habits, use it free for fourteen days. Then ask: did I log on the <em>bad</em> days? What happened when I missed? Did I ever open the stats out of curiosity? Did I start dreading the notifications?</p>
-
     <p>If it passes, pay — you'll get years out of it. If it fails on the first two, that's an app problem, not a you problem.</p>
-
   </li>
-
   <li class="rv"><h4>Set it up so it survives a bad week</h4>
-
     <p>Make each habit embarrassingly small at first — one page, not thirty minutes. Attach each to something that already happens: after I pour coffee, when I close my laptop. Decide your missed-day rule <em>before</em> you need it. Put the widget on screen one. Book a five-minute Sunday review, not to judge yourself but to see the pattern.</p>
-
   </li>
-
   <li class="rv"><h4>Prune monthly, don't pile</h4>
-
     <p>Anything running under 30% isn't a habit, it's a reproach — shrink it or delete it. Anything you now do automatically without checking the app? Also delete it. It's a habit now, and the empty slot is what lets you add something new.</p>
-
   </li>
-
 </ol>
 
 <h2 id="best" class="rv">The 6 best habit tracker apps in 2026</h2>
@@ -1159,389 +830,206 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 <div class="disc rv"><strong>Disclosure and method.</strong> Productify is our own app, so we have an obvious bias. To keep this useful, every app was judged against the same criteria: check-in speed, reminder flexibility, missed-day handling, price, platform support and whether we were still using it weeks later. Pricing verified August 2026 from official App Store, Google Play and product pages. Prices vary by region and change often — check before you buy.</div>
 
 <article class="app top rv">
-
   <div class="app-h"><span class="rk">01</span><h3>Productify</h3><span class="for">Best overall · iPhone</span></div>
-
   <p class="plat">iOS &amp; Apple Watch · No account required · Free to start</p>
-
   <p>Built around one principle: make the daily check-in as fast as humanly possible. Open it and you're on today's habits — no dashboard, no motivational quote, no loading screen. Tap what you've done, close it. After three weeks our average check-in was <strong>11 seconds for four habits</strong>. We timed it.</p>
-
   <p>That speed comes from specific decisions: no confirmation dialogs, no sub-menus, no forced review prompts. Streaks keep your full history instead of resetting after a miss, which takes most of the anxiety out of an imperfect week. Reminders are set per habit with individual times and days.</p>
-
   <p>Two features stand out beyond the basics. <strong>Habit Duo</strong> pairs you privately with one specific person on one specific habit — no leaderboards, no group, just enough social weight to matter on a low-motivation morning. The <strong>AI Analyser</strong> surfaced a pattern we'd never noticed: a focus block running 89% on weekdays and 28% on weekends, which changed how we scheduled Saturdays.</p>
-
   <p>The tradeoff is real. Productify tracks daily habits and nothing else — no projects, no task management, no web version.</p>
-
   <div class="pcs">
-
     <div class="p"><h5>Pros</h5><ul>
-
       <li>Fastest daily check-in tested</li>
-
       <li>Forgiving with missed days</li>
-
       <li>Private accountability via Habit Duo</li>
-
       <li>AI insights specific to your data</li>
-
       <li>Unlimited habits and reminders free</li>
-
       <li>No email, no signup</li>
-
     </ul></div>
-
     <div class="c"><h5>Cons</h5><ul>
-
       <li>iOS only</li>
-
       <li>Not a task or project manager</li>
-
       <li>Habit Duo &amp; AI are Pro-only</li>
-
       <li>No group or social features</li>
-
     </ul></div>
-
   </div>
-
   <div class="meta">
-
     <div><span>Price</span>Free with unlimited habits, reminders and streaks · Pro adds Habit Duo, AI Analyser and advanced analytics</div>
-
     <div><span>Best for</span>iPhone users who want a focused daily tracker with zero setup friction</div>
-
     <div><span>Skip if</span>You're on Android, need a web version, or want tasks in the same app</div>
-
   </div>
-
   <p class="tnote"><strong>Testing note:</strong> we held a more consistent run here than in any other app's window, on the same four habits. It also survived a trip with two days missed straight — and coming back didn't carry the dread a hard streak reset creates elsewhere.</p>
-
 </article>
 
 <article class="app rv">
-
   <div class="app-h"><span class="rk">02</span><h3>Streaks</h3><span class="for">Best for Apple Watch</span></div>
-
   <p class="plat">iOS, iPadOS, Apple Watch, macOS, Vision Pro · $5.99 one-time</p>
-
   <p>Multiple Apple Design Awards, and using it you can see why — a circular grid of up to 24 tasks, each showing its streak at a glance, that feels more native to iOS than almost anything else on the store.</p>
-
   <p>The Apple Watch integration is the strongest here. You can log from your wrist without touching your phone, and anything tracked in Apple Health — workouts, steps, sleep — auto-completes the matching habit. Go for a run that Health records and your exercise habit marks itself done.</p>
-
   <p>The 24-task cap is deliberate. Some people find it frustrating; we found it clarifying, because a capped list forces the question of what actually matters. The real drawback is the absence of a free tier: you pay before you know whether it suits you, and a missed day resets your streak immediately.</p>
-
   <div class="pcs">
-
     <div class="p"><h5>Pros</h5><ul>
-
       <li>Best Apple Watch experience here</li>
-
       <li>Health auto-completion saves real effort</li>
-
       <li>One-time payment, no subscription</li>
-
       <li>Genuinely native feel</li>
-
     </ul></div>
-
     <div class="c"><h5>Cons</h5><ul>
-
       <li>No free tier at all</li>
-
       <li>24-task hard cap</li>
-
       <li>Apple ecosystem only</li>
-
       <li>Harsh streak resets</li>
-
       <li>No templates or insights</li>
-
     </ul></div>
-
   </div>
-
   <div class="meta">
-
     <div><span>Price</span>$5.99 one-time (iOS, iPadOS, macOS) · no subscription</div>
-
     <div><span>Best for</span>Apple Watch wearers who want Health integration and no recurring bill</div>
-
     <div><span>Skip if</span>You want to try before paying or track more than 24 things</div>
-
   </div>
-
   <p class="tnote"><strong>Testing note:</strong> the morning walk auto-completing from Health is frictionless in a way tapping never is. But paying upfront is hard to recommend to anyone not already certain they want a habit tracker.</p>
-
 </article>
 
 <article class="app rv">
-
   <div class="app-h"><span class="rk">03</span><h3>HabitNow</h3><span class="for">Best for Android</span></div>
-
   <p class="plat">Android only · Free with optional premium</p>
-
   <p>If you're on Android, HabitNow is the most capable free option in the category. It handles habits you're building and habits you're quitting in the same interface, which not many apps do well, and the scheduling is the most flexible of anything we tested — daily, specific weekdays, custom intervals or "x times per week," set independently per habit.</p>
-
   <p>The Material Design interface is clean and loads fast, and the free tier is genuinely usable rather than a three-habit teaser. What it lacks is Productify's speed and polish: the check-in takes a few more taps, and there are no templates, AI insights or accountability features.</p>
-
   <div class="pcs">
-
     <div class="p"><h5>Pros</h5><ul>
-
       <li>Most capable free Android tracker</li>
-
       <li>Negative habit tracking that works</li>
-
       <li>Unmatched scheduling flexibility</li>
-
       <li>Clean, fast Material design</li>
-
     </ul></div>
-
     <div class="c"><h5>Cons</h5><ul>
-
       <li>Android only</li>
-
       <li>Slower check-in</li>
-
       <li>No AI, templates or accountability</li>
-
       <li>Detailed stats behind premium</li>
-
     </ul></div>
-
   </div>
-
   <div class="meta">
-
     <div><span>Price</span>Free, with an optional one-time premium unlock (varies by region)</div>
-
     <div><span>Best for</span>Android users who want comprehensive scheduling without paying</div>
-
     <div><span>Skip if</span>You're on iPhone or want AI analysis</div>
-
   </div>
-
   <p class="tnote"><strong>Testing note:</strong> negative habit tracking was the standout — "no alcohol on weekdays" sitting alongside positive habits in one view worked cleanly, which is rarer than it should be.</p>
-
 </article>
 
 <article class="app rv">
-
   <div class="app-h"><span class="rk">04</span><h3>Habitica</h3><span class="for">Best gamified</span></div>
-
   <p class="plat">iOS, Android, Web · Free with optional subscription</p>
-
   <p>Habitica turns your habits into a role-playing game. Complete your real-life tasks and you gain XP, gold and equipment; miss them and your character loses health. It sounds gimmicky, and for most people it is — but for someone who responds to game mechanics and has bounced off every conventional tracker, it works where nothing else has.</p>
-
   <p>The party system is the most distinctive thing in this entire list. You join a group of friends, quest together, and take collective damage when someone misses. That shared stake is genuine accountability, just wrapped in fantasy armour.</p>
-
   <p>The problem is density. Character, inventory, habits, dailies, to-dos and rewards all at once, and navigating it takes real attention. Fine if you're invested in the RPG layer; exhausting within a week if you just want to tick off a morning routine. An account is required and your data lives on their servers.</p>
-
   <div class="pcs">
-
     <div class="p"><h5>Pros</h5><ul>
-
       <li>Most effective group accountability tested</li>
-
       <li>True cross-platform with full sync</li>
-
       <li>Genuinely fun if the RPG layer clicks</li>
-
       <li>Free tier covers everything core</li>
-
     </ul></div>
-
     <div class="c"><h5>Cons</h5><ul>
-
       <li>Dense, complex interface</li>
-
       <li>Account required, data stored remotely</li>
-
       <li>The meta-game becomes the distraction</li>
-
       <li>Long onboarding</li>
-
     </ul></div>
-
   </div>
-
   <div class="meta">
-
     <div><span>Price</span>Free to use · optional subscription $4.99/month up to $47.99/year</div>
-
     <div><span>Best for</span>People who found conventional trackers too dry</div>
-
     <div><span>Skip if</span>You want a quick check-in or care about data privacy</div>
-
   </div>
-
   <p class="tnote"><strong>Testing note:</strong> knowing teammates took damage if we skipped a day added real pull on low-energy mornings. But we also caught ourselves spending more time managing a character than thinking about the habits.</p>
-
 </article>
 
 <article class="app rv">
-
   <div class="app-h"><span class="rk">05</span><h3>Habitify</h3><span class="for">Best cross-platform</span></div>
-
   <p class="plat">iOS, Android, macOS, Web, Apple Watch · Freemium</p>
-
   <p>The right choice if cross-device access is your primary requirement. Sync between iPhone, Mac, Android and browser is reliable and the design stays consistent across all four. It's also the only app here with a proper desktop app — if part of your routine happens at your computer, logging without picking up your phone is a genuine convenience.</p>
-
   <p>The analytics are the most detailed in this list after Productify's AI Analyser: completion rates, habit area breakdowns, per-habit trends. Journal notes let you add a line of reflection to any entry, which changes what a weekly review is actually worth.</p>
-
   <p>The free tier is where it disappoints. Three habits isn't enough to represent a real morning routine, so most people hit the wall before they've had time to decide whether they like the app.</p>
-
   <div class="pcs">
-
     <div class="p"><h5>Pros</h5><ul>
-
       <li>Best cross-device sync in this group</li>
-
       <li>The only proper Mac app here</li>
-
       <li>Journal notes add real depth</li>
-
       <li>Detailed analytics</li>
-
     </ul></div>
-
     <div class="c"><h5>Cons</h5><ul>
-
       <li>Free tier capped at 3 habits</li>
-
       <li>Account required</li>
-
       <li>No accountability features</li>
-
       <li>No cheap monthly plan</li>
-
     </ul></div>
-
   </div>
-
   <div class="meta">
-
     <div><span>Price</span>Free for 3 habits · Premium from ~$2.49/month billed annually, or ~$59.99 lifetime</div>
-
     <div><span>Best for</span>People who need reliable iPhone-to-Mac sync</div>
-
     <div><span>Skip if</span>You primarily use one device or want to start free</div>
-
   </div>
-
   <p class="tnote"><strong>Testing note:</strong> the journal notes changed how we reviewed the week — one sentence per entry gave a week's worth of context we'd otherwise have lost entirely.</p>
-
 </article>
 
 <article class="app rv">
-
   <div class="app-h"><span class="rk">06</span><h3>Productive</h3><span class="for">Best for structured routines</span></div>
-
   <p class="plat">iOS, Android, Apple Watch · Freemium</p>
-
   <p>Productive organises habits into morning, afternoon and evening sessions rather than a flat list. If your day genuinely has that structure — specific habits in the morning, different ones at night — it feels more like a plan than a checklist, and seeing "Morning" complete as a block is satisfying in a way a list isn't.</p>
-
   <p>The analytics are solid: streak stats, completion trends over weeks and months, a clear calendar history. The design is polished and professional without being minimal the way Productify is.</p>
-
   <p>But when everything you track happens in the morning, the structure is just visual noise. The free tier caps how many habits you can create — more generous than Habitify's three, still short of a full routine — and the lack of templates means starting from a blank slate.</p>
-
   <div class="pcs">
-
     <div class="p"><h5>Pros</h5><ul>
-
       <li>Session structure suits time-of-day habits</li>
-
       <li>Genuine iOS and Android coverage</li>
-
       <li>Strong streak and completion analytics</li>
-
       <li>Good negative habit support</li>
-
     </ul></div>
-
     <div class="c"><h5>Cons</h5><ul>
-
       <li>Free habit cap</li>
-
       <li>Account required</li>
-
       <li>No templates</li>
-
       <li>Structure can feel rigid</li>
-
     </ul></div>
-
   </div>
-
   <div class="meta">
-
     <div><span>Price</span>Free with limited habits · Premium from $19.99/year (varies widely by region)</div>
-
     <div><span>Best for</span>People whose habits split across morning, afternoon and evening</div>
-
     <div><span>Skip if</span>You want to start free or find rigid structure constraining</div>
-
   </div>
-
   <p class="tnote"><strong>Testing note:</strong> genuinely useful during a week when habits were spread across the day. In a week when everything was a morning habit, the structure added noise rather than clarity.</p>
-
 </article>
 
 <h2 id="pick" class="rv">Which one is right for you</h2>
 
 <div class="pk rv">
-
   <div><span>On iPhone, want a fast simple check-in</span><b>Productify</b></div>
-
   <div><span>Apple Watch and Health auto-tracking</span><b>Streaks</b></div>
-
   <div><span>On Android, want a solid free option</span><b>HabitNow</b></div>
-
   <div><span>Conventional trackers bore you</span><b>Habitica</b></div>
-
   <div><span>Need sync across iPhone, Mac and web</span><b>Habitify</b></div>
-
   <div><span>Habits split across the day</span><b>Productive</b></div>
-
   <div><span>Private accountability with one person</span><b>Productify · Duo</b></div>
-
 </div>
 
 <h3 class="rv">Full feature comparison</h3>
 
 <div class="tw rv">
-
 <table>
-
 <thead><tr><th>Feature</th><th>Productify</th><th>HabitNow</th><th>Habitica</th><th>Habitify</th><th>Streaks</th><th>Productive</th></tr></thead>
-
 <tbody>
-
 <tr><td>Usable free tier</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">3 habits</td><td class="n">Paid</td><td class="n">Limited</td></tr>
-
 <tr><td>iOS</td><td class="y">✓</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-
 <tr><td>Android</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">—</td><td class="y">✓</td></tr>
-
 <tr><td>Forgiving streaks</td><td class="y">✓</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
-
 <tr><td>Per-habit reminders</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-
 <tr><td>AI insights</td><td class="y">Pro</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
-
 <tr><td>Accountability</td><td class="y">Duo</td><td class="n">—</td><td class="y">Party</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
-
 <tr><td>Habit templates</td><td class="y">50+</td><td class="n">—</td><td class="n">—</td><td class="n">Some</td><td class="n">Few</td><td class="n">—</td></tr>
-
 <tr><td>Measurable goals</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-
 <tr><td>No account needed</td><td class="y">✓</td><td class="y">✓</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="n">—</td></tr>
-
 </tbody>
-
 </table>
-
 </div>
 
 <h2 id="verdict" class="rv">The verdict</h2>
@@ -1555,145 +1043,108 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 <div class="quote rv">Whichever you pick, start with two habits, not ten. The app is a record-keeper and a mirror — it was never going to be the motivation.</div>
 
 <div class="cta rv">
-
   <h3>Try Productify free</h3>
-
   <p>Unlimited habits, per-habit reminders, and streaks that don't punish you for one bad week.</p>
-
   <a class="btn" href="#">Download for iPhone</a>
-
   <small>Free · iOS 15+ · No account required</small>
-
 </div>
 
 <h2 id="faq" class="rv">Frequently asked questions</h2>
 
 <div class="rv">
-
 <details><summary>What is a habit tracker app?</summary>
-
 <p>A digital tool that helps you build routines, break bad behaviours and monitor daily consistency. You define a behaviour, do it, and mark it done — building a record of how consistent you've actually been over weeks and months.</p></details>
 
 <details><summary>Do habit trackers actually work?</summary>
-
 <p>Self-monitoring is one of the better-supported behaviour-change techniques — recording what you do tends to change what you do. The catch is retention: most people abandon the app before the habit forms. A tracker is a record-keeper and a mirror, not a motivation supply.</p></details>
 
 <details><summary>Are habit tracker apps free?</summary>
-
 <p>Many are. Productify and HabitNow have genuinely usable free tiers, and Habitica's free version covers the core loop. Habitify caps you at three habits and Streaks is paid upfront. Always run one free for two weeks before subscribing.</p></details>
 
 <details><summary>How many habits should I track at once?</summary>
-
 <p>Three or fewer to start. Eight habits on day one becomes six red marks by week two, and six red marks is how people end up deleting the app. Add more once the first three are automatic.</p></details>
 
 <details><summary>What's the best free habit tracker app?</summary>
-
 <p>On iPhone, Productify — unlimited habits and reminders on the free tier, no account required. On Android, HabitNow, which has the most flexible scheduling of anything tested without paying.</p></details>
 
 <details><summary>Is a paper habit tracker better than an app?</summary>
-
 <p>For some people, yes. Paper is deliberate and costs nothing. It loses on reminders, streak calculations, long-term data and portability — so it works best alongside an existing journalling habit rather than as a standalone system.</p></details>
-
 </div>
 
 </main>
 
+<div class="rail">
+  <div class="sticky">
+    <div class="rcard">
+      <div class="rh">
+        <div class="lbl">Our pick</div>
+        <h4>Productify</h4>
+      </div>
+      <ul>
+        <li><span>Check-in speed</span><b>11 sec</b></li>
+        <li><span>Free habits</span><b>Unlimited</b></li>
+        <li><span>Streaks</span><b>Guilt-free</b></li>
+        <li><span>Account needed</span><b>No</b></li>
+        <li><span>Platform</span><b>iOS + Watch</b></li>
+      </ul>
+      <div class="rf"><a class="rb" href="#">Download free</a></div>
+    </div>
+    <p class="rnote">Android? HabitNow is the better pick.<br>Apple Watch? Streaks wins there.</p>
+  </div>
+</div>
+
 </div>
 
 <script>
-
 (function(){
-
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* heatmap */
-
   var g=document.getElementById('hg');
-
   if(g){
-
     for(var i=0;i<49;i++){
-
       var d=document.createElement('span'), r=Math.random();
-
       d.className='cell'+(r>.82?' l4':r>.62?' l3':r>.42?' l2':r>.24?' l1':'');
-
       d.style.animationDelay=(reduce?0:0.5+i*0.018)+'s';
-
       if(reduce){d.style.opacity=1;d.style.transform='none';}
-
       g.appendChild(d);
-
     }
-
   }
 
   /* scroll reveal */
-
   var els=document.querySelectorAll('.rv,.bars,.checks,h2');
-
   if('IntersectionObserver' in window && !reduce){
-
     var io=new IntersectionObserver(function(es){
-
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-
     },{rootMargin:'0px 0px -8% 0px',threshold:.12});
-
     els.forEach(function(el){io.observe(el)});
-
   } else {
-
     els.forEach(function(el){el.classList.add('in')});
-
   }
 
   /* reading progress */
-
   var bar=document.getElementById('prog');
-
   window.addEventListener('scroll',function(){
-
     var h=document.documentElement.scrollHeight-window.innerHeight;
-
     bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';
-
   },{passive:true});
 
   /* active toc */
-
   var links=[].slice.call(document.querySelectorAll('.toc a'));
-
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
-
   if('IntersectionObserver' in window){
-
     var io2=new IntersectionObserver(function(es){
-
       es.forEach(function(e){
-
         if(e.isIntersecting){
-
           links.forEach(function(l){l.classList.remove('act')});
-
           var m=links.filter(function(l){return l.getAttribute('href')==='#'+e.target.id})[0];
-
           if(m)m.classList.add('act');
-
         }
-
       });
-
     },{rootMargin:'-15% 0px -75% 0px'});
-
     secs.forEach(function(s){io2.observe(s)});
-
   }
-
 })();
-
 </script>
-
 </body>
-
-</html>  
+</html>
