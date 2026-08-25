@@ -9,8 +9,6 @@
 <meta name="description" content="{{ page.description | strip_newlines | escape }}">
 <meta name="robots" content="{{ page.robots | default: 'index, follow, max-image-preview:large, max-snippet:-1' }}">
 <link rel="canonical" href="{{ canonical }}">
-<link rel="alternate" hreflang="{{ site.lang }}" href="{{ canonical }}">
-<link rel="alternate" hreflang="x-default" href="{{ canonical }}">
 {%- if site.facebook_domain_verification %}
 <meta name="facebook-domain-verification" content="{{ site.facebook_domain_verification }}">
 {%- endif %}

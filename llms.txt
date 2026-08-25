@@ -1,48 +1,62 @@
+---
+permalink: /llms.txt
+layout: null
+sitemap: false
+---
+{%- comment -%}
+Generated from the collections, the same way sitemap.xml is, so this index
+cannot drift out of date as pages are added. A page is excluded by setting
+`sitemap: false` (the noindex alias page) or `robots: noindex`.
+{%- endcomment -%}
+{%- assign docs = site.documents | where_exp: "d", "d.sitemap != false" -%}
+{%- assign posts   = docs | where: "collection", "blog"      | sort: "date" | reverse -%}
+{%- assign feats   = docs | where: "collection", "features"  | sort: "title" -%}
+{%- assign compare = docs | where: "collection", "compare"   | sort: "title" -%}
+{%- assign sols    = docs | where: "collection", "solutions" | sort: "title" -%}
 # Productify
 
 > Productify is a free daily habit tracker app for iPhone focused on calm habit tracking, streaks, smart reminders, Habit Duo accountability, AI insights, and habit templates. It is free to download and does not require an account to start.
 
 Productify helps users build and maintain daily routines with simple habit tracking, flexible reminders, streak visibility, measurable goals, and optional AI-powered habit insights.
 
-This file provides a curated index of the most important pages on productifyapp.org for AI agents and language models.
+This file provides a curated index of the most important pages on {{ site.url | remove: "https://" }} for AI agents and language models.
 
 ## Primary pages
 
-- [Homepage](https://productifyapp.org/)
-- [Download Productify on the App Store](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237)
+- [Homepage]({{ '/' | absolute_url }}): {{ site.tagline }}
+- [Download Productify]({{ '/download/' | absolute_url }}): free on the App Store, no account required
+- [Pricing]({{ '/pricing/' | absolute_url }}): free tier, Pro subscription and lifetime plan
+- [Download on the App Store]({{ site.appstore_url }})
+
+## Compare
+{% for d in compare %}
+- [{{ d.title }}]({{ d.url | absolute_url }}){% if d.og_description %}: {{ d.og_description | strip_newlines }}{% endif %}
+{%- endfor %}
+
+## Features
+{% for d in feats %}{% unless d.robots contains 'noindex' %}
+- [{{ d.title }}]({{ d.url | absolute_url }}){% if d.og_description %}: {{ d.og_description | strip_newlines }}{% endif %}
+{%- endunless %}{% endfor %}
+
+## Solutions
+{% for d in sols %}
+- [{{ d.title }}]({{ d.url | absolute_url }}){% if d.og_description %}: {{ d.og_description | strip_newlines }}{% endif %}
+{%- endfor %}
 
 ## Blog
 
-- [6 Best Habit Tracker Apps to Use in 2026](https://productifyapp.org/blog/best-habit-tracker-apps-2026/)
-- [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
-- [How to Start a Daily Habit](https://productifyapp.org/blog/how-to-start-a-daily-habit/)
-- [How to Break Bad Habits](https://productifyapp.org/blog/how-to-break-bad-habits/)
-- [Habit Tracker vs To-Do List](https://productifyapp.org/blog/habit-tracker-vs-to-do-list/)
-- [How to Use a Habit Tracker](https://productifyapp.org/blog/how-to-use-a-habit-tracker/)
-- [How Long Does It Take to Build a Habit?](https://productifyapp.org/blog/how-long-to-build-a-habit/)
-- [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
-
-## Features
-
-- [Habit Tracker](https://productifyapp.org/habit-tracker/)
-- [Habit Duo](https://productifyapp.org/habit-duo/)
-- [AI Habit Analyser](https://productifyapp.org/ai-analyser/)
-- [Habit Templates](https://productifyapp.org/habit-templates/)
-- [Streak Tracking](https://productifyapp.org/streak-tracking/)
-- [Measurable Goals](https://productifyapp.org/measurable-goals/)
-
-## Solutions
-
-- [Morning Routine](https://productifyapp.org/morning-routine/)
-- [Productivity at Work](https://productifyapp.org/productivity-at-work/)
+- [All articles]({{ '/blog/' | absolute_url }})
+{%- for d in posts %}
+- [{{ d.title }}]({{ d.url | absolute_url }}){% if d.og_description %}: {{ d.og_description | strip_newlines }}{% endif %}
+{%- endfor %}
 
 ## Product information
 
 - Platform: iOS 15+, Apple Watch
 - Pricing: Free to start, optional Pro subscription
 - Account required: No
-- App Store: Available on the App Store
-- Website: https://productifyapp.org/
-- Contact: https://productifyapp.org/#contact
+- App Store: {{ site.appstore_url }}
+- Website: {{ '/' | absolute_url }}
+- Contact: {{ '/#contact' | absolute_url }}
 - X/Twitter: https://x.com/Productify_app
 - Instagram: https://www.instagram.com/productify.habits
