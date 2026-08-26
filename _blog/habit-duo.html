@@ -17,334 +17,341 @@ faq:
 sitemap: true
 toc: true
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>What Is a Habit Duo? How to Build Better Habits With a Partner</title>
-<meta name="description" content="A habit duo is two people tracking habits together with shared accountability. How it works, duo vs solo, why most apps fail couples, and how to set one up.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --lav-50:#f8f5fe; --lav-100:#f0eafd; --lav-200:#ded2fa; --lav-300:#c4b0f4;
-  --lav-400:#a68ce9; --lav-500:#8a6ade; --lav-600:#7050c9; --lav-700:#573ba4; --lav-900:#2b1a5e;
-  --teal-400:#6fc5c0; --teal-600:#3d938e;
-  --ink:#181321; --ink-2:#584f6e; --ink-3:#8d85a3;
-  --line:#ece6f7; --bg:#fff;
-  --rose:#c4577f;
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --sh-sm:0 1px 2px rgba(43,26,94,.05),0 4px 14px rgba(43,26,94,.045);
-  --sh-md:0 10px 34px rgba(43,26,94,.10),0 2px 8px rgba(43,26,94,.05);
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+.pd-post{
+  --br:#6B6FD4; --br-d:#4a4eb0; --br-dd:#33356f;
+  --br-50:#f6f6fd; --br-100:#eeeefb; --br-200:#d9dbf6; --br-300:#bcbfef;
+  --teal:#4fb3ad; --teal-d:#2f8c86; --rose:#c4577f;
+  --ink:#1a1a26; --ink-2:#55556b; --ink-3:#8b8b9e;
+  --line:#e8e8f2;
   --ease:cubic-bezier(.22,.85,.3,1);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
-  font-size:17.5px;line-height:1.72;-webkit-font-smoothing:antialiased;
-  overflow-x:hidden;width:100%;max-width:100%}
-p,li,h1,h2,h3,h4,td,th,summary{overflow-wrap:break-word;word-break:break-word}
-img,svg,table{max-width:100%}
+  --sh:0 1px 2px rgba(40,40,80,.04),0 6px 20px rgba(40,40,80,.06);
+  --sh-lg:0 12px 34px rgba(40,40,80,.11);
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
 
-/* reveal */
-.rv{opacity:0;transform:translateY(26px);
-  transition:opacity .75s var(--ease),transform .75s var(--ease)}
-.rv.in{opacity:1;transform:none}
+  width:100%;
+  max-width:100%;
+  font-family:var(--sans);
+  color:var(--ink);
+  font-size:clamp(16px,.55vw + 14.6px,18px);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.pd-post *{box-sizing:border-box;max-width:100%}
+.pd-post p,.pd-post li,.pd-post h2,.pd-post h3,.pd-post h4,.pd-post td,.pd-post th{
+  overflow-wrap:break-word;word-break:break-word}
+
+/* ---------- reveal ---------- */
+.pd-post .rv{opacity:0;transform:translateY(20px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.pd-post .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  .rv{opacity:1!important;transform:none!important;transition:none!important}
-  *{animation:none!important}
-  html{scroll-behavior:auto}
+  .pd-post .rv{opacity:1!important;transform:none!important;transition:none!important}
+  .pd-post *{animation:none!important}
 }
 
-/* layout */
-.shell{width:100%;max-width:1180px;margin:0 auto;padding:0 40px;
-  display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px;justify-content:center}
-.col{width:100%;min-width:0;max-width:760px;padding-bottom:110px}
-aside{padding-top:60px;min-width:0}
-.sticky{position:sticky;top:40px}
+/* ---------- typography ---------- */
+.pd-post h2{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(25px,3.1vw + 13px,36px);
+  line-height:1.18;letter-spacing:-.018em;
+  margin:clamp(48px,6vw,80px) 0 .5em;color:var(--ink)}
+.pd-post h3{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(20px,1.5vw + 15px,24px);
+  line-height:1.28;letter-spacing:-.012em;
+  margin:clamp(32px,4vw,48px) 0 .45em;color:var(--ink)}
+.pd-post h4{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(17.5px,.9vw + 15px,20px);
+  line-height:1.32;margin:clamp(24px,3vw,34px) 0 .4em;color:var(--ink)}
+.pd-post p{margin:0 0 1.1em}
+.pd-post strong,.pd-post b{font-weight:650;color:var(--ink)}
+.pd-post em{font-style:italic}
+.pd-post a{color:var(--br-d)}
+.pd-post .lede{
+  font-size:clamp(18px,1.1vw + 15.5px,21px);
+  line-height:1.55;color:var(--ink-2);margin-bottom:1.2em}
 
-/* type */
-h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.018em;line-height:1.16}
-h2{font-size:34px;margin:82px 0 14px;position:relative}
-h2::before{content:"";position:absolute;left:-28px;top:16px;width:14px;height:2px;
-  background:var(--lav-300);border-radius:2px;opacity:0;transform:scaleX(0);transform-origin:left;
-  transition:opacity .6s .2s var(--ease),transform .6s .2s var(--ease)}
-h2.in::before{opacity:1;transform:none}
-h3{font-size:22px;margin:46px 0 10px;line-height:1.3}
-h4{font-size:19px;margin:32px 0 8px}
-p{margin:0 0 19px}
-.lede{font-size:21px;line-height:1.6;color:var(--ink-2);margin-bottom:28px}
-.kicker{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--lav-600);margin:0 0 24px}
-a{color:var(--lav-700)}
-strong{font-weight:650}
-
-/* hero */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,#fbf9ff,#fff)}
-.blob{position:absolute;border-radius:50%;filter:blur(78px);opacity:.55;pointer-events:none}
-.b1{width:520px;height:520px;background:#d9c7fb;top:-210px;right:-90px;animation:float1 22s ease-in-out infinite}
-.b2{width:400px;height:400px;background:#c3ecea;top:50px;right:200px;animation:float2 28s ease-in-out infinite}
-.b3{width:340px;height:340px;background:#f6d5ec;top:-90px;right:420px;animation:float1 25s ease-in-out infinite reverse}
-@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-38px,34px) scale(1.09)}}
-@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-28px) scale(.93)}}
-.hero-in{position:relative;max-width:1320px;margin:0 auto;padding:96px 40px 76px;
-  display:grid;grid-template-columns:1fr 320px;gap:72px;align-items:center}
-.hero h1{font-size:clamp(37px,4.7vw,62px);margin:0 0 22px;max-width:16ch}
-.hero h1 .hl{position:relative;white-space:nowrap}
-.hero h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:12px;
-  background:linear-gradient(90deg,var(--lav-200),#c3ecea);z-index:-1;border-radius:3px;
-  transform:scaleX(0);transform-origin:left;animation:swipe 1s .55s var(--ease) forwards}
-@keyframes swipe{to{transform:scaleX(1)}}
-.hero .sub{font-size:21px;color:var(--ink-2);max-width:56ch;margin:0 0 32px;line-height:1.6}
-.tagrow{display:flex;flex-wrap:wrap;gap:9px}
-.tag{font-size:12.5px;font-weight:600;color:var(--lav-700);background:rgba(255,255,255,.75);
-  border:1px solid var(--lav-200);padding:7px 14px;border-radius:99px;backdrop-filter:blur(6px);
+/* ---------- intro card ---------- */
+.pd-post .pd-top{
+  position:relative;overflow:hidden;
+  border:1px solid var(--br-200);border-radius:clamp(14px,1.6vw,20px);
+  padding:clamp(22px,3.4vw,38px);
+  margin:0 0 clamp(26px,3.4vw,40px);
+  background:linear-gradient(150deg,var(--br-50),#fff 62%)}
+.pd-post .pd-top::after{
+  content:"";position:absolute;top:-90px;right:-70px;
+  width:min(260px,45%);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(var(--br-100),transparent 70%);pointer-events:none}
+.pd-post .pd-top > *{position:relative}
+.pd-post .kicker{
+  font-size:clamp(10px,.4vw + 9px,11.5px);font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--br);margin:0 0 .9em}
+.pd-post .pd-top .lede{margin-bottom:0}
+.pd-post .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.2em}
+.pd-post .tag{
+  font-size:clamp(11px,.35vw + 10px,12.5px);font-weight:600;color:var(--br-d);
+  background:#fff;border:1px solid var(--br-200);padding:6px 13px;border-radius:99px;
   transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-.tag:hover{transform:translateY(-2px);box-shadow:var(--sh-sm)}
-.fade-up{opacity:0;transform:translateY(22px);animation:fadeUp .85s var(--ease) forwards}
-.fade-up.a1{animation-delay:.05s}.fade-up.a2{animation-delay:.18s}
-.fade-up.a3{animation-delay:.31s}.fade-up.a4{animation-delay:.44s}
-@keyframes fadeUp{to{opacity:1;transform:none}}
+.pd-post .tag:hover{transform:translateY(-2px);box-shadow:var(--sh)}
 
-/* duo widget */
-.duo{background:rgba(255,255,255,.85);border:1px solid var(--lav-200);border-radius:18px;
-  padding:22px;box-shadow:var(--sh-md);backdrop-filter:blur(10px)}
-.duo .dt{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:16px}
-.drow{display:flex;align-items:center;gap:11px;margin-bottom:14px}
-.who{width:26px;height:26px;border-radius:50%;flex:0 0 auto;font-size:11px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;color:#fff}
-.who.a{background:var(--lav-600)}
-.who.b{background:var(--teal-600)}
-.dots{display:flex;gap:6px;flex:1}
-.dot{flex:1;aspect-ratio:1;border-radius:50%;background:var(--lav-100);
-  transform:scale(.3);opacity:0;animation:pop .5s var(--ease) forwards}
-.drow.a .dot.on{background:var(--lav-500)}
-.drow.b .dot.on{background:var(--teal-400)}
-@keyframes pop{to{transform:scale(1);opacity:1}}
-.duo .link{display:flex;align-items:center;gap:9px;margin:2px 0 14px 37px;
-  font-size:12px;color:var(--ink-3)}
-.duo .link::before{content:"";width:22px;height:1px;background:var(--lav-200)}
-.duo .df{border-top:1px solid var(--line);padding-top:13px;margin-top:4px;
-  display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3)}
-.duo .df b{color:var(--lav-700);font-size:13px}
-
-/* toc */
-.toc-t{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-3);margin:0 0 15px}
-.toc a{display:block;font-size:14px;color:var(--ink-2);text-decoration:none;
-  padding:8px 0 8px 16px;border-left:2px solid var(--line);line-height:1.4;
-  transition:color .25s,border-color .25s,padding-left .25s var(--ease)}
-.toc a:hover,.toc a.act{color:var(--lav-700);border-left-color:var(--lav-400);padding-left:20px}
-
-/* pull + note */
-.key{border-left:3px solid var(--lav-400);padding:6px 0 6px 24px;margin:32px 0;
-  font-family:var(--serif);font-size:23px;line-height:1.42}
-.note{position:relative;background:linear-gradient(135deg,var(--lav-50),#fff);
-  border:1px solid var(--lav-200);border-radius:14px;padding:20px 24px;margin:30px 0;
-  font-size:16px;line-height:1.65;color:var(--ink-2);box-shadow:var(--sh-sm);overflow:hidden}
-.note::after{content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;
-  border-radius:50%;background:radial-gradient(var(--lav-100),transparent 70%)}
-.note b{color:var(--ink)}
-.quote{font-family:var(--serif);font-size:21px;line-height:1.48;font-style:italic;
-  border-left:3px solid var(--lav-200);padding-left:24px;margin:30px 0}
-.disc{font-size:14px;color:var(--ink-3);line-height:1.65;border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);padding:18px 0;margin:28px 0}
-
-/* benefit columns */
-.bene{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:34px 0;
-  border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm)}
-.bene > div{padding:26px 26px 22px}
-.bene > div:first-child{border-right:1px solid var(--line);
-  background:linear-gradient(165deg,var(--lav-50),#fff 65%)}
-.bene > div:last-child{background:#fcfcfd}
-.bene h4{font-family:var(--sans);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
-  margin:0 0 16px;font-weight:700;color:var(--lav-600)}
-.bene > div:last-child h4{color:var(--ink-3)}
-.bene ol{list-style:none;counter-reset:b;margin:0;padding:0}
-.bene li{counter-increment:b;position:relative;padding:0 0 16px 30px;font-size:15px;
-  line-height:1.55;color:var(--ink-2)}
-.bene li:last-child{padding-bottom:0}
-.bene li::before{content:counter(b);position:absolute;left:0;top:1px;width:20px;height:20px;
-  border-radius:50%;background:var(--lav-100);color:var(--lav-700);font-size:11px;font-weight:700;
+/* ---------- duo widget ---------- */
+.pd-post .duo{
+  border:1px solid var(--br-200);border-radius:14px;background:#fff;
+  padding:clamp(16px,2.2vw,22px);margin:clamp(24px,3vw,34px) 0;box-shadow:var(--sh)}
+.pd-post .duo .dt{
+  font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:14px}
+.pd-post .drow{display:flex;align-items:center;gap:clamp(8px,1.2vw,12px);margin-bottom:12px}
+.pd-post .who{
+  width:clamp(22px,2.4vw,27px);aspect-ratio:1;border-radius:50%;flex:0 0 auto;
+  font-size:clamp(10px,.5vw + 8.5px,11.5px);font-weight:700;color:#fff;
   display:flex;align-items:center;justify-content:center}
-.bene > div:last-child li::before{background:#eceaf2;color:var(--ink-2)}
-.bene li b{color:var(--ink);display:block;margin-bottom:2px;font-size:15.5px}
+.pd-post .who.a{background:var(--br)}
+.pd-post .who.b{background:var(--teal-d)}
+.pd-post .dots{display:flex;gap:clamp(4px,.7vw,7px);flex:1;min-width:0}
+.pd-post .dot{
+  flex:1;aspect-ratio:1;border-radius:50%;background:var(--br-100);
+  transform:scale(.3);opacity:0;animation:pdPop .5s var(--ease) forwards}
+.pd-post .drow.a .dot.on{background:var(--br)}
+.pd-post .drow.b .dot.on{background:var(--teal)}
+@keyframes pdPop{to{transform:scale(1);opacity:1}}
+.pd-post .duo .mid{
+  display:flex;align-items:center;gap:9px;font-size:11.5px;color:var(--ink-3);
+  margin:0 0 12px clamp(30px,3.6vw,39px)}
+.pd-post .duo .mid::before{content:"";width:20px;height:1px;background:var(--br-200)}
+.pd-post .duo .df{
+  border-top:1px solid var(--line);margin-top:4px;padding-top:12px;
+  display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--ink-3)}
+.pd-post .duo .df b{color:var(--br-d)}
 
-/* table */
-.tw{overflow-x:auto;margin:28px 0;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-sm)}
-table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
-th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-thead th{background:#fbfafe;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-3);font-weight:700}
-tbody tr{transition:background .25s}
-tbody tr:hover{background:var(--lav-50)}
-tbody tr:last-child td{border-bottom:0}
-td:first-child{font-weight:600;color:var(--ink)}
+/* ---------- inline contents ---------- */
+.pd-post .toc{
+  border:1px solid var(--line);border-radius:14px;background:#fcfcfe;
+  padding:clamp(18px,2.4vw,24px);margin:clamp(26px,3.2vw,36px) 0}
+.pd-post .toc p{
+  font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 12px}
+.pd-post .toc ol{
+  margin:0;padding:0;list-style:none;counter-reset:pdt;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px 22px}
+.pd-post .toc li{counter-increment:pdt;position:relative;padding:6px 0 6px 26px}
+.pd-post .toc li::before{
+  content:counter(pdt);position:absolute;left:0;top:9px;
+  width:18px;height:18px;border-radius:50%;background:var(--br-100);color:var(--br-d);
+  font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.pd-post .toc a{
+  font-size:clamp(14px,.4vw + 13px,15.5px);color:var(--ink-2);text-decoration:none;
+  transition:color .25s}
+.pd-post .toc a:hover{color:var(--br-d)}
 
-/* checks */
-.checks{list-style:none;padding:0;margin:24px 0}
-.checks li{position:relative;padding-left:30px;margin-bottom:12px;font-size:16.5px;color:var(--ink-2)}
-.checks li::before{content:"";position:absolute;left:3px;top:9px;width:10px;height:10px;
-  border:2px solid var(--lav-400);border-right:0;border-top:0;transform:rotate(-45deg) scale(.4);
-  opacity:0;transition:transform .4s var(--ease),opacity .4s}
-.checks.in li::before{transform:rotate(-45deg) scale(1);opacity:1}
-.checks.in li:nth-child(2)::before{transition-delay:.08s}
-.checks.in li:nth-child(3)::before{transition-delay:.16s}
-.checks.in li:nth-child(4)::before{transition-delay:.24s}
-.checks.in li:nth-child(5)::before{transition-delay:.32s}
-.checks.in li:nth-child(6)::before{transition-delay:.4s}
+/* ---------- pull + note ---------- */
+.pd-post .key{
+  font-family:var(--serif);font-size:clamp(19px,1.5vw + 14px,24px);line-height:1.4;
+  border-left:3px solid var(--br-300);padding:4px 0 4px clamp(16px,2vw,24px);
+  margin:clamp(26px,3.2vw,36px) 0;color:var(--ink)}
+.pd-post .quote{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(18px,1.2vw + 14px,22px);line-height:1.45;
+  border-left:3px solid var(--br-200);padding-left:clamp(16px,2vw,24px);
+  margin:clamp(26px,3.2vw,36px) 0}
+.pd-post .note{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--br-50),#fff);
+  border:1px solid var(--br-200);border-radius:14px;
+  padding:clamp(16px,2.2vw,22px) clamp(18px,2.6vw,26px);
+  margin:clamp(24px,3vw,32px) 0;color:var(--ink-2);
+  font-size:clamp(15px,.5vw + 13.5px,16.5px);line-height:1.62;box-shadow:var(--sh)}
+.pd-post .disc{
+  font-size:clamp(13.5px,.4vw + 12.5px,15px);color:var(--ink-3);line-height:1.6;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:16px 0;margin:clamp(24px,3vw,32px) 0}
 
-/* reason cards */
-.why{display:grid;gap:14px;margin:30px 0}
-.wcard{border:1px solid var(--line);border-radius:14px;padding:20px 24px;background:#fff;
+/* ---------- reason cards ---------- */
+.pd-post .cards{display:grid;gap:clamp(10px,1.4vw,15px);margin:clamp(24px,3vw,34px) 0}
+.pd-post .card{
+  border:1px solid var(--line);border-radius:14px;background:#fff;
+  padding:clamp(17px,2.2vw,24px) clamp(18px,2.4vw,26px);
   transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
-.wcard:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:var(--lav-200)}
-.wcard h4{font-size:18px;margin:0 0 7px}
-.wcard p{font-size:16px;color:var(--ink-2);margin:0}
+.pd-post .card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);border-color:var(--br-200)}
+.pd-post .card h4{margin:0 0 .4em;font-size:clamp(16.5px,.8vw + 14.5px,19px)}
+.pd-post .card p{margin:0;color:var(--ink-2);font-size:clamp(15px,.5vw + 13.5px,16.5px)}
 
-/* steps */
-.steps{list-style:none;padding:0;margin:34px 0;counter-reset:s}
-.steps > li{counter-increment:s;position:relative;padding:0 0 30px 54px;
-  border-left:1px solid var(--line);margin-left:15px}
-.steps > li:last-child{border-left-color:transparent;padding-bottom:0}
-.steps > li::before{content:counter(s);position:absolute;left:-15px;top:-3px;width:30px;height:30px;
-  border-radius:50%;background:#fff;border:1px solid var(--lav-200);color:var(--lav-700);
-  font-family:var(--sans);font-size:13px;font-weight:700;display:flex;align-items:center;
-  justify-content:center;transition:transform .35s var(--ease),background .35s,color .35s}
-.steps > li:hover::before{transform:scale(1.15);background:var(--lav-600);color:#fff;border-color:var(--lav-600)}
-.steps h4{margin:0 0 7px;font-size:20px}
-.steps p{font-size:16.5px;color:var(--ink-2);margin:0 0 10px}
-.steps p:last-child{margin-bottom:0}
-.watch{background:var(--lav-50);border-left:2px solid var(--lav-300);border-radius:0 10px 10px 0;
-  padding:12px 18px;font-size:15px;color:var(--ink-2);line-height:1.6;margin-top:12px!important}
-.watch b{color:var(--lav-700)}
-.said{font-family:var(--serif);font-style:italic;font-size:17.5px;color:var(--ink);
-  border-left:2px solid var(--lav-200);padding-left:18px;margin:14px 0!important}
+/* ---------- benefit split ---------- */
+.pd-post .bene{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  margin:clamp(26px,3.4vw,38px) 0;box-shadow:var(--sh)}
+.pd-post .bene > div{padding:clamp(20px,2.6vw,28px)}
+.pd-post .bene > div:first-child{background:linear-gradient(165deg,var(--br-50),#fff 65%)}
+.pd-post .bene > div + div{border-top:1px solid var(--line)}
+@media (min-width:640px){
+  .pd-post .bene > div + div{border-top:0;border-left:1px solid var(--line)}
+}
+.pd-post .bene h4{
+  font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--br);margin:0 0 14px}
+.pd-post .bene > div:last-child h4{color:var(--ink-3)}
+.pd-post .bene ol{list-style:none;counter-reset:pdb;margin:0;padding:0}
+.pd-post .bene li{
+  counter-increment:pdb;position:relative;padding:0 0 15px 28px;
+  font-size:clamp(14.5px,.4vw + 13.5px,15.5px);line-height:1.55;color:var(--ink-2)}
+.pd-post .bene li:last-child{padding-bottom:0}
+.pd-post .bene li::before{
+  content:counter(pdb);position:absolute;left:0;top:2px;width:19px;height:19px;
+  border-radius:50%;background:var(--br-100);color:var(--br-d);font-size:10.5px;
+  font-weight:700;display:flex;align-items:center;justify-content:center}
+.pd-post .bene > div:last-child li::before{background:#ececf2;color:var(--ink-2)}
+.pd-post .bene li b{display:block;color:var(--ink);margin-bottom:2px}
 
-/* avoid list */
-.avoid{list-style:none;padding:0;margin:28px 0;display:grid;gap:12px}
-.avoid li{position:relative;padding:16px 20px 16px 50px;border:1px solid #f4dde5;
-  border-radius:12px;background:#fdf7f9;font-size:16px;line-height:1.6;color:var(--ink-2);
+/* ---------- tables ---------- */
+.pd-post .tw{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--line);border-radius:14px;
+  margin:clamp(24px,3vw,32px) 0;box-shadow:var(--sh)}
+.pd-post table{border-collapse:collapse;width:100%;min-width:440px;
+  font-size:clamp(14px,.4vw + 13px,15px);margin:0}
+.pd-post th,.pd-post td{
+  padding:clamp(11px,1.2vw,15px) clamp(12px,1.4vw,17px);
+  text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.pd-post thead th{
+  background:#fafaff;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:700;white-space:nowrap}
+.pd-post tbody tr{transition:background .25s}
+.pd-post tbody tr:hover{background:var(--br-50)}
+.pd-post tbody tr:last-child td{border-bottom:0}
+.pd-post td:first-child{font-weight:600;color:var(--ink)}
+
+/* ---------- check list ---------- */
+.pd-post .checks{list-style:none;padding:0;margin:clamp(20px,2.4vw,28px) 0}
+.pd-post .checks li{
+  position:relative;padding-left:28px;margin-bottom:11px;
+  font-size:clamp(15px,.5vw + 13.5px,16.5px);color:var(--ink-2)}
+.pd-post .checks li::before{
+  content:"";position:absolute;left:3px;top:9px;width:9px;height:9px;
+  border:2px solid var(--br);border-right:0;border-top:0;
+  transform:rotate(-45deg) scale(.4);opacity:0;
+  transition:transform .4s var(--ease),opacity .4s}
+.pd-post .checks.in li::before{transform:rotate(-45deg) scale(1);opacity:1}
+.pd-post .checks.in li:nth-child(2)::before{transition-delay:.08s}
+.pd-post .checks.in li:nth-child(3)::before{transition-delay:.16s}
+.pd-post .checks.in li:nth-child(4)::before{transition-delay:.24s}
+.pd-post .checks.in li:nth-child(5)::before{transition-delay:.32s}
+.pd-post .checks.in li:nth-child(6)::before{transition-delay:.4s}
+
+/* ---------- steps ---------- */
+.pd-post .steps{list-style:none;padding:0;margin:clamp(26px,3.4vw,38px) 0;counter-reset:pds}
+.pd-post .steps > li{
+  counter-increment:pds;position:relative;
+  padding:0 0 clamp(24px,3vw,32px) clamp(38px,4.6vw,52px);
+  border-left:1px solid var(--line);margin-left:clamp(11px,1.4vw,15px)}
+.pd-post .steps > li:last-child{border-left-color:transparent;padding-bottom:0}
+.pd-post .steps > li::before{
+  content:counter(pds);position:absolute;left:clamp(-15px,-1.4vw,-11px);top:-2px;
+  width:clamp(23px,2.8vw,30px);aspect-ratio:1;border-radius:50%;
+  background:#fff;border:1px solid var(--br-200);color:var(--br-d);
+  font-family:var(--sans);font-size:clamp(11.5px,.5vw + 10px,13px);font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .35s var(--ease),background .35s,color .35s}
+.pd-post .steps > li:hover::before{
+  transform:scale(1.14);background:var(--br);color:#fff;border-color:var(--br)}
+.pd-post .steps h4{margin:0 0 .4em}
+.pd-post .steps p{color:var(--ink-2);margin:0 0 .7em}
+.pd-post .steps > li > *:last-child{margin-bottom:0}
+.pd-post .watch{
+  background:var(--br-50);border-left:2px solid var(--br-300);border-radius:0 10px 10px 0;
+  padding:11px clamp(14px,1.8vw,18px);
+  font-size:clamp(14px,.4vw + 13px,15.5px);line-height:1.58;
+  color:var(--ink-2)!important;margin-top:.85em!important}
+.pd-post .watch b{color:var(--br-d)}
+.pd-post .said{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(16px,.7vw + 14px,18px);color:var(--ink)!important;
+  border-left:2px solid var(--br-200);padding-left:clamp(14px,1.8vw,18px);
+  margin:.9em 0!important}
+
+/* ---------- avoid ---------- */
+.pd-post .avoid{list-style:none;padding:0;display:grid;gap:11px;
+  margin:clamp(24px,3vw,32px) 0}
+.pd-post .avoid li{
+  position:relative;border:1px solid #f2dbe3;border-radius:12px;background:#fdf8fa;
+  padding:clamp(14px,1.8vw,17px) clamp(16px,2vw,20px) clamp(14px,1.8vw,17px) 46px;
+  font-size:clamp(15px,.5vw + 13.5px,16.5px);line-height:1.58;color:var(--ink-2);
   transition:transform .35s var(--ease)}
-.avoid li:hover{transform:translateX(3px)}
-.avoid li::before,.avoid li::after{content:"";position:absolute;left:20px;top:26px;
-  width:13px;height:2px;background:var(--rose);border-radius:2px}
-.avoid li::before{transform:rotate(45deg)}
-.avoid li::after{transform:rotate(-45deg)}
-.avoid b{color:var(--ink)}
+.pd-post .avoid li:hover{transform:translateX(3px)}
+.pd-post .avoid li::before,.pd-post .avoid li::after{
+  content:"";position:absolute;left:19px;top:calc(clamp(14px,1.8vw,17px) + 10px);
+  width:12px;height:2px;background:var(--rose);border-radius:2px}
+.pd-post .avoid li::before{transform:rotate(45deg)}
+.pd-post .avoid li::after{transform:rotate(-45deg)}
 
-/* recap */
-.recap{border:1px solid var(--lav-200);border-radius:16px;padding:26px 30px;margin:36px 0;
-  background:linear-gradient(160deg,var(--lav-50),#fff 70%);box-shadow:var(--sh-sm)}
-.recap h4{margin:0 0 14px;font-size:19px}
-.recap ol{margin:0;padding-left:20px;color:var(--ink-2);font-size:16px;line-height:1.7}
-.recap li{margin-bottom:5px}
-
-/* faq */
-details{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font-weight:600;
-  font-size:17px;position:relative;transition:color .25s}
-summary:hover{color:var(--lav-700)}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"";position:absolute;right:6px;top:26px;width:10px;height:10px;
-  border-right:2px solid var(--lav-400);border-bottom:2px solid var(--lav-400);
-  transform:rotate(45deg);transition:transform .35s var(--ease)}
-details[open] summary::after{transform:rotate(-135deg);top:30px}
-details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
-  animation:slideDown .4s var(--ease)}
-@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-
-#prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:99;
-  background:linear-gradient(90deg,var(--teal-400),var(--lav-600))}
-
-@media(max-width:1040px){
-  .shell{grid-template-columns:1fr;gap:0;max-width:780px;padding:0 32px}
-  aside{display:none}
-  .hero-in{grid-template-columns:1fr;gap:44px}
-  h2::before{display:none}
-}
-@media(max-width:600px){
-  body{font-size:16.5px}
-  .hero-in{padding:52px 20px 40px;gap:34px}
-  .shell{padding:0 20px;max-width:100%}
-  h2{font-size:28px;margin-top:62px}
-  .bene{grid-template-columns:1fr}
-  .bene > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
-  .wcard,.recap{padding:20px 20px}
-}
+/* ---------- recap ---------- */
+.pd-post .recap{
+  border:1px solid var(--br-200);border-radius:16px;
+  background:linear-gradient(160deg,var(--br-50),#fff 70%);
+  padding:clamp(20px,2.6vw,30px);margin:clamp(28px,3.4vw,38px) 0;box-shadow:var(--sh)}
+.pd-post .recap h4{margin:0 0 .6em}
+.pd-post .recap ol{margin:0;padding-left:20px;color:var(--ink-2);
+  font-size:clamp(15px,.5vw + 13.5px,16.5px);line-height:1.65}
+.pd-post .recap li{margin-bottom:4px}
 </style>
-</head>
-<body>
-<div id="prog"></div>
 
-<header class="hero">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-  <div class="hero-in">
-    <div>
-      <p class="kicker fade-up a1">Accountability · Habit guide</p>
-      <h1 class="fade-up a2">What is a habit duo, and <span class="hl">why does it work?</span></h1>
-      <p class="sub fade-up a3">Two people. One commitment to showing up. Each one able to see whether the other did. Here's how habit duos work, when they beat tracking alone, and how to set one up that survives past week two.</p>
-      <div class="tagrow fade-up a4">
-        <span class="tag">10 min read</span>
-        <span class="tag">Duo vs solo</span>
-        <span class="tag">Setup guide</span>
-      </div>
-    </div>
-    <div class="duo fade-up a4">
-      <div class="dt">This week</div>
-      <div class="drow a"><span class="who a">A</span><span class="dots" id="rowA"></span></div>
-      <div class="link">paired · both can see</div>
-      <div class="drow b"><span class="who b">B</span><span class="dots" id="rowB"></span></div>
-      <div class="df"><span>Two streaks, no scoreboard</span><b>Duo</b></div>
-    </div>
+<article class="pd-post">
+
+<div class="pd-top rv">
+  <p class="kicker">Accountability · Habit guide</p>
+  <p class="lede">A habit duo is a pair of people who build, track and maintain their daily habits together with shared accountability. Two people, one commitment to showing up — and each one can see whether the other did.</p>
+  <div class="tags">
+    <span class="tag">10 min read</span>
+    <span class="tag">Duo vs solo</span>
+    <span class="tag">Setup guide</span>
   </div>
-</header>
+</div>
 
-<div class="shell">
+<div class="toc rv">
+  <p>In this guide</p>
+  <ol>
+    <li><a href="#pd-what">What is a habit duo</a></li>
+    <li><a href="#pd-how">How it works</a></li>
+    <li><a href="#pd-who">Who to pair with</a></li>
+    <li><a href="#pd-vs">Duo vs solo tracking</a></li>
+    <li><a href="#pd-partner">Habits with your partner</a></li>
+    <li><a href="#pd-apps">Which app to use</a></li>
+    <li><a href="#pd-steps">Small steps that last</a></li>
+    <li><a href="#pd-avoid">What to avoid</a></li>
+  </ol>
+</div>
 
-<aside>
-  <div class="sticky">
-    <p class="toc-t">Contents</p>
-    <nav class="toc">
-      <a href="#what">What is a habit duo</a>
-      <a href="#how">How it works</a>
-      <a href="#who">Who to pair with</a>
-      <a href="#vs">Duo vs solo</a>
-      <a href="#partner">Building habits with your partner</a>
-      <a href="#apps">Which app to use</a>
-      <a href="#steps">Small steps that last</a>
-      <a href="#avoid">What to avoid</a>
-    </nav>
-  </div>
-</aside>
-
-<main class="col">
-
-<h2 id="what" class="rv" style="margin-top:56px">What Is a Habit Duo?</h2>
-
-<p class="lede rv">A habit duo is a pair of people who build, track and maintain their daily habits together with shared accountability. Two people, one commitment to showing up — and each one can see whether the other did.</p>
+<h2 id="pd-what" class="rv">What is a habit duo?</h2>
 
 <p class="rv">That's it. No group chat, no leaderboard, no team of twelve posting workout selfies. Just one person who knows whether you did the thing.</p>
 
 <p class="rv">It sounds too small to matter. It isn't. Tracking a habit alone and tracking it with a partner are two different promises: one you made to yourself, one someone else can see. At 6am on a cold Tuesday, your brain treats those very differently.</p>
 
-<h2 id="how" class="rv">How does a habit duo work?</h2>
+<div class="duo rv">
+  <div class="dt">This week</div>
+  <div class="drow a"><span class="who a">A</span><span class="dots" id="pdRowA"></span></div>
+  <div class="mid">paired · both can see</div>
+  <div class="drow b"><span class="who b">B</span><span class="dots" id="pdRowB"></span></div>
+  <div class="df"><span>Two records, side by side</span><b>No scoreboard</b></div>
+</div>
+
+<h2 id="pd-how" class="rv">How does a habit duo work?</h2>
 
 <p class="rv">Four things make a habit duo function.</p>
 
-<div class="why">
-  <div class="wcard rv"><h4>1. Mutual accountability</h4>
+<div class="cards">
+  <div class="card rv"><h4>1. Mutual accountability</h4>
     <p>You pair with a partner, friend, sibling or roommate and agree to stay consistent together. The commitment stops being private — which is the entire point.</p></div>
-  <div class="wcard rv"><h4>2. Shared motivation</h4>
+  <div class="card rv"><h4>2. Shared motivation</h4>
     <p>When one of you checks in, the other sees it. That small signal is often enough to get someone off the sofa. On the days your motivation is gone, theirs carries you. It's rarely both of you on the same day, which is exactly why it works.</p></div>
-  <div class="wcard rv"><h4>3. A visible shared record</h4>
+  <div class="card rv"><h4>3. A visible shared record</h4>
     <p>Two streaks side by side instead of one private one. You're not competing over them — you're just both aware they exist.</p></div>
-  <div class="wcard rv"><h4>4. A tool you both use</h4>
+  <div class="card rv"><h4>4. A tool you both use</h4>
     <p>Some duos keep it analogue: a shared wall calendar with two rows, or matching paper trackers. Others use apps built for pairs — DailyDuo on iOS, Duohabit on Android — where both people's check-ins sit in one view. Some habit trackers now build pairing in directly, so you don't have to move your habits to a new app.</p></div>
 </div>
 
@@ -356,7 +363,7 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 
 <div class="note rv"><b>What the evidence doesn't say</b> is that a partner replaces wanting the habit. A duo adds a steady pull on your worst days. That's genuinely useful. It's not magic — if you don't want the habit, a partner just gives you a witness.</div>
 
-<h2 id="who" class="rv">Who can you build a habit duo with?</h2>
+<h2 id="pd-who" class="rv">Who can you build a habit duo with?</h2>
 
 <p class="rv">Almost anyone. The best choice is usually less obvious than you'd assume.</p>
 
@@ -383,7 +390,7 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 
 <p class="rv"><strong>Not a group challenge, shrunk.</strong> Groups diffuse responsibility: if eight people are in a challenge and you skip, someone else's streak covers the silence. In a duo there's one other person, and they notice. That's the whole mechanism.</p>
 
-<h2 id="vs" class="rv">Habit Duo vs. Solo Habit Tracking: Which Works Better?</h2>
+<h2 id="pd-vs" class="rv">Habit duo vs. solo habit tracking: which works better?</h2>
 
 <p class="rv">Neither one wins outright. They're good at different things, and picking wrong is why plenty of people conclude that habit tracking "doesn't work for them."</p>
 
@@ -439,22 +446,22 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 
 <p class="rv">The most durable setup for most people is a small mix: one or two habits in a duo — the ones that keep collapsing — and the rest tracked quietly on your own.</p>
 
-<h2 id="partner" class="rv">How to Build Better Habits With Your Partner</h2>
+<h2 id="pd-partner" class="rv">How to build better habits with your partner</h2>
 
 <p class="rv">Of all the pairings, a romantic partner is the most common — and the most misunderstood. You share a home, a schedule and most of your evenings, which makes you either the best possible habit partner or the worst, depending almost entirely on how you set it up.</p>
 
 <h3 class="rv">Why building habits with your partner matters</h3>
 
-<div class="why">
-  <div class="wcard rv"><h4>Your routines are already shared</h4>
+<div class="cards">
+  <div class="card rv"><h4>Your routines are already shared</h4>
     <p>You eat at the same times. You go to bed within an hour of each other. One of you suggests takeaway and the other agrees. Living together means your habits are already entangled — the only question is whether that entanglement is deliberate. Most couples don't drift into worse routines separately. They drift together.</p></div>
-  <div class="wcard rv"><h4>A habit your partner doesn't share is a habit you're working against</h4>
+  <div class="card rv"><h4>A habit your partner doesn't share is a habit you're working against</h4>
     <p>Try going phone-free after 10pm while the person beside you is scrolling. Try cooking on weeknights while your partner orders in. It's not impossible, it's just an extra fight you have to win every single evening — and you won't win all of them. When you're both in, the environment stops resisting you.</p></div>
-  <div class="wcard rv"><h4>The daily cue is already built</h4>
+  <div class="card rv"><h4>The daily cue is already built</h4>
     <p>The hardest part of a habit is attaching it to a reliable moment. With a partner you have dozens: after we make coffee, when we get home, before we start the show, once the kids are down. You're not inventing a trigger, you're using one you both already live by.</p></div>
-  <div class="wcard rv"><h4>It gives you something to do together that isn't consumption</h4>
+  <div class="card rv"><h4>It gives you something to do together that isn't consumption</h4>
     <p>A lot of shared time defaults to a screen. A walk, a stretch, a cooked meal, a quiet reading half-hour — these turn into time together rather than time beside each other. Couples who stick with paired habits usually mention this before they mention the habit.</p></div>
-  <div class="wcard rv"><h4>It survives one of you having a bad month</h4>
+  <div class="card rv"><h4>It survives one of you having a bad month</h4>
     <p>Everyone has a stretch where the routine collapses. Alone that's usually the end of it. When two people are holding the same routine, one of you is almost always still standing — and that's how the habit gets rebuilt instead of abandoned.</p></div>
 </div>
 
@@ -489,16 +496,16 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 
 <p class="rv">That's a much smaller feature set than most apps ship, which is exactly why the ones built for pairs tend to work better than the ones built for everyone.</p>
 
-<h2 id="apps" class="rv">What App Should You Use to Build a Habit Duo?</h2>
+<h2 id="pd-apps" class="rv">What app should you use to build a habit duo?</h2>
 
 <p class="rv">There are three realistic options, and it's worth knowing what each one costs you before you pick.</p>
 
-<div class="why">
-  <div class="wcard rv"><h4>Paper</h4>
+<div class="cards">
+  <div class="card rv"><h4>Paper</h4>
     <p>A shared wall calendar with two rows and a marker. Free, deliberate, and genuinely effective if you live together. It falls apart the moment you don't — no reminders, no way to check in from a different city, no record beyond the current month.</p></div>
-  <div class="wcard rv"><h4>A dedicated pair app</h4>
+  <div class="card rv"><h4>A dedicated pair app</h4>
     <p>Apps like DailyDuo (iOS) and Duohabit (Android) are built for exactly two people. That focus is their strength. The catch is that they're a second app: your other habits stay wherever you already track them, so you end up maintaining two systems and usually abandoning one.</p></div>
-  <div class="wcard rv"><h4>A habit tracker with pairing built in</h4>
+  <div class="card rv"><h4>A habit tracker with pairing built in</h4>
     <p>One app for everything you track, with the option to share specific habits with one person. Nothing to migrate, nothing to maintain twice — which in practice is the difference between still doing this in March and not.</p></div>
 </div>
 
@@ -550,7 +557,7 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 
 <p class="rv">The app matters less than the pairing does. Any of these will work if you pick a real partner, agree what a missed day means before you miss one, and keep it to two or three habits. Pick the one that removes the most friction from your setup, and start this week rather than optimising the choice for another month.</p>
 
-<h2 id="steps" class="rv">Small Steps to a Habit Duo That Actually Lasts</h2>
+<h2 id="pd-steps" class="rv">Small steps to a habit duo that actually lasts</h2>
 
 <p class="rv">Most habit duos don't fail because the idea is weak. They fail in the first two weeks, over things that took five minutes to decide and nobody decided. Here's the setup that survives.</p>
 
@@ -600,7 +607,7 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
   </li>
 </ol>
 
-<h2 id="avoid" class="rv">What to avoid</h2>
+<h2 id="pd-avoid" class="rv">What to avoid</h2>
 
 <ul class="avoid">
   <li class="rv"><b>Don't nag.</b> The fastest way to kill a duo, especially with a live-in partner. Their missed day is theirs. Being visible is the mechanism; commentary isn't.</li>
@@ -627,60 +634,34 @@ details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
 
 <div class="quote rv">Do that and the duo outlives the novelty. Skip the missed-day conversation and it probably won't see February.</div>
 
-</main>
-
-</div>
+</article>
 
 <script>
 (function(){
+  var root=document.querySelector('.pd-post'); if(!root)return;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* duo widget rows */
   function fill(id,pattern,offset){
     var el=document.getElementById(id); if(!el)return;
     pattern.forEach(function(on,i){
       var d=document.createElement('span');
       d.className='dot'+(on?' on':'');
-      d.style.animationDelay=(reduce?0:0.55+offset+i*0.07)+'s';
+      d.style.animationDelay=(reduce?0:0.35+offset+i*0.07)+'s';
       if(reduce){d.style.opacity=1;d.style.transform='none';}
       el.appendChild(d);
     });
   }
-  fill('rowA',[1,1,0,1,1,1,1],0);
-  fill('rowB',[1,1,1,1,0,1,1],0.12);
+  fill('pdRowA',[1,1,0,1,1,1,1],0);
+  fill('pdRowB',[1,1,1,1,0,1,1],0.12);
 
-  /* reveal */
-  var els=document.querySelectorAll('.rv,.checks,h2');
+  var els=root.querySelectorAll('.rv,.checks');
   if('IntersectionObserver' in window && !reduce){
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+    },{rootMargin:'0px 0px -6% 0px',threshold:.1});
     els.forEach(function(el){io.observe(el)});
-  } else { els.forEach(function(el){el.classList.add('in')}); }
-
-  /* progress */
-  var bar=document.getElementById('prog');
-  window.addEventListener('scroll',function(){
-    var h=document.documentElement.scrollHeight-window.innerHeight;
-    bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';
-  },{passive:true});
-
-  /* active toc */
-  var links=[].slice.call(document.querySelectorAll('.toc a'));
-  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
-  if('IntersectionObserver' in window){
-    var io2=new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if(e.isIntersecting){
-          links.forEach(function(l){l.classList.remove('act')});
-          var m=links.filter(function(l){return l.getAttribute('href')==='#'+e.target.id})[0];
-          if(m)m.classList.add('act');
-        }
-      });
-    },{rootMargin:'-15% 0px -75% 0px'});
-    secs.forEach(function(s){io2.observe(s)});
+  } else {
+    els.forEach(function(el){el.classList.add('in')});
   }
 })();
 </script>
-</body>
-</html>
