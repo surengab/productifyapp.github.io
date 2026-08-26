@@ -1,0 +1,682 @@
+---
+title: Habit duo
+description: "A habit duo is a pair of people who build, track and maintain
+  their daily habits together with shared accountability. Two people, one
+  commitment to showing up and each one can see whether the other did. That's
+  it. No group chat, no leaderboard, no team of twelve posting workout selfies.
+  Just one person who knows whether you did the thing. It sounds too small to
+  matter. It isn't. Tracking a habit alone and tracking it with a partner are
+  two different promises: one you made to yourself, one someone else can see. At
+  6am on a cold Tuesday, your brain treats those very differently"
+date: 2026-08-26
+last_modified: 2026-08-26
+sitemap: false
+toc: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is a Habit Duo? How to Build Better Habits With a Partner</title>
+<meta name="description" content="A habit duo is two people tracking habits together with shared accountability. How it works, duo vs solo, why most apps fail couples, and how to set one up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lav-50:#f8f5fe; --lav-100:#f0eafd; --lav-200:#ded2fa; --lav-300:#c4b0f4;
+  --lav-400:#a68ce9; --lav-500:#8a6ade; --lav-600:#7050c9; --lav-700:#573ba4; --lav-900:#2b1a5e;
+  --teal-400:#6fc5c0; --teal-600:#3d938e;
+  --ink:#181321; --ink-2:#584f6e; --ink-3:#8d85a3;
+  --line:#ece6f7; --bg:#fff;
+  --rose:#c4577f;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --sh-sm:0 1px 2px rgba(43,26,94,.05),0 4px 14px rgba(43,26,94,.045);
+  --sh-md:0 10px 34px rgba(43,26,94,.10),0 2px 8px rgba(43,26,94,.05);
+  --ease:cubic-bezier(.22,.85,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
+  font-size:17.5px;line-height:1.72;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;width:100%;max-width:100%}
+p,li,h1,h2,h3,h4,td,th,summary{overflow-wrap:break-word;word-break:break-word}
+img,svg,table{max-width:100%}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);
+  transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1!important;transform:none!important;transition:none!important}
+  *{animation:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* layout */
+.shell{width:100%;max-width:1180px;margin:0 auto;padding:0 40px;
+  display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px;justify-content:center}
+.col{width:100%;min-width:0;max-width:760px;padding-bottom:110px}
+aside{padding-top:60px;min-width:0}
+.sticky{position:sticky;top:40px}
+
+/* type */
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.018em;line-height:1.16}
+h2{font-size:34px;margin:82px 0 14px;position:relative}
+h2::before{content:"";position:absolute;left:-28px;top:16px;width:14px;height:2px;
+  background:var(--lav-300);border-radius:2px;opacity:0;transform:scaleX(0);transform-origin:left;
+  transition:opacity .6s .2s var(--ease),transform .6s .2s var(--ease)}
+h2.in::before{opacity:1;transform:none}
+h3{font-size:22px;margin:46px 0 10px;line-height:1.3}
+h4{font-size:19px;margin:32px 0 8px}
+p{margin:0 0 19px}
+.lede{font-size:21px;line-height:1.6;color:var(--ink-2);margin-bottom:28px}
+.kicker{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--lav-600);margin:0 0 24px}
+a{color:var(--lav-700)}
+strong{font-weight:650}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#fbf9ff,#fff)}
+.blob{position:absolute;border-radius:50%;filter:blur(78px);opacity:.55;pointer-events:none}
+.b1{width:520px;height:520px;background:#d9c7fb;top:-210px;right:-90px;animation:float1 22s ease-in-out infinite}
+.b2{width:400px;height:400px;background:#c3ecea;top:50px;right:200px;animation:float2 28s ease-in-out infinite}
+.b3{width:340px;height:340px;background:#f6d5ec;top:-90px;right:420px;animation:float1 25s ease-in-out infinite reverse}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-38px,34px) scale(1.09)}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-28px) scale(.93)}}
+.hero-in{position:relative;max-width:1320px;margin:0 auto;padding:96px 40px 76px;
+  display:grid;grid-template-columns:1fr 320px;gap:72px;align-items:center}
+.hero h1{font-size:clamp(37px,4.7vw,62px);margin:0 0 22px;max-width:16ch}
+.hero h1 .hl{position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:12px;
+  background:linear-gradient(90deg,var(--lav-200),#c3ecea);z-index:-1;border-radius:3px;
+  transform:scaleX(0);transform-origin:left;animation:swipe 1s .55s var(--ease) forwards}
+@keyframes swipe{to{transform:scaleX(1)}}
+.hero .sub{font-size:21px;color:var(--ink-2);max-width:56ch;margin:0 0 32px;line-height:1.6}
+.tagrow{display:flex;flex-wrap:wrap;gap:9px}
+.tag{font-size:12.5px;font-weight:600;color:var(--lav-700);background:rgba(255,255,255,.75);
+  border:1px solid var(--lav-200);padding:7px 14px;border-radius:99px;backdrop-filter:blur(6px);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.tag:hover{transform:translateY(-2px);box-shadow:var(--sh-sm)}
+.fade-up{opacity:0;transform:translateY(22px);animation:fadeUp .85s var(--ease) forwards}
+.fade-up.a1{animation-delay:.05s}.fade-up.a2{animation-delay:.18s}
+.fade-up.a3{animation-delay:.31s}.fade-up.a4{animation-delay:.44s}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* duo widget */
+.duo{background:rgba(255,255,255,.85);border:1px solid var(--lav-200);border-radius:18px;
+  padding:22px;box-shadow:var(--sh-md);backdrop-filter:blur(10px)}
+.duo .dt{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:16px}
+.drow{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.who{width:26px;height:26px;border-radius:50%;flex:0 0 auto;font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;color:#fff}
+.who.a{background:var(--lav-600)}
+.who.b{background:var(--teal-600)}
+.dots{display:flex;gap:6px;flex:1}
+.dot{flex:1;aspect-ratio:1;border-radius:50%;background:var(--lav-100);
+  transform:scale(.3);opacity:0;animation:pop .5s var(--ease) forwards}
+.drow.a .dot.on{background:var(--lav-500)}
+.drow.b .dot.on{background:var(--teal-400)}
+@keyframes pop{to{transform:scale(1);opacity:1}}
+.duo .link{display:flex;align-items:center;gap:9px;margin:2px 0 14px 37px;
+  font-size:12px;color:var(--ink-3)}
+.duo .link::before{content:"";width:22px;height:1px;background:var(--lav-200)}
+.duo .df{border-top:1px solid var(--line);padding-top:13px;margin-top:4px;
+  display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3)}
+.duo .df b{color:var(--lav-700);font-size:13px}
+
+/* toc */
+.toc-t{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 15px}
+.toc a{display:block;font-size:14px;color:var(--ink-2);text-decoration:none;
+  padding:8px 0 8px 16px;border-left:2px solid var(--line);line-height:1.4;
+  transition:color .25s,border-color .25s,padding-left .25s var(--ease)}
+.toc a:hover,.toc a.act{color:var(--lav-700);border-left-color:var(--lav-400);padding-left:20px}
+
+/* pull + note */
+.key{border-left:3px solid var(--lav-400);padding:6px 0 6px 24px;margin:32px 0;
+  font-family:var(--serif);font-size:23px;line-height:1.42}
+.note{position:relative;background:linear-gradient(135deg,var(--lav-50),#fff);
+  border:1px solid var(--lav-200);border-radius:14px;padding:20px 24px;margin:30px 0;
+  font-size:16px;line-height:1.65;color:var(--ink-2);box-shadow:var(--sh-sm);overflow:hidden}
+.note::after{content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;
+  border-radius:50%;background:radial-gradient(var(--lav-100),transparent 70%)}
+.note b{color:var(--ink)}
+.quote{font-family:var(--serif);font-size:21px;line-height:1.48;font-style:italic;
+  border-left:3px solid var(--lav-200);padding-left:24px;margin:30px 0}
+.disc{font-size:14px;color:var(--ink-3);line-height:1.65;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);padding:18px 0;margin:28px 0}
+
+/* benefit columns */
+.bene{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:34px 0;
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm)}
+.bene > div{padding:26px 26px 22px}
+.bene > div:first-child{border-right:1px solid var(--line);
+  background:linear-gradient(165deg,var(--lav-50),#fff 65%)}
+.bene > div:last-child{background:#fcfcfd}
+.bene h4{font-family:var(--sans);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  margin:0 0 16px;font-weight:700;color:var(--lav-600)}
+.bene > div:last-child h4{color:var(--ink-3)}
+.bene ol{list-style:none;counter-reset:b;margin:0;padding:0}
+.bene li{counter-increment:b;position:relative;padding:0 0 16px 30px;font-size:15px;
+  line-height:1.55;color:var(--ink-2)}
+.bene li:last-child{padding-bottom:0}
+.bene li::before{content:counter(b);position:absolute;left:0;top:1px;width:20px;height:20px;
+  border-radius:50%;background:var(--lav-100);color:var(--lav-700);font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+.bene > div:last-child li::before{background:#eceaf2;color:var(--ink-2)}
+.bene li b{color:var(--ink);display:block;margin-bottom:2px;font-size:15.5px}
+
+/* table */
+.tw{overflow-x:auto;margin:28px 0;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-sm)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#fbfafe;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:700}
+tbody tr{transition:background .25s}
+tbody tr:hover{background:var(--lav-50)}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;color:var(--ink)}
+
+/* checks */
+.checks{list-style:none;padding:0;margin:24px 0}
+.checks li{position:relative;padding-left:30px;margin-bottom:12px;font-size:16.5px;color:var(--ink-2)}
+.checks li::before{content:"";position:absolute;left:3px;top:9px;width:10px;height:10px;
+  border:2px solid var(--lav-400);border-right:0;border-top:0;transform:rotate(-45deg) scale(.4);
+  opacity:0;transition:transform .4s var(--ease),opacity .4s}
+.checks.in li::before{transform:rotate(-45deg) scale(1);opacity:1}
+.checks.in li:nth-child(2)::before{transition-delay:.08s}
+.checks.in li:nth-child(3)::before{transition-delay:.16s}
+.checks.in li:nth-child(4)::before{transition-delay:.24s}
+.checks.in li:nth-child(5)::before{transition-delay:.32s}
+.checks.in li:nth-child(6)::before{transition-delay:.4s}
+
+/* reason cards */
+.why{display:grid;gap:14px;margin:30px 0}
+.wcard{border:1px solid var(--line);border-radius:14px;padding:20px 24px;background:#fff;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+.wcard:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:var(--lav-200)}
+.wcard h4{font-size:18px;margin:0 0 7px}
+.wcard p{font-size:16px;color:var(--ink-2);margin:0}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:34px 0;counter-reset:s}
+.steps > li{counter-increment:s;position:relative;padding:0 0 30px 54px;
+  border-left:1px solid var(--line);margin-left:15px}
+.steps > li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps > li::before{content:counter(s);position:absolute;left:-15px;top:-3px;width:30px;height:30px;
+  border-radius:50%;background:#fff;border:1px solid var(--lav-200);color:var(--lav-700);
+  font-family:var(--sans);font-size:13px;font-weight:700;display:flex;align-items:center;
+  justify-content:center;transition:transform .35s var(--ease),background .35s,color .35s}
+.steps > li:hover::before{transform:scale(1.15);background:var(--lav-600);color:#fff;border-color:var(--lav-600)}
+.steps h4{margin:0 0 7px;font-size:20px}
+.steps p{font-size:16.5px;color:var(--ink-2);margin:0 0 10px}
+.steps p:last-child{margin-bottom:0}
+.watch{background:var(--lav-50);border-left:2px solid var(--lav-300);border-radius:0 10px 10px 0;
+  padding:12px 18px;font-size:15px;color:var(--ink-2);line-height:1.6;margin-top:12px!important}
+.watch b{color:var(--lav-700)}
+.said{font-family:var(--serif);font-style:italic;font-size:17.5px;color:var(--ink);
+  border-left:2px solid var(--lav-200);padding-left:18px;margin:14px 0!important}
+
+/* avoid list */
+.avoid{list-style:none;padding:0;margin:28px 0;display:grid;gap:12px}
+.avoid li{position:relative;padding:16px 20px 16px 50px;border:1px solid #f4dde5;
+  border-radius:12px;background:#fdf7f9;font-size:16px;line-height:1.6;color:var(--ink-2);
+  transition:transform .35s var(--ease)}
+.avoid li:hover{transform:translateX(3px)}
+.avoid li::before,.avoid li::after{content:"";position:absolute;left:20px;top:26px;
+  width:13px;height:2px;background:var(--rose);border-radius:2px}
+.avoid li::before{transform:rotate(45deg)}
+.avoid li::after{transform:rotate(-45deg)}
+.avoid b{color:var(--ink)}
+
+/* recap */
+.recap{border:1px solid var(--lav-200);border-radius:16px;padding:26px 30px;margin:36px 0;
+  background:linear-gradient(160deg,var(--lav-50),#fff 70%);box-shadow:var(--sh-sm)}
+.recap h4{margin:0 0 14px;font-size:19px}
+.recap ol{margin:0;padding-left:20px;color:var(--ink-2);font-size:16px;line-height:1.7}
+.recap li{margin-bottom:5px}
+
+/* faq */
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font-weight:600;
+  font-size:17px;position:relative;transition:color .25s}
+summary:hover{color:var(--lav-700)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:26px;width:10px;height:10px;
+  border-right:2px solid var(--lav-400);border-bottom:2px solid var(--lav-400);
+  transform:rotate(45deg);transition:transform .35s var(--ease)}
+details[open] summary::after{transform:rotate(-135deg);top:30px}
+details p{padding:0 0 20px;margin:0;color:var(--ink-2);font-size:16px;
+  animation:slideDown .4s var(--ease)}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+#prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:99;
+  background:linear-gradient(90deg,var(--teal-400),var(--lav-600))}
+
+@media(max-width:1040px){
+  .shell{grid-template-columns:1fr;gap:0;max-width:780px;padding:0 32px}
+  aside{display:none}
+  .hero-in{grid-template-columns:1fr;gap:44px}
+  h2::before{display:none}
+}
+@media(max-width:600px){
+  body{font-size:16.5px}
+  .hero-in{padding:52px 20px 40px;gap:34px}
+  .shell{padding:0 20px;max-width:100%}
+  h2{font-size:28px;margin-top:62px}
+  .bene{grid-template-columns:1fr}
+  .bene > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .wcard,.recap{padding:20px 20px}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<header class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="hero-in">
+    <div>
+      <p class="kicker fade-up a1">Accountability · Habit guide</p>
+      <h1 class="fade-up a2">What is a habit duo, and <span class="hl">why does it work?</span></h1>
+      <p class="sub fade-up a3">Two people. One commitment to showing up. Each one able to see whether the other did. Here's how habit duos work, when they beat tracking alone, and how to set one up that survives past week two.</p>
+      <div class="tagrow fade-up a4">
+        <span class="tag">10 min read</span>
+        <span class="tag">Duo vs solo</span>
+        <span class="tag">Setup guide</span>
+      </div>
+    </div>
+    <div class="duo fade-up a4">
+      <div class="dt">This week</div>
+      <div class="drow a"><span class="who a">A</span><span class="dots" id="rowA"></span></div>
+      <div class="link">paired · both can see</div>
+      <div class="drow b"><span class="who b">B</span><span class="dots" id="rowB"></span></div>
+      <div class="df"><span>Two streaks, no scoreboard</span><b>Duo</b></div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+
+<aside>
+  <div class="sticky">
+    <p class="toc-t">Contents</p>
+    <nav class="toc">
+      <a href="#what">What is a habit duo</a>
+      <a href="#how">How it works</a>
+      <a href="#who">Who to pair with</a>
+      <a href="#vs">Duo vs solo</a>
+      <a href="#partner">Building habits with your partner</a>
+      <a href="#apps">Which app to use</a>
+      <a href="#steps">Small steps that last</a>
+      <a href="#avoid">What to avoid</a>
+    </nav>
+  </div>
+</aside>
+
+<main class="col">
+
+<h2 id="what" class="rv" style="margin-top:56px">What Is a Habit Duo?</h2>
+
+<p class="lede rv">A habit duo is a pair of people who build, track and maintain their daily habits together with shared accountability. Two people, one commitment to showing up — and each one can see whether the other did.</p>
+
+<p class="rv">That's it. No group chat, no leaderboard, no team of twelve posting workout selfies. Just one person who knows whether you did the thing.</p>
+
+<p class="rv">It sounds too small to matter. It isn't. Tracking a habit alone and tracking it with a partner are two different promises: one you made to yourself, one someone else can see. At 6am on a cold Tuesday, your brain treats those very differently.</p>
+
+<h2 id="how" class="rv">How does a habit duo work?</h2>
+
+<p class="rv">Four things make a habit duo function.</p>
+
+<div class="why">
+  <div class="wcard rv"><h4>1. Mutual accountability</h4>
+    <p>You pair with a partner, friend, sibling or roommate and agree to stay consistent together. The commitment stops being private — which is the entire point.</p></div>
+  <div class="wcard rv"><h4>2. Shared motivation</h4>
+    <p>When one of you checks in, the other sees it. That small signal is often enough to get someone off the sofa. On the days your motivation is gone, theirs carries you. It's rarely both of you on the same day, which is exactly why it works.</p></div>
+  <div class="wcard rv"><h4>3. A visible shared record</h4>
+    <p>Two streaks side by side instead of one private one. You're not competing over them — you're just both aware they exist.</p></div>
+  <div class="wcard rv"><h4>4. A tool you both use</h4>
+    <p>Some duos keep it analogue: a shared wall calendar with two rows, or matching paper trackers. Others use apps built for pairs — DailyDuo on iOS, Duohabit on Android — where both people's check-ins sit in one view. Some habit trackers now build pairing in directly, so you don't have to move your habits to a new app.</p></div>
+</div>
+
+<h3 class="rv">Do habit duos actually work?</h3>
+
+<p class="rv">The apps built around paired tracking all make the same claim: building a habit with someone else beats going solo for long-term consistency.</p>
+
+<p class="rv">The wider behaviour-change research backs the mechanism. <strong>Public commitment and social accountability</strong> are among the best-evidenced techniques for sticking with a behaviour — because they change what a missed day costs you. Skipping alone is free. Skipping when someone will notice is not.</p>
+
+<div class="note rv"><b>What the evidence doesn't say</b> is that a partner replaces wanting the habit. A duo adds a steady pull on your worst days. That's genuinely useful. It's not magic — if you don't want the habit, a partner just gives you a witness.</div>
+
+<h2 id="who" class="rv">Who can you build a habit duo with?</h2>
+
+<p class="rv">Almost anyone. The best choice is usually less obvious than you'd assume.</p>
+
+<div class="tw rv">
+<table>
+<thead><tr><th>Partner</th><th>Works best for</th><th>Watch out for</th></tr></thead>
+<tbody>
+<tr><td>Your partner</td><td>Morning routines, cooking, phone-free evenings, walks</td><td>Accountability turning into nagging</td></tr>
+<tr><td>A close friend</td><td>Almost anything — often the strongest pairing</td><td>Nothing much; distance is a feature</td></tr>
+<tr><td>A sibling</td><td>Fitness, reading, anything mildly competitive</td><td>Old rivalries resurfacing</td></tr>
+<tr><td>A roommate</td><td>Gym mornings, cooking, cleaning routines</td><td>Awkwardness if one of you quits</td></tr>
+<tr><td>A colleague</td><td>Focus blocks, leaving on time, lunchtime walks</td><td>Keep it to habits you'd share at work</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="rv">And the pairing most people overlook: <strong>someone chasing a completely different habit.</strong> You don't have to do the same thing. One of you runs, the other reads. What you share is the daily check-in, not the activity — and this often works better than matched habits, because there's nothing to compare.</p>
+
+<h3 class="rv">What a habit duo is not</h3>
+
+<p class="rv"><strong>Not a competition.</strong> There's no score and nobody wins.</p>
+
+<p class="rv"><strong>Not a social feed.</strong> A duo is private by design — two people, no audience, nothing to perform.</p>
+
+<p class="rv"><strong>Not a group challenge, shrunk.</strong> Groups diffuse responsibility: if eight people are in a challenge and you skip, someone else's streak covers the silence. In a duo there's one other person, and they notice. That's the whole mechanism.</p>
+
+<h2 id="vs" class="rv">Habit Duo vs. Solo Habit Tracking: Which Works Better?</h2>
+
+<p class="rv">Neither one wins outright. They're good at different things, and picking wrong is why plenty of people conclude that habit tracking "doesn't work for them."</p>
+
+<p class="rv">Solo tracking is quiet, flexible and entirely yours. A habit duo is louder, slower to abandon, and harder to quietly let slide. The right choice depends less on the habit than on <em>why you keep dropping it.</em></p>
+
+<div class="bene rv">
+  <div>
+    <h4>5 benefits of a habit duo</h4>
+    <ol>
+      <li><b>A missed day actually costs something.</b> Skipping alone is free — nobody knows, so nothing happens. In a duo, one other person sees the gap. That's a small cost, but it lands on exactly the day you were going to skip, which is the only day it matters.</li>
+      <li><b>Motivation gets borrowed.</b> You and your partner won't have a bad day at the same time. When your energy is gone, theirs usually isn't, and their check-in pulls you along. Over a month that evens out the peaks and dips that kill a solo streak.</li>
+      <li><b>Starting is easier.</b> Most habits die in week one, before there's any momentum to protect. Agreeing to start with someone gets you past the hardest stretch, because you're not just letting yourself down if you never begin.</li>
+      <li><b>It turns into a relationship, not a chore.</b> A daily check-in with a friend, sibling or partner is contact you'd probably want anyway. The habit rides along on something you already enjoy — which is why duos outlast trackers that are pure admin.</li>
+      <li><b>Recovery after a bad week is faster.</b> Solo, a broken streak often ends the whole project. In a duo, someone is still going, still checking in, and getting back on is a message rather than a decision made alone at midnight.</li>
+    </ol>
+  </div>
+  <div>
+    <h4>5 benefits of solo tracking</h4>
+    <ol>
+      <li><b>Total flexibility.</b> Change the habit, the schedule or the target whenever you want. No negotiation, no explaining, no coordinating with someone else's week.</li>
+      <li><b>Complete privacy.</b> Some habits aren't for sharing — anything tied to health, money, sleep, drinking or mental wellbeing. Solo tracking keeps them yours, with no one to explain a bad month to.</li>
+      <li><b>No dependency.</b> Your habit doesn't wobble when someone else's life gets busy. Partners travel, get sick, go quiet for two weeks — and a solo streak doesn't notice.</li>
+      <li><b>Zero social pressure.</b> Nobody's watching, so there's no performing, no guilt, no urge to log something you didn't quite do. The record stays honest because it only has to satisfy you.</li>
+      <li><b>It's instant.</b> No conversation, no finding the right person, no agreeing on rules. You decide at 11pm and start tomorrow morning.</li>
+    </ol>
+  </div>
+</div>
+
+<h3 class="rv">Habit duo vs. solo: side by side</h3>
+
+<div class="tw rv">
+<table>
+<thead><tr><th></th><th>Habit duo</th><th>Solo tracking</th></tr></thead>
+<tbody>
+<tr><td>Best for</td><td>Habits you keep abandoning</td><td>Habits you're already fairly consistent with</td></tr>
+<tr><td>What drives you</td><td>Someone else noticing</td><td>Your own record</td></tr>
+<tr><td>A missed day</td><td>Visible — harder to ignore</td><td>Invisible — easy to shrug off</td></tr>
+<tr><td>Privacy</td><td>Shared with one person</td><td>Completely private</td></tr>
+<tr><td>Flexibility</td><td>Needs a little coordination</td><td>Total</td></tr>
+<tr><td>Main weakness</td><td>Wobbles if your partner drops off</td><td>Nothing stops you quietly quitting</td></tr>
+<tr><td>Best habits for it</td><td>Gym, walking, reading, phone-free evenings, cooking</td><td>Sleep, money, health, journalling, anything personal</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="rv">So which should you choose?</h3>
+
+<p class="rv"><strong>Choose a habit duo</strong> if you've started the same habit three times and never made it past week two, or if the thing you're missing is a reason to show up rather than a plan for showing up.</p>
+
+<p class="rv"><strong>Choose solo tracking</strong> if you're generally consistent and just want a record, or if the habit is private, or if the effort of coordinating with someone else is one more excuse waiting to happen.</p>
+
+<div class="key rv">And you don't have to choose one. Accountability is a tool, not a lifestyle — use it on the habits that actually need it.</div>
+
+<p class="rv">The most durable setup for most people is a small mix: one or two habits in a duo — the ones that keep collapsing — and the rest tracked quietly on your own.</p>
+
+<h2 id="partner" class="rv">How to Build Better Habits With Your Partner</h2>
+
+<p class="rv">Of all the pairings, a romantic partner is the most common — and the most misunderstood. You share a home, a schedule and most of your evenings, which makes you either the best possible habit partner or the worst, depending almost entirely on how you set it up.</p>
+
+<h3 class="rv">Why building habits with your partner matters</h3>
+
+<div class="why">
+  <div class="wcard rv"><h4>Your routines are already shared</h4>
+    <p>You eat at the same times. You go to bed within an hour of each other. One of you suggests takeaway and the other agrees. Living together means your habits are already entangled — the only question is whether that entanglement is deliberate. Most couples don't drift into worse routines separately. They drift together.</p></div>
+  <div class="wcard rv"><h4>A habit your partner doesn't share is a habit you're working against</h4>
+    <p>Try going phone-free after 10pm while the person beside you is scrolling. Try cooking on weeknights while your partner orders in. It's not impossible, it's just an extra fight you have to win every single evening — and you won't win all of them. When you're both in, the environment stops resisting you.</p></div>
+  <div class="wcard rv"><h4>The daily cue is already built</h4>
+    <p>The hardest part of a habit is attaching it to a reliable moment. With a partner you have dozens: after we make coffee, when we get home, before we start the show, once the kids are down. You're not inventing a trigger, you're using one you both already live by.</p></div>
+  <div class="wcard rv"><h4>It gives you something to do together that isn't consumption</h4>
+    <p>A lot of shared time defaults to a screen. A walk, a stretch, a cooked meal, a quiet reading half-hour — these turn into time together rather than time beside each other. Couples who stick with paired habits usually mention this before they mention the habit.</p></div>
+  <div class="wcard rv"><h4>It survives one of you having a bad month</h4>
+    <p>Everyone has a stretch where the routine collapses. Alone that's usually the end of it. When two people are holding the same routine, one of you is almost always still standing — and that's how the habit gets rebuilt instead of abandoned.</p></div>
+</div>
+
+<h3 class="rv">Why standard habit apps don't work for couples</h3>
+
+<p class="rv">Here's the frustrating part. Most couples who try this reach for a habit tracker and quit within a few weeks — not because the idea is wrong, but because almost no habit app is actually built for two people.</p>
+
+<p class="rv"><strong>They're built for one person, or for a crowd — nothing in between.</strong> The market splits cleanly: solo trackers with no sharing at all, and social apps built around groups, feeds and leaderboards. A couple is neither. You don't want a private silo and you definitely don't want an audience. There's very little designed for exactly two.</p>
+
+<p class="rv"><strong>Group features turn a relationship into a scoreboard.</strong> Drop a couple into a leaderboard app and you've added competition to a relationship that didn't need any. One partner pulls ahead, the other feels judged, and within a fortnight one of you is logging things you didn't really do just to avoid the conversation. The tracking stops being honest, which means it stops being useful.</p>
+
+<p class="rv"><strong>Sharing is all-or-nothing.</strong> Most apps that do offer sharing share everything. But couples don't want the same visibility on every habit. A shared evening walk, sure. Your therapy attendance, your weight, your spending, your drinking — no. Without habit-by-habit control, people either overshare or give up on sharing entirely.</p>
+
+<p class="rv"><strong>Everything has to be identical.</strong> Shared-goal features usually assume you're both doing the same thing. In reality one of you wants to run and the other wants to read. Forcing both into one habit means someone is doing a habit they didn't choose, and that one always dies first.</p>
+
+<p class="rv"><strong>Notifications aimed at your partner become nagging from you.</strong> This is the quiet killer. An app that pings your partner about your incomplete habit reads as pressure coming from you, even though you never sent it. Do that for two weeks and the app stops being a tracker and starts being a source of friction at home.</p>
+
+<p class="rv"><strong>Two subscriptions for one shared routine.</strong> Most trackers price per person and paywall the sharing feature. A couple ends up paying twice for a feature that only exists because there are two of you.</p>
+
+<h3 class="rv">What a couple actually needs</h3>
+
+<p class="rv">Strip out everything that doesn't apply and the requirements are short:</p>
+
+<ul class="checks rv">
+  <li><strong>Exactly two people</strong> — no group, no feed, no leaderboard</li>
+  <li><strong>Per-habit sharing</strong> — you choose which habits your partner sees, and which stay private</li>
+  <li><strong>Different habits allowed</strong> — you share the check-in, not the activity</li>
+  <li><strong>No competitive scoring</strong> — visibility, not ranking</li>
+  <li><strong>Gentle missed-day handling</strong> — a gap your partner can see, not an alert that reads as a complaint</li>
+  <li><strong>Free to start</strong> — because most couples won't pay twice to test an idea</li>
+</ul>
+
+<p class="rv">That's a much smaller feature set than most apps ship, which is exactly why the ones built for pairs tend to work better than the ones built for everyone.</p>
+
+<h2 id="apps" class="rv">What App Should You Use to Build a Habit Duo?</h2>
+
+<p class="rv">There are three realistic options, and it's worth knowing what each one costs you before you pick.</p>
+
+<div class="why">
+  <div class="wcard rv"><h4>Paper</h4>
+    <p>A shared wall calendar with two rows and a marker. Free, deliberate, and genuinely effective if you live together. It falls apart the moment you don't — no reminders, no way to check in from a different city, no record beyond the current month.</p></div>
+  <div class="wcard rv"><h4>A dedicated pair app</h4>
+    <p>Apps like DailyDuo (iOS) and Duohabit (Android) are built for exactly two people. That focus is their strength. The catch is that they're a second app: your other habits stay wherever you already track them, so you end up maintaining two systems and usually abandoning one.</p></div>
+  <div class="wcard rv"><h4>A habit tracker with pairing built in</h4>
+    <p>One app for everything you track, with the option to share specific habits with one person. Nothing to migrate, nothing to maintain twice — which in practice is the difference between still doing this in March and not.</p></div>
+</div>
+
+<p class="rv">That last option is what we built, so treat what follows accordingly.</p>
+
+<h3 class="rv">Why we suggest Productify for habit duos</h3>
+
+<div class="disc rv"><strong>Disclosure:</strong> Productify is our own app. We think it's the right pick for this, and you should discount that opinion by however much you think is fair. The alternatives above are real, and we've named them for a reason.</div>
+
+<h4 class="rv">It's a pair, not a group</h4>
+<p class="rv">Habit Duo pairs you with exactly one person on one habit. No leaderboard, no group feed, no ranking, no followers. Your partner can see whether you checked in — that's the entire social layer, and it's deliberately the only one.</p>
+<p class="rv">That constraint is the feature. Everything that goes wrong when couples use social habit apps — the competition, the scoreboard, the performing — comes from mechanics that simply don't exist here.</p>
+
+<h4 class="rv">You choose what's shared, habit by habit</h4>
+<p class="rv">Your evening walk can be shared. Your sleep, your budget, your therapy attendance, your drinking — private, in the same app, at the same time. Pairing is set per habit, not per account, so you never have to choose between sharing everything and sharing nothing.</p>
+
+<h4 class="rv">You don't have to be doing the same thing</h4>
+<p class="rv">You can pair on the same habit or on completely different ones. One of you runs while the other reads; what you share is the daily check-in, not the activity. That removes comparison entirely — and matched habits are where most paired setups quietly fall apart.</p>
+
+<h4 class="rv">Missed days don't punish either of you</h4>
+<p class="rv">Productify's streaks keep your full history instead of resetting to zero after a miss. In a duo this matters twice over: you're not just recovering from your own bad week, you're recovering from it in front of someone. An app that treats one skipped day as a total reset turns a small gap into a reason for both of you to stop opening it.</p>
+<p class="rv">There's no nagging notification sent to your partner either. They can see the gap if they look. Nothing pings them to point it out — because a notification about your missed habit reads as a complaint from you, even when it isn't.</p>
+
+<h4 class="rv">The rest of your habits live in the same place</h4>
+<p class="rv">You don't run a separate app for the two habits you share. Everything is in one list: shared habits, private habits, counts, timers, negative habits. One check-in, once a day, roughly eleven seconds for four habits.</p>
+<p class="rv">That's the practical reason built-in pairing beats a dedicated pair app for most people. Two apps means two daily check-ins, and the second one always gets dropped first.</p>
+
+<h4 class="rv">It's free to start, with no account</h4>
+<p class="rv">You can install it, add your habits and use unlimited habits, reminders and streaks without paying anything or creating an account. For a couple that matters — most people won't set up two accounts and two subscriptions to test whether an idea works.</p>
+<p class="rv"><strong>Habit Duo itself is part of Pro.</strong> We'd rather say that plainly than have you find it at the paywall: the free tier covers full habit tracking, and pairing is a paid feature.</p>
+
+<h4 class="rv">It's iOS only</h4>
+<p class="rv">The honest limitation. Productify runs on iPhone and Apple Watch — no Android, no web. <strong>If you and your partner are on different platforms, this isn't your app</strong>, and Duohabit or a shared calendar will serve you better. A duo only works if both people can actually check in.</p>
+
+<h3 class="rv">Which should you actually pick?</h3>
+
+<div class="tw rv">
+<table>
+<thead><tr><th>Your situation</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>Both on iPhone, want one app for everything</td><td>Productify (Habit Duo)</td></tr>
+<tr><td>One of you is on Android</td><td>Duohabit, or a shared paper tracker</td></tr>
+<tr><td>You want a dedicated pair-only app</td><td>DailyDuo (iOS) or Duohabit (Android)</td></tr>
+<tr><td>You live together and want zero apps</td><td>A wall calendar with two rows</td></tr>
+<tr><td>Testing whether the idea works at all</td><td>Start on paper for two weeks — it costs nothing</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="rv">The app matters less than the pairing does. Any of these will work if you pick a real partner, agree what a missed day means before you miss one, and keep it to two or three habits. Pick the one that removes the most friction from your setup, and start this week rather than optimising the choice for another month.</p>
+
+<h2 id="steps" class="rv">Small Steps to a Habit Duo That Actually Lasts</h2>
+
+<p class="rv">Most habit duos don't fail because the idea is weak. They fail in the first two weeks, over things that took five minutes to decide and nobody decided. Here's the setup that survives.</p>
+
+<ol class="steps">
+  <li class="rv">
+    <h4>Have the conversation before the app</h4>
+    <p>The most common mistake is inviting someone into a habit duo without asking them first. A notification is not consent, and the person who didn't choose this is the one who quits.</p>
+    <p class="said">"I keep starting this and dropping it. Would you do it with me for a month, so someone else knows whether I showed up?"</p>
+    <p class="watch"><b>Pay attention to:</b> whether they're genuinely interested or just being nice. A polite yes is the most common cause of a dead duo in week two.</p>
+  </li>
+  <li class="rv">
+    <h4>Start with one habit each</h4>
+    <p>One. Not three, not "our whole morning routine." You're not testing the habit yet — you're testing whether the two of you check in daily. That's a separate skill, and it takes a couple of weeks. Add more once the check-in is automatic.</p>
+    <p class="watch"><b>Pay attention to:</b> the urge to build the perfect shared routine on day one. Every duo that starts with six habits is down to zero within a month.</p>
+  </li>
+  <li class="rv">
+    <h4>Decide: same habit, or different ones?</h4>
+    <p>Both work. They just work differently.</p>
+    <p><strong>Same habit</strong> (you both walk every morning) — good if you're doing it together in the same place. The habit and the time together become one thing.</p>
+    <p><strong>Different habits</strong> (you run, they read) — better if your schedules don't line up, and better if either of you is competitive. There's nothing to compare, so nobody feels behind.</p>
+    <p class="watch"><b>Pay attention to:</b> if one of you is much fitter, further along or more consistent already — pick different habits. Matched habits with mismatched starting points turn into a scoreboard whether you want one or not.</p>
+  </li>
+  <li class="rv">
+    <h4>Make it embarrassingly small</h4>
+    <p>Not a 5km run — put your shoes on and go outside. Not thirty minutes of reading — one page. Not a full home-cooked dinner — cook once this week.</p>
+    <p>For the first two weeks you're building the act of checking in, not the habit itself. Scale up once neither of you has to think about it.</p>
+    <p class="watch"><b>Pay attention to:</b> ambition on day one. The version of the habit you design while motivated is never the version you do while tired — and the tired version is the one that counts.</p>
+  </li>
+  <li class="rv">
+    <h4>Agree what a missed day means — before anyone misses one</h4>
+    <p>This is the single most important five minutes of the whole setup, and almost nobody does it. Decide in advance:</p>
+    <ul class="checks">
+      <li>Are rest days planned, or does every day count?</li>
+      <li>What's the recovery rule? <em>Never miss twice in a row</em> is a good one.</li>
+      <li>Does the other person say anything, or just notice quietly?</li>
+    </ul>
+    <p class="watch"><b>Pay attention to:</b> deciding this while calm. If you wait until someone actually misses a day, the conversation happens while one of you is defensive and the other is annoyed. That's the conversation that ends duos.</p>
+  </li>
+  <li class="rv">
+    <h4>Agree what your partner sees</h4>
+    <p>Not every habit should be shared, even with someone you live with. Share the ones that benefit from a witness: exercise, walking, reading, cooking, phone-free evenings. Keep private the ones tied to health, money, sleep, drinking or anything you'd resent explaining on a bad month.</p>
+    <p class="watch"><b>Pay attention to:</b> sharing something you'll later want to hide. It's much easier to add a habit to the duo than to quietly remove one.</p>
+  </li>
+  <li class="rv">
+    <h4>Set an end date for the trial</h4>
+    <p>Commit to four weeks, then decide whether to keep going. An open-ended arrangement is hard to leave gracefully, so people leave by going silent instead. A defined trial gives you both an honest exit — and most duos that get through four weeks continue without needing to be asked.</p>
+  </li>
+</ol>
+
+<h2 id="avoid" class="rv">What to avoid</h2>
+
+<ul class="avoid">
+  <li class="rv"><b>Don't nag.</b> The fastest way to kill a duo, especially with a live-in partner. Their missed day is theirs. Being visible is the mechanism; commentary isn't.</li>
+  <li class="rv"><b>Don't compete.</b> No scores, no "I'm on 12 and you're on 4." The moment it becomes a contest, the person behind starts logging things they didn't do, and the record stops being true.</li>
+  <li class="rv"><b>Don't use guilt.</b> Not yours, not theirs. A duo that runs on shame gets abandoned quickly — usually by both people at once, because leaving is a relief.</li>
+  <li class="rv"><b>Don't pair with someone who isn't interested.</b> Enthusiasm can't be lent. If they said yes to be kind, find someone else rather than dragging them for a month.</li>
+  <li class="rv"><b>Don't quit together.</b> The real risk of pairing: one of you drops off, the other takes it as permission, and the whole thing dies in a weekend. Agree upfront that if one person stops, the other keeps going. A duo that survives one person's bad month is a duo that lasts a year.</li>
+  <li class="rv"><b>Don't share everything.</b> All-or-nothing visibility is how people end up either oversharing or abandoning the idea. Pick what's shared, deliberately.</li>
+  <li class="rv"><b>Don't rebuild the system every time it wobbles.</b> Missing a few days isn't a reason to switch apps, change habits and start fresh on Monday. It's a reason to check in tomorrow.</li>
+</ul>
+
+<div class="recap rv">
+  <h4>The 60-second version</h4>
+  <ol>
+    <li>Ask properly — get a real yes</li>
+    <li>One habit each, not six</li>
+    <li>Same habit or different, depending on schedules and competitiveness</li>
+    <li>Make it embarrassingly small for two weeks</li>
+    <li>Decide the missed-day rule before you need it</li>
+    <li>Choose habit by habit what's shared</li>
+    <li>Four-week trial, then decide</li>
+  </ol>
+</div>
+
+<div class="quote rv">Do that and the duo outlives the novelty. Skip the missed-day conversation and it probably won't see February.</div>
+
+</main>
+
+</div>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* duo widget rows */
+  function fill(id,pattern,offset){
+    var el=document.getElementById(id); if(!el)return;
+    pattern.forEach(function(on,i){
+      var d=document.createElement('span');
+      d.className='dot'+(on?' on':'');
+      d.style.animationDelay=(reduce?0:0.55+offset+i*0.07)+'s';
+      if(reduce){d.style.opacity=1;d.style.transform='none';}
+      el.appendChild(d);
+    });
+  }
+  fill('rowA',[1,1,0,1,1,1,1],0);
+  fill('rowB',[1,1,1,1,0,1,1],0.12);
+
+  /* reveal */
+  var els=document.querySelectorAll('.rv,.checks,h2');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
+
+  /* progress */
+  var bar=document.getElementById('prog');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';
+  },{passive:true});
+
+  /* active toc */
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
+  if('IntersectionObserver' in window){
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(l){l.classList.remove('act')});
+          var m=links.filter(function(l){return l.getAttribute('href')==='#'+e.target.id})[0];
+          if(m)m.classList.add('act');
+        }
+      });
+    },{rootMargin:'-15% 0px -75% 0px'});
+    secs.forEach(function(s){io2.observe(s)});
+  }
+})();
+</script>
+</body>
+</html>
