@@ -15,5 +15,20 @@
             <a href="{{ cta.link_href }}" class="btn btn-ghost">{{ cta.link_label }}</a>
             {%- endif %}
         </div>
+        {%- comment -%}
+        The badge and the ghost button are the conversion path; this line is the
+        internal-linking one. Every page carrying a CTA banner now passes a
+        contextual link to both /download/ and /pricing/, which previously had
+        five and two in-body inbound links site-wide. Suppress with
+        `cta.hide_meta: true`.
+        {%- endcomment -%}
+        {%- unless cta.hide_meta %}
+        <p class="cta-banner__meta">
+            {{ cta.meta_prefix | default: 'Free for up to 5 habits, no account required.' }}
+            <a href="/download/">{{ cta.meta_download_label | default: 'See what you get' }}</a>
+            <span aria-hidden="true">&middot;</span>
+            <a href="/pricing/">{{ cta.meta_pricing_label | default: 'Compare Free and Pro' }}</a>
+        </p>
+        {%- endunless %}
     </div>
 </section>
