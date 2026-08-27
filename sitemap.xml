@@ -22,7 +22,26 @@ Generated from the collections. A page leaves the sitemap by setting
 {% for p in sorted %}
   <url>
     <loc>{{ p.url | absolute_url }}</loc>
-    {%- assign lastmod = p.sitemap_lastmod | default: p.last_modified | default: p.git_lastmod | default: p.date %}
+    {%- comment -%}
+    `p.date` is deliberately NOT a blanket fallback. Jekyll gives a collection
+    document with no `date:` in its front matter the *build* time, so using it
+    stamped ten URLs with the date of the last deploy -- a modification date
+    that changes every rebuild and reflects nothing. An absent <lastmod> is a
+    weaker signal than a real one, but a fabricated one is worse than both: it
+    trains Google to discount the field. So `p.date` counts only when it is a
+    real publish date, i.e. not today's build.
+
+    This is a guard, not the fix. The fix is `_plugins/lastmod.rb` supplying
+    `git_lastmod` for every page, which requires Settings -> Pages -> Source to
+    be "GitHub Actions"; the legacy branch build runs Jekyll in safe mode and
+    skips _plugins entirely.
+    {%- endcomment -%}
+    {%- assign lastmod = p.sitemap_lastmod | default: p.last_modified | default: p.git_lastmod %}
+    {%- unless lastmod %}
+      {%- assign page_day = p.date | date: "%Y-%m-%d" %}
+      {%- assign build_day = site.time | date: "%Y-%m-%d" %}
+      {%- if p.date and page_day != build_day %}{% assign lastmod = p.date %}{% endif %}
+    {%- endunless %}
     {%- if lastmod %}
     <lastmod>{{ lastmod | date: "%Y-%m-%d" }}</lastmod>
     {%- endif %}

@@ -2,9 +2,9 @@
 title: What is a habit duo, and why does it work?
 heading: What is a habit duo, and why does it work?
 seo_title: What is a habit duo, and why does it work?
-description: Two people. One commitment to showing up. Each one able to see
-  whether the other did. Here's how habit duos work, when they beat tracking
-  alone, and how to set one up that survives past week two.
+description: "How habit duos work: two people, one commitment to showing up, each
+  able to see whether the other did. When pairing beats solo tracking, and how to
+  start one."
 og_description: Two people. One commitment to showing up. Each one able to see
   whether the other did. Here's how habit duos work, when they beat tracking
   alone, and how to set one up that survives past week two.
@@ -50,6 +50,27 @@ faq:
     a: Yes. A friend in another city works as well as one down the street, as long
       as you're both using something that syncs. Paper is the one option that
       doesn't survive distance.
+extra_head: |-
+  <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+og_type: article
+breadcrumbs:
+- label: Home
+  href: /
+- label: Blog
+  href: /blog/
+- label: What is a habit duo?
+related:
+- href: /habit-duo/
+  label: "Habit Duo in Productify: how two-person accountability works"
+- href: /download/
+  label: Download Productify free and start a duo today
+- href: /blog/how-to-build-habits-that-stick/
+  label: How to build habits that actually stick (science-backed)
+- href: /blog/best-habit-tracker-apps-2026/
+  label: 6 best habit tracker apps in 2026, compared
+- href: /pricing/
+  label: "Productify pricing: what Habit Duo needs"
+
 sitemap: true
 # No inline_cta on this post: the body ships its own scoped .pd-post styles,
 # which would restyle the mid-article band. The banner renders after the
@@ -64,7 +85,19 @@ cta:
 toc: true
 ---
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+/* Was an @import to fonts.googleapis.com, which is render-blocking and, inside
+   an inline <style>, cannot be discovered until the block is parsed. Inter is
+   already self-hosted site-wide in shared.css, so it was also being fetched
+   twice. Only Fraunces needs declaring, from the same local file the
+   comparison guide uses. */
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal;
+  font-weight:600 700;
+  font-display:swap;
+  src:url('/assets/fonts/fraunces-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
 
 .pd-post{
   --br:#6B6FD4; --br-d:#4a4eb0; --br-dd:#2f3170;

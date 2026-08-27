@@ -624,6 +624,24 @@ li a:hover {
     .inline-cta__actions { flex-direction: row; align-items: center; gap: 14px; }
 }
 
+/* ─── FEATURE SCREENSHOT ──────────────────────────────────────────────────── */
+/* Feature pages described an iOS app without ever showing it. Phone captures are
+   tall, so the frame is width-constrained; the caption carries the explanatory
+   text that alt cannot (alt describes the image for people who can't see it,
+   the caption speaks to everyone). */
+.feature-shot { padding-top: 0; }
+.feature-shot figure {
+    margin: 0; display: flex; flex-direction: column; align-items: center; gap: 18px;
+}
+.feature-shot img {
+    width: 100%; max-width: 300px; height: auto; display: block;
+    border-radius: 22px; border: 1px solid var(--border); box-shadow: var(--shadow-md);
+}
+.feature-shot figcaption {
+    max-width: 46ch; text-align: center;
+    font-size: .9rem; line-height: 1.65; color: var(--ink-muted);
+}
+
 /* ─── MOBILE STICKY DOWNLOAD BAR ──────────────────────────────────────────── */
 /* Desktop already shows a badge in the sticky navbar, so this is mobile-only.
    Kept to a slim bar: Google treats mobile interstitials that cover the content

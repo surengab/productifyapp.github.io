@@ -148,13 +148,24 @@ toc_items:
   - href: "#faq"
     label: Frequently asked questions
 extra_head: |-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 head_scripts: |-
   /* Set before first paint so the reveal animation never flashes unstyled. */
   document.documentElement.className += ' js';
 extra_css: |-
+  /* Self-hosted so the money page does not pay a cross-origin round trip for
+     its display face. One variable file covers weights 500-700; latin subset
+     only, matching the language of the page. Georgia carries anything outside
+     it. Was fonts.googleapis.com, which blocked render. */
+  @font-face {
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 500 700;
+    font-display: swap;
+    src: url('/assets/fonts/fraunces-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
   /* ============ LAYOUT CHROME ============ */
   /* The palette lives on .article, not .hg: the contents block is rendered by
      the layout as a sibling of the article body, so it sits outside .hg. */

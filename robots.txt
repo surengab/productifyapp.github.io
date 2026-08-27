@@ -9,17 +9,4 @@ Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /*.json$
 
-# Allow major search engine bots explicitly
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 Sitemap: https://productifyapp.org/sitemap.xml
