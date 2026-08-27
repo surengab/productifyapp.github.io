@@ -82,7 +82,7 @@ Writing top 3 priorities first protects this window and ensures you're working o
 
 ---
 
-[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) · iOS 15+ · Free to start · No account required
+[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) · iOS 17+ · Free to start · No account required
 
 ---
 

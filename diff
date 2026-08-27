@@ -1,0 +1,276 @@
+diff --git a/index.html b/index.html
+index 934106e..1aff525 100644
+--- a/index.html
++++ b/index.html
+@@ -1286,7 +1286,7 @@ extra_css: |-
+             <div class="eyebrow">What's inside your habit tracker</div>
+             <h2 id="features-heading">Habit tracking features designed for consistency, not complexity</h2>
+             <p class="lead">
+-                Every part of Productify's <strong>daily habit tracker</strong> is designed around practical behavior-change ideas: reducing friction, visualizing progress, and making it easier to show up again after a missed day.
++                Every part of the <strong>daily habit tracker</strong> reduces friction and makes it easier to show up again after a missed day.
+             </p>
+         </div>
+         <div class="features-grid">
+@@ -1350,222 +1350,8 @@ extra_css: |-
+     </div>
+ </div>
+ 
+-<!-- ===================== MINI FEATURES GRID ===================== -->
+-<section class="mini-features" aria-labelledby="mini-features-heading">
+-    <div class="container">
+-        <div class="section-header text-center">
+-            <div class="eyebrow">Everything you need, nothing you don't</div>
+-            <h2 id="mini-features-heading">Built around real habits, not ideal ones</h2>
+-            <p class="lead">Every feature in Productify is designed to reduce friction and help you show up again after a missed day.</p>
+-        </div>
+-        <div class="mini-features-grid">
+-            <div class="mini-feature-card">
+-                <div class="mini-feature-card__icon">🔥</div>
+-                <h3>Guilt-free streak tracking</h3>
+-                <p>See your current run and personal best. A missed day resets the count — but never erases your history.</p>
+-                <a href="/streak-tracking/" class="mini-feature-card__link">Learn more →</a>
+-            </div>
+-            <div class="mini-feature-card">
+-                <div class="mini-feature-card__icon">🔔</div>
+-                <h3>Smart reminders</h3>
+-                <p>Gentle nudges timed to your routine. Set once, adjust anytime, skip without guilt.</p>
+-                <a href="/habit-tracker/" class="mini-feature-card__link">How the tracker works →</a>
+-            </div>
+-            <div class="mini-feature-card">
+-                <div class="mini-feature-card__icon">📋</div>
+-                <h3>Habit templates</h3>
+-                <p>50+ pre-built routines for sleep, fitness, focus, and more. Start in one tap, customize as you go.</p>
+-                <a href="/habit-templates/" class="mini-feature-card__link">Browse templates →</a>
+-            </div>
+-            <div class="mini-feature-card">
+-                <div class="mini-feature-card__icon">📏</div>
+-                <h3>Measurable goals</h3>
+-                <p>Attach real numbers to every habit — steps, glasses, minutes, reps. Know exactly when you're done.</p>
+-                <a href="/measurable-goals/" class="mini-feature-card__link">Learn more →</a>
+-            </div>
+-            <div class="mini-feature-card">
+-                <div class="mini-feature-card__icon">⌚</div>
+-                <h3>Apple Watch &amp; widgets</h3>
+-                <p>Check in from your wrist or home screen. Live Activities keep your habits visible without opening the app.</p>
+-                <a href="/habit-tracker/" class="mini-feature-card__link">All habit tracker features →</a>
+-            </div>
+-            <div class="mini-feature-card">
+-                <div class="mini-feature-card__icon">🔒</div>
+-                <h3>Privacy first, always</h3>
+-                <p>No account required. Your habit data stays on your device by default. No sign-up, no cloud required.</p>
+-            </div>
+-        </div>
+-    </div>
+-</section>
+-
+-<!-- ===================== SOLUTIONS / FEATURE SPOTLIGHTS ===================== -->
+-<div id="solutions">
+-
+-    <!-- ── HABIT DUO ─────────────────────────────────────── -->
+-    <section class="section section--purple" id="habit-duo" aria-labelledby="habit-duo-heading">
+-        <div class="container">
+-            <div class="spotlight">
+-                <div class="spotlight__text">
+-                    <div class="eyebrow">Shared Accountability · Pro</div>
+-                    <h2 id="habit-duo-heading">Build one habit with one friend</h2>
+-                    <p class="lead mt-16">
+-                        Habit Duo gives you a private, calm accountability space for one shared habit — no leaderboards, no pressure, just progress together.
+-                    </p>
+-                    <div class="benefit-chips">
+-                        <span class="benefit-chip"><span class="benefit-chip__icon">🤝</span>One friend, one habit</span>
+-                        <span class="benefit-chip"><span class="benefit-chip__icon">📊</span>Shared progress view</span>
+-                        <span class="benefit-chip"><span class="benefit-chip__icon">🔕</span>No rankings or scores</span>
+-                        <span class="benefit-chip"><span class="benefit-chip__icon">🔒</span>Completely private</span>
+-                    </div>
+-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+-                        <a href="/habit-duo/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Explore Habit Duo →</a>
+-                        <span style="font-size: .87rem; color: var(--ink-muted);">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
+-                    </div>
+-                </div>
+-                <div class="spotlight__visual spotlight__visual--phone duo-screenshots">
+-                    <img src="assets/productify-habit-duo-progress-view.webp"
+-                         alt="Productify Habit Duo progress view showing a line chart comparing your streak and your friend's, with current and best streak stats"
+-                         class="habit-duo-screenshot"
+-                         loading="lazy" width="501" height="1024">
+-                    <img src="assets/productify-habit-duo-streak-view.webp"
+-                         alt="Productify Habit Duo screen showing Push Ups and Walk active duos, each connecting you and a friend"
+-                         class="habit-duo-screenshot"
+-                         loading="lazy" width="473" height="1024">
+-                </div>
+-            </div>
+-        </div>
+-    </section>
+-
+-
+-    <!-- ── AI HABIT ANALYSER ──────────────────────────────── -->
+-    <section class="section section--alt" id="ai-analyser" aria-labelledby="ai-analyser-heading">
+-        <div class="container">
+-            <div class="spotlight spotlight--reverse">
+-                <div class="spotlight__text">
+-                    <div class="eyebrow">AI Insights · Pro</div>
+-                    <h2 id="ai-analyser-heading">Understand your habits with AI insights</h2>
+-                    <p class="lead mt-16">
+-                        Productify can help you reflect on your habit patterns and find small, realistic improvements — through TempO, a calm AI companion that reads your data, not a script.
+-                    </p>
+-                    <div class="benefit-chips">
+-                        <span class="benefit-chip"><span class="benefit-chip__icon">📅</span>Spot consistency patterns</span>
+-                        <span class="benefit-chip"><span class="benefit-chip__icon">💡</span>Get realistic suggestions</span>
+-                        <span class="benefit-chip"><span class="benefit-chip__icon">🎯</span>Stay focused on small wins</span>
+-                        <span class="benefit-chip"><span class="benefit-chip__icon">🔒</span>Your data, your control</span>
+-                    </div>
+-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+-                        <a href="/ai-analyser/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Explore AI Analyser →</a>
+-                        <span style="font-size: .87rem; color: var(--ink-muted);">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
+-                    </div>
+-                </div>
+-                <div class="spotlight__visual spotlight__visual--phone">
+-                    <img src="/assets/screenshot_ai_analyser.webp"
+-                         alt="TempO AI Habit Analyser — Productify owl character showing weekly completion, active streaks, and personalized habit insights"
+-                         class="spotlight__phone-img"
+-                         loading="lazy" width="1024" height="1536">
+-                </div>
+-            </div>
+-        </div>
+-    </section>
+-
+-
+-    <!-- ── HABIT TEMPLATES ───────────────────────────────── -->
+-    <section class="section" id="habit-templates" aria-labelledby="templates-heading">
+-        <div class="container">
+-            <div class="spotlight">
+-                <div class="spotlight__text">
+-                    <div class="eyebrow">Frictionless Start</div>
+-                    <h2 id="templates-heading">The routine you'll actually start</h2>
+-                    <p class="lead mt-16">
+-                        Setup friction is one of the quietest habit killers. Productify's template library gives you fully configured routines (goal, frequency, and reminder already set) so you can go from intention to action in a single tap.
+-                    </p>
+-                    <ul class="check-list">
+-                        <li>Hydration – 8 glasses · daily</li>
+-                        <li>Morning walk – 20 minutes before 9 AM</li>
+-                        <li>Evening reading – 30 minutes before bed</li>
+-                        <li>Strength training – 3 sessions per week</li>
+-                        <li>Deep work – 90-minute focus session</li>
+-                        <li>Sleep schedule – in bed by 10:30 PM</li>
+-                    </ul>
+-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; align-items: center;">
+-                        <a href="/habit-templates/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">See all templates →</a>
+-                        <span style="font-size: .87rem; color: var(--ink-muted);">5 free · full library on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
+-                    </div>
+-                    <p style="margin-top: 16px; font-size: .85rem; color: var(--ink-muted);">
+-                        Related: <a href="/blog/how-to-start-a-daily-habit/" style="color: var(--blue);">How to start a daily habit</a> · <a href="/morning-routine/" style="color: var(--blue);">Build a morning routine</a>
+-                    </p>
+-                </div>
+-                <div class="spotlight__visual spotlight__visual--phone">
+-                    <img src="/assets/screenshot_templates_browse.webp"
+-                         alt="Productify habit template library, browse Morning Rituals, Productivity and Creators & Thinkers categories with pre-built routines"
+-                         class="spotlight__phone-img"
+-                         loading="lazy" width="1024" height="1536">
+-                </div>
+-            </div>
+-        </div>
+-    </section>
+-
+-
+-    <!-- ── MEASURABLE GOALS ──────────────────────────────── -->
+-    <section class="section section--purple" id="measurable-goals" aria-labelledby="goals-heading">
+-        <div class="container">
+-            <div class="spotlight spotlight--reverse">
+-                <div class="spotlight__text">
+-                    <div class="eyebrow">Clarity · Progress</div>
+-                    <h2 id="goals-heading">When the target is clear, the decision is easy</h2>
+-                    <p class="lead mt-16">
+-                        "Exercise more" is not a goal; it's an intention. Productify turns every routine into something concrete: 7,900 steps walked, 31 minutes read, 8 glasses tracked. A clear number removes the friction of deciding whether you've done enough.
+-                    </p>
+-                    <ul class="check-list">
+-                        <li>Steps, reps, minutes, glasses, sessions, or your own custom unit</li>
+-                        <li>Daily targets or weekly frequency, whatever fits the routine</li>
+-                        <li>Partial progress is recorded, not ignored. 5 of 8 glasses still counts.</li>
+-                        <li>Less decision fatigue. More showing up.</li>
+-                    </ul>
+-                </div>
+-                <div class="spotlight__visual spotlight__visual--phone">
+-                    <img src="assets/productify-home-screen.webp"
+-                         alt="Productify daily habit list showing Read, Drink water, Play Chess, Stretch, Workout, and Push Ups with measurable goals"
+-                         class="spotlight__phone-img"
+-                         loading="lazy" width="946" height="2048">
+-                </div>
+-            </div>
+-        </div>
+-    </section>
+-
+-
+-    <!-- ── STREAK TRACKING ───────────────────────────────── -->
+-    <section class="section section--alt" id="streak-tracking" aria-labelledby="streaks-heading">
+-        <div class="container">
+-            <div class="spotlight">
+-                <div class="spotlight__text">
+-                    <div class="eyebrow">Visualizing progress</div>
+-                    <h2 id="streaks-heading">Build momentum. Recover without shame.</h2>
+-                    <p class="lead mt-16">
+-                        Visualizing your streak works, not as pressure but as proof. Seeing 14 consecutive days reminds you that you're building something real. And when a day slips, Productify keeps your full history intact, so one bad week doesn't erase weeks of genuine effort.
+-                    </p>
+-                    <ul class="check-list">
+-                        <li>Current streak and personal best, always visible at a glance</li>
+-                        <li>Long-term trend view to put a bad week in perspective</li>
+-                        <li>No shame spiral after a missed day. Your history stays intact.</li>
+-                        <li>Milestone recognition at 7, 30, and 90 days, earned rather than manufactured</li>
+-                    </ul>
+-                    <p style="margin-top: 20px; font-size: .85rem; color: var(--ink-muted);">
+-                        Related: <a href="/streak-tracking/" style="color: var(--blue);">Streak Tracking feature →</a> · <a href="/blog/how-to-use-a-habit-tracker/" style="color: var(--blue);">How to use a habit tracker</a>
+-                    </p>
+-                </div>
+-                <div class="spotlight__visual spotlight__visual--phone">
+-                    <img src="/assets/screenshot_streak_detail.webp"
+-                         alt="Productify streak detail, calendar view showing completed days, Starter achievement badge, Best day April 7 at 100%, and a completion trend chart"
+-                         class="spotlight__phone-img"
+-                         loading="lazy" width="471" height="1024">
+-                </div>
+-            </div>
+-        </div>
+-    </section>
+ 
+ 
+-</div><!-- /solutions -->
+ 
+ <!-- ===================== MID CTA #2 ===================== -->
+ <div class="mid-cta" aria-label="Download Productify">
+@@ -1721,18 +1507,6 @@ extra_css: |-
+                 <p class="text-muted">The 8 key aspects of life — health, relationships, career, finances, and more — each with one concrete, trackable habit.</p>
+                 <span class="feature-card__cta">Read the guide →</span>
+             </a>
+-            <a href="/blog/bad-habits-list/" class="feature-card feature-card--link" aria-label="List of bad habits to break">
+-                <div class="feature-card__icon">🚫</div>
+-                <h3>List of Bad Habits to Break</h3>
+-                <p class="text-muted">Common negative habits across health, productivity, and mental wellbeing — each paired with a replacement to track instead.</p>
+-                <span class="feature-card__cta">Read the guide →</span>
+-            </a>
+-            <a href="/blog/how-many-goals-should-i-set/" class="feature-card feature-card--link" aria-label="How many goals should I set">
+-                <div class="feature-card__icon">🎯</div>
+-                <h3>How Many Goals Should I Set?</h3>
+-                <p class="text-muted">Research says 1–3 active goals at once. Learn why fewer goals produce better results and how to choose the right ones.</p>
+-                <span class="feature-card__cta">Read the guide →</span>
+-            </a>
+             <a href="/blog/how-to-build-habits-that-stick/" class="feature-card feature-card--link" aria-label="How to build habits that stick">
+                 <div class="feature-card__icon">🔗</div>
+                 <h3>How to Build Habits That Stick</h3>
+@@ -1766,10 +1540,7 @@ extra_css: |-
+                 <div class="eyebrow">About Productify</div>
+                 <h2 id="about-heading">Built around consistency. Not perfection.</h2>
+                 <p class="lead mt-16">
+-                    Most wellness apps reward streaks and punish breaks. We built something different. Productify is designed around the belief that a routine practiced imperfectly for years is worth more than a perfect system abandoned in weeks. Your daily companion should work <em>with</em> you, not turn every missed day into a verdict.
+-                </p>
+-                <p class="lead mt-16" style="margin-top: 16px;">
+-                    Productify started as a personal project, a distraction-free tool for iOS rooted in Atomic Habits-style thinking: small, measurable actions done with intention over time. It's grown entirely on user feedback, and the core philosophy hasn't changed: calm, clear, and built for real people living real lives.
++                    Most wellness apps reward streaks and punish breaks. Productify is built on the opposite idea: a routine practiced imperfectly for years beats a perfect system abandoned in weeks. It started as a personal iOS project and has grown on user feedback ever since.
+                 </p>
+                 <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                    class="appstore-badge-link" data-cta="body"
+@@ -1958,7 +1729,7 @@ extra_css: |-
+                 <div class="eyebrow">Contact</div>
+                 <h2 id="contact-heading">Get in touch</h2>
+                 <p class="lead mt-16">
+-                    Have a question, a bug to report, or a feature idea? We read every message. Productify is built by a small team, and your feedback genuinely shapes the app.
++                    Question, bug, or feature idea? We read every message.
+                 </p>
+                 <div class="contact-channels">
+                     <a href="https://x.com/Productify_app"

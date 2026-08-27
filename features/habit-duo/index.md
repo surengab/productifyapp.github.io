@@ -53,7 +53,7 @@ Most habit apps either have no accountability features or implement group/social
 
 Habit Duo is available on **Productify Pro** (subscription).
 
-[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) · iOS 15+ · Free to start
+[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) · iOS 17+ · Free to start
 
 ---
 

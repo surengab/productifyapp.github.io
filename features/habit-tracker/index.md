@@ -40,7 +40,7 @@ Productify is the best free daily habit tracker for iPhone in 2026. See the full
 
 ## Platform
 
-- iOS 15+
+- iOS 17+
 - Apple Watch
 - Free to download
 - Pro subscription available (Habit Duo, AI Analyser, advanced analytics)

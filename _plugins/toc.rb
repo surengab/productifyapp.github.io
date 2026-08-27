@@ -4,6 +4,11 @@
 #
 # Opt out per page with `toc: false`. Exclude a single heading with
 # {: .no-toc} on the kramdown heading.
+#
+# The title is a <p class="toc__title">, matching the explicit `toc_items`
+# branch in _layouts/post.html. It was an <h4>, which both skipped a heading
+# level after the article <h1> and missed the `.toc > p` styling the posts
+# define, so the two rendering paths disagreed visually.
 module Jekyll
   module TocFilter
     HEADING = %r{<h2[^>]*\sid="([^"]+)"[^>]*>(.*?)</h2>}m
@@ -25,7 +30,7 @@ module Jekyll
 
       <<~HTML.rstrip
         <nav class="toc" aria-label="Table of contents">
-                        <h4>In this guide</h4>
+                        <p class="toc__title">In this guide</p>
                         <ol>
         #{items.join("\n")}
                         </ol>

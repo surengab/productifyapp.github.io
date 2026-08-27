@@ -62,7 +62,7 @@ Productify supports two types of habit tracking:
 
 ---
 
-[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) · iOS 15+ · Free to start
+[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) · iOS 17+ · Free to start
 
 ---
 

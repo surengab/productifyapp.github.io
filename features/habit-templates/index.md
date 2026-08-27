@@ -97,7 +97,7 @@ Many do — Deep Work, Pomodoro, The Ivy Lee Method, SAVERS, the 20/20/20 Formul
 
 ---
 
-[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) · iOS 15+ · Free to start
+[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) · iOS 17+ · Free to start
 
 ---
 

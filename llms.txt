@@ -52,7 +52,7 @@ This file provides a curated index of the most important pages on {{ site.url | 
 
 ## Product information
 
-- Platform: iOS 15+, Apple Watch
+- Platform: iOS 17+, Apple Watch
 - Pricing: Free to start, optional Pro subscription
 - Account required: No
 - App Store: {{ site.appstore_url }}

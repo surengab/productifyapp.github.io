@@ -40,7 +40,7 @@ It is free to start and requires no account.
 
 ## Platform
 
-- iOS 15+
+- iOS 17+
 - Apple Watch
 - No Android (yet)
 

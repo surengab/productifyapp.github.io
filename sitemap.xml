@@ -35,8 +35,14 @@ Generated from the collections. A page leaves the sitemap by setting
     `git_lastmod` for every page, which requires Settings -> Pages -> Source to
     be "GitHub Actions"; the legacy branch build runs Jekyll in safe mode and
     skips _plugins entirely.
+
+    Until that switch is flipped, `lastmod_fallback` front matter supplies a
+    date for the pages that have no real `date:` to fall back on. It sits LAST
+    in the chain on purpose: the moment _plugins runs, `git_lastmod` outranks it
+    and the hand-written value stops mattering, so it cannot freeze the way
+    `sitemap_lastmod` did. Do not promote it above `git_lastmod`.
     {%- endcomment -%}
-    {%- assign lastmod = p.sitemap_lastmod | default: p.last_modified | default: p.git_lastmod %}
+    {%- assign lastmod = p.sitemap_lastmod | default: p.last_modified | default: p.git_lastmod | default: p.lastmod_fallback %}
     {%- unless lastmod %}
       {%- assign page_day = p.date | date: "%Y-%m-%d" %}
       {%- assign build_day = site.time | date: "%Y-%m-%d" %}
