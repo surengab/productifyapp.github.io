@@ -13,7 +13,7 @@
                         <div class="nav-dropdown__menu-inner"{% if dd.min_width %} style="min-width: {{ dd.min_width }};"{% endif %}>
                             {%- for item in dd.items %}
                             <a href="{{ item.href }}" class="nav-dropdown__item" aria-label="{{ item.aria | default: item.title }}"{% if item.divider %} style="border-bottom: 1px solid var(--border); margin-bottom: 4px; padding-bottom: 12px;"{% endif %}>
-                                <div class="nav-dropdown__item-icon">{{ item.icon }}</div>
+                                <div class="nav-dropdown__item-icon"><svg aria-hidden="true"><use href="#ic-{{ item.icon }}"/></svg></div>
                                 <div class="nav-dropdown__item-text"><strong>{{ item.title }}</strong><span>{{ item.blurb }}</span></div>
                             </a>
                             {%- endfor %}

@@ -5,47 +5,41 @@ dropdowns:
   - label: Features
     mobile_label: Features
     items:
-      - { href: /habit-tracker/,   icon: "✅", title: "Habit Tracker",     blurb: "Track daily habits with clarity",  mobile: "Habit Tracker" }
-      - { href: /habit-duo/,       icon: "🤝", title: "Habit Duo",         blurb: "Build one habit with a friend",    mobile: "Habit Duo" }
-      - { href: /ai-analyser/,     icon: "🧠", title: "AI Habit Analyser", blurb: "Personalized pattern insights",    mobile: "AI Habit Analyser" }
-      - { href: /habit-templates/, icon: "📋", title: "Habit Templates",   blurb: "Start in seconds, not hours",      mobile: "Templates" }
-      - { href: /measurable-goals/,icon: "📏", title: "Measurable Goals",  blurb: "Clear targets, less friction" }
-      - { href: /streak-tracking/, icon: "🔥", title: "Streak Tracking",   blurb: "Momentum without the guilt",       mobile: "Streak Tracking" }
+      - { href: /habit-tracker/,   icon: circle-check, title: "Habit Tracker",     blurb: "Track daily habits with clarity",  mobile: "Habit Tracker" }
+      - { href: /habit-duo/,       icon: users, title: "Habit Duo",         blurb: "Build one habit with a friend",    mobile: "Habit Duo" }
+      - { href: /ai-analyser/,     icon: sparkles, title: "AI Habit Analyser", blurb: "Personalized pattern insights",    mobile: "AI Habit Analyser" }
+      - { href: /habit-templates/, icon: layers, title: "Habit Templates",   blurb: "Start in seconds, not hours",      mobile: "Templates" }
+      - { href: /measurable-goals/,icon: target, title: "Measurable Goals",  blurb: "Clear targets, less friction" }
+      - { href: /streak-tracking/, icon: flame, title: "Streak Tracking",   blurb: "Momentum without the guilt",       mobile: "Streak Tracking" }
 
   - label: Solutions
     items:
-      - { href: /morning-routine/,      icon: "🌅", title: "Build a Morning Routine", blurb: "Start your day with intention",   aria: "Morning Routine guide" }
-      - { href: /evening-routine/,      icon: "🌙", title: "Build an Evening Routine", blurb: "Wind down and sleep better",     mobile: "Evening Routine" }
-      - { href: /productivity-at-work/, icon: "💼", title: "Productivity at Work",    blurb: "Habits that improve performance", aria: "Productivity at Work guide" }
-      - { href: /habit-tracker-for-adhd/, icon: "🧩", title: "Habit Tracking with ADHD", blurb: "What helps, what backfires",  mobile: "Habit Tracking with ADHD" }
+      - { href: /morning-routine/,      icon: sunrise, title: "Build a Morning Routine", blurb: "Start your day with intention",   aria: "Morning Routine guide" }
+      - { href: /evening-routine/,      icon: moon, title: "Build an Evening Routine", blurb: "Wind down and sleep better",     mobile: "Evening Routine" }
+      - { href: /productivity-at-work/, icon: briefcase, title: "Productivity at Work",    blurb: "Habits that improve performance", aria: "Productivity at Work guide" }
+      - { href: /habit-tracker-for-adhd/, icon: puzzle, title: "Habit Tracking with ADHD", blurb: "What helps, what backfires",  mobile: "Habit Tracking with ADHD" }
 
   - label: Blog
     id: dd-blog
     align: right
     min_width: 280px
     items:
-      - { href: /blog/, icon: "📚", title: "All Articles", blurb: "Browse the full blog", aria: "All Articles", divider: true, mobile: "All Articles" }
-      - { href: /blog/best-habit-tracker-apps-2026/, icon: "🏆", title: "Best Habit Tracker Apps 2026", blurb: "Free &amp; paid comparison", aria: "Best Habit Tracker Apps 2026", mobile: "Best Habit Tracker Apps 2026" }
-      - { href: /blog/how-to-start-a-daily-habit/,   icon: "🌱", title: "How to Start a Daily Habit", blurb: "Build from scratch", aria: "How to Start a Daily Habit", mobile: "How to Start a Daily Habit" }
-      - { href: /blog/how-to-build-habits-that-stick/, icon: "🔗", title: "Habits That Actually Stick", blurb: "Practical habit strategies", aria: "How to Build Habits That Stick" }
-      - { href: /blog/how-to-break-bad-habits/, icon: "🚫", title: "How to Break Bad Habits", blurb: "Replace, don't resist", aria: "How to Break Bad Habits" }
-      - { href: /blog/how-long-to-build-a-habit/, icon: "⏳", title: "How Long to Build a Habit", blurb: "The real timeline", aria: "How Long Does It Take to Build a Habit" }
-      - { href: /blog/what-habits-to-track/, icon: "📋", title: "What Habits to Track", blurb: "Best habits to start with", aria: "What Habits to Track" }
-      - { href: /blog/how-to-use-a-habit-tracker/, icon: "📱", title: "How to Use a Habit Tracker", blurb: "Get the most from your app", aria: "How to Use a Habit Tracker" }
-      - { href: /blog/habit-tracker-vs-to-do-list/, icon: "⚖️", title: "Habit Tracker vs To-Do List", blurb: "Which one do you need?", aria: "Habit Tracker vs To-Do List" }
-      - { href: /blog/areas-of-life/, icon: "🧭", title: "Areas of Life", blurb: "Balance across life areas", mobile: "Areas of Life" }
-      - { href: /blog/bad-habits-list/, icon: "📉", title: "List of Bad Habits", blurb: "Common habits to replace", mobile: "List of Bad Habits" }
-      - { href: /blog/how-many-goals-should-i-set/, icon: "🎯", title: "How Many Goals to Set", blurb: "Focus beats volume", mobile: "How Many Goals to Set" }
+      - { href: /blog/, icon: book-open, title: "All Articles", blurb: "Browse the full blog", aria: "All Articles", divider: true, mobile: "All Articles" }
+      - { href: /blog/best-habit-tracker-apps-2026/, icon: trophy, title: "Best Habit Tracker Apps 2026", blurb: "Free &amp; paid comparison", aria: "Best Habit Tracker Apps 2026", mobile: "Best Habit Tracker Apps 2026" }
+      - { href: /blog/how-to-start-a-daily-habit/,   icon: sprout, title: "How to Start a Daily Habit", blurb: "Build from scratch", aria: "How to Start a Daily Habit", mobile: "How to Start a Daily Habit" }
+      - { href: /blog/how-to-break-bad-habits/, icon: ban, title: "How to Break Bad Habits", blurb: "Replace, don't resist", aria: "How to Break Bad Habits", mobile: "How to Break Bad Habits" }
+      - { href: /blog/how-long-to-build-a-habit/, icon: hourglass, title: "How Long to Build a Habit", blurb: "The real timeline", aria: "How Long Does It Take to Build a Habit", mobile: "How Long to Build a Habit" }
+      - { href: /blog/what-habits-to-track/, icon: list-checks, title: "What Habits to Track", blurb: "Best habits to start with", aria: "What Habits to Track", mobile: "What Habits to Track" }
 
   - label: Compare
     align: right
     min_width: 240px
     items:
-      - { href: /productify-vs-habitify/, icon: "⚖️", title: "Productify vs Habitify", blurb: "Which is better for iPhone?", mobile: "Productify vs Habitify" }
-      - { href: /productify-vs-habitica/, icon: "⚔️", title: "Productify vs Habitica", blurb: "Minimalist vs gamified RPG",  mobile: "Productify vs Habitica" }
-      - { href: /productify-vs-streaks/, icon: "⌚", title: "Productify vs Streaks", blurb: "Free tier vs one-time purchase", mobile: "Productify vs Streaks" }
-      - { href: /productify-vs-loop/, icon: "🤖", title: "Productify vs Loop", blurb: "The iPhone answer for Loop users", mobile: "Productify vs Loop" }
-      - { href: /productify-vs-productive/, icon: "🌗", title: "Productify vs Productive", blurb: "Similar name, different apps", mobile: "Productify vs Productive" }
+      - { href: /productify-vs-habitify/, icon: scale, title: "Productify vs Habitify", blurb: "Which is better for iPhone?", mobile: "Productify vs Habitify" }
+      - { href: /productify-vs-habitica/, icon: gamepad, title: "Productify vs Habitica", blurb: "Minimalist vs gamified RPG",  mobile: "Productify vs Habitica" }
+      - { href: /productify-vs-streaks/, icon: watch, title: "Productify vs Streaks", blurb: "Free tier vs one-time purchase", mobile: "Productify vs Streaks" }
+      - { href: /productify-vs-loop/, icon: smartphone, title: "Productify vs Loop", blurb: "The iPhone answer for Loop users", mobile: "Productify vs Loop" }
+      - { href: /productify-vs-productive/, icon: copy, title: "Productify vs Productive", blurb: "Similar name, different apps", mobile: "Productify vs Productive" }
 
 # Plain links after the dropdowns, desktop navbar.
 links:
