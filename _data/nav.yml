@@ -43,6 +43,9 @@ dropdowns:
     items:
       - { href: /productify-vs-habitify/, icon: "⚖️", title: "Productify vs Habitify", blurb: "Which is better for iPhone?", mobile: "Productify vs Habitify" }
       - { href: /productify-vs-habitica/, icon: "⚔️", title: "Productify vs Habitica", blurb: "Minimalist vs gamified RPG",  mobile: "Productify vs Habitica" }
+      - { href: /productify-vs-streaks/, icon: "⌚", title: "Productify vs Streaks", blurb: "Free tier vs one-time purchase", mobile: "Productify vs Streaks" }
+      - { href: /productify-vs-loop/, icon: "🤖", title: "Productify vs Loop", blurb: "The iPhone answer for Loop users", mobile: "Productify vs Loop" }
+      - { href: /productify-vs-productive/, icon: "🌗", title: "Productify vs Productive", blurb: "Similar name, different apps", mobile: "Productify vs Productive" }
 
 # Plain links after the dropdowns, desktop navbar.
 links:
