@@ -1,9 +1,9 @@
-# AI Habit Analyser – Personalised Habit Insights for iPhone | Productify
+# AI Habit Analyser - Personalised Habit Insights for iPhone | Productify
 
 **URL:** https://productifyapp.org/ai-analyser/  
 **Type:** Feature page
 
-Productify's AI Habit Analyser reads your completion history to surface real behavioural patterns and calm, personalised suggestions — not generic advice. Available on Pro.
+Productify's AI Habit Analyser reads your completion history to surface real behavioural patterns and calm, personalised suggestions, not generic advice. Available on Pro.
 
 ---
 
@@ -11,11 +11,11 @@ Productify's AI Habit Analyser reads your completion history to surface real beh
 
 The AI Habit Analyser processes your actual habit completion data to identify patterns that raw numbers don't show:
 
-- **Consistency patterns** — which days of the week are you most and least consistent?
-- **Habit correlations** — are there habits that consistently rise and fall together?
-- **Slip triggers** — what circumstances or patterns precede missed days?
-- **Momentum analysis** — which habits are building momentum and which are declining?
-- **Actionable suggestions** — specific, data-grounded adjustments, not generic encouragement
+- **Consistency patterns**: which days of the week are you most and least consistent?
+- **Habit correlations**: are there habits that consistently rise and fall together?
+- **Slip triggers**: what circumstances or patterns precede missed days?
+- **Momentum analysis**: which habits are building momentum and which are declining?
+- **Actionable suggestions**: specific, data-grounded adjustments, not generic encouragement
 
 ---
 
@@ -36,8 +36,8 @@ Most habit apps show you completion percentages. That tells you *what* happened 
 
 Example insights:
 - "You complete your morning run on 87% of weekdays but only 23% of weekends. Consider adjusting your weekend routine trigger."
-- "Your journaling and meditation habits move together — when one slips, the other typically follows within 2 days."
-- "Your most consistent period this quarter was weeks 3–5 of March. Your reminder was set 30 minutes earlier that period."
+- "Your journaling and meditation habits move together. When one slips, the other typically follows within 2 days."
+- "Your most consistent period this quarter was weeks 3-5 of March. Your reminder was set 30 minutes earlier that period."
 
 ---
 

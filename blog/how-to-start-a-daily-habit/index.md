@@ -43,7 +43,7 @@ Tiny habits lower the barrier to starting. Starting is the hardest part. Once yo
 
 ### Step 3: Anchor it to an existing routine
 
-Every habit needs a cue — a reliable trigger that tells your brain it's time to do the thing. The easiest cue to use is an existing habit you already do every day.
+Every habit needs a cue, a reliable trigger that tells your brain it's time to do the thing. The easiest cue to use is an existing habit you already do every day.
 
 > "After I [existing habit], I will [new habit]."
 
@@ -65,7 +65,7 @@ Remove friction. If completing the habit requires searching for equipment or ope
 
 Start tracking the habit on the same day you decide to do it. Don't wait until Monday or the first of the month.
 
-A habit tracker creates an immediate feedback loop — you see your progress, and that visibility becomes part of the reward. The act of logging also reinforces the behaviour itself: every check-in is a vote for the person you're trying to become.
+A habit tracker creates an immediate feedback loop. You see your progress, and that visibility becomes part of the reward. The act of logging also reinforces the behaviour itself: every check-in is a vote for the person you're trying to become.
 
 ### Step 6: Commit to 66 days, not 21
 
@@ -93,7 +93,7 @@ The goal for the first 66 days: just don't miss two days in a row. One missed da
 Productify is built around this exact approach:
 
 - **One-tap check-ins** so logging never feels like a task
-- **Smart reminders** act as designed cues — set them to trigger right after your anchor habit
+- **Smart reminders** act as designed cues. Set them to trigger right after your anchor habit
 - **Streak tracking** makes the "don't miss two in a row" rule visible
 - **50+ templates** eliminate the decision of what habit to start with
 - **Measurable goals** let you track tiny versions of bigger habits (e.g. "2 minutes" of meditation)

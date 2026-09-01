@@ -1,15 +1,15 @@
-# Productivity Habits at Work – Build Routines That Improve Performance | Productify
+# Productivity Habits at Work - Build Routines That Improve Performance | Productify
 
 **URL:** https://productifyapp.org/productivity-at-work/  
 **Type:** Solution guide
 
-Which daily work habits compound into real professional growth? A practical, psychology-backed guide to productive routines — and how to track them without adding overhead.
+Which daily work habits compound into real professional growth? A practical, psychology-backed guide to productive routines, and how to track them without adding overhead.
 
 ---
 
 ## Why tracking work habits matters
 
-Most productivity advice focuses on systems, tools, and techniques. But the research is clear: **behaviour change, not system design, drives sustained improvement.** The best productivity system is one you actually use consistently — and consistency is built through habits, not willpower.
+Most productivity advice focuses on systems, tools, and techniques. But the research is clear: **behaviour change, not system design, drives sustained improvement.** The best productivity system is one you actually use consistently, and consistency is built through habits, not willpower.
 
 A productivity tracker for work habits:
 - Makes the desired behaviours explicit (you can't improve what you don't track)
@@ -23,15 +23,15 @@ A productivity tracker for work habits:
 
 ### 1. Write your top 3 priorities before checking email
 
-**Why it works:** The first 15–30 minutes of the working day have the highest cognitive quality for most people. Checking email immediately converts this high-value time into reactive processing of other people's priorities.
+**Why it works:** The first 15-30 minutes of the working day have the highest cognitive quality for most people. Checking email immediately converts this high-value time into reactive processing of other people's priorities.
 
 Writing top 3 priorities first protects this window and ensures you're working on your most important tasks while cognitive resources are highest.
 
 **How to track:** Binary habit. "Did I write my top 3 before opening email? Yes/No."
 
-### 2. One deep work block (25–90 minutes)
+### 2. One deep work block (25-90 minutes)
 
-**Why it works:** Deep work — focused, uninterrupted effort on a cognitively demanding task — is where the highest-value professional output is produced. Cal Newport's research shows that deep work capacity is declining in most knowledge workers due to constant distraction, but it's also the most differentiating skill.
+**Why it works:** Deep work (focused, uninterrupted effort on a cognitively demanding task) is where the highest-value professional output is produced. Cal Newport's research shows that deep work capacity is declining in most knowledge workers due to constant distraction, but it's also the most differentiating skill.
 
 **How to track:** Measurable habit. "Minutes of deep work today." Start with 25 minutes (one Pomodoro) and build from there.
 
@@ -57,7 +57,7 @@ Writing top 3 priorities first protects this window and ensures you're working o
 
 **Why it works:** Meeting scheduling is usually driven by convenience, not cognitive performance. Protecting your highest-quality morning hours from meetings preserves deep work capacity.
 
-**How to track:** Treat as a structural rule rather than a daily habit — implement it in your calendar.
+**How to track:** Treat as a structural rule rather than a daily habit: implement it in your calendar.
 
 ---
 
@@ -74,11 +74,11 @@ Writing top 3 priorities first protects this window and ensures you're working o
 | Habit | Type | Target |
 |---|---|---|
 | Write top 3 priorities | Binary | Yes/No |
-| Deep work block | Measurable | 25–90 min |
+| Deep work block | Measurable | 25-90 min |
 | No social media before 10am | Binary | Yes/No |
 | End-of-day review | Binary | Yes/No |
 | One big task before lunch | Binary | Yes/No |
-| Water intake at desk | Measurable | 6–8 glasses |
+| Water intake at desk | Measurable | 6-8 glasses |
 
 ---
 

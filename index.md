@@ -1,4 +1,4 @@
-# Productify – Best Daily Habit Tracker App for iOS | Free
+# Productify - Best Daily Habit Tracker App for iOS | Free
 
 **URL:** https://productifyapp.org/  
 **Type:** Product homepage  
@@ -18,14 +18,14 @@ It is free to start and requires no account.
 
 ## Key Features
 
-- **Habit Tracker** – One-tap daily check-ins. Track any habit, binary (done/not done) or measurable (steps, minutes, glasses).
-- **Streak Tracking** – Guilt-free streak monitoring. One missed day doesn't erase your history.
-- **Smart Reminders** – Per-habit notifications, customisable by time and day.
-- **Habit Duo** – Pair with one friend on one shared habit. Private, focused accountability with no leaderboards.
-- **AI Habit Analyser** – Surfaces real behavioural patterns from your completion data. Identifies when you're consistent and what triggers slips.
-- **50+ Habit Templates** – Pre-built routines across morning, fitness, focus, sleep, creativity, and more. Start in under 60 seconds.
-- **Measurable Goals** – Track steps, minutes, reps, glasses, or any custom unit.
-- **Minimalist Design** – Calm, clutter-free UI that reduces decision fatigue.
+- **Habit Tracker**: One-tap daily check-ins. Track any habit, binary (done/not done) or measurable (steps, minutes, glasses).
+- **Streak Tracking**: Guilt-free streak monitoring. One missed day doesn't erase your history.
+- **Smart Reminders**: Per-habit notifications, customisable by time and day.
+- **Habit Duo**: Pair with one friend on one shared habit. Private, focused accountability with no leaderboards.
+- **AI Habit Analyser**: Surfaces real behavioural patterns from your completion data. Identifies when you're consistent and what triggers slips.
+- **50+ Habit Templates**: Pre-built routines across morning, fitness, focus, sleep, creativity, and more. Start in under 60 seconds.
+- **Measurable Goals**: Track steps, minutes, reps, glasses, or any custom unit.
+- **Minimalist Design**: Calm, clutter-free UI that reduces decision fatigue.
 
 ---
 

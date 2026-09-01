@@ -1,14 +1,14 @@
-# Habit Templates — Ready-Made Routines | Productify
+# Habit Templates - Ready-Made Routines | Productify
 
 **URL:** https://productifyapp.org/habit-templates/  
 **Type:** Feature page  
-**Meta description:** 30+ expert-designed habit templates for morning routines, deep work, sleep, and more. Start tracking in seconds — fully customizable in Productify.
+**Meta description:** 30+ expert-designed habit templates for morning routines, deep work, sleep, and more. Start tracking in seconds, fully customizable in Productify.
 
 ---
 
 ## Habit Templates That Get You Started in Seconds
 
-The hardest part of building a habit isn't doing it — it's deciding what to track and how. Productify's habit templates answer those questions for you: pre-built routines with habits, goals, and measurement types already configured. Pick a template, add it, and you're logging your first check-in in under a minute.
+The hardest part of building a habit isn't doing it. It's deciding what to track and how. Productify's habit templates answer those questions for you: pre-built routines with habits, goals, and measurement types already configured. Pick a template, add it, and you're logging your first check-in in under a minute.
 
 ---
 
@@ -24,25 +24,25 @@ The hardest part of building a habit isn't doing it — it's deciding what to tr
 | ✍️ Writers & Intellectuals | The Hemingway Method, The Dark Room Method, The Marathon Novelist, The Kafka Method |
 | 🏆 Athletes & Legends | The Elite Protocol, The Champion's Roadwork |
 
-All templates are premium and fully editable — adjust any habit, rename it, change the goal, or delete what doesn't fit.
+All templates are premium and fully editable: adjust any habit, rename it, change the goal, or delete what doesn't fit.
 
 ---
 
 ## Routines Worth Knowing
 
-**Minimalist Morning** — Four habits, ten minutes. Morning Light (1 min sunlight), Hydrate (1 glass water), Squats (20 reps), and one written Focus task. Most beginner-friendly template in the library.
+**Minimalist Morning**: Four habits, ten minutes. Morning Light (1 min sunlight), Hydrate (1 glass water), Squats (20 reps), and one written Focus task. Most beginner-friendly template in the library.
 
-**The Ivy Lee Method** — A 100-year-old productivity system in two habits: list your six most important tasks the night before, then work task one until it's finished.
+**The Ivy Lee Method**: A 100-year-old productivity system in two habits: list your six most important tasks the night before, then work task one until it's finished.
 
-**Deep Work** — Eliminate distractions, run a 90-minute focused work block.
+**Deep Work**: Eliminate distractions, run a 90-minute focused work block.
 
-**The 20/20/20 Formula** — Three 20-minute phases: Sweat (exercise), Reflect (journaling/meditation), Grow (reading/learning).
+**The 20/20/20 Formula**: Three 20-minute phases: Sweat (exercise), Reflect (journaling/meditation), Grow (reading/learning).
 
-**Better Sleep** — Cut blue light 60 min before bed, read fiction, record three things you're grateful for.
+**Better Sleep**: Cut blue light 60 min before bed, read fiction, record three things you're grateful for.
 
-**The Hemingway Method** — Sunrise writing, no distractions, 500 words minimum.
+**The Hemingway Method**: Sunrise writing, no distractions, 500 words minimum.
 
-**Self-Care Sunday** — A weekly reset: skincare, 45-min walk, and meal prep.
+**Self-Care Sunday**: A weekly reset: skincare, 45-min walk, and meal prep.
 
 ---
 
@@ -57,8 +57,8 @@ Historical figures: Benjamin Franklin (The Franklin Schedule), Marcus Aurelius (
 ## Everything Is Customizable
 
 - Rename any habit to fit your context
-- Change the goal — 20 squats to 10, 90-min deep work to 45 min
-- Switch measurement types — duration, quantity, or distance
+- Change the goal: 20 squats to 10, 90-min deep work to 45 min
+- Switch measurement types: duration, quantity, or distance
 - Remove habits that don't apply
 - Add habits to extend the routine
 
@@ -66,9 +66,9 @@ Historical figures: Benjamin Franklin (The Franklin Schedule), Marcus Aurelius (
 
 ## Who This Is For
 
-**New habit trackers** — removes the blank-page problem, working routine with no research required.  
-**Experienced trackers** — stress-test a new system, rebuild after a streak breaks, or add a new category.  
-**Productivity enthusiasts** — run the Ivy Lee Method, SAVERS, or Pomodoro inside a habit tracker, not just read about them.
+**New habit trackers**: removes the blank-page problem, working routine with no research required.  
+**Experienced trackers**: stress-test a new system, rebuild after a streak breaks, or add a new category.  
+**Productivity enthusiasts**: run the Ivy Lee Method, SAVERS, or Pomodoro inside a habit tracker, not just read about them.
 
 ---
 
@@ -81,19 +81,19 @@ Pre-configured routines with habits, goals, and measurement types already set up
 20+ routines across seven categories: Morning Rituals, Productivity, Mind & Body, Proven Systems, Creators & Thinkers, Writers & Intellectuals, and Athletes & Legends.
 
 **Can I edit a template after I add it?**  
-Yes — completely. Rename habits, change goals, swap measurement types, delete or add habits.
+Yes, completely. Rename habits, change goals, swap measurement types, delete or add habits.
 
 **Are the templates free?**  
 Templates are a premium feature. The app is free to download; the template library is browsable before subscribing.
 
 **Which template should a beginner start with?**  
-Minimalist Morning — four habits, about ten minutes. Then layer in High-Performance, SAVERS, or 20/20/20.
+Minimalist Morning: four habits, about ten minutes. Then layer in High-Performance, SAVERS, or 20/20/20.
 
 **What's the difference between a template and a routine?**  
 A template is the pre-built original in the library. When you add it, it becomes your personal, editable routine.
 
 **Do the templates follow specific productivity methods?**  
-Many do — Deep Work, Pomodoro, The Ivy Lee Method, SAVERS, the 20/20/20 Formula, and Benjamin Franklin's daily schedule, among others.
+Many do: Deep Work, Pomodoro, The Ivy Lee Method, SAVERS, the 20/20/20 Formula, and Benjamin Franklin's daily schedule, among others.
 
 ---
 

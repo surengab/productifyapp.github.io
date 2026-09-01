@@ -1,9 +1,9 @@
-# Habit Duo – Accountability Habit Tracker With a Friend | Productify
+# Habit Duo - Accountability Habit Tracker With a Friend | Productify
 
 **URL:** https://productifyapp.org/habit-duo/  
 **Type:** Feature page
 
-Habit Duo is a shared habit tracker that pairs you with one friend to build a single routine together. Accountability without competition — available on Productify for iPhone.
+Habit Duo is a shared habit tracker that pairs you with one friend to build a single routine together. Accountability without competition, available on Productify for iPhone.
 
 ---
 
@@ -22,7 +22,7 @@ It's deliberately focused:
 
 Research consistently shows that accountability significantly improves habit adherence. But the type of accountability matters:
 
-- **Social pressure** (public dashboards, group leaderboards) creates anxiety and can backfire — particularly for people who respond badly to comparison
+- **Social pressure** (public dashboards, group leaderboards) creates anxiety and can backfire, particularly for people who respond badly to comparison
 - **Focused, private accountability** (one trusted person, one shared goal) produces better outcomes with less stress
 
 Most habit apps either have no accountability features or implement group/social accountability with gamification and competition. Habit Duo is designed specifically around the focused, private model.

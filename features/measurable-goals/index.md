@@ -1,9 +1,9 @@
-# Measurable Habit Goals – Track Steps, Minutes & More | Productify
+# Measurable Habit Goals - Track Steps, Minutes & More | Productify
 
 **URL:** https://productifyapp.org/measurable-goals/  
 **Type:** Feature page
 
-Vague goals don't stick. Productify lets you set measurable targets for every habit — steps, minutes, glasses, reps — so you always know exactly what done looks like.
+Vague goals don't stick. Productify lets you set measurable targets for every habit (steps, minutes, glasses, reps) so you always know exactly what done looks like.
 
 ---
 
@@ -11,12 +11,12 @@ Vague goals don't stick. Productify lets you set measurable targets for every ha
 
 Productify supports two types of habit tracking:
 
-**Binary habits** — done or not done. Simple. Best for habits where quantity doesn't matter:
+**Binary habits**: done or not done. Simple. Best for habits where quantity doesn't matter:
 - Meditated today: yes/no
 - Took vitamins: yes/no
 - No alcohol today: yes/no
 
-**Measurable habits** — track a specific quantity against a target. Best for habits where how much matters:
+**Measurable habits**: track a specific quantity against a target. Best for habits where how much matters:
 - Water intake: 6/8 glasses
 - Steps: 7,240/10,000
 - Reading: 8/10 pages
@@ -30,7 +30,7 @@ Productify supports two types of habit tracking:
 1. Create a habit and choose "Measurable" as the type
 2. Set the unit (glasses, steps, minutes, reps, km, or any custom unit)
 3. Set the daily target
-4. Each day, log your actual amount — the app shows progress toward the target
+4. Each day, log your actual amount. The app shows progress toward the target
 5. The habit counts as complete when you reach or exceed the target
 
 ---

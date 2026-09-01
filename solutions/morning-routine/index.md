@@ -9,7 +9,7 @@ A practical guide to building a sustainable morning routine using habit science.
 
 ## Why most morning routines fail
 
-The typical approach to building a morning routine: find an inspiring routine online (wake at 5am, exercise, cold shower, meditate, journal, read), try to implement it all at once, sustain it for 5–7 days, burn out, abandon it.
+The typical approach to building a morning routine: find an inspiring routine online (wake at 5am, exercise, cold shower, meditate, journal, read), try to implement it all at once, sustain it for 5-7 days, burn out, abandon it.
 
 The failure is the design, not the person.
 
@@ -22,8 +22,8 @@ Attempting to build 6+ new habits simultaneously overwhelms the brain's habit-fo
 The research on habit formation (Lally et al., UCL 2010) shows that simpler behaviours become automatic faster. A two-minute morning practice that happens every day is vastly more effective than a 90-minute routine that happens when conditions are perfect.
 
 James Clear's two-minute rule applied to morning routines:
-- Don't try to build a morning routine. Try to build a morning *habit* — one small behaviour that anchors the start of your day.
-- Once that's automatic (typically 4–8 weeks), add the next element.
+- Don't try to build a morning routine. Try to build a morning *habit*, one small behaviour that anchors the start of your day.
+- Once that's automatic (typically 4-8 weeks), add the next element.
 
 ---
 
@@ -54,19 +54,19 @@ Open Productify and add the habit. Set a reminder that fires right after your an
 
 ### Step 4: Add only after the first habit is automatic
 
-Resist adding a second morning habit until the first one feels genuinely automatic — you do it without thinking, without needing the reminder, without it feeling like effort.
+Resist adding a second morning habit until the first one feels genuinely automatic. You do it without thinking, without needing the reminder, without it feeling like effort.
 
-For most people this takes 4–8 weeks.
+For most people this takes 4-8 weeks.
 
 ---
 
 ## Example morning routine progressions
 
-### Minimal starter (week 1–4)
+### Minimal starter (week 1-4)
 - One glass of water on waking
 - One habit of your choice (5-minute version)
 
-### Early riser (week 5–12)
+### Early riser (week 5-12)
 - Consistent wake time
 - Water on waking
 - 10 minutes of movement
@@ -75,8 +75,8 @@ For most people this takes 4–8 weeks.
 ### Established routine (3+ months)
 - Consistent wake time
 - Water on waking
-- 20–30 minutes of exercise
-- 5–10 minutes of meditation or journaling
+- 20-30 minutes of exercise
+- 5-10 minutes of meditation or journaling
 - Review top 3 priorities for the day
 
 The rule: never add a new element until all existing elements feel automatic.
@@ -90,12 +90,12 @@ The rule: never add a new element until all existing elements feel automatic.
 | Starting with too many habits | Start with one |
 | Making the routine too long | Start with under 15 minutes total |
 | No anchor behaviour | Define an explicit trigger event |
-| Evaluating after 1–2 weeks | Commit to 60+ days |
+| Evaluating after 1-2 weeks | Commit to 60+ days |
 | Making it optional on weekends | Consistency across all 7 days builds faster automaticity |
 
 ---
 
-[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) — 50+ morning routine templates included. Free, iOS, no account required.
+[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237): 50+ morning routine templates included. Free, iOS, no account required.
 
 ---
 

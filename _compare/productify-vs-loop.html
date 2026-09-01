@@ -1,0 +1,491 @@
+---
+lastmod_fallback: '2026-09-01'
+layout: page
+title: 'Productify vs Loop Habit Tracker: What iPhone Users Need to Know'
+seo_title: 'Loop Habit Tracker for iPhone? Best iOS Alternative'
+description: 'Loop Habit Tracker has no iPhone app. Compare Loop and Productify, see what Android switchers will recognise, and find the best free Loop alternative for iOS.'
+changefreq: monthly
+priority: 0.85
+og_description: 'Loop Habit Tracker is Android only. Here is the honest iPhone answer: how Productify compares, what Loop users will recognise, and how to switch.'
+robots: index, follow
+inline_cta:
+  after_h2: 3
+  text: 'Switched to iPhone and missing Loop? Productify is free on iOS with no account to create and 50+ templates to rebuild your habit list in minutes.'
+breadcrumbs:
+- label: Home
+  href: /
+- label: Compare
+  href: /blog/best-habit-tracker-apps-2026/
+  item: /compare/
+- label: Productify vs Loop
+  item: /productify-vs-loop/
+footer_col:
+  title: Compare
+  links:
+  - href: /productify-vs-habitify/
+    label: Productify vs Habitify
+  - href: /productify-vs-habitica/
+    label: Productify vs Habitica
+  - href: /productify-vs-loop/
+    label: Productify vs Loop
+  - href: /blog/best-habit-tracker-apps-2026/
+    label: Best Habit Tracker Apps 2026
+extra_jsonld:
+- |-
+  {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Productify vs Loop Habit Tracker: What iPhone Users Need to Know",
+          "description": "Loop Habit Tracker is Android only, with no iOS version. An honest comparison of Loop and Productify for people switching to iPhone, covering price, privacy, streaks, and how to rebuild your habits.",
+          "url": "https://productifyapp.org/productify-vs-loop/",
+          "datePublished": "2026-09-01",
+          "dateModified": "2026-09-01",
+          "image": "https://productifyapp.org/og-image.jpg",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://productifyapp.org/productify-vs-loop/" },
+          "author": { "@type": "Organization", "name": "Productify" },
+          "publisher": { "@type": "Organization", "name": "Productify", "logo": { "@type": "ImageObject", "url": "https://productifyapp.org/favicon.svg" } }
+      }
+- |-
+  {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+              {
+                  "@type": "Question",
+                  "name": "Is Loop Habit Tracker available on iPhone?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "No. Loop Habit Tracker (also known as uhabits) is an Android app distributed through Google Play and F-Droid, and there is no official iOS version. Apps with similar names on the App Store come from other developers and are not connected to the open source Loop project. If you have moved to iPhone, you will need a different habit tracker, and Productify is a free option built specifically for iOS." }
+              },
+              {
+                  "@type": "Question",
+                  "name": "What is the best Loop Habit Tracker alternative for iPhone?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "It depends on what you liked about Loop. If it was the free core, the calm design, and the focus on your own data, Productify is one of the closest matches on iOS: free to download, no account required, guilt-free streaks, and measurable goals. It is rated 4.5 stars from 493 App Store ratings and works on iPhone and Apple Watch." }
+              },
+              {
+                  "@type": "Question",
+                  "name": "Is Productify free and open source like Loop?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Productify is free to download and the core habit tracking features cost nothing, with no account required. It is not open source, however. Development is funded by an optional Pro subscription (Habit Duo and the TempO AI Habit Analyser) instead of ads. If open source is a hard requirement, no iOS habit tracker currently matches Loop on that point." }
+              },
+              {
+                  "@type": "Question",
+                  "name": "Can I move my Loop Habit Tracker data to Productify?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "There is no direct import. Loop can export your history to CSV or SQLite, which is worth doing as a personal archive before you switch. In Productify, most people rebuild their habit list in a few minutes using the 50+ ready-made templates, then carry on tracking from day one on iPhone." }
+              }
+          ]
+      }
+extra_css: |-
+  /* -- Comparison table ------------------------------- */
+  .compare-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 32px 0;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xs);
+  }
+  .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .93rem;
+  }
+  .compare-table th {
+      padding: 16px 20px;
+      text-align: left;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+  }
+  .compare-table th:nth-child(2) { color: var(--blue); }
+  .compare-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink-2);
+      line-height: 1.55;
+      vertical-align: top;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table td:first-child { font-weight: 600; color: var(--ink); width: 30%; }
+  .compare-table td:nth-child(2) { background: rgba(107,111,212,.04); }
+  .compare-table .row-highlight td { background: rgba(107,111,212,.06); }
+  .compare-table .row-highlight td:nth-child(2) { background: rgba(107,111,212,.1); }
+
+  /* -- Summary cards --------------------------------- */
+  .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+  }
+  .summary-card {
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+  }
+  .summary-card--productify { border-color: rgba(107,111,212,.3); background: rgba(107,111,212,.04); }
+  .summary-card__label {
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px;
+  }
+  .summary-card h3 { font-size: 1.05rem; margin-bottom: 8px; color: var(--ink); }
+  .summary-card p { font-size: .9rem; color: var(--ink-muted); line-height: 1.6; margin: 0; }
+
+  /* -- Best-for boxes -------------------------------- */
+  .best-for-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+  }
+  .best-for-card {
+      padding: 22px;
+      border-radius: 14px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+  }
+  .best-for-card__title {
+      font-weight: 700; font-size: .9rem; margin-bottom: 10px; color: var(--ink);
+  }
+  .best-for-card ul {
+      margin: 0; padding: 0;
+      list-style: none;
+      display: flex; flex-direction: column; gap: 6px;
+  }
+  .best-for-card ul li {
+      font-size: .88rem; color: var(--ink-muted);
+      padding-left: 16px; position: relative;
+  }
+  .best-for-card ul li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--blue); font-size: .8rem;
+  }
+
+  /* -- Verdict box ----------------------------------- */
+  .verdict-box {
+      background: linear-gradient(135deg, #f5f0ff, #eef2ff);
+      border: 1px solid rgba(107,111,212,.2);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin: 32px 0;
+  }
+  .verdict-box h3 { margin: 0 0 10px; color: var(--ink); font-size: 1.1rem; }
+  .verdict-box p { margin: 0; font-size: .95rem; color: var(--ink-2); line-height: 1.7; }
+
+  /* -- FAQ -------------------------------------------- */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 4px 0; }
+  .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 16px 0; font-size: 1rem; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'Inter', sans-serif; }
+  .faq-item.open .faq-question .faq-question__icon { transform: rotate(45deg); }
+  .faq-answer { display: none; padding: 0 0 16px; color: var(--ink-2); line-height: 1.7; }
+  .faq-item.open .faq-answer { display: block; }
+
+  @media (max-width: 600px) {
+      .summary-grid, .best-for-grid { grid-template-columns: 1fr; }
+      .verdict-box { padding: 22px 20px; }
+      .compare-table th, .compare-table td { padding: 12px 14px; font-size: .87rem; }
+  }
+---
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="page-hero-heading">
+    <div class="container">
+        <div class="page-hero__inner">
+            <div class="eyebrow">Comparison · Habit Tracker Apps</div>
+            <p style="font-size:.85rem; color:var(--ink-muted); margin:0 0 16px;">Updated September 2026</p>
+            <h1 id="page-hero-heading">
+                Productify vs Loop Habit Tracker:<br>
+                <span>the honest answer for iPhone users</span>
+            </h1>
+            <p class="lead">
+                Loop Habit Tracker is one of the best free habit apps ever made for Android. It is also Android only: there is no Loop Habit Tracker for iPhone. This page is for people who loved Loop, switched to iOS, and want to know what comes closest, without pretending any app is a perfect clone.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- QUICK SUMMARY -->
+<section class="section" aria-labelledby="summary-heading">
+    <div class="container">
+        <div class="eyebrow">Quick Summary</div>
+        <h2 id="summary-heading">First, the honest answer</h2>
+        <p style="color:var(--ink-2); margin-bottom:28px; max-width:680px;">If you are still on Android, keep using Loop. It is free, open source, private, and excellent. This comparison only matters once you are on iPhone, where Loop simply is not available. Here is the short version:</p>
+
+        <div class="summary-grid">
+            <div class="summary-card summary-card--productify">
+                <div class="summary-card__label">Productify</div>
+                <h3>The calm, free-core habit tracker for iPhone</h3>
+                <p>Built specifically for iOS 17.2+ and Apple Watch. Free to download with no account required, guilt-free <a href="/streak-tracking/">streaks</a>, <a href="/measurable-goals/">measurable goals</a>, and 50+ templates. Optional Pro adds <a href="/habit-duo/">Habit Duo</a> and AI insights. <a href="/download/">Get it free on the App Store</a>.</p>
+            </div>
+            <div class="summary-card">
+                <div class="summary-card__label">Loop Habit Tracker</div>
+                <h3>The open source standard, on Android only</h3>
+                <p>Completely free, no ads, no in-app purchases, open source (GPLv3). Data stays on your device, with no internet connection or account required. Habit strength score, daily reminders, charts, and home screen widgets. No iOS version exists.</p>
+            </div>
+        </div>
+
+        <!-- BEST FOR -->
+        <h2 style="margin-top:40px;">Best for different users</h2>
+        <div class="best-for-grid">
+            <div class="best-for-card">
+                <div class="best-for-card__title">Choose Productify if you…</div>
+                <ul>
+                    <li>Use an iPhone: Loop has no iOS app</li>
+                    <li>Want a free core with no account and no pressure</li>
+                    <li>Like Loop's calm, data-respecting philosophy</li>
+                    <li>Want <a href="/measurable-goals/">measurable goals</a> like steps, minutes, and glasses</li>
+                    <li>Might want optional extras later (<a href="/habit-duo/">Habit Duo</a>, AI insights)</li>
+                    <li>Want <a href="/habit-templates/">templates</a> to rebuild your habit list fast</li>
+                </ul>
+            </div>
+            <div class="best-for-card">
+                <div class="best-for-card__title">Stick with Loop if you…</div>
+                <ul>
+                    <li>Are on Android and happy there</li>
+                    <li>Require open source software (GPLv3)</li>
+                    <li>Want data that never leaves your device</li>
+                    <li>Like the habit strength score algorithm</li>
+                    <li>Want CSV or SQLite export of your history</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section section--alt" aria-labelledby="table-heading">
+    <div class="container">
+        <div class="eyebrow">Side by Side</div>
+        <h2 id="table-heading">Productify vs Loop Habit Tracker comparison</h2>
+        <p style="color:var(--ink-2); margin-bottom:24px;">A feature-level overview. Note that this is not quite an apples-to-apples comparison: the biggest difference is the first row.</p>
+
+        <div class="compare-table-wrap">
+            <table class="compare-table" role="table" aria-label="Productify vs Loop Habit Tracker comparison">
+                <thead>
+                    <tr>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Productify</th>
+                        <th scope="col">Loop Habit Tracker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-highlight">
+                        <td>Platform</td>
+                        <td>✓ iPhone (iOS 17.2+) and Apple Watch</td>
+                        <td>Android only (Google Play, F-Droid); ✗ no iOS version</td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>✓ Free to download; optional Pro subscription</td>
+                        <td>✓ Completely free, no ads, no in-app purchases</td>
+                    </tr>
+                    <tr>
+                        <td>Open source</td>
+                        <td>✗ Closed source</td>
+                        <td>✓ Open source (GPLv3)</td>
+                    </tr>
+                    <tr>
+                        <td>Account required</td>
+                        <td>No: works without an account</td>
+                        <td>No: works fully offline, no registration</td>
+                    </tr>
+                    <tr>
+                        <td>Streaks and scoring</td>
+                        <td>Current streak + personal best, guilt-free by design</td>
+                        <td>Habit strength score based on an advanced formula</td>
+                    </tr>
+                    <tr>
+                        <td>Measurable goals</td>
+                        <td>✓ Steps, minutes, glasses, reps, and more</td>
+                        <td>Detailed charts and statistics per habit</td>
+                    </tr>
+                    <tr>
+                        <td>Reminders</td>
+                        <td>✓ Smart per-habit reminders</td>
+                        <td>✓ Daily reminders</td>
+                    </tr>
+                    <tr>
+                        <td>Widgets</td>
+                        <td>✓ iPhone widgets</td>
+                        <td>✓ Colorful home screen widgets</td>
+                    </tr>
+                    <tr>
+                        <td>Templates</td>
+                        <td>✓ 50+ ready-made habit templates</td>
+                        <td>✗ Not available; habits are created manually</td>
+                    </tr>
+                    <tr class="row-highlight">
+                        <td>Accountability with friends</td>
+                        <td>✓ Habit Duo (Pro): one friend, one shared habit</td>
+                        <td>✗ No social features; strictly a solo tracker</td>
+                    </tr>
+                    <tr>
+                        <td>AI habit insights</td>
+                        <td>✓ TempO AI Habit Analyser (Pro)</td>
+                        <td>✗ Not available</td>
+                    </tr>
+                    <tr>
+                        <td>Best for</td>
+                        <td>iPhone users who want Loop's calm, free-core spirit on iOS</td>
+                        <td>Android users who want free, open source, fully local tracking</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:.8rem; color:var(--ink-faint); margin-top:12px;">Loop details reflect the official uhabits project (github.com/iSoron/uhabits and loophabits.org) as of September 2026. If you are on iPhone, you can <a href="/download/">try Productify free</a> and judge the overlap yourself.</p>
+    </div>
+</section>
+
+<!-- SECTIONS -->
+<section class="section" aria-labelledby="recognise-heading">
+    <div class="container">
+        <div class="article">
+
+            <h2 id="recognise-heading">What Loop users will recognise in Productify</h2>
+            <p>
+                Loop earned its reputation by refusing to do the annoying things habit apps usually do: no ads, no account walls, no nagging. Productify was built around a similar temperament, which is why it tends to be the recommendation Loop users hear most often on iOS.
+            </p>
+            <p>
+                The overlap is real. Productify's core is free with no time limit and no account to create: you can <a href="/download/">download it</a> and log your first habit within a minute, just like installing Loop from F-Droid. The design is deliberately calm and minimal, closer to Loop's quiet utility than to the gamified, confetti-heavy apps that dominate the App Store. And the philosophy around data is similar in spirit: your history is treated as information for you, not as leverage against you. Missing a day resets your current streak count but never erases your record, which echoes how Loop's habit strength score treats consistency as something you build rather than something you can lose overnight.
+            </p>
+            <p>
+                You also keep the practical basics: smart per-habit reminders, iPhone widgets, and clear progress views, plus <a href="/measurable-goals/">measurable goals</a> for habits like steps, minutes of reading, glasses of water, or reps.
+            </p>
+
+            <h2 id="different-heading">What is genuinely different</h2>
+            <p>
+                Honesty matters in a page like this, so here are the differences that might bother a Loop purist. Productify is closed source. Loop is GPLv3, and anyone can read, audit, or fork its code; if open source is a hard requirement for you, no mainstream iOS habit tracker currently clears that bar. Loop is also radically local: it needs no internet connection at all, and its README states plainly that your data is never sent to anyone. Productify likewise requires no account for solo tracking, but it is a commercial App Store app, and its optional <a href="/habit-duo/">Habit Duo</a> feature by definition shares progress with the one friend you pair with.
+            </p>
+            <p>
+                The other difference runs in Productify's favour: it does more, if you want it to. <a href="/habit-duo/">Habit Duo</a> lets you track one shared habit with one friend (private, no leaderboards), and the <a href="/ai-analyser/">TempO AI Habit Analyser</a> reads your history to surface patterns Loop's charts leave you to spot yourself. Both are Pro features and both are strictly optional: the free core never pushes you toward them. Think of them as additions layered on a Loop-like foundation, not replacements for it.
+            </p>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>The short version:</strong> Loop optimises for software freedom and total data locality. Productify optimises for the iPhone experience, with a free, calm core plus optional social and AI layers. Which trade-off is right depends on which phone is in your pocket. If it is an iPhone, <a href="/download/">the free download</a> is the fastest way to test the fit.
+                </p>
+            </div>
+
+            <h2 id="switching-heading">Switching from Loop: what to expect</h2>
+            <p>
+                There is no direct import from Loop into Productify, so the honest advice is: before you retire your Android phone, use Loop's export (CSV or SQLite) to keep a permanent archive of your history. That data is yours, and it is worth saving even if no app ever reads it again.
+            </p>
+            <p>
+                Rebuilding in Productify is quicker than most switchers expect. The <a href="/habit-templates/">50+ habit templates</a> cover the usual suspects (exercise, reading, water, meditation, sleep), so recreating a typical Loop habit list takes a few minutes, not an evening. Set your reminder times, add measurable targets where Loop only offered a checkmark, and add a widget to your Home Screen so tracking stays one glance away, the way Loop's widgets kept it.
+            </p>
+            <p>
+                Expect the first week to feel slightly different: streak counts start from zero, and Productify shows a current streak and personal best rather than Loop's strength percentage. Your consistency did not reset, only the counter did, and the app is deliberately designed never to guilt you about it. Most people are back in rhythm within days. <a href="/download/">Start free</a>, rebuild your top three habits first, and add the rest as they come up.
+            </p>
+
+            <h2 id="pricing-heading">Pricing: free core, optional Pro</h2>
+            <p>
+                Loop is completely free forever, with no purchases of any kind. Productify's core is also free: unlimited-time habit tracking, streaks, reminders, templates, measurable goals, and widgets cost nothing and require no account. Productify Pro, which unlocks <a href="/habit-duo/">Habit Duo</a> and the <a href="/ai-analyser/">AI Habit Analyser</a>, costs US $3.99 per month, $24.99 per year, or $34.99 for lifetime access. That is how development is funded instead of ads. If you only ever use the free tier, the comparison with Loop's price is a tie; you can <a href="/download/">download Productify free</a> and never pay a cent.
+            </p>
+
+        </div>
+
+        <!-- VERDICT -->
+        <div class="verdict-box">
+            <h3>Which one should you choose?</h3>
+            <p>
+                If you are on Android, choose Loop, sincerely. It is free, open source, private, and one of the best pieces of software in its category. But Loop does not exist on iPhone, and waiting for an iOS version is not a plan. If you have switched to iPhone and want the closest match to what made Loop good (a free core, no account, calm design, respect for your data), Productify is built for exactly that, and adds optional extras Loop never had.
+            </p>
+            <p style="margin-top:14px;">
+                The practical move: export your Loop history for safekeeping, then <a href="/download/">install Productify free</a> and rebuild your top habits from templates. Ten minutes, and you are tracking again.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">FAQ</div>
+            <h2 id="faq-heading">Common questions</h2>
+        </div>
+        <div class="faq-list" style="max-width: 720px; margin: 0 auto;">
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Is Loop Habit Tracker available on iPhone?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>No. Loop Habit Tracker (also known as uhabits) is an Android app distributed through Google Play and F-Droid, and there is no official iOS version. Apps with similar names on the App Store come from other developers and are not connected to the open source Loop project. If you have moved to iPhone, you will need a different habit tracker, and Productify is a free option built specifically for iOS.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    What is the best Loop Habit Tracker alternative for iPhone?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>It depends on what you liked about Loop. If it was the free core, the calm design, and the focus on your own data, Productify is one of the closest matches on iOS: free to download, no account required, guilt-free streaks, and measurable goals. It is rated 4.5 stars from 493 App Store ratings and works on iPhone and Apple Watch.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Is Productify free and open source like Loop?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>Productify is free to download and the core habit tracking features cost nothing, with no account required. It is not open source, however. Development is funded by an optional Pro subscription (Habit Duo and the TempO AI Habit Analyser) instead of ads. If open source is a hard requirement, no iOS habit tracker currently matches Loop on that point.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Can I move my Loop Habit Tracker data to Productify?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>There is no direct import. Loop can export your history to CSV or SQLite, which is worth doing as a personal archive before you switch. In Productify, most people rebuild their habit list in a few minutes using the 50+ ready-made templates, then carry on tracking from day one on iPhone.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INTERNAL LINKS -->
+<section class="section" aria-labelledby="explore-heading">
+    <div class="container">
+        <div class="article" style="max-width:760px; margin:0 auto;">
+            <h2 id="explore-heading">Explore what makes Productify different</h2>
+            <ul class="check-list">
+                <li><a href="/habit-templates/">Habit templates</a>: 50+ ready-made habits, the fastest way to rebuild a Loop list</li>
+                <li><a href="/streak-tracking/">Streak tracking</a>: consistency without guilt</li>
+                <li><a href="/measurable-goals/">Measurable goals</a>: track steps, minutes, glasses, and reps</li>
+                <li><a href="/habit-duo/">Habit Duo</a>: track one habit with one friend, privately</li>
+                <li><a href="/ai-analyser/">AI Habit Analyser</a>: understand your patterns, not just your counts</li>
+                <li><a href="/habit-tracker/">Habit tracker overview</a>: see the full feature set</li>
+                <li><a href="/blog/best-habit-tracker-apps-2026/">Best habit tracker apps in 2026</a>: broader comparison including more apps</li>
+                <li><a href="/productify-vs-habitify/">Productify vs Habitify</a> and <a href="/productify-vs-habitica/">Productify vs Habitica</a>: how Productify compares to other iOS trackers</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner section--dark" aria-labelledby="cta-heading">
+    <div class="container">
+        <div class="eyebrow" style="background:rgba(255,255,255,.1); color:#93C5FD; border-color:rgba(255,255,255,.1);">Try it free</div>
+        <h2 id="cta-heading">Loop is not on iPhone. Your habits can be.</h2>
+        <p class="lead">
+            Free to download, no account required. Rebuild your habit list from 50+ templates and keep tracking with calm streaks, measurable goals, and widgets, right on iPhone and Apple Watch.
+        </p>
+        <div class="cta-banner__btns">
+            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+               class="appstore-badge-link" data-cta="banner" aria-label="Download Productify free on the App Store">
+                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="170" height="50" loading="lazy" decoding="async">
+            </a>
+            <a href="/#pricing" class="btn btn-ghost">See pricing →</a>
+        </div>
+        <p class="cta-banner__meta">
+            Free for up to 5 habits, no account required.
+            <a href="/download/">See what you get</a>
+            <span aria-hidden="true">&middot;</span>
+            <a href="/pricing/">Compare Free and Pro</a>
+        </p>
+        <p style="margin-top:16px; font-size:.8rem; color:rgba(248,250,252,.5);">Free to start · No account required · Built for iPhone</p>
+    </div>
+</section>

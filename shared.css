@@ -1,8 +1,8 @@
-/* ─── INTER (self-hosted) ─────────────────────────────────────────────────── */
+/* --- INTER (self-hosted) --------------------------------------------------- */
 /* Was loaded from fonts.googleapis.com, which put a cross-origin round trip on
    the critical path before any text could paint. Google serves Inter as one
    variable file per subset, so this is the same two files it was already
-   sending — now same-origin and preloaded.
+   sending - now same-origin and preloaded.
 
    The 400-800 range reproduces the previous rendering exactly: the stylesheet
    asks for font-weight 300 in a few places, and with no face below 400 that
@@ -27,9 +27,9 @@
     unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* ─── PRODUCTIFY – SHARED DESIGN SYSTEM ─────────────────────────────────── */
+/* --- PRODUCTIFY - SHARED DESIGN SYSTEM ----------------------------------- */
 
-/* ─── TOKENS ──────────────────────────────────────────────────────────────── */
+/* --- TOKENS ------------------------------------------------------------ */
 :root {
     --blue:          #2563EB;
     --blue-dark:     #1D4ED8;
@@ -67,7 +67,7 @@
     --purple-light:  #3B82F6;
 }
 
-/* ─── RESET ───────────────────────────────────────────────────────────────── */
+/* --- RESET ------------------------------------------------------------ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
@@ -81,13 +81,13 @@ img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; transition: color .2s; }
 ul, ol { list-style: none; }
 
-/* ─── LAYOUT ──────────────────────────────────────────────────────────────── */
+/* --- LAYOUT ------------------------------------------------------------ */
 .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 .section { padding: 80px 0; background: var(--bg); }
 .section--alt  { background: var(--bg-alt); }
 .section--dark { background: var(--dark-bg); }
 
-/* ─── TYPOGRAPHY ──────────────────────────────────────────────────────────── */
+/* --- TYPOGRAPHY ------------------------------------------------------------ */
 .eyebrow {
     display: inline-block;
     font-size: .71rem; font-weight: 600;
@@ -125,7 +125,7 @@ h3 {
 .section--dark .lead { color: rgba(248,250,252,.65); }
 .section--dark .eyebrow { background: rgba(255,255,255,.08); color: #93C5FD; border-color: rgba(255,255,255,.1); }
 
-/* ─── BUTTONS ─────────────────────────────────────────────────────────────── */
+/* --- BUTTONS ------------------------------------------------------------ */
 .btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 14px 30px; border-radius: var(--radius-pill);
@@ -142,12 +142,12 @@ h3 {
 .btn-ghost:hover { background: rgba(255,255,255,.18); }
 .btn-lg { padding: 16px 38px; font-size: 1.02rem; }
 
-/* ─── APP STORE BADGE ─────────────────────────────────────────────────────── */
+/* --- APP STORE BADGE ------------------------------------------------------- */
 .appstore-badge-link { display: inline-block; line-height: 0; }
 .appstore-badge { display: block; height: auto; border-radius: 10px; transition: opacity .2s, transform .2s; }
 .appstore-badge:hover { opacity: .85; transform: translateY(-2px); }
 
-/* ─── NAVBAR ──────────────────────────────────────────────────────────────── */
+/* --- NAVBAR ------------------------------------------------------------ */
 .navbar {
     position: sticky; top: 0; z-index: 100;
     background: rgba(255,255,255,.92);
@@ -185,7 +185,7 @@ h3 {
 /* hover-to-open: hidden via opacity/visibility so the invisible bridge works */
 .nav-dropdown__menu {
     position: absolute; top: 100%; left: 0;
-    padding-top: 8px;   /* invisible bridge — cursor stays inside the element */
+    padding-top: 8px;   /* invisible bridge - cursor stays inside the element */
     z-index: 200;
     opacity: 0;
     visibility: hidden;
@@ -225,7 +225,7 @@ h3 {
 .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink-muted); border-radius: 2px; margin: 5px 0; transition: all .3s; }
 
-/* ─── MOBILE NAV DRAWER ───────────────────────────────────────────────────── */
+/* --- MOBILE NAV DRAWER ----------------------------------------------------- */
 .mobile-nav-backdrop {
     display: none; position: fixed; inset: 0; z-index: 190;
     background: rgba(20,10,40,.4);
@@ -301,12 +301,12 @@ h3 {
 }
 .mobile-nav__footer .appstore-badge { width: 150px; }
 
-/* Hide header App Store badge on mobile — hero badge is enough */
+/* Hide header App Store badge on mobile - hero badge is enough */
 @media (max-width: 768px) {
     .nav-cta .appstore-badge-link { display: none; }
 }
 
-/* ─── BREADCRUMB ──────────────────────────────────────────────────────────── */
+/* --- BREADCRUMB ------------------------------------------------------------ */
 .breadcrumb {
     padding: 12px 0;
     background: var(--bg-alt);
@@ -319,7 +319,7 @@ h3 {
 .breadcrumb__sep { color: var(--ink-faint); }
 .breadcrumb__current { color: var(--ink); font-weight: 500; }
 
-/* ─── SUB-PAGE HERO ───────────────────────────────────────────────────────── */
+/* --- SUB-PAGE HERO --------------------------------------------------------- */
 .page-hero {
     padding: 72px 0 64px;
     background: var(--bg);
@@ -336,7 +336,7 @@ h3 {
 .page-hero h1 span { color: var(--blue); }
 .page-hero .lead { margin-bottom: 32px; }
 
-/* ─── ARTICLE BODY ────────────────────────────────────────────────────────── */
+/* --- ARTICLE BODY ---------------------------------------------------------- */
 .article { max-width: 760px; }
 .article h2 { margin: 48px 0 16px; }
 .article h3 { margin: 32px 0 10px; font-size: 1.15rem; }
@@ -362,7 +362,7 @@ li a:hover {
     color: var(--blue-dark);
 }
 
-/* ─── CHECK LIST ──────────────────────────────────────────────────────────── */
+/* --- CHECK LIST ------------------------------------------------------------ */
 .check-list { display: flex; flex-direction: column; gap: 11px; margin: 20px 0; }
 .check-list li {
     /* Deliberately NOT a flex container. Flex promotes every child -- the tick
@@ -383,7 +383,7 @@ li a:hover {
     font-size: .65rem; font-weight: 700;
 }
 
-/* ─── NEXT STEP BOX ───────────────────────────────────────────────────────── */
+/* --- NEXT STEP BOX --------------------------------------------------------- */
 .next-step-box {
     background: var(--blue-dim); border: 1px solid var(--blue); border-radius: 12px;
     padding: 24px 28px; margin: 40px 0 32px;
@@ -402,7 +402,7 @@ li a:hover {
     font-size: .9rem; color: var(--ink-muted); margin: 12px 0 0; font-style: italic;
 }
 
-/* ─── USE CASE CARDS ──────────────────────────────────────────────────────── */
+/* --- USE CASE CARDS -------------------------------------------------------- */
 .use-case-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;
     margin-top: 32px;
@@ -416,7 +416,7 @@ li a:hover {
 .use-case-card h3 { font-size: .97rem; margin-bottom: 6px; }
 .use-case-card p { font-size: .88rem; color: var(--ink-muted); line-height: 1.7; }
 
-/* ─── HIGHLIGHT BOX ───────────────────────────────────────────────────────── */
+/* --- HIGHLIGHT BOX --------------------------------------------------------- */
 .highlight-box {
     background: var(--blue-dim);
     border: 1px solid rgba(37,99,235,.15);
@@ -426,7 +426,7 @@ li a:hover {
 .highlight-box p { font-size: .97rem; color: var(--ink-2); line-height: 1.84; margin: 0; }
 .highlight-box strong { color: var(--blue); }
 
-/* ─── CTA BANNER ──────────────────────────────────────────────────────────── */
+/* --- CTA BANNER ------------------------------------------------------------ */
 .cta-banner {
     text-align: center; padding: 80px 0;
     background: var(--dark-bg); position: relative; overflow: hidden;
@@ -449,7 +449,7 @@ li a:hover {
 .cta-banner__meta a:hover { color: #F8FAFC; }
 .cta-banner__meta span { margin: 0 4px; color: rgba(248,250,252,.3); }
 
-/* ─── FOOTER ──────────────────────────────────────────────────────────────── */
+/* --- FOOTER ------------------------------------------------------------ */
 .footer {
     background: var(--dark-bg);
     border-top: 1px solid var(--dark-border);
@@ -481,11 +481,11 @@ li a:hover {
 }
 .footer__social a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
 
-/* ─── SECTION HEADER ──────────────────────────────────────────────────────── */
+/* --- SECTION HEADER -------------------------------------------------------- */
 .section-header { margin-bottom: 52px; }
 .section-header.text-center .lead { margin: 10px auto 0; }
 
-/* ─── FAQ (feature pages) ─────────────────────────────────────────────────── */
+/* --- FAQ (feature pages) --------------------------------------------------- */
 .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item {
     background: var(--surface); border-radius: 12px;
@@ -512,7 +512,7 @@ li a:hover {
 .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 20px; }
 .faq-answer p { font-size: .92rem; color: var(--ink-muted); line-height: 1.82; }
 
-/* ─── FEATURE CARDS (shared) ──────────────────────────────────────────────── */
+/* --- FEATURE CARDS (shared) ------------------------------------------------ */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -535,12 +535,12 @@ li a:hover {
 .feature-card p { font-size: .88rem; color: var(--ink-muted); line-height: 1.72; flex: 1; }
 .feature-card__cta { display: inline-block; margin-top: 16px; font-size: .83rem; font-weight: 600; color: var(--blue); }
 
-/* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
+/* --- RESPONSIVE ------------------------------------------------------------ */
 @media (max-width: 900px) {
     .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
     .nav-links { display: none; }
     .hamburger { display: block; }
-    /* dropdowns hidden with mobile nav open — transition still works when nav-links is shown */
+    /* dropdowns hidden with mobile nav open - transition still works when nav-links is shown */
     .nav-dropdown__menu { pointer-events: none !important; opacity: 0 !important; visibility: hidden !important; }
 }
 @media (max-width: 600px) {
@@ -551,7 +551,7 @@ li a:hover {
     .use-case-grid { grid-template-columns: 1fr; }
 }
 
-/* ─── STICKY CONTENTS RAIL (long articles) ────────────────────────────────── */
+/* --- STICKY CONTENTS RAIL (long articles) ---------------------------------- */
 /* Positioned alongside the article rather than wrapping it in a grid: long
    posts break out of .article mid-way for full-width tables, so the column
    layout has to leave the content flow untouched. Opt in per page with
@@ -594,7 +594,7 @@ li a:hover {
     .article-shell .toc { display: none; }
 }
 
-/* ─── MID-ARTICLE DOWNLOAD BAND ───────────────────────────────────────────── */
+/* --- MID-ARTICLE DOWNLOAD BAND --------------------------------------------- */
 /* Rendered by _includes/inline-cta.html, placed inside the article by
    _layouts/post.html. Slim on purpose: it interrupts the read, so it stays one
    line of copy plus a badge rather than a second full CTA banner. */
@@ -624,7 +624,7 @@ li a:hover {
     .inline-cta__actions { flex-direction: row; align-items: center; gap: 14px; }
 }
 
-/* ─── FEATURE SCREENSHOT ──────────────────────────────────────────────────── */
+/* --- FEATURE SCREENSHOT ---------------------------------------------------- */
 /* Feature pages described an iOS app without ever showing it. Phone captures are
    tall, so the frame is width-constrained; the caption carries the explanatory
    text that alt cannot (alt describes the image for people who can't see it,
@@ -642,7 +642,7 @@ li a:hover {
     font-size: .9rem; line-height: 1.65; color: var(--ink-muted);
 }
 
-/* ─── MOBILE STICKY DOWNLOAD BAR ──────────────────────────────────────────── */
+/* --- MOBILE STICKY DOWNLOAD BAR -------------------------------------------- */
 /* Desktop already shows a badge in the sticky navbar, so this is mobile-only.
    Kept to a slim bar: Google treats mobile interstitials that cover the content
    as intrusive, while a small banner is explicitly fine. */

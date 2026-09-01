@@ -19,7 +19,7 @@ Use a to-do list for one-time tasks with a clear finish line. Use a habit tracke
 
 The clearest way to understand the difference: **a to-do list tracks tasks you need to complete once. A [habit tracker](/habit-tracker/) tracks behaviors you want to repeat on a schedule.**
 
-"Submit the quarterly report" goes on a to-do list. Once it's done, you cross it off and never see it again. "Read for 30 minutes" belongs in a habit tracker — you'll do it again tomorrow, and the day after, and the tracker helps you build consistency. If you're setting one up for the first time, see [how to use a habit tracker](/blog/how-to-use-a-habit-tracker/). For habit ideas, see [what habits to track](/blog/what-habits-to-track/).
+"Submit the quarterly report" goes on a to-do list. Once it's done, you cross it off and never see it again. "Read for 30 minutes" belongs in a habit tracker. You'll do it again tomorrow, and the day after, and the tracker helps you build consistency. If you're setting one up for the first time, see [how to use a habit tracker](/blog/how-to-use-a-habit-tracker/). For habit ideas, see [what habits to track](/blog/what-habits-to-track/).
 
 **The simple rule:** If you only need to do something once, use a to-do list. If you want to do it regularly, use a habit tracker.
 
@@ -102,7 +102,7 @@ Ask yourself one question: **do I want to do this once, or every day?**
 - If **repeatedly** → habit tracker  
 - If **both** → use both, separately  
 
-If you've been struggling to "stick to" a habit that you put on a to-do list — daily exercise, reading, journaling — the tool mismatch is likely part of the problem. A dedicated [habit tracker](/habit-tracker/) like Productify is built for recurring behaviors, [streaks](/streak-tracking/), reminders, [measurable goals](/measurable-goals/), and long-term consistency. For habits that last, see [how to build habits that stick](/blog/how-to-build-habits-that-stick/). For a wider landscape view, see our [best habit tracker apps](/blog/best-habit-tracker-apps-2026/) guide.
+If you've been struggling to "stick to" a habit that you put on a to-do list (daily exercise, reading, journaling), the tool mismatch is likely part of the problem. A dedicated [habit tracker](/habit-tracker/) like Productify is built for recurring behaviors, [streaks](/streak-tracking/), reminders, [measurable goals](/measurable-goals/), and long-term consistency. For habits that last, see [how to build habits that stick](/blog/how-to-build-habits-that-stick/). For a wider landscape view, see our [best habit tracker apps](/blog/best-habit-tracker-apps-2026/) guide.
 
 **Bottom line:** You probably need both, but for different things. Keep one-off work in a to-do list and repeating behaviors in a habit tracker. When those roles blur, both views tend to get noisier and less reliable.
 
@@ -155,7 +155,7 @@ Track routines you want to repeat, such as exercise, reading, water, meditation,
 
 If you already use a to-do app for tasks, Productify can sit beside it as your dedicated habit tracker for routines, streaks, reminders, measurable goals, and long-term consistency.
 
-[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237) — free to start on iPhone, no account required.
+[Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237): free to start on iPhone, no account required.
 
 ---
 

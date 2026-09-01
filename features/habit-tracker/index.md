@@ -1,4 +1,4 @@
-# Habit Tracker App – Best Daily Habit Tracker for iOS 2026 | Productify
+# Habit Tracker App - Best Daily Habit Tracker for iOS 2026 | Productify
 
 **URL:** https://productifyapp.org/habit-tracker/  
 **Type:** Feature page  
@@ -14,11 +14,11 @@ Productify's habit tracker is designed around a single principle: the fastest, l
 Core capabilities:
 - **One-tap daily check-ins** for each habit
 - **Binary habits** (done/not done) and **measurable habits** (steps, minutes, glasses, reps)
-- **Custom habit scheduling** — daily, weekday-only, or specific days of the week
-- **Streak tracking** — current run, personal best, and full history
-- **Smart reminders** — per-habit notifications, schedulable by time and day
-- **50+ habit templates** — pre-built routines across morning, fitness, focus, sleep, and creativity
-- **Progress history** — calendar view of past completions
+- **Custom habit scheduling**: daily, weekday-only, or specific days of the week
+- **Streak tracking**: current run, personal best, and full history
+- **Smart reminders**: per-habit notifications, schedulable by time and day
+- **50+ habit templates**: pre-built routines across morning, fitness, focus, sleep, and creativity
+- **Progress history**: calendar view of past completions
 
 ---
 
