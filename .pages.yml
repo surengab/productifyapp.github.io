@@ -1,4 +1,4 @@
-# Pages CMS configuration — https://pagescms.org
+# Pages CMS configuration - https://pagescms.org
 # Sign in at https://app.pagescms.org with GitHub, authorise this repo, and this
 # file defines the editing panel. Saving writes a commit to `main`, which the
 # Actions workflow builds and deploys.
@@ -29,7 +29,7 @@ content:
       - { name: title, label: Title, type: string, required: true, description: "Used for the <h1>, og:title and the JSON-LD headline." }
       - { name: heading, label: On-page heading override, type: string, description: "Only set this if the visible <h1> should differ from the title above." }
       - { name: seo_title, label: Browser/search title, type: string, description: "Defaults to “<title> | Productify” when left empty." }
-      - { name: description, label: Meta description, type: text, required: true, description: "Shown in search results. Aim for 140–160 characters." }
+      - { name: description, label: Meta description, type: text, required: true, description: "Shown in search results. Aim for 140-160 characters." }
       - { name: og_description, label: Social description, type: text, description: "Optional. Falls back to the meta description." }
       - { name: lead, label: Lead paragraph, type: rich-text, description: "The intro paragraph above the table of contents." }
       - { name: category, label: Category tag, type: string, description: "e.g. How-To Guide, Comparison Guide." }
@@ -41,7 +41,7 @@ content:
         label: Article body
         type: code
         options: { language: html }
-        description: "Section headings (h2 with an id) become the table of contents automatically. Kept as HTML because the articles use custom blocks — check-lists, comparison rows, tables — that a WYSIWYG editor would rewrite on save. Switch this field to `type: rich-text` if you would rather have the visual editor and accept that reformatting."
+        description: "Section headings (h2 with an id) become the table of contents automatically. Kept as HTML because the articles use custom blocks (check-lists, comparison rows, tables) that a WYSIWYG editor would rewrite on save. Switch this field to `type: rich-text` if you would rather have the visual editor and accept that reformatting."
       - name: faq
         label: FAQ
         type: object
@@ -140,6 +140,7 @@ content:
       - { name: priority, label: "Sitemap priority", type: number, options: { min: 0, max: 1, step: 0.05 } }
       - { name: changefreq, label: "Sitemap change frequency", type: select, options: { values: [daily, weekly, monthly, yearly] } }
       - { name: sitemap, label: Include in sitemap, type: boolean }
+      - { name: lastmod_fallback, label: "Sitemap last-modified fallback (advanced)", type: date, options: { format: "yyyy-MM-dd" }, description: "Only used while GitHub Pages builds from the branch. Once Settings -> Pages -> Source is \"GitHub Actions\", the real git date wins and this is ignored. Declared here so a CMS save does not strip it." }
       - { name: robots, label: "Robots meta (advanced)", type: string }
       - { name: canonical_override, label: "Canonical URL override (advanced)", type: string }
       - { name: extra_css, label: "Page CSS (advanced)", type: code, options: { language: css } }

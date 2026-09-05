@@ -12,7 +12,7 @@
                 </a>
             </div>
             <div class="footer__col">
-                <h4>{{ site.data.footer.features.title }}</h4>
+                <h2>{{ site.data.footer.features.title }}</h2>
                 <ul>
                     {%- for link in site.data.footer.features.links %}
                     <li><a href="{{ link.href }}">{{ link.label }}</a></li>
@@ -20,7 +20,7 @@
                 </ul>
             </div>
             <div class="footer__col">
-                <h4>{{ col3.title }}</h4>
+                <h2>{{ col3.title }}</h2>
                 <ul>
                     {%- for link in col3.links %}
                     <li><a href="{{ link.href }}">{{ link.label }}</a></li>
@@ -28,7 +28,7 @@
                 </ul>
             </div>
             <div class="footer__col">
-                <h4>{{ site.data.footer.company.title }}</h4>
+                <h2>{{ site.data.footer.company.title }}</h2>
                 <ul>
                     {%- for link in site.data.footer.company.links %}
                     <li><a href="{{ link.href }}">{{ link.label }}</a></li>

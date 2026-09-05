@@ -20,6 +20,7 @@ Generated from the collections. A page leaves the sitemap by setting
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 {% for p in sorted %}
+{% unless p.robots contains 'noindex' or p.redirect_to or p.canonical_override %}
   <url>
     <loc>{{ p.url | absolute_url }}</loc>
     {%- comment -%}
@@ -54,5 +55,6 @@ Generated from the collections. A page leaves the sitemap by setting
     <changefreq>{{ p.changefreq | default: "monthly" }}</changefreq>
     <priority>{{ p.priority | default: 0.5 }}</priority>
   </url>
+{% endunless %}
 {% endfor %}
 </urlset>

@@ -39,6 +39,9 @@ jobs:
       - name: Check every published URL still resolves
         run: ruby _scripts/check_urls.rb
 
+      - name: Validate SEO metadata, links and structured data
+        run: python3 _scripts/check_seo.py
+
       - uses: actions/upload-pages-artifact@v3
 
   deploy:

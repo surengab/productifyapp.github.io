@@ -29,6 +29,22 @@ URLs come from the `permalink` settings in `_config.yml` and match the
 pre-Jekyll site exactly. `_scripts/check_urls.rb` runs in CI and fails the build
 if any previously published URL stops resolving.
 
+`_scripts/check_seo.py` also gates deployment: it checks canonical URLs,
+unique titles/descriptions, H1s, image alt attributes, internal links and
+anchors, valid JSON-LD, consistent Productify ratings, and indexable sitemap
+entries. Run both checks against a fresh build:
+
+```sh
+bundle exec jekyll build
+ruby _scripts/check_urls.rb
+python3 _scripts/check_seo.py
+```
+
+The homepage is `index.html`. The `index.md` companion is excluded from
+publishing by `_config.yml`; keep its product details synchronized before
+ever enabling it. Legacy `features/`, `compare/`, and `solutions/` HTML files
+are redirect stubs, not alternate content sources. Preserve these URLs.
+
 ## Things worth knowing
 
 - **FAQs live in front matter**, not in the body. One list drives both the

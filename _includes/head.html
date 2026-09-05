@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+<title>{% if page.seo_title %}{{ page.seo_title | escape }}{% else %}{{ page.title | escape }} | {{ site.title | escape }}{% endif %}</title>
 <meta name="description" content="{{ page.description | strip_newlines | escape }}">
 <meta name="robots" content="{{ page.robots | default: 'index, follow, max-image-preview:large, max-snippet:-1' }}">
 <link rel="canonical" href="{{ canonical }}">
@@ -61,10 +61,30 @@ page that needs its own webfont. Raw HTML, emitted verbatim.
 </script>
 {%- endif %}
 
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
+{%- if site.ga_id %}
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ site.ga_id }}');
+    // Keep page-view and CTA events queued while the critical page loads.
+    // No interaction gate: passive readers are still measured.
+    (function () {
+        function loadAnalytics() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}';
+            document.head.appendChild(script);
+        }
+        function scheduleAnalytics() {
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(loadAnalytics, { timeout: 1500 });
+            } else {
+                loadAnalytics();
+            }
+        }
+        if (document.readyState === 'complete') scheduleAnalytics();
+        else window.addEventListener('load', scheduleAnalytics, { once: true });
+    })();
 </script>
+{%- endif %}

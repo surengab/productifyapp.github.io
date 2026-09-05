@@ -5,7 +5,7 @@
 # Run after `jekyll build`; the deploy workflow gates on it.
 require "set"
 
-SITE = File.expand_path("../_site", __dir__)
+SITE = ARGV[0] ? File.expand_path(ARGV[0]) : File.expand_path("../_site", __dir__)
 
 REQUIRED = %w[
   /

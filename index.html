@@ -25,6 +25,11 @@ footer_col:
     label: Start a Daily Habit
   - href: /blog/best-habit-tracker-apps-2026/
     label: Best Habit Tracker Apps
+extra_head: |
+  <link rel="preload" as="image" href="/assets/productify-home-screen-640.webp"
+        imagesrcset="/assets/productify-home-screen-320.webp 320w, /assets/productify-home-screen-640.webp 640w, /assets/productify-home-screen.webp 946w"
+        imagesizes="(max-width: 480px) 258px, (max-width: 720px) 278px, (max-width: 960px) 274px, 334px"
+        fetchpriority="high">
 extra_jsonld:
 - |-
   {
@@ -33,6 +38,7 @@ extra_jsonld:
           "name": "Productify",
           "applicationCategory": "LifestyleApplication",
           "applicationSubCategory": "ProductivityApplication",
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "493", "bestRating": "5" },
           "operatingSystem": "iOS 17+",
           "availableOnDevice": ["iPhone", "iPad", "Apple Watch"],
           "countriesSupported": "AU US GB CA NZ",
@@ -460,6 +466,7 @@ extra_css: |-
   }
   .phone-preview img {
       width: 100%;
+      height: auto;
       display: block;
       border-radius: 34px;
       /* Show the top of the screen; intentionally clip the bottom */
@@ -983,30 +990,30 @@ extra_css: |-
   .footer {
       background: var(--dark-bg);
       border-top: 1px solid var(--dark-border);
-      color: rgba(248,250,252,.55);
+      color: #CBD5E1;
       padding: 64px 0 32px;
   }
   .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
   .footer__brand .logo { color: #F8FAFC; font-size: 1.35rem; }
-  .footer__brand p { margin-top: 14px; font-size: .87rem; line-height: 1.8; color: rgba(248,250,252,.45); }
-  .footer__col h4 {
-      font-size: .73rem; font-weight: 700; color: rgba(248,250,252,.3);
+  .footer__brand p { margin-top: 14px; font-size: .87rem; line-height: 1.8; color: #CBD5E1; }
+  .footer__col h2 {
+      font-size: .73rem; font-weight: 700; color: #CBD5E1;
       letter-spacing: .1em; text-transform: uppercase; margin-bottom: 16px;
   }
   .footer__col ul { display: flex; flex-direction: column; gap: 10px; }
-  .footer__col ul a { font-size: .87rem; color: rgba(248,250,252,.5); }
+  .footer__col ul a { font-size: .87rem; color: #CBD5E1; }
   .footer__col ul a:hover { color: #F8FAFC; }
   .footer__bottom {
       padding-top: 24px; border-top: 1px solid var(--dark-border);
       display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px; font-size: .79rem; color: rgba(248,250,252,.35);
+      flex-wrap: wrap; gap: 16px; font-size: .79rem; color: #CBD5E1;
   }
   .footer__social { display: flex; gap: 10px; }
   .footer__social a {
       width: 34px; height: 34px; border-radius: 50%;
       background: var(--dark-surface); border: 1px solid var(--dark-border);
       display: flex; align-items: center; justify-content: center;
-      font-size: .9rem; color: rgba(248,250,252,.5);
+      font-size: .9rem; color: #CBD5E1;
       transition: background .2s, color .2s;
   }
   .footer__social a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
@@ -1178,6 +1185,12 @@ extra_css: |-
   }
 
   /* --- UTILITY -------------------------------------- */
+  .section--purple .eyebrow,
+  .section--alt .eyebrow { color: #5B21B6; }
+  .section p a:not(.btn):not(.appstore-badge-link) {
+      text-decoration: underline;
+      text-underline-offset: .15em;
+  }
   .mt-8  { margin-top: 8px; }
   .mt-16 { margin-top: 16px; }
   .mt-24 { margin-top: 24px; }
@@ -1212,12 +1225,14 @@ extra_css: |-
             </div>
             <div class="hero__visual">
                 <div class="phone-preview">
-                    <img src="assets/productify-home-screen.webp"
+                    <img src="/assets/productify-home-screen-640.webp"
+                         srcset="/assets/productify-home-screen-320.webp 320w, /assets/productify-home-screen-640.webp 640w, /assets/productify-home-screen.webp 946w"
+                         sizes="(max-width: 480px) 258px, (max-width: 720px) 278px, (max-width: 960px) 274px, 334px"
                          alt="Productify habit tracker app home screen"
-                         width="390" height="844"
+                         width="946" height="2048"
                          loading="eager"
                          fetchpriority="high"
-                         decoding="sync">
+                         decoding="async">
                 </div>
             </div>
         </div>
@@ -1639,7 +1654,7 @@ extra_css: |-
         <div class="section-header text-center">
             <div class="eyebrow">App Store Reviews</div>
             <h2 id="testimonials-heading">People who use it, love it</h2>
-            <p class="lead">Real quotes copied directly from the App Store.</p>
+            <p class="lead">Summaries of customer feedback from the <a href="{{ site.appstore_url }}">US App Store</a>.</p>
         </div>
         <div class="testimonials-aggregate" aria-label="Highly rated on the App Store">
             <div class="testimonials-aggregate__stars" aria-hidden="true">
@@ -1649,57 +1664,36 @@ extra_css: |-
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <span class="testimonials-aggregate__label">Highly rated on the App Store</span>
+            <a class="testimonials-aggregate__label" href="{{ site.appstore_url }}">4.5 out of 5 from 493 US App Store ratings</a>
         </div>
         <div class="testimonials-grid">
             <article class="testimonial-card">
-                <div class="testimonial-card__stars" aria-label="5 stars">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <p class="testimonial-card__quote">"I really want to gush about this app but worry it will look fake. My love for this app isn't fake. Streaks work very well for me so the visual of an ongoing streak is elegant and perfect. The clean simplicity of using it is perfect. I upgraded within a week so I could add more habits. Highly recommend!"</p>
+                <p class="testimonial-card__quote">RCGStreer finds the visible streaks and simple design motivating, praises the support response, and upgraded to track more habits.</p>
                 <div class="testimonial-card__author">
                     <div class="testimonial-card__avatar" aria-hidden="true">RC</div>
                     <div>
                         <div class="testimonial-card__name">RCGStreer</div>
-                        <div class="testimonial-card__role">Verified App Store review</div>
+                        <div class="testimonial-card__role">App Store review summary</div>
                     </div>
                 </div>
             </article>
             <article class="testimonial-card">
-                <div class="testimonial-card__stars" aria-label="5 stars">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <p class="testimonial-card__quote">"I absolutely love this app, it helps me keep a good cleaning schedule for every day of the week and reminds me to take vitamins. I have no complaints. I haven't had a problem since I started and would recommend it to anyone building a daily routine."</p>
+                <p class="testimonial-card__quote">MilofromOhio uses the app for a cleaning routine and vitamin reminders. After an earlier data-loss issue, they report no further problems and request more icons.</p>
                 <div class="testimonial-card__author">
                     <div class="testimonial-card__avatar" aria-hidden="true">MO</div>
                     <div>
                         <div class="testimonial-card__name">MilofromOhio</div>
-                        <div class="testimonial-card__role">Verified App Store review</div>
+                        <div class="testimonial-card__role">App Store review summary</div>
                     </div>
                 </div>
             </article>
             <article class="testimonial-card">
-                <div class="testimonial-card__stars" aria-label="5 stars">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <p class="testimonial-card__quote">"This app provides you with the tools you need to build and track good habits and to potentially eliminate bad ones in a beautiful way. It's exactly what I was looking for."</p>
+                <p class="testimonial-card__quote">northandsouth praises the design and habit-building tools but reports reminder problems and distracting screen transitions. The developer responded that the reminder issue had been fixed.</p>
                 <div class="testimonial-card__author">
                     <div class="testimonial-card__avatar" aria-hidden="true">NS</div>
                     <div>
                         <div class="testimonial-card__name">northandsouth</div>
-                        <div class="testimonial-card__role">Verified App Store review</div>
+                        <div class="testimonial-card__role">App Store review summary</div>
                     </div>
                 </div>
             </article>

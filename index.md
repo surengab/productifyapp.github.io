@@ -1,10 +1,10 @@
-# Productify - Best Daily Habit Tracker App for iOS | Free
+# Productify - Daily Habit Tracker for iPhone
 
 **URL:** https://productifyapp.org/  
 **Type:** Product homepage  
 **Last updated:** 2026
 
-Productify is the best free daily habit tracker app for iPhone. Build lasting routines with AI insights, streak tracking, Habit Duo accountability, and 50+ templates. Free to download, no account required.
+Productify is a calm daily habit tracker for iPhone. Track habits, streaks, reminders, measurable goals, Habit Duo accountability, and optional AI insights. Free to start, no account required.
 
 ---
 
@@ -23,7 +23,7 @@ It is free to start and requires no account.
 - **Smart Reminders**: Per-habit notifications, customisable by time and day.
 - **Habit Duo**: Pair with one friend on one shared habit. Private, focused accountability with no leaderboards.
 - **AI Habit Analyser**: Surfaces real behavioural patterns from your completion data. Identifies when you're consistent and what triggers slips.
-- **50+ Habit Templates**: Pre-built routines across morning, fitness, focus, sleep, creativity, and more. Start in under 60 seconds.
+- **Habit Templates**: 5 starter templates included free; the full library of 50+ routines is available on Pro.
 - **Measurable Goals**: Track steps, minutes, reps, glasses, or any custom unit.
 - **Minimalist Design**: Calm, clutter-free UI that reduces decision fatigue.
 
@@ -33,14 +33,17 @@ It is free to start and requires no account.
 
 | Plan | Price | What's included |
 |------|-------|-----------------|
-| Free | $0 | Unlimited habits, reminders, streak tracking |
-| Pro | Subscription | Habit Duo, AI Analyser, advanced analytics |
+| Free | $0 forever | Up to 5 habits, streak tracking, smart reminders, 5 starter templates, and basic progress view |
+| Pro | $3.99/month or $24.99/year | Unlimited habits, Habit Duo, AI Habit Analyser, all habit templates, advanced analytics, custom habit units, and priority support |
+| Lifetime | $34.99 one-time | All Pro features and future updates |
+
+Prices are in USD and may vary by region and local taxes. Pro includes a 7-day free trial.
 
 ---
 
 ## Platform
 
-- iOS 17+
+- iPhone and iPad, iOS 17+
 - Apple Watch
 - No Android (yet)
 
@@ -48,7 +51,8 @@ It is free to start and requires no account.
 
 ## App Store Rating
 
-4.9 stars · Available on the App Store  
+Highly rated on the App Store
+
 [Download Productify](https://apps.apple.com/us/app/habit-tracker-productify/id1389900237)
 
 ---

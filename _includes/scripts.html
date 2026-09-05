@@ -6,12 +6,16 @@
         var navBackdrop = document.getElementById('mobileNavBackdrop');
 
         function openMobileNav() {
+            mobileNav.inert = false;
             mobileNav.classList.add('open');
             navBackdrop.classList.add('open');
             document.body.style.overflow = 'hidden';
             openBtn.setAttribute('aria-expanded', 'true');
+            if (closeBtn) closeBtn.focus();
         }
         function closeMobileNav() {
+            if (mobileNav.contains(document.activeElement)) openBtn.focus();
+            mobileNav.inert = true;
             mobileNav.classList.remove('open');
             navBackdrop.classList.remove('open');
             document.body.style.overflow = '';
@@ -47,7 +51,7 @@
         });
 
         var isTouchDevice = false;
-        window.addEventListener('touchstart', function () { isTouchDevice = true; }, { once: true });
+        window.addEventListener('touchstart', function () { isTouchDevice = true; }, { once: true, passive: true });
         function closeAllDropdowns(except) {
             document.querySelectorAll('.nav-dropdown.open').forEach(function (dd) {
                 if (dd !== except) {
@@ -92,32 +96,45 @@
             var ctaClose = document.getElementById('stickyCtaClose');
             var footer = document.querySelector('footer');
             var footerVisible = false;
+            var ctaDismissed = false;
 
             if (footer && 'IntersectionObserver' in window) {
                 new IntersectionObserver(function (entries) {
                     footerVisible = entries[0].isIntersecting;
+                    syncCta();
                 }, { rootMargin: '0px 0px -40px 0px' }).observe(footer);
             }
 
             var ctaTicking = false;
+            var pastHero = false;
+            var hero = document.querySelector('.hero, .page-hero, #article-heading');
+            var observeHero = hero && 'IntersectionObserver' in window;
             var syncCta = function () {
                 ctaTicking = false;
                 // one viewport down clears the hero and its existing CTA
-                var past = window.scrollY > window.innerHeight * 0.9;
-                cta.classList.toggle('is-visible', past && !footerVisible);
+                var past = observeHero ? pastHero : window.scrollY > window.innerHeight * 0.9;
+                cta.classList.toggle('is-visible', past && !footerVisible && !ctaDismissed);
             };
-            window.addEventListener('scroll', function () {
+            if (observeHero) {
+                new IntersectionObserver(function (entries) {
+                    var entry = entries[0];
+                    pastHero = !entry.isIntersecting && entry.boundingClientRect.bottom <= 0;
+                    syncCta();
+                }).observe(hero);
+            } else window.addEventListener('scroll', function () {
                 if (!ctaTicking) { ctaTicking = true; window.requestAnimationFrame(syncCta); }
             }, { passive: true });
 
             if (ctaClose) {
                 ctaClose.addEventListener('click', function () {
+                    ctaDismissed = true;
                     cta.classList.remove('is-visible');
                     sessionStorage.setItem('ctaDismissed', '1');
                     window.setTimeout(function () { cta.hidden = true; }, 300);
                 });
             }
-            syncCta();
+            if (observeHero) syncCta();
+            else window.requestAnimationFrame(syncCta);
         }
 
         // Contents rail: highlight the section currently being read. Falls back
@@ -138,11 +155,13 @@
                         if (entries[i].target.getBoundingClientRect().top <= 140) best = entries[i];
                     }
                     if (best === current) return;
+                    // Read layout before toggling styles to avoid forcing a
+                    // synchronous layout calculation on every active change.
+                    var lt = best.link.offsetTop, rs = rail.scrollTop, rh = rail.clientHeight;
                     if (current) current.link.classList.remove('is-active');
                     best.link.classList.add('is-active');
                     current = best;
                     // keep the active item in view when the rail itself scrolls
-                    var lt = best.link.offsetTop, rs = rail.scrollTop, rh = rail.clientHeight;
                     if (lt < rs || lt > rs + rh - 40) rail.scrollTop = lt - rh / 2;
                 };
                 window.addEventListener('scroll', function () {
@@ -169,9 +188,12 @@
         if (!isIOS && location.pathname !== '/download/') {
             document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
                 if (a.closest('.sticky-cta')) return;
+                // Only route download controls, not review/source citations.
+                if (!a.matches('.appstore-badge-link, [data-cta]')) return;
                 if (a.href.indexOf(OUR_APP) === -1) return;   // competitor listing
                 a.dataset.storeHref = a.href;
                 a.href = '/download/';
+                a.setAttribute('aria-label', 'Download Productify');
             });
         }
 
