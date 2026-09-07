@@ -77,10 +77,25 @@ matching the hand-written ones.
             {%- endcomment -%}
             <h1 id="article-heading">{{ page.heading | default: page.title }}</h1>
 
+            <p class="article-byline">By <a href="/editorial/">{{ site.title }} Editorial Team</a></p>
+
             {%- if page.lead %}
             <p class="lead">
                 {{ page.lead }}
             </p>
+            {%- endif %}
+
+            {%- if page.summary %}
+            <aside class="article-summary" aria-label="Quick answer">
+                <strong>Quick answer</strong>
+                <p>{{ page.summary }}</p>
+            </aside>
+            {%- endif %}
+            {%- if page.cover_alt and page.image %}
+            <img class="article-cover" src="{{ page.image }}"
+                 {% if page.image_small %}srcset="{{ page.image_small }} 720w, {{ page.image }} 1200w" sizes="(max-width: 828px) calc(100vw - 48px), 780px"{% endif %}
+                 width="1200" height="800" loading="lazy" decoding="async"
+                 alt="{{ page.cover_alt | escape }}">
             {%- endif %}
 
             {%- comment -%}

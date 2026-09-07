@@ -9,6 +9,26 @@ priority: 0.9
 og_description: Practical guides on habit tracking, daily routines, productivity, and behavior change from the Productify team.
 robots: index, follow
 permalink: /blog/
+image: /assets/blog/habit-growth-v2.jpg
+extra_css: |
+  .blog-hero__layout {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      gap: 48px;
+  }
+  .blog-hero__layout .lead { margin-bottom: 0; }
+  .blog-hero__art {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+  }
+  @media (max-width: 900px) {
+      .blog-hero__layout { grid-template-columns: 1fr; gap: 32px; }
+      .blog-hero__art { max-width: 640px; }
+  }
 breadcrumbs:
 - label: Home
   href: /
@@ -50,11 +70,12 @@ extra_jsonld:
               { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/how-long-to-build-a-habit/" }
           ]
       }
+last_modified: '2026-09-07'
 ---
 
 <!-- PAGE HERO -->
 <section class="page-hero" aria-labelledby="blog-hero-heading">
-    <div class="container">
+    <div class="container blog-hero__layout">
         <div class="page-hero__inner">
             <div class="eyebrow">Habit Tracking &amp; Productivity</div>
             <h1 id="blog-hero-heading">
@@ -65,6 +86,43 @@ extra_jsonld:
                 Practical guides on habit tracking, productivity, morning routines, and behavior change, from the team behind Productify.
             </p>
         </div>
+        <img class="blog-hero__art"
+             src="/assets/blog/habit-growth-v2.jpg"
+             srcset="/assets/blog/habit-growth-v2-720.jpg 720w, /assets/blog/habit-growth-v2.jpg 1200w"
+             sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 900px) 640px, 530px"
+             width="1200" height="800" fetchpriority="high"
+             alt="Three plants in lavender, teal, and coral pots, with a watering can and a looping line.">
+    </div>
+</section>
+
+<section class="section" aria-labelledby="start-here-heading">
+    <div class="container">
+        <div class="section-header">
+            <div class="eyebrow">Start here</div>
+            <h2 id="start-here-heading">A guide for where you are now</h2>
+            <p>Start a routine, work through an obstacle, or understand what progress can look like.</p>
+        </div>
+        <nav class="editorial-topics" aria-label="Browse habit guides">
+            <a href="#start-here-heading">Getting started</a>
+            <a href="/blog/how-to-build-habits-that-stick/">Staying consistent</a>
+            <a href="/blog/best-habit-tracker-apps-2026/">Choosing an app</a>
+            <a href="/morning-routine/">Daily routines</a>
+            <a href="#topics-heading">More topics</a>
+        </nav>
+        <div class="featured-guides">
+            {% assign featured_urls = '/blog/how-to-start-a-daily-habit/|/blog/how-to-build-habits-that-stick/|/blog/how-long-to-build-a-habit/' | split: '|' %}
+            {% for guide_url in featured_urls %}
+            {% assign guide = site.blog | where: 'url', guide_url | first %}
+            <a class="feature-card feature-card--link featured-guide" href="{{ guide.url }}">
+                <img src="{{ guide.image_small }}" width="720" height="480" loading="lazy" decoding="async" alt="{{ guide.cover_alt | escape }}">
+                <span class="eyebrow">{% if forloop.first %}Your first week{% elsif forloop.index == 2 %}Keep going{% else %}Understand the timeline{% endif %}</span>
+                <h3>{{ guide.title }}</h3>
+                <p>{{ guide.description }}</p>
+                <span class="feature-card__cta">Read the guide →</span>
+            </a>
+            {% endfor %}
+        </div>
+        <p class="text-muted" style="margin-top:24px;">By the <a href="/editorial/">Productify Editorial Team</a>. Read how we handle sources and product comparisons.</p>
     </div>
 </section>
 
@@ -72,8 +130,8 @@ extra_jsonld:
 <section class="section" aria-labelledby="articles-heading">
     <div class="container">
         <div class="section-header" style="margin-bottom: 40px;">
-            <div class="eyebrow">Latest articles</div>
-            <h2 id="articles-heading">All guides</h2>
+            <div class="eyebrow">More to explore</div>
+            <h2 id="articles-heading">More habit guides</h2>
         </div>
 
         <div class="features-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
@@ -85,7 +143,7 @@ extra_jsonld:
                     <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Comparison · Apr 2026</div>
                 </div>
                 <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">6 Best Habit Tracker Apps to Use in 2026 (Free &amp; Paid)</h3>
-                <p class="text-muted" style="flex: 1;">An honest, detailed comparison of the top habit tracker apps, Productify, Streaks, Habitica, HabitNow, Habitify, and Productive. Find a daily habit tracker that fits your goals.</p>
+                <p class="text-muted" style="flex: 1;">Compare six habit tracker apps by published features, payment model, and use case. Start with the shortlist and check the official sources.</p>
                 <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
             </a>
 
@@ -150,8 +208,8 @@ extra_jsonld:
                     <div class="feature-card__icon" style="font-size: 2rem;">🎯</div>
                     <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Goal Setting · May 2026</div>
                 </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How Many Goals Should I Set? The Research-Backed Answer</h3>
-                <p class="text-muted" style="flex: 1;">Research points to 1-3 active goals at once. Learn why fewer goals produce better outcomes, how to choose the right ones, and how habits bridge goal to result.</p>
+                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How Many Goals Should I Set? A Practical Planning Guide</h3>
+                <p class="text-muted" style="flex: 1;">Choose goals that fit your time and responsibilities. Use a small active list as a planning exercise and connect each goal to a practical action.</p>
                 <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
             </a>
 
@@ -167,26 +225,10 @@ extra_jsonld:
             </a>
 
             <!-- Article 5 -->
-            <a href="/blog/how-to-build-habits-that-stick/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">🧠</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">How-To Guide · Apr 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How to Build Habits That Actually Stick (Science-Backed)</h3>
-                <p class="text-muted" style="flex: 1;">The habit loop, cue-routine-reward, habit stacking, and environment design, practical tools to make good habits easier to repeat.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
+
 
             <!-- Article 6 -->
-            <a href="/blog/how-to-start-a-daily-habit/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">🌱</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">How-To Guide · Apr 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How to Start a Daily Habit (Even If You've Failed Before)</h3>
-                <p class="text-muted" style="flex: 1;">A practical, six-step method to start a daily habit and keep it, built for people who've tried and failed with the usual advice.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
+
 
             <!-- Article 7 -->
             <a href="/blog/how-to-break-bad-habits/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
@@ -222,15 +264,7 @@ extra_jsonld:
             </a>
 
             <!-- Article 10 -->
-            <a href="/blog/how-long-to-build-a-habit/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">🔬</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Science · Apr 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How Long Does It Take to Build a Habit? (The Real Science)</h3>
-                <p class="text-muted" style="flex: 1;">It's not 21 days. The UCL research says 66 days on average, here's what that means for your habits and how to shorten the timeline.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
+
 
         </div>
     </div>

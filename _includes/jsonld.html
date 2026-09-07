@@ -12,7 +12,7 @@ and the visible page can no longer drift apart (they did, before the migration).
     "url": "{{ include.canonical }}",
     "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
     "dateModified": "{{ page.last_modified | default: page.git_lastmod | default: page.lastmod_fallback | default: page.date | date: '%Y-%m-%d' }}",
-    "author": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ '/' | absolute_url }}" },
+    "author": { "@type": "Organization", "name": {{ site.title | append: " Editorial Team" | jsonify }}, "url": "{{ '/editorial/' | absolute_url }}" },
     "publisher": { "@type": "Organization", "name": "{{ site.title }}", "logo": { "@type": "ImageObject", "url": "{{ '/favicon.svg' | absolute_url }}" } },
     "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ include.canonical }}" },
     "image": "{{ include.img }}"

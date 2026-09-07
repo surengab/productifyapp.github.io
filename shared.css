@@ -685,3 +685,26 @@ li a:hover {
 @media (max-width: 900px) and (prefers-reduced-motion: reduce) {
     .sticky-cta { transition: none; }
 }
+
+/* Editorial guides: shared readable summaries, images, and tables. */
+.article .article-byline { font-size: .85rem; color: var(--ink-muted); margin: 12px 0 20px; }
+.article-summary { background: #f5f3fb; border-left: 3px solid #6B6FD4; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 24px 0; }
+.article .article-summary p { margin: 6px 0 0; font-size: 1rem; }
+.article-cover { display: block; width: 100%; height: auto; border-radius: 18px; margin: 28px 0; }
+.editorial-table { max-width: 100%; overflow-x: auto; margin: 24px 0; border: 1px solid var(--border); border-radius: 12px; }
+.editorial-table:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.editorial-table table { width: 100%; border-collapse: collapse; min-width: 520px; font-size: .9rem; }
+.editorial-table caption { text-align: left; padding: 16px; font-weight: 600; background: var(--bg-alt); }
+.editorial-table th, .editorial-table td { text-align: left; vertical-align: top; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+.editorial-table thead { background: var(--bg-alt); }
+.editorial-table tbody tr:last-child > * { border-bottom: 0; }
+.editorial-topics { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+.editorial-topics a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px; border: 1px solid var(--border); border-radius: 24px; font-size: .9rem; color: var(--ink-2); }
+.editorial-topics a:hover { background: var(--bg-alt); }
+.featured-guides { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.featured-guide { min-width: 0; display: flex; flex-direction: column; }
+.featured-guide img { display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 20px; }
+.featured-guide .eyebrow { align-self: flex-start; }
+.featured-guide h3 { font-size: 1.12rem; }
+.featured-guide .feature-card__cta { margin-top: 16px; }
+@media (max-width: 760px) { .featured-guides { grid-template-columns: 1fr; } }
