@@ -101,7 +101,7 @@ The rule: never add a new element until all existing elements feel automatic.
 
 ## Related
 
-- [How to Start a Daily Habit](https://productifyapp.org/blog/how-to-start-a-daily-habit/)
+- [How to Start a Daily Habit](https://productifyapp.org/guides/how-to-start-a-daily-habit/)
 - [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
-- [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
+- [How to Build Habits That Actually Stick](https://productifyapp.org/guides/how-to-build-habits-that-stick/)
 - [Habit Templates](https://productifyapp.org/features/habit-templates/)

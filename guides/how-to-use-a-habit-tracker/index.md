@@ -1,6 +1,6 @@
 # How to Use a Habit Tracker: A Complete Beginner's Guide
 
-**URL:** https://productifyapp.org/blog/how-to-use-a-habit-tracker/  
+**URL:** https://productifyapp.org/guides/how-to-use-a-habit-tracker/  
 **Type:** Beginner guide  
 **Published:** April 2026
 
@@ -143,6 +143,6 @@ The meta-habit that supports all other habits is the daily check-in. To make it 
 ## Related reading
 
 - [What Habits Should I Track? 30 Daily Habits Worth Building](https://productifyapp.org/blog/what-habits-to-track/)
-- [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
-- [How to Start a Daily Habit](https://productifyapp.org/blog/how-to-start-a-daily-habit/)
+- [How to Build Habits That Actually Stick](https://productifyapp.org/guides/how-to-build-habits-that-stick/)
+- [How to Start a Daily Habit](https://productifyapp.org/guides/how-to-start-a-daily-habit/)
 - [Habit Tracker vs To-Do List](https://productifyapp.org/blog/habit-tracker-vs-to-do-list/)

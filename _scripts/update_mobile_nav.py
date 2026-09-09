@@ -36,7 +36,7 @@ NEW_NAV = '''\
             <span class="mobile-nav__group-label">Blog</span>
             <a href="/blog/" class="mobile-nav__link">All Articles</a>
             <a href="/blog/best-habit-tracker-apps-2026/" class="mobile-nav__link">Best Habit Tracker Apps 2026</a>
-            <a href="/blog/how-to-start-a-daily-habit/" class="mobile-nav__link">How to Start a Daily Habit</a>
+            <a href="/guides/how-to-start-a-daily-habit/" class="mobile-nav__link">How to Start a Daily Habit</a>
         </div>
     </div>
 

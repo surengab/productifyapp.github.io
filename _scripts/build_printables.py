@@ -37,8 +37,8 @@ def header(c, width, height, title, subtitle, size_label):
     text(c, 36, height - 72, title, 29, True)
     text(c, 36, height - 94, subtitle, 10, color=MUTED)
     text(c, width - 100, 27, size_label, 8, color=MUTED)
-    text(c, 36, 27, 'productifyapp.org/habit-tracker-printable/', 8, color=MUTED)
-    c.linkURL('https://productifyapp.org/habit-tracker-printable/', (36, 23, 250, 37), relative=0)
+    text(c, 36, 27, 'productifyapp.org/guides/habit-tracker-printable/', 8, color=MUTED)
+    c.linkURL('https://productifyapp.org/guides/habit-tracker-printable/', (36, 23, 250, 37), relative=0)
 
 
 def grid(c, top, widths, labels, rows, row_height, header_height):
@@ -126,7 +126,10 @@ def build():
             assert abs(float(page.mediabox.width) - pagesize[0]) < 0.1
             assert abs(float(page.mediabox.height) - pagesize[1]) < 0.1
             content = page.extract_text()
-            assert 'habit tracker' in content and 'productifyapp.org/habit-tracker-printable/' in content
+            assert 'habit tracker' in content and 'productifyapp.org/guides/habit-tracker-printable/' in content
+            assert [a.get_object()['/A']['/URI'] for a in page.get('/Annots', [])] == [
+                'https://productifyapp.org/guides/habit-tracker-printable/'
+            ]
             if layout == 'monthly':
                 assert all(str(day) in content.splitlines() for day in range(1, 32))
             else:

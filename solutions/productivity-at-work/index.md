@@ -89,6 +89,6 @@ Writing top 3 priorities first protects this window and ensures you're working o
 ## Related
 
 - [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
-- [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
-- [How to Use a Habit Tracker](https://productifyapp.org/blog/how-to-use-a-habit-tracker/)
+- [How to Build Habits That Actually Stick](https://productifyapp.org/guides/how-to-build-habits-that-stick/)
+- [How to Use a Habit Tracker](https://productifyapp.org/guides/how-to-use-a-habit-tracker/)
 - [Habit Templates](https://productifyapp.org/features/habit-templates/)

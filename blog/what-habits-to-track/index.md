@@ -103,7 +103,7 @@ Most habit researchers, including James Clear, recommend against tracking more t
 
 ## Related reading
 
-- [How to Start a Daily Habit](https://productifyapp.org/blog/how-to-start-a-daily-habit/)
-- [How to Use a Habit Tracker](https://productifyapp.org/blog/how-to-use-a-habit-tracker/)
+- [How to Start a Daily Habit](https://productifyapp.org/guides/how-to-start-a-daily-habit/)
+- [How to Use a Habit Tracker](https://productifyapp.org/guides/how-to-use-a-habit-tracker/)
 - [How to Build a Morning Routine](https://productifyapp.org/solutions/morning-routine/)
 - [How Long Does It Take to Build a Habit?](https://productifyapp.org/blog/how-long-to-build-a-habit/)

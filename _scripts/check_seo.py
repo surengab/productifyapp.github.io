@@ -20,6 +20,8 @@ class Page(HTMLParser):
         self.ids, self.links, self.canonicals, self.schemas = set(), [], [], []
         self.title, self.description, self.robots = '', '', ''
         self.social_urls = []
+        self.library_links, self.section_links, self.cards = [], [], []
+        self.nav_label = ''
         self.h1 = 0
         self.redirect = False
         self.in_title = self.in_json = False
@@ -31,6 +33,13 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag == 'nav': self.nav_label = a.get('aria-label', '')
+        if tag == 'a':
+            if self.nav_label in ('Guides library', 'Blog library'):
+                self.library_links.append((self.nav_label, a.get('href'), a.get('aria-current')))
+            if self.nav_label == 'Resource sections':
+                self.section_links.append((a.get('href'), a.get('aria-current')))
+            if 'resource-card' in a.get('class', '').split(): self.cards.append(a.get('href'))
         if a.get('id'):
             self.ids.add(a['id'])
         if tag == 'h1': self.h1 += 1
@@ -56,6 +65,7 @@ class Page(HTMLParser):
         if self.in_json: self.json_text += text
 
     def handle_endtag(self, tag):
+        if tag == 'nav': self.nav_label = ''
         if tag == 'title': self.in_title = False
         if tag == 'script' and self.in_json:
             try: self.schemas.append(json.loads(self.json_text))
@@ -99,6 +109,35 @@ for path, page in pages.items():
     for social_url in page.social_urls:
         if social_url != url: errors.append(f'{relative}: incorrect social URL {social_url}')
     for schema in page.schemas: inspect_schema(schema, relative)
+    section = relative.split('/')[0]
+    if section in ('guides', 'blog'):
+        section_url = f'/{section}/'
+        page_url = '/' + relative.removesuffix('index.html')
+        children = {'/' + p.relative_to(ROOT).as_posix().removesuffix('index.html')
+                    for p in pages if p.parent.parent == ROOT / section}
+        links = page.library_links
+        if {href for _, href, _ in links} != children | {section_url} or len(links) != len(children) + 1:
+            errors.append(f'{relative}: sidebar must list its own collection exactly once')
+        if any(label != f'{section.capitalize()} library' for label, _, _ in links):
+            errors.append(f'{relative}: wrong section sidebar')
+        if [href for _, href, current in links if current == 'page'] != [page_url]:
+            errors.append(f'{relative}: sidebar current page does not match URL')
+        if page.section_links != [('/guides/', 'location' if section == 'guides' else None),
+                                  ('/blog/', 'location' if section == 'blog' else None)]:
+            errors.append(f'{relative}: inconsistent resource section navigation')
+        if page_url == section_url and (set(page.cards) != children or len(page.cards) != len(children)):
+            errors.append(f'{relative}: listing must contain only its own collection, without duplicates')
+        breadcrumbs = [s for s in page.schemas if isinstance(s, dict) and s.get('@type') == 'BreadcrumbList']
+        expected = [ORIGIN + '/', ORIGIN + section_url]
+        if page_url != section_url: expected.append(ORIGIN + page_url)
+        if len(breadcrumbs) != 1 or [item.get('item') for item in breadcrumbs[0]['itemListElement']] != expected:
+            errors.append(f'{relative}: breadcrumbs do not match section hierarchy')
+        if page_url == section_url:
+            schema_type = 'Blog' if section == 'blog' else 'CollectionPage'
+            lists = [s for s in page.schemas if isinstance(s, dict) and s.get('@type') == schema_type]
+            key = 'blogPost' if section == 'blog' else 'hasPart'
+            if len(lists) != 1 or {s['url'] for s in lists[0].get(key, [])} != {ORIGIN + p for p in children}:
+                errors.append(f'{relative}: structured listing does not match collection')
     for tag, href in page.links:
         resolved = urljoin(url, href)
         parts = urlsplit(resolved)

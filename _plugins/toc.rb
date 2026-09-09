@@ -1,4 +1,4 @@
-# Builds the "In this guide" table of contents from the <h2 id="..."> elements
+# Builds the "On this page" table of contents from the <h2 id="..."> elements
 # kramdown generates for the post body, so adding a section to an article no
 # longer means hand-editing a second list that can silently fall out of sync.
 #
@@ -30,7 +30,7 @@ module Jekyll
 
       <<~HTML.rstrip
         <nav class="toc" aria-label="Table of contents">
-                        <p class="toc__title">In this guide</p>
+                        <p class="toc__title">On this page</p>
                         <ol>
         #{items.join("\n")}
                         </ol>

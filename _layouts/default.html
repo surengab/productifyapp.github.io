@@ -14,10 +14,10 @@
 {% include mobile-nav.html %}
 {% include navbar.html %}
 
-{%- if page.guide_sidebar %}
-<div class="guide-shell">
-    {% include guide-sidebar.html %}
-    <div class="guide-content" id="guide-main" tabindex="-1">{{ content }}</div>
+{%- if page.section == 'guides' or page.section == 'blog' %}
+<div class="resource-shell">
+    {% include resource-sidebar.html %}
+    <div class="resource-content" id="resource-main" tabindex="-1">{{ content }}</div>
 </div>
 {%- else %}
 {{ content }}

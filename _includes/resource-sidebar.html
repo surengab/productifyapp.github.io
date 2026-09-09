@@ -1,0 +1,27 @@
+{%- assign library = site[page.section] | sort: 'nav_order' -%}
+{%- assign section_title = page.section | capitalize -%}
+{%- assign section_url = '/' | append: page.section | append: '/' -%}
+<aside class="resource-sidebar">
+    <a class="resource-skip" href="#resource-main">Skip to content</a>
+    <nav class="resource-sections" aria-label="Resource sections">
+        <a href="/guides/"{% if page.section == 'guides' %} aria-current="location"{% endif %}>Guides</a>
+        <a href="/blog/"{% if page.section == 'blog' %} aria-current="location"{% endif %}>Blog</a>
+    </nav>
+    <details class="resource-sidebar__menu" open>
+        <summary>Browse {{ section_title }}</summary>
+        <nav aria-label="{{ section_title }} library">
+            <ul>
+                <li><a href="{{ section_url }}" class="resource-sidebar__link"{% if page.url == section_url %} aria-current="page"{% endif %}>
+                    <strong>{% if page.section == 'guides' %}All Guides{% else %}All Articles{% endif %}</strong>
+                    <span>{% if page.section == 'guides' %}Tutorials and printable resources{% else %}Ideas, research, and comparisons{% endif %}</span>
+                </a></li>
+                {%- for item in library %}
+                <li><a href="{{ item.url }}" class="resource-sidebar__link"{% if page.url == item.url %} aria-current="page"{% endif %}>
+                    <strong>{{ item.nav_title | default: item.title | escape }}</strong>
+                    <span>{{ item.nav_description | default: item.description | escape }}</span>
+                </a></li>
+                {%- endfor %}
+            </ul>
+        </nav>
+    </details>
+</aside>

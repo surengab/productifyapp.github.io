@@ -1,10 +1,14 @@
 ---
-layout: page
-title: Habit Tracking Guides and Free Resources
-seo_title: 'Habit Tracking Guides & Free Resources | Productify'
-description: 'Explore practical habit tracking guides: start a daily routine, choose habits to track, work through setbacks, compare apps, and download free printable trackers.'
+layout: resource-index
+section: guides
+title: Habit Tracking Guides and Free Printable Resources
+seo_title: 'Habit Tracking Guides & Free Printables | Productify'
+description: 'Follow step-by-step guides to start a daily habit, use a habit tracker, break bad habits, and plan your goals. Download free monthly and weekly printable trackers.'
 permalink: /guides/
-guide_sidebar: true
+heading: Practical guides for your next habit.
+lead: 'Choose a task, follow the steps, and put it into practice. Start here for habit-tracking tutorials, goal planning, and free printable resources.'
+library_heading: All guides and resources
+library_description: 'A clear next step, from your first check-in to a routine you can keep.'
 last_modified: '2026-09-09'
 changefreq: weekly
 priority: 0.9
@@ -12,52 +16,4 @@ breadcrumbs:
   - label: Home
     href: /
   - label: Guides
-cta:
-  eyebrow: Put it into practice
-  heading: Give your next habit a place to grow.
-  lead: 'Use Productify on iPhone to set a schedule, record your progress, and review your routine. Start free with up to 5 habits.'
-  link_href: /features/habit-tracker/
-  link_label: Explore the habit tracker →
 ---
-<section class="guide-hero" aria-labelledby="guides-heading">
-    <div class="container">
-        <div class="eyebrow">Learn at your own pace</div>
-        <h1 id="guides-heading">Habit tracking guides<br>for your next step.</h1>
-        <p class="lead">Start your first routine, find habits worth tracking, or work through a setback. Choose a guide you can put into practice today.</p>
-        <div class="guide-start">
-            <h2>New to habit tracking?</h2>
-            <p>Begin with one action and a realistic schedule. Our beginner’s guide walks through a first week, on paper or in an app.</p>
-            <a href="/blog/how-to-use-a-habit-tracker/" class="btn btn-primary">Start with the beginner’s guide →</a>
-        </div>
-        <nav class="editorial-topics" aria-label="Find a guide">
-            <a href="/blog/what-habits-to-track/">Find habit ideas</a>
-            <a href="/blog/how-to-build-habits-that-stick/">Stay consistent</a>
-            <a href="/blog/best-habit-tracker-apps-2026/">Compare apps</a>
-            <a href="/habit-tracker-printable/">Get free printables</a>
-        </nav>
-    </div>
-</section>
-<section class="guide-library" aria-labelledby="guide-library-heading">
-    <div class="container">
-        <div class="section-header">
-            <h2 id="guide-library-heading">Explore all guides</h2>
-            <p>Practical help with choosing, building, and tracking your habits.</p>
-        </div>
-        <div class="guide-cards">
-            {%- assign guides = site.blog | where: 'guide_sidebar', true | sort: 'title' %}
-            {%- for guide in guides %}
-            <a class="feature-card feature-card--link guide-card" href="{{ guide.url }}">
-                <span class="eyebrow">{{ guide.category | default: 'Habit guide' | escape }}</span>
-                <h3>{{ guide.title | escape }}</h3>
-                <p>{{ guide.description | escape }}</p>
-                <span class="feature-card__cta">Read the guide →</span>
-            </a>
-            {%- endfor %}
-        </div>
-        <div class="guide-start">
-            <h2>Prefer paper and pen?</h2>
-            <p>Choose a free monthly or weekly tracker in A4 or US Letter. See a completed example, then make the next page your own.</p>
-            <a href="/habit-tracker-printable/" class="btn btn-secondary">Choose a printable habit tracker →</a>
-        </div>
-    </div>
-</section>

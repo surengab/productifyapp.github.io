@@ -25,19 +25,22 @@ content:
       default:
         sort: date
         order: desc
-    fields:
+    fields: &article_fields
+      - { name: layout, label: Page presentation, type: select, options: { values: [post, page] }, description: "Use post for articles and tutorials; page for the printable resource with its own heading." }
       - { name: title, label: Title, type: string, required: true, description: "Used for the <h1>, og:title and the JSON-LD headline." }
       - { name: heading, label: On-page heading override, type: string, description: "Only set this if the visible <h1> should differ from the title above." }
       - { name: seo_title, label: Browser/search title, type: string, description: "Defaults to “<title> | Productify” when left empty." }
       - { name: description, label: Meta description, type: text, required: true, description: "Shown in search results. Aim for 140-160 characters." }
       - { name: og_description, label: Social description, type: text, description: "Optional. Falls back to the meta description." }
       - { name: lead, label: Lead paragraph, type: rich-text, description: "The intro paragraph above the table of contents." }
-      - { name: category, label: Category tag, type: string, description: "e.g. How-To Guide, Comparison Guide." }
+      - { name: category, label: Category tag, type: string, description: "e.g. Habit ideas, Habit research, App comparisons." }
       - { name: read_time, label: Read time, type: string, description: "e.g. 11 min read." }
       - { name: date, label: Published, type: date, options: { format: "yyyy-MM-dd" }, required: true }
       - { name: last_modified, label: Updated, type: date, options: { format: "yyyy-MM-dd" }, description: "Adds a visible “Updated …” line. Leave empty if unchanged." }
       - { name: image, label: Social image, type: image, description: "Defaults to the site-wide og-image.jpg." }
-      - { name: guide_sidebar, label: Show in Guides, type: boolean, description: "Show the guide sidebar and include this article in the Guides library. Turn off for blog-only updates or stories." }
+      - { name: nav_title, label: Sidebar title, type: string, description: "Short title for this section’s sidebar and footer." }
+      - { name: nav_description, label: Sidebar description, type: string }
+      - { name: nav_order, label: Sidebar order, type: number, description: "Lower numbers appear first within this section." }
       - name: body
         label: Article body
         type: code
@@ -97,18 +100,21 @@ content:
           - { name: href, label: Anchor, type: string }
           - { name: label, label: Label, type: string }
       - { name: extra_css, label: "Page CSS (advanced)", type: code, options: { language: css } }
-      - name: footer_col
-        label: "Footer column (advanced)"
-        type: object
-        fields:
-          - { name: title, label: Heading, type: string }
-          - name: links
-            label: Links
-            type: object
-            list: true
-            fields:
-              - { name: href, label: URL, type: string }
-              - { name: label, label: Text, type: string }
+
+  - name: guides
+    label: Guides and tutorials
+    type: collection
+    path: _guides
+    extension: html
+    format: yaml-frontmatter
+    filename: '{primary}.html'
+    view:
+      fields: [title, category, nav_order]
+      sort: [nav_order, title]
+      default:
+        sort: nav_order
+        order: asc
+    fields: *article_fields
 
   - name: features
     label: Feature pages
@@ -125,7 +131,6 @@ content:
       - { name: description, label: Meta description, type: text, required: true }
       - { name: og_description, label: Social description, type: text }
       - { name: image, label: Social image, type: image }
-      - { name: guide_sidebar, label: Show guide sidebar, type: boolean }
       - name: body
         label: Page content
         type: code
@@ -188,27 +193,40 @@ content:
     format: yaml-frontmatter
     fields: *page_fields
 
-  - name: guides
+  - name: guides_index
     label: Guides landing page
     type: file
     path: guides/index.html
     format: yaml-frontmatter
-    fields: *page_fields
-
-  - name: guide_sidebar
-    label: Guide sidebar
-    type: file
-    path: _data/guide_sidebar.yml
-    format: yaml
-    fields:
-      - name: items
-        label: Sidebar links
+    fields: &resource_index_fields
+      - { name: layout, label: Layout, type: string, description: "Keep resource-index for the shared library layout." }
+      - { name: section, label: Section, type: select, options: { values: [guides, blog] } }
+      - { name: permalink, label: URL, type: string }
+      - { name: title, label: Title, type: string }
+      - { name: seo_title, label: Search title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: heading, label: Page heading, type: string }
+      - { name: lead, label: Introduction, type: text }
+      - { name: library_heading, label: Listing heading, type: string }
+      - { name: library_description, label: Listing description, type: text }
+      - { name: image, label: Social image, type: image }
+      - { name: last_modified, label: Updated, type: date }
+      - { name: changefreq, label: Sitemap frequency, type: string }
+      - { name: priority, label: Sitemap priority, type: number }
+      - name: breadcrumbs
+        label: Breadcrumbs
         type: object
         list: true
         fields:
-          - { name: href, label: URL, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: blurb, label: Description, type: string }
+          - { name: label, label: Label, type: string }
+          - { name: href, label: Link, type: string }
+
+  - name: blog_index
+    label: Blog landing page
+    type: file
+    path: blog/index.html
+    format: yaml-frontmatter
+    fields: *resource_index_fields
 
   - name: navigation
     label: Navigation menu

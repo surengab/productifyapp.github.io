@@ -105,5 +105,5 @@ Many do: Deep Work, Pomodoro, The Ivy Lee Method, SAVERS, the 20/20/20 Formula, 
 
 - [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
 - [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
-- [How to Start a Daily Habit](https://productifyapp.org/blog/how-to-start-a-daily-habit/)
+- [How to Start a Daily Habit](https://productifyapp.org/guides/how-to-start-a-daily-habit/)
 - [Build a Morning Routine](https://productifyapp.org/solutions/morning-routine/)

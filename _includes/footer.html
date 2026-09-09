@@ -1,4 +1,10 @@
 {%- assign col3 = page.footer_col | default: site.data.footer.contextual -%}
+{%- assign col3_title = col3.title -%}
+{%- assign col3_links = col3.links -%}
+{%- if page.section == 'guides' or page.section == 'blog' -%}
+{%- assign col3_title = page.section | capitalize -%}
+{%- assign col3_links = site[page.section] | sort: 'nav_order' -%}
+{%- endif -%}
 <footer class="footer" role="contentinfo">
     <div class="container">
         <div class="footer__grid">
@@ -20,10 +26,10 @@
                 </ul>
             </div>
             <div class="footer__col">
-                <h2>{{ col3.title }}</h2>
+                <h2>{{ col3_title }}</h2>
                 <ul>
-                    {%- for link in col3.links %}
-                    <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+                    {%- for link in col3_links %}
+                    <li><a href="{{ link.url | default: link.href }}">{{ link.nav_title | default: link.label | default: link.title }}</a></li>
                     {%- endfor %}
                 </ul>
             </div>

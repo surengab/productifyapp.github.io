@@ -21,6 +21,9 @@ ahrefs_site_verification: fa4bb1ff66190ceaa3866dffe1adca9a9c0569b8b7ffdfd06263e4
 # Retired flat URLs have no redirect or duplicate page. Individual resources
 # can keep a standalone URL with an explicit front-matter permalink.
 collections:
+  guides:
+    output: true
+    permalink: /guides/:path/
   blog:
     output: true
     permalink: /blog/:path/
@@ -42,6 +45,13 @@ defaults:
       changefreq: monthly
       priority: 0.5
       sitemap: true
+  - scope: { path: "", type: guides }
+    values:
+      layout: post
+      section: guides
+      changefreq: monthly
+      priority: 0.8
+      toc: true
   - scope: { path: "", type: blog }
     values:
       layout: post
@@ -86,12 +96,13 @@ sass:
 # page; index.md then renders to index.html and clobbers the real page, which is
 # what replaced the homepage with the LLM index. Jekyll 4 in .github/workflows
 # has no such plugin and copies them verbatim, so once Settings -> Pages ->
-# Source is "GitHub Actions" these five lines can be deleted to restore the
+# Source is "GitHub Actions" these exclusion lines can be deleted to restore the
 # /index.md URLs.
 exclude:
   - index.md
   - blog/index.md
   - blog/*/index.md
+  - guides/*/index.md
   - features/*/index.md
   - solutions/*/index.md
   - Gemfile

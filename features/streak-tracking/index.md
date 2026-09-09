@@ -55,4 +55,4 @@ Why does tracking streaks work?
 
 - [Habit Tracker](https://productifyapp.org/features/habit-tracker/)
 - [How Long Does It Take to Build a Habit?](https://productifyapp.org/blog/how-long-to-build-a-habit/)
-- [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
+- [How to Build Habits That Actually Stick](https://productifyapp.org/guides/how-to-build-habits-that-stick/)

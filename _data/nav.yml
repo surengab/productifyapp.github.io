@@ -32,8 +32,8 @@ dropdowns:
   - label: Resources
     align: right
     items:
-      - { href: /guides/, icon: book-open, title: "Guides", blurb: "Learn to build and track habits", mobile: "Guides" }
-      - { href: /blog/, icon: layers, title: "Blog", blurb: "Browse the latest articles", mobile: "Blog" }
+      - { href: /guides/, icon: book-open, title: "Guides", blurb: "Step-by-step tutorials & printables", mobile: "Guides" }
+      - { href: /blog/, icon: layers, title: "Blog", blurb: "Habit ideas, research & comparisons", mobile: "Blog" }
 
   - label: Company
     align: right

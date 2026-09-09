@@ -1,6 +1,6 @@
 # How to Start a Daily Habit (Even If You've Failed Before)
 
-**URL:** https://productifyapp.org/blog/how-to-start-a-daily-habit/  
+**URL:** https://productifyapp.org/guides/how-to-start-a-daily-habit/  
 **Type:** How-to guide  
 **Published:** April 2026
 
@@ -104,7 +104,7 @@ Productify is built around this exact approach:
 
 ## Related reading
 
-- [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
+- [How to Build Habits That Actually Stick](https://productifyapp.org/guides/how-to-build-habits-that-stick/)
 - [How Long Does It Take to Build a Habit?](https://productifyapp.org/blog/how-long-to-build-a-habit/)
 - [What Habits Should I Track?](https://productifyapp.org/blog/what-habits-to-track/)
-- [How to Use a Habit Tracker](https://productifyapp.org/blog/how-to-use-a-habit-tracker/)
+- [How to Use a Habit Tracker](https://productifyapp.org/guides/how-to-use-a-habit-tracker/)

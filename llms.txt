@@ -43,6 +43,13 @@ This file provides a curated index of the most important pages on {{ site.url | 
 - [{{ d.title }}]({{ d.url | absolute_url }}){% if d.og_description %}: {{ d.og_description | strip_newlines }}{% endif %}
 {%- endfor %}
 
+## Guides
+
+- [All guides]({{ '/guides/' | absolute_url }})
+{%- for d in site.guides %}
+- [{{ d.title }}]({{ d.url | absolute_url }}): {{ d.description | strip_newlines }}
+{%- endfor %}
+
 ## Blog
 
 - [All articles]({{ '/blog/' | absolute_url }})

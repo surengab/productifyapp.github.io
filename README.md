@@ -11,26 +11,32 @@ Two ways, both of which commit to `main` and trigger a deploy:
    GitHub and open this repo. The panel is defined by `.pages.yml`: blog posts,
    feature/comparison/solution pages, the homepage, plus the navigation menu and
    footer. No server or OAuth app to run.
-2. **Directly in the repo**: edit the files under `_blog/`, `_features/`,
+2. **Directly in the repo**: edit the files under `_guides/`, `_blog/`, `_features/`,
    `_compare/`, `_solutions/`.
 
 ## Layout
 
 | Path | What it holds |
 | --- | --- |
-| `_blog/`, `_features/`, `_compare/`, `_solutions/` | page content + front matter |
+| `_guides/`, `_blog/`, `_features/`, `_compare/`, `_solutions/` | page content + front matter |
 | `_layouts/` | `post` (articles), `page` (marketing pages), `legal`, `default` |
 | `_includes/` | head/SEO, JSON-LD, navbar, mobile drawer, footer, FAQ, breadcrumb, CTA |
 | `_data/nav.yml`, `_data/footer.yml` | navigation and footer, shared by every page |
 | `_plugins/toc.rb` | builds the "In this guide" contents from the article's headings |
 | `sitemap.xml` | generated from the collections |
 
-URLs come from the `permalink` settings in `_config.yml`: `/features/<slug>/`,
-`/solutions/<slug>/`, `/compare/<slug>/`, and `/blog/<slug>/`. The printable
-resource explicitly keeps `/habit-tracker-printable/`. The 15 migrated flat
-URLs and the old habit-streaks aliases are intentionally removed, with no
-redirects. `_scripts/check_urls.rb` checks that current paths exist and retired
-paths are absent. Always build into a clean destination after changing URLs.
+URLs come from the collection permalinks in `_config.yml`: `/features/<slug>/`,
+`/solutions/<slug>/`, `/compare/<slug>/`, `/guides/<slug>/`, and `/blog/<slug>/`.
+Guides contains task-based tutorials, goal planning, and the printable tracker.
+Blog contains habit ideas, research, accountability topics, and app comparisons.
+Each item belongs to exactly one collection. Both sections use the same listing
+layout and a sidebar generated from their own collection. Edit sidebar labels and
+order on the article itself; there is no separate "Show in Guides" checkbox.
+
+The retired flat URLs, legacy habit-streaks aliases, and former blog URLs of moved
+guides are intentionally removed, with no redirects. `_scripts/check_urls.rb`
+checks that current paths exist and retired paths are absent. Always build into a
+clean destination after changing URLs.
 
 `_scripts/check_seo.py` also gates deployment: it checks canonical URLs,
 unique titles/descriptions, H1s, image alt attributes, internal links and

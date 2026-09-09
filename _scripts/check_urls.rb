@@ -12,11 +12,11 @@ REQUIRED = %w[
   /blog/best-habit-tracker-apps-2026/
   /blog/habit-tracker-vs-to-do-list/
   /blog/how-long-to-build-a-habit/
-  /blog/how-many-goals-should-i-set/
-  /blog/how-to-break-bad-habits/
-  /blog/how-to-build-habits-that-stick/
-  /blog/how-to-start-a-daily-habit/
-  /blog/how-to-use-a-habit-tracker/
+  /guides/how-many-goals-should-i-set/
+  /guides/how-to-break-bad-habits/
+  /guides/how-to-build-habits-that-stick/
+  /guides/how-to-start-a-daily-habit/
+  /guides/how-to-use-a-habit-tracker/
   /blog/what-habits-to-track/
   /compare/productify-vs-habitica/
   /compare/productify-vs-habitify/
@@ -25,7 +25,7 @@ REQUIRED = %w[
   /features/streak-tracking/
   /features/habit-templates/
   /features/habit-tracker/
-  /habit-tracker-printable/
+  /guides/habit-tracker-printable/
   /assets/printables/habit-tracker-monthly-a4.pdf
   /assets/printables/habit-tracker-monthly-letter.pdf
   /assets/printables/habit-tracker-weekly-monday-a4.pdf
@@ -53,6 +53,12 @@ REQUIRED = %w[
 ].freeze
 
 RETIRED = %w[
+  /blog/how-to-use-a-habit-tracker/
+  /blog/how-to-start-a-daily-habit/
+  /blog/how-to-build-habits-that-stick/
+  /blog/how-to-break-bad-habits/
+  /blog/how-many-goals-should-i-set/
+  /habit-tracker-printable/
   /habit-duo/
   /habit-templates/
   /habit-tracker/

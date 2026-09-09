@@ -1,96 +1,20 @@
 ---
-lastmod_fallback: '2026-08-27'
-layout: page
-title: Productify Blog - Latest Articles on Habits and Routines
-seo_title: 'Productify Blog: Latest Articles on Habits & Routines'
-description: Browse the latest Productify articles on habit tracking, daily routines, and productivity. Find practical ideas and explore our step-by-step guide library.
+layout: resource-index
+section: blog
+title: 'Productify Blog: Habit Ideas, Research and App Comparisons'
+seo_title: 'Habit Ideas, Research & App Comparisons | Productify Blog'
+description: 'Explore habit ideas, behavior research, shared accountability, and app comparisons. Read perspectives on habits, life priorities, and everyday productivity.'
+permalink: /blog/
+heading: Ideas and perspectives on everyday progress.
+lead: 'Explore what to track, what research tells us, and how different tools compare. Find ideas for your routine and a fresh perspective on the habits you choose.'
+library_heading: Latest articles
+library_description: 'Habit ideas, research, productivity topics, and comparisons from Productify.'
+last_modified: '2026-09-09'
 changefreq: weekly
 priority: 0.9
-og_description: Practical guides on habit tracking, daily routines, productivity, and behavior change from the Productify team.
-robots: index, follow
-permalink: /blog/
 image: /assets/blog/habit-growth-v2.jpg
 breadcrumbs:
-- label: Home
-  href: /
-- label: Blog
-  item: /blog/
-footer_col:
-  title: Blog
-  links:
-  - href: /blog/areas-of-life/
-    label: Areas of Life
-  - href: /blog/bad-habits-list/
-    label: Bad Habits List
-  - href: /blog/how-many-goals-should-i-set/
-    label: How Many Goals
-  - href: /blog/best-habit-tracker-apps-2026/
-    label: Best Habit Tracker Apps
-  - href: /solutions/morning-routine/
-    label: Morning Routine
-extra_jsonld:
-- |-
-  {
-          "@context": "https://schema.org",
-          "@type": "Blog",
-          "name": "Productify Blog",
-          "description": "Practical guides on habit tracking, daily routines, productivity, and behavior change.",
-          "url": "https://productifyapp.org/blog/",
-          "publisher": { "@type": "Organization", "name": "Productify", "logo": { "@type": "ImageObject", "url": "https://productifyapp.org/favicon.svg" } },
-          "blogPost": [
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/best-habit-tracker-apps-2026/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/areas-of-life/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/bad-habits-list/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/how-many-goals-should-i-set/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/habit-tracker-vs-to-do-list/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/how-to-build-habits-that-stick/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/how-to-start-a-daily-habit/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/how-to-break-bad-habits/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/how-to-use-a-habit-tracker/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/what-habits-to-track/" },
-              { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/how-long-to-build-a-habit/" }
-          ]
-      }
-last_modified: '2026-09-09'
+  - label: Home
+    href: /
+  - label: Blog
 ---
-<section class="page-hero" aria-labelledby="blog-hero-heading">
-    <div class="container">
-        <div class="eyebrow">From Productify</div>
-        <h1 id="blog-hero-heading">The Productify blog</h1>
-        <p class="lead">Our latest writing on habits, routines, and making progress in everyday life.</p>
-    </div>
-</section>
-<section class="section" aria-labelledby="articles-heading">
-    <div class="container">
-        <h2 id="articles-heading">Latest articles</h2>
-        <div class="blog-feed">
-            {%- assign articles = site.blog | sort: 'date' | reverse %}
-            {%- for article in articles %}
-            <article class="blog-feed__article">
-                <time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
-                <h3><a href="{{ article.url }}">{{ article.title | escape }}</a></h3>
-                <p>{{ article.description | escape }}</p>
-                <a class="feature-card__cta" href="{{ article.url }}" aria-label="Read {{ article.title | escape }}">Read the article →</a>
-            </article>
-            {%- endfor %}
-        </div>
-    </div>
-</section>
-<section class="section section--alt" aria-labelledby="start-here-heading">
-    <div class="container">
-        <h2 id="start-here-heading">Looking for a place to start?</h2>
-        <p class="lead" style="margin: 16px 0 24px;">Explore the Guides library for help with your first habit, daily tracking, setbacks, and choosing an app.</p>
-        <a href="/guides/" class="btn btn-primary">Browse all guides →</a>
-    </div>
-</section>
-<section class="section section--alt" aria-labelledby="topics-heading">
-    <div class="container">
-        <h2 id="topics-heading">Explore more resources</h2>
-        <nav class="editorial-topics" aria-label="More resources">
-            <a href="/guides/">Habit tracking guides</a>
-            <a href="/habit-tracker-printable/">Free printable trackers</a>
-            <a href="/solutions/morning-routine/">Morning routines</a>
-            <a href="/features/habit-tracker/">Productify habit tracker</a>
-        </nav>
-    </div>
-</section>

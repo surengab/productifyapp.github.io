@@ -94,7 +94,7 @@ These are general ranges. Individual variation is high.
 
 ## Related reading
 
-- [How to Build Habits That Actually Stick](https://productifyapp.org/blog/how-to-build-habits-that-stick/)
-- [How to Start a Daily Habit](https://productifyapp.org/blog/how-to-start-a-daily-habit/)
-- [How to Use a Habit Tracker](https://productifyapp.org/blog/how-to-use-a-habit-tracker/)
+- [How to Build Habits That Actually Stick](https://productifyapp.org/guides/how-to-build-habits-that-stick/)
+- [How to Start a Daily Habit](https://productifyapp.org/guides/how-to-start-a-daily-habit/)
+- [How to Use a Habit Tracker](https://productifyapp.org/guides/how-to-use-a-habit-tracker/)
 - [Streak Tracking feature](https://productifyapp.org/features/streak-tracking/)
