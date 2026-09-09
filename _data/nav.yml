@@ -25,6 +25,7 @@ dropdowns:
     min_width: 280px
     items:
       - { href: /blog/, icon: book-open, title: "All Articles", blurb: "Browse the full blog", aria: "All Articles", divider: true, mobile: "All Articles" }
+      - { href: /habit-tracker-printable/, icon: list-checks, title: "Free Printable Habit Tracker", blurb: "Monthly and weekly PDFs", mobile: "Free Printable Habit Tracker" }
       - { href: /blog/best-habit-tracker-apps-2026/, icon: trophy, title: "Best Habit Tracker Apps 2026", blurb: "Free &amp; paid comparison", aria: "Best Habit Tracker Apps 2026", mobile: "Best Habit Tracker Apps 2026" }
       - { href: /blog/how-to-start-a-daily-habit/,   icon: sprout, title: "How to Start a Daily Habit", blurb: "Build from scratch", aria: "How to Start a Daily Habit", mobile: "How to Start a Daily Habit" }
       - { href: /blog/how-to-break-bad-habits/, icon: ban, title: "How to Break Bad Habits", blurb: "Replace, don't resist", aria: "How to Break Bad Habits", mobile: "How to Break Bad Habits" }

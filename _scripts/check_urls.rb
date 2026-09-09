@@ -28,6 +28,13 @@ REQUIRED = %w[
   /habit-streaks/
   /habit-templates/
   /habit-tracker/
+  /habit-tracker-printable/
+  /assets/printables/habit-tracker-monthly-a4.pdf
+  /assets/printables/habit-tracker-monthly-letter.pdf
+  /assets/printables/habit-tracker-weekly-monday-a4.pdf
+  /assets/printables/habit-tracker-weekly-monday-letter.pdf
+  /assets/printables/habit-tracker-weekly-sunday-a4.pdf
+  /assets/printables/habit-tracker-weekly-sunday-letter.pdf
   /measurable-goals/
   /streak-tracking/
   /evening-routine/
