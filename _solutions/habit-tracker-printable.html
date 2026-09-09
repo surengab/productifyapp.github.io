@@ -61,15 +61,15 @@ extra_css: |-
 
 <section class="section section--alt" aria-labelledby="downloads">
     <div class="container">
-        <div class="section-header"><div class="eyebrow">Download &amp; print</div><h2 id="downloads">Choose your habit tracker printable</h2><p>Each download is a one-page PDF. Use the matching paper size and print at actual size or 100%.</p></div>
+        <div class="section-header"><div class="eyebrow">Download &amp; print</div><h2 id="downloads">Choose your habit tracker printable</h2><p>Choose a format to open its one-page PDF in a new tab. Use the PDF viewer’s Download or Print button to save or print it. Match your paper size and print at actual size or 100%.</p></div>
         <div class="printable-grid">
             <article class="printable-card" aria-labelledby="monthly-heading">
                 <div class="printable-preview"><img src="/assets/printables/monthly-preview.webp" alt="Blank monthly habit tracker with eight habit rows, dates 1 through 31, and space for a monthly review" width="1200" height="927" decoding="async"></div>
                 <h3 id="monthly-heading">Monthly habit tracker</h3>
                 <p>See the month in one grid. Eight rows give you room to choose your habits; you can leave most of them empty. Write your targets, then cross out dates that do not apply.</p>
                 <div class="printable-downloads">
-                    <a class="btn btn-primary" href="/assets/printables/habit-tracker-monthly-a4.pdf" download data-printable="monthly-a4">Monthly A4 PDF ↓</a>
-                    <a class="btn btn-secondary" href="/assets/printables/habit-tracker-monthly-letter.pdf" download data-printable="monthly-letter">Monthly US Letter PDF ↓</a>
+                    <a class="btn btn-primary" href="/assets/printables/habit-tracker-monthly-a4.pdf" target="_blank" rel="noopener" data-printable="monthly-a4">Open Monthly A4 PDF ↗</a>
+                    <a class="btn btn-secondary" href="/assets/printables/habit-tracker-monthly-letter.pdf" target="_blank" rel="noopener" data-printable="monthly-letter">Open Monthly US Letter PDF ↗</a>
                 </div>
                 <small>Landscape · Dates 1–31 · Any month, any year</small>
             </article>
@@ -79,13 +79,13 @@ extra_css: |-
                 <p>Start with one week. Five roomy rows let you write a habit and its target, with space to note what worked and one change to try next.</p>
                 <h4>Monday start</h4>
                 <div class="printable-downloads">
-                    <a class="btn btn-primary" href="/assets/printables/habit-tracker-weekly-monday-a4.pdf" download data-printable="weekly-monday-a4">Monday A4 PDF ↓</a>
-                    <a class="btn btn-secondary" href="/assets/printables/habit-tracker-weekly-monday-letter.pdf" download data-printable="weekly-monday-letter">Monday US Letter PDF ↓</a>
+                    <a class="btn btn-primary" href="/assets/printables/habit-tracker-weekly-monday-a4.pdf" target="_blank" rel="noopener" data-printable="weekly-monday-a4">Open Monday A4 PDF ↗</a>
+                    <a class="btn btn-secondary" href="/assets/printables/habit-tracker-weekly-monday-letter.pdf" target="_blank" rel="noopener" data-printable="weekly-monday-letter">Open Monday US Letter PDF ↗</a>
                 </div>
                 <h4>Sunday start</h4>
                 <div class="printable-downloads">
-                    <a class="btn btn-primary" href="/assets/printables/habit-tracker-weekly-sunday-a4.pdf" download data-printable="weekly-sunday-a4">Sunday A4 PDF ↓</a>
-                    <a class="btn btn-secondary" href="/assets/printables/habit-tracker-weekly-sunday-letter.pdf" download data-printable="weekly-sunday-letter">Sunday US Letter PDF ↓</a>
+                    <a class="btn btn-primary" href="/assets/printables/habit-tracker-weekly-sunday-a4.pdf" target="_blank" rel="noopener" data-printable="weekly-sunday-a4">Open Sunday A4 PDF ↗</a>
+                    <a class="btn btn-secondary" href="/assets/printables/habit-tracker-weekly-sunday-letter.pdf" target="_blank" rel="noopener" data-printable="weekly-sunday-letter">Open Sunday US Letter PDF ↗</a>
                 </div>
                 <small>Portrait · Choose either week order · Reprint when you need it</small>
             </article>
@@ -124,7 +124,7 @@ extra_css: |-
 document.addEventListener('click', function (event) {
     var link = event.target.closest('a[data-printable]');
     if (link && typeof window.gtag === 'function') {
-        window.gtag('event', 'printable_download', {
+        window.gtag('event', 'printable_open', {
             printable_variant: link.dataset.printable,
             page_path: location.pathname,
             link_url: link.href
