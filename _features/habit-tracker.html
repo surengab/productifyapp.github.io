@@ -1,12 +1,15 @@
 ---
 lastmod_fallback: '2026-08-27'
+last_modified: '2026-09-09'
 layout: page
-title: 'Daily Habit Tracking: Reminders, Streaks & Goals'
-seo_title: 'Daily Habit Tracking: Reminders, Streaks & Goals | Productify'
-description: 'How daily habit tracking works in Productify: setting a habit, checking in, smart reminders, streaks, measurable goals and the weekly review. Free on iPhone.'
+title: 'Habit Tracking App for Daily and Weekly Routines'
+seo_title: 'Habit Tracking App: Reminders & Goals | Productify'
+description: 'A habit tracking app for daily and weekly routines. Set reminders, log measurable goals, and review your progress. Start free with 5 habits on iPhone.'
 changefreq: monthly
 priority: 0.9
-og_description: 'A walkthrough of daily habit tracking in Productify: how you set a habit, check in, and see the week (reminders, streaks and measurable goals included).'
+og_description: 'Set a schedule, log what you did, and review your progress. Productify combines reminders, measurable goals, and habit history on iPhone.'
+extra_css: |-
+  h2[id] { scroll-margin-top: 92px; }
 breadcrumbs:
 - label: Home
   href: /
@@ -48,329 +51,95 @@ faq:
 - q: "Does Productify work as a productivity tracker?"
   a: "Yes. Productify works as both a habit tracker and a productivity tracker. You can track focus sessions, deep work time, reading minutes, skill practice, and professional routines, with measurable targets and time-based reminders. See our productivity at work guide for specific setups."
 - q: "Is Productify habit tracker free?"
-  a: "Yes. Productify is free to download on iOS with no account required. The free plan covers up to 5 habits with reminders, streaks and starter templates. Unlimited habits and Pro features (Habit Duo shared accountability, AI Habit Analyser, and advanced analytics) are available via monthly or annual subscription. See <a href=\"/pricing/\">what Free and Pro each include</a>."
+  a: "Yes. Productify is free to download on iOS with no account required. The free plan covers up to 5 habits with reminders, streaks and starter templates. Pro adds unlimited habits, Habit Duo, AI Habit Analyser, and advanced analytics, with subscription and lifetime options. See <a href=\"/pricing/\">what Free and Pro each include</a>."
+- q: "Does Productify track habits automatically?"
+  a: "No. You record completion or progress yourself. Productify's reminders help you remember to act, but the app does not automatically detect that you read, walked, or completed another habit."
+- q: "Can I track weekly habits?"
+  a: "Yes. Set a schedule or weekly frequency that fits the habit. A practice session on chosen days and a weekly review can sit alongside your daily habits."
 ---
 
 <!-- PAGE HERO -->
 <section class="page-hero" aria-labelledby="page-hero-heading">
-    <div class="container">
-        <div class="page-hero__inner">
-            <div class="eyebrow">Feature · Daily Habit Tracking</div>
-            <h1 id="page-hero-heading">
-                Daily habit tracking with<br>
-                <span>reminders, streaks and goals</span>
-            </h1>
-            <p class="lead">
-                Set a habit once (its schedule, its target, its reminder) and Productify carries it through the week. This page walks through what <strong>daily habit tracking</strong> actually looks like in the app: how you check in, what happens on a day you miss, and what you see at the end of the week. Start from scratch, or from one of 50+ <a href="/habit-templates/">habit templates</a>.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; align-items: center;">
-                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                   class="appstore-badge-link" data-cta="hero" aria-label="Download Productify free on the App Store">
-                    <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
-                </a>
-                <a href="/blog/best-habit-tracker-apps-2026/" class="btn btn-ghost" style="font-size:.9rem;">Compare top habit tracker apps →</a>
-            </div>
-            <p style="margin-top: 12px; font-size: .8rem; color: var(--ink-faint);">Free to download · iOS 17+ · No account required · 4.5★ from 493 US App Store ratings</p>
+    <div class="container"><div class="page-hero__inner">
+        <div class="eyebrow">Feature · Habit Tracking</div>
+        <h1 id="page-hero-heading">A habit tracking app for<br><span>daily and weekly routines</span></h1>
+        <p class="lead">Productify helps you put each habit on a schedule, set a reminder, and record what you actually did. Track a simple check-off, time spent, or a measurable goal in one daily list. Start free on iPhone with up to 5 habits and no account to create.</p>
+        <div class="cta-banner__btns">
+            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237" class="appstore-badge-link" data-cta="hero" aria-label="Download Productify free on the App Store"><img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47"></a>
+            <a href="#habit-tracker-benefits-heading" class="btn btn-secondary">See how tracking works →</a>
         </div>
-    </div>
+        <p class="text-muted">Free for up to 5 habits · No account required · iPhone &amp; Apple Watch</p>
+    </div></div>
 </section>
 
-<!-- SCREENSHOT -->
-<section class="section feature-shot" aria-label="Screenshot">
-    <div class="container">
-        <figure>
-            <img src="/assets/productify-home-screen.webp" alt="Productify home screen listing today's habits with completion rings, current streak counts and a one-tap check-off control"
-                 width="946" height="2048" loading="lazy" decoding="async">
-            <figcaption>The whole app on one screen: today's habits, where each streak stands, and a single tap to check one off.</figcaption>
-        </figure>
-    </div>
+<section class="section feature-shot" aria-label="Productify habit list screenshot">
+    <div class="container"><figure>
+        <img src="/assets/productify-home-screen.webp" alt="Productify daily habit list with a reading timer, a water quantity target, and check-off habits below the weekly date selector" width="946" height="2048" loading="lazy" decoding="async">
+        <figcaption>Your daily list brings time targets, quantity targets, and check-off habits together. Choose targets that fit your routine.</figcaption>
+    </figure></div>
 </section>
 
-<!-- WHAT IS A HABIT TRACKER -->
 <section class="section section--alt" aria-labelledby="what-is-heading">
-    <div class="container">
-        <div class="article">
-            <div class="eyebrow">Understanding habit tracking</div>
-            <h2 id="what-is-heading">What is a habit tracker?</h2>
-            <p>
-                A <strong>habit tracker</strong> is a tool, app, journal, or spreadsheet, that records whether you completed a desired behaviour each day. By making progress visible, it leverages the psychological principle that what gets measured gets done. According to habit expert <strong>James Clear</strong> (author of <em>Atomic Habits</em>), habit tracking "creates a visual cue that reminds you to act, provides immediate satisfaction when you log the completion, and becomes a record of your growth over time."
-            </p>
-            <p>
-                The best <strong>daily habit tracker</strong> apps go further: they add smart reminders to reduce missed days, streak counters to build momentum, and data visualisation to surface patterns that help you understand yourself better. Used consistently, a <strong>productivity tracker</strong> like Productify doesn't just log behaviour, it actively reshapes it.
-            </p>
-            <div class="highlight-box">
-                <p>
-                    Habit formation varies by person and behaviour. Our <a href="/blog/how-long-to-build-a-habit/#sources">guide to habit-formation research</a> explains the evidence and links to the original study. A tracker can help you record progress while a routine develops.
-                </p>
-            </div>
-        </div>
-    </div>
+    <div class="container"><div class="article">
+        <div class="eyebrow">Your daily record</div>
+        <h2 id="what-is-heading">What does a habit tracking app do?</h2>
+        <p>A habit tracking app records a repeated action against the schedule you choose. Instead of trying to remember whether you practiced this week, you have a record to review. Reminders cue the action; your check-ins show what happened.</p>
+        <p>Productify supports habits you check off and <a href="/measurable-goals/">measurable goals</a> such as minutes, pages, or repetitions. You enter your progress yourself: the app does not automatically detect completed activities.</p>
+        <p>A one-time errand belongs on a to-do list. A recurring reading session belongs in a habit tracker. Our <a href="/blog/habit-tracker-vs-to-do-list/">tracker versus to-do list guide</a> explains how to choose.</p>
+    </div></div>
 </section>
 
-<!-- MAIN CONTENT: WHY IT WORKS -->
 <section class="section" aria-labelledby="habit-tracker-benefits-heading">
-    <div class="container">
-        <div class="article">
-            <div class="eyebrow">Why it works</div>
-            <h2 id="habit-tracker-benefits-heading">The best habit tracker reduces friction, not adds it</h2>
-            <p>
-                Most people don't fail at habits because they lack willpower. They stop because their system is too hard to maintain. A great <strong>daily habit tracker</strong> makes every check-in feel effortless: open the app, see today's list, tap to confirm, move on. That simplicity isn't accidental, it's the core design philosophy behind Productify.
-            </p>
-
-            <h2>Key benefits of daily habit tracking</h2>
-            <ul class="check-list">
-                <li><strong>Consistency you can see</strong>, streaks and completion history turn abstract effort into visible proof of progress</li>
-                <li><strong>Better follow-through on busy days</strong>, smart reminders nudge you at the right moment, not every hour</li>
-                <li><strong>Deeper self-awareness</strong>, patterns reveal what's working, what's breaking down, and why</li>
-                <li><strong>Less decision fatigue</strong>, your daily tracker becomes a simple checklist, eliminating "what should I do today?"</li>
-                <li><strong>Momentum that outlasts motivation</strong>, on days when motivation dips, a streak worth keeping often doesn't</li>
-                <li><strong>Accountability without pressure</strong>, optional Habit Duo lets you build routines alongside a friend, not compete against them</li>
-            </ul>
-
-            <h2>Key features to look for in a habit tracker app</h2>
-            <p>Not all habit trackers are created equal. When evaluating the best habit tracker app for your needs, look for these essential features:</p>
-
-            <h3>Smart reminders &amp; notifications</h3>
-            <p>
-                The most powerful feature in any <strong>habit tracker app</strong> isn't the tracking itself, it's the reminder system. Poorly designed reminders either fire too often (causing notification fatigue) or not at all. Productify's smart reminders are customisable per habit: set a time, choose days, and receive a single gentle nudge when it matters most.
-            </p>
-
-            <h3>Data visualisation &amp; progress tracking</h3>
-            <p>
-                Seeing progress is motivating. Your productivity tracker should display streaks, completion rates, and trend data in a way that's immediately readable, not buried behind dashboards. Productify surfaces your progress clearly on the main screen so you always know where you stand at a glance.
-            </p>
-
-            <h3>Streak tracking with guilt-free design</h3>
-            <p>
-                Streaks are one of the most effective motivational tools in habit tracking, but they can also create harmful pressure. The best <strong>daily habit tracker</strong> apps show streaks as encouragement, not ultimatums. Productify's <a href="/streak-tracking/">Streak Tracking</a> preserves your history even after a missed day, so a single slip doesn't erase months of progress.
-            </p>
-
-            <h3>Notes, diary, and reflection</h3>
-            <p>
-                Some habits benefit from journaling alongside tracking. Noting why you completed (or missed) a habit adds qualitative depth to your data, helping you identify the contextual triggers that influence behaviour. Productify supports notes on habit entries for exactly this purpose.
-            </p>
-
-            <h3>Flexibility: binary and measurable goals</h3>
-            <p>
-                Not every habit is a yes/no checkbox. Running, hydration, reading, and focus time all benefit from measurable targets. Productify's <a href="/measurable-goals/">Measurable Goals</a> let you attach real numbers to your habits, steps walked, minutes read, glasses of water, so you always know when "done" means done.
-            </p>
-
-            <h3>Templates to eliminate setup friction</h3>
-            <p>
-                A blank slate is an enemy of starting. The best habit tracker apps come with pre-built routines so you can begin tracking immediately. Productify's <a href="/habit-templates/">50+ Habit Templates</a> cover fitness, sleep, focus, mindfulness, hydration, creativity, and more, each customisable from day one.
-            </p>
-        </div>
-
-        <!-- USE CASES GRID -->
-        <div style="margin-top: 48px;">
-            <div class="section-header text-center" style="margin-bottom: 32px;">
-                <div class="eyebrow">Use cases</div>
-                <h2>Who uses Productify as their daily habit tracker</h2>
-            </div>
-        </div>
-
-        <div class="use-case-grid">
-            <div class="use-case-card">
-                <div class="use-case-card__icon">🌅</div>
-                <h3>Morning routine builders</h3>
-                <p>Track a focused set of AM habits, hydration, stretching, journaling, cold exposure, and build a repeatable morning that survives even your worst days. See our <a href="/morning-routine/">morning routine guide</a>.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-card__icon">💼</div>
-                <h3>Productivity-focused professionals</h3>
-                <p>Use Productify as a <strong>productivity tracker</strong> for deep work sessions, reading, skill practice, and end-of-day shutdown rituals. See our <a href="/productivity-at-work/">productivity at work guide</a>.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-card__icon">💪</div>
-                <h3>Fitness &amp; health trackers</h3>
-                <p>Track workouts, daily steps, mobility work, hydration, and sleep consistency, all with measurable targets that adapt to real life, not an idealised version of it.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-card__icon">📚</div>
-                <h3>Learners &amp; skill builders</h3>
-                <p>Language practice, reading, coding, music: small daily check-ins in your habit tracker compound into real mastery. 15 minutes a day beats 3-hour weekend sessions every time.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-card__icon">🧘</div>
-                <h3>Mental wellbeing &amp; mindfulness</h3>
-                <p>Meditation, gratitude journaling, breathwork, and digital detox habits, tracked calmly and without gamification pressure in a design that respects your mental space.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-card__icon">🤝</div>
-                <h3>Accountability partners</h3>
-                <p>Build one habit with a friend using <a href="/habit-duo/">Habit Duo</a>, the simplest accountability system for two people who want to show up for each other without social pressure or rankings.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FEATURE BREAKDOWN -->
-<section class="section section--alt" aria-labelledby="feature-breakdown-heading">
-    <div class="container">
-        <div class="article">
-            <div class="eyebrow">Feature breakdown</div>
-            <h2 id="feature-breakdown-heading">Everything inside Productify's habit tracker</h2>
-
-            <h3>Daily check-ins in under 10 seconds</h3>
-            <p>
-                The core of any great habit tracker is how fast you can log a habit. Productify is designed so that opening the app, checking off today's habits, and closing it takes under 10 seconds on a typical morning. No loading screens, no onboarding popups, no mandatory reviews. Just your habits, waiting to be ticked.
-            </p>
-
-            <h3>AI-powered habit insights</h3>
-            <p>
-                Beyond simple tracking, Productify's <a href="/ai-analyser/">AI Habit Analyser</a> surfaces honest patterns from your data: which days you're most consistent, which habits are struggling, and what contextual factors seem to correlate with missed days. It's the intelligence layer that turns a simple habit log into a true <strong>productivity tracker</strong>.
-            </p>
-
-            <h3>Habit Duo: shared accountability</h3>
-            <p>
-                Sharing a routine can provide encouragement and a reason to check in. Productify's <a href="/habit-duo/">Habit Duo</a> feature pairs you with one friend for one shared routine, no leaderboards, no social feed, just a quiet awareness that someone else is showing up alongside you.
-            </p>
-
-            <h3>50+ habit templates, zero setup time</h3>
-            <p>
-                Start your daily habit tracker immediately with pre-built routines spanning 10+ life categories: morning rituals, fitness goals, sleep hygiene, focus work, creative practice, and more. Each template is fully customisable, adopt it as-is or use it as a starting point.
-            </p>
-
-            <h3>Minimalist design that reduces friction</h3>
-            <p>
-                The most underrated feature of a <strong>habit tracker app</strong> is its design. Productify's minimalist interface strips away everything that isn't essential, making it the only habit app you'll actually keep coming back to. No gamification loops, no aggressive badge systems, just your habits and your progress.
-            </p>
-
-            <h2>Popular non-digital habit tracking methods</h2>
-            <p>Digital apps aren't the only way to track habits. Some people thrive with analogue systems:</p>
-
-            <h3>Bullet journaling</h3>
-            <p>
-                Bullet journaling uses a monthly habit tracker grid, dates across the top, habits down the left, that you fill in by hand. It's tactile, flexible, and requires no battery. The downside: it doesn't send reminders, doesn't track streaks automatically, and requires carrying your journal everywhere.
-            </p>
-
-            <h3>Spreadsheets &amp; Notion</h3>
-            <p>
-                Tools like Notion, Google Sheets, or Airtable can be configured as powerful <strong>habit trackers</strong> with charts, formulas, and conditional formatting. They're infinitely customisable but require significant setup and don't offer mobile-native reminders or quick daily check-ins.
-            </p>
-
-            <h3>Printable habit trackers</h3>
-            <p>
-                Pre-designed PDFs printed monthly give a simple visual grid for tracking. No tech required, good for families or screen-free zones. Limited to whatever habits you printed at the start of the month and provide no data analysis over time.
-            </p>
-
-            <div class="highlight-box">
-                <p>
-                    <strong>Why most people eventually switch to an app:</strong> Reminders, streak data, long-term history, and the ability to adjust your routine on the fly are hard to replicate on paper. For serious habit building, a <strong>daily habit tracker</strong> app like Productify offers a significant advantage, especially when you're building multiple habits simultaneously.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- COMPARISON / WHY PRODUCTIFY -->
-<section class="section" aria-labelledby="comparison-heading">
-    <div class="container">
-        <div class="article">
-            <div class="eyebrow">Comparison</div>
-            <h2 id="comparison-heading">How Productify compares to other habit tracker apps</h2>
-            <p>
-                There are dozens of habit tracker apps available in 2026. Here's how Productify stacks up against the most popular alternatives across the features that matter most for building lasting daily routines.
-            </p>
-        </div>
-
-        <div style="overflow-x: auto; margin-top: 32px; margin-bottom: 32px;">
-            <table style="width:100%; border-collapse: collapse; font-size: .9rem; min-width: 600px;">
-                <thead>
-                    <tr style="background: var(--bg-alt-2);">
-                        <th style="padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--border); font-weight: 700;">Feature</th>
-                        <th style="padding: 14px 16px; text-align: center; border-bottom: 2px solid var(--blue); color: var(--blue); font-weight: 700;">Productify</th>
-                        <th style="padding: 14px 16px; text-align: center; border-bottom: 2px solid var(--border);">Streaks</th>
-                        <th style="padding: 14px 16px; text-align: center; border-bottom: 2px solid var(--border);">Habitica</th>
-                        <th style="padding: 14px 16px; text-align: center; border-bottom: 2px solid var(--border);">Habitify</th>
-                    </tr>
-                </thead>
+    <div class="container"><div class="article">
+        <div class="eyebrow">From setup to review</div>
+        <h2 id="habit-tracker-benefits-heading">How to track a habit in Productify</h2>
+        <ol>
+            <li><strong>Name an action.</strong> Create your own habit or choose from the <a href="/habit-templates/">habit templates</a>. If you need inspiration, browse <a href="/blog/what-habits-to-track/">30 habit tracker ideas</a>.</li>
+            <li><strong>Choose the schedule and target.</strong> Decide when the habit is due and what counts as done. For reading, that could be 10 minutes after dinner on weekdays.</li>
+            <li><strong>Set a reminder.</strong> Choose a time when you can act. Adjust it if the reminder repeatedly arrives at an inconvenient moment.</li>
+            <li><strong>Log the result.</strong> Check off the action or enter the quantity you completed. Record partial progress honestly instead of treating the target as already finished.</li>
+            <li><strong>Review the week.</strong> Look for missed scheduled days and adjust the time, goal, or frequency. A smaller repeatable action may fit better than your first plan.</li>
+        </ol>
+        <div class="highlight-box"><p><strong>After a missed day:</strong> the current streak count resets, while your recorded history stays intact. Resume on the next scheduled day and use the record to adjust the routine. Read more about <a href="/streak-tracking/">streaks and completion history</a>.</p></div>
+        <h3>Examples of daily and weekly goals</h3>
+        <div class="editorial-table" role="region" aria-label="Example habits and ways to record them" tabindex="0">
+            <table>
+                <caption>Example setups you can adapt</caption>
+                <thead><tr><th scope="col">Habit</th><th scope="col">Schedule</th><th scope="col">Record</th></tr></thead>
                 <tbody>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 12px 16px; font-weight: 500;">Free daily habit tracker</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ Paid only</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #d97706;">Limited</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-alt);">
-                        <td style="padding: 12px 16px; font-weight: 500;">iOS native app</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 12px 16px; font-weight: 500;">Streak tracking</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Guilt-free</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-alt);">
-                        <td style="padding: 12px 16px; font-weight: 500;">AI habit insights</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ No</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ No</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ No</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 12px 16px; font-weight: 500;">Accountability partner</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Habit Duo</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ No</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Social</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ No</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-alt);">
-                        <td style="padding: 12px 16px; font-weight: 500;">Habit templates (50+)</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ 50+</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #d97706;">Limited</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ No</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #d97706;">Some</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 12px 16px; font-weight: 500;">Minimalist / calm design</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ Gamified</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-alt);">
-                        <td style="padding: 12px 16px; font-weight: 500;">No account required</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ Required</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #dc2626;">✗ Required</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 12px 16px; font-weight: 500;">Measurable goals</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #16a34a;">✓ Yes</td>
-                    </tr>
+                    <tr><th scope="row">Read</th><td>Weekday evenings</td><td>Minutes read toward your target</td></tr>
+                    <tr><th scope="row">Practice a skill</th><td>Three chosen days each week</td><td>Minutes of practice</td></tr>
+                    <tr><th scope="row">Prepare for tomorrow</th><td>At the end of each workday</td><td>Check off after writing the first task</td></tr>
+                    <tr><th scope="row">Review the week</th><td>Sunday afternoon</td><td>Check off after reviewing your record</td></tr>
                 </tbody>
             </table>
         </div>
+        <p>For a more detailed first-week plan, follow the <a href="/blog/how-to-use-a-habit-tracker/">beginner's habit tracking guide</a>.</p>
+    </div></div>
+</section>
 
-        <div class="article" style="margin-top: 16px;">
-            <h2>Why Productify is the best habit tracker app for most people</h2>
-            <p>
-                Productify focuses on practical features that make daily tracking easier to maintain:
-            </p>
-            <ul class="check-list">
-                <li><strong>Free to start, no credit card:</strong> <a href="/download/">Download and track habits immediately</a>: the core <strong>daily habit tracker</strong> is always free</li>
-                <li><strong>No account barrier:</strong> Most habit trackers require sign-up before you can start; Productify starts tracking the moment you open it</li>
-                <li><strong>Minimalist design that reduces friction:</strong> The number one reason people abandon habit apps is UI overwhelm; Productify is specifically designed to avoid this</li>
-                <li><strong>AI insights that are actually useful:</strong> Not generic motivational quotes, but pattern analysis from your real data via the <a href="/ai-analyser/">AI Habit Analyser</a></li>
-                <li><strong>Guilt-free streaks:</strong> Streak tracking that motivates without punishing, which matters most <a href="/habit-tracker-for-adhd/">if you have ADHD</a>: because life happens</li>
-                <li><strong>Unique Habit Duo feature:</strong> A focused two-person accountability feature without a social feed</li>
-                <li><strong>50+ templates:</strong> Ready-made routines across fitness, sleep, focus and other areas; 5 starter templates are free and the full library is on Pro</li>
-            </ul>
+<section class="section section--alt" aria-labelledby="feature-breakdown-heading">
+    <div class="container"><div class="article">
+        <div class="eyebrow">Choose what you need</div>
+        <h2 id="feature-breakdown-heading">Habit tracking features and free-plan limits</h2>
+        <h3>Free: a small routine with reminders and history</h3>
+        <p>Track up to 5 habits with per-habit reminders, streaks, and completion history. Start with 5 included templates or create a habit yourself. The free plan has no trial deadline and does not require a Productify account.</p>
+        <h3>Pro: more habits and optional support</h3>
+        <p>Pro adds unlimited habits, the full template library, advanced analytics, <a href="/habit-duo/">Habit Duo</a> for tracking a habit with one friend, and <a href="/ai-analyser/">AI Habit Analyser</a> for reflecting on your data. Check <a href="/pricing/">Free, Pro, and lifetime options</a> for the current plan details.</p>
+        <h3>Check in from iPhone or Apple Watch</h3>
+        <p>Productify includes an Apple Watch companion, Home Screen widgets, and Live Activities. Its workflow is built around Apple devices; there is currently no Android or browser version.</p>
+        <p>Your habits stay on your device by default. Optional sharing and AI features involve additional data processing; see the <a href="/privacy.html">privacy policy</a> for those details.</p>
+    </div></div>
+</section>
 
-            <p>Want a full side-by-side breakdown? Read our guide: <a href="/blog/best-habit-tracker-apps-2026/"><strong>6 Best Habit Tracker Apps in 2026 (Free &amp; Paid)</strong></a>.</p>
-        </div>
-    </div>
+<section class="section" aria-labelledby="comparison-heading">
+    <div class="container"><div class="article">
+        <div class="eyebrow">Find the right fit</div>
+        <h2 id="comparison-heading">Is Productify the right habit tracker for you?</h2>
+        <p>Consider Productify if you want to log a routine on iPhone, use measurable goals, and start without creating an account. If you need Android, a web app, automatic activity detection, or a full to-do manager, compare those requirements before choosing.</p>
+        <p>Our <a href="/blog/best-habit-tracker-apps-2026/">best habit tracker apps guide</a> covers six options by platform and tracking style. For specific tradeoffs, read <a href="/productify-vs-habitica/">Productify as a Habitica alternative</a> or <a href="/productify-vs-habitify/">Productify vs Habitify</a>.</p>
+        <p>Prefer paper? A notebook or spreadsheet can record the same planned actions. Choose the format you can use and review consistently; an app mainly adds convenient reminders and progress views.</p>
+    </div></div>
 </section>
 
 <!-- FAQ -->
@@ -391,7 +160,7 @@ faq:
         <div class="section-header text-center" style="margin-bottom: 32px;">
             <div class="eyebrow">Explore more</div>
             <h2 id="explore-heading">All Productify habit tracker features</h2>
-            <p class="lead">Every feature in Productify is designed to support one goal: making your daily habit tracker something you actually stick with.</p>
+            <p class="lead">Explore the features that fit your routine, from measurable goals to a habit shared with one friend.</p>
         </div>
         <div class="features-grid">
             <a href="/streak-tracking/" class="feature-card feature-card--link">
@@ -403,19 +172,19 @@ faq:
             <a href="/habit-duo/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🤝</div>
                 <h3>Habit Duo</h3>
-                <p class="text-muted">Build one habit with one friend. Private, supportive, and surprisingly effective.</p>
+                <p class="text-muted">Track one habit with one friend and see your progress together. Available on Pro.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="/ai-analyser/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🧠</div>
                 <h3>AI Habit Analyser</h3>
-                <p class="text-muted">Pattern recognition from your real data, not generic advice, actual insights about your routines.</p>
+                <p class="text-muted">Review patterns in the habit data you choose to analyze. Available on Pro.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="/habit-templates/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">📋</div>
                 <h3>Habit Templates</h3>
-                <p class="text-muted">50+ pre-built routines across 10 life categories. Start tracking today, not after a setup session.</p>
+                <p class="text-muted">Choose from 5 free starter templates or explore the full library on Pro.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
             <a href="/measurable-goals/" class="feature-card feature-card--link">
@@ -434,7 +203,7 @@ faq:
         <div class="eyebrow" style="background: rgba(255,255,255,.1); color: #93C5FD; border-color: rgba(255,255,255,.1);">Download free · iOS 17+</div>
         <h2 id="cta-heading">Start your daily habit tracker today.</h2>
         <p class="lead">
-            Download Productify free, no account, no credit card, no setup friction. Build your first habit routine in under 2 minutes and see why it's the best habit tracker app for iOS in 2026.
+            Choose one habit, set its schedule, and record your next check-in. Start free with up to 5 habits and 5 starter templates, with no account required.
         </p>
         <div class="cta-banner__btns">
             <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
