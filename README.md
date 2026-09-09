@@ -25,14 +25,17 @@ Two ways, both of which commit to `main` and trigger a deploy:
 | `_plugins/toc.rb` | builds the "In this guide" contents from the article's headings |
 | `sitemap.xml` | generated from the collections |
 
-URLs come from the `permalink` settings in `_config.yml` and match the
-pre-Jekyll site exactly. `_scripts/check_urls.rb` runs in CI and fails the build
-if any previously published URL stops resolving.
+URLs come from the `permalink` settings in `_config.yml`: `/features/<slug>/`,
+`/solutions/<slug>/`, `/compare/<slug>/`, and `/blog/<slug>/`. The printable
+resource explicitly keeps `/habit-tracker-printable/`. The 15 migrated flat
+URLs and the old habit-streaks aliases are intentionally removed, with no
+redirects. `_scripts/check_urls.rb` checks that current paths exist and retired
+paths are absent. Always build into a clean destination after changing URLs.
 
 `_scripts/check_seo.py` also gates deployment: it checks canonical URLs,
 unique titles/descriptions, H1s, image alt attributes, internal links and
-anchors, valid JSON-LD, consistent Productify ratings, and indexable sitemap
-entries. Run both checks against a fresh build:
+anchors, JSON-LD URLs, social sharing URLs, consistent Productify ratings,
+indexable sitemap entries, and the absence of redirect pages. Run both checks against a fresh build:
 
 ```sh
 bundle exec jekyll build
@@ -42,8 +45,9 @@ python3 _scripts/check_seo.py
 
 The homepage is `index.html`. The `index.md` companion is excluded from
 publishing by `_config.yml`; keep its product details synchronized before
-ever enabling it. Legacy `features/`, `compare/`, and `solutions/` HTML files
-are redirect stubs, not alternate content sources. Preserve these URLs.
+ever enabling it. Feature, solution and comparison HTML is generated only
+from its collection; do not add physical `index.html` files at those output
+paths, since they would collide with the generated pages.
 
 ## Things worth knowing
 
@@ -55,9 +59,8 @@ are redirect stubs, not alternate content sources. Preserve these URLs.
   section wrappers rather than headings.
 - **`heading`** overrides the visible `<h1>` where it deliberately differs from
   the `title` used for `og:title` and search results.
-- **`sitemap: false`** keeps a page out of `sitemap.xml`;
-  `/habit-streaks/` uses it, being a `noindex` alias that canonicalises
-  to `/streak-tracking/`.
+- **`sitemap: false`** keeps a page out of `sitemap.xml`. Canonical collection
+  URLs are included automatically when their permalinks change.
 
 ## Local development
 

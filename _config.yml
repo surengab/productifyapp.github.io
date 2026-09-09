@@ -17,23 +17,22 @@ facebook_domain_verification: t80j6c2w3dtbodjnxkg283562wp4ud
 ahrefs_site_verification: fa4bb1ff66190ceaa3866dffe1adca9a9c0569b8b7ffdfd06263e47dc951ad27
 
 # --- Collections -------------------------------------------------------------
-# Blog keeps its prefix; features/compare/solutions live at the site root.
-# The former /features/... /compare/... /solutions/... URLs are kept alive as
-# redirect stubs under redirects/ -- GitHub Pages serves static files only, so
-# a meta refresh plus rel=canonical is the strongest redirect available.
+# Each collection serves its content directly under its section prefix.
+# Retired flat URLs have no redirect or duplicate page. Individual resources
+# can keep a standalone URL with an explicit front-matter permalink.
 collections:
   blog:
     output: true
     permalink: /blog/:path/
   features:
     output: true
-    permalink: /:path/
+    permalink: /features/:path/
   compare:
     output: true
-    permalink: /:path/
+    permalink: /compare/:path/
   solutions:
     output: true
-    permalink: /:path/
+    permalink: /solutions/:path/
 
 # --- Front matter defaults ---------------------------------------------------
 defaults:

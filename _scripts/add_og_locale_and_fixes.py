@@ -1,7 +1,5 @@
 """
 1. Add og:locale where missing (all pages)
-2. Add JS redirect on habit-streaks legacy page
-3. Ensure blog pages have datePublished / dateModified in Article schema
 """
 import re, os, glob
 
@@ -34,23 +32,6 @@ for path in all_html:
         with open(path, 'w', encoding='utf-8') as fh:
             fh.write(html)
         updated.append(f"og:locale: {os.path.relpath(path, ROOT)}")
-
-# 2. Add JS redirect to habit-streaks legacy page
-habit_streaks_path = os.path.join(ROOT, "features", "habit-streaks", "index.html")
-with open(habit_streaks_path, 'r', encoding='utf-8') as fh:
-    html = fh.read()
-
-REDIRECT_JS = '''\
-    <script>
-        // Legacy URL — redirect users to canonical page after short delay
-        setTimeout(function() { window.location.replace("/features/streak-tracking/"); }, 1500);
-    </script>'''
-
-if 'window.location.replace' not in html and '</head>' in html:
-    html = html.replace('</head>', REDIRECT_JS + '\n</head>', 1)
-    with open(habit_streaks_path, 'w', encoding='utf-8') as fh:
-        fh.write(html)
-    updated.append("JS redirect: features/habit-streaks/index.html")
 
 print(f"Done. {len(updated)} changes:")
 for u in updated:

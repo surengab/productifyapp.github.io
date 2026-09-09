@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate generated HTML and sitemap before deployment. No network required."""
 import json
+import re
 import sys
 from collections import Counter
 from html.parser import HTMLParser
@@ -18,11 +19,15 @@ class Page(HTMLParser):
         self.path = path
         self.ids, self.links, self.canonicals, self.schemas = set(), [], [], []
         self.title, self.description, self.robots = '', '', ''
+        self.social_urls = []
         self.h1 = 0
         self.redirect = False
         self.in_title = self.in_json = False
         self.json_text = ''
-        self.feed(path.read_text())
+        source = path.read_text()
+        self.feed(source)
+        if re.search(r'\b(?:window\.)?location\s*(?:\.\s*(?:replace|assign)\s*\(|(?:\.\s*href)?\s*=(?!=))', source):
+            self.redirect = True
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -33,6 +38,8 @@ class Page(HTMLParser):
         if tag == 'meta':
             if a.get('name') == 'description': self.description = a.get('content', '')
             if a.get('name') == 'robots': self.robots = a.get('content', '')
+            if a.get('property', a.get('name')) in ('og:url', 'twitter:url'):
+                self.social_urls.append(a.get('content', ''))
             if a.get('http-equiv', '').lower() == 'refresh': self.redirect = True
         if tag == 'link' and a.get('rel') == 'canonical':
             self.canonicals.append(a.get('href', ''))
@@ -64,19 +71,23 @@ titles = Counter()
 descriptions = Counter()
 ratings = set()
 
-def inspect_schema(value):
+def inspect_schema(value, relative):
     if isinstance(value, list):
-        for item in value: inspect_schema(item)
+        for item in value: inspect_schema(item, relative)
     elif isinstance(value, dict):
         if value.get('@type') == 'SoftwareApplication' and value.get('name', '').startswith('Productify'):
             rating = value.get('aggregateRating')
             if rating:
                 ratings.add((str(rating.get('ratingValue')), str(rating.get('ratingCount', rating.get('reviewCount')))))
-        for item in value.values(): inspect_schema(item)
+        for item in value.values(): inspect_schema(item, relative)
+    elif isinstance(value, str) and urlsplit(value).netloc == 'productifyapp.org':
+        if not target(value).is_file():
+            errors.append(f'{relative}: broken JSON-LD target {value}')
 
 for path, page in pages.items():
     relative = path.relative_to(ROOT).as_posix()
     url = ORIGIN + '/' + relative.removesuffix('index.html')
+    if page.redirect: errors.append(f'{relative}: redirect pages are not allowed')
     indexable = not page.redirect and 'noindex' not in page.robots
     if indexable:
         if not page.title.strip() or not page.description.strip():
@@ -85,7 +96,9 @@ for path, page in pages.items():
         descriptions[page.description.strip()] += 1
         if page.h1 != 1: errors.append(f'{relative}: expected one H1, found {page.h1}')
         if page.canonicals != [url]: errors.append(f'{relative}: incorrect canonical {page.canonicals}')
-    for schema in page.schemas: inspect_schema(schema)
+    for social_url in page.social_urls:
+        if social_url != url: errors.append(f'{relative}: incorrect social URL {social_url}')
+    for schema in page.schemas: inspect_schema(schema, relative)
     for tag, href in page.links:
         resolved = urljoin(url, href)
         parts = urlsplit(resolved)
@@ -107,6 +120,9 @@ for url in urls:
     page = pages.get(target(url))
     if not page or page.redirect or 'noindex' in page.robots or page.canonicals != [url]:
         errors.append(f'sitemap URL is not canonical/indexable: {url}')
+for href in re.findall(r'\]\(([^)\s]+)\)', (ROOT / 'llms.txt').read_text()):
+    if urlsplit(href).netloc == 'productifyapp.org' and not target(href).is_file():
+        errors.append(f'llms.txt: broken target {href}')
 for error in sorted(set(errors)): print(error)
 print(f'Checked {len(pages)} HTML pages and {len(urls)} sitemap URLs; {len(set(errors))} errors.')
 sys.exit(bool(errors))
