@@ -37,6 +37,7 @@ content:
       - { name: date, label: Published, type: date, options: { format: "yyyy-MM-dd" }, required: true }
       - { name: last_modified, label: Updated, type: date, options: { format: "yyyy-MM-dd" }, description: "Adds a visible “Updated …” line. Leave empty if unchanged." }
       - { name: image, label: Social image, type: image, description: "Defaults to the site-wide og-image.jpg." }
+      - { name: guide_sidebar, label: Show in Guides, type: boolean, description: "Show the guide sidebar and include this article in the Guides library. Turn off for blog-only updates or stories." }
       - name: body
         label: Article body
         type: code
@@ -124,6 +125,7 @@ content:
       - { name: description, label: Meta description, type: text, required: true }
       - { name: og_description, label: Social description, type: text }
       - { name: image, label: Social image, type: image }
+      - { name: guide_sidebar, label: Show guide sidebar, type: boolean }
       - name: body
         label: Page content
         type: code
@@ -185,6 +187,28 @@ content:
     path: index.html
     format: yaml-frontmatter
     fields: *page_fields
+
+  - name: guides
+    label: Guides landing page
+    type: file
+    path: guides/index.html
+    format: yaml-frontmatter
+    fields: *page_fields
+
+  - name: guide_sidebar
+    label: Guide sidebar
+    type: file
+    path: _data/guide_sidebar.yml
+    format: yaml
+    fields:
+      - name: items
+        label: Sidebar links
+        type: object
+        list: true
+        fields:
+          - { name: href, label: URL, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: blurb, label: Description, type: string }
 
   - name: navigation
     label: Navigation menu

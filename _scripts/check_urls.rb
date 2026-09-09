@@ -10,6 +10,7 @@ SITE = ARGV[0] ? File.expand_path(ARGV[0]) : File.expand_path("../_site", __dir_
 REQUIRED = %w[
   /
   /blog/
+  /guides/
   /blog/areas-of-life/
   /blog/bad-habits-list/
   /blog/best-habit-tracker-apps-2026/

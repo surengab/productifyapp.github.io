@@ -1,34 +1,15 @@
 ---
 lastmod_fallback: '2026-08-27'
 layout: page
-title: Blog - Habit Tracking, Daily Routines & Behavior Change
-seo_title: 'Habit Tracking & Daily Routine Guides | Productify'
-description: Practical guides on habit tracking, daily routines, productivity, and making behavior change easier to repeat with Productify.
+title: Productify Blog - Latest Articles on Habits and Routines
+seo_title: 'Productify Blog: Latest Articles on Habits & Routines'
+description: Browse the latest Productify articles on habit tracking, daily routines, and productivity. Find practical ideas and explore our step-by-step guide library.
 changefreq: weekly
 priority: 0.9
 og_description: Practical guides on habit tracking, daily routines, productivity, and behavior change from the Productify team.
 robots: index, follow
 permalink: /blog/
 image: /assets/blog/habit-growth-v2.jpg
-extra_css: |
-  .blog-hero__layout {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      align-items: center;
-      gap: 48px;
-  }
-  .blog-hero__layout .lead { margin-bottom: 0; }
-  .blog-hero__art {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 24px;
-  }
-  @media (max-width: 900px) {
-      .blog-hero__layout { grid-template-columns: 1fr; gap: 32px; }
-      .blog-hero__art { max-width: 640px; }
-  }
 breadcrumbs:
 - label: Home
   href: /
@@ -70,270 +51,46 @@ extra_jsonld:
               { "@type": "BlogPosting", "url": "https://productifyapp.org/blog/how-long-to-build-a-habit/" }
           ]
       }
-last_modified: '2026-09-07'
+last_modified: '2026-09-09'
 ---
-
-<!-- PAGE HERO -->
 <section class="page-hero" aria-labelledby="blog-hero-heading">
-    <div class="container blog-hero__layout">
-        <div class="page-hero__inner">
-            <div class="eyebrow">Habit Tracking &amp; Productivity</div>
-            <h1 id="blog-hero-heading">
-                Guides to help you<br>
-                <span>build better habits</span>
-            </h1>
-            <p class="lead">
-                Practical guides on habit tracking, productivity, morning routines, and behavior change, from the team behind Productify.
-            </p>
-        </div>
-        <img class="blog-hero__art"
-             src="/assets/blog/habit-growth-v2.jpg"
-             srcset="/assets/blog/habit-growth-v2-720.jpg 720w, /assets/blog/habit-growth-v2.jpg 1200w"
-             sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 900px) 640px, 530px"
-             width="1200" height="800" fetchpriority="high"
-             alt="Three plants in lavender, teal, and coral pots, with a watering can and a looping line.">
-    </div>
-</section>
-
-<section class="section" aria-labelledby="start-here-heading">
     <div class="container">
-        <div class="section-header">
-            <div class="eyebrow">Start here</div>
-            <h2 id="start-here-heading">A guide for where you are now</h2>
-            <p>Start a routine, work through an obstacle, or understand what progress can look like.</p>
-        </div>
-        <nav class="editorial-topics" aria-label="Browse habit guides">
-            <a href="#start-here-heading">Getting started</a>
-            <a href="/blog/how-to-build-habits-that-stick/">Staying consistent</a>
-            <a href="/blog/best-habit-tracker-apps-2026/">Choosing an app</a>
-            <a href="/habit-tracker-printable/">Free printable trackers</a>
-            <a href="/morning-routine/">Daily routines</a>
-            <a href="#topics-heading">More topics</a>
-        </nav>
-        <div class="featured-guides">
-            {% assign featured_urls = '/blog/how-to-start-a-daily-habit/|/blog/how-to-build-habits-that-stick/|/blog/how-long-to-build-a-habit/' | split: '|' %}
-            {% for guide_url in featured_urls %}
-            {% assign guide = site.blog | where: 'url', guide_url | first %}
-            <a class="feature-card feature-card--link featured-guide" href="{{ guide.url }}">
-                <img src="{{ guide.image_small }}" width="720" height="480" loading="lazy" decoding="async" alt="{{ guide.cover_alt | escape }}">
-                <span class="eyebrow">{% if forloop.first %}Your first week{% elsif forloop.index == 2 %}Keep going{% else %}Understand the timeline{% endif %}</span>
-                <h3>{{ guide.title }}</h3>
-                <p>{{ guide.description }}</p>
-                <span class="feature-card__cta">Read the guide →</span>
-            </a>
-            {% endfor %}
-        </div>
-        <p class="text-muted" style="margin-top:24px;">By the <a href="/editorial/">Productify Editorial Team</a>. Read how we handle sources and product comparisons.</p>
+        <div class="eyebrow">From Productify</div>
+        <h1 id="blog-hero-heading">The Productify blog</h1>
+        <p class="lead">Our latest writing on habits, routines, and making progress in everyday life.</p>
     </div>
 </section>
-
-<!-- BLOG ARTICLES -->
 <section class="section" aria-labelledby="articles-heading">
     <div class="container">
-        <div class="section-header" style="margin-bottom: 40px;">
-            <div class="eyebrow">More to explore</div>
-            <h2 id="articles-heading">More habit guides</h2>
-        </div>
-
-        <div class="features-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
-
-            <!-- Article 1 -->
-            <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">📱</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Comparison · Apr 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">6 Best Habit Tracker Apps to Use in 2026 (Free &amp; Paid)</h3>
-                <p class="text-muted" style="flex: 1;">Compare six habit tracker apps by published features, payment model, and use case. Start with the shortlist and check the official sources.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article 2 -->
-            <a href="/morning-routine/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">🌅</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Routines · Guide</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How to Build a Morning Routine That Actually Sticks</h3>
-                <p class="text-muted" style="flex: 1;">Why starting small tends to work, and how to design a morning routine that survives even your worst days. Includes a step-by-step habit tracker setup.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article 3 -->
-            <a href="/productivity-at-work/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">💼</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Productivity · Guide</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">Productivity Habits Worth Tracking at Work in 2026</h3>
-                <p class="text-muted" style="flex: 1;">Which daily habits compound into real professional growth, and how to use a productivity tracker to build them without adding overhead to your day.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article: Habit Duo -->
-            <a href="/blog/habit-duo/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">🤝</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Accountability &middot; Aug 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">What is a habit duo, and why does it work?</h3>
-                <p class="text-muted" style="flex: 1;">Two people, one commitment to showing up, each able to see whether the other did. How habit duos work, when they beat tracking alone, and how to set one up that survives past week two.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide &rarr;</span>
-            </a>
-
-            <!-- Article: Areas of Life -->
-            <a href="/blog/areas-of-life/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">🌐</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Life Design · May 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">8 Areas of Life to Focus On (And One Habit for Each)</h3>
-                <p class="text-muted" style="flex: 1;">The 8 key aspects of life (health, relationships, career, finances, personal growth, creativity, environment, and mental wellbeing), with one trackable habit for each.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article: Bad Habits List -->
-            <a href="/blog/bad-habits-list/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">🚫</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Habit Change · May 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">List of Bad Habits to Break in 2026 (With Replacements)</h3>
-                <p class="text-muted" style="flex: 1;">Common negative habits across health, productivity, mental health, social life, and finances, each paired with a specific replacement to track instead.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article: How Many Goals -->
-            <a href="/blog/how-many-goals-should-i-set/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">🎯</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Goal Setting · May 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How Many Goals Should I Set? A Practical Planning Guide</h3>
-                <p class="text-muted" style="flex: 1;">Choose goals that fit your time and responsibilities. Use a small active list as a planning exercise and connect each goal to a practical action.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article 4 -->
-            <a href="/blog/habit-tracker-vs-to-do-list/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">⚖️</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Comparison · Apr 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">Habit Tracker vs To-Do List: Which Do You Actually Need?</h3>
-                <p class="text-muted" style="flex: 1;">A clear breakdown of the real difference between habit trackers and to-do lists, and when to use each (or both).</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article 5 -->
-
-
-            <!-- Article 6 -->
-
-
-            <!-- Article 7 -->
-            <a href="/blog/how-to-break-bad-habits/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">⛔</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">How-To Guide · Apr 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How to Break Bad Habits: A Step-by-Step Guide</h3>
-                <p class="text-muted" style="flex: 1;">Why bad habits don't disappear through willpower, and a practical habit replacement approach for long-term change.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article 8 -->
-            <a href="/blog/how-to-use-a-habit-tracker/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">📋</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Beginner Guide · Apr 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">How to Use a Habit Tracker: A Complete Beginner's Guide</h3>
-                <p class="text-muted" style="flex: 1;">What to track, how to set it up, and how to make the daily check-in a habit in itself, for people brand new to habit tracking.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article 9 -->
-            <a href="/blog/what-habits-to-track/" class="feature-card feature-card--link" style="display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div class="feature-card__icon" style="font-size: 2rem;">✅</div>
-                    <div style="font-size: .75rem; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em;">Habit Ideas · Apr 2026</div>
-                </div>
-                <h3 style="margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4;">30 Habit Tracker Ideas for Your Daily and Weekly Routine</h3>
-                <p class="text-muted" style="flex: 1;">30 practical daily habits organized by category: health, focus, mindset, morning routine, and relationships.</p>
-                <span class="feature-card__cta" style="margin-top: 16px;">Read the guide →</span>
-            </a>
-
-            <!-- Article 10 -->
-
-
+        <h2 id="articles-heading">Latest articles</h2>
+        <div class="blog-feed">
+            {%- assign articles = site.blog | sort: 'date' | reverse %}
+            {%- for article in articles %}
+            <article class="blog-feed__article">
+                <time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
+                <h3><a href="{{ article.url }}">{{ article.title | escape }}</a></h3>
+                <p>{{ article.description | escape }}</p>
+                <a class="feature-card__cta" href="{{ article.url }}" aria-label="Read {{ article.title | escape }}">Read the article →</a>
+            </article>
+            {%- endfor %}
         </div>
     </div>
 </section>
-
-<!-- CONTENT CLUSTERS -->
+<section class="section section--alt" aria-labelledby="start-here-heading">
+    <div class="container">
+        <h2 id="start-here-heading">Looking for a place to start?</h2>
+        <p class="lead" style="margin: 16px 0 24px;">Explore the Guides library for help with your first habit, daily tracking, setbacks, and choosing an app.</p>
+        <a href="/guides/" class="btn btn-primary">Browse all guides →</a>
+    </div>
+</section>
 <section class="section section--alt" aria-labelledby="topics-heading">
     <div class="container">
-        <div class="section-header text-center" style="margin-bottom: 32px;">
-            <div class="eyebrow">Browse by topic</div>
-            <h2 id="topics-heading">Habit tracking guides by topic</h2>
-            <p class="lead" style="margin-top: 12px;">Our content covers many dimensions of building better habits, from choosing a habit tracker app to practical ideas for making behavior change last.</p>
-        </div>
-        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-            <a href="/habit-tracker/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">✅</div>
-                <h3>Habit tracker apps</h3>
-                <p class="text-muted">How daily habit trackers work, what to look for, app comparisons, and ideas for staying consistent.</p>
-                <span class="feature-card__cta">Explore →</span>
-            </a>
-            <a href="/productivity-at-work/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">⚡</div>
-                <h3>Productivity Tracker Tips</h3>
-                <p class="text-muted">Deep work, focus habits, time tracking, and building a productivity tracker system that fits your life.</p>
-                <span class="feature-card__cta">Explore →</span>
-            </a>
-            <a href="/morning-routine/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">🌅</div>
-                <h3>Morning Routine Building</h3>
-                <p class="text-muted">Design a morning routine that sets the tone for the day, from 5-minute rituals to full 60-minute tracker setups.</p>
-                <span class="feature-card__cta">Explore →</span>
-            </a>
-            <a href="/streak-tracking/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">🔥</div>
-                <h3>Streak Tracking &amp; Motivation</h3>
-                <p class="text-muted">Habit streaks, momentum, recovering from missed days, and long-term consistency.</p>
-                <span class="feature-card__cta">Explore →</span>
-            </a>
-            <a href="/habit-duo/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">🤝</div>
-                <h3>Accountability &amp; Habit Partners</h3>
-                <p class="text-muted">How accountability partners improve habit adherence, and the right way to track habits with a friend without adding pressure.</p>
-                <span class="feature-card__cta">Explore →</span>
-            </a>
-            <a href="/ai-analyser/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">🧠</div>
-                <h3>AI &amp; Smart Habit Insights</h3>
-                <p class="text-muted">How AI-powered habit analysis surfaces patterns that raw completion data can't show, and what to do with those insights.</p>
-                <span class="feature-card__cta">Explore →</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- CTA BANNER -->
-<section class="cta-banner section--dark" aria-labelledby="blog-cta-heading">
-    <div class="container">
-        <div class="eyebrow" style="background: rgba(255,255,255,.1); color: #93C5FD; border-color: rgba(255,255,255,.1);">Put it into practice</div>
-        <h2 id="blog-cta-heading">Read about it. Then track it.</h2>
-        <p class="lead">
-            Habit advice is easier to use when you turn it into a simple daily action. Productify helps you track the routines you want to build, with no account required.
-        </p>
-        <div class="cta-banner__btns">
-            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="appstore-badge-link" data-cta="banner" aria-label="Download Productify on the App Store">
-                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="170" height="50" loading="lazy" decoding="async">
-            </a>
-            <a href="/habit-tracker/" class="btn btn-ghost">See the habit tracker →</a>
-        </div>
+        <h2 id="topics-heading">Explore more resources</h2>
+        <nav class="editorial-topics" aria-label="More resources">
+            <a href="/guides/">Habit tracking guides</a>
+            <a href="/habit-tracker-printable/">Free printable trackers</a>
+            <a href="/morning-routine/">Morning routines</a>
+            <a href="/habit-tracker/">Productify habit tracker</a>
+        </nav>
     </div>
 </section>

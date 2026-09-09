@@ -50,6 +50,15 @@
             });
         });
 
+        // Keep the guide links visible beside desktop articles and collapsible on mobile.
+        var guideMenu = document.querySelector('.guide-sidebar__menu');
+        if (guideMenu) {
+            var guideDesktop = window.matchMedia('(min-width: 1100px)');
+            function syncGuideMenu() { guideMenu.open = guideDesktop.matches; }
+            syncGuideMenu();
+            guideDesktop.addEventListener('change', syncGuideMenu);
+        }
+
         var isTouchDevice = false;
         window.addEventListener('touchstart', function () { isTouchDevice = true; }, { once: true, passive: true });
         function closeAllDropdowns(except) {

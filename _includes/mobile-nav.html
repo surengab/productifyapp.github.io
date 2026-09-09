@@ -16,14 +16,12 @@
             {%- endfor %}
         </div>
         {%- endif %}
-        {%- if dd.label == 'Features' %}
+        {%- endfor %}
         <div class="mobile-nav__section">
             {%- for link in site.data.nav.mobile_primary %}
             <a href="{{ link.href }}" class="mobile-nav__link{% if link.primary %} mobile-nav__link--primary{% endif %}">{{ link.label }}</a>
             {%- endfor %}
         </div>
-        {%- endif %}
-        {%- endfor %}
     </div>
 
     <div class="mobile-nav__footer">

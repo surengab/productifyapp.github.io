@@ -19,19 +19,6 @@ dropdowns:
       - { href: /productivity-at-work/, icon: briefcase, title: "Productivity at Work",    blurb: "Habits that improve performance", aria: "Productivity at Work guide" }
       - { href: /habit-tracker-for-adhd/, icon: puzzle, title: "Habit Tracking with ADHD", blurb: "What helps, what backfires",  mobile: "Habit Tracking with ADHD" }
 
-  - label: Blog
-    id: dd-blog
-    align: right
-    min_width: 280px
-    items:
-      - { href: /blog/, icon: book-open, title: "All Articles", blurb: "Browse the full blog", aria: "All Articles", divider: true, mobile: "All Articles" }
-      - { href: /habit-tracker-printable/, icon: list-checks, title: "Free Printable Habit Tracker", blurb: "Monthly and weekly PDFs", mobile: "Free Printable Habit Tracker" }
-      - { href: /blog/best-habit-tracker-apps-2026/, icon: trophy, title: "Best Habit Tracker Apps 2026", blurb: "Free &amp; paid comparison", aria: "Best Habit Tracker Apps 2026", mobile: "Best Habit Tracker Apps 2026" }
-      - { href: /blog/how-to-start-a-daily-habit/,   icon: sprout, title: "How to Start a Daily Habit", blurb: "Build from scratch", aria: "How to Start a Daily Habit", mobile: "How to Start a Daily Habit" }
-      - { href: /blog/how-to-break-bad-habits/, icon: ban, title: "How to Break Bad Habits", blurb: "Replace, don't resist", aria: "How to Break Bad Habits", mobile: "How to Break Bad Habits" }
-      - { href: /blog/how-long-to-build-a-habit/, icon: hourglass, title: "How Long to Build a Habit", blurb: "The real timeline", aria: "How Long Does It Take to Build a Habit", mobile: "How Long to Build a Habit" }
-      - { href: /blog/what-habits-to-track/, icon: list-checks, title: "What Habits to Track", blurb: "Best habits to start with", aria: "What Habits to Track", mobile: "What Habits to Track" }
-
   - label: Compare
     align: right
     min_width: 240px
@@ -42,15 +29,21 @@ dropdowns:
       - { href: /productify-vs-loop/, icon: smartphone, title: "Productify vs Loop", blurb: "The iPhone answer for Loop users", mobile: "Productify vs Loop" }
       - { href: /productify-vs-productive/, icon: copy, title: "Productify vs Productive", blurb: "Similar name, different apps", mobile: "Productify vs Productive" }
 
-# Plain links after the dropdowns, desktop navbar.
+  - label: Resources
+    align: right
+    items:
+      - { href: /guides/, icon: book-open, title: "Guides", blurb: "Learn to build and track habits", mobile: "Guides" }
+      - { href: /blog/, icon: layers, title: "Blog", blurb: "Browse the latest articles", mobile: "Blog" }
+
+  - label: Company
+    align: right
+    items:
+      - { href: /#about, icon: users, title: "About", blurb: "Get to know Productify", mobile: "About" }
+      - { href: /#contact, icon: smartphone, title: "Contact", blurb: "Get in touch with the team", mobile: "Contact" }
+
+# Plain links after the dropdowns.
 links:
   - { href: /pricing/, label: Pricing }
-  - { href: /#about,   label: About }
-  - { href: /#contact, label: Contact }
 
-# The un-grouped block in the middle of the mobile drawer.
 mobile_primary:
-  - { href: /#how-it-works, label: "How It Works", primary: true }
-  - { href: /pricing/,      label: "Pricing",      primary: true }
-  - { href: /#about,        label: "About" }
-  - { href: /#contact,      label: "Contact" }
+  - { href: /pricing/, label: Pricing, primary: true }

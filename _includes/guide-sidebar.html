@@ -1,0 +1,16 @@
+<aside class="guide-sidebar">
+    <a class="guide-skip" href="#guide-main">Skip to content</a>
+    <details class="guide-sidebar__menu" open>
+        <summary>Browse the guides</summary>
+        <nav aria-label="Guide library">
+            <ul>
+                {%- for item in site.data.guide_sidebar.items %}
+                <li><a href="{{ item.href }}" class="guide-sidebar__link"{% if page.url == item.href %} aria-current="page"{% endif %}>
+                    <strong>{{ item.title | escape }}</strong>
+                    <span>{{ item.blurb | escape }}</span>
+                </a></li>
+                {%- endfor %}
+            </ul>
+        </nav>
+    </details>
+</aside>
