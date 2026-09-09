@@ -194,6 +194,7 @@ h3 {
     pointer-events: none;
 }
 .nav-dropdown__menu-inner {
+    position: relative;
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 12px; padding: 8px; min-width: 230px;
     box-shadow: var(--shadow-md);
@@ -222,6 +223,21 @@ h3 {
     display: block; font-size: .86rem; font-weight: 600; color: var(--ink);
 }
 .nav-dropdown__item-text span { font-size: .78rem; color: var(--ink-muted); }
+
+/* Guides and Blog reveal their own links on hover or keyboard focus. */
+.nav-resource__arrow { width: 12px; height: 12px; margin: 5px 0 0 auto; flex-shrink: 0; }
+/* The transparent bridge covers the parent padding and the gap between menus. */
+.nav-resource__panel { display: none; position: absolute; top: 0; left: calc(100% - 8px); width: 328px; padding-left: 16px; }
+.nav-resource__links { padding: 8px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow-md); max-height: calc(100vh - 120px); overflow-y: auto; }
+.nav-dropdown.open .nav-resource:is(:hover, :focus-within) > .nav-resource__panel { display: block; }
+.nav-resource:is(:hover, :focus-within) > .nav-dropdown__item { background: var(--bg-alt); }
+/* A hovered sibling takes precedence if another section still has focus. */
+.nav-dropdown__menu-inner:has(.nav-resource:hover) .nav-resource:not(:hover) > .nav-resource__panel { display: none; }
+.nav-resource a:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+@media (max-width: 1200px) {
+    .nav-resource__panel { left: auto; right: calc(100% - 8px); padding-left: 0; padding-right: 16px; }
+    .nav-resource__arrow { transform: rotate(180deg); }
+}
 
 .nav-cta { display: flex; align-items: center; gap: 12px; }
 .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }

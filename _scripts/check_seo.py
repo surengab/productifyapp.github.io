@@ -22,6 +22,8 @@ class Page(HTMLParser):
         self.social_urls = []
         self.library_links, self.section_links, self.cards = [], [], []
         self.nav_label = ''
+        self.has_main_nav = False
+        self.flyouts, self.flyout_label, self.flyout_depth = {}, None, 0
         self.h1 = 0
         self.redirect = False
         self.in_title = self.in_json = False
@@ -33,8 +35,16 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
-        if tag == 'nav': self.nav_label = a.get('aria-label', '')
+        if tag == 'nav':
+            self.nav_label = a.get('aria-label', '')
+            if self.nav_label == 'Main navigation': self.has_main_nav = True
+        if tag == 'div':
+            if self.flyout_depth: self.flyout_depth += 1
+            elif a.get('role') == 'group' and a.get('aria-label') in ('Guides navigation', 'Blog navigation'):
+                self.flyout_label, self.flyout_depth = a['aria-label'], 1
+                self.flyouts[self.flyout_label] = []
         if tag == 'a':
+            if self.flyout_label: self.flyouts[self.flyout_label].append(a.get('href'))
             if self.nav_label in ('Guides library', 'Blog library'):
                 self.library_links.append((self.nav_label, a.get('href'), a.get('aria-current')))
             if self.nav_label == 'Resource sections':
@@ -65,6 +75,9 @@ class Page(HTMLParser):
         if self.in_json: self.json_text += text
 
     def handle_endtag(self, tag):
+        if tag == 'div' and self.flyout_depth:
+            self.flyout_depth -= 1
+            if not self.flyout_depth: self.flyout_label = None
         if tag == 'nav': self.nav_label = ''
         if tag == 'title': self.in_title = False
         if tag == 'script' and self.in_json:
@@ -109,6 +122,14 @@ for path, page in pages.items():
     for social_url in page.social_urls:
         if social_url != url: errors.append(f'{relative}: incorrect social URL {social_url}')
     for schema in page.schemas: inspect_schema(schema, relative)
+    if page.has_main_nav:
+        for resource_section in ('guides', 'blog'):
+            expected = {'/' + p.relative_to(ROOT).as_posix().removesuffix('index.html')
+                        for p in pages if p.parent.parent == ROOT / resource_section}
+            expected.add(f'/{resource_section}/')
+            actual = page.flyouts.get(f'{resource_section.capitalize()} navigation', [])
+            if set(actual) != expected or len(actual) != len(expected):
+                errors.append(f'{relative}: {resource_section} hover navigation must match its collection')
     section = relative.split('/')[0]
     if section in ('guides', 'blog'):
         section_url = f'/{section}/'

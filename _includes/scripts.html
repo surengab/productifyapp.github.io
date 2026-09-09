@@ -64,6 +64,9 @@
         function closeAllDropdowns(except) {
             document.querySelectorAll('.nav-dropdown.open').forEach(function (dd) {
                 if (dd !== except) {
+                    if (dd.querySelector('.nav-dropdown__menu').contains(document.activeElement)) {
+                        dd.querySelector('.nav-dropdown__toggle').focus();
+                    }
                     dd.classList.remove('open');
                     dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded', 'false');
                 }
@@ -84,9 +87,13 @@
             dd.addEventListener('mouseleave', function () {
                 if (isTouchDevice) return;
                 leaveTimer = setTimeout(function () {
+                    if (dd.querySelector('.nav-dropdown__menu').contains(document.activeElement)) return;
                     dd.classList.remove('open');
                     dd.querySelector('.nav-dropdown__toggle').setAttribute('aria-expanded', 'false');
                 }, 120);
+            });
+            dd.addEventListener('focusout', function (e) {
+                if (!dd.contains(e.relatedTarget) && !dd.matches(':hover')) closeAllDropdowns();
             });
             dd.querySelector('.nav-dropdown__toggle').addEventListener('click', function (e) {
                 e.stopPropagation();
