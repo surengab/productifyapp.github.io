@@ -18,8 +18,8 @@ ahrefs_site_verification: fa4bb1ff66190ceaa3866dffe1adca9a9c0569b8b7ffdfd06263e4
 
 # --- Collections -------------------------------------------------------------
 # Each collection serves its content directly under its section prefix.
-# Retired flat URLs have no redirect or duplicate page. Individual resources
-# can keep a standalone URL with an explicit front-matter permalink.
+# Legacy URLs redirect through _data/redirects.json and _plugins/redirects.rb.
+# Individual resources can keep a standalone URL with an explicit permalink.
 collections:
   guides:
     output: true

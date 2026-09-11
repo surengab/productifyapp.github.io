@@ -34,14 +34,18 @@ layout and a sidebar generated from their own collection. Edit sidebar labels an
 order on the article itself; there is no separate "Show in Guides" checkbox.
 
 The retired flat URLs, legacy habit-streaks aliases, and former blog URLs of moved
-guides are intentionally removed, with no redirects. `_scripts/check_urls.rb`
-checks that current paths exist and retired paths are absent. Always build into a
-clean destination after changing URLs.
+guides redirect to their current pages. `_data/redirects.json` maps old paths to
+new paths; `_plugins/redirects.rb` generates small redirect pages during the build.
+GitHub Pages serves static HTML, so these use an immediate meta refresh and a
+canonical link, with JavaScript preserving query strings and fragments. They are
+excluded from the sitemap and resource navigation. `_scripts/check_urls.rb`
+checks that current paths, legacy paths, and redirect destinations exist.
+Always build into a clean destination after changing URLs.
 
 `_scripts/check_seo.py` also gates deployment: it checks canonical URLs,
 unique titles/descriptions, H1s, image alt attributes, internal links and
 anchors, JSON-LD URLs, social sharing URLs, consistent Productify ratings,
-indexable sitemap entries, and the absence of redirect pages. Run both checks against a fresh build:
+indexable sitemap entries, and valid legacy redirects without chains. Run both checks against a fresh build:
 
 ```sh
 bundle exec jekyll build

@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else '_site').resolve()
 ORIGIN = 'https://productifyapp.org'
+REDIRECTS = json.loads((Path(__file__).resolve().parents[1] / '_data/redirects.json').read_text())
 errors = []
 
 class Page(HTMLParser):
@@ -26,6 +27,7 @@ class Page(HTMLParser):
         self.flyouts, self.flyout_label, self.flyout_depth = {}, None, 0
         self.h1 = 0
         self.redirect = False
+        self.refresh = None
         self.in_title = self.in_json = False
         self.json_text = ''
         source = path.read_text()
@@ -59,7 +61,8 @@ class Page(HTMLParser):
             if a.get('name') == 'robots': self.robots = a.get('content', '')
             if a.get('property', a.get('name')) in ('og:url', 'twitter:url'):
                 self.social_urls.append(a.get('content', ''))
-            if a.get('http-equiv', '').lower() == 'refresh': self.redirect = True
+            if a.get('http-equiv', '').lower() == 'refresh':
+                self.redirect, self.refresh = True, a.get('content', '')
         if tag == 'link' and a.get('rel') == 'canonical':
             self.canonicals.append(a.get('href', ''))
         if tag in ('a', 'img', 'script', 'link'):
@@ -110,7 +113,18 @@ def inspect_schema(value, relative):
 for path, page in pages.items():
     relative = path.relative_to(ROOT).as_posix()
     url = ORIGIN + '/' + relative.removesuffix('index.html')
-    if page.redirect: errors.append(f'{relative}: redirect pages are not allowed')
+    redirect_to = REDIRECTS.get('/' + relative.removesuffix('index.html'))
+    if redirect_to:
+        destination = ORIGIN + redirect_to
+        if page.refresh != f'0; url={destination}' or page.canonicals != [destination]:
+            errors.append(f'{relative}: expected immediate redirect and canonical to {destination}')
+        if ('a', destination) not in page.links:
+            errors.append(f'{relative}: redirect missing fallback link')
+        dest_page = pages.get(target(destination))
+        if not dest_page or dest_page.redirect or 'noindex' in dest_page.robots or dest_page.canonicals != [destination]:
+            errors.append(f'{relative}: redirect target must be a canonical, indexable page')
+        continue
+    if page.redirect: errors.append(f'{relative}: unexpected redirect page')
     indexable = not page.redirect and 'noindex' not in page.robots
     if indexable:
         if not page.title.strip() or not page.description.strip():
@@ -125,7 +139,7 @@ for path, page in pages.items():
     if page.has_main_nav:
         for resource_section in ('guides', 'blog'):
             expected = {'/' + p.relative_to(ROOT).as_posix().removesuffix('index.html')
-                        for p in pages if p.parent.parent == ROOT / resource_section}
+                        for p, child in pages.items() if p.parent.parent == ROOT / resource_section and not child.redirect}
             expected.add(f'/{resource_section}/')
             actual = page.flyouts.get(f'{resource_section.capitalize()} navigation', [])
             if set(actual) != expected or len(actual) != len(expected):
@@ -135,7 +149,7 @@ for path, page in pages.items():
         section_url = f'/{section}/'
         page_url = '/' + relative.removesuffix('index.html')
         children = {'/' + p.relative_to(ROOT).as_posix().removesuffix('index.html')
-                    for p in pages if p.parent.parent == ROOT / section}
+                    for p, child in pages.items() if p.parent.parent == ROOT / section and not child.redirect}
         links = page.library_links
         if {href for _, href, _ in links} != children | {section_url} or len(links) != len(children) + 1:
             errors.append(f'{relative}: sidebar must list its own collection exactly once')

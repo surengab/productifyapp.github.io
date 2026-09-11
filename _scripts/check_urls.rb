@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 # Check the current URL architecture after a fresh Jekyll build. Pages must
-# exist at their canonical paths; retired flat URLs and aliases must be absent.
+# exist at their canonical paths and legacy paths must have redirect pages.
+require "json"
+
 SITE = ARGV[0] ? File.expand_path(ARGV[0]) : File.expand_path("../_site", __dir__)
 
 REQUIRED = %w[
@@ -52,41 +54,15 @@ REQUIRED = %w[
   /compare/productify-vs-streaks/
 ].freeze
 
-RETIRED = %w[
-  /blog/how-to-use-a-habit-tracker/
-  /blog/how-to-start-a-daily-habit/
-  /blog/how-to-build-habits-that-stick/
-  /blog/how-to-break-bad-habits/
-  /blog/how-many-goals-should-i-set/
-  /habit-tracker-printable/
-  /habit-duo/
-  /habit-templates/
-  /habit-tracker/
-  /streak-tracking/
-  /ai-analyser/
-  /measurable-goals/
-  /evening-routine/
-  /habit-tracker-for-adhd/
-  /morning-routine/
-  /productivity-at-work/
-  /productify-vs-habitica/
-  /productify-vs-habitify/
-  /productify-vs-loop/
-  /productify-vs-productive/
-  /productify-vs-streaks/
-  /habit-streaks/
-  /features/habit-streaks/
-].freeze
+REDIRECTS = JSON.parse(File.read(File.expand_path("../_data/redirects.json", __dir__))).freeze
 
 def output_path(url)
   path = File.join(SITE, url)
   url.end_with?("/") ? File.join(path, "index.html") : path
 end
 
-missing = REQUIRED.reject { |url| File.file?(output_path(url)) }
-retained = RETIRED.select { |url| File.file?(output_path(url)) }
-missing.each { |url| warn "check_urls: missing canonical URL #{url}" }
-retained.each { |url| warn "check_urls: retired URL still published #{url}" }
-exit 1 unless missing.empty? && retained.empty?
+missing = (REQUIRED + REDIRECTS.keys + REDIRECTS.values).uniq.reject { |url| File.file?(output_path(url)) }
+missing.each { |url| warn "check_urls: missing URL #{url}" }
+exit 1 unless missing.empty?
 
-puts "check_urls: all #{REQUIRED.size} required URLs resolve; #{RETIRED.size} retired URLs are absent"
+puts "check_urls: all #{REQUIRED.size} required URLs and #{REDIRECTS.size} legacy redirects exist"
