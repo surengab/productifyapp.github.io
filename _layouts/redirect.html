@@ -1,0 +1,14 @@
+{%- assign redirect_path = site.data.redirects[page.url] -%}
+{%- assign destination = redirect_path | absolute_url -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page moved | Productify</title>
+  <link rel="canonical" href="{{ destination | escape }}">
+  <script>window.location.replace({{ destination | jsonify }} + window.location.search + window.location.hash);</script>
+  <meta http-equiv="refresh" content="0; url={{ destination | escape }}">
+</head>
+<body><p>This page has moved to <a href="{{ destination | escape }}">its new location</a>.</p></body>
+</html>

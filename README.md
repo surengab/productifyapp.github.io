@@ -35,12 +35,16 @@ order on the article itself; there is no separate "Show in Guides" checkbox.
 
 The retired flat URLs, legacy habit-streaks aliases, and former blog URLs of moved
 guides redirect to their current pages. `_data/redirects.json` maps old paths to
-new paths; `_plugins/redirects.rb` generates small redirect pages during the build.
-GitHub Pages serves static HTML, so these use an immediate meta refresh and a
-canonical link, with JavaScript preserving query strings and fragments. They are
-excluded from the sitemap and resource navigation. `_scripts/check_urls.rb`
-checks that current paths, legacy paths, and redirect destinations exist.
-Always build into a clean destination after changing URLs.
+new paths. Each file in `redirects/` declares an old URL as its `permalink` and
+uses `_layouts/redirect.html`, which looks up the destination in that map.
+These ordinary Jekyll pages work in both the branch-based GitHub Pages build
+(safe mode, without custom plugins) and the custom Actions build. GitHub Pages
+serves static HTML, so these use an immediate meta refresh and a canonical link,
+with JavaScript preserving query strings and fragments. They are excluded from
+the sitemap and resource navigation. When adding a mapping, add its matching
+page in `redirects/` with `layout: redirect` and `sitemap: false`.
+`_scripts/check_urls.rb` checks that current paths, legacy paths, and redirect
+destinations exist. Always build into a clean destination after changing URLs.
 
 `_scripts/check_seo.py` also gates deployment: it checks canonical URLs,
 unique titles/descriptions, H1s, image alt attributes, internal links and
@@ -51,6 +55,14 @@ indexable sitemap entries, and valid legacy redirects without chains. Run both c
 bundle exec jekyll build
 ruby _scripts/check_urls.rb
 python3 _scripts/check_seo.py
+```
+
+Also verify redirects without custom plugins before changing their implementation:
+
+```sh
+bundle exec jekyll build --safe --destination /tmp/productify-safe-build
+ruby _scripts/check_urls.rb /tmp/productify-safe-build
+python3 _scripts/check_seo.py /tmp/productify-safe-build
 ```
 
 The homepage is `index.html`. The `index.md` companion is excluded from
