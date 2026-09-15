@@ -777,3 +777,40 @@ li a:hover {
     .guide-hero { padding-top: 28px; }
     .guide-start { padding: 20px; }
 }
+
+/* Download actions: one primary button, a quieter optional detail link. */
+a.download-button, .article .inline-cta a.download-button {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    min-height: 48px; padding: 14px 24px; border-radius: 12px;
+    background: #6840ca; color: #fff; border: 1px solid transparent;
+    font: 600 .97rem/1.4 'Inter', sans-serif; text-decoration: none;
+    text-align: center; box-shadow: 0 4px 12px rgba(78,44,153,.16);
+    transition: background .2s;
+}
+a.download-button:hover, .article .inline-cta a.download-button:hover { background: #5331a7; color: #fff; text-decoration: none; }
+a.download-button:focus-visible, a.cta-secondary:focus-visible, .sticky-cta__close:focus-visible {
+    outline: 3px solid #6840ca; outline-offset: 4px;
+}
+a.cta-secondary {
+    display: inline-flex; align-items: center; min-height: 44px;
+    color: var(--ink-2); font-size: .9rem; font-weight: 500;
+    text-decoration: underline; text-underline-offset: 4px;
+}
+.section--dark a.cta-secondary { color: #e2e8f0; }
+.section--dark a.download-button { background: #fff; color: #5331a7; }
+.section--dark a.download-button:hover { background: #eee8fb; }
+.section--dark a.download-button:focus-visible { outline-color: #fff; }
+.download-note { font-size: .78rem; line-height: 1.5; color: var(--ink-2); }
+.cta-banner__btns { align-items: center; gap: 24px; }
+.inline-cta__actions { gap: 8px; }
+.article .inline-cta p.inline-cta__text { margin: 0; line-height: 1.6; }
+.sticky-cta[hidden] { display: none; }
+.sticky-cta .download-button { min-height: 44px; padding: 10px 16px; font-size: .85rem; flex-shrink: 0; }
+.sticky-cta .sticky-cta__close { width: 44px; height: 44px; color: var(--ink-2); }
+@media (max-width: 560px) {
+    .inline-cta__text { flex-basis: auto; }
+    .inline-cta__actions { flex-direction: column; width: 100%; gap: 8px; }
+    .inline-cta .download-button { width: 100%; }
+    .sticky-cta { gap: 8px; padding-left: 12px; padding-right: 4px; }
+}
+@media (prefers-reduced-motion: reduce) { a.download-button { transition: none; } }

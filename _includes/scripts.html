@@ -103,34 +103,43 @@
                 else { dd.classList.remove('open'); this.setAttribute('aria-expanded', 'false'); }
             });
         });
-        // Mobile download bar: reveal once the reader is past the hero, and pull
-        // it back while the footer is on screen so it never sits on top of the
-        // footer's own App Store badge. Dismissal lasts for the session only.
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        document.documentElement.classList.toggle('is-ios', isIOS);
+
+        // Offer the sticky action on iOS after the hero, except beside another
+        // download prompt. Storage denial must not break routing or analytics.
         var cta = document.getElementById('stickyCta');
-        if (cta && !sessionStorage.getItem('ctaDismissed')) {
+        var ctaDismissed = false;
+        try { ctaDismissed = sessionStorage.getItem('ctaDismissed') === '1'; } catch (e) {}
+        if (cta && isIOS && location.pathname !== '/download/' && !ctaDismissed) {
             cta.hidden = false;
             var ctaClose = document.getElementById('stickyCtaClose');
-            var footer = document.querySelector('footer');
-            var footerVisible = false;
-            var ctaDismissed = false;
-
-            if (footer && 'IntersectionObserver' in window) {
-                new IntersectionObserver(function (entries) {
-                    footerVisible = entries[0].isIntersecting;
-                    syncCta();
-                }, { rootMargin: '0px 0px -40px 0px' }).observe(footer);
-            }
-
+            var mobileCta = window.matchMedia('(max-width: 900px)');
+            var visiblePrompts = new Set();
             var ctaTicking = false;
             var pastHero = false;
             var hero = document.querySelector('.hero, .page-hero, #article-heading');
             var observeHero = hero && 'IntersectionObserver' in window;
-            var syncCta = function () {
+            function syncCta() {
                 ctaTicking = false;
-                // one viewport down clears the hero and its existing CTA
                 var past = observeHero ? pastHero : window.scrollY > window.innerHeight * 0.9;
-                cta.classList.toggle('is-visible', past && !footerVisible && !ctaDismissed);
-            };
+                var visible = mobileCta.matches && past && !visiblePrompts.size && !ctaDismissed;
+                cta.classList.toggle('is-visible', visible);
+                cta.inert = !visible;
+            }
+            if ('IntersectionObserver' in window) {
+                var promptObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) visiblePrompts.add(entry.target);
+                        else visiblePrompts.delete(entry.target);
+                    });
+                    syncCta();
+                });
+                document.querySelectorAll('footer, .inline-cta, .cta-banner, .mid-cta').forEach(function (prompt) {
+                    promptObserver.observe(prompt);
+                });
+            }
             if (observeHero) {
                 new IntersectionObserver(function (entries) {
                     var entry = entries[0];
@@ -140,17 +149,16 @@
             } else window.addEventListener('scroll', function () {
                 if (!ctaTicking) { ctaTicking = true; window.requestAnimationFrame(syncCta); }
             }, { passive: true });
-
+            mobileCta.addEventListener('change', syncCta);
             if (ctaClose) {
                 ctaClose.addEventListener('click', function () {
                     ctaDismissed = true;
-                    cta.classList.remove('is-visible');
-                    sessionStorage.setItem('ctaDismissed', '1');
+                    syncCta();
+                    try { sessionStorage.setItem('ctaDismissed', '1'); } catch (e) {}
                     window.setTimeout(function () { cta.hidden = true; }, 300);
                 });
             }
-            if (observeHero) syncCta();
-            else window.requestAnimationFrame(syncCta);
+            syncCta();
         }
 
         // Contents rail: highlight the section currently being read. Falls back
@@ -190,16 +198,8 @@
 
 
 
-        /* -- Desktop download routing -------------------------------------
-           Productify is an iPhone app, so an App Store link on a desktop
-           browser is a dead end: it opens a web listing that cannot install
-           anything. On non-iOS devices, send the badges to /download/ instead,
-           which states the requirements and what happens after install.
-           The markup keeps the App Store URL so crawlers and no-JS visitors
-           still get the canonical destination; this is enhancement only.
-           The sticky bar is excluded because it is mobile-only by CSS. */
-        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-                    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        // Keep iOS downloads direct. Other devices use the QR handoff page;
+        // source and review links retain their original destination.
         var OUR_APP = 'id1389900237';
         if (!isIOS && location.pathname !== '/download/') {
             document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
@@ -209,7 +209,7 @@
                 if (a.href.indexOf(OUR_APP) === -1) return;   // competitor listing
                 a.dataset.storeHref = a.href;
                 a.href = '/download/';
-                a.setAttribute('aria-label', 'Download Productify');
+                if (a.hasAttribute('aria-label')) a.setAttribute('aria-label', 'Get Productify for your iPhone');
             });
         }
 
@@ -233,13 +233,13 @@
         document.addEventListener('click', function (e) {
             var a = e.target.closest('a[href*="apps.apple.com"], a[href*="play.google.com"], a[href="/download/"]');
             if (!a || typeof window.gtag !== 'function') return;
-            var target = a.dataset.storeHref || a.href;
-            var ours = target.indexOf(OUR_APP) !== -1 || a.getAttribute('href') === '/download/';
-            var evt;
-            if (!ours)                                  evt = 'competitor_store_click';
-            else if (a.getAttribute('href') === '/download/' && !a.dataset.storeHref)
-                                                        evt = 'download_page_click';
-            else                                        evt = 'download_click';
+            var target = a.href;
+            var downloadPage = a.getAttribute('href') === '/download/';
+            var ourStore = target.indexOf(OUR_APP) !== -1;
+            // Reading an App Store review/source is not a download CTA click.
+            if (ourStore && !a.matches('.appstore-badge-link, [data-cta]')) return;
+            var evt = downloadPage ? 'download_page_click' :
+                      ourStore ? 'download_click' : 'competitor_store_click';
             gtag('event', evt, {
                 cta_location: ctaLocation(a),
                 page_path: location.pathname,

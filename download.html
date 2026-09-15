@@ -1,11 +1,11 @@
 ---
-lastmod_fallback: '2026-08-27'
+lastmod_fallback: '2026-09-14'
 layout: page
 permalink: /download/
 title: Download Productify - Free Habit Tracker for iPhone
 seo_title: Download Productify - Free Habit Tracker for iPhone
 description: Download Productify free on the App Store. A calm habit tracker for iPhone and Apple Watch - no account required, works offline, free for 5 habits.
-og_description: Get Productify free on the App Store. Habit tracking for iPhone and Apple Watch, no account needed, ready in under a minute.
+og_description: Get Productify free on the App Store. Habit tracking for iPhone and Apple Watch, no account needed, start with your first habit.
 changefreq: monthly
 priority: 0.8
 robots: index, follow
@@ -45,6 +45,15 @@ faq:
 - q: How long does setup take?
   a: Under a minute. You can start from one of the built-in templates or add a single habit of your own. Starting with one habit is usually the better approach.
 extra_css: |-
+  .dl-hero { display: grid; grid-template-columns: minmax(0, 1fr) 284px; gap: 64px; align-items: center; }
+  .dl-handoff { margin: 0; padding: 24px; text-align: center; background: #fff; border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow-sm); }
+  .dl-handoff img { display: block; width: 220px; max-width: 100%; height: auto; margin: 0 auto 12px; }
+  .dl-handoff h2 { font-size: 1.15rem; margin: 0 0 8px; }
+  .dl-handoff p { font-size: .9rem; line-height: 1.6; color: var(--ink-2); margin: 0; }
+  .dl-hero .download-note { margin-top: 16px; }
+  .is-ios .dl-handoff { display: none; }
+  .is-ios .dl-hero { grid-template-columns: 1fr; }
+  @media (max-width: 760px) { .dl-hero { grid-template-columns: 1fr; gap: 32px; } .dl-handoff { max-width: 320px; } }
   .dl-steps { display: grid; gap: 18px; margin: 28px 0; counter-reset: dl; }
   @media (min-width: 720px) { .dl-steps { grid-template-columns: repeat(3, 1fr); } }
   .dl-step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 22px 22px 24px; }
@@ -61,22 +70,28 @@ extra_css: |-
 
 <!-- PAGE HERO -->
 <section class="page-hero" aria-labelledby="page-hero-heading">
-    <div class="container">
+    <div class="container dl-hero">
         <div class="page-hero__inner">
             <div class="eyebrow">Download · iPhone &amp; Apple Watch</div>
             <h1 id="page-hero-heading">
-                Download Productify<br>
-                <span>free on the App Store</span>
+                Your next habit<br>
+                <span>starts on your iPhone.</span>
             </h1>
             <p class="lead">
-                A calm daily habit tracker for iPhone. No account, no onboarding tour, no card: install it and you can check off your first habit in under a minute.
+                Get Productify free, choose one habit, and set a reminder. Track up to 5 habits with no account required.
             </p>
-            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+            <a href="{{ site.appstore_url }}"
                class="appstore-badge-link" data-cta="hero" aria-label="Download Productify free on the App Store">
                 <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="180" height="53">
             </a>
-            <p style="margin-top: 12px; font-size: .8rem; color: var(--ink-faint);">Free · iOS 17+ · No account required · 4.5★ from 493 US App Store ratings</p>
+            <p class="download-note">iOS 17.2+ · Free plan available · Optional in-app purchases</p>
         </div>
+        <aside class="dl-handoff" aria-labelledby="handoff-heading">
+            <img src="/assets/productify-app-store-qr.svg" width="220" height="220"
+                 alt="QR code to open Productify in the App Store on your iPhone">
+            <h2 id="handoff-heading">Scan with your iPhone</h2>
+            <p>Open Camera, point it at the code, then tap the App Store link.</p>
+        </aside>
     </div>
 </section>
 
@@ -123,7 +138,7 @@ extra_css: |-
             <div class="spec-list">
                 <div><span>Platform</span><span>iPhone, Apple Watch</span></div>
                 <div><span>Minimum version</span><span>iOS 17.2 or later</span></div>
-                <div><span>Price</span><span>Free · <a href="/pricing/">Pro from $3.99/month</a></span></div>
+                <div><span>Price</span><span>Free · <a href="/pricing/">Optional Pro plans</a></span></div>
                 <div><span>Account</span><span>Not required</span></div>
                 <div><span>Works offline</span><span>Yes</span></div>
                 <div><span>Android version</span><span>Not available</span></div>

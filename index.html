@@ -1195,6 +1195,8 @@ extra_css: |-
   .mt-16 { margin-top: 16px; }
   .mt-24 { margin-top: 24px; }
   .mt-32 { margin-top: 32px; }
+  .hero__cta-group { gap: 24px; }
+  .hero__note { color: var(--ink-2); }
   .d-flex { display: flex; }
   .align-center { align-items: center; }
   .flex-wrap { flex-wrap: wrap; }
@@ -1214,14 +1216,12 @@ extra_css: |-
                     Track your habits, keep your streak visible, and get reminders that cue instead of nag. <strong>Free on the App Store</strong>, with no account to create.
                 </p>
                 <div class="hero__cta-group">
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="appstore-badge-link" data-cta="hero"
-                       aria-label="Download Productify on the App Store">
-                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180" height="53">
+                    <a href="{{ site.appstore_url }}" class="download-button" data-cta="hero">
+                        Get Productify free <span aria-hidden="true">→</span>
                     </a>
-                    <a href="#features" class="btn btn-secondary btn-lg">Explore features</a>
+                    <a href="#how-it-works" class="cta-secondary">See how it works</a>
                 </div>
-                <p class="hero__note">Free to start · No account required · Privacy first</p>
+                <p class="hero__note">5 habits free · No account required · For iPhone</p>
             </div>
             <div class="hero__visual">
                 <div class="phone-preview">
@@ -2030,13 +2030,11 @@ extra_css: |-
             Productify helps you build routines that survive real life, with calm reminders, flexible goals, and guilt-free progress. Free to start, no account required.
         </p>
         <div class="cta-banner__btns">
-            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="appstore-badge-link" data-cta="banner"
-               aria-label="Download Productify on the App Store">
-                <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge appstore-badge--hero" width="180" height="53" loading="lazy" decoding="async">
+            <a href="{{ site.appstore_url }}" class="download-button" data-cta="banner">
+                Get Productify free <span aria-hidden="true">→</span>
             </a>
-            <a href="#features" class="btn btn-ghost btn-lg">Explore features</a>
+            <a href="/pricing/" class="cta-secondary">See the free plan</a>
         </div>
-        <p style="margin-top: 20px; font-size: .82rem; color: rgba(255,255,255,.5);">Free to start · No account required · Built for iPhone</p>
+        <p class="cta-banner__meta">5 habits free · No account required · For iPhone</p>
     </div>
 </section>

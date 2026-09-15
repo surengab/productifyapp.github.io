@@ -92,3 +92,24 @@ bundle exec jekyll serve
 ```
 
 Requires Ruby 3.x (CI pins 3.3).
+
+## Download CTA checks
+
+Primary download controls use `data-cta` to identify their placement. iOS users
+go directly to the App Store; other devices go to `/download/`, which offers a
+static QR code. Regenerate `assets/productify-app-store-qr.svg` if the app's
+App Store URL changes. The QR has no external service dependency.
+
+`download_page_click` measures visits to the handoff page; `download_click`
+measures actual App Store CTA clicks. Review/source links are excluded. Neither
+event measures installs, and scanning the static QR does not emit a web click.
+
+With Playwright available in your Node environment and a local build served, run:
+
+```sh
+node _scripts/check_cta.cjs http://127.0.0.1:8768
+```
+
+Set `CHROME_PATH` to an installed Chrome executable if needed. The check blocks
+external traffic and covers desktop, iPhone, Android, disabled JavaScript, and
+blocked session storage. `CTA_SCREENSHOTS` optionally saves screenshots.
