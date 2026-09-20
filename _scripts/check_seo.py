@@ -11,6 +11,9 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else '_site').resolve()
 ORIGIN = 'https://productifyapp.org'
+APP_STORE_URL = 'https://apps.apple.com/us/app/habit-tracker-productify/id1389900237'
+SOFTWARE_ID = f'{ORIGIN}/#software'
+GA_URL = 'https://www.googletagmanager.com/gtag/js?id=G-M3DE9J4KYW'
 REDIRECTS = json.loads((Path(__file__).resolve().parents[1] / '_data/redirects.json').read_text())
 errors = []
 
@@ -133,6 +136,10 @@ for path, page in pages.items():
         descriptions[page.description.strip()] += 1
         if page.h1 != 1: errors.append(f'{relative}: expected one H1, found {page.h1}')
         if page.canonicals != [url]: errors.append(f'{relative}: incorrect canonical {page.canonicals}')
+        ga_loads = [href for tag, href in page.links
+                    if tag == 'script' and 'googletagmanager.com/gtag/js' in href]
+        if ga_loads != [GA_URL]:
+            errors.append(f'{relative}: expected one intended GA library load, found {ga_loads}')
     for social_url in page.social_urls:
         if social_url != url: errors.append(f'{relative}: incorrect social URL {social_url}')
     for schema in page.schemas: inspect_schema(schema, relative)
@@ -187,6 +194,19 @@ for title, count in titles.items():
 for description, count in descriptions.items():
     if count > 1: errors.append(f'duplicate description ({count} pages): {description}')
 if len(ratings) > 1: errors.append(f'conflicting Productify ratings: {sorted(ratings)}')
+home = pages[ROOT / 'index.html']
+software = [schema for schema in home.schemas
+            if isinstance(schema, dict) and schema.get('@id') == SOFTWARE_ID]
+if len(software) != 1:
+    errors.append(f'homepage must define exactly one {SOFTWARE_ID} entity')
+else:
+    app = software[0]
+    if app.get('downloadUrl') != APP_STORE_URL or app.get('sameAs') != [APP_STORE_URL]:
+        errors.append('homepage SoftwareApplication must use the configured US App Store entity URL')
+    if app.get('availableOnDevice') != ['iPhone', 'Apple Watch']:
+        errors.append('homepage SoftwareApplication device list must match the verified listing')
+    if app.get('applicationCategory') != 'ProductivityApplication':
+        errors.append('homepage SoftwareApplication category must match the App Store listing')
 ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
 urls = [n.text for n in ET.parse(ROOT / 'sitemap.xml').findall('s:url/s:loc', ns)]
 if len(urls) != len(set(urls)): errors.append('duplicate sitemap URLs')

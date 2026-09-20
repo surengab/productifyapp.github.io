@@ -33,13 +33,15 @@ extra_jsonld:
   {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
+          "@id": "https://productifyapp.org/#software",
           "name": "Productify - Habit Tracker",
-          "operatingSystem": "iOS",
-          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "iOS 17.2 or later; watchOS 11.4 or later",
+          "applicationCategory": "ProductivityApplication",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
           "description": "Productify is a daily habit tracker for iOS designed to help you build consistency with reminders, progress views, templates, measurable goals, and AI insights.",
-          "url": "https://productifyapp.org/features/habit-tracker/",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "493", "bestRating": "5" }
+          "url": "https://productifyapp.org/",
+          "downloadUrl": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "500", "bestRating": "5" }
       }
 faq:
 - q: "What is a habit tracker app?"
@@ -51,9 +53,9 @@ faq:
 - q: "Does Productify work as a productivity tracker?"
   a: "Yes. Productify works as both a habit tracker and a productivity tracker. You can track focus sessions, deep work time, reading minutes, skill practice, and professional routines, with measurable targets and time-based reminders. See our productivity at work guide for specific setups."
 - q: "Is Productify habit tracker free?"
-  a: "Yes. Productify is free to download on iOS with no account required. The free plan covers up to 5 habits with reminders, streaks and starter templates. Pro adds unlimited habits, Habit Duo, AI Habit Analyser, and advanced analytics, with subscription and lifetime options. See <a href=\"/pricing/\">what Free and Pro each include</a>."
+  a: "Yes. Productify is free to download on iOS with no account required. The free plan covers up to 5 habits with reminders, streaks and starter templates. Pro adds unlimited habits, Habit Duo, AI Habit Analyser, and advanced analytics. See <a href=\"/pricing/\">current Free and Pro options</a>."
 - q: "Does Productify track habits automatically?"
-  a: "No. You record completion or progress yourself. Productify's reminders help you remember to act, but the app does not automatically detect that you read, walked, or completed another habit."
+  a: "Productify supports optional Apple Health integration for compatible activities such as walking, running, cycling, push-ups, and exercise time. Other habits are recorded manually, and Health access is only requested if you enable the feature."
 - q: "Can I track weekly habits?"
   a: "Yes. Set a schedule or weekly frequency that fits the habit. A practice session on chosen days and a weekly review can sit alongside your daily habits."
 ---
@@ -84,7 +86,7 @@ faq:
         <div class="eyebrow">Your daily record</div>
         <h2 id="what-is-heading">What does a habit tracking app do?</h2>
         <p>A habit tracking app records a repeated action against the schedule you choose. Instead of trying to remember whether you practiced this week, you have a record to review. Reminders cue the action; your check-ins show what happened.</p>
-        <p>Productify supports habits you check off and <a href="/features/measurable-goals/">measurable goals</a> such as minutes, pages, or repetitions. You enter your progress yourself: the app does not automatically detect completed activities.</p>
+        <p>Productify supports habits you check off and <a href="/features/measurable-goals/">measurable goals</a> such as minutes, pages, or repetitions. Compatible activities can use optional Apple Health integration; other habits are recorded manually.</p>
         <p>A one-time errand belongs on a to-do list. A recurring reading session belongs in a habit tracker. Our <a href="/blog/habit-tracker-vs-to-do-list/">tracker versus to-do list guide</a> explains how to choose.</p>
     </div></div>
 </section>
@@ -125,7 +127,7 @@ faq:
         <h3>Free: a small routine with reminders and history</h3>
         <p>Track up to 5 habits with per-habit reminders, streaks, and completion history. Start with 5 included templates or create a habit yourself. The free plan has no trial deadline and does not require a Productify account.</p>
         <h3>Pro: more habits and optional support</h3>
-        <p>Pro adds unlimited habits, the full template library, advanced analytics, <a href="/features/habit-duo/">Habit Duo</a> for tracking a habit with one friend, and <a href="/features/ai-analyser/">AI Habit Analyser</a> for reflecting on your data. Check <a href="/pricing/">Free, Pro, and lifetime options</a> for the current plan details.</p>
+        <p>Pro adds unlimited habits, the full template library, advanced analytics, <a href="/features/habit-duo/">Habit Duo</a> for tracking a habit with one friend, and <a href="/features/ai-analyser/">AI Habit Analyser</a> for reflecting on your data. Check <a href="/pricing/">current Free and Pro options</a> for plan details.</p>
         <h3>Check in from iPhone or Apple Watch</h3>
         <p>Productify includes an Apple Watch companion, Home Screen widgets, and Live Activities. Its workflow is built around Apple devices; there is currently no Android or browser version.</p>
         <p>Your habits stay on your device by default. Optional sharing and AI features involve additional data processing; see the <a href="/privacy.html">privacy policy</a> for those details.</p>

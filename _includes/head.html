@@ -62,29 +62,11 @@ page that needs its own webfont. Raw HTML, emitted verbatim.
 {%- endif %}
 
 {%- if site.ga_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ site.ga_id }}');
-    // Keep page-view and CTA events queued while the critical page loads.
-    // No interaction gate: passive readers are still measured.
-    (function () {
-        function loadAnalytics() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}';
-            document.head.appendChild(script);
-        }
-        function scheduleAnalytics() {
-            if ('requestIdleCallback' in window) {
-                window.requestIdleCallback(loadAnalytics, { timeout: 1500 });
-            } else {
-                loadAnalytics();
-            }
-        }
-        if (document.readyState === 'complete') scheduleAnalytics();
-        else window.addEventListener('load', scheduleAnalytics, { once: true });
-    })();
 </script>
 {%- endif %}

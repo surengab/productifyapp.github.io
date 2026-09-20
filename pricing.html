@@ -2,10 +2,10 @@
 lastmod_fallback: '2026-08-27'
 layout: page
 permalink: /pricing/
-title: Productify Pricing - Free Habit Tracker, Pro and Lifetime Plans
-seo_title: Productify Pricing - Free, Pro & Lifetime Plans
-description: 'Productify pricing: free forever for up to 5 habits, or unlimited habits, Habit Duo and AI insights with Pro from $3.99/month or $34.99 once.'
-og_description: Free forever for up to 5 habits. Pro from $3.99/month, or pay $34.99 once for lifetime access. No account required to start.
+title: Productify Pricing - Free Habit Tracker and Pro Plans
+seo_title: Productify Pricing - Free and Pro Plans
+description: 'Productify is free for up to 5 habits. Compare current monthly and yearly Pro prices, plan features, and App Store purchase terms.'
+og_description: Free for up to 5 habits. Compare the current US App Store monthly and yearly Pro options, with no account required to start.
 changefreq: monthly
 priority: 0.9
 robots: index, follow
@@ -26,49 +26,28 @@ extra_jsonld:
       "@type": "SoftwareApplication",
       "name": "Productify",
       "operatingSystem": "iOS 17.2 or later",
-      "applicationCategory": "LifestyleApplication",
+      "@id": "https://productifyapp.org/#software",
+      "applicationCategory": "ProductivityApplication",
       "url": "https://productifyapp.org/",
       "downloadUrl": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
-      "offers": [
-          {
-              "@type": "Offer",
-              "name": "Free",
-              "price": "0",
-              "priceCurrency": "USD",
-              "description": "Track up to 5 habits with streaks, reminders and starter templates. Free forever, no account required."
-          },
-          {
-              "@type": "Offer",
-              "name": "Pro (monthly)",
-              "price": "3.99",
-              "priceCurrency": "USD",
-              "description": "Unlimited habits, Habit Duo, AI Habit Analyser and advanced analytics, billed monthly."
-          },
-          {
-              "@type": "Offer",
-              "name": "Pro (yearly)",
-              "price": "24.99",
-              "priceCurrency": "USD",
-              "description": "All Pro features billed once a year."
-          },
-          {
-              "@type": "Offer",
-              "name": "Lifetime",
-              "price": "34.99",
-              "priceCurrency": "USD",
-              "description": "All Pro features and future updates as a single one-time purchase."
-          }
-      ]
+      "offers": {
+          "@type": "Offer",
+          "name": "Free download",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
+          "description": "Free to download with optional in-app purchases."
+      }
   }
 faq:
 - q: Is Productify free?
   a: Yes. Productify is free forever for up to 5 habits, with streak tracking, per-habit reminders and 5 starter templates included. It is not a trial. There is no expiry date, and no account or card is required to start.
 - q: How much does Productify Pro cost?
-  a: Pro is $3.99 per month or $24.99 per year, which works out at about $2.08 a month. There is also a Lifetime option at $34.99 as a single one-time purchase. Prices are in USD and may vary by region and local taxes.
-- q: What is the difference between Pro and Lifetime?
-  a: The features are identical. Pro is a subscription billed monthly or yearly; Lifetime is one payment that includes all future updates with no recurring charge. Lifetime costs roughly the same as seventeen months of yearly Pro.
+  a: The US App Store listing checked September 20, 2026 shows Monthly Premium at $4.99 and Yearly Premium at $19.99. It also lists promotional yearly and trial offers, plus a $29.99 Productify Pro purchase. Apple shows the option you are eligible for, its duration, renewal terms, and your local price before purchase.
+- q: Which paid option should I choose?
+  a: Monthly is the lower-commitment way to try Pro; yearly costs less than twelve monthly renewals at the currently listed US prices. Confirm the exact duration and renewal terms on Apple's purchase sheet, especially for promotional or other Productify Pro offers.
 - q: Is there a free trial for Pro?
-  a: Yes, Pro includes a 7-day free trial. You can cancel during the trial from the App Store and you will not be charged.
+  a: The US App Store listing currently includes some 7-day-trial purchase options. Trial eligibility can vary by account and offer, so rely on Apple's purchase sheet for the trial length and the price that follows it before you confirm.
 - q: How do I cancel my subscription?
   a: Subscriptions are managed by Apple, not by Productify. Open the Settings app on your iPhone, tap your name, then Subscriptions, and cancel Productify there. Access continues until the end of the period you have already paid for.
 - q: Do I need an account to use Productify?
@@ -120,7 +99,7 @@ extra_css: |-
             <div class="eyebrow">Plans</div>
             <h2 id="plans-heading">Productify pricing at a glance</h2>
             <p>
-                Three options: stay on the free plan indefinitely, subscribe to Pro, or buy Pro once and keep it. Everything is an in-app purchase through the App Store, so cancelling and refunds are handled by Apple rather than by us.
+                Stay on the free plan indefinitely, or choose a paid Pro option in the app. Purchases are handled by Apple, and the purchase sheet shows the applicable local price, duration, and renewal terms before you confirm.
             </p>
         </div>
 
@@ -141,10 +120,10 @@ extra_css: |-
                 </div>
 
                 <div class="plan plan--featured">
-                    <span class="plan__tag">Most popular</span>
-                    <div class="plan__name">Pro</div>
-                    <div class="plan__price">$3.99</div>
-                    <span class="plan__period">per month · or $24.99/year (save 48%)</span>
+                    <span class="plan__tag">Flexible</span>
+                    <div class="plan__name">Monthly Premium</div>
+                    <div class="plan__price">$4.99</div>
+                    <span class="plan__period">per month · US App Store</span>
                     <p class="plan__blurb">For people serious about making habits last, with every tool Productify offers.</p>
                     <ul>
                         <li>Unlimited habits</li>
@@ -158,24 +137,23 @@ extra_css: |-
                 </div>
 
                 <div class="plan">
-                    <span class="plan__tag" style="background: var(--ink);">Best value</span>
-                    <div class="plan__name">Lifetime</div>
-                    <div class="plan__price">$34.99</div>
-                    <span class="plan__period">one-time · pay once, own forever</span>
-                    <p class="plan__blurb">Everything in Pro, with no recurring charges. Ever.</p>
+                    <span class="plan__tag" style="background: var(--ink);">Lower annual cost</span>
+                    <div class="plan__name">Yearly Premium</div>
+                    <div class="plan__price">$19.99</div>
+                    <span class="plan__period">per year · US App Store</span>
+                    <p class="plan__blurb">The same Pro tools, billed yearly through Apple.</p>
                     <ul>
                         <li>All Pro features included</li>
                         <li>Unlimited habits</li>
                         <li>Habit Duo (shared accountability)</li>
                         <li>AI Habit Analyser</li>
                         <li>All habit templates</li>
-                        <li>All future updates included</li>
                         <li>Priority support</li>
                     </ul>
                 </div>
             </div>
             <p class="price-note">
-                Pro includes a 7-day free trial. Cancel anytime from the App Store. Lifetime is a one-time in-app purchase. Prices are in USD and may vary by region and local taxes.
+                US prices checked September 20, 2026. The listing also shows promotional yearly and 7-day-trial offers, plus a $29.99 “Productify Pro” purchase. Apple shows your eligible offer, local price, duration, and renewal terms before purchase.
             </p>
         </div>
     </div>
@@ -214,7 +192,7 @@ extra_css: |-
             </p>
             <ul class="check-list">
                 <li><span>You want to track more than five habits at once</span></li>
-                <li><span>You want <a href="/features/habit-duo/">Habit Duo</a>: one shared habit with one friend, for accountability without leaderboards</span></li>
+                <li><span>You want <a href="/features/habit-duo/">Habit Duo</a>: one shared habit with one friend and private, side-by-side streak progress</span></li>
                 <li><span>You want the <a href="/features/ai-analyser/">AI Habit Analyser</a> to surface which cues and days actually predict your slips</span></li>
                 <li><span>You want <a href="/features/measurable-goals/">measurable goals</a> in custom units rather than simple yes/no check-ins</span></li>
                 <li><span>You want the full <a href="/features/habit-templates/">habit template</a> library rather than the five starters</span></li>
@@ -222,9 +200,9 @@ extra_css: |-
             <p>
                 If none of those apply, the free plan is genuinely the right choice, and we would rather you stayed on it than paid for something you do not use.
             </p>
-            <h3>Monthly, yearly, or lifetime?</h3>
+            <h3>Monthly or yearly?</h3>
             <p>
-                Yearly works out at about $2.08 a month, so it pays for itself against monthly in roughly seven months. Lifetime costs about the same as seventeen months of Pro billed yearly: worth it if you expect to keep tracking habits for more than a year and a half, and a poor deal if you are still deciding whether habit tracking suits you at all. Starting monthly and switching later is a reasonable path.
+                At the currently listed US prices, yearly costs less than twelve monthly renewals. Monthly keeps the initial commitment smaller while you decide whether Pro solves a real problem. Promotional offers and eligibility vary, so compare the duration and renewal terms on Apple's purchase sheet rather than choosing from the headline price alone.
             </p>
         </div>
     </div>

@@ -14,20 +14,21 @@ extra_jsonld:
   {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
+      "@id": "https://productifyapp.org/#software",
       "name": "Productify",
       "operatingSystem": "iOS 17.2 or later",
-      "applicationCategory": "LifestyleApplication",
+      "applicationCategory": "ProductivityApplication",
       "url": "https://productifyapp.org/",
       "downloadUrl": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
       "installUrl": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "493", "bestRating": "5" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "500", "bestRating": "5" },
       "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
           "description": "Free to download. Track up to 5 habits with streaks, reminders and templates. No account required."
       },
-      "publisher": { "@type": "Organization", "name": "Productify", "url": "https://productifyapp.org/" }
+      "publisher": { "@id": "https://productifyapp.org/#organization" }
   }
 breadcrumbs:
 - label: Home
@@ -94,6 +95,8 @@ extra_css: |-
         </aside>
     </div>
 </section>
+
+{% include product-screenshots.html %}
 
 <!-- WHAT HAPPENS NEXT -->
 <section class="section" aria-labelledby="steps-heading">

@@ -35,40 +35,23 @@ extra_jsonld:
   {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
+          "@id": "https://productifyapp.org/#software",
           "name": "Productify",
-          "applicationCategory": "LifestyleApplication",
-          "applicationSubCategory": "ProductivityApplication",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "493", "bestRating": "5" },
-          "operatingSystem": "iOS 17+",
-          "availableOnDevice": ["iPhone", "iPad", "Apple Watch"],
-          "countriesSupported": "AU US GB CA NZ",
-          "inLanguage": ["en-US", "en-AU", "en-GB"],
-          "offers": [
-              { "@type": "Offer", "price": "0", "priceCurrency": "AUD", "name": "Free", "eligibleRegion": { "@type": "Country", "name": "Australia" } },
-              { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free", "eligibleRegion": { "@type": "Country", "name": "United States" } },
-              { "@type": "Offer", "price": "6.99", "priceCurrency": "AUD", "name": "Pro Monthly", "eligibleRegion": { "@type": "Country", "name": "Australia" } },
-              { "@type": "Offer", "price": "3.99", "priceCurrency": "USD", "name": "Pro Monthly", "eligibleRegion": { "@type": "Country", "name": "United States" } },
-              { "@type": "Offer", "price": "39.99", "priceCurrency": "AUD", "name": "Pro Yearly", "eligibleRegion": { "@type": "Country", "name": "Australia" } },
-              { "@type": "Offer", "price": "24.99", "priceCurrency": "USD", "name": "Pro Yearly", "eligibleRegion": { "@type": "Country", "name": "United States" } },
-              { "@type": "Offer", "price": "34.99", "priceCurrency": "USD", "name": "Lifetime Pro", "description": "One-time purchase, all Pro features forever" }
-          ],
+          "applicationCategory": "ProductivityApplication",
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "500", "bestRating": "5" },
+          "operatingSystem": "iOS 17.2 or later; watchOS 11.4 or later",
+          "availableOnDevice": ["iPhone", "Apple Watch"],
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free download", "url": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237" },
           "description": "Productify is a calm habit tracker for iPhone and Apple Watch. Build daily routines with frictionless check-ins, TempO pattern insights, shared Habit Duo accountability, templates, measurable goals, and informational streak tracking. Free to download worldwide.",
-          "screenshot": "https://productifyapp.org/image_2.webp",
-          "url": "https://productifyapp.org/",
-          "downloadUrl": "https://apps.apple.com/au/app/habit-tracker-productify/id1389900237",
-          "sameAs": [
-              "https://apps.apple.com/au/app/habit-tracker-productify/id1389900237",
-              "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+          "screenshot": [
+              "https://productifyapp.org/assets/productify-never-miss-habit.jpg",
+              "https://productifyapp.org/assets/productify-habit-duo-together.jpg",
+              "https://productifyapp.org/assets/productify-visualize-progress.jpg"
           ],
-          "author": {
-              "@type": "Organization",
-              "name": "Productify",
-              "url": "https://productifyapp.org/",
-              "sameAs": [
-                  "https://www.instagram.com/productify.habits",
-                  "https://x.com/Productify_app"
-              ]
-          },
+          "url": "https://productifyapp.org/",
+          "downloadUrl": "https://apps.apple.com/us/app/habit-tracker-productify/id1389900237",
+          "sameAs": ["https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"],
+          "author": { "@id": "https://productifyapp.org/#organization" },
           "featureList": [
               "Habit Duo: shared accountability with one friend",
               "AI Habit Analyser (TempO): personalized behavior insights",
@@ -85,9 +68,11 @@ extra_jsonld:
   {
           "@context": "https://schema.org",
           "@type": "WebSite",
+          "@id": "https://productifyapp.org/#website",
           "name": "Productify",
           "url": "https://productifyapp.org/",
-          "description": "Official website for Productify, a daily habit tracker app for iOS."
+          "description": "Official website for Productify, a daily habit tracker app for iPhone.",
+          "publisher": { "@id": "https://productifyapp.org/#organization" }
       }
 - |-
   {
@@ -115,7 +100,7 @@ extra_jsonld:
                   "name": "Can Productify track habits automatically?",
                   "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "No. You log habits yourself, usually with a tap. Productify does not passively detect habits in the background, so your log reflects what you choose to record."
+                      "text": "Productify supports optional Apple Health integration for compatible activities such as walking, running, cycling, push-ups, and exercise time. Other habits are recorded manually. Health access is optional."
                   }
               },
               {
@@ -123,7 +108,7 @@ extra_jsonld:
                   "name": "What is Habit Duo?",
                   "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Habit Duo lets you build one shared habit with one friend. You each track your own progress and see completion side by side, for mutual accountability without rankings."
+                      "text": "Habit Duo lets you build one shared habit with one friend. You each track your own progress and see daily check-ins and current streaks side by side in a private view."
                   }
               },
               {
@@ -139,7 +124,7 @@ extra_jsonld:
                   "name": "Is Productify available on Android?",
                   "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Productify is iOS-only today (iPhone and iPad, iOS 17+). An Android version is on the roadmap."
+                      "text": "No. Productify is currently available for iPhone and Apple Watch; there is no Android version."
                   }
               }
           ]
@@ -148,6 +133,7 @@ extra_jsonld:
   {
           "@context": "https://schema.org",
           "@type": "Organization",
+          "@id": "https://productifyapp.org/#organization",
           "name": "Productify",
           "url": "https://productifyapp.org/",
           "logo": "https://productifyapp.org/favicon.svg",
@@ -1231,8 +1217,7 @@ extra_css: |-
                          alt="Productify habit tracker app home screen"
                          width="946" height="2048"
                          loading="eager"
-                         fetchpriority="high"
-                         decoding="async">
+                         fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -1249,7 +1234,7 @@ extra_css: |-
             </div>
             <div class="trust-item">
                 <span class="trust-item__icon">👥</span>
-                <span><strong>5,000+</strong> people building better habits</span>
+                <span><strong>500+ ratings</strong> on the App Store</span>
             </div>
             <div class="trust-item">
                 <span class="trust-item__icon">🔒</span>
@@ -1269,7 +1254,7 @@ extra_css: |-
         <div class="platform-strip__inner">
             <div class="platform-item">
                 <span class="platform-item__icon">📱</span>
-                <span>iPhone &amp; iPad</span>
+                <span>iPhone</span>
             </div>
             <div class="platform-divider" aria-hidden="true"></div>
             <div class="platform-item">
@@ -1296,6 +1281,9 @@ extra_css: |-
 </div>
 
 <!-- ===================== FEATURES OVERVIEW ===================== -->
+{% include product-screenshots.html %}
+
+<!-- ===================== FEATURES OVERVIEW ===================== -->
 <section class="section" id="features" aria-labelledby="features-heading">
     <div class="container">
         <div class="section-header text-center">
@@ -1306,37 +1294,37 @@ extra_css: |-
             </p>
         </div>
         <div class="features-grid">
-            <a href="/features/habit-tracker/" class="feature-card feature-card--link" aria-label="Habit Tracker feature">
+            <a href="/features/habit-tracker/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">✅</div>
                 <h3>Habit Tracker</h3>
                 <p class="text-muted">Your daily habit tracker. Fast check-ins, streak history, and a minimalist design that makes showing up effortless.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="/features/habit-duo/" class="feature-card feature-card--link" aria-label="Habit Duo feature">
+            <a href="/features/habit-duo/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🤝</div>
                 <h3>Habit Duo</h3>
-                <p class="text-muted">The feeling of not being alone in it. Share one routine with one friend, no rankings, just quiet mutual accountability.</p>
+                <p class="text-muted">The feeling of not being alone in it. Share one routine with one friend and compare progress in a private, focused view.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="/features/ai-analyser/" class="feature-card feature-card--link" aria-label="AI Habit Analyser feature">
+            <a href="/features/ai-analyser/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🧠</div>
                 <h3>AI Habit Analyser</h3>
                 <p class="text-muted">A calm coach, not a dashboard. TempO surfaces honest patterns from your real data, without the generic pep talks.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="/features/habit-templates/" class="feature-card feature-card--link" aria-label="Habit Templates feature">
+            <a href="/features/habit-templates/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">📋</div>
                 <h3>Habit Templates</h3>
                 <p class="text-muted">Frictionless from day one. Pre-built routines for sleep, fitness, focus, and more. Adopt in a tap, customize as you grow.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="/features/measurable-goals/" class="feature-card feature-card--link" aria-label="Measurable Goals feature">
+            <a href="/features/measurable-goals/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">📏</div>
                 <h3>Measurable Goals</h3>
                 <p class="text-muted">Clarity removes hesitation. Attach a real number to every routine (steps, minutes, glasses) so you always know you're done.</p>
                 <span class="feature-card__cta">Learn more →</span>
             </a>
-            <a href="/features/streak-tracking/" class="feature-card feature-card--link" aria-label="Streak Tracking feature">
+            <a href="/features/streak-tracking/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🔥</div>
                 <h3>Streak Tracking</h3>
                 <p class="text-muted">Visualizing progress builds momentum. A missed day resets the count, but it doesn't erase the work you've already done.</p>
@@ -1352,7 +1340,7 @@ extra_css: |-
         <div class="mid-cta__inner">
             <div class="mid-cta__text">
                 <h3>Ready to track your first habit?</h3>
-                <p>Free to download · No account needed · Works on iPhone, iPad &amp; Apple Watch</p>
+                <p>Free to download · No account needed · Works on iPhone &amp; Apple Watch</p>
             </div>
             <div class="mid-cta__actions">
                 <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
@@ -1425,12 +1413,12 @@ extra_css: |-
                     <div class="eyebrow">Shared Accountability · Pro</div>
                     <h2 id="habit-duo-heading">Build one habit with one friend</h2>
                     <p class="lead mt-16">
-                        Habit Duo gives you a private, calm accountability space for one shared habit: no leaderboards, no pressure, just progress together.
+                        Habit Duo gives you a private accountability space for one shared habit, with both streaks and check-ins shown side by side.
                     </p>
                     <div class="benefit-chips">
                         <span class="benefit-chip"><span class="benefit-chip__icon">🤝</span>One friend, one habit</span>
                         <span class="benefit-chip"><span class="benefit-chip__icon">📊</span>Shared progress view</span>
-                        <span class="benefit-chip"><span class="benefit-chip__icon">🔕</span>No rankings or scores</span>
+                        <span class="benefit-chip"><span class="benefit-chip__icon">🔥</span>Side-by-side streaks</span>
                         <span class="benefit-chip"><span class="benefit-chip__icon">🔒</span>Completely private</span>
                     </div>
                     <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
@@ -1475,10 +1463,10 @@ extra_css: |-
                     </div>
                 </div>
                 <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="/assets/screenshot_ai_analyser.webp"
-                         alt="TempO AI Habit Analyser - Productify owl character showing weekly completion, active streaks, and personalized habit insights"
+                    <img src="/assets/productify-tempo-ai-coach.jpg"
+                         alt="TempO AI coach helping a Productify user turn a daily water goal into a practical habit"
                          class="spotlight__phone-img"
-                         loading="lazy" width="1024" height="1536">
+                         loading="lazy" width="460" height="996">
                 </div>
             </div>
         </div>
@@ -1664,7 +1652,7 @@ extra_css: |-
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <a class="testimonials-aggregate__label" href="{{ site.appstore_url }}">4.5 out of 5 from 493 US App Store ratings</a>
+            <a class="testimonials-aggregate__label" href="{{ site.appstore_url }}">4.5 out of 5 from 500+ App Store ratings</a>
         </div>
         <div class="testimonials-grid">
             <article class="testimonial-card">
@@ -1711,37 +1699,37 @@ extra_css: |-
             <p>Prefer paper? <a href="/guides/habit-tracker-printable/">Download a free printable habit tracker</a> in A4 or US Letter.</p>
         </div>
         <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-            <a href="/blog/areas-of-life/" class="feature-card feature-card--link" aria-label="Areas of life to focus on">
+            <a href="/blog/areas-of-life/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🌐</div>
                 <h3>8 Areas of Life to Focus On</h3>
                 <p class="text-muted">The 8 key aspects of life (health, relationships, career, finances, and more), each with one concrete, trackable habit.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
-            <a href="/blog/bad-habits-list/" class="feature-card feature-card--link" aria-label="List of bad habits to break">
+            <a href="/blog/bad-habits-list/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🚫</div>
                 <h3>List of Bad Habits to Break</h3>
                 <p class="text-muted">Common negative habits across health, productivity, and mental wellbeing, each paired with a replacement to track instead.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
-            <a href="/guides/how-many-goals-should-i-set/" class="feature-card feature-card--link" aria-label="How many goals should I set">
+            <a href="/guides/how-many-goals-should-i-set/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🎯</div>
                 <h3>How Many Goals Should I Set?</h3>
                 <p class="text-muted">Research says 1-3 active goals at once. Learn why fewer goals produce better results and how to choose the right ones.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
-            <a href="/guides/how-to-build-habits-that-stick/" class="feature-card feature-card--link" aria-label="How to build habits that stick">
+            <a href="/guides/how-to-build-habits-that-stick/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🔗</div>
                 <h3>How to Build Habits That Stick</h3>
                 <p class="text-muted">Five practical tactics (cue, routine, reward, environment, and accountability) and how to combine them.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
-            <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link" aria-label="6 Best habit tracker apps 2026">
+            <a href="/blog/best-habit-tracker-apps-2026/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🏆</div>
                 <h3>6 Best Habit Tracker Apps 2026</h3>
                 <p class="text-muted">An honest side-by-side comparison of the top free and paid habit tracker apps for iPhone, including what each one does best.</p>
                 <span class="feature-card__cta">Read the guide →</span>
             </a>
-            <a href="/guides/how-to-start-a-daily-habit/" class="feature-card feature-card--link" aria-label="How to start a daily habit">
+            <a href="/guides/how-to-start-a-daily-habit/" class="feature-card feature-card--link">
                 <div class="feature-card__icon">🌱</div>
                 <h3>How to Start a Daily Habit</h3>
                 <p class="text-muted">Why starting small beats starting strong, and a clear framework for building a daily routine from scratch, even if you've tried before.</p>
@@ -1819,8 +1807,8 @@ extra_css: |-
             <article class="pricing-card pricing-card--featured">
                 <div class="pricing-badge">Most Popular</div>
                 <h3>Pro</h3>
-                <div class="price">$3.99</div>
-                <div class="price-period">per month · or $24.99/year (save 48%)</div>
+                <div class="price">$4.99</div>
+                <div class="price-period">per month · US App Store</div>
                 <p class="pricing-desc">For people serious about making habits last, with every tool Productify offers.</p>
                 <hr class="pricing-divider">
                 <ul class="check-list">
@@ -1840,13 +1828,13 @@ extra_css: |-
                     </a>
                 </div>
             </article>
-            <!-- Lifetime -->
+            <!-- Yearly -->
             <article class="pricing-card" style="border-color: #7C3AED; box-shadow: 0 0 0 1px rgba(124,58,237,.15), var(--shadow-md); position: relative;">
                 <div class="pricing-badge" style="background: #7C3AED;">Best Value</div>
-                <h3>Lifetime</h3>
-                <div class="price" style="font-size: 2.4rem;">$34.99</div>
-                <div class="price-period">one-time · pay once, own forever</div>
-                <p class="pricing-desc">Everything in Pro, with no recurring charges. Ever.</p>
+                <h3>Yearly Pro</h3>
+                <div class="price" style="font-size: 2.4rem;">$19.99</div>
+                <div class="price-period">per year · US App Store</div>
+                <p class="pricing-desc">The same Pro tools, billed yearly through Apple.</p>
                 <hr class="pricing-divider">
                 <ul class="check-list">
                     <li>All Pro features included</li>
@@ -1854,20 +1842,19 @@ extra_css: |-
                     <li>Habit Duo (shared accountability)</li>
                     <li>AI Habit Analyser</li>
                     <li>All habit templates</li>
-                    <li>All future updates included</li>
                     <li>Priority support</li>
                 </ul>
                 <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
                     <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
                        class="appstore-badge-link" data-cta="body"
-                       aria-label="Get Productify Lifetime on the App Store">
+                       aria-label="See Productify yearly pricing on the App Store">
                         <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy" decoding="async">
                     </a>
                 </div>
             </article>
         </div>
         <p class="text-center text-muted mt-32" style="font-size: .85rem; margin-top: 28px;">
-            Pro plan includes a 7-day free trial. Cancel anytime from the App Store. Lifetime is a one-time in-app purchase.
+            US prices checked September 20, 2026. The listing also shows promotional yearly and 7-day-trial offers, plus a $29.99 “Productify Pro” purchase. Apple shows your eligible offer, local price, duration, and renewal terms before purchase.
         </p>
     </div>
 </section>
@@ -1908,7 +1895,7 @@ extra_css: |-
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>No. You log habits yourself, usually with a tap. Productify does not passively detect habits in the background, so your log reflects what you choose to record.</p>
+                    <p>For compatible activities such as walking, running, cycling, push-ups, and exercise time, you can optionally connect Apple Health. Other habits are recorded manually. Health access is optional.</p>
                 </div>
             </div>
 
@@ -1918,7 +1905,7 @@ extra_css: |-
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Habit Duo lets you build one shared habit with one friend. You each track your own progress and see completion side by side, for mutual accountability without rankings.</p>
+                    <p>Habit Duo lets you build one shared habit with one friend. You each track your own progress and see daily check-ins and current streaks side by side in a private view.</p>
                 </div>
             </div>
 
@@ -1938,7 +1925,7 @@ extra_css: |-
                     <span class="faq-question__icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Productify is iOS-only today (iPhone and iPad, iOS 17+). An Android version is on the roadmap.</p>
+                    <p>No. Productify is currently available for iPhone and Apple Watch; there is no Android version.</p>
                 </div>
             </div>
 
@@ -1959,8 +1946,7 @@ extra_css: |-
                 <div class="contact-channels">
                     <a href="https://x.com/Productify_app"
                        class="contact-channel"
-                       target="_blank" rel="noopener noreferrer"
-                       aria-label="Follow Productify on X (Twitter)">
+                       target="_blank" rel="noopener noreferrer">
                         <div class="contact-channel__icon">🐦</div>
                         <div>
                             <div class="contact-channel__label">X (Twitter)</div>
@@ -1969,8 +1955,7 @@ extra_css: |-
                     </a>
                     <a href="https://www.instagram.com/productify.habits"
                        class="contact-channel"
-                       target="_blank" rel="noopener noreferrer"
-                       aria-label="Follow Productify on Instagram">
+                       target="_blank" rel="noopener noreferrer">
                         <div class="contact-channel__icon">📸</div>
                         <div>
                             <div class="contact-channel__label">Instagram</div>
@@ -1978,8 +1963,7 @@ extra_css: |-
                         </div>
                     </a>
                     <a href="mailto:contact@deductify.org"
-                       class="contact-channel"
-                       aria-label="Email Productify">
+                       class="contact-channel">
                         <div class="contact-channel__icon">✉️</div>
                         <div>
                             <div class="contact-channel__label">Email</div>

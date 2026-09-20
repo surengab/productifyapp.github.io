@@ -22,6 +22,7 @@ const output = process.env.CTA_SCREENSHOTS;
             const errors = [];
             page.on('pageerror', error => errors.push(error.message));
             await page.goto(base, { waitUntil: 'networkidle' });
+            assert.equal(await page.locator('script[src*="googletagmanager.com/gtag/js"]').count(), 1, 'Exactly one GA library load is expected');
             const hero = page.locator('.hero [data-cta="hero"]');
             assert.match(await hero.getAttribute('href'), mobile || mode === 'no-js' ? /apps\.apple\.com/ : /\/download\/$/);
             assert.equal((await hero.innerText()).replace(/\s+/g, ' ').trim(), 'Get Productify free →');
@@ -43,6 +44,18 @@ const output = process.env.CTA_SCREENSHOTS;
             await page.goto(`${base}/download/`, { waitUntil: 'networkidle' });
             assert.equal(await page.locator('.dl-handoff').isVisible(), !mobile);
             assert.match(await page.locator('[data-cta="hero"]').getAttribute('href'), /apps\.apple\.com/);
+            if (mode !== 'no-js') {
+                await page.evaluate(() => {
+                    window.ctaEvents = [];
+                    window.gtag = (...args) => window.ctaEvents.push(args);
+                    document.addEventListener('click', e => { if (e.target.closest('a')) e.preventDefault(); });
+                });
+                await page.locator('[data-cta="hero"] img').click();
+                const [event] = await page.evaluate(() => window.ctaEvents);
+                assert.equal(event[1], 'download_click', 'Nested badge clicks must count as outbound downloads');
+                assert.equal(event[2].cta_location, 'hero');
+                assert.match(event[2].link_url, /apps\.apple\.com\/us\/app\/habit-tracker-productify\/id1389900237/);
+            }
             if (output && ['desktop', 'iphone'].includes(mode)) await page.screenshot({ path: `${output}/download-${mode}.png` });
             if (mode !== 'no-js') {
                 await page.goto(`${base}/blog/habit-tracker-vs-to-do-list/`, { waitUntil: 'networkidle' });

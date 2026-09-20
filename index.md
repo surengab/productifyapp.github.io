@@ -34,18 +34,18 @@ It is free to start and requires no account.
 | Plan | Price | What's included |
 |------|-------|-----------------|
 | Free | $0 forever | Up to 5 habits, streak tracking, smart reminders, 5 starter templates, and basic progress view |
-| Pro | $3.99/month or $24.99/year | Unlimited habits, Habit Duo, AI Habit Analyser, all habit templates, advanced analytics, custom habit units, and priority support |
-| Lifetime | $34.99 one-time | All Pro features and future updates |
+| Monthly Premium | $4.99/month in the US App Store | Unlimited habits, Habit Duo, AI Habit Analyser, all habit templates, advanced analytics, custom habit units, and priority support |
+| Yearly Premium | $19.99/year in the US App Store | The same Pro features, billed yearly through Apple |
 
-Prices are in USD and may vary by region and local taxes. Pro includes a 7-day free trial.
+US prices were checked September 20, 2026. Apple may show other Productify Pro, promotional, or 7-day-trial offers. Your App Store purchase sheet is the source of truth for local price, eligibility, duration, and renewal terms.
 
 ---
 
 ## Platform
 
-- iPhone and iPad, iOS 17+
+- iPhone, iOS 17.2+
 - Apple Watch
-- No Android (yet)
+- No Android version
 
 ---
 
