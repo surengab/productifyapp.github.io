@@ -19,6 +19,7 @@ REQUIRED = %w[
   /guides/how-to-build-habits-that-stick/
   /guides/how-to-start-a-daily-habit/
   /guides/how-to-use-a-habit-tracker/
+  /guides/habit-duo/
   /blog/what-habits-to-track/
   /compare/productify-vs-habitica/
   /compare/productify-vs-habitify/
@@ -47,7 +48,6 @@ REQUIRED = %w[
   /robots.txt
   /llms.txt
   /shared.css
-  /blog/habit-duo/
   /editorial/
   /compare/productify-vs-loop/
   /compare/productify-vs-productive/
