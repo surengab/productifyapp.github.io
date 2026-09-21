@@ -245,7 +245,9 @@ extra_css: |-
       margin-bottom: 20px;
   }
   .step-card__img {
-      width: 100%; border-radius: 14px;
+      width: 100%; height: 300px; object-fit: contain; object-position: center;
+      display: block; padding: 12px; box-sizing: border-box;
+      background: #f3eeff; border-radius: 14px;
       border: 1px solid var(--border);
       box-shadow: var(--shadow-xs);
       margin-bottom: 20px;
@@ -488,10 +490,10 @@ extra_css: |-
             <div class="step-card">
                 <div class="step-card__num">3</div>
                 <img
-                    src="/assets/habitduo_partner_avatars.webp"
+                    src="/assets/productify-habit-duo-progress-view.webp"
                     alt="HabitDuo shared progress view"
                     class="step-card__img"
-                    loading="lazy" width="863" height="1823">
+                    loading="lazy" width="501" height="1024">
                 <h3>Track together</h3>
                 <p>Every day, you both see whether the other checked in. Quiet. Private. Just the two of you, with a shared streak that supports you through bad days and celebrates the good ones.</p>
             </div>
