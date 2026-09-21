@@ -1,5 +1,5 @@
 ---
-lastmod_fallback: '2026-08-27'
+lastmod_fallback: '2026-09-21'
 layout: page
 title: How to Build a Morning Routine That Actually Sticks
 seo_title: 'How to Build a Morning Routine That Sticks'
@@ -37,7 +37,7 @@ extra_jsonld:
           "url": "https://productifyapp.org/solutions/morning-routine/",
           "mainEntityOfPage": { "@type": "WebPage", "@id": "https://productifyapp.org/solutions/morning-routine/" },
           "image": "https://productifyapp.org/og-image.jpg",
-          "dateModified": "2026-08-27",
+          "dateModified": "2026-09-21",
           "publisher": {
               "@type": "Organization",
               "name": "Productify",
@@ -85,31 +85,45 @@ extra_jsonld:
       }
 extra_css: |-
   .solution-meta-date { font-size: .85rem; color: var(--ink-muted); margin: 0 0 8px; }
+  .morning-hero__grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(320px, .85fr); gap: clamp(40px, 6vw, 88px); align-items: center; }
+  .morning-hero__art { position: relative; z-index: 1; margin: 0; }
+  .morning-hero__art img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; }
   .faq-block { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 32px; }
   .faq-block details { border-bottom: 1px solid var(--border); padding: 12px 0; }
   .faq-block summary { font-weight: 600; cursor: pointer; list-style: none; }
   .faq-block summary::-webkit-details-marker { display: none; }
   .faq-block details p { margin: 12px 0 0; color: var(--ink-2); line-height: 1.65; font-size: .95rem; }
+  @media (max-width: 900px) {
+    .morning-hero__grid { grid-template-columns: 1fr; gap: 32px; }
+    .morning-hero__art { width: min(100%, 480px); margin: 0 auto; }
+  }
 ---
 
 <!-- PAGE HERO -->
-<section class="page-hero" aria-labelledby="page-hero-heading">
+<section class="page-hero morning-hero" aria-labelledby="page-hero-heading">
     <div class="container">
-        <div class="page-hero__inner">
-            <div class="eyebrow">Solution · Routine Building</div>
-            <p class="solution-meta-date">Updated August 27, 2026</p>
-            <h1 id="page-hero-heading">
-                How to build a morning routine<br>
-                <span>that actually sticks</span>
-            </h1>
-            <p class="lead">
-                The most effective morning routines aren't heroic five-step systems. They're small, intentional actions done consistently. Here's why starting small makes the routine easier to repeat, and how to build one that lasts.
-            </p>
-            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-               class="appstore-badge-link" data-cta="hero" aria-label="Download Productify free on the App Store">
-                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
-            </a>
-            <p style="margin-top: 12px; font-size: .8rem; color: var(--ink-faint);">Free to download · iOS 17+ · No account required</p>
+        <div class="morning-hero__grid">
+            <div class="page-hero__inner">
+                <div class="eyebrow">Solution · Routine Building</div>
+                <p class="solution-meta-date">Updated September 21, 2026</p>
+                <h1 id="page-hero-heading">
+                    How to build a morning routine<br>
+                    <span>that actually sticks</span>
+                </h1>
+                <p class="lead">
+                    The most effective morning routines aren't heroic five-step systems. They're small, intentional actions done consistently. Here's why starting small makes the routine easier to repeat, and how to build one that lasts.
+                </p>
+                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                   class="appstore-badge-link" data-cta="hero" aria-label="Download Productify free on the App Store">
+                    <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
+                </a>
+                <p style="margin-top: 12px; font-size: .8rem; color: var(--ink-faint);">Free to download · iOS 17+ · No account required</p>
+            </div>
+            <figure class="morning-hero__art">
+                <img src="/assets/solutions/morning-routine.webp"
+                     alt="A journal with one completed morning habit beside a glass of water, an alarm clock, a rolled exercise mat, and a leafy plant."
+                     width="900" height="1125" loading="eager" fetchpriority="high" decoding="async">
+            </figure>
         </div>
     </div>
 </section>
