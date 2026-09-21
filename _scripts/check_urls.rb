@@ -20,6 +20,7 @@ REQUIRED = %w[
   /guides/how-to-start-a-daily-habit/
   /guides/how-to-use-a-habit-tracker/
   /guides/habit-duo/
+  /blog/habit-duo/
   /blog/what-habits-to-track/
   /compare/productify-vs-habitica/
   /compare/productify-vs-habitify/
