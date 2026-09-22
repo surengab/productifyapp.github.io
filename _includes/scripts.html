@@ -161,6 +161,58 @@
             syncCta();
         }
 
+        // Invite engaged desktop readers once a week; mobile keeps its small
+        // download bar instead of an intrusive interstitial.
+        var downloadPopup = document.getElementById('downloadPopup');
+        if (downloadPopup && typeof downloadPopup.showModal === 'function') {
+            var popupPreview = new URLSearchParams(location.search).has('preview-popup');
+            var popupDesktop = window.matchMedia('(min-width: 901px)');
+            var popupReady = popupPreview;
+            var popupShown = false;
+            var lastPopupView = 0;
+            try { lastPopupView = Number(localStorage.getItem('productifyDownloadPopupViewed') || 0); } catch (e) {}
+            function popupEvent(name) {
+                if (typeof window.gtag === 'function') gtag('event', name, {
+                    campaign: 'editorial_download_v1',
+                    page_path: location.pathname
+                });
+            }
+            function maybeShowPopup() {
+                if (!popupReady || popupShown || document.visibilityState !== 'visible') return;
+                if (!popupPreview) {
+                    if (!popupDesktop.matches || Date.now() - lastPopupView < 7 * 86400000) return;
+                    var scrollable = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+                    if (scrollY < 600 || scrollY / scrollable < .25) return;
+                    var otherPrompt = document.querySelector('.cta-banner, footer');
+                    if (otherPrompt) {
+                        var bounds = otherPrompt.getBoundingClientRect();
+                        if (bounds.top < innerHeight && bounds.bottom > 0) return;
+                    }
+                }
+                popupShown = true;
+                downloadPopup.showModal();
+                downloadPopup.querySelector('h2').focus();
+                if (!popupPreview) {
+                    try { localStorage.setItem('productifyDownloadPopupViewed', String(Date.now())); } catch (e) {}
+                }
+                popupEvent('download_popup_view');
+            }
+            downloadPopup.querySelectorAll('[data-popup-close]').forEach(function (button) {
+                button.addEventListener('click', function () { downloadPopup.close(); });
+            });
+            downloadPopup.addEventListener('click', function (event) {
+                if (event.target === downloadPopup) downloadPopup.close();
+            });
+            downloadPopup.addEventListener('close', function () { popupEvent('download_popup_close'); });
+            downloadPopup.querySelector('[data-cta="popup"]').addEventListener('click', function () {
+                popupEvent('download_popup_click');
+            });
+            window.addEventListener('scroll', maybeShowPopup, { passive: true });
+            document.addEventListener('visibilitychange', maybeShowPopup);
+            if (popupPreview) maybeShowPopup();
+            else window.setTimeout(function () { popupReady = true; maybeShowPopup(); }, 45000);
+        }
+
         // Contents rail: highlight the section currently being read. Falls back
         // to a plain link list if this never runs.
         var rail = document.querySelector('.toc-rail');

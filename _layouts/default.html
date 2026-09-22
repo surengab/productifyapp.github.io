@@ -25,6 +25,9 @@
 
 {% include footer.html %}
 {% include sticky-cta.html %}
+{%- if page.section == 'guides' or page.section == 'blog' %}
+{% include download-popup.html %}
+{%- endif %}
 {% include scripts.html %}
 {%- if page.page_scripts %}
 <script>
