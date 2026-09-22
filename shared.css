@@ -694,22 +694,27 @@ li a:hover {
 
 @media (max-width: 900px) {
     .sticky-cta {
-        display: flex; align-items: center; gap: 12px;
+        display: flex; align-items: center; gap: 8px;
         position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
-        padding: 10px 14px;
-        padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        padding: 8px 12px;
+        padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
         background: rgba(255,255,255,.97);
         -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
-        border-top: 1px solid var(--border);
+        border-top: 2px solid #e9e1fa;
         box-shadow: 0 -4px 20px rgba(0,0,0,.07);
         transform: translateY(115%);
         transition: transform .28s cubic-bezier(.4,0,.2,1);
     }
     .sticky-cta.is-visible { transform: translateY(0); }
+    .sticky-cta__mark {
+        flex: 0 0 32px; display: grid; place-items: center; width: 32px; height: 32px;
+        border-radius: 50%; background: #ede7fb; color: #6840ca;
+        font-size: 1rem; font-weight: 800;
+    }
     .sticky-cta__text { flex: 1; min-width: 0; line-height: 1.25; }
-    .sticky-cta__text strong { display: block; font-size: .88rem; color: var(--ink); font-weight: 700; }
+    .sticky-cta__text strong { display: block; font-size: .84rem; color: var(--ink); font-weight: 750; white-space: nowrap; }
     .sticky-cta__text span {
-        display: block; font-size: .74rem; color: var(--ink-muted);
+        display: block; font-size: .71rem; color: var(--ink-muted);
         white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .sticky-cta .appstore-badge { width: 112px; }
@@ -831,14 +836,16 @@ a.cta-secondary {
 .inline-cta__actions { gap: 8px; }
 .article .inline-cta p.inline-cta__text { margin: 0; line-height: 1.6; }
 .sticky-cta[hidden] { display: none; }
-.sticky-cta .download-button { min-height: 44px; padding: 10px 16px; font-size: .85rem; flex-shrink: 0; }
+.sticky-cta .download-button { min-height: 46px; padding: 10px 13px; gap: 7px; font-size: .83rem; flex-shrink: 0; }
+.sticky-cta .download-button svg { flex: none; }
 .sticky-cta .sticky-cta__close { width: 44px; height: 44px; color: var(--ink-2); }
 @media (max-width: 560px) {
     .inline-cta__text { flex-basis: auto; }
     .inline-cta__actions { flex-direction: column; width: 100%; gap: 8px; }
     .inline-cta .download-button { width: 100%; }
-    .sticky-cta { gap: 8px; padding-left: 12px; padding-right: 4px; }
+    .sticky-cta { padding-right: 4px; }
 }
+@media (max-width: 360px) { .sticky-cta__mark { display: none; } }
 @media (prefers-reduced-motion: reduce) { a.download-button { transition: none; } }
 
 /* Product proof: real app screens close to the primary download decision. */

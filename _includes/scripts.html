@@ -111,8 +111,10 @@
         // download prompt. Storage denial must not break routing or analytics.
         var cta = document.getElementById('stickyCta');
         var ctaDismissed = false;
+        var stickyPreview = new URLSearchParams(location.search).has('preview-sticky');
         try { ctaDismissed = sessionStorage.getItem('ctaDismissed') === '1'; } catch (e) {}
-        if (cta && isIOS && location.pathname !== '/download/' && !ctaDismissed) {
+        if (stickyPreview) ctaDismissed = false;
+        if (cta && (isIOS || stickyPreview) && location.pathname !== '/download/' && !ctaDismissed) {
             cta.hidden = false;
             var ctaClose = document.getElementById('stickyCtaClose');
             var mobileCta = window.matchMedia('(max-width: 900px)');
@@ -124,7 +126,7 @@
             function syncCta() {
                 ctaTicking = false;
                 var past = observeHero ? pastHero : window.scrollY > window.innerHeight * 0.9;
-                var visible = mobileCta.matches && past && !visiblePrompts.size && !ctaDismissed;
+                var visible = mobileCta.matches && (past || stickyPreview) && (!visiblePrompts.size || stickyPreview) && !ctaDismissed;
                 cta.classList.toggle('is-visible', visible);
                 cta.inert = !visible;
             }
@@ -136,7 +138,7 @@
                     });
                     syncCta();
                 });
-                document.querySelectorAll('footer, .inline-cta, .cta-banner, .mid-cta').forEach(function (prompt) {
+                document.querySelectorAll('footer, .inline-cta, .cta-banner, .mid-cta, .product-tour').forEach(function (prompt) {
                     promptObserver.observe(prompt);
                 });
             }
