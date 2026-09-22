@@ -466,18 +466,29 @@ li a:hover {
 .cta-banner__meta a { color: rgba(248,250,252,.82); text-decoration: underline; text-underline-offset: 2px; }
 .cta-banner__meta a:hover { color: #F8FAFC; }
 .cta-banner__meta span { margin: 0 4px; color: #CBD5E1; }
-.cta-banner--compact { text-align: left; padding: 44px; margin-top: 48px; border-radius: 24px; }
-.cta-banner--compact::before { left: auto; right: -120px; transform: translateY(-50%); width: 520px; }
-.cta-banner--compact .container { max-width: none; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) 230px; column-gap: 48px; align-items: center; }
-.cta-banner--compact .eyebrow { justify-self: start; margin-bottom: 18px; }
-.cta-banner--compact h2 { max-width: 590px; margin-bottom: 12px; font-size: clamp(2rem, 3.7vw, 3rem); }
-.cta-banner--compact .lead { max-width: 610px; margin: 0; }
-.cta-banner--compact .cta-banner__btns { grid-column: 2; grid-row: 1 / 4; flex-direction: column; align-items: stretch; gap: 12px; }
-.cta-banner--compact .download-button { width: 100%; }
-.cta-banner--compact .cta-secondary { justify-content: center; }
+.cta-banner--compact {
+    text-align: left; padding: 38px; margin: 56px auto 0;
+    border: 1px solid rgba(147,197,253,.16); border-radius: 28px;
+    background: linear-gradient(135deg, #10182e 0%, #121a34 58%, #211744 100%);
+    box-shadow: 0 24px 70px rgba(15,23,42,.22), inset 0 1px rgba(255,255,255,.05);
+}
+.cta-banner--compact::before { left: auto; right: -90px; transform: translateY(-50%); width: 480px; opacity: .8; }
+.cta-banner--compact .container { max-width: none; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) 260px; column-gap: 36px; align-items: center; }
+.cta-banner--compact .eyebrow { justify-self: start; margin-bottom: 16px; padding: 5px 12px; font-size: .67rem; }
+.cta-banner--compact h2 { max-width: 590px; margin-bottom: 12px; font-size: clamp(2rem, 3.4vw, 2.75rem); line-height: 1.08; }
+.cta-banner--compact .lead { max-width: 610px; margin: 0; color: #B8C4D9; font-size: 1rem; line-height: 1.65; }
+.cta-banner--compact .cta-banner__btns {
+    grid-column: 2; grid-row: 1 / 4; flex-direction: column; align-items: stretch; gap: 10px;
+    padding: 14px; border: 1px solid rgba(255,255,255,.1); border-radius: 18px;
+    background: rgba(255,255,255,.055); box-shadow: inset 0 1px rgba(255,255,255,.04);
+}
+.cta-banner--compact .cta-banner__prompt { color: #AFC8F4; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-align: center; text-transform: uppercase; }
+.cta-banner--compact .download-button { width: 100%; min-height: 54px; border-radius: 12px; }
+.cta-banner--compact .cta-secondary { justify-content: center; min-height: 42px; border-radius: 10px; text-decoration: none; }
+.cta-banner--compact .cta-secondary:hover { background: rgba(255,255,255,.07); color: #fff; }
 .cta-banner--compact .cta-banner__meta { display: none; }
 @media (max-width: 760px) {
-    .cta-banner--compact { padding: 32px 24px; border-radius: 18px; }
+    .cta-banner--compact { padding: 30px 24px; border-radius: 22px; }
     .cta-banner--compact .container { grid-template-columns: 1fr; }
     .cta-banner--compact .cta-banner__btns { grid-column: 1; grid-row: auto; margin-top: 24px; }
 }

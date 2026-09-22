@@ -7,6 +7,9 @@
             {{ cta.lead }}
         </p>
         <div class="cta-banner__btns">
+            {%- if page.section == 'blog' %}
+            <span class="cta-banner__prompt">Ready when you are</span>
+            {%- endif %}
             <a href="{{ site.appstore_url }}" class="download-button" data-cta="banner">
                 Get Productify free <span aria-hidden="true">→</span>
             </a>
