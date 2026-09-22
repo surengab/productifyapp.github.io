@@ -64,11 +64,13 @@ inline_cta:
   text: Prefer an app to a paper grid? Productify helps you record the habits you
     choose to practice.
 cta:
-  eyebrow: Make a start
-  heading: Give your next habit a place to grow.
-  lead: Set up a habit, choose a schedule, and record your progress with Productify.
+  eyebrow: Your first check-in
+  heading: Start one habit before you leave.
+  lead: Choose a ready-made routine, set your schedule, and check in today. Productify
+    is free for your first five habits, with no account needed.
   link_href: "/features/habit-templates/"
-  link_label: Explore habit templates →
+  link_label: Browse starter templates →
+  hide_meta: true
 extra_css: |-
   .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
   .article-meta__tag { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--blue); background: var(--blue-dim); padding: 4px 10px; border-radius: 20px; }
@@ -90,6 +92,20 @@ extra_css: |-
   .step-card__num { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; font-size: .95rem; flex-shrink: 0; }
   .step-card__body h3 { margin: 0 0 8px; font-size: 1.05rem; }
   .step-card__body p { margin: 0; color: var(--ink-2); font-size: .9rem; line-height: 1.65; }
+  .cta-banner { text-align: left; padding: 44px; margin-top: 48px; border-radius: 24px; }
+  .cta-banner::before { left: auto; right: -120px; transform: translateY(-50%); width: 520px; }
+  .cta-banner .container { max-width: none; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) 230px; column-gap: 48px; align-items: center; }
+  .cta-banner .eyebrow { justify-self: start; margin-bottom: 18px; }
+  .cta-banner h2 { max-width: 590px; margin-bottom: 12px; font-size: clamp(2rem, 3.7vw, 3rem); }
+  .cta-banner .lead { max-width: 610px; margin: 0; }
+  .cta-banner__btns { grid-column: 2; grid-row: 1 / 4; flex-direction: column; align-items: stretch; gap: 12px; }
+  .cta-banner__btns .download-button { width: 100%; }
+  .cta-banner__btns .cta-secondary { justify-content: center; }
+  @media (max-width: 760px) {
+    .cta-banner { padding: 32px 24px; border-radius: 18px; }
+    .cta-banner .container { grid-template-columns: 1fr; }
+    .cta-banner__btns { grid-column: 1; grid-row: auto; margin-top: 24px; }
+  }
 summary: Pick a useful minimum, attach it to an existing routine, and record what
   actually happens. At the end of the week, change the part of the plan that got in
   the way.
