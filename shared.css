@@ -717,7 +717,8 @@ li a:hover {
         display: block; font-size: .71rem; color: var(--ink-muted);
         white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
-    .sticky-cta .appstore-badge { width: 112px; }
+    .sticky-cta .appstore-badge-link { display: flex; align-items: center; flex: none; min-height: 44px; }
+    .sticky-cta .appstore-badge { width: 120px; }
     .sticky-cta__close {
         flex-shrink: 0; width: 26px; height: 26px;
         display: flex; align-items: center; justify-content: center;
@@ -819,7 +820,7 @@ a.download-button, .article .inline-cta a.download-button {
     transition: background .2s;
 }
 a.download-button:hover, .article .inline-cta a.download-button:hover { background: #5331a7; color: #fff; text-decoration: none; }
-a.download-button:focus-visible, a.cta-secondary:focus-visible, .sticky-cta__close:focus-visible {
+a.download-button:focus-visible, a.cta-secondary:focus-visible, .sticky-cta .appstore-badge-link:focus-visible, .sticky-cta__close:focus-visible {
     outline: 3px solid #6840ca; outline-offset: 4px;
 }
 a.cta-secondary {
@@ -836,8 +837,6 @@ a.cta-secondary {
 .inline-cta__actions { gap: 8px; }
 .article .inline-cta p.inline-cta__text { margin: 0; line-height: 1.6; }
 .sticky-cta[hidden] { display: none; }
-.sticky-cta .download-button { min-height: 46px; padding: 10px 13px; gap: 7px; font-size: .83rem; flex-shrink: 0; }
-.sticky-cta .download-button svg { flex: none; }
 .sticky-cta .sticky-cta__close { width: 44px; height: 44px; color: var(--ink-2); }
 @media (max-width: 560px) {
     .inline-cta__text { flex-basis: auto; }
