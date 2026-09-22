@@ -250,12 +250,13 @@
 
 
 
-        // Keep iOS downloads direct. Other devices use the QR handoff page;
-        // source and review links retain their original destination.
+        // Keep iOS downloads direct. Other devices use the QR handoff page,
+        // except the popup, whose button goes straight to the App Store.
+        // Source and review links retain their original destination.
         var OUR_APP = 'id1389900237';
         if (!isIOS && location.pathname !== '/download/') {
             document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
-                if (a.closest('.sticky-cta')) return;
+                if (a.closest('.sticky-cta, .download-popup')) return;
                 // Only route download controls, not review/source citations.
                 if (!a.matches('.appstore-badge-link, [data-cta]')) return;
                 if (a.href.indexOf(OUR_APP) === -1) return;   // competitor listing
