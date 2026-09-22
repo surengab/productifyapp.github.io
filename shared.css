@@ -882,6 +882,7 @@ a.cta-secondary {
     font-size: .7rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
 }
 .download-popup h2 { max-width: 390px; font-size: clamp(1.9rem, 3vw, 2.55rem); line-height: 1.12; letter-spacing: -.04em; }
+.download-popup h2:focus { outline: none; }
 .download-popup__copy > p:not(.download-popup__note) { max-width: 390px; margin-top: 18px; color: #536075; font-size: 1rem; line-height: 1.65; }
 .download-popup__button {
     display: inline-flex; justify-content: center; align-items: center; gap: 18px;
