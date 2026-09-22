@@ -1,5 +1,5 @@
 {%- assign cta = page.cta -%}
-<section class="cta-banner section--dark" aria-labelledby="cta-heading">
+<section class="cta-banner{% if page.section == 'blog' %} cta-banner--compact{% endif %} section--dark" aria-labelledby="cta-heading">
     <div class="container">
         <div class="eyebrow" style="background: rgba(255,255,255,.1); color: #93C5FD; border-color: rgba(255,255,255,.1);">{{ cta.eyebrow | default: 'Free Habit Tracker App · iOS' }}</div>
         <h2 id="cta-heading">{{ cta.heading }}</h2>

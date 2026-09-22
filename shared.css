@@ -466,6 +466,21 @@ li a:hover {
 .cta-banner__meta a { color: rgba(248,250,252,.82); text-decoration: underline; text-underline-offset: 2px; }
 .cta-banner__meta a:hover { color: #F8FAFC; }
 .cta-banner__meta span { margin: 0 4px; color: #CBD5E1; }
+.cta-banner--compact { text-align: left; padding: 44px; margin-top: 48px; border-radius: 24px; }
+.cta-banner--compact::before { left: auto; right: -120px; transform: translateY(-50%); width: 520px; }
+.cta-banner--compact .container { max-width: none; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) 230px; column-gap: 48px; align-items: center; }
+.cta-banner--compact .eyebrow { justify-self: start; margin-bottom: 18px; }
+.cta-banner--compact h2 { max-width: 590px; margin-bottom: 12px; font-size: clamp(2rem, 3.7vw, 3rem); }
+.cta-banner--compact .lead { max-width: 610px; margin: 0; }
+.cta-banner--compact .cta-banner__btns { grid-column: 2; grid-row: 1 / 4; flex-direction: column; align-items: stretch; gap: 12px; }
+.cta-banner--compact .download-button { width: 100%; }
+.cta-banner--compact .cta-secondary { justify-content: center; }
+.cta-banner--compact .cta-banner__meta { display: none; }
+@media (max-width: 760px) {
+    .cta-banner--compact { padding: 32px 24px; border-radius: 18px; }
+    .cta-banner--compact .container { grid-template-columns: 1fr; }
+    .cta-banner--compact .cta-banner__btns { grid-column: 1; grid-row: auto; margin-top: 24px; }
+}
 
 /* --- FOOTER ------------------------------------------------------------ */
 .footer {
