@@ -885,12 +885,13 @@ a.cta-secondary {
 .download-popup h2:focus { outline: none; }
 .download-popup__copy > p:not(.download-popup__note) { max-width: 390px; margin-top: 18px; color: #536075; font-size: 1rem; line-height: 1.65; }
 .download-popup__button {
-    display: inline-flex; justify-content: center; align-items: center; gap: 18px;
+    display: inline-flex; justify-content: center; align-items: center; gap: 10px;
     min-height: 54px; margin-top: 28px; padding: 13px 22px;
     border-radius: 12px; background: #6840ca; color: #fff;
     font-size: .96rem; font-weight: 700; line-height: 1.35;
     box-shadow: 0 8px 20px rgba(104,64,202,.2);
 }
+.download-popup__button svg { flex: none; }
 .download-popup__button:hover { background: #5331a7; color: #fff; }
 .download-popup__note { margin-top: 14px; color: #667085; font-size: .78rem; line-height: 1.5; }
 .download-popup__later {
@@ -908,14 +909,31 @@ a.cta-secondary {
 .download-popup__close:hover { background: #fff; color: #111827; }
 .download-popup__button:focus-visible, .download-popup button:focus-visible { outline: 3px solid #6840ca; outline-offset: 3px; }
 .download-popup__visual {
-    display: grid; place-items: end center; overflow: hidden;
-    padding: 48px 25px 0; background: linear-gradient(150deg, #f6f0ff 0%, #e4ddff 100%);
+    display: grid; place-items: center; overflow: hidden; padding: 30px 18px;
+    background: radial-gradient(circle at 85% 18%, #e4d3ff 0, transparent 48%), linear-gradient(150deg, #f6f0ff, #e7e0ff);
 }
-.download-popup__visual img {
-    width: 205px; height: auto; transform: translateY(64px);
-    border: 6px solid #292338; border-radius: 29px 29px 0 0;
-    box-shadow: 0 16px 36px rgba(61,43,111,.2);
+.download-popup__habit-card {
+    width: 100%; max-width: 226px; padding: 21px 17px 19px;
+    border: 1px solid #e8e1f6; border-radius: 20px; background: #fff;
+    box-shadow: 0 20px 42px rgba(63,39,119,.19); transform: rotate(-3deg);
 }
+.download-popup__habit-label { color: #6840ca; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.download-popup__habit-label span { margin-right: 3px; font-size: 1rem; vertical-align: -1px; }
+.download-popup__habit-name { margin-top: 25px; color: #242033; font-size: 1.03rem; font-weight: 750; line-height: 1.3; }
+.download-popup__habit-hint { margin-top: 4px; color: #7b728f; font-size: .72rem; }
+.download-popup__week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px 4px; margin-top: 25px; text-align: center; }
+.download-popup__week > span { color: #8d849e; font-size: .59rem; font-weight: 700; }
+.download-popup__week > b {
+    display: grid; place-items: center; width: 22px; height: 22px;
+    border: 1px solid #e6e0ef; border-radius: 50%; color: #6840ca;
+    font-size: .7rem; line-height: 1;
+}
+.download-popup__week > b.is-done { border-color: #6840ca; background: #6840ca; color: #fff; }
+.download-popup__week > b.is-next { border: 2px solid #6840ca; }
+.download-popup__habit-foot { display: flex; justify-content: space-between; margin-top: 25px; color: #62586f; font-size: .67rem; }
+.download-popup__habit-foot strong { color: #6840ca; }
+.download-popup__habit-bar { height: 6px; margin-top: 9px; overflow: hidden; border-radius: 6px; background: #eee9f6; }
+.download-popup__habit-bar span { display: block; width: 57%; height: 100%; border-radius: inherit; background: #6840ca; }
 @media (max-width: 650px) {
     .download-popup__content { grid-template-columns: 1fr; }
     .download-popup__copy { padding: 52px 26px 30px; }

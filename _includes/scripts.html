@@ -161,14 +161,15 @@
             syncCta();
         }
 
-        // Invite engaged desktop readers once a week; mobile keeps its small
-        // download bar instead of an intrusive interstitial.
+        // Give engaged desktop readers a final invitation when they leave;
+        // never interrupt the article or replace the small mobile bar.
         var downloadPopup = document.getElementById('downloadPopup');
         if (downloadPopup && typeof downloadPopup.showModal === 'function') {
             var popupPreview = new URLSearchParams(location.search).has('preview-popup');
             var popupDesktop = window.matchMedia('(min-width: 901px)');
             var popupReady = popupPreview;
             var popupShown = false;
+            var popupEngaged = false;
             var lastPopupView = 0;
             try { lastPopupView = Number(localStorage.getItem('productifyDownloadPopupViewed') || 0); } catch (e) {}
             function popupEvent(name) {
@@ -180,9 +181,7 @@
             function maybeShowPopup() {
                 if (!popupReady || popupShown || document.visibilityState !== 'visible') return;
                 if (!popupPreview) {
-                    if (!popupDesktop.matches || Date.now() - lastPopupView < 7 * 86400000) return;
-                    var scrollable = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-                    if (scrollY < 600 || scrollY / scrollable < .25) return;
+                    if (!popupDesktop.matches || !popupEngaged || Date.now() - lastPopupView < 7 * 86400000) return;
                     var otherPrompt = document.querySelector('.cta-banner, footer');
                     if (otherPrompt) {
                         var bounds = otherPrompt.getBoundingClientRect();
@@ -207,10 +206,17 @@
             downloadPopup.querySelector('[data-cta="popup"]').addEventListener('click', function () {
                 popupEvent('download_popup_click');
             });
-            window.addEventListener('scroll', maybeShowPopup, { passive: true });
-            document.addEventListener('visibilitychange', maybeShowPopup);
+            function trackPopupReading() {
+                var scrollable = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+                if (scrollY >= 600 && scrollY / scrollable >= .25) popupEngaged = true;
+            }
+            trackPopupReading();
+            window.addEventListener('scroll', trackPopupReading, { passive: true });
+            document.addEventListener('mouseout', function (event) {
+                if (!event.relatedTarget && event.clientY <= 0) maybeShowPopup();
+            });
             if (popupPreview) maybeShowPopup();
-            else window.setTimeout(function () { popupReady = true; maybeShowPopup(); }, 45000);
+            else window.setTimeout(function () { popupReady = true; }, 30000);
         }
 
         // Contents rail: highlight the section currently being read. Falls back
