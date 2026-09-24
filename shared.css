@@ -872,7 +872,7 @@ a.cta-secondary {
     .product-tour__card { flex: 0 0 min(82vw, 340px); scroll-snap-align: center; }
 }
 
-/* A quiet, late-reading download invitation on editorial desktop pages. */
+/* A quiet exit-intent download invitation on marketing pages, desktop only. */
 .download-popup:not([open]) { display: none; }
 .download-popup {
     width: min(780px, calc(100vw - 48px)); max-height: calc(100dvh - 48px);

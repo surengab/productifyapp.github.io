@@ -163,8 +163,8 @@
             syncCta();
         }
 
-        // Give engaged desktop readers a final invitation when they leave;
-        // never interrupt the article or replace the small mobile bar.
+        // Give engaged desktop visitors a final invitation when they leave;
+        // never interrupt reading or replace the small mobile bar.
         var downloadPopup = document.getElementById('downloadPopup');
         if (downloadPopup && typeof downloadPopup.showModal === 'function') {
             var popupPreview = new URLSearchParams(location.search).has('preview-popup');
@@ -176,7 +176,7 @@
             try { lastPopupView = Number(localStorage.getItem('productifyDownloadPopupViewed') || 0); } catch (e) {}
             function popupEvent(name) {
                 if (typeof window.gtag === 'function') gtag('event', name, {
-                    campaign: 'editorial_download_v1',
+                    campaign: 'sitewide_download_v1',
                     page_path: location.pathname
                 });
             }
@@ -184,11 +184,11 @@
                 if (!popupReady || popupShown || document.visibilityState !== 'visible') return;
                 if (!popupPreview) {
                     if (!popupDesktop.matches || !popupEngaged || Date.now() - lastPopupView < 7 * 86400000) return;
-                    var otherPrompt = document.querySelector('.cta-banner, footer');
-                    if (otherPrompt) {
-                        var bounds = otherPrompt.getBoundingClientRect();
-                        if (bounds.top < innerHeight && bounds.bottom > 0) return;
-                    }
+                    var prompts = document.querySelectorAll('.cta-banner, .inline-cta, .mid-cta, .product-tour, footer');
+                    if (Array.prototype.some.call(prompts, function (prompt) {
+                        var bounds = prompt.getBoundingClientRect();
+                        return bounds.top < innerHeight && bounds.bottom > 0;
+                    })) return;
                 }
                 popupShown = true;
                 downloadPopup.showModal();
