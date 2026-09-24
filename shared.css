@@ -872,76 +872,42 @@ a.cta-secondary {
     .product-tour__card { flex: 0 0 min(82vw, 340px); scroll-snap-align: center; }
 }
 
-/* A quiet exit-intent download invitation on marketing pages, desktop only. */
+/* A compact, non-modal download sheet for engaged iPhone readers. */
 .download-popup:not([open]) { display: none; }
 .download-popup {
-    width: min(780px, calc(100vw - 48px)); max-height: calc(100dvh - 48px);
-    margin: auto; padding: 0; overflow: auto;
-    border: 1px solid #e9e5f4; border-radius: 24px;
-    background: #fff; box-shadow: 0 28px 90px rgba(15,23,42,.28);
+    position: fixed; inset: auto 0 calc(12px + env(safe-area-inset-bottom, 0px));
+    width: min(420px, calc(100vw - 24px)); max-height: calc(100dvh - 80px);
+    margin: 0 auto; padding: 0; overflow: auto; z-index: 100;
+    border: 1px solid #dfd4f7; border-top: 4px solid #6840ca; border-radius: 20px;
+    background: #fff; box-shadow: 0 20px 60px rgba(28,20,52,.24);
 }
-.download-popup::backdrop { background: rgba(15,23,42,.58); backdrop-filter: blur(3px); }
-.download-popup__content { display: grid; grid-template-columns: minmax(0, 1fr) 255px; position: relative; }
-.download-popup__copy { padding: 62px 44px 40px; }
+.download-popup__content { position: relative; }
+.download-popup__copy { padding: 26px 24px 20px; }
 .download-popup__eyebrow {
-    display: inline-block; margin-bottom: 16px; color: #6840ca;
-    font-size: .7rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 7px; margin-bottom: 10px; color: #6840ca;
+    font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
 }
-.download-popup h2 { max-width: 390px; font-size: clamp(1.9rem, 3vw, 2.55rem); line-height: 1.12; letter-spacing: -.04em; }
+.download-popup__eyebrow::before {
+    content: '✓'; display: grid; place-items: center; width: 20px; height: 20px;
+    border-radius: 50%; background: #ede7fb; font-size: .75rem; letter-spacing: 0;
+}
+.download-popup h2 { padding-right: 20px; font-size: clamp(1.5rem, 6vw, 1.85rem); line-height: 1.16; letter-spacing: -.035em; }
 .download-popup h2:focus { outline: none; }
-.download-popup__copy > p:not(.download-popup__note) { max-width: 390px; margin-top: 18px; color: #536075; font-size: 1rem; line-height: 1.65; }
-.download-popup__button {
-    display: inline-flex; justify-content: center; align-items: center; gap: 10px;
-    min-height: 54px; margin-top: 28px; padding: 13px 22px;
-    border-radius: 12px; background: #6840ca; color: #fff;
-    font-size: .96rem; font-weight: 700; line-height: 1.35;
-    box-shadow: 0 8px 20px rgba(104,64,202,.2);
-}
-.download-popup__button svg { flex: none; }
-.download-popup__button:hover { background: #5331a7; color: #fff; }
-.download-popup__note { margin-top: 14px; color: #667085; font-size: .78rem; line-height: 1.5; }
+.download-popup__copy > p:not(.download-popup__note) { margin-top: 10px; color: #536075; font-size: .88rem; line-height: 1.5; }
+.download-popup__store { display: inline-block; margin-top: 18px; }
+.download-popup__store .appstore-badge { width: 180px; }
+.download-popup__note { margin-top: 10px; color: #667085; font-size: .75rem; line-height: 1.5; }
 .download-popup__later {
-    display: block; margin-top: 24px; padding: 6px 0; border: 0;
+    display: block; margin-top: 12px; padding: 6px 0; border: 0;
     background: none; color: #667085; font: 500 .85rem 'Inter', sans-serif;
     text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
 }
 .download-popup__later:hover { color: #374151; }
 .download-popup__close {
-    position: absolute; z-index: 1; top: 16px; right: 16px;
-    display: grid; place-items: center; width: 38px; height: 38px;
-    border: 0; border-radius: 50%; background: rgba(255,255,255,.9);
+    position: absolute; z-index: 1; top: 12px; right: 12px;
+    display: grid; place-items: center; width: 44px; height: 44px;
+    border: 0; border-radius: 50%; background: #f5f1fc;
     color: #4b5563; font: 400 1.6rem/1 'Inter', sans-serif; cursor: pointer;
 }
 .download-popup__close:hover { background: #fff; color: #111827; }
-.download-popup__button:focus-visible, .download-popup button:focus-visible { outline: 3px solid #6840ca; outline-offset: 3px; }
-.download-popup__visual {
-    display: grid; place-items: center; overflow: hidden; padding: 30px 18px;
-    background: radial-gradient(circle at 85% 18%, #e4d3ff 0, transparent 48%), linear-gradient(150deg, #f6f0ff, #e7e0ff);
-}
-.download-popup__habit-card {
-    width: 100%; max-width: 226px; padding: 21px 17px 19px;
-    border: 1px solid #e8e1f6; border-radius: 20px; background: #fff;
-    box-shadow: 0 20px 42px rgba(63,39,119,.19); transform: rotate(-3deg);
-}
-.download-popup__habit-label { color: #6840ca; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.download-popup__habit-label span { margin-right: 3px; font-size: 1rem; vertical-align: -1px; }
-.download-popup__habit-name { margin-top: 25px; color: #242033; font-size: 1.03rem; font-weight: 750; line-height: 1.3; }
-.download-popup__habit-hint { margin-top: 4px; color: #7b728f; font-size: .72rem; }
-.download-popup__week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px 4px; margin-top: 25px; text-align: center; }
-.download-popup__week > span { color: #8d849e; font-size: .59rem; font-weight: 700; }
-.download-popup__week > b {
-    display: grid; place-items: center; width: 22px; height: 22px;
-    border: 1px solid #e6e0ef; border-radius: 50%; color: #6840ca;
-    font-size: .7rem; line-height: 1;
-}
-.download-popup__week > b.is-done { border-color: #6840ca; background: #6840ca; color: #fff; }
-.download-popup__week > b.is-next { border: 2px solid #6840ca; }
-.download-popup__habit-foot { display: flex; justify-content: space-between; margin-top: 25px; color: #62586f; font-size: .67rem; }
-.download-popup__habit-foot strong { color: #6840ca; }
-.download-popup__habit-bar { height: 6px; margin-top: 9px; overflow: hidden; border-radius: 6px; background: #eee9f6; }
-.download-popup__habit-bar span { display: block; width: 57%; height: 100%; border-radius: inherit; background: #6840ca; }
-@media (max-width: 650px) {
-    .download-popup__content { grid-template-columns: 1fr; }
-    .download-popup__copy { padding: 52px 26px 30px; }
-    .download-popup__visual { display: none; }
-}
+.download-popup__store:focus-visible, .download-popup button:focus-visible { outline: 3px solid #6840ca; outline-offset: 3px; }
