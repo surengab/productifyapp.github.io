@@ -219,7 +219,10 @@
             }
             trackPopupReading();
             window.addEventListener('scroll', trackPopupReading, { passive: true });
-            popupMobile.addEventListener('change', maybeShowPopup);
+            popupMobile.addEventListener('change', function () {
+                if (!popupMobile.matches && downloadPopup.open) downloadPopup.close();
+                else maybeShowPopup();
+            });
             if (popupPreview) maybeShowPopup();
             else window.setTimeout(function () { popupReady = true; maybeShowPopup(); }, 30000);
         }
