@@ -1,5 +1,5 @@
 ---
-lastmod_fallback: '2026-08-27'
+lastmod_fallback: '2026-09-25'
 layout: page
 title: Productify - Daily Habit Tracker for iPhone
 seo_title: Productify - Daily Habit Tracker for iPhone
@@ -28,7 +28,7 @@ footer_col:
 extra_head: |
   <link rel="preload" as="image" href="/assets/productify-home-screen-640.webp"
         imagesrcset="/assets/productify-home-screen-320.webp 320w, /assets/productify-home-screen-640.webp 640w, /assets/productify-home-screen.webp 946w"
-        imagesizes="(max-width: 480px) 258px, (max-width: 720px) 278px, (max-width: 960px) 274px, 334px"
+        imagesizes="(max-width: 480px) 258px, (max-width: 720px) 278px, 274px"
         fetchpriority="high">
 extra_jsonld:
 - |-
@@ -404,7 +404,7 @@ extra_css: |-
 
   /* --- HERO ----------------------------------------- */
   .hero {
-      padding: 80px 0 0;
+      padding: 40px 0 0;
       background: linear-gradient(160deg, #ffffff 0%, #f5f0ff 100%);
       position: relative;
       overflow: hidden;
@@ -419,10 +419,10 @@ extra_css: |-
   .hero__inner {
       position: relative; z-index: 1;
       display: grid;
-      grid-template-columns: 1fr 360px;
+      grid-template-columns: 1fr 300px;
       gap: 56px;
       align-items: center;
-      padding: 0 0 72px;
+      padding: 0 0 40px;
   }
   .hero__text {
       display: flex;
@@ -447,7 +447,7 @@ extra_css: |-
       border-radius: 44px;
       box-shadow: 0 24px 64px rgba(43, 28, 90, 0.16);
       border: 1px solid rgba(123, 78, 230, 0.12);
-      max-width: 360px;
+      max-width: 300px;
       width: 100%;
   }
   .phone-preview img {
@@ -456,7 +456,7 @@ extra_css: |-
       display: block;
       border-radius: 34px;
       /* Show the top of the screen; intentionally clip the bottom */
-      max-height: 700px;
+      max-height: 520px;
       object-fit: cover;
       object-position: top;
   }
@@ -764,7 +764,7 @@ extra_css: |-
   /* --- HOW IT WORKS --------------------------------- */
   .steps-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 0;
       position: relative;
   }
@@ -773,8 +773,8 @@ extra_css: |-
       content: '';
       position: absolute;
       top: 38px;
-      left: calc(12.5% + 4px);
-      right: calc(12.5% + 4px);
+      left: calc(16.67% + 4px);
+      right: calc(16.67% + 4px);
       height: 2px;
       background: linear-gradient(90deg, var(--blue) 0%, rgba(37,99,235,.15) 100%);
       z-index: 0;
@@ -1195,11 +1195,10 @@ extra_css: |-
             <div class="hero__text">
                 <div class="eyebrow">Habit Tracker App for iPhone</div>
                 <h1 id="hero-heading">
-                    Build habits that survive bad days.<br>
-                    <span>The daily habit tracker for iPhone.</span>
+                    Build habits that <span>survive bad days.</span>
                 </h1>
                 <p class="lead">
-                    Track your habits, keep your streak visible, and get reminders that cue instead of nag. <strong>Free on the App Store</strong>, with no account to create.
+                    Productify is a daily habit tracker for iPhone. Check in, see your streaks, and set reminders that fit your routine.
                 </p>
                 <div class="hero__cta-group">
                     <a href="{{ site.appstore_url }}" class="download-button" data-cta="hero">
@@ -1213,7 +1212,7 @@ extra_css: |-
                 <div class="phone-preview">
                     <img src="/assets/productify-home-screen-640.webp"
                          srcset="/assets/productify-home-screen-320.webp 320w, /assets/productify-home-screen-640.webp 640w, /assets/productify-home-screen.webp 946w"
-                         sizes="(max-width: 480px) 258px, (max-width: 720px) 278px, (max-width: 960px) 274px, 334px"
+                         sizes="(max-width: 480px) 258px, (max-width: 720px) 278px, 274px"
                          alt="Productify habit tracker app home screen"
                          width="946" height="2048"
                          loading="eager"
@@ -1280,324 +1279,13 @@ extra_css: |-
     </div>
 </div>
 
-<!-- ===================== FEATURES OVERVIEW ===================== -->
-{% include product-screenshots.html %}
-
-<!-- ===================== FEATURES OVERVIEW ===================== -->
-<section class="section" id="features" aria-labelledby="features-heading">
-    <div class="container">
-        <div class="section-header text-center">
-            <div class="eyebrow">What's inside your habit tracker</div>
-            <h2 id="features-heading">Habit tracking features designed for consistency, not complexity</h2>
-            <p class="lead">
-                Every part of Productify's <strong>daily habit tracker</strong> is designed around practical behavior-change ideas: reducing friction, visualizing progress, and making it easier to show up again after a missed day.
-            </p>
-        </div>
-        <div class="features-grid">
-            <a href="/features/habit-tracker/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">✅</div>
-                <h3>Habit Tracker</h3>
-                <p class="text-muted">Your daily habit tracker. Fast check-ins, streak history, and a minimalist design that makes showing up effortless.</p>
-                <span class="feature-card__cta">Learn more →</span>
-            </a>
-            <a href="/features/habit-duo/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">🤝</div>
-                <h3>Habit Duo</h3>
-                <p class="text-muted">The feeling of not being alone in it. Share one routine with one friend and compare progress in a private, focused view.</p>
-                <span class="feature-card__cta">Learn more →</span>
-            </a>
-            <a href="/features/ai-analyser/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">🧠</div>
-                <h3>AI Habit Analyser</h3>
-                <p class="text-muted">A calm coach, not a dashboard. TempO surfaces honest patterns from your real data, without the generic pep talks.</p>
-                <span class="feature-card__cta">Learn more →</span>
-            </a>
-            <a href="/features/habit-templates/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">📋</div>
-                <h3>Habit Templates</h3>
-                <p class="text-muted">Frictionless from day one. Pre-built routines for sleep, fitness, focus, and more. Adopt in a tap, customize as you grow.</p>
-                <span class="feature-card__cta">Learn more →</span>
-            </a>
-            <a href="/features/measurable-goals/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">📏</div>
-                <h3>Measurable Goals</h3>
-                <p class="text-muted">Clarity removes hesitation. Attach a real number to every routine (steps, minutes, glasses) so you always know you're done.</p>
-                <span class="feature-card__cta">Learn more →</span>
-            </a>
-            <a href="/features/streak-tracking/" class="feature-card feature-card--link">
-                <div class="feature-card__icon">🔥</div>
-                <h3>Streak Tracking</h3>
-                <p class="text-muted">Visualizing progress builds momentum. A missed day resets the count, but it doesn't erase the work you've already done.</p>
-                <span class="feature-card__cta">Learn more →</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== MID CTA #1 ===================== -->
-<div class="mid-cta" aria-label="Download Productify">
-    <div class="container">
-        <div class="mid-cta__inner">
-            <div class="mid-cta__text">
-                <h3>Ready to track your first habit?</h3>
-                <p>Free to download · No account needed · Works on iPhone &amp; Apple Watch</p>
-            </div>
-            <div class="mid-cta__actions">
-                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                   class="appstore-badge-link" data-cta="body"
-                   aria-label="Download Productify on the App Store">
-                    <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy">
-                </a>
-                <a href="#how-it-works" class="btn btn-secondary" style="font-size:.9rem;">See how it works</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ===================== MINI FEATURES GRID ===================== -->
-<section class="mini-features" aria-labelledby="mini-features-heading">
-    <div class="container">
-        <div class="section-header text-center">
-            <div class="eyebrow">Everything you need, nothing you don't</div>
-            <h2 id="mini-features-heading">Built around real habits, not ideal ones</h2>
-            <p class="lead">Every feature in Productify is designed to reduce friction and help you show up again after a missed day.</p>
-        </div>
-        <div class="mini-features-grid">
-            <div class="mini-feature-card">
-                <div class="mini-feature-card__icon">🔥</div>
-                <h3>Guilt-free streak tracking</h3>
-                <p>See your current run and personal best. A missed day resets the count, but never erases your history.</p>
-                <a href="/features/streak-tracking/" class="mini-feature-card__link">Learn more →</a>
-            </div>
-            <div class="mini-feature-card">
-                <div class="mini-feature-card__icon">🔔</div>
-                <h3>Smart reminders</h3>
-                <p>Gentle nudges timed to your routine. Set once, adjust anytime, skip without guilt.</p>
-                <a href="/features/habit-tracker/" class="mini-feature-card__link">How the tracker works →</a>
-            </div>
-            <div class="mini-feature-card">
-                <div class="mini-feature-card__icon">📋</div>
-                <h3>Habit templates</h3>
-                <p>50+ pre-built routines for sleep, fitness, focus, and more. Start in one tap, customize as you go.</p>
-                <a href="/features/habit-templates/" class="mini-feature-card__link">Browse templates →</a>
-            </div>
-            <div class="mini-feature-card">
-                <div class="mini-feature-card__icon">📏</div>
-                <h3>Measurable goals</h3>
-                <p>Attach real numbers to every habit: steps, glasses, minutes, reps. Know exactly when you're done.</p>
-                <a href="/features/measurable-goals/" class="mini-feature-card__link">Learn more →</a>
-            </div>
-            <div class="mini-feature-card">
-                <div class="mini-feature-card__icon">⌚</div>
-                <h3>Apple Watch &amp; widgets</h3>
-                <p>Check in from your wrist or home screen. Live Activities keep your habits visible without opening the app.</p>
-                <a href="/features/habit-tracker/" class="mini-feature-card__link">All habit tracker features →</a>
-            </div>
-            <div class="mini-feature-card">
-                <div class="mini-feature-card__icon">🔒</div>
-                <h3>Privacy first, always</h3>
-                <p>No account required. Your habit data stays on your device by default. No sign-up, no cloud required.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== SOLUTIONS / FEATURE SPOTLIGHTS ===================== -->
-<div id="solutions">
-
-    <!-- -- HABIT DUO --------------------------------------- -->
-    <section class="section section--purple" id="habit-duo" aria-labelledby="habit-duo-heading">
-        <div class="container">
-            <div class="spotlight">
-                <div class="spotlight__text">
-                    <div class="eyebrow">Shared Accountability · Pro</div>
-                    <h2 id="habit-duo-heading">Build one habit with one friend</h2>
-                    <p class="lead mt-16">
-                        Habit Duo gives you a private accountability space for one shared habit, with both streaks and check-ins shown side by side.
-                    </p>
-                    <div class="benefit-chips">
-                        <span class="benefit-chip"><span class="benefit-chip__icon">🤝</span>One friend, one habit</span>
-                        <span class="benefit-chip"><span class="benefit-chip__icon">📊</span>Shared progress view</span>
-                        <span class="benefit-chip"><span class="benefit-chip__icon">🔥</span>Side-by-side streaks</span>
-                        <span class="benefit-chip"><span class="benefit-chip__icon">🔒</span>Completely private</span>
-                    </div>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-                        <a href="/features/habit-duo/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Explore Habit Duo →</a>
-                        <span style="font-size: .87rem; color: var(--ink-muted);">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
-                    </div>
-                </div>
-                <div class="spotlight__visual spotlight__visual--phone duo-screenshots">
-                    <img src="assets/productify-habit-duo-progress-view.webp"
-                         alt="Productify Habit Duo progress view showing a line chart comparing your streak and your friend's, with current and best streak stats"
-                         class="habit-duo-screenshot"
-                         loading="lazy" width="501" height="1024">
-                    <img src="assets/productify-habit-duo-streak-view.webp"
-                         alt="Productify Habit Duo screen showing Push Ups and Walk active duos, each connecting you and a friend"
-                         class="habit-duo-screenshot"
-                         loading="lazy" width="473" height="1024">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- -- AI HABIT ANALYSER -------------------------------- -->
-    <section class="section section--alt" id="ai-analyser" aria-labelledby="ai-analyser-heading">
-        <div class="container">
-            <div class="spotlight spotlight--reverse">
-                <div class="spotlight__text">
-                    <div class="eyebrow">AI Insights · Pro</div>
-                    <h2 id="ai-analyser-heading">Understand your habits with AI insights</h2>
-                    <p class="lead mt-16">
-                        Productify can help you reflect on your habit patterns and find small, realistic improvements, through TempO, a calm AI companion that reads your data, not a script.
-                    </p>
-                    <div class="benefit-chips">
-                        <span class="benefit-chip"><span class="benefit-chip__icon">📅</span>Spot consistency patterns</span>
-                        <span class="benefit-chip"><span class="benefit-chip__icon">💡</span>Get realistic suggestions</span>
-                        <span class="benefit-chip"><span class="benefit-chip__icon">🎯</span>Stay focused on small wins</span>
-                        <span class="benefit-chip"><span class="benefit-chip__icon">🔒</span>Your data, your control</span>
-                    </div>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-                        <a href="/features/ai-analyser/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">Explore AI Analyser →</a>
-                        <span style="font-size: .87rem; color: var(--ink-muted);">Available on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
-                    </div>
-                </div>
-                <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="/assets/productify-tempo-ai-coach.jpg"
-                         alt="TempO AI coach helping a Productify user turn a daily water goal into a practical habit"
-                         class="spotlight__phone-img"
-                         loading="lazy" width="460" height="996">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- -- HABIT TEMPLATES --------------------------------- -->
-    <section class="section" id="habit-templates" aria-labelledby="templates-heading">
-        <div class="container">
-            <div class="spotlight">
-                <div class="spotlight__text">
-                    <div class="eyebrow">Frictionless Start</div>
-                    <h2 id="templates-heading">The routine you'll actually start</h2>
-                    <p class="lead mt-16">
-                        Setup friction is one of the quietest habit killers. Productify's template library gives you fully configured routines (goal, frequency, and reminder already set) so you can go from intention to action in a single tap.
-                    </p>
-                    <ul class="check-list">
-                        <li>Hydration - 8 glasses · daily</li>
-                        <li>Morning walk - 20 minutes before 9 AM</li>
-                        <li>Evening reading - 30 minutes before bed</li>
-                        <li>Strength training - 3 sessions per week</li>
-                        <li>Deep work - 90-minute focus session</li>
-                        <li>Sleep schedule - in bed by 10:30 PM</li>
-                    </ul>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; align-items: center;">
-                        <a href="/features/habit-templates/" class="btn btn-secondary" style="font-size: .88rem; padding: 10px 20px;">See all templates →</a>
-                        <span style="font-size: .87rem; color: var(--ink-muted);">5 free · full library on Pro. <a href="#pricing" style="color: var(--blue); font-weight: 600;">See pricing →</a></span>
-                    </div>
-                    <p style="margin-top: 16px; font-size: .85rem; color: var(--ink-muted);">
-                        Related: <a href="/guides/how-to-start-a-daily-habit/" style="color: var(--blue);">How to start a daily habit</a> · <a href="/solutions/morning-routine/" style="color: var(--blue);">Build a morning routine</a>
-                    </p>
-                </div>
-                <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="/assets/screenshot_templates_browse.webp"
-                         alt="Productify habit template library, browse Morning Rituals, Productivity and Creators & Thinkers categories with pre-built routines"
-                         class="spotlight__phone-img"
-                         loading="lazy" width="1024" height="1536">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- -- MEASURABLE GOALS -------------------------------- -->
-    <section class="section section--purple" id="measurable-goals" aria-labelledby="goals-heading">
-        <div class="container">
-            <div class="spotlight spotlight--reverse">
-                <div class="spotlight__text">
-                    <div class="eyebrow">Clarity · Progress</div>
-                    <h2 id="goals-heading">When the target is clear, the decision is easy</h2>
-                    <p class="lead mt-16">
-                        "Exercise more" is not a goal; it's an intention. Productify turns every routine into something concrete: 7,900 steps walked, 31 minutes read, 8 glasses tracked. A clear number removes the friction of deciding whether you've done enough.
-                    </p>
-                    <ul class="check-list">
-                        <li>Steps, reps, minutes, glasses, sessions, or your own custom unit</li>
-                        <li>Daily targets or weekly frequency, whatever fits the routine</li>
-                        <li>Partial progress is recorded, not ignored. 5 of 8 glasses still counts.</li>
-                        <li>Less decision fatigue. More showing up.</li>
-                    </ul>
-                </div>
-                <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="assets/productify-home-screen.webp"
-                         alt="Productify daily habit list showing Read, Drink water, Play Chess, Stretch, Workout, and Push Ups with measurable goals"
-                         class="spotlight__phone-img"
-                         loading="lazy" width="946" height="2048">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- -- STREAK TRACKING --------------------------------- -->
-    <section class="section section--alt" id="streak-tracking" aria-labelledby="streaks-heading">
-        <div class="container">
-            <div class="spotlight">
-                <div class="spotlight__text">
-                    <div class="eyebrow">Visualizing progress</div>
-                    <h2 id="streaks-heading">Build momentum. Recover without shame.</h2>
-                    <p class="lead mt-16">
-                        Visualizing your streak works, not as pressure but as proof. Seeing 14 consecutive days reminds you that you're building something real. And when a day slips, Productify keeps your full history intact, so one bad week doesn't erase weeks of genuine effort.
-                    </p>
-                    <ul class="check-list">
-                        <li>Current streak and personal best, always visible at a glance</li>
-                        <li>Long-term trend view to put a bad week in perspective</li>
-                        <li>No shame spiral after a missed day. Your history stays intact.</li>
-                        <li>Milestone recognition at 7, 30, and 90 days, earned rather than manufactured</li>
-                    </ul>
-                    <p style="margin-top: 20px; font-size: .85rem; color: var(--ink-muted);">
-                        Related: <a href="/features/streak-tracking/" style="color: var(--blue);">Streak Tracking feature →</a> · <a href="/guides/how-to-use-a-habit-tracker/" style="color: var(--blue);">How to use a habit tracker</a>
-                    </p>
-                </div>
-                <div class="spotlight__visual spotlight__visual--phone">
-                    <img src="/assets/screenshot_streak_detail.webp"
-                         alt="Productify streak detail, calendar view showing completed days, Starter achievement badge, Best day April 7 at 100%, and a completion trend chart"
-                         class="spotlight__phone-img"
-                         loading="lazy" width="471" height="1024">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-</div><!-- /solutions -->
-
-<!-- ===================== MID CTA #2 ===================== -->
-<div class="mid-cta" aria-label="Download Productify">
-    <div class="container">
-        <div class="mid-cta__inner">
-            <div class="mid-cta__text">
-                <h3>Start building habits that stick, for free.</h3>
-                <p>Calm tracking, guilt-free streaks, and one-tap check-ins. No account required.</p>
-            </div>
-            <div class="mid-cta__actions">
-                <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                   class="appstore-badge-link" data-cta="body"
-                   aria-label="Download Productify on the App Store">
-                    <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy">
-                </a>
-                <a href="#pricing" class="btn btn-secondary" style="font-size:.9rem;">View pricing</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- ===================== HOW IT WORKS ===================== -->
 <section class="section" id="how-it-works" aria-labelledby="how-heading" style="background: linear-gradient(180deg, #fff 0%, #F0F4FF 100%);">
     <div class="container">
         <div class="section-header text-center">
             <div class="eyebrow">How Productify works</div>
-            <h2 id="how-heading">Up and running before the motivation fades</h2>
-            <p class="lead">No lengthy setup. No configuration overhead. Just a clear, frictionless path from intention to action.</p>
+            <h2 id="how-heading">Start your first habit in three steps</h2>
+            <p class="lead">Start with up to 5 habits free. No account required.</p>
         </div>
         <div class="steps-grid">
             <div class="step-card">
@@ -1606,7 +1294,7 @@ extra_css: |-
                     <span class="step-card__num">1</span>
                 </div>
                 <h3>Choose a routine</h3>
-                <p>Pick from a curated template library or create your own, with a measurable goal that removes all ambiguity.</p>
+                <p>Choose a starter template or create your own habit. Give it a clear target, such as reading for 10 minutes.</p>
             </div>
             <div class="step-card">
                 <div class="step-card__icon-wrap">
@@ -1622,16 +1310,62 @@ extra_css: |-
                     <span class="step-card__num">3</span>
                 </div>
                 <h3>Log it in a tap</h3>
-                <p>One tap marks it done. Your streak grows. Your weekly view fills in. Visualizing progress makes each day feel worthwhile.</p>
+                <p>Mark your habit done and see your progress. A missed day resets the streak, while your history stays available.</p>
             </div>
-            <div class="step-card">
-                <div class="step-card__icon-wrap">
-                    <span class="step-card__emoji">🦉</span>
-                    <span class="step-card__num">4</span>
-                </div>
-                <h3>Let TempO reflect</h3>
-                <p>Productify's AI companion surfaces small, honest observations from your patterns. You stay curious, not self-critical.</p>
-            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FEATURES OVERVIEW ===================== -->
+{% include product-screenshots.html %}
+
+<!-- ===================== FEATURES OVERVIEW ===================== -->
+<section class="section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">Made for your routine</div>
+            <h2 id="features-heading">A clear view of your habits and progress</h2>
+            <p class="lead">
+                Track your own routines, or explore Pro tools for shared habits and deeper insights.
+            </p>
+        </div>
+        <div class="features-grid" id="solutions">
+            <a href="/features/habit-tracker/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">✅</div>
+                <h3>Habit Tracker</h3>
+                <p class="text-muted">Check off daily habits, set reminders, and keep your progress in one place. Track up to 5 habits free.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a id="habit-duo" href="/features/habit-duo/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">🤝</div>
+                <h3 id="habit-duo-heading">Habit Duo · Pro</h3>
+                <p class="text-muted">Share one routine with one friend and compare progress in a private view. Included with Productify Pro.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a id="ai-analyser" href="/features/ai-analyser/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">🧠</div>
+                <h3 id="ai-analyser-heading">AI Habit Analyser · Pro</h3>
+                <p class="text-muted">Let TempO help you explore patterns in your recorded habits. Included with Productify Pro.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a id="habit-templates" href="/features/habit-templates/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">📋</div>
+                <h3 id="templates-heading">Habit Templates</h3>
+                <p class="text-muted">Choose a routine for sleep, fitness, or focus. Start with 5 free templates; unlock the full library with Pro.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a id="measurable-goals" href="/features/measurable-goals/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">📏</div>
+                <h3 id="goals-heading">Measurable Goals</h3>
+                <p class="text-muted">Set a target in steps, minutes, or glasses so you know when your habit is done. Pro adds custom units.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
+            <a id="streak-tracking" href="/features/streak-tracking/" class="feature-card feature-card--link">
+                <div class="feature-card__icon">🔥</div>
+                <h3 id="streaks-heading">Streak Tracking</h3>
+                <p class="text-muted">See your current streak and past progress. A missed day resets the count, while your history stays available.</p>
+                <span class="feature-card__cta">Learn more →</span>
+            </a>
         </div>
     </div>
 </section>
@@ -1641,7 +1375,7 @@ extra_css: |-
     <div class="container">
         <div class="section-header text-center">
             <div class="eyebrow">App Store Reviews</div>
-            <h2 id="testimonials-heading">People who use it, love it</h2>
+            <h2 id="testimonials-heading">From Productify users</h2>
             <p class="lead">Summaries of customer feedback from the <a href="{{ site.appstore_url }}">US App Store</a>.</p>
         </div>
         <div class="testimonials-aggregate" aria-label="Highly rated on the App Store">
@@ -1685,6 +1419,167 @@ extra_css: |-
                     </div>
                 </div>
             </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="section" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">Pricing</div>
+            <h2 id="pricing-heading">Simple, transparent pricing</h2>
+            <p class="lead">Start free. Upgrade when you want more. No hidden costs.</p>
+        </div>
+        <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+            <!-- Free -->
+            <article class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">$0</div>
+                <div class="price-period">forever</div>
+                <p class="pricing-desc">Enough to start building your first habits.</p>
+                <hr class="pricing-divider">
+                <ul class="check-list">
+                    <li>Up to 5 habits</li>
+                    <li>Streak tracking</li>
+                    <li>Smart reminders</li>
+                    <li>Habit templates (5 starter)</li>
+                    <li>Basic progress view</li>
+                </ul>
+                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="appstore-badge-link" data-cta="pricing-free"
+                       aria-label="Download Productify free on the App Store">
+                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy" decoding="async">
+                    </a>
+                </div>
+            </article>
+            <!-- Pro -->
+            <article class="pricing-card pricing-card--featured">
+                <div class="pricing-badge">Most Popular</div>
+                <h3>Pro</h3>
+                <div class="price">$4.99</div>
+                <div class="price-period">per month · US App Store</div>
+                <p class="pricing-desc">More room to grow, with unlimited habits and every Pro tool.</p>
+                <hr class="pricing-divider">
+                <ul class="check-list">
+                    <li>Unlimited habits</li>
+                    <li>Habit Duo (shared accountability)</li>
+                    <li>AI Habit Analyser</li>
+                    <li>All habit templates</li>
+                    <li>Advanced analytics &amp; trends</li>
+                    <li>Custom habit units</li>
+                    <li>Priority support</li>
+                </ul>
+                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="appstore-badge-link" data-cta="pricing-pro-monthly"
+                       aria-label="View Productify Pro on the App Store">
+                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy" decoding="async">
+                    </a>
+                </div>
+            </article>
+            <!-- Yearly -->
+            <article class="pricing-card" style="border-color: #7C3AED; box-shadow: 0 0 0 1px rgba(124,58,237,.15), var(--shadow-md); position: relative;">
+                <div class="pricing-badge" style="background: #7C3AED;">Best Value</div>
+                <h3>Yearly Pro</h3>
+                <div class="price" style="font-size: 2.4rem;">$19.99</div>
+                <div class="price-period">per year · US App Store</div>
+                <p class="pricing-desc">The same Pro tools, billed yearly through Apple.</p>
+                <hr class="pricing-divider">
+                <ul class="check-list">
+                    <li>All Pro features included</li>
+                    <li>Unlimited habits</li>
+                    <li>Habit Duo (shared accountability)</li>
+                    <li>AI Habit Analyser</li>
+                    <li>All habit templates</li>
+                    <li>Priority support</li>
+                </ul>
+                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+                       class="appstore-badge-link" data-cta="pricing-pro-yearly"
+                       aria-label="See Productify yearly pricing on the App Store">
+                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy" decoding="async">
+                    </a>
+                </div>
+            </article>
+        </div>
+        <p class="text-center text-muted mt-32" style="font-size: .85rem; margin-top: 28px;">
+            US prices checked September 20, 2026. The listing also shows promotional yearly and 7-day-trial offers, plus a $29.99 “Productify Pro” purchase. Apple shows your eligible offer, local price, duration, and renewal terms before purchase.
+        </p>
+    </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section section--alt" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">FAQ</div>
+            <h2 id="faq-heading">Questions people actually ask</h2>
+            <p class="lead">Quick answers before you download.</p>
+        </div>
+        <div class="faq-list" role="list">
+
+            <div class="faq-item" role="listitem">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Is Productify free?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. You can download Productify free on the App Store and start with core habit tracking. Pro unlocks features like Habit Duo and the AI Habit Analyser.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Do I need an account to use Productify?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>No account is required to get started. You can download the app and track habits without signing up for a Productify account.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Can Productify track habits automatically?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>For compatible activities such as walking, running, cycling, push-ups, and exercise time, you can optionally connect Apple Health. Other habits are recorded manually. Health access is optional.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    What is Habit Duo?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Habit Duo lets you build one shared habit with one friend. You each track your own progress and see daily check-ins and current streaks side by side in a private view.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    How does the AI Habit Analyser work?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>On Pro, TempO can review patterns in the habit data you choose to analyze. You are prompted before an analysis runs. How data is processed, including any use of third-party AI services, is described in our <a href="/privacy.html" style="color: var(--blue);">Privacy Policy</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Is Productify available on Android?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>No. Productify is currently available for iPhone and Apple Watch; there is no Android version.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -1768,167 +1663,6 @@ extra_css: |-
                      class="spotlight__phone-img"
                      loading="lazy" width="471" height="1024">
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== PRICING ===================== -->
-<section class="section" id="pricing" aria-labelledby="pricing-heading">
-    <div class="container">
-        <div class="section-header text-center">
-            <div class="eyebrow">Pricing</div>
-            <h2 id="pricing-heading">Simple, transparent pricing</h2>
-            <p class="lead">Start free. Upgrade when you want more. No hidden costs.</p>
-        </div>
-        <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-            <!-- Free -->
-            <article class="pricing-card">
-                <h3>Free</h3>
-                <div class="price">$0</div>
-                <div class="price-period">forever</div>
-                <p class="pricing-desc">Enough to start building your first habits.</p>
-                <hr class="pricing-divider">
-                <ul class="check-list">
-                    <li>Up to 5 habits</li>
-                    <li>Streak tracking</li>
-                    <li>Smart reminders</li>
-                    <li>Habit templates (5 starter)</li>
-                    <li>Basic progress view</li>
-                </ul>
-                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="appstore-badge-link" data-cta="body"
-                       aria-label="Download Productify free on the App Store">
-                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy" decoding="async">
-                    </a>
-                </div>
-            </article>
-            <!-- Pro -->
-            <article class="pricing-card pricing-card--featured">
-                <div class="pricing-badge">Most Popular</div>
-                <h3>Pro</h3>
-                <div class="price">$4.99</div>
-                <div class="price-period">per month · US App Store</div>
-                <p class="pricing-desc">For people serious about making habits last, with every tool Productify offers.</p>
-                <hr class="pricing-divider">
-                <ul class="check-list">
-                    <li>Unlimited habits</li>
-                    <li>Habit Duo (shared accountability)</li>
-                    <li>AI Habit Analyser</li>
-                    <li>All habit templates</li>
-                    <li>Advanced analytics &amp; trends</li>
-                    <li>Custom habit units</li>
-                    <li>Priority support</li>
-                </ul>
-                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="appstore-badge-link" data-cta="body"
-                       aria-label="Start Productify Pro free trial on the App Store">
-                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy" decoding="async">
-                    </a>
-                </div>
-            </article>
-            <!-- Yearly -->
-            <article class="pricing-card" style="border-color: #7C3AED; box-shadow: 0 0 0 1px rgba(124,58,237,.15), var(--shadow-md); position: relative;">
-                <div class="pricing-badge" style="background: #7C3AED;">Best Value</div>
-                <h3>Yearly Pro</h3>
-                <div class="price" style="font-size: 2.4rem;">$19.99</div>
-                <div class="price-period">per year · US App Store</div>
-                <p class="pricing-desc">The same Pro tools, billed yearly through Apple.</p>
-                <hr class="pricing-divider">
-                <ul class="check-list">
-                    <li>All Pro features included</li>
-                    <li>Unlimited habits</li>
-                    <li>Habit Duo (shared accountability)</li>
-                    <li>AI Habit Analyser</li>
-                    <li>All habit templates</li>
-                    <li>Priority support</li>
-                </ul>
-                <div style="margin-top: auto; padding-top: 28px; display: flex; justify-content: center;">
-                    <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
-                       class="appstore-badge-link" data-cta="body"
-                       aria-label="See Productify yearly pricing on the App Store">
-                        <img src="appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy" decoding="async">
-                    </a>
-                </div>
-            </article>
-        </div>
-        <p class="text-center text-muted mt-32" style="font-size: .85rem; margin-top: 28px;">
-            US prices checked September 20, 2026. The listing also shows promotional yearly and 7-day-trial offers, plus a $29.99 “Productify Pro” purchase. Apple shows your eligible offer, local price, duration, and renewal terms before purchase.
-        </p>
-    </div>
-</section>
-
-<!-- ===================== FAQ ===================== -->
-<section class="section section--alt" id="faq" aria-labelledby="faq-heading">
-    <div class="container">
-        <div class="section-header text-center">
-            <div class="eyebrow">FAQ</div>
-            <h2 id="faq-heading">Questions people actually ask</h2>
-            <p class="lead">Quick answers before you download.</p>
-        </div>
-        <div class="faq-list" role="list">
-
-            <div class="faq-item" role="listitem">
-                <button type="button" class="faq-question" aria-expanded="false">
-                    Is Productify free?
-                    <span class="faq-question__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. You can download Productify free on the App Store and start with core habit tracking. Pro unlocks features like Habit Duo and the AI Habit Analyser.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" role="listitem">
-                <button type="button" class="faq-question" aria-expanded="false">
-                    Do I need an account to use Productify?
-                    <span class="faq-question__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>No account is required to get started. You can download the app and track habits without signing up for a Productify account.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" role="listitem">
-                <button type="button" class="faq-question" aria-expanded="false">
-                    Can Productify track habits automatically?
-                    <span class="faq-question__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>For compatible activities such as walking, running, cycling, push-ups, and exercise time, you can optionally connect Apple Health. Other habits are recorded manually. Health access is optional.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" role="listitem">
-                <button type="button" class="faq-question" aria-expanded="false">
-                    What is Habit Duo?
-                    <span class="faq-question__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Habit Duo lets you build one shared habit with one friend. You each track your own progress and see daily check-ins and current streaks side by side in a private view.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" role="listitem">
-                <button type="button" class="faq-question" aria-expanded="false">
-                    How does the AI Habit Analyser work?
-                    <span class="faq-question__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>On Pro, TempO can review patterns in the habit data you choose to analyze. You are prompted before an analysis runs. How data is processed, including any use of third-party AI services, is described in our <a href="/privacy.html" style="color: var(--blue);">Privacy Policy</a>.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" role="listitem">
-                <button type="button" class="faq-question" aria-expanded="false">
-                    Is Productify available on Android?
-                    <span class="faq-question__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>No. Productify is currently available for iPhone and Apple Watch; there is no Android version.</p>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
