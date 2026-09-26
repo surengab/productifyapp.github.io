@@ -1,0 +1,298 @@
+---
+layout: default
+section: guides
+nav_title: Build a Reading Habit
+nav_description: Five minutes, one book, and a seven-day plan
+nav_order: 9
+title: How to Build a Daily Reading Habit
+seo_title: How to Build a Daily Reading Habit | Productify
+description: Start a daily reading habit with a book you enjoy, a five-minute goal, and a seven-day plan. Learn what to track and how to restart after a break.
+category: How-To Guide
+read_time: 6 min read
+date: '2026-09-27'
+last_modified: '2026-09-27'
+og_type: article
+breadcrumbs:
+- label: Home
+  href: /
+- label: Guides
+  href: /guides/
+- label: How to Build a Daily Reading Habit
+  item: /guides/how-to-build-a-reading-habit/
+---
+<style>
+/* Reading guide design, using the shared site font and navigation. */
+#productify-reading-guide{--lav:#8B5CF6;--lav-dark:#6D3ED2;--lilac:#F3EFFF;--plum:#171326;--text:#423B52;--muted:#746C82;--paper:#FCFBFE;--line:#E8E3EF;--night:#171326;color:var(--text);background:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.75;isolation:isolate;text-align:left;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+#productify-reading-guide *,#productify-reading-guide *:before,#productify-reading-guide *:after{box-sizing:border-box}
+#productify-reading-guide :is(h1,h2,h3,h4,p,figure){margin:0;padding:0}
+#productify-reading-guide :is(h1,h2,h3,h4){color:var(--plum);font-family:inherit;font-weight:680;line-height:1.15;letter-spacing:-.035em}
+#productify-reading-guide a{color:var(--lav-dark);text-decoration:none;box-shadow:none}
+#productify-reading-guide a:hover{text-decoration:underline;text-underline-offset:5px}
+#productify-reading-guide button{font:inherit;cursor:pointer}
+#productify-reading-guide :is(a,button,summary,[tabindex]):focus-visible{outline:3px solid var(--lav);outline-offset:5px}
+#productify-reading-guide svg{width:20px;height:20px;display:inline-block;vertical-align:middle;flex:none}
+#productify-reading-guide .pr-skip{position:absolute;top:-100px;left:15px;background:white;padding:10px 16px;z-index:99}
+#productify-reading-guide .pr-skip:focus{top:15px}
+#productify-reading-guide .pr-progress{position:fixed;z-index:9999;top:0;left:0;width:100%;height:3px;pointer-events:none}
+#productify-reading-guide .pr-progress span{display:block;width:0;height:100%;background:var(--lav)}
+#productify-reading-guide .pr-header{max-width:1280px;margin:auto;padding:27px 40px;display:flex;align-items:center;gap:24px;border-bottom:1px solid var(--line)}
+#productify-reading-guide .pr-brand{display:flex;align-items:center;gap:9px;color:var(--plum);font-size:23px;font-weight:780;letter-spacing:-1px}
+#productify-reading-guide .pr-brand-mark{width:30px;height:32px;border-radius:9px;display:grid;place-items:center;background:var(--lav);color:white;transform:rotate(-5deg)}
+#productify-reading-guide .pr-brand-mark svg{width:17px}
+#productify-reading-guide .pr-journal{font-size:13px;color:var(--muted);margin-left:14px;border-left:1px solid var(--line);padding-left:24px}
+#productify-reading-guide .pr-header-cta{margin-left:auto;color:var(--plum);font-size:13px;font-weight:650}
+#productify-reading-guide .pr-header-cta span{color:var(--lav);margin-left:12px}
+#productify-reading-guide .pr-hero{max-width:1280px;margin:auto;padding:78px 40px 82px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);gap:60px;align-items:center}
+#productify-reading-guide .pr-eyebrow{display:block;color:var(--lav-dark);font-size:10px;font-weight:750;letter-spacing:1.7px;text-transform:uppercase;margin-bottom:18px}
+#productify-reading-guide .pr-eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;display:inline-block;background:var(--lav);margin-right:9px}
+#productify-reading-guide h1{font-size:clamp(48px,5vw,70px);line-height:1.02;letter-spacing:-3.6px;max-width:650px}
+#productify-reading-guide h1 em{font-style:normal;color:var(--lav-dark);position:relative;white-space:nowrap}
+#productify-reading-guide h1 em:after{content:"";position:absolute;left:2px;right:0;bottom:-8px;height:8px;border-top:2px solid var(--lav);border-radius:50%;opacity:.45;transform:rotate(-2deg)}
+#productify-reading-guide .pr-lead{font-size:19px;color:var(--plum);line-height:1.55;max-width:530px;margin-top:31px}
+#productify-reading-guide .pr-intro{font-size:14px;line-height:1.8;color:var(--muted);max-width:520px;margin-top:15px}
+#productify-reading-guide .pr-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:28px}
+#productify-reading-guide .pr-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;background:var(--lav);border:1px solid var(--lav);border-radius:9px;color:white;padding:13px 20px;font-size:13px;font-weight:650;transition:.2s ease}
+#productify-reading-guide .pr-button:hover{background:var(--lav-dark);transform:translateY(-2px);box-shadow:0 7px 24px #8b5cf633;text-decoration:none}
+#productify-reading-guide .pr-text-link{color:var(--plum);font-size:13px;font-weight:650}
+#productify-reading-guide .pr-byline{display:flex;gap:10px;align-items:center;margin-top:31px;font-size:11px;line-height:1.5}
+#productify-reading-guide .pr-byline b,#productify-reading-guide .pr-byline small{display:block}
+#productify-reading-guide .pr-byline small{color:var(--muted)}
+#productify-reading-guide .pr-byline i{font-style:normal;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--lilac);color:var(--lav-dark);font-weight:800}
+#productify-reading-guide .pr-book-demo{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 22px 60px #1713260d;position:relative;overflow:hidden}
+#productify-reading-guide .pr-demo-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:8px;letter-spacing:1.3px;font-weight:700;text-transform:uppercase}
+#productify-reading-guide .pr-session-state{letter-spacing:0;text-transform:none;padding:4px 8px;border:1px solid var(--line);background:#fff;border-radius:999px;font-size:9px}
+#productify-reading-guide .pr-session-state:before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--lav);margin-right:5px}
+#productify-reading-guide .pr-open-book{height:220px;display:grid;place-items:center;position:relative;margin:10px 0 2px}
+#productify-reading-guide .pr-book{position:relative;width:270px;height:164px;perspective:800px;filter:drop-shadow(0 20px 20px #1713261a)}
+#productify-reading-guide .pr-book:before,#productify-reading-guide .pr-book:after{content:"";position:absolute;top:0;width:50%;height:100%;background:#fff;border:1px solid var(--line)}
+#productify-reading-guide .pr-book:before{left:0;border-radius:11px 2px 2px 11px;transform:skewY(2deg)}
+#productify-reading-guide .pr-book:after{right:0;border-radius:2px 11px 11px 2px;transform:skewY(-2deg)}
+#productify-reading-guide .pr-spine{position:absolute;left:50%;top:5px;bottom:3px;width:1px;background:#D8CFF0;z-index:3}
+#productify-reading-guide .pr-copy{position:absolute;z-index:2;width:40%;height:70%;top:28px;background:repeating-linear-gradient(to bottom,#D8D2E1 0 2px,transparent 2px 12px);opacity:.65}
+#productify-reading-guide .pr-copy-left{left:6%}.pr-copy-right{right:6%}
+#productify-reading-guide .pr-page{position:absolute;z-index:4;right:50%;top:2px;width:49%;height:97%;transform-origin:right center;background:#fff;border:1px solid var(--line);border-radius:8px 2px 2px 8px;transform:rotateY(180deg);opacity:0}
+#productify-reading-guide .pr-page.pr-turn{animation:pr-turn .8s ease}
+#productify-reading-guide .pr-bookmark{position:absolute;z-index:5;left:calc(50% + 24px);top:1px;width:17px;height:93px;background:var(--lav);clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%)}
+#productify-reading-guide .pr-timer-card{background:white;border:1px solid var(--line);border-radius:14px;padding:19px 20px;position:relative;z-index:8}
+#productify-reading-guide .pr-timer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}
+#productify-reading-guide .pr-timer-head div span{display:block;font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+#productify-reading-guide .pr-timer-head strong{font-size:15px;color:var(--plum)}
+#productify-reading-guide .pr-timer-ring{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--lav) var(--progress,0%),var(--lilac) 0);position:relative;color:var(--plum);font-size:10px;font-weight:750}
+#productify-reading-guide .pr-timer-ring:before{content:"";position:absolute;inset:5px;background:#fff;border-radius:50%}
+#productify-reading-guide .pr-timer-ring span{position:relative}
+#productify-reading-guide .pr-demo-track{height:6px;background:var(--lilac);border-radius:99px;overflow:hidden;margin:10px 0}
+#productify-reading-guide .pr-demo-track i{display:block;height:100%;width:0;background:var(--lav);border-radius:inherit;transition:width .3s}
+#productify-reading-guide .pr-demo-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:15px}
+#productify-reading-guide .pr-demo-controls p{font-size:9px;color:var(--muted)}
+#productify-reading-guide #pr-read{border:0;border-radius:7px;background:var(--lav);color:white;font-size:10px;font-weight:650;padding:9px 12px;min-height:36px}
+#productify-reading-guide .pr-demo-caption{text-align:center;color:var(--muted);font-size:9px;margin-top:13px}
+#productify-reading-guide .pr-strip{border-block:1px solid var(--line);background:var(--paper);display:flex;justify-content:center;gap:62px;flex-wrap:wrap;padding:21px 28px;color:var(--muted);font-size:11px;font-weight:600}
+#productify-reading-guide .pr-strip span{display:flex;gap:8px;align-items:center}.pr-strip b{color:var(--lav);font-size:16px}
+#productify-reading-guide .pr-layout{max-width:1190px;margin:auto;display:grid;grid-template-columns:205px minmax(0,1fr);gap:80px;align-items:start;padding:76px 40px 35px}
+#productify-reading-guide .pr-sidebar{position:sticky;top:42px}
+#productify-reading-guide .pr-sidebar nav{display:grid;gap:5px}.pr-sidebar-label{font-size:10px;letter-spacing:1.2px;color:var(--muted);font-weight:700;text-transform:uppercase;margin:0 0 13px 14px}
+#productify-reading-guide .pr-sidebar a{font-size:11px;line-height:1.5;padding:9px 13px;border-left:2px solid transparent;color:var(--muted)}
+#productify-reading-guide .pr-sidebar a:hover,#productify-reading-guide .pr-sidebar a[aria-current]{background:var(--lilac);border-color:var(--lav);color:var(--lav-dark);text-decoration:none}
+#productify-reading-guide .pr-sidebar-note{border-top:1px solid var(--line);margin-top:38px;padding:23px 14px}.pr-sidebar-note strong{font-size:28px;color:var(--lav);letter-spacing:2px}.pr-sidebar-note p{font-size:12px;margin:8px 0 12px}.pr-sidebar-note a{padding:0;border:0;color:var(--lav-dark);font-weight:700}
+#productify-reading-guide article{min-width:0;max-width:800px}
+#productify-reading-guide .pr-chapter{padding-bottom:62px;margin-bottom:62px;border-bottom:1px solid var(--line);scroll-margin-top:35px}
+#productify-reading-guide .pr-chapter>.pr-eyebrow{margin-bottom:14px}.pr-chapter>.pr-eyebrow:before{display:none}
+#productify-reading-guide h2{font-size:36px;letter-spacing:-1.4px;margin-bottom:25px;max-width:700px}
+#productify-reading-guide .pr-chapter h3{font-size:21px;margin:34px 0 13px;letter-spacing:-.6px}
+#productify-reading-guide .pr-chapter h4{font-size:16px;margin-bottom:9px}
+#productify-reading-guide .pr-chapter p{font-size:16px;line-height:1.85;margin-bottom:20px;max-width:72ch}
+#productify-reading-guide .pr-callout{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:19px;background:var(--lilac);border-left:3px solid var(--lav);padding:24px 26px;border-radius:0 12px 12px 0;margin:30px 0}
+#productify-reading-guide .pr-callout-icon{width:46px;height:46px;border-radius:14px;background:white;color:var(--lav);display:grid;place-items:center;font-size:21px}
+#productify-reading-guide .pr-callout p{margin:0;font-size:18px;line-height:1.5;color:var(--plum)}
+#productify-reading-guide .pr-friction{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:29px 0}
+#productify-reading-guide .pr-friction>div{padding:23px}.pr-friction>div+div{border-left:1px solid var(--line)}.pr-friction i{font-style:normal;font-size:24px}.pr-friction h3{font-size:16px;margin:12px 0 8px}.pr-friction p{font-size:12px;line-height:1.7;margin:0;color:var(--muted)}
+#productify-reading-guide .pr-formula{display:flex;align-items:center;justify-content:center;gap:13px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:23px;margin:27px 0;color:var(--plum);font-size:13px;font-weight:700}
+#productify-reading-guide .pr-formula span{background:white;border:1px solid var(--line);border-radius:8px;padding:9px 13px}.pr-formula b{color:var(--lav);font-size:17px}
+#productify-reading-guide .pr-methods{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+#productify-reading-guide .pr-method{border:1px solid var(--line);border-radius:12px;padding:23px;background:white}.pr-method-num{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:50%;background:var(--lilac);color:var(--lav-dark);font-size:10px;font-weight:800}.pr-method h3{font-size:18px;margin:14px 0 10px}.pr-method p{font-size:13px;margin:0}.pr-method ul{padding-left:17px;margin:11px 0 0}.pr-method li{font-size:12px;margin:6px 0}
+#productify-reading-guide .pr-measures{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.pr-measures div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 10px;text-align:center}.pr-measures strong{display:block;color:var(--lav);font-size:23px}.pr-measures span{font-size:10px;color:var(--muted)}
+#productify-reading-guide .pr-days{list-style:none;counter-reset:day;padding:0;margin:33px 0}.pr-days li{counter-increment:day;display:grid;grid-template-columns:64px minmax(0,1fr);gap:19px;padding:0 0 25px;position:relative}.pr-days li>div{grid-column:2;grid-row:1;min-width:0}.pr-days li:not(:last-child):before{content:"";position:absolute;left:28px;top:47px;bottom:0;width:1px;background:var(--line)}.pr-days li:after{content:"Day " counter(day);grid-column:1;grid-row:1;width:56px;height:40px;border-radius:9px;background:var(--lilac);color:var(--lav-dark);display:grid;place-items:center;font-size:10px;font-weight:800}.pr-days h3{font-size:19px;margin:4px 0 8px}.pr-days p{font-size:13px;margin:0;max-width:100%}
+#productify-reading-guide .pr-week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:19px;margin:25px 0}.pr-week div{text-align:center}.pr-week span{display:block;color:var(--muted);font-size:9px;margin-bottom:7px}.pr-week i{display:grid;place-items:center;width:32px;height:32px;margin:auto;border-radius:8px;background:var(--lav);color:white;font-style:normal;font-size:10px}.pr-week div:nth-child(4) i{background:var(--lilac);color:var(--lav-dark);border:1px dashed var(--lav)}
+#productify-reading-guide .pr-restart{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:26px 0}.pr-restart>div{padding:22px;border:1px solid var(--line);border-radius:12px}.pr-restart strong{display:block;color:var(--lav-dark);font-size:11px;text-transform:uppercase;letter-spacing:.9px;margin-bottom:8px}.pr-restart p{font-size:13px;margin:0}
+#productify-reading-guide .pr-quote{font-size:24px!important;color:var(--plum);line-height:1.5!important;border-left:3px solid var(--lav);padding-left:24px;margin:30px 0!important;letter-spacing:-.6px}
+#productify-reading-guide .pr-closing{background:var(--night);color:#D7D0DF;text-align:center;padding:77px 28px}.pr-closing .pr-eyebrow{color:#D6C2FF}.pr-closing .pr-eyebrow:before{display:none}.pr-closing h2{max-width:none;color:white;font-size:48px;letter-spacing:-2px;margin-bottom:19px}.pr-closing p{font-size:15px;margin-bottom:25px}.pr-closing-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.pr-print{border:1px solid #574F69;background:transparent;color:white;border-radius:9px;padding:13px 20px;font-size:13px}.pr-print:hover{background:#251E35}.pr-closing small{display:block;color:#AFA5C0;font-size:10px;margin-top:20px}
+#productify-reading-guide .pr-footer{max-width:1280px;margin:auto;padding:25px 40px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px}
+#productify-reading-guide .pr-bookmark{animation:pr-bookmark 3.2s ease-in-out infinite}
+#productify-reading-guide .pr-reveal{animation:pr-rise .65s ease both}
+@keyframes pr-rise{from{opacity:.15;transform:translateY(17px)}to{opacity:1;transform:none}}
+@keyframes pr-turn{0%{opacity:1;transform:rotateY(0)}99%{opacity:1}100%{opacity:0;transform:rotateY(-180deg)}}
+@keyframes pr-bookmark{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media(max-width:950px){#productify-reading-guide .pr-hero{grid-template-columns:1fr 420px;gap:28px;padding:65px 28px}#productify-reading-guide h1{font-size:51px}.pr-layout{gap:38px!important;grid-template-columns:175px minmax(0,1fr)!important;padding:60px 28px 30px!important}.pr-strip{gap:30px!important}}
+@media(max-width:760px){#productify-reading-guide .pr-header{padding:20px 24px}.pr-journal{display:none}.pr-hero{grid-template-columns:1fr!important;padding:54px 24px 40px!important}.pr-book-demo{width:100%;max-width:510px;justify-self:center}.pr-layout{display:block!important;padding:35px 24px 0!important}.pr-sidebar{position:static!important;margin-bottom:45px}.pr-sidebar nav{grid-template-columns:1fr 1fr}.pr-sidebar-label{grid-column:1/-1;margin-left:0}.pr-sidebar a{background:var(--paper);border-radius:5px;padding:9px 10px}.pr-sidebar-note{display:none}.pr-strip{display:grid!important;grid-template-columns:1fr 1fr;gap:15px!important;justify-items:start}.pr-friction{grid-template-columns:1fr!important}.pr-friction>div+div{border-left:0!important;border-top:1px solid var(--line)}.pr-methods{gap:13px!important}.pr-measures{grid-template-columns:1fr 1fr!important}.pr-chapter{padding-bottom:46px!important;margin-bottom:46px!important}.pr-chapter p{font-size:14px!important}#productify-reading-guide h2{font-size:31px}.pr-closing h2{font-size:37px!important}.pr-footer{padding:25px 24px!important}}
+@media(max-width:440px){#productify-reading-guide .pr-header{gap:10px}.pr-brand{font-size:20px}.pr-header-cta{font-size:11px}.pr-open-book{height:190px}.pr-book{width:235px;height:142px}.pr-book-demo{padding:17px}.pr-methods,.pr-restart{grid-template-columns:1fr!important}.pr-week{padding:12px!important;gap:3px!important}.pr-week i{width:29px!important;height:29px!important}.pr-callout{padding:20px!important;gap:13px!important}.pr-callout p{font-size:16px!important}.pr-days li{grid-template-columns:50px minmax(0,1fr)!important;gap:12px!important}.pr-days li:after{width:46px!important}.pr-days li:not(:last-child):before{left:23px!important}.pr-footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){#productify-reading-guide *,#productify-reading-guide *:before,#productify-reading-guide *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{#productify-reading-guide .pr-header-cta,#productify-reading-guide .pr-sidebar,#productify-reading-guide .pr-progress,#productify-reading-guide .pr-actions,#productify-reading-guide .pr-closing-actions{display:none}.pr-layout{display:block!important;padding:25px!important}.pr-closing{background:white!important;color:#111!important}.pr-closing h2{color:#111!important}}
+
+
+/* Fit the original design into the shared Guides navigation. */
+#productify-reading-guide .pr-hero{grid-template-columns:1fr;gap:40px}
+#productify-reading-guide h1 em{white-space:normal}
+#productify-reading-guide .pr-book-demo{width:100%;max-width:620px}
+#productify-reading-guide .pr-sidebar{top:100px}
+#productify-reading-guide .pr-chapter{scroll-margin-top:100px}
+#productify-reading-guide [hidden]{display:none!important}
+#productify-reading-guide .pr-button,#productify-reading-guide #pr-read,#productify-reading-guide .pr-week i{background:var(--lav-dark)}
+#productify-reading-guide #pr-read{min-height:44px}
+#productify-reading-guide .pr-week{grid-template-columns:repeat(7,minmax(0,1fr))}
+#productify-reading-guide .pr-week i{width:100%!important;max-width:32px}
+#productify-reading-guide .pr-week div:nth-child(4) i{background:var(--lilac)}
+#productify-reading-guide .pr-closing h2{color:white}
+#productify-reading-guide .pr-method h3{font-size:21px;margin:16px 0 12px}
+#productify-reading-guide .pr-days h3{font-size:20px;margin:4px 0 8px}
+@media(min-width:1100px){
+  #productify-reading-guide .pr-layout{grid-template-columns:160px minmax(0,1fr);gap:32px;padding-inline:24px}
+}
+@media(max-width:1099px){
+  #productify-reading-guide .pr-layout{display:block!important}
+  #productify-reading-guide .pr-sidebar{position:static;margin-bottom:40px}
+  #productify-reading-guide .pr-sidebar nav{grid-template-columns:1fr 1fr}
+  #productify-reading-guide .pr-sidebar-label{grid-column:1/-1}
+  #productify-reading-guide .pr-sidebar-note{display:none}
+}
+@media print{
+  @page{margin:15mm}
+  body> :not(.resource-shell),.resource-sidebar{display:none!important}
+  .resource-shell,.resource-content{display:block!important;padding:0!important;margin:0!important;max-width:none!important;width:auto!important}
+  #productify-reading-guide .pr-skip,#productify-reading-guide .pr-progress,#productify-reading-guide .pr-hero,#productify-reading-guide .pr-strip,#productify-reading-guide .pr-sidebar,#productify-reading-guide .pr-closing,#productify-reading-guide .pr-chapter:not(#pr-week){display:none!important}
+  #productify-reading-guide .pr-layout{display:block!important;padding:0!important}
+  #productify-reading-guide #pr-week{margin:0!important;padding:0!important;border:0}
+  #productify-reading-guide #pr-week h2{font-size:24px;margin:0 0 12px}
+  #productify-reading-guide #pr-week h3{font-size:14px;margin:0 0 4px}
+  #productify-reading-guide #pr-week p{font-size:11px!important;line-height:1.5;margin:0 0 10px}
+  #productify-reading-guide .pr-week{margin:14px 0;padding:10px}
+  #productify-reading-guide .pr-days{margin:15px 0}
+  #productify-reading-guide .pr-days li{break-inside:avoid;padding-bottom:10px}
+  #productify-reading-guide .pr-reveal{animation:none}
+}
+</style>
+<!-- PRODUCTIFY READING GUIDE START -->
+<div id="productify-reading-guide"><a class="pr-skip" href="#pr-why">Skip to guide</a><div class="pr-progress" aria-hidden="true"><span></span></div>
+<main><section class="pr-hero"><div><span class="pr-eyebrow">A SMALLER WAY TO READ MORE</span><h1>How to Build a Daily <em>Reading Habit</em></h1><p class="pr-lead">A simple seven-day plan to start reading consistently.</p><p class="pr-intro">Five minutes, a book you want to open, and a place in your day. Start small, find what fits, and return when life interrupts.</p><div class="pr-actions"><a class="pr-button" href="#pr-why">Read the guide <span>↓</span></a><a class="pr-text-link" href="#pr-week">Start the 7-day plan ↗</a></div><div class="pr-byline"><i>P</i><span><b>By <a href="/editorial/">Productify Editorial Team</a></b><small><time datetime="2026-09-27">September 27, 2026</time> · 6 min read</small></span></div></div><div class="pr-book-demo" aria-label="Illustration of a five-minute reading goal">
+<div class="pr-demo-top"><span>A SMALL READING GOAL</span><span class="pr-session-state">Example</span></div>
+<div class="pr-open-book" aria-hidden="true"><div class="pr-book"><span class="pr-spine"></span><span class="pr-copy pr-copy-left"></span><span class="pr-copy pr-copy-right"></span><span class="pr-page"></span><span class="pr-bookmark"></span></div></div>
+<div class="pr-timer-card"><div class="pr-timer-head"><div><span>Today’s goal</span><strong>Read for five minutes</strong></div><div class="pr-timer-ring" id="pr-ring"><span>0/5</span></div></div><div class="pr-demo-track"><i id="pr-demo-bar"></i></div><div class="pr-demo-controls"><p id="pr-demo-status" role="status">Example: a five-minute reading goal.</p><button type="button" id="pr-read" hidden>Preview one minute</button></div></div>
+<p class="pr-demo-caption">Interactive illustration · Preview progress, not a live timer</p></div></section>
+<div class="pr-strip"><span><b>01</b> Choose a book you want</span><span><b>02</b> Start with five minutes</span><span><b>03</b> Attach it to a cue</span><span><b>04</b> Return after a miss</span></div>
+<div class="pr-layout"><aside class="pr-sidebar"><nav aria-label="In this guide"><span class="pr-sidebar-label">In this guide</span><a href="#pr-why">Why reading is difficult</a><a href="#pr-build">Build the routine</a><a href="#pr-track">What to track</a><a href="#pr-week">Seven-day plan</a><a href="#pr-restart">Restart after a break</a></nav><div class="pr-sidebar-note"><strong>5:00</strong><p>Your minimum can be small enough for the busiest day.</p><a href="#pr-week">Try one week →</a></div></aside><article>
+<section class="pr-chapter" id="pr-why" aria-labelledby="pr-why-title">
+  <span class="pr-eyebrow">The real friction</span>
+  <h2 id="pr-why-title">Why reading is easy to postpone</h2>
+  <p>You want to read, but the day fills up. By bedtime, you are too tired to follow the story. Or you pick up a book, reread the same paragraph, and reach for your phone.</p>
+  <p>Before setting a bigger goal, look at what makes your current reading session difficult. The problem may be the time, the book, or the effort of getting started. Each calls for a different adjustment.</p>
+  <div class="pr-friction">
+    <div><i aria-hidden="true">☾</i><h3>Too sleepy</h3><p>Try an earlier session. Five minutes after lunch may suit you better than a chapter in bed.</p></div>
+    <div><i aria-hidden="true">◎</i><h3>Too many distractions</h3><p>Keep your book within reach and silence notifications before opening it.</p></div>
+    <div><i aria-hidden="true">⌁</i><h3>The wrong book</h3><p>If every session feels like homework, sample something you are curious about.</p></div>
+  </div>
+  <p>You do not need to solve all three at once. Start with the obstacle that most often stops you from opening the book.</p>
+</section>
+
+<section class="pr-chapter" id="pr-build" aria-labelledby="pr-build-title">
+  <span class="pr-eyebrow">Build the routine</span>
+  <h2 id="pr-build-title">Make reading easier to begin</h2>
+  <p>Choose one book, a small target, and a moment in your day that can make room for it. You can adjust the routine after trying it.</p>
+  <div class="pr-formula"><span>Enjoyable book</span><b>+</b><span>Tiny target</span><b>+</b><span>Reliable cue</span><b>=</b><span>A repeatable routine</span></div>
+  <div class="pr-methods">
+    <div class="pr-method">
+      <span class="pr-method-num">01</span>
+      <h3>Choose a book you want to open</h3>
+      <p>An absorbing novel, a short story collection, a familiar favorite, or a practical guide all count. Read a sample before committing. Leave the impressive book you feel obliged to finish for another time.</p>
+      <p>If you repeatedly abandon books, notice where interest fades. You might prefer shorter chapters, a different genre, or a less demanding book right now. Changing books is a useful adjustment; you do not need to finish everything you start.</p>
+    </div>
+    <div class="pr-method">
+      <span class="pr-method-num">02</span>
+      <h3>Start with five minutes</h3>
+      <p>Use five minutes as an initial target. Page counts vary with type size and how demanding the text is, so time can be a convenient starting point. Stop when the timer ends or continue if you want.</p>
+      <p>Choose a fallback for disrupted days: one page. This gives you a specific way to return to the book when your usual session does not fit.</p>
+    </div>
+    <div class="pr-method">
+      <span class="pr-method-num">03</span>
+      <h3>Attach reading to something you already do</h3>
+      <p>Choose a cue you can recognize: finishing breakfast, making coffee, or sitting down after lunch. “Read more tonight” leaves the moment undecided; “read after lunch” tells you when to begin.</p>
+      <p>Try this worked example: <strong>After making my morning coffee, I will read at the kitchen table for five minutes. If the morning falls apart, I will read one page after lunch.</strong> Keep the book beside your mug, ready for the next session.</p>
+      <p>If weekends have a different rhythm, choose a separate cue for them. Reading after breakfast on workdays and after lunch on weekends can still give each session a clear place.</p>
+    </div>
+    <div class="pr-method">
+      <span class="pr-method-num">04</span>
+      <h3>Leave the next session ready</h3>
+      <p>Put a bookmark where you stopped and leave the book where you plan to read. Keep an e-reader charged. If you read on your phone, open the book directly and silence other notifications.</p>
+      <p>If you often lose the thread between sessions, jot down a few words about what just happened. A quick reminder can spare you another long reread.</p>
+    </div>
+  </div>
+  <p>For more examples of choosing a small action and a cue, see <a href="/guides/how-to-start-a-daily-habit/">how to start a daily habit</a>.</p>
+</section>
+
+<section class="pr-chapter" id="pr-track" aria-labelledby="pr-track-title">
+  <span class="pr-eyebrow">Visible progress</span>
+  <h2 id="pr-track-title">Keep a record you can use</h2>
+  <p>Pick one measure: minutes, pages, or simply whether you read. Use whichever helps you understand your week without making the record a chore.</p>
+  <div class="pr-measures"><div><strong>5</strong><span>minutes</span></div><div><strong>5</strong><span>pages</span></div><div><strong>1</strong><span>session</span></div><div><strong>✓</strong><span>day read</span></div></div>
+  <p>For a concrete Productify setup, create a habit called <strong>Read</strong>, schedule it daily, and set a target of <strong>five minutes</strong>. After each session, log the minutes you actually read. A two-minute session is useful information, even when it falls short of your target.</p>
+  <p>At the end of the week, use the record to spot a practical adjustment. If evenings keep slipping, try lunch. If you regularly read longer and enjoy it, you can keep the same small target anyway.</p>
+  <p>Explore <a href="/features/measurable-goals/">measurable goals in Productify</a> or learn <a href="/guides/how-to-use-a-habit-tracker/">how to use a habit tracker</a>. Prefer paper? Use a <a href="/guides/habit-tracker-printable/">printable habit tracker</a> and mark each reading day.</p>
+</section>
+
+<section class="pr-chapter" id="pr-week" aria-labelledby="pr-week-title">
+  <span class="pr-eyebrow">A practical start</span>
+  <h2 id="pr-week-title">Your seven-day reading plan</h2>
+  <p>Treat this as a one-week experiment in finding a routine that fits. Seven days is a review point, not a deadline for making reading automatic. Start on any day of the week.</p>
+  <div class="pr-week" aria-label="Seven-day plan: five minutes each day except Day 4, when the target is one page">
+    <div><span>Day 1</span><i>5m</i></div><div><span>Day 2</span><i>5m</i></div><div><span>Day 3</span><i>5m</i></div><div><span>Day 4</span><i>1p</i></div><div><span>Day 5</span><i>5m</i></div><div><span>Day 6</span><i>5m</i></div><div><span>Day 7</span><i>5m</i></div>
+  </div>
+  <ol class="pr-days">
+    <li><div><h3>Pick a book and begin</h3><p>Choose something that interests you and read for five minutes today. Put in a bookmark so tomorrow has a clear starting point.</p></div></li>
+    <li><div><h3>Try your cue</h3><p>Read for five minutes after your chosen activity. Notice whether that moment gives you enough time and attention.</p></div></li>
+    <li><div><h3>Prepare your reading spot</h3><p>Move distractions away, then read for five minutes. Leave the book in place for your next session.</p></div></li>
+    <li><div><h3>Practice the fallback</h3><p>Read one page today. This deliberately smaller session lets you try the version you will use when five minutes feels difficult.</p></div></li>
+    <li><div><h3>Make progress visible</h3><p>Read for five minutes and record the session. Choose one measure you would be comfortable keeping next week.</p></div></li>
+    <li><div><h3>Check the book</h3><p>Read for five minutes. Are you interested in continuing? If not, choose another book before your next session.</p></div></li>
+    <li><div><h3>Review and repeat</h3><p>Read for five minutes, then choose one adjustment for next week. Keep what worked; there is no need to increase the target.</p></div></li>
+  </ol>
+</section>
+
+<section class="pr-chapter" id="pr-restart" aria-labelledby="pr-restart-title">
+  <span class="pr-eyebrow">After a break</span>
+  <h2 id="pr-restart-title">Return without catching up</h2>
+  <p>If you miss a day, continue with the next small session. After a longer break, look at what changed before restoring the old routine.</p>
+  <div class="pr-restart">
+    <div><strong>Reduce</strong><p>Open the book and read one page. You can leave a longer session for another day.</p></div>
+    <div><strong>Replace</strong><p>If the book has become a barrier, try a short story or a familiar favorite.</p></div>
+    <div><strong>Relocate</strong><p>If bedtime leaves you sleepy, move reading to breakfast or lunch.</p></div>
+    <div><strong>Resume</strong><p>Record the session you completed. Missed days do not create a reading debt.</p></div>
+  </div>
+  <p>For help adjusting a routine after interruptions, see <a href="/guides/how-to-build-habits-that-stick/">how to build habits that stick</a>. Your next step can be as small as finding your bookmark and reading from there.</p>
+</section>
+</article></div>
+<section class="pr-closing" aria-labelledby="pr-close-title"><span class="pr-eyebrow">YOUR NEXT SMALL STEP</span><h2 id="pr-close-title">Open the book.<br>Read one page.</h2><p>Use Productify to record your reading minutes, or start with a bookmark and a paper tick. Open your book at the next opportunity.</p><div class="pr-closing-actions"><a class="pr-button" data-cta="reading-guide" href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237">Get Productify free ↗</a><button class="pr-print" type="button" id="pr-print" hidden>Print the 7-day plan</button></div><small>5 habits free · No account required · iPhone &amp; Apple Watch</small></section></main>
+</div>
+<script>
+(function(){
+  'use strict';
+  const root=document.getElementById('productify-reading-guide');
+  if(!root||root.dataset.ready)return;root.dataset.ready='true';
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const button=root.querySelector('#pr-read'),ring=root.querySelector('#pr-ring'),bar=root.querySelector('#pr-demo-bar'),status=root.querySelector('#pr-demo-status'),page=root.querySelector('.pr-page');
+  button.hidden=false;
+  root.querySelector('#pr-print').hidden=false;
+  let step=0;
+  button.addEventListener('click',function(){
+    step=(step+1)%6;const pct=step*20;
+    ring.style.setProperty('--progress',pct+'%');ring.querySelector('span').textContent=step+'/5';bar.style.width=pct+'%';
+    status.textContent=step===0?'Example: a five-minute reading goal.':step===5?'Example complete: five minutes recorded.':'Example: '+step+' of 5 minutes recorded.';
+    button.textContent=step===5?'Reset example':'Preview one minute';
+    if(step>0){page.classList.remove('pr-turn');void page.offsetWidth;page.classList.add('pr-turn');}
+  });
+  root.querySelector('#pr-print').addEventListener('click',function(){window.print();});
+  root.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){const t=document.getElementById(a.hash.slice(1));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'});t.setAttribute('tabindex','-1');t.focus({preventScroll:true});try{history.replaceState(null,'',a.hash)}catch(_){}})});
+  const chapters=[...root.querySelectorAll('.pr-chapter')],links=[...root.querySelectorAll('.pr-sidebar a')],progress=root.querySelector('.pr-progress span');let queued=false;
+  function update(){queued=false;const box=root.getBoundingClientRect(),distance=Math.max(1,root.offsetHeight-innerHeight);progress.style.width=Math.max(0,Math.min(1,-box.top/distance))*100+'%';let current=chapters[0];chapters.forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.35)current=s});links.forEach(a=>a.hash==='#'+current.id?a.setAttribute('aria-current','location'):a.removeAttribute('aria-current'));}
+  function queue(){if(!queued){queued=true;requestAnimationFrame(update)}}window.addEventListener('scroll',queue,{passive:true});window.addEventListener('resize',queue,{passive:true});update();
+  if('IntersectionObserver'in window&&!reduced.matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('pr-reveal');observer.unobserve(entry.target)}}),{threshold:.13});root.querySelectorAll('.pr-callout,.pr-friction,.pr-formula,.pr-week').forEach(el=>observer.observe(el));}
+})();
+
+</script>

@@ -18,6 +18,7 @@ REQUIRED = %w[
   /guides/how-to-break-bad-habits/
   /guides/how-to-build-habits-that-stick/
   /guides/how-to-start-a-daily-habit/
+  /guides/how-to-build-a-reading-habit/
   /guides/how-to-use-a-habit-tracker/
   /guides/habit-duo/
   /blog/habit-duo/
