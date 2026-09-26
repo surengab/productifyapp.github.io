@@ -4,6 +4,10 @@
 
 Explore habit ideas, research, accountability, productivity topics, and comparisons.
 
+## From Guides
+
+- [Habit Duo: Build Habits Together](https://productifyapp.org/guides/habit-duo/): choose a partner, agree on a small routine, and plan for missed days.
+
 ## Articles
 
 - [30 Habit Tracker Ideas](https://productifyapp.org/blog/what-habits-to-track/)

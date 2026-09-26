@@ -158,8 +158,10 @@ for path, page in pages.items():
         children = {'/' + p.relative_to(ROOT).as_posix().removesuffix('index.html')
                     for p, child in pages.items() if p.parent.parent == ROOT / section and not child.redirect}
         links = page.library_links
-        if {href for _, href, _ in links} != children | {section_url} or len(links) != len(children) + 1:
-            errors.append(f'{relative}: sidebar must list its own collection exactly once')
+        library_urls = children | {section_url}
+        if section == 'blog': library_urls.add('/guides/habit-duo/')
+        if {href for _, href, _ in links} != library_urls or len(links) != len(library_urls):
+            errors.append(f'{relative}: sidebar must list its collection and featured guide exactly once')
         if any(label != f'{section.capitalize()} library' for label, _, _ in links):
             errors.append(f'{relative}: wrong section sidebar')
         if [href for _, href, current in links if current == 'page'] != [page_url]:

@@ -757,7 +757,7 @@ li a:hover {
 .featured-guide .feature-card__cta { margin-top: 16px; }
 @media (max-width: 760px) { .featured-guides { grid-template-columns: 1fr; } }
 
-/* Guides and Blog share a layout; each sidebar lists only its own collection. */
+/* Guides and Blog share a layout; Blog also highlights a related guide. */
 .resource-shell { display: grid; grid-template-columns: 268px minmax(0, 1fr); gap: 36px; max-width: 1320px; margin: 0 auto; padding: 24px 24px 0; }
 .resource-content { min-width: 0; }
 .resource-content .container { max-width: 100%; padding-left: 0; padding-right: 0; }
