@@ -14,6 +14,7 @@ REQUIRED = %w[
   /blog/best-habit-tracker-apps-2026/
   /blog/habit-tracker-vs-to-do-list/
   /blog/how-long-to-build-a-habit/
+  /blog/accountability-partner/
   /guides/how-many-goals-should-i-set/
   /guides/how-to-break-bad-habits/
   /guides/how-to-build-habits-that-stick/

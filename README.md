@@ -30,9 +30,10 @@ URLs come from the collection permalinks in `_config.yml`: `/features/<slug>/`,
 Guides contains task-based tutorials, goal planning, and the printable tracker.
 Blog contains habit ideas, research, accountability topics, and app comparisons.
 Each item belongs to exactly one collection. Both sections use the same listing
-layout and a sidebar generated from their own collection. Blog also highlights
-the Habit Duo guide with a sidebar link and a summary card, both pointing to its
-single Guides URL. Edit sidebar labels and
+layout and a sidebar generated from their own collection. The accountability
+research article belongs in Blog; the practical Habit Duo setup guide belongs
+in Guides. They link to each other and have distinct content and canonical URLs.
+Edit sidebar labels and
 order on the article itself; there is no separate "Show in Guides" checkbox.
 
 The retired flat URLs, legacy habit-streaks aliases, and former blog URLs of moved

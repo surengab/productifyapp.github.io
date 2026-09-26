@@ -15,12 +15,6 @@
                     <strong>{% if page.section == 'guides' %}All Guides{% else %}All Articles{% endif %}</strong>
                     <span>{% if page.section == 'guides' %}Tutorials and printable resources{% else %}Ideas, research, and comparisons{% endif %}</span>
                 </a></li>
-                {%- if page.section == 'blog' %}
-                <li><a href="/guides/habit-duo/" class="resource-sidebar__link">
-                    <strong>Habit Duo: Build Habits Together</strong>
-                    <span>From Guides · Shared accountability with a partner</span>
-                </a></li>
-                {%- endif %}
                 {%- for item in library %}
                 <li><a href="{{ item.url }}" class="resource-sidebar__link"{% if page.url == item.url %} aria-current="page"{% endif %}>
                     <strong>{{ item.nav_title | default: item.title | escape }}</strong>
