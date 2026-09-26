@@ -76,6 +76,9 @@ paths, since they would collide with the generated pages.
 
 ## Things worth knowing
 
+- **New illustrations use WebP.** This is the site owner's format preference.
+  Use WebP for article covers, responsive variants, and their social previews;
+  do not add JPEG or PNG versions unless explicitly requested.
 - **FAQs live in front matter**, not in the body. One list drives both the
   visible accordion and the `FAQPage` structured data. Google requires the two
   to match, and they had drifted apart on several posts before the migration.
