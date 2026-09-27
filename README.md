@@ -36,13 +36,6 @@ in Guides. They link to each other and have distinct content and canonical URLs.
 Edit sidebar labels and
 order on the article itself; there is no separate "Show in Guides" checkbox.
 
-The Guides and Blog landing pages group their own articles by reader goal using
-`_data/resource_topics.yml`. The first article in each group is marked "Start here";
-related links connect to other resources and features. Articles not yet assigned
-to a topic appear under "More guides" or "More articles" so new content stays listed.
-Blog also shows its three latest articles by publication date between the goal
-shortcuts and the full topic sections.
-
 The retired flat URLs, legacy habit-streaks aliases, and former blog URLs of moved
 guides redirect to their current pages. `_data/redirects.json` maps old paths to
 new paths. Each file in `redirects/` declares an old URL as its `permalink` and

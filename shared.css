@@ -806,26 +806,6 @@ li a:hover {
 .guide-card .feature-card__cta { margin-top: 8px; }
 .guide-library { padding: 36px 0 60px; }
 .guide-library .section-header { margin-bottom: 24px; }
-.resource-topic-nav a:focus-visible, .resource-topic-group a:focus-visible, .resource-hub-actions a:focus-visible, .resource-latest a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
-.resource-latest { margin-bottom: 36px; }
-.resource-latest-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; list-style: none; padding: 0; margin: 20px 0 0; }
-.resource-latest .feature-card { height: 100%; padding: 20px; }
-.resource-latest time { margin-top: auto; color: var(--ink-muted); font-size: .85rem; }
-.resource-topic-group { padding: 36px 0; border-top: 1px solid var(--border); }
-.resource-topic-description { max-width: 720px; margin: 12px 0 24px; color: var(--ink-muted); }
-.resource-topic-group .guide-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.resource-topic-group .guide-card:only-child { grid-column: 1 / -1; }
-.resource-card--recommended { border-color: var(--blue); background: var(--blue-dim); }
-.resource-topic-start { padding: 20px; border: 1px solid var(--blue); border-radius: 12px; background: var(--blue-dim); }
-.resource-topic-start a, .resource-topic-next a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
-.resource-topic-next { margin-top: 24px; }
-.resource-topic-next h3 { font-size: 1rem; }
-.resource-topic-next ul { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; padding: 0; margin: 12px 0 0; }
-.resource-topic-next a { display: inline-block; padding: 8px 0; }
-.resource-hub-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
-.resource-home .feature-card__cta { opacity: 1; transform: none; }
-.resource-home #blog-teaser-heading { scroll-margin-top: 112px; }
-@media (max-width: 700px) { .resource-topic-group .guide-cards, .resource-latest-list { grid-template-columns: 1fr; } }
 .blog-feed { max-width: 880px; }
 .blog-feed__article { padding: 28px 0; border-bottom: 1px solid var(--border); }
 .blog-feed__article h3 { font-size: 1.3rem; margin: 10px 0; }
