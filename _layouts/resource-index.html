@@ -14,22 +14,78 @@ layout: page
         <div class="section-header">
             <h2 id="resource-library-heading">{{ page.library_heading }}</h2>
             <p>{{ page.library_description }}</p>
+            <nav class="editorial-topics resource-topic-nav" aria-label="Browse by goal">
+                {%- for topic in site.data.resource_topics %}
+                <a href="#{{ topic.id }}">{{ topic.title | escape }}</a>
+                {%- endfor %}
+            </nav>
         </div>
-        <div class="guide-cards">
-            {%- if page.section == 'guides' %}
-            {%- assign articles = site.guides | sort: 'nav_order' %}
-            {%- else %}
-            {%- assign articles = site.blog | sort: 'date' | reverse %}
+        {%- if page.section == 'blog' %}
+        {%- assign latest_articles = site.blog | sort: 'date' | reverse %}
+        <section class="resource-latest" id="latest-articles" aria-labelledby="latest-articles-heading">
+            <h2 id="latest-articles-heading">Latest articles</h2>
+            <ol class="resource-latest-list">
+                {%- for article in latest_articles limit: 3 %}
+                <li>
+                    <a class="feature-card feature-card--link latest-article" href="{{ article.url }}">
+                        <h3>{{ article.title | escape }}</h3>
+                        <time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>
+                        <span class="feature-card__cta">Read the article →</span>
+                    </a>
+                </li>
+                {%- endfor %}
+            </ol>
+        </section>
+        {%- endif %}
+        {%- assign articles = site[page.section] | sort: 'nav_order' %}
+        {%- assign grouped_urls = '|' %}
+        {%- for topic in site.data.resource_topics %}
+        <section class="resource-topic-group" id="{{ topic.id }}" aria-labelledby="{{ topic.id }}-heading">
+            <h2 id="{{ topic.id }}-heading">{{ topic.title | escape }}</h2>
+            <p class="resource-topic-description">{{ topic.description[page.section] | escape }}</p>
+            {%- if topic[page.section].size > 0 %}
+            <div class="guide-cards">
+                {%- for article_url in topic[page.section] %}
+                {%- assign article = articles | where: 'url', article_url | first %}
+                {%- if article %}
+                {%- assign grouped_urls = grouped_urls | append: article.url | append: '|' %}
+                {% include resource-card.html article=article recommended=forloop.first %}
+                {%- endif %}
+                {%- endfor %}
+            </div>
             {%- endif %}
-            {%- for article in articles %}
-            <a class="feature-card feature-card--link guide-card resource-card" href="{{ article.url }}">
-                <span class="eyebrow">{{ article.category | default: 'Article' | escape }}</span>
-                <h3>{{ article.title | escape }}</h3>
-                <p>{{ article.description | escape }}</p>
-                {% if page.section == 'blog' %}<time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%B %-d, %Y' }}</time>{% endif %}
-                <span class="feature-card__cta">{% if page.section == 'guides' %}Open the guide{% else %}Read the article{% endif %} →</span>
-            </a>
-            {%- endfor %}
-        </div>
+            {%- assign start_link = topic.start[page.section] %}
+            {%- if start_link %}
+            <p class="resource-topic-start"><strong>Start here:</strong> <a href="{{ start_link.href }}">{{ start_link.label | escape }} →</a></p>
+            {%- endif %}
+            {%- assign related_links = topic.links | default: topic.related[page.section] %}
+            {%- if related_links.size > 0 %}
+            <div class="resource-topic-next">
+                <h3>{% if topic.id == 'choose-an-app' %}Detailed comparisons{% else %}Explore next{% endif %}</h3>
+                <ul>
+                    {%- for link in related_links %}
+                    <li><a href="{{ link.href }}">{{ link.label | escape }} →</a></li>
+                    {%- endfor %}
+                </ul>
+            </div>
+            {%- endif %}
+        </section>
+        {%- endfor %}
+        {%- comment -%}New articles remain discoverable before they are assigned a topic.{%- endcomment -%}
+        {%- capture other_cards -%}
+        {%- for article in articles %}
+            {%- assign article_key = '|' | append: article.url | append: '|' %}
+            {%- unless grouped_urls contains article_key %}
+            {% include resource-card.html article=article recommended=false %}
+            {%- endunless %}
+        {%- endfor %}
+        {%- endcapture -%}
+        {%- assign other_cards = other_cards | strip %}
+        {%- if other_cards != '' %}
+        <section class="resource-topic-group" aria-labelledby="more-resources-heading">
+            <h2 id="more-resources-heading">More {% if page.section == 'guides' %}guides{% else %}articles{% endif %}</h2>
+            <div class="guide-cards">{{ other_cards }}</div>
+        </section>
+        {%- endif %}
     </div>
 </section>

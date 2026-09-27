@@ -1,0 +1,7 @@
+<a class="feature-card feature-card--link guide-card resource-card{% if include.recommended %} resource-card--recommended{% endif %}" href="{{ include.article.url }}">
+    <span class="eyebrow">{% if include.recommended %}Start here · {% endif %}{{ include.article.category | default: 'Article' | escape }}</span>
+    <h3>{{ include.article.title | escape }}</h3>
+    <p>{{ include.article.description | escape }}</p>
+    {% if page.section == 'blog' %}<time datetime="{{ include.article.date | date: '%Y-%m-%d' }}">{{ include.article.date | date: '%B %-d, %Y' }}</time>{% endif %}
+    <span class="feature-card__cta">{% if page.section == 'guides' %}Open the guide{% else %}Read the article{% endif %} →</span>
+</a>
