@@ -9,12 +9,15 @@
         {%- for dd in site.data.nav.dropdowns %}
         {%- assign shown = dd.items | where_exp: "i", "i.mobile" %}
         {%- if shown.size > 0 %}
-        <div class="mobile-nav__section">
-            <span class="mobile-nav__group-label">{{ dd.mobile_label | default: dd.label }}</span>
+        <details class="mobile-nav__section">
+            <summary class="mobile-nav__toggle">
+                {{ dd.mobile_label | default: dd.label | escape }}
+                <svg aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+            </summary>
             {%- for item in shown %}
             <a href="{{ item.href }}" class="mobile-nav__link">{{ item.mobile }}</a>
             {%- endfor %}
-        </div>
+        </details>
         {%- endif %}
         {%- endfor %}
         <div class="mobile-nav__section">

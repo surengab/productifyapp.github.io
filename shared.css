@@ -302,6 +302,18 @@ h3 {
     text-transform: uppercase; color: var(--ink-faint);
     margin-bottom: 8px; display: block;
 }
+details.mobile-nav__section { padding: 4px 20px; }
+.mobile-nav__toggle {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    min-height: 48px; padding: 8px; border-radius: 10px;
+    font-size: 1rem; font-weight: 600; color: var(--ink);
+    cursor: pointer; list-style: none;
+}
+.mobile-nav__toggle::-webkit-details-marker { display: none; }
+.mobile-nav__toggle:hover { background: var(--bg-alt); }
+.mobile-nav__toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+.mobile-nav__toggle svg { width: 14px; height: 14px; flex-shrink: 0; }
+.mobile-nav__section[open] > .mobile-nav__toggle svg { transform: rotate(180deg); }
 .mobile-nav__link {
     display: block; padding: 9px 8px; border-radius: 10px;
     font-size: .96rem; font-weight: 500; color: var(--ink-muted);
