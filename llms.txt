@@ -26,6 +26,7 @@ This file provides a curated index of the most important pages on {{ site.url | 
 - [Homepage]({{ '/' | absolute_url }}): {{ site.tagline }}
 - [Download Productify]({{ '/download/' | absolute_url }}): free on the App Store, no account required
 - [Pricing]({{ '/pricing/' | absolute_url }}): free tier, Pro subscription and lifetime plan
+- [Free habit tools]({{ '/tools/' | absolute_url }}): printable 30-day, monthly and weekly habit trackers, a year in pixels sheet, and a habit streak calculator
 - [Download on the App Store]({{ site.appstore_url }})
 
 ## Compare

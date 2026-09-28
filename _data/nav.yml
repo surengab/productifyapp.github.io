@@ -34,6 +34,7 @@ dropdowns:
     items:
       - { href: /guides/, icon: book-open, title: "Guides", blurb: "Step-by-step tutorials & printables", mobile: "Guides" }
       - { href: /blog/, icon: layers, title: "Blog", blurb: "Habit ideas, research & comparisons", mobile: "Blog" }
+      - { href: /tools/, icon: list-checks, title: "Free Tools", blurb: "Printable trackers & streak calculator", mobile: "Free Tools" }
 
   - label: Company
     align: right

@@ -37,6 +37,16 @@ REQUIRED = %w[
   /assets/printables/habit-tracker-weekly-monday-letter.pdf
   /assets/printables/habit-tracker-weekly-sunday-a4.pdf
   /assets/printables/habit-tracker-weekly-sunday-letter.pdf
+  /tools/
+  /guides/30-day-habit-tracker/
+  /guides/year-in-pixels/
+  /guides/habit-streak-calculator/
+  /assets/printables/30-day-habit-tracker-single-a4.pdf
+  /assets/printables/30-day-habit-tracker-single-letter.pdf
+  /assets/printables/30-day-habit-tracker-multi-a4.pdf
+  /assets/printables/30-day-habit-tracker-multi-letter.pdf
+  /assets/printables/year-in-pixels-a4.pdf
+  /assets/printables/year-in-pixels-letter.pdf
   /features/measurable-goals/
   /solutions/evening-routine/
   /solutions/habit-tracker-for-adhd/

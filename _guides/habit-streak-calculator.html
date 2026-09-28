@@ -1,0 +1,315 @@
+---
+nav_title: "Habit Streak Calculator"
+nav_description: "Count your streak and milestones"
+nav_order: 7.3
+layout: page
+category: Free tool
+title: Habit Streak Calculator - Count Your Streak and Milestones
+seo_title: 'Habit Streak Calculator: Days, Milestones & Consistency'
+description: 'Free habit streak calculator. Enter the day your streak started to see your streak length and the dates you reach 30, 66, 100, and 365 days. Check your consistency too.'
+og_description: 'How long is your streak, and when do you hit 66 or 100 days? A free calculator for habit streaks, milestone dates, and consistency, with no sign-up.'
+date: '2026-09-28'
+last_modified: '2026-09-28'
+og_type: article
+priority: 0.8
+breadcrumbs:
+  - label: Home
+    href: /
+  - label: Guides
+    href: /guides/
+  - label: Habit Streak Calculator
+faq:
+  - q: How do you calculate a habit streak?
+    a: '<p>Count the consecutive days you completed the habit, starting from the first day of the current run. If you started on the 1st and have done it every day through the 10th, your streak is 10 days. The calculator counts the start date as Day 1 and includes today only if you have already done the habit.</p>'
+  - q: Does missing one day reset my streak?
+    a: '<p>A streak counts days in a row, so a missed day ends the current run. Your work is not lost, though. Consistency, the share of planned days you completed, barely moves after one miss: 29 out of 30 days is still 97%. Pick up again the next day.</p>'
+  - q: How many days does it take to form a habit?
+    a: '<p>There is no fixed number. In the best-known study, the median time for a behavior to feel automatic was about 66 days, with individual estimates from 18 to 254 days. See <a href="/blog/how-long-to-build-a-habit/">how long it takes to build a habit</a> for the details.</p>'
+  - q: Can I use the calculator for habits that are not daily?
+    a: '<p>The streak calculator assumes a daily habit. For habits you plan on some days only, such as three workouts a week, use the consistency calculator: enter the number of planned days and the number you completed.</p>'
+  - q: Does the calculator save my data?
+    a: '<p>No. The calculations run in your browser. Nothing you enter is stored or sent to Productify.</p>'
+cta:
+  eyebrow: Let your phone do the counting
+  heading: Streaks, counted for you.
+  lead: 'Productify tracks your current streak, your personal best, and a calendar of completed days for every habit on your iPhone. Start free with up to 5 habits. No account required.'
+  link_href: /features/streak-tracking/
+  link_label: See how streak tracking works →
+extra_css: |-
+  .calc-intro { max-width: 800px; }
+  h2[id] { scroll-margin-top: 92px; }
+  .calc-card { max-width: 880px; padding: 28px; border: 1px solid var(--border); border-radius: 20px; background: var(--bg); box-shadow: var(--shadow-sm); }
+  .calc-card + .calc-card { margin-top: 24px; }
+  .calc-card h2 { margin: 0 0 6px; font-size: 1.35rem; }
+  .calc-card > p { color: var(--ink-muted); margin-bottom: 20px; }
+  .calc-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+  .calc-form { display: grid; gap: 18px; }
+  .calc-field label, .calc-field legend { display: block; font-weight: 600; color: var(--ink); font-size: .95rem; margin-bottom: 6px; }
+  .calc-field input[type="date"], .calc-field input[type="number"] { width: 100%; font: inherit; font-size: 1rem; padding: 11px 14px; border: 1px solid var(--border-hover); border-radius: 12px; background: var(--bg); color: var(--ink); }
+  .calc-field input:focus-visible { outline: 3px solid var(--blue-glow); border-color: var(--blue); }
+  .calc-field fieldset, fieldset.calc-field { border: 0; padding: 0; margin: 0; }
+  .calc-choice { display: flex; gap: 10px; flex-wrap: wrap; }
+  .calc-choice label { display: flex; align-items: center; gap: 8px; margin: 0; font-weight: 500; padding: 9px 14px; border: 1px solid var(--border-hover); border-radius: 50px; cursor: pointer; }
+  .calc-choice label:has(input:checked) { border-color: var(--blue); background: var(--blue-dim); color: var(--blue-dark); }
+  .calc-hint { font-size: .85rem; color: var(--ink-muted); margin-top: 6px; }
+  .calc-result { padding: 22px; border-radius: 16px; background: var(--bg-alt); }
+  .calc-big { font-size: 3rem; line-height: 1; font-weight: 800; color: var(--ink); letter-spacing: -.02em; margin: 0; }
+  .calc-big small { font-size: 1rem; font-weight: 600; color: var(--ink-muted); letter-spacing: 0; margin-left: 6px; }
+  .calc-line { margin: 12px 0 0; color: var(--ink-2); font-size: .98rem; }
+  .calc-error { color: #B42318; font-weight: 600; }
+  .calc-bar { height: 8px; border-radius: 8px; background: var(--border); margin-top: 16px; overflow: hidden; }
+  .calc-bar span { display: block; height: 100%; width: 0; background: var(--blue); border-radius: 8px; transition: width .3s ease; }
+  .milestones { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+  .milestones li { padding: 12px 14px; border: 1px solid var(--border); border-radius: 12px; font-size: .9rem; color: var(--ink-2); }
+  .milestones li strong { display: block; color: var(--ink); font-size: 1rem; }
+  .milestones li.is-done { border-color: rgba(37,99,235,.35); background: var(--blue-dim); }
+  .milestones li.is-done strong::after { content: ' ✓'; color: var(--blue); }
+  .calc-note { font-size: .85rem; color: var(--ink-muted); margin-top: 18px; }
+  @media (max-width: 760px) {
+    .calc-grid { grid-template-columns: 1fr; }
+    .calc-card { padding: 20px; }
+    .calc-big { font-size: 2.4rem; }
+    .milestones { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .milestones li { padding: 10px 12px; font-size: .82rem; }
+  }
+---
+<section class="page-hero" aria-labelledby="calc-heading">
+    <div class="container"><div class="calc-intro">
+        <div class="eyebrow">Free tool · No sign-up</div>
+        <h1 id="calc-heading">Habit streak calculator<br><span>how far you’ve come, and what’s next.</span></h1>
+        <p class="lead">Enter the day your current streak started to see how many days it has run and when you will reach 30, 66, 100, and 365 days. Then check your consistency, the number that survives a missed day.</p>
+    </div></div>
+</section>
+
+<section class="section section--alt" aria-label="Calculators">
+    <div class="container">
+        <div class="calc-card">
+            <h2 id="streak-calculator">Streak and milestone calculator</h2>
+            <p>For a habit you do every day. The start date counts as Day 1.</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="streakForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="streakStart">First day of your current streak</label>
+                        <input type="date" id="streakStart" name="start" required aria-describedby="streakStartHint">
+                        <p class="calc-hint" id="streakStartHint">The first day in your current run, not the day you first tried the habit.</p>
+                    </div>
+                    <fieldset class="calc-field">
+                        <legend>Have you done it today?</legend>
+                        <div class="calc-choice">
+                            <label><input type="radio" name="today" value="yes" checked> Yes, done</label>
+                            <label><input type="radio" name="today" value="no"> Not yet</label>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="calc-result" id="streakResult" aria-live="polite">
+                    <p class="calc-big"><span id="streakDays">–</span><small id="streakUnit">day streak</small></p>
+                    <p class="calc-line" id="streakNext">Choose a start date to see your streak.</p>
+                    <div class="calc-bar" aria-hidden="true"><span id="streakBar"></span></div>
+                </div>
+            </div>
+            <ol class="milestones" id="milestoneList" aria-label="Streak milestones"></ol>
+            <noscript><p class="calc-note">The calculator needs JavaScript. To count by hand: your streak is the number of days from your start date to today, counting both days if you have already done the habit today.</p></noscript>
+        </div>
+
+        <div class="calc-card">
+            <h2 id="consistency-calculator">Consistency calculator</h2>
+            <p>For any habit, including ones you plan on some days only. Count only the days you planned to do it.</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="consistencyForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="plannedDays">Days you planned to do it</label>
+                        <input type="number" id="plannedDays" name="planned" min="1" max="3660" step="1" inputmode="numeric" value="30">
+                    </div>
+                    <div class="calc-field">
+                        <label for="doneDays">Days you actually did it</label>
+                        <input type="number" id="doneDays" name="done" min="0" max="3660" step="1" inputmode="numeric" value="24">
+                    </div>
+                </form>
+                <div class="calc-result" id="consistencyResult" aria-live="polite">
+                    <p class="calc-big"><span id="consistencyPct">–</span><small>consistency</small></p>
+                    <p class="calc-line" id="consistencyText"></p>
+                    <p class="calc-line" id="consistencyNext"></p>
+                </div>
+            </div>
+            <p class="calc-note">Both calculators run in your browser. Nothing you enter is stored or sent anywhere.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="how-it-counts">
+    <div class="container"><div class="article">
+        <h2 id="how-it-counts">How the streak calculator counts</h2>
+        <p>A streak is the number of days in a row you completed a habit. The calculator counts the start date as Day 1 and counts forward to today.</p>
+        <ul class="check-list">
+            <li><strong>If you have done the habit today,</strong> today is included. A streak that started yesterday is 2 days.</li>
+            <li><strong>If you haven’t done it yet,</strong> the streak runs to yesterday. It isn’t broken until today is over.</li>
+            <li><strong>Milestone dates</strong> are the day you will reach each number if you keep going every day. Day 30 of a streak that started on the 1st is the 30th.</li>
+        </ul>
+        <p>For habits on a schedule, such as the gym on Monday, Wednesday and Friday, a daily streak is the wrong measure. Use the consistency calculator instead, or read <a href="/guides/how-to-use-a-habit-tracker/">how to use a habit tracker</a> to set up a weekly schedule.</p>
+
+        <h2 id="streak-vs-consistency">Streak or consistency: which matters more?</h2>
+        <p>Streaks are motivating because they are easy to see and easy to extend. Their weakness is that one missed day sends the number back to zero, which can make a good month feel like a failure.</p>
+        <p>Consistency is the share of planned days you completed. It moves slowly: 29 out of 30 days is 97%, even if the missed day was yesterday. Watching both gives you the momentum of a streak without the all-or-nothing pressure. That is the approach behind <a href="/features/streak-tracking/">Productify’s streak tracking</a>, which keeps your full history when a run ends.</p>
+
+        <h2 id="milestones">What the streak milestones mean</h2>
+        <div class="editorial-table" role="region" aria-label="Habit streak milestones" tabindex="0">
+            <table>
+                <thead><tr><th scope="col">Milestone</th><th scope="col">What it tells you</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>7 days</strong></td><td>You have fitted the habit into a full week, including the weekend.</td></tr>
+                    <tr><td><strong>21 days</strong></td><td>A popular target. There is no evidence that habits form in 21 days, but three weeks is a fair test of your routine.</td></tr>
+                    <tr><td><strong>30 days</strong></td><td>A month-long trial and a good point to review. The <a href="/guides/30-day-habit-tracker/">30-day habit tracker</a> is built around it.</td></tr>
+                    <tr><td><strong>66 days</strong></td><td>The median time for a behavior to feel automatic in the best-known study. Individual estimates ranged from 18 to 254 days.</td></tr>
+                    <tr><td><strong>90 days</strong></td><td>About a season of practice. The <a href="/features/streak-tracking/">Productify app</a> marks 7, 30, and 90 days with a quiet acknowledgment.</td></tr>
+                    <tr><td><strong>100 and 365 days</strong></td><td>Personal records rather than scientific thresholds. By now the question is less “can I keep going?” and more “is this still the right habit?”</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>The research behind the 66-day figure is covered in <a href="/blog/how-long-to-build-a-habit/">how long it takes to build a habit</a>. The short version: automaticity grows gradually, and one missed day did not materially affect it.</p>
+
+        <h2 id="protect-a-streak">How to protect a streak without making it fragile</h2>
+        <ul class="check-list">
+            <li><strong>Define a minimum version.</strong> Two minutes of stretching or one page of a book still counts on a bad day.</li>
+            <li><strong>Decide what counts before you start,</strong> so you don’t negotiate with yourself at 11 p.m.</li>
+            <li><strong>Try not to miss twice in a row.</strong> One miss is noise. Two is the start of a new pattern.</li>
+            <li><strong>Keep a record you can see,</strong> such as a <a href="/guides/habit-tracker-printable/">printable habit tracker</a>, a <a href="/guides/year-in-pixels/">year in pixels</a>, or an app with reminders.</li>
+        </ul>
+
+        <h2 id="faq">Habit streak questions</h2>
+        {% include faq.html %}
+
+        <p>More free resources: the <a href="/guides/30-day-habit-tracker/">30-day habit tracker</a>, the <a href="/guides/year-in-pixels/">year in pixels printable</a>, and all <a href="/tools/">free habit tools</a>.</p>
+    </div></div>
+</section>
+
+<script>
+(function () {
+    var DAY = 86400000;
+    var MILESTONES = [7, 21, 30, 66, 90, 100, 180, 365];
+    var fmt = new Intl.DateTimeFormat(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+    var used = {};
+
+    function track(tool) {
+        if (used[tool]) return;
+        used[tool] = true;
+        if (typeof window.gtag === 'function') window.gtag('event', 'tool_use', { tool_name: tool, page_path: location.pathname });
+    }
+    function todayUTC() {
+        var n = new Date();
+        return Date.UTC(n.getFullYear(), n.getMonth(), n.getDate());
+    }
+    function parseDate(value) {
+        var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || '');
+        return m ? Date.UTC(+m[1], +m[2] - 1, +m[3]) : null;
+    }
+    function isoDate(t) { return new Date(t).toISOString().slice(0, 10); }
+    function plural(n, word) { return n + ' ' + word + (n === 1 ? '' : 's'); }
+    function $(id) { return document.getElementById(id); }
+
+    var start = $('streakStart');
+    var today = todayUTC();
+    start.max = isoDate(today);
+    start.value = isoDate(today - 12 * DAY);
+
+    function renderStreak() {
+        var list = $('milestoneList');
+        var s = parseDate(start.value);
+        var doneToday = document.querySelector('input[name="today"]:checked').value === 'yes';
+        list.innerHTML = '';
+        $('streakNext').classList.remove('calc-error');
+        if (s === null) {
+            $('streakDays').textContent = '–';
+            $('streakNext').textContent = 'Choose a start date to see your streak.';
+            $('streakBar').style.width = '0';
+            return;
+        }
+        var elapsed = Math.round((today - s) / DAY);
+        if (elapsed < 0) {
+            $('streakDays').textContent = '–';
+            $('streakNext').textContent = 'That date is in the future. Choose today or an earlier day.';
+            $('streakNext').classList.add('calc-error');
+            $('streakBar').style.width = '0';
+            return;
+        }
+        var streak = doneToday ? elapsed + 1 : elapsed;
+        $('streakDays').textContent = streak.toLocaleString();
+        var next = null;
+        for (var i = 0; i < MILESTONES.length; i++) { if (MILESTONES[i] > streak) { next = MILESTONES[i]; break; } }
+        var line;
+        if (streak === 0) {
+            line = 'Check in today to start your streak. Day 1 counts.';
+        } else if (next && !doneToday && s + (next - 1) * DAY === today) {
+            line = 'Check in today to reach ' + next + ' days.';
+            doneToday = true; // the line already asks for today's check-in
+        } else if (next) {
+            var left = next - streak;
+            line = plural(left, 'more day') + ' to ' + next + ' days, on ' + fmt.format(new Date(s + (next - 1) * DAY)) + '.';
+        } else {
+            line = 'Past 365 days. Every day from here is a new personal best.';
+        }
+        if (!doneToday && streak > 0) line += ' Check in today to keep it going.';
+        $('streakNext').textContent = line;
+        var prev = 0;
+        for (var j = 0; j < MILESTONES.length; j++) { if (MILESTONES[j] <= streak) prev = MILESTONES[j]; }
+        $('streakBar').style.width = next ? Math.max(4, Math.round((streak - prev) / (next - prev) * 100)) + '%' : '100%';
+
+        MILESTONES.forEach(function (n) {
+            var li = document.createElement('li');
+            var reachedOn = s + (n - 1) * DAY;
+            var strong = document.createElement('strong');
+            strong.textContent = n + ' days';
+            li.appendChild(strong);
+            var detail;
+            if (streak >= n) {
+                li.className = 'is-done';
+                detail = 'Reached ' + fmt.format(new Date(reachedOn));
+            } else if (reachedOn === today) {
+                detail = 'Today, once you check in';
+            } else {
+                detail = fmt.format(new Date(reachedOn)) + ' · ' + plural(n - streak, 'day') + ' to go';
+            }
+            li.appendChild(document.createTextNode(detail));
+            list.appendChild(li);
+        });
+    }
+
+    function renderConsistency() {
+        var planned = parseInt($('plannedDays').value, 10);
+        var done = parseInt($('doneDays').value, 10);
+        var text = $('consistencyText'), next = $('consistencyNext');
+        text.classList.remove('calc-error');
+        next.textContent = '';
+        if (!(planned >= 1) || !(done >= 0)) {
+            $('consistencyPct').textContent = '–';
+            text.textContent = 'Enter the number of planned days and completed days.';
+            return;
+        }
+        if (done > planned) {
+            $('consistencyPct').textContent = '–';
+            text.textContent = 'Completed days can’t be more than planned days.';
+            text.classList.add('calc-error');
+            return;
+        }
+        var pct = Math.round(done / planned * 100);
+        $('consistencyPct').textContent = pct + '%';
+        var verdict;
+        if (pct >= 80) verdict = 'Strong. Most of your planned days happened.';
+        else if (pct >= 50) verdict = 'A solid base. Look at which days slip and plan around them.';
+        else verdict = 'Worth adjusting. A smaller version or fewer planned days may fit better.';
+        text.textContent = 'You did ' + done + ' of ' + plural(planned, 'planned day') + '. ' + verdict;
+        var ifMiss = Math.round(done / (planned + 1) * 100);
+        var ifDo = Math.round((done + 1) / (planned + 1) * 100);
+        next.textContent = 'Next planned day: doing it takes you to ' + ifDo + '%. Missing it takes you to ' + ifMiss + '%, while a streak would go back to 0.';
+    }
+
+    start.addEventListener('input', function () { track('streak_calculator'); renderStreak(); });
+    document.querySelectorAll('input[name="today"]').forEach(function (r) {
+        r.addEventListener('change', function () { track('streak_calculator'); renderStreak(); });
+    });
+    ['plannedDays', 'doneDays'].forEach(function (id) {
+        $(id).addEventListener('input', function () { track('consistency_calculator'); renderConsistency(); });
+    });
+    renderStreak();
+    renderConsistency();
+})();
+</script>
