@@ -1,0 +1,170 @@
+---
+layout: localized
+lang: ko
+locale: ko_KR
+permalink: /ko/tools/habit-streak-calculator/
+translation_key: habit-streak-calculator
+title: "습관 연속 기록 계산기: 연속 일수와 목표일"
+seo_title: "습관 연속 기록 계산기 | 66일·100일 도달일 계산"
+description: "무료 습관 연속 기록 계산기. 연속 기록이 시작된 날만 입력하면 지금 며칠째인지, 30일·66일·100일·365일에 언제 도달하는지 알려 줍니다. 달성률 계산도 함께."
+og_description: "지금 며칠째일까? 66일, 100일에는 언제 도달할까? 연속 기록, 목표일, 달성률을 계산하는 무료 도구. 가입이 필요 없습니다."
+date: '2026-09-29'
+last_modified: '2026-09-29'
+og_type: article
+priority: 0.8
+breadcrumbs:
+  - label: 홈
+    href: /ko/
+  - label: 무료 도구
+    href: /ko/tools/
+  - label: 연속 기록 계산기
+faq:
+  - q: "연속 기록은 어떻게 계산하나요?"
+    a: "<p>지금의 연속 기록이 시작된 날부터 습관을 한 날을 이어서 셉니다. 1일부터 10일까지 매일 했다면 연속 기록은 10일입니다. 이 계산기는 시작일을 1일째로 세고, 오늘은 이미 완료했을 때만 포함합니다.</p>"
+  - q: "하루를 놓치면 연속 기록이 초기화되나요?"
+    a: "<p>연속 기록은 ‘연달아 며칠 했는지’이기 때문에 놓친 날에 지금의 기록은 끝납니다. 하지만 그동안 쌓은 노력이 사라지는 건 아니에요. 계획한 날 중 며칠을 해냈는지 보여 주는 달성률은 하루를 놓쳐도 거의 변하지 않습니다. 30일 중 29일이면 여전히 97%입니다.</p>"
+  - q: "습관이 만들어지려면 며칠이 걸리나요?"
+    a: "<p>정해진 기간은 없습니다. 가장 잘 알려진 연구에서 행동이 자동으로 느껴지기까지 걸린 기간의 중앙값은 약 66일이었고, 개인별 추정치는 18일에서 254일까지 다양했습니다.</p>"
+  - q: "매일 하지 않는 습관에도 쓸 수 있나요?"
+    a: "<p>연속 기록 계산은 매일 하는 습관을 기준으로 합니다. 주 3회 운동처럼 정해진 날에만 하는 습관은 달성률 계산을 쓰세요. 계획한 날 수와 해낸 날 수만 입력하면 됩니다.</p>"
+  - q: "입력한 데이터가 저장되나요?"
+    a: "<p>아니요. 계산은 모두 브라우저 안에서 이루어지며, 입력한 내용은 저장되거나 Productify로 전송되지 않습니다.</p>"
+cta:
+  heading: "연속 기록은 앱이 대신 세어 줍니다"
+  lead: "Productify는 습관마다 현재 연속 기록, 최고 기록, 완료한 날 캘린더를 아이폰에서 자동으로 기록합니다. 습관 5개까지 무료, 회원가입 없이 시작하세요."
+---
+<section class="page-hero" aria-labelledby="calc-heading">
+    <div class="container"><div class="calc-intro">
+        <div class="eyebrow">무료 도구 · 가입 없이</div>
+        <h1 id="calc-heading">연속 기록 계산기<br><span>지금까지 온 길, 그리고 다음 목표.</span></h1>
+        <p class="lead">지금의 연속 기록이 시작된 날을 입력하면 며칠째인지, 30일·66일·100일·365일에 언제 도달하는지 알 수 있습니다. 하루를 놓쳐도 무너지지 않는 ‘달성률’도 확인해 보세요.</p>
+    </div></div>
+</section>
+
+<section class="section section--alt" aria-label="계산기">
+    <div class="container">
+        <div class="calc-card">
+            <h2 id="streak-calculator">연속 기록과 목표일 계산</h2>
+            <p>매일 하는 습관용입니다. 시작일을 1일째로 셉니다.</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="streakForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="streakStart">지금의 연속 기록이 시작된 날</label>
+                        <input type="date" id="streakStart" name="start" required aria-describedby="streakStartHint">
+                        <p class="calc-hint" id="streakStartHint">습관을 처음 시도한 날이 아니라, 지금 이어지고 있는 기록의 1일째입니다.</p>
+                    </div>
+                    <fieldset class="calc-field">
+                        <legend>오늘 이미 했나요?</legend>
+                        <div class="calc-choice">
+                            <label><input type="radio" name="today" value="yes" checked> 네, 했어요</label>
+                            <label><input type="radio" name="today" value="no"> 아직이요</label>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="calc-result" aria-live="polite">
+                    <p class="calc-big"><span id="streakDays">–</span><small>일 연속</small></p>
+                    <p class="calc-line" id="streakNext">시작일을 고르면 연속 기록이 표시됩니다.</p>
+                    <div class="calc-bar" aria-hidden="true"><span id="streakBar"></span></div>
+                </div>
+            </div>
+            <ol class="milestones" id="milestoneList" aria-label="연속 기록 목표일"></ol>
+            <noscript><p class="calc-note">이 계산기는 JavaScript가 필요합니다. 직접 세려면, 시작일부터 오늘까지의 일수(오늘 이미 했다면 두 날 모두 포함)가 연속 기록입니다.</p></noscript>
+        </div>
+
+        <div class="calc-card">
+            <h2 id="consistency-calculator">달성률 계산</h2>
+            <p>정해진 날에만 하는 습관에도 쓸 수 있습니다. 계획했던 날만 세어 주세요.</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="consistencyForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="plannedDays">계획한 날 수</label>
+                        <input type="number" id="plannedDays" name="planned" min="1" max="3660" step="1" inputmode="numeric" value="30">
+                    </div>
+                    <div class="calc-field">
+                        <label for="doneDays">실제로 해낸 날 수</label>
+                        <input type="number" id="doneDays" name="done" min="0" max="3660" step="1" inputmode="numeric" value="24">
+                    </div>
+                </form>
+                <div class="calc-result" aria-live="polite">
+                    <p class="calc-big"><span id="consistencyPct">–</span><small>달성률</small></p>
+                    <p class="calc-line" id="consistencyText"></p>
+                    <p class="calc-line" id="consistencyNext"></p>
+                </div>
+            </div>
+            <p class="calc-note">두 계산 모두 브라우저 안에서만 실행됩니다. 입력한 내용은 저장되거나 전송되지 않습니다.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="how-it-counts">
+    <div class="container"><div class="article">
+        <h2 id="how-it-counts">연속 기록 세는 법</h2>
+        <p>연속 기록은 습관을 연달아 해낸 날의 수입니다. 이 계산기는 시작일을 1일째로 하고 오늘까지 셉니다.</p>
+        <ul class="check-list">
+            <li><strong>오늘 이미 했다면</strong> 오늘도 포함됩니다. 어제 시작한 기록이라면 2일입니다.</li>
+            <li><strong>오늘 아직 안 했다면</strong> 어제까지로 셉니다. 오늘이 끝나기 전까지는 끊긴 게 아니에요.</li>
+            <li><strong>목표일은</strong> 매일 이어갔을 때 각 일수에 도달하는 날짜입니다.</li>
+        </ul>
+
+        <h2 id="streak-vs-consistency">연속 기록과 달성률, 무엇이 더 중요할까?</h2>
+        <p>연속 기록은 눈에 보이고 늘리기 쉬워서 동기 부여가 됩니다. 약점은 하루만 놓쳐도 숫자가 0으로 돌아가, 괜찮았던 한 달이 실패처럼 느껴진다는 점이죠.</p>
+        <p>달성률은 계획한 날 중 실제로 해낸 비율입니다. 천천히 움직여서, 어제 놓쳤더라도 30일 중 29일이면 97%입니다. 둘 다 보면 연속 기록의 추진력은 살리면서 ‘전부 아니면 전무’라는 압박은 피할 수 있습니다. Productify도 같은 생각으로, 기록이 끊겨도 그동안의 히스토리는 모두 남겨 둡니다.</p>
+
+        <h2 id="milestones">목표 일수가 알려 주는 것</h2>
+        <div class="editorial-table" role="region" aria-label="연속 기록 목표 일수" tabindex="0">
+            <table>
+                <thead><tr><th scope="col">일수</th><th scope="col">의미</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>7일</strong></td><td>주말까지 포함해 온전히 한 주를 해냈습니다.</td></tr>
+                    <tr><td><strong>21일</strong></td><td>많이들 목표로 삼는 숫자입니다. 21일 만에 습관이 된다는 근거는 없지만, 3주는 루틴을 시험하기에 좋은 기간입니다.</td></tr>
+                    <tr><td><strong>30일</strong></td><td>한 달 동안의 시험, 그리고 돌아보기에 좋은 시점. <a href="/ko/tools/30-day-habit-tracker/">30일 해빗 트래커</a>도 이 기간에 맞춰 만들었습니다.</td></tr>
+                    <tr><td><strong>66일</strong></td><td>가장 잘 알려진 연구에서 행동이 자동으로 느껴지기까지 걸린 기간의 중앙값. 개인별 추정치는 18일에서 254일이었습니다.</td></tr>
+                    <tr><td><strong>90일</strong></td><td>대략 한 계절. Productify 앱은 7일, 30일, 90일을 조용히 축하해 줍니다.</td></tr>
+                    <tr><td><strong>100일과 365일</strong></td><td>과학적 기준이라기보다 나만의 기록입니다. 이쯤 되면 ‘이 습관이 지금의 나에게 맞을까?’를 생각해 볼 때예요.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="protect-a-streak">연속 기록을 무너지지 않게 지키는 법</h2>
+        <ul class="check-list">
+            <li><strong>최소 버전을 정해 두세요.</strong> 2분 스트레칭이나 책 한 쪽도 힘든 날에는 훌륭한 ‘완료’입니다.</li>
+            <li><strong>무엇을 하면 완료인지 미리 정하세요.</strong> 밤 11시에 스스로와 협상하지 않아도 됩니다.</li>
+            <li><strong>이틀 연속으로 쉬지 않도록 해 보세요.</strong> 한 번은 우연이지만, 두 번이면 새로운 패턴의 시작입니다.</li>
+            <li><strong>눈에 보이게 기록하세요.</strong> <a href="/ko/tools/habit-tracker-printable/">해빗 트래커 양식</a>, <a href="/ko/tools/year-in-pixels/">이어 인 픽셀</a>, 또는 알림이 있는 앱으로요.</li>
+        </ul>
+
+        <h2 id="faq">연속 기록 계산기 자주 묻는 질문</h2>
+        {% include faq.html %}
+
+        <p>다른 무료 도구: <a href="/ko/tools/30-day-habit-tracker/">30일 해빗 트래커</a>, <a href="/ko/tools/year-in-pixels/">이어 인 픽셀</a>, <a href="/ko/tools/">모든 무료 도구</a>.</p>
+    </div></div>
+</section>
+
+{% include l10n-cta.html %}
+
+<script>
+window.STREAK_I18N = {
+    locale: 'ko-KR',
+    empty: '시작일을 고르면 연속 기록이 표시됩니다.',
+    future: '미래의 날짜입니다. 오늘이나 그 이전 날짜를 골라 주세요.',
+    zero: '오늘 체크하면 연속 기록이 시작됩니다. 1일째도 소중한 하루예요.',
+    next: '{n}일까지 {left} 남았어요 ({date}).',
+    reach_today: '오늘 체크하면 {n}일에 도달합니다.',
+    past365: '365일 돌파! 이제 매일이 새로운 최고 기록입니다.',
+    keep_going: '오늘도 체크해서 기록을 이어가세요.',
+    more_days: { other: '{n}일' },
+    days: { other: '{n}일' },
+    reached: '{date} 달성',
+    today_checkin: '오늘, 체크하면 달성',
+    to_go: '{date} · {left} 남음',
+    cons_empty: '계획한 날 수와 해낸 날 수를 입력하세요.',
+    cons_error: '해낸 날 수가 계획한 날 수보다 많을 수 없습니다.',
+    cons_text: '계획한 {planned}일 중 {done}일을 해냈어요. {verdict}',
+    verdict_high: '아주 좋아요. 계획한 날 대부분을 해냈습니다.',
+    verdict_mid: '좋은 기반이 있어요. 자주 놓치는 요일을 살펴보고 계획을 조정해 보세요.',
+    verdict_low: '조정이 필요할 수 있어요. 양을 줄이거나 계획하는 날을 줄이면 더 잘 맞을 거예요.',
+    cons_next: '다음 계획한 날에 하면 {up}로 오르고, 놓치면 {down}로 내려갑니다. 연속 기록이라면 0으로 돌아가는 상황이에요.',
+    percent: '{p}%'
+};
+</script>
+<script src="/assets/streak-calculator.js" defer></script>

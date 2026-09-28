@@ -274,6 +274,9 @@
                 // Only route download controls, not review/source citations.
                 if (!a.matches('.appstore-badge-link, [data-cta]')) return;
                 if (a.href.indexOf(OUR_APP) === -1) return;   // competitor listing
+                // Localized pages link their own storefront and show a QR code
+                // beside it, so the English handoff page is skipped there.
+                if (a.hasAttribute('data-direct')) return;
                 a.dataset.storeHref = a.href;
                 a.href = '/download/';
                 if (a.hasAttribute('aria-label')) a.setAttribute('aria-label', 'Get Productify for your iPhone');
@@ -318,6 +321,18 @@
             m.addEventListener('click', function (e) { e.stopPropagation(); });
         });
         document.addEventListener('click', function () { closeAllDropdowns(); });
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('.nav-lang[open], .l10n-lang[open]').forEach(function (d) {
+                if (!d.contains(e.target)) d.open = false;
+            });
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape') return;
+            document.querySelectorAll('.nav-lang[open], .l10n-lang[open]').forEach(function (d) {
+                d.open = false;
+                d.querySelector('summary').focus();
+            });
+        });
         document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAllDropdowns(); });
     })();
 </script>

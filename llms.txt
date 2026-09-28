@@ -29,6 +29,12 @@ This file provides a curated index of the most important pages on {{ site.url | 
 - [Free habit tools]({{ '/tools/' | absolute_url }}): printable 30-day, monthly and weekly habit trackers, a year in pixels sheet, and a habit streak calculator
 - [Download on the App Store]({{ site.appstore_url }})
 
+## Other languages
+
+The homepage and the free tools (printable trackers, year in pixels, streak calculator) are also available in German, French, Japanese and Korean. The rest of the site is in English.
+{% for l in site.data.languages %}{% unless l.code == 'en' %}
+- [{{ l.name }}]({{ l.url | absolute_url }}), free tools: {{ site.data.i18n[l.code].tools_url | absolute_url }}{% endunless %}{% endfor %}
+
 ## Compare
 {% for d in compare %}
 - [{{ d.title }}]({{ d.url | absolute_url }}){% if d.og_description %}: {{ d.og_description | strip_newlines }}{% endif %}

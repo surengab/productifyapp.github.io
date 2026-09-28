@@ -1,0 +1,170 @@
+---
+layout: localized
+lang: ja
+locale: ja_JP
+permalink: /ja/tools/habit-streak-calculator/
+translation_key: habit-streak-calculator
+title: "習慣の連続記録 計算ツール：連続日数と目標日"
+seo_title: "習慣の連続日数 計算ツール｜66日・100日の到達日がわかる"
+description: "無料の連続記録 計算ツール。連続記録が始まった日を入れるだけで、今の連続日数と、30日・66日・100日・365日に届く日付がわかります。継続率の計算も。"
+og_description: "今、何日連続？ 66日や100日にはいつ届く？ 連続記録・目標日・継続率がわかる無料の計算ツール。登録は不要です。"
+date: '2026-09-29'
+last_modified: '2026-09-29'
+og_type: article
+priority: 0.8
+breadcrumbs:
+  - label: ホーム
+    href: /ja/
+  - label: 無料ツール
+    href: /ja/tools/
+  - label: 連続記録 計算ツール
+faq:
+  - q: "連続記録はどうやって数えますか？"
+    a: "<p>今の連続記録が始まった日から、習慣をやった日を連続で数えます。1日から10日まで毎日できたなら、連続記録は10日です。このツールは開始日を1日目とし、今日はすでにできた場合だけ数に入れます。</p>"
+  - q: "1日休んだら連続記録はリセットされますか？"
+    a: "<p>連続記録は「続けて何日できたか」なので、休んだ日で今の記録は途切れます。でも、それまでの積み重ねが消えるわけではありません。予定した日のうち何日できたかを表す継続率は、1日休んでもほとんど変わりません。30日中29日なら、まだ97%です。</p>"
+  - q: "習慣が身につくまで何日かかりますか？"
+    a: "<p>決まった日数はありません。よく知られている研究では、行動が自動的に感じられるまでの中央値はおよそ66日で、個人の推定値は18日から254日まで幅がありました。</p>"
+  - q: "毎日ではない習慣にも使えますか？"
+    a: "<p>連続記録の計算は、毎日行う習慣を前提にしています。週3回の運動のように特定の日だけ行う習慣には、継続率の計算を使ってください。予定した日数とできた日数を入れるだけです。</p>"
+  - q: "入力したデータは保存されますか？"
+    a: "<p>いいえ。計算はすべてブラウザの中で行われ、入力した内容が保存されたり、Productifyに送られたりすることはありません。</p>"
+cta:
+  heading: "連続記録は、アプリにおまかせ"
+  lead: "Productifyは、習慣ごとの連続記録と自己ベスト、できた日のカレンダーをiPhoneで自動で記録します。5つの習慣まで無料、アカウント登録は不要です。"
+---
+<section class="page-hero" aria-labelledby="calc-heading">
+    <div class="container"><div class="calc-intro">
+        <div class="eyebrow">無料ツール・登録不要</div>
+        <h1 id="calc-heading">連続記録 計算ツール<br><span>ここまでの道のりと、次の目標。</span></h1>
+        <p class="lead">今の連続記録が始まった日を入れると、何日続いているか、そして30日・66日・100日・365日に届く日付がわかります。1日休んでも崩れない「継続率」もチェックしてみましょう。</p>
+    </div></div>
+</section>
+
+<section class="section section--alt" aria-label="計算ツール">
+    <div class="container">
+        <div class="calc-card">
+            <h2 id="streak-calculator">連続記録と目標日の計算</h2>
+            <p>毎日行う習慣向けです。開始日を1日目として数えます。</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="streakForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="streakStart">今の連続記録が始まった日</label>
+                        <input type="date" id="streakStart" name="start" required aria-describedby="streakStartHint">
+                        <p class="calc-hint" id="streakStartHint">その習慣を初めて試した日ではなく、今続いている記録の1日目です。</p>
+                    </div>
+                    <fieldset class="calc-field">
+                        <legend>今日はもうできましたか？</legend>
+                        <div class="calc-choice">
+                            <label><input type="radio" name="today" value="yes" checked> はい、できた</label>
+                            <label><input type="radio" name="today" value="no"> まだ</label>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="calc-result" aria-live="polite">
+                    <p class="calc-big"><span id="streakDays">–</span><small>日連続</small></p>
+                    <p class="calc-line" id="streakNext">開始日を選ぶと、連続記録が表示されます。</p>
+                    <div class="calc-bar" aria-hidden="true"><span id="streakBar"></span></div>
+                </div>
+            </div>
+            <ol class="milestones" id="milestoneList" aria-label="連続記録の目標日"></ol>
+            <noscript><p class="calc-note">この計算ツールにはJavaScriptが必要です。手で数える場合は、開始日から今日までの日数（今日すでにできていれば両日を含む）が連続記録です。</p></noscript>
+        </div>
+
+        <div class="calc-card">
+            <h2 id="consistency-calculator">継続率の計算</h2>
+            <p>特定の日だけ行う習慣にも使えます。予定していた日だけを数えてください。</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="consistencyForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="plannedDays">予定した日数</label>
+                        <input type="number" id="plannedDays" name="planned" min="1" max="3660" step="1" inputmode="numeric" value="30">
+                    </div>
+                    <div class="calc-field">
+                        <label for="doneDays">実際にできた日数</label>
+                        <input type="number" id="doneDays" name="done" min="0" max="3660" step="1" inputmode="numeric" value="24">
+                    </div>
+                </form>
+                <div class="calc-result" aria-live="polite">
+                    <p class="calc-big"><span id="consistencyPct">–</span><small>継続率</small></p>
+                    <p class="calc-line" id="consistencyText"></p>
+                    <p class="calc-line" id="consistencyNext"></p>
+                </div>
+            </div>
+            <p class="calc-note">どちらの計算もブラウザの中だけで行われます。入力内容は保存も送信もされません。</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="how-it-counts">
+    <div class="container"><div class="article">
+        <h2 id="how-it-counts">連続記録の数え方</h2>
+        <p>連続記録とは、習慣を続けてできた日数のことです。このツールは開始日を1日目として、今日まで数えます。</p>
+        <ul class="check-list">
+            <li><strong>今日すでにできている場合、</strong>今日も数に入ります。昨日始めた記録なら2日です。</li>
+            <li><strong>今日まだの場合、</strong>記録は昨日までで数えます。今日が終わるまでは途切れていません。</li>
+            <li><strong>目標日は、</strong>このまま毎日続けたときに、それぞれの日数に届く日付です。</li>
+        </ul>
+
+        <h2 id="streak-vs-consistency">連続記録と継続率、どちらが大事？</h2>
+        <p>連続記録は、目に見えて伸ばしやすいのでやる気につながります。弱点は、1日休むだけで数字がゼロに戻り、せっかくの良い1か月が失敗のように感じられてしまうことです。</p>
+        <p>継続率は、予定した日のうち実際にできた割合です。こちらはゆっくりしか動きません。昨日休んだとしても、30日中29日なら97%です。両方を見ることで、連続記録の勢いを保ちながら「全部できなければ意味がない」というプレッシャーを避けられます。Productifyも同じ考え方で、記録が途切れてもそれまでの履歴はすべて残ります。</p>
+
+        <h2 id="milestones">目標日数の目安</h2>
+        <div class="editorial-table" role="region" aria-label="連続記録の目標日数" tabindex="0">
+            <table>
+                <thead><tr><th scope="col">日数</th><th scope="col">わかること</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>7日</strong></td><td>週末も含めて、まる1週間続けられた。</td></tr>
+                    <tr><td><strong>21日</strong></td><td>よく目標にされる日数です。21日で習慣が身につくという根拠はありませんが、ルーティンを試すには十分な3週間です。</td></tr>
+                    <tr><td><strong>30日</strong></td><td>1か月のお試しと見直しにぴったり。<a href="/ja/tools/30-day-habit-tracker/">30日間 習慣トラッカー</a>もこの日数で作られています。</td></tr>
+                    <tr><td><strong>66日</strong></td><td>よく知られた研究で、行動が自動的に感じられるまでにかかった日数の中央値。個人の推定値は18日から254日でした。</td></tr>
+                    <tr><td><strong>90日</strong></td><td>ほぼひと季節分。Productifyアプリでは、7日・30日・90日の節目をさりげなくお祝いします。</td></tr>
+                    <tr><td><strong>100日と365日</strong></td><td>科学的な基準というより、自分だけの記録。ここまで来たら「この習慣は今の自分に合っている？」を考えるタイミングです。</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="protect-a-streak">連続記録を、壊れにくく守るコツ</h2>
+        <ul class="check-list">
+            <li><strong>最小版を決めておく。</strong>2分のストレッチや1ページの読書でも、調子の悪い日には立派な「できた」です。</li>
+            <li><strong>何をしたら「できた」かを先に決める。</strong>夜11時に自分と交渉しなくて済みます。</li>
+            <li><strong>2日続けて休まないようにする。</strong>1回はたまたま、2回続くと新しいパターンの始まりです。</li>
+            <li><strong>記録を目に見える形に。</strong><a href="/ja/tools/habit-tracker-printable/">印刷できる習慣トラッカー</a>、<a href="/ja/tools/year-in-pixels/">Year in Pixels</a>、またはリマインダー付きのアプリで。</li>
+        </ul>
+
+        <h2 id="faq">連続記録 計算ツールのよくある質問</h2>
+        {% include faq.html %}
+
+        <p>ほかの無料ツール：<a href="/ja/tools/30-day-habit-tracker/">30日間 習慣トラッカー</a>、<a href="/ja/tools/year-in-pixels/">Year in Pixels</a>、<a href="/ja/tools/">すべての無料ツール</a>。</p>
+    </div></div>
+</section>
+
+{% include l10n-cta.html %}
+
+<script>
+window.STREAK_I18N = {
+    locale: 'ja-JP',
+    empty: '開始日を選ぶと、連続記録が表示されます。',
+    future: 'その日付は未来です。今日かそれより前の日を選んでください。',
+    zero: '今日チェックすれば、連続記録のスタートです。1日目も立派な1日です。',
+    next: '{n}日まであと{left}（{date}）。',
+    reach_today: '今日チェックすれば{n}日に到達します。',
+    past365: '365日を突破。これからは毎日が自己ベストです。',
+    keep_going: '今日もチェックして記録を伸ばしましょう。',
+    more_days: { other: '{n}日' },
+    days: { other: '{n}日' },
+    reached: '{date}に到達',
+    today_checkin: '今日、チェックしたら到達',
+    to_go: '{date}・あと{left}',
+    cons_empty: '予定した日数とできた日数を入力してください。',
+    cons_error: 'できた日数が予定した日数を超えています。',
+    cons_text: '予定した{planned}日のうち{done}日できました。{verdict}',
+    verdict_high: 'とても順調です。予定した日のほとんどができています。',
+    verdict_mid: 'いい土台ができています。できなかった曜日を見直して、予定を調整しましょう。',
+    verdict_low: '見直しのタイミングかもしれません。量を減らすか、予定する日を減らすと続けやすくなります。',
+    cons_next: '次の予定日にできれば{up}、できなければ{down}。連続記録なら0に戻るところです。',
+    percent: '{p}%'
+};
+</script>
+<script src="/assets/streak-calculator.js" defer></script>

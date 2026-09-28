@@ -1,0 +1,11 @@
+{%- comment -%} Closing download section for localized pages: heading/lead from page.cta, button and note from _data/i18n. {%- endcomment -%}
+{%- assign i18n = site.data.i18n[page.lang] -%}
+<section class="section section--dark l10n-cta" aria-labelledby="cta-heading">
+    <div class="container text-center">
+        {%- if page.cta.eyebrow %}<div class="eyebrow">{{ page.cta.eyebrow }}</div>{% endif %}
+        <h2 id="cta-heading">{{ page.cta.heading }}</h2>
+        <p class="lead">{{ page.cta.lead }}</p>
+        <a href="{{ i18n.appstore_url }}" class="btn btn-primary btn-lg" data-cta="banner" data-direct>{{ i18n.ui.cta_button }} <span aria-hidden="true">→</span></a>
+        <p class="l10n-cta__note">{{ i18n.ui.cta_note }}</p>
+    </div>
+</section>

@@ -38,6 +38,59 @@ REQUIRED = %w[
   /assets/printables/habit-tracker-weekly-sunday-a4.pdf
   /assets/printables/habit-tracker-weekly-sunday-letter.pdf
   /tools/
+  /de/
+  /fr/
+  /ja/
+  /ko/
+  /assets/localized.css
+  /de/tools/
+  /de/tools/30-day-habit-tracker/
+  /de/tools/year-in-pixels/
+  /de/tools/habit-tracker-printable/
+  /de/tools/habit-streak-calculator/
+  /assets/printables/de/30-day-habit-tracker-multi-a4.pdf
+  /assets/printables/de/30-day-habit-tracker-single-a4.pdf
+  /assets/printables/de/habit-tracker-monthly-a4.pdf
+  /assets/printables/de/habit-tracker-weekly-monday-a4.pdf
+  /assets/printables/de/year-in-pixels-a4.pdf
+  /fr/tools/
+  /fr/tools/30-day-habit-tracker/
+  /fr/tools/year-in-pixels/
+  /fr/tools/habit-tracker-printable/
+  /fr/tools/habit-streak-calculator/
+  /assets/printables/fr/30-day-habit-tracker-multi-a4.pdf
+  /assets/printables/fr/30-day-habit-tracker-multi-letter.pdf
+  /assets/printables/fr/30-day-habit-tracker-single-a4.pdf
+  /assets/printables/fr/30-day-habit-tracker-single-letter.pdf
+  /assets/printables/fr/habit-tracker-monthly-a4.pdf
+  /assets/printables/fr/habit-tracker-monthly-letter.pdf
+  /assets/printables/fr/habit-tracker-weekly-monday-a4.pdf
+  /assets/printables/fr/habit-tracker-weekly-monday-letter.pdf
+  /assets/printables/fr/year-in-pixels-a4.pdf
+  /assets/printables/fr/year-in-pixels-letter.pdf
+  /ja/tools/
+  /ja/tools/30-day-habit-tracker/
+  /ja/tools/year-in-pixels/
+  /ja/tools/habit-tracker-printable/
+  /ja/tools/habit-streak-calculator/
+  /assets/printables/ja/30-day-habit-tracker-multi-a4.pdf
+  /assets/printables/ja/30-day-habit-tracker-single-a4.pdf
+  /assets/printables/ja/habit-tracker-monthly-a4.pdf
+  /assets/printables/ja/habit-tracker-weekly-monday-a4.pdf
+  /assets/printables/ja/habit-tracker-weekly-sunday-a4.pdf
+  /assets/printables/ja/year-in-pixels-a4.pdf
+  /ko/tools/
+  /ko/tools/30-day-habit-tracker/
+  /ko/tools/year-in-pixels/
+  /ko/tools/habit-tracker-printable/
+  /ko/tools/habit-streak-calculator/
+  /assets/printables/ko/30-day-habit-tracker-multi-a4.pdf
+  /assets/printables/ko/30-day-habit-tracker-single-a4.pdf
+  /assets/printables/ko/habit-tracker-monthly-a4.pdf
+  /assets/printables/ko/habit-tracker-weekly-monday-a4.pdf
+  /assets/printables/ko/habit-tracker-weekly-sunday-a4.pdf
+  /assets/printables/ko/year-in-pixels-a4.pdf
+  /assets/streak-calculator.js
   /guides/30-day-habit-tracker/
   /guides/year-in-pixels/
   /guides/habit-streak-calculator/

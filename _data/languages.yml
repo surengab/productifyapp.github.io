@@ -1,0 +1,11 @@
+# Site languages. `url` is each language's homepage, used by the language
+# switchers when the current page has no translation in that language.
+# Translated pages share a `translation_key` (see _includes/translations.html);
+# head.html emits a reciprocal hreflang set for them and the switchers link
+# straight to the matching page. Translated so far: the homepage and the free
+# tools (/xx/tools/). Shared UI strings live in _data/i18n/<code>.yml.
+- { code: en, hreflang: en, name: English,  url: / }
+- { code: de, hreflang: de, name: Deutsch,  url: /de/ }
+- { code: fr, hreflang: fr, name: Français, url: /fr/ }
+- { code: ja, hreflang: ja, name: 日本語,   url: /ja/ }
+- { code: ko, hreflang: ko, name: 한국어,   url: /ko/ }

@@ -1,0 +1,170 @@
+---
+layout: localized
+lang: de
+locale: de_DE
+permalink: /de/tools/habit-streak-calculator/
+translation_key: habit-streak-calculator
+title: "Streak-Rechner für Gewohnheiten: Tage und Meilensteine"
+seo_title: "Streak-Rechner: Gewohnheit, Tage & Meilensteine berechnen"
+description: "Kostenloser Streak-Rechner: Gib den ersten Tag deines Streaks ein und sieh, wie viele Tage er läuft und wann du 30, 66, 100 und 365 Tage erreichst. Plus Beständigkeits-Rechner."
+og_description: "Wie lang ist dein Streak und wann erreichst du 66 oder 100 Tage? Ein kostenloser Rechner für Streaks, Meilensteine und Beständigkeit, ohne Anmeldung."
+date: '2026-09-29'
+last_modified: '2026-09-29'
+og_type: article
+priority: 0.8
+breadcrumbs:
+  - label: Startseite
+    href: /de/
+  - label: Kostenlose Tools
+    href: /de/tools/
+  - label: Streak-Rechner
+faq:
+  - q: "Wie berechnet man einen Streak?"
+    a: "<p>Zähle die Tage in Folge, an denen du die Gewohnheit erledigt hast, ab dem ersten Tag der aktuellen Serie. Hast du vom 1. bis zum 10. jeden Tag durchgezogen, ist dein Streak 10 Tage lang. Der Rechner zählt das Startdatum als Tag 1 und heute nur mit, wenn du die Gewohnheit schon erledigt hast.</p>"
+  - q: "Setzt ein verpasster Tag meinen Streak zurück?"
+    a: "<p>Ein Streak zählt Tage in Folge, deshalb endet die aktuelle Serie mit einem verpassten Tag. Deine Arbeit ist aber nicht verloren: Die Beständigkeit, also der Anteil der geplanten Tage, die du geschafft hast, bewegt sich nach einem Aussetzer kaum. 29 von 30 Tagen sind immer noch 97 %.</p>"
+  - q: "Wie lange dauert es, eine Gewohnheit aufzubauen?"
+    a: "<p>Es gibt keine feste Zahl. In der bekanntesten Studie lag der Median bei etwa 66 Tagen, bis sich ein Verhalten automatisch anfühlte, mit individuellen Werten zwischen 18 und 254 Tagen.</p>"
+  - q: "Funktioniert der Rechner auch für Gewohnheiten, die nicht täglich sind?"
+    a: "<p>Der Streak-Rechner geht von einer täglichen Gewohnheit aus. Für Gewohnheiten an bestimmten Tagen, etwa dreimal Sport pro Woche, nutze den Beständigkeits-Rechner: Gib die geplanten und die erledigten Tage ein.</p>"
+  - q: "Speichert der Rechner meine Daten?"
+    a: "<p>Nein. Die Berechnung läuft in deinem Browser. Nichts, was du eingibst, wird gespeichert oder an Productify gesendet.</p>"
+cta:
+  heading: "Streaks, die sich selbst zählen"
+  lead: "Productify zählt deinen aktuellen Streak, deinen Rekord und zeigt einen Kalender deiner erledigten Tage für jede Gewohnheit auf dem iPhone. Gratis für bis zu 5 Gewohnheiten, ohne Konto."
+---
+<section class="page-hero" aria-labelledby="calc-heading">
+    <div class="container"><div class="calc-intro">
+        <div class="eyebrow">Kostenloses Tool · Ohne Anmeldung</div>
+        <h1 id="calc-heading">Streak-Rechner<br><span>wie weit du bist und was als Nächstes kommt.</span></h1>
+        <p class="lead">Gib den ersten Tag deines aktuellen Streaks ein und sieh, wie viele Tage er läuft und wann du 30, 66, 100 und 365 Tage erreichst. Prüf dann deine Beständigkeit, die Zahl, die einen verpassten Tag übersteht.</p>
+    </div></div>
+</section>
+
+<section class="section section--alt" aria-label="Rechner">
+    <div class="container">
+        <div class="calc-card">
+            <h2 id="streak-calculator">Streak- und Meilenstein-Rechner</h2>
+            <p>Für eine tägliche Gewohnheit. Das Startdatum zählt als Tag 1.</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="streakForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="streakStart">Erster Tag deines aktuellen Streaks</label>
+                        <input type="date" id="streakStart" name="start" required aria-describedby="streakStartHint">
+                        <p class="calc-hint" id="streakStartHint">Der erste Tag der aktuellen Serie, nicht der Tag, an dem du die Gewohnheit zum ersten Mal ausprobiert hast.</p>
+                    </div>
+                    <fieldset class="calc-field">
+                        <legend>Heute schon erledigt?</legend>
+                        <div class="calc-choice">
+                            <label><input type="radio" name="today" value="yes" checked> Ja, erledigt</label>
+                            <label><input type="radio" name="today" value="no"> Noch nicht</label>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="calc-result" aria-live="polite">
+                    <p class="calc-big"><span id="streakDays">–</span><small>Tage Streak</small></p>
+                    <p class="calc-line" id="streakNext">Wähle ein Startdatum, um deinen Streak zu sehen.</p>
+                    <div class="calc-bar" aria-hidden="true"><span id="streakBar"></span></div>
+                </div>
+            </div>
+            <ol class="milestones" id="milestoneList" aria-label="Streak-Meilensteine"></ol>
+            <noscript><p class="calc-note">Der Rechner braucht JavaScript. Von Hand: Dein Streak ist die Anzahl der Tage vom Startdatum bis heute, beide Tage mitgezählt, wenn du heute schon erledigt hast.</p></noscript>
+        </div>
+
+        <div class="calc-card">
+            <h2 id="consistency-calculator">Beständigkeits-Rechner</h2>
+            <p>Für jede Gewohnheit, auch für solche an bestimmten Tagen. Zähle nur die Tage, an denen du sie geplant hattest.</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="consistencyForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="plannedDays">Geplante Tage</label>
+                        <input type="number" id="plannedDays" name="planned" min="1" max="3660" step="1" inputmode="numeric" value="30">
+                    </div>
+                    <div class="calc-field">
+                        <label for="doneDays">Davon erledigt</label>
+                        <input type="number" id="doneDays" name="done" min="0" max="3660" step="1" inputmode="numeric" value="24">
+                    </div>
+                </form>
+                <div class="calc-result" aria-live="polite">
+                    <p class="calc-big"><span id="consistencyPct">–</span><small>Beständigkeit</small></p>
+                    <p class="calc-line" id="consistencyText"></p>
+                    <p class="calc-line" id="consistencyNext"></p>
+                </div>
+            </div>
+            <p class="calc-note">Beide Rechner laufen in deinem Browser. Nichts, was du eingibst, wird gespeichert oder gesendet.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="how-it-counts">
+    <div class="container"><div class="article">
+        <h2 id="how-it-counts">So zählt der Streak-Rechner</h2>
+        <p>Ein Streak ist die Zahl der Tage in Folge, an denen du eine Gewohnheit erledigt hast. Der Rechner zählt das Startdatum als Tag 1 und zählt bis heute.</p>
+        <ul class="check-list">
+            <li><strong>Hast du heute schon erledigt,</strong> zählt heute mit. Ein Streak, der gestern begann, ist dann 2 Tage lang.</li>
+            <li><strong>Hast du heute noch nicht erledigt,</strong> läuft der Streak bis gestern. Gerissen ist er erst, wenn der Tag vorbei ist.</li>
+            <li><strong>Die Meilenstein-Daten</strong> zeigen, wann du jede Zahl erreichst, wenn du jeden Tag weitermachst.</li>
+        </ul>
+
+        <h2 id="streak-vs-consistency">Streak oder Beständigkeit: Was zählt mehr?</h2>
+        <p>Streaks motivieren, weil sie leicht zu sehen und leicht zu verlängern sind. Ihre Schwäche: Ein verpasster Tag setzt die Zahl auf null, und ein guter Monat fühlt sich plötzlich wie ein Misserfolg an.</p>
+        <p>Beständigkeit ist der Anteil der geplanten Tage, die du geschafft hast. Sie bewegt sich langsam: 29 von 30 Tagen sind 97 %, auch wenn der verpasste Tag gestern war. Wenn du beides im Blick hast, bekommst du den Schwung eines Streaks ohne den Alles-oder-nichts-Druck. So funktioniert auch Productify: Dein Verlauf bleibt, wenn eine Serie endet.</p>
+
+        <h2 id="milestones">Was die Meilensteine bedeuten</h2>
+        <div class="editorial-table" role="region" aria-label="Streak-Meilensteine" tabindex="0">
+            <table>
+                <thead><tr><th scope="col">Meilenstein</th><th scope="col">Was er dir sagt</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>7 Tage</strong></td><td>Die Gewohnheit hat eine ganze Woche überstanden, Wochenende inklusive.</td></tr>
+                    <tr><td><strong>21 Tage</strong></td><td>Ein beliebtes Ziel. Dass Gewohnheiten in 21 Tagen entstehen, ist nicht belegt, aber drei Wochen sind ein fairer Test für deine Routine.</td></tr>
+                    <tr><td><strong>30 Tage</strong></td><td>Ein Monat Test und ein guter Zeitpunkt für einen Rückblick. Dafür gibt es den <a href="/de/tools/30-day-habit-tracker/">30-Tage Habit Tracker</a>.</td></tr>
+                    <tr><td><strong>66 Tage</strong></td><td>Der Median in der bekanntesten Studie, bis sich ein Verhalten automatisch anfühlte. Die individuellen Werte reichten von 18 bis 254 Tagen.</td></tr>
+                    <tr><td><strong>90 Tage</strong></td><td>Etwa eine Jahreszeit. Die Productify-App würdigt 7, 30 und 90 Tage mit einer kleinen Anerkennung.</td></tr>
+                    <tr><td><strong>100 und 365 Tage</strong></td><td>Persönliche Rekorde statt wissenschaftlicher Schwellen. Jetzt lautet die Frage eher: Ist das noch die richtige Gewohnheit?</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="protect-a-streak">So schützt du deinen Streak, ohne dass er zerbrechlich wird</h2>
+        <ul class="check-list">
+            <li><strong>Leg eine Mini-Version fest.</strong> Zwei Minuten Dehnen oder eine Seite lesen zählen auch an schlechten Tagen.</li>
+            <li><strong>Entscheide vorher, was zählt,</strong> damit du um 23 Uhr nicht mit dir verhandelst.</li>
+            <li><strong>Versuch, nicht zweimal hintereinander auszusetzen.</strong> Einmal ist Zufall, zweimal der Beginn eines neuen Musters.</li>
+            <li><strong>Halte deine Tage sichtbar fest,</strong> mit einer <a href="/de/tools/habit-tracker-printable/">Habit Tracker Vorlage</a>, einem <a href="/de/tools/year-in-pixels/">Year in Pixels</a> oder einer App mit Erinnerungen.</li>
+        </ul>
+
+        <h2 id="faq">Fragen zum Streak-Rechner</h2>
+        {% include faq.html %}
+
+        <p>Weitere kostenlose Tools: der <a href="/de/tools/30-day-habit-tracker/">30-Tage Habit Tracker</a>, die <a href="/de/tools/year-in-pixels/">Year in Pixels Vorlage</a> und <a href="/de/tools/">alle kostenlosen Tools</a>.</p>
+    </div></div>
+</section>
+
+{% include l10n-cta.html %}
+
+<script>
+window.STREAK_I18N = {
+    locale: 'de-DE',
+    empty: 'Wähle ein Startdatum, um deinen Streak zu sehen.',
+    future: 'Dieses Datum liegt in der Zukunft. Wähle heute oder einen früheren Tag.',
+    zero: 'Hake heute ab, um deinen Streak zu starten. Tag 1 zählt.',
+    next: 'Noch {left} bis {n} Tage, am {date}.',
+    reach_today: 'Hake heute ab, um {n} Tage zu erreichen.',
+    past365: 'Über 365 Tage. Jeder Tag ist jetzt ein neuer Rekord.',
+    keep_going: 'Hake heute ab, damit er weiterläuft.',
+    more_days: { one: '{n} Tag', other: '{n} Tage' },
+    days: { one: '{n} Tag', other: '{n} Tage' },
+    reached: 'Erreicht am {date}',
+    today_checkin: 'Heute, sobald du abhakst',
+    to_go: '{date} · noch {left}',
+    cons_empty: 'Gib die geplanten und die erledigten Tage ein.',
+    cons_error: 'Es können nicht mehr Tage erledigt als geplant sein.',
+    cons_text: 'Du hast {done} von {planned} geplanten Tagen geschafft. {verdict}',
+    verdict_high: 'Stark: Die meisten geplanten Tage haben geklappt.',
+    verdict_mid: 'Eine gute Basis. Schau, an welchen Tagen es hakt, und plane darum herum.',
+    verdict_low: 'Zeit für eine Anpassung. Eine kleinere Version oder weniger geplante Tage passen vielleicht besser.',
+    cons_next: 'Nächster geplanter Tag: Erledigst du ihn, steigst du auf {up}. Verpasst du ihn, sinkst du auf {down}, während ein Streak auf 0 fallen würde.',
+    percent: '{p} %'
+};
+</script>
+<script src="/assets/streak-calculator.js" defer></script>

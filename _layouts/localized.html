@@ -1,0 +1,87 @@
+{%- comment -%}
+Layout for every localized page (/de/, /fr/, /ja/, /ko/ and the pages under
+them). A page with `hero` front matter is a localized homepage and renders
+_includes/localized-landing.html; any other page renders its own content.
+Shared strings (navbar, drawer, footer, CTAs) come from _data/i18n/<lang>.yml.
+CTAs link the local App Store storefront directly (data-direct), and the
+English download handoff and popup/sticky prompts are left out.
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<head>
+{% include head.html %}
+<link rel="stylesheet" href="/assets/localized.css?v={{ site.time | date: '%s' }}">
+{%- assign i18n = site.data.i18n[page.lang] %}
+{%- if page.hero %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Productify",
+    "alternateName": {{ i18n.store_name | jsonify }},
+    "url": "{{ page.url | absolute_url }}",
+    "inLanguage": "{{ page.lang }}",
+    "description": {{ page.description | strip_newlines | jsonify }},
+    "operatingSystem": "iOS 17.2 or later; watchOS 11.4 or later",
+    "applicationCategory": "ProductivityApplication",
+    "availableOnDevice": ["iPhone", "Apple Watch"],
+    "downloadUrl": "{{ i18n.appstore_url }}",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "{{ i18n.currency }}" },
+    "publisher": { "@type": "Organization", "name": "DEDUCTIFY, LLC" }
+}
+</script>
+{%- endif %}
+</head>
+
+<body>
+{% include icons.svg %}
+{% include mobile-nav.html %}
+{% include navbar.html %}
+
+<main>
+{%- if page.breadcrumbs %}
+{% include breadcrumb.html %}
+{%- endif %}
+{%- if page.hero %}
+{% include localized-landing.html %}
+{%- else %}
+{{ content }}
+{%- endif %}
+</main>
+
+<footer class="footer l10n-footer" role="contentinfo">
+    <div class="container">
+        <div class="l10n-footer__top">
+            <div>
+                <span class="logo" style="color:#F8FAFC;">Productify</span>
+                <p>{{ i18n.footer.blurb }}</p>
+            </div>
+            <ul class="l10n-footer__links">
+                <li><a href="{{ i18n.tools_url }}">{{ i18n.footer.tools }}</a></li>
+                <li><a href="/" hreflang="en" lang="en">{{ i18n.footer.english_site }}</a></li>
+                <li><a href="/privacy.html" hreflang="en">{{ i18n.footer.privacy }}</a></li>
+                <li><a href="/terms.html" hreflang="en">{{ i18n.footer.terms }}</a></li>
+                <li><a href="mailto:contact@deductify.org">{{ i18n.footer.contact }}</a></li>
+            </ul>
+        </div>
+        <nav class="footer__languages" aria-label="{{ i18n.ui.language_label }}">
+            {%- for x in site.data.languages %}
+            {%- include lang-url.html code=x.code fallback=x.url %}
+            <a href="{{ lang_url }}" hreflang="{{ x.hreflang }}" lang="{{ x.code }}"{% if x.code == page.lang %} aria-current="page"{% endif %}>{{ x.name }}</a>
+            {%- endfor %}
+        </nav>
+        <div class="footer__bottom"><span>{{ site.data.footer.copyright }}</span></div>
+    </div>
+</footer>
+
+{% include scripts.html %}
+<script>
+document.addEventListener('click', function (event) {
+    var link = event.target.closest('a[data-printable]');
+    if (link && typeof window.gtag === 'function') {
+        window.gtag('event', 'printable_open', { printable_variant: link.dataset.printable, page_path: location.pathname, link_url: link.href });
+    }
+});
+</script>
+</body>
+</html>

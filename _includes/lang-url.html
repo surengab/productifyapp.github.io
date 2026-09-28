@@ -1,0 +1,6 @@
+{%- comment -%} Sets `lang_url`: the page in language `include.code` that translates this page, or that language's homepage. Needs translations.html first. {%- endcomment -%}
+{%- assign lang_url = include.fallback -%}
+{%- for t in page_translations -%}
+{%- assign t_lang = t.lang | default: 'en' -%}
+{%- if t_lang == include.code %}{% assign lang_url = t.url %}{% endif -%}
+{%- endfor -%}

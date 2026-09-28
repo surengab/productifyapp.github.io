@@ -1,0 +1,170 @@
+---
+layout: localized
+lang: fr
+locale: fr_FR
+permalink: /fr/tools/habit-streak-calculator/
+translation_key: habit-streak-calculator
+title: "Calculateur de série d’habitudes : jours et paliers"
+seo_title: "Calculateur de série d’habitudes : jours, paliers et régularité"
+description: "Calculateur de série gratuit : indiquez le premier jour de votre série pour voir sa durée et les dates auxquelles vous atteindrez 30, 66, 100 et 365 jours. Avec calcul de régularité."
+og_description: "Combien de jours dure votre série, et quand atteindrez-vous 66 ou 100 jours ? Un calculateur gratuit de séries, de paliers et de régularité, sans inscription."
+date: '2026-09-29'
+last_modified: '2026-09-29'
+og_type: article
+priority: 0.8
+breadcrumbs:
+  - label: Accueil
+    href: /fr/
+  - label: Outils gratuits
+    href: /fr/tools/
+  - label: Calculateur de série
+faq:
+  - q: "Comment calcule-t-on une série ?"
+    a: "<p>On compte les jours consécutifs où l’habitude a été faite, à partir du premier jour de la série en cours. Si vous l’avez faite chaque jour du 1er au 10, votre série est de 10 jours. Le calculateur compte la date de début comme jour 1 et n’inclut aujourd’hui que si c’est déjà fait.</p>"
+  - q: "Un jour manqué remet-il ma série à zéro ?"
+    a: "<p>Une série compte des jours consécutifs : un jour manqué met donc fin à la série en cours. Votre travail n’est pas perdu pour autant. La régularité, c’est-à-dire la part des jours prévus que vous avez réalisés, bouge à peine : 29 jours sur 30, c’est encore 97 %.</p>"
+  - q: "Combien de jours faut-il pour créer une habitude ?"
+    a: "<p>Il n’y a pas de chiffre fixe. Dans l’étude la plus connue, il a fallu en médiane environ 66 jours pour qu’un comportement devienne automatique, avec des estimations individuelles allant de 18 à 254 jours.</p>"
+  - q: "Le calculateur marche-t-il pour des habitudes non quotidiennes ?"
+    a: "<p>Le calculateur de série suppose une habitude quotidienne. Pour une habitude prévue certains jours seulement, comme trois séances de sport par semaine, utilisez le calcul de régularité : indiquez les jours prévus et les jours réalisés.</p>"
+  - q: "Le calculateur enregistre-t-il mes données ?"
+    a: "<p>Non. Le calcul se fait dans votre navigateur. Rien de ce que vous saisissez n’est enregistré ni envoyé à Productify.</p>"
+cta:
+  heading: "Des séries qui se comptent toutes seules"
+  lead: "Productify suit votre série en cours, votre record et un calendrier des jours réalisés pour chaque habitude sur iPhone. Gratuit jusqu’à 5 habitudes, sans compte."
+---
+<section class="page-hero" aria-labelledby="calc-heading">
+    <div class="container"><div class="calc-intro">
+        <div class="eyebrow">Outil gratuit · Sans inscription</div>
+        <h1 id="calc-heading">Calculateur de série<br><span>le chemin parcouru, et la suite.</span></h1>
+        <p class="lead">Indiquez le premier jour de votre série en cours pour voir depuis combien de jours elle dure et quand vous atteindrez 30, 66, 100 et 365 jours. Vérifiez ensuite votre régularité, le chiffre qui résiste à un jour manqué.</p>
+    </div></div>
+</section>
+
+<section class="section section--alt" aria-label="Calculateurs">
+    <div class="container">
+        <div class="calc-card">
+            <h2 id="streak-calculator">Calculateur de série et de paliers</h2>
+            <p>Pour une habitude quotidienne. La date de début compte comme jour 1.</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="streakForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="streakStart">Premier jour de votre série en cours</label>
+                        <input type="date" id="streakStart" name="start" required aria-describedby="streakStartHint">
+                        <p class="calc-hint" id="streakStartHint">Le premier jour de la série actuelle, pas le jour où vous avez essayé l’habitude pour la première fois.</p>
+                    </div>
+                    <fieldset class="calc-field">
+                        <legend>C’est fait aujourd’hui ?</legend>
+                        <div class="calc-choice">
+                            <label><input type="radio" name="today" value="yes" checked> Oui, c’est fait</label>
+                            <label><input type="radio" name="today" value="no"> Pas encore</label>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="calc-result" aria-live="polite">
+                    <p class="calc-big"><span id="streakDays">–</span><small>jours de série</small></p>
+                    <p class="calc-line" id="streakNext">Choisissez une date de début pour voir votre série.</p>
+                    <div class="calc-bar" aria-hidden="true"><span id="streakBar"></span></div>
+                </div>
+            </div>
+            <ol class="milestones" id="milestoneList" aria-label="Paliers de la série"></ol>
+            <noscript><p class="calc-note">Le calculateur a besoin de JavaScript. À la main : votre série est le nombre de jours entre la date de début et aujourd’hui, les deux inclus si c’est déjà fait aujourd’hui.</p></noscript>
+        </div>
+
+        <div class="calc-card">
+            <h2 id="consistency-calculator">Calcul de régularité</h2>
+            <p>Pour toute habitude, y compris celles prévues certains jours seulement. Ne comptez que les jours où elle était prévue.</p>
+            <div class="calc-grid">
+                <form class="calc-form" id="consistencyForm" novalidate onsubmit="return false">
+                    <div class="calc-field">
+                        <label for="plannedDays">Jours prévus</label>
+                        <input type="number" id="plannedDays" name="planned" min="1" max="3660" step="1" inputmode="numeric" value="30">
+                    </div>
+                    <div class="calc-field">
+                        <label for="doneDays">Jours réalisés</label>
+                        <input type="number" id="doneDays" name="done" min="0" max="3660" step="1" inputmode="numeric" value="24">
+                    </div>
+                </form>
+                <div class="calc-result" aria-live="polite">
+                    <p class="calc-big"><span id="consistencyPct">–</span><small>de régularité</small></p>
+                    <p class="calc-line" id="consistencyText"></p>
+                    <p class="calc-line" id="consistencyNext"></p>
+                </div>
+            </div>
+            <p class="calc-note">Les deux calculateurs fonctionnent dans votre navigateur. Rien n’est enregistré ni envoyé.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="how-it-counts">
+    <div class="container"><div class="article">
+        <h2 id="how-it-counts">Comment le calculateur compte</h2>
+        <p>Une série est le nombre de jours consécutifs où vous avez fait une habitude. Le calculateur compte la date de début comme jour 1, puis compte jusqu’à aujourd’hui.</p>
+        <ul class="check-list">
+            <li><strong>Si c’est déjà fait aujourd’hui,</strong> aujourd’hui compte. Une série commencée hier fait alors 2 jours.</li>
+            <li><strong>Si ce n’est pas encore fait,</strong> la série va jusqu’à hier. Elle n’est pas rompue tant que la journée n’est pas finie.</li>
+            <li><strong>Les dates des paliers</strong> indiquent quand vous atteindrez chaque chiffre si vous continuez chaque jour.</li>
+        </ul>
+
+        <h2 id="streak-vs-consistency">Série ou régularité : qu’est-ce qui compte le plus ?</h2>
+        <p>Les séries motivent parce qu’elles sont faciles à voir et à prolonger. Leur faiblesse : un seul jour manqué ramène le compteur à zéro, et un bon mois ressemble soudain à un échec.</p>
+        <p>La régularité, c’est la part des jours prévus que vous avez réalisés. Elle évolue lentement : 29 jours sur 30 font 97 %, même si le jour manqué était hier. Suivre les deux donne l’élan d’une série sans la pression du tout ou rien. C’est aussi l’approche de Productify, qui garde tout votre historique quand une série s’arrête.</p>
+
+        <h2 id="milestones">Ce que disent les paliers</h2>
+        <div class="editorial-table" role="region" aria-label="Paliers de série" tabindex="0">
+            <table>
+                <thead><tr><th scope="col">Palier</th><th scope="col">Ce qu’il vous apprend</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>7 jours</strong></td><td>L’habitude a tenu une semaine entière, week-end compris.</td></tr>
+                    <tr><td><strong>21 jours</strong></td><td>Un objectif très répandu. Rien ne prouve qu’une habitude se forme en 21 jours, mais trois semaines sont un bon test pour votre routine.</td></tr>
+                    <tr><td><strong>30 jours</strong></td><td>Un mois d’essai et un bon moment pour faire le point, avec le <a href="/fr/tools/30-day-habit-tracker/">habit tracker 30 jours</a>.</td></tr>
+                    <tr><td><strong>66 jours</strong></td><td>La médiane de l’étude la plus connue pour qu’un comportement devienne automatique. Les estimations individuelles allaient de 18 à 254 jours.</td></tr>
+                    <tr><td><strong>90 jours</strong></td><td>Environ une saison. L’application Productify salue discrètement les 7, 30 et 90 jours.</td></tr>
+                    <tr><td><strong>100 et 365 jours</strong></td><td>Des records personnels plutôt que des seuils scientifiques. La vraie question devient : est-ce toujours la bonne habitude ?</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="protect-a-streak">Protéger sa série sans la rendre fragile</h2>
+        <ul class="check-list">
+            <li><strong>Définissez une version minimale.</strong> Deux minutes d’étirements ou une page de lecture comptent aussi les mauvais jours.</li>
+            <li><strong>Décidez à l’avance ce qui compte,</strong> pour ne pas négocier avec vous-même à 23 h.</li>
+            <li><strong>Évitez de manquer deux jours de suite.</strong> Une fois, c’est un accident ; deux fois, le début d’une nouvelle habitude.</li>
+            <li><strong>Gardez une trace visible,</strong> avec un <a href="/fr/tools/habit-tracker-printable/">habit tracker à imprimer</a>, un <a href="/fr/tools/year-in-pixels/">Year in Pixels</a> ou une application avec rappels.</li>
+        </ul>
+
+        <h2 id="faq">Questions sur le calculateur de série</h2>
+        {% include faq.html %}
+
+        <p>Autres outils gratuits : le <a href="/fr/tools/30-day-habit-tracker/">habit tracker 30 jours</a>, le <a href="/fr/tools/year-in-pixels/">Year in Pixels à imprimer</a> et <a href="/fr/tools/">tous les outils gratuits</a>.</p>
+    </div></div>
+</section>
+
+{% include l10n-cta.html %}
+
+<script>
+window.STREAK_I18N = {
+    locale: 'fr-FR',
+    empty: 'Choisissez une date de début pour voir votre série.',
+    future: 'Cette date est dans le futur. Choisissez aujourd’hui ou un jour précédent.',
+    zero: 'Cochez aujourd’hui pour lancer votre série. Le jour 1 compte.',
+    next: 'Encore {left} avant {n} jours, le {date}.',
+    reach_today: 'Cochez aujourd’hui pour atteindre {n} jours.',
+    past365: 'Plus de 365 jours. Chaque jour est désormais un nouveau record.',
+    keep_going: 'Cochez aujourd’hui pour la prolonger.',
+    more_days: { one: '{n} jour', other: '{n} jours' },
+    days: { one: '{n} jour', other: '{n} jours' },
+    reached: 'Atteint le {date}',
+    today_checkin: 'Aujourd’hui, dès que vous cochez',
+    to_go: '{date} · encore {left}',
+    cons_empty: 'Indiquez les jours prévus et les jours réalisés.',
+    cons_error: 'Les jours réalisés ne peuvent pas dépasser les jours prévus.',
+    cons_text: 'Vous avez réalisé {done} des {planned} jours prévus. {verdict}',
+    verdict_high: 'Solide : la plupart des jours prévus ont eu lieu.',
+    verdict_mid: 'Une bonne base. Regardez quels jours coincent et adaptez-vous.',
+    verdict_low: 'À ajuster. Une version plus petite ou moins de jours prévus conviendraient peut-être mieux.',
+    cons_next: 'Prochain jour prévu : le faire vous amène à {up}. Le manquer vous fait passer à {down}, alors qu’une série retomberait à 0.',
+    percent: '{p} %'
+};
+</script>
+<script src="/assets/streak-calculator.js" defer></script>

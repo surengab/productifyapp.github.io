@@ -1,12 +1,21 @@
+{%- comment -%}
+Shared by the English site and the localized pages (/de/, /fr/, /ja/, /ko/).
+On a localized page `i18n` (_data/i18n/<lang>.yml, set by translations.html)
+supplies translated labels, a note that most linked pages are English, the
+local App Store link, and replacement links for pages that are translated
+(`nav_items`). English pages have no `i18n` and use the defaults.
+{%- endcomment -%}
+{%- assign nav_lang = page.lang | default: 'en' -%}
+{%- assign nav_home = i18n.home_url | default: '/' -%}
 <header class="navbar" role="banner">
     <div class="container">
         <div class="navbar__inner">
-            <a href="/" class="logo" aria-label="Productify - Home">Productify</a>
+            <a href="{{ nav_home }}" class="logo" aria-label="{{ i18n.ui.home_label | default: 'Productify - Home' }}">Productify</a>
             <nav class="nav-links" role="navigation" aria-label="Main navigation">
                 {%- for dd in site.data.nav.dropdowns %}
                 <div class="nav-dropdown"{% if dd.id %} id="{{ dd.id }}"{% endif %}>
                     <button class="nav-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
-                        {{ dd.label }}
+                        {{ i18n.ui.nav[dd.label] | default: dd.label }}
                         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
                     </button>
                     <div class="nav-dropdown__menu"{% if dd.align == 'right' %} style="left: auto; right: 0;"{% endif %}>
@@ -17,9 +26,10 @@
                             {%- assign resource_section = item.href | remove: '/' %}
                             <div class="nav-resource">
                             {%- endif %}
-                            <a href="{{ item.href }}" class="nav-dropdown__item" aria-label="{{ item.aria | default: item.title }}"{% if item.divider %} style="border-bottom: 1px solid var(--border); margin-bottom: 4px; padding-bottom: 12px;"{% endif %}>
+                            {%- assign ov = i18n.nav_items[item.href] %}
+                            <a href="{{ ov.href | default: item.href }}" class="nav-dropdown__item" aria-label="{{ ov.title | default: item.aria | default: item.title }}"{% if item.divider %} style="border-bottom: 1px solid var(--border); margin-bottom: 4px; padding-bottom: 12px;"{% endif %}>
                                 <div class="nav-dropdown__item-icon"><svg aria-hidden="true"><use href="#ic-{{ item.icon }}"/></svg></div>
-                                <div class="nav-dropdown__item-text"><strong>{{ item.title }}</strong><span>{{ item.blurb }}</span></div>
+                                <div class="nav-dropdown__item-text"><strong>{{ ov.title | default: item.title }}</strong><span>{{ ov.blurb | default: item.blurb }}</span></div>
                                 {%- if resource_section %}<svg class="nav-resource__arrow" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 2l4 4-4 4"/></svg>{% endif %}
                             </a>
                             {%- if resource_section %}
@@ -38,20 +48,37 @@
                             </div>
                             {%- endif %}
                             {%- endfor %}
+                            {%- if i18n.ui.english_note %}
+                            <p class="nav-dropdown__note">{{ i18n.ui.english_note }}</p>
+                            {%- endif %}
                         </div>
                     </div>
                 </div>
                 {%- endfor %}
                 {%- for link in site.data.nav.links %}
-                <a href="{{ link.href }}">{{ link.label }}</a>
+                <a href="{{ link.href }}"{% if i18n %} hreflang="en"{% endif %}>{{ i18n.ui.nav[link.label] | default: link.label }}</a>
                 {%- endfor %}
             </nav>
             <div class="nav-cta">
+                {%- comment -%} Language switcher. Only the homepage is translated, so each entry links to that language's homepage. {%- endcomment %}
+                <details class="nav-lang">
+                    <summary aria-label="{{ i18n.ui.language_label | default: 'Language: English. Choose another language' }}"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>{{ nav_lang | upcase }}</span></summary>
+                    <ul>
+                        {%- for l in site.data.languages %}
+                        {%- include lang-url.html code=l.code fallback=l.url %}
+                        <li><a href="{{ lang_url }}" hreflang="{{ l.hreflang }}" lang="{{ l.code }}"{% if l.code == nav_lang %} aria-current="true"{% endif %}>{{ l.name }}</a></li>
+                        {%- endfor %}
+                    </ul>
+                </details>
+                {%- if i18n %}
+                <a href="{{ i18n.appstore_url }}" class="btn btn-primary nav-cta__btn" data-cta="nav" data-direct>{{ i18n.ui.download }}</a>
+                {%- else %}
                 <a href="{{ site.appstore_url }}"
                    class="appstore-badge-link" data-cta="nav"
                    aria-label="Download Productify on the App Store">
                     <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="140" height="41">
                 </a>
+                {%- endif %}
                 <button class="hamburger" id="openNav" aria-label="Open menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>

@@ -1,0 +1,16 @@
+{%- comment -%}
+Finds the translations of the current page. A page joins a translation set by
+setting `translation_key` (the same value on the English page and on each
+localized copy); a localized page also sets `lang`. Sets:
+  page_translations - every page in the set, this one included
+  i18n              - the shared UI strings for this page's language
+                      (_data/i18n/<lang>.yml), or nil on English pages
+Included by head.html, so the navbar, drawer and footer can reuse both.
+{%- endcomment -%}
+{%- assign i18n = site.data.i18n[page.lang] -%}
+{%- assign page_translations = '' | split: '' -%}
+{%- if page.translation_key -%}
+{%- assign tr_pages = site.pages | where: 'translation_key', page.translation_key -%}
+{%- assign tr_docs = site.documents | where: 'translation_key', page.translation_key -%}
+{%- assign page_translations = tr_pages | concat: tr_docs -%}
+{%- endif -%}

@@ -1,37 +1,59 @@
+{%- assign nav_lang = page.lang | default: 'en' -%}
+{%- assign nav_home = i18n.home_url | default: '/' -%}
+{%- assign nav_lang_name = 'English' -%}
+{%- for l in site.data.languages %}{% if l.code == nav_lang %}{% assign nav_lang_name = l.name %}{% endif %}{% endfor -%}
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" inert>
     <div class="mobile-nav__header">
-        <a href="/" class="mobile-nav__brand">Productify</a>
+        <a href="{{ nav_home }}" class="mobile-nav__brand">Productify</a>
         <button class="mobile-nav__close" id="closeNav" aria-label="Close menu">✕</button>
     </div>
 
     <div class="mobile-nav__body">
+        {%- if i18n.ui.english_note %}
+        <p class="mobile-nav__note">{{ i18n.ui.english_note }}</p>
+        {%- endif %}
         {%- for dd in site.data.nav.dropdowns %}
         {%- assign shown = dd.items | where_exp: "i", "i.mobile" %}
         {%- if shown.size > 0 %}
         <details class="mobile-nav__section">
             <summary class="mobile-nav__toggle">
-                {{ dd.mobile_label | default: dd.label | escape }}
+                {{ i18n.ui.nav[dd.label] | default: dd.mobile_label | default: dd.label | escape }}
                 <svg aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
             </summary>
             {%- for item in shown %}
-            <a href="{{ item.href }}" class="mobile-nav__link">{{ item.mobile }}</a>
+            {%- assign ov = i18n.nav_items[item.href] %}
+            <a href="{{ ov.href | default: item.href }}" class="mobile-nav__link">{{ ov.mobile | default: item.mobile }}</a>
             {%- endfor %}
         </details>
         {%- endif %}
         {%- endfor %}
+        <details class="mobile-nav__section">
+            <summary class="mobile-nav__toggle">
+                <span class="mobile-nav__lang-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg> {{ i18n.ui.language_word | default: 'Language' }} · {{ nav_lang_name }}</span>
+                <svg aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+            </summary>
+            {%- for l in site.data.languages %}
+            {%- include lang-url.html code=l.code fallback=l.url %}
+            <a href="{{ lang_url }}" class="mobile-nav__link" hreflang="{{ l.hreflang }}" lang="{{ l.code }}"{% if l.code == nav_lang %} aria-current="true"{% endif %}>{{ l.name }}</a>
+            {%- endfor %}
+        </details>
         <div class="mobile-nav__section">
             {%- for link in site.data.nav.mobile_primary %}
-            <a href="{{ link.href }}" class="mobile-nav__link{% if link.primary %} mobile-nav__link--primary{% endif %}">{{ link.label }}</a>
+            <a href="{{ link.href }}" class="mobile-nav__link{% if link.primary %} mobile-nav__link--primary{% endif %}">{{ i18n.ui.nav[link.label] | default: link.label }}</a>
             {%- endfor %}
         </div>
     </div>
 
     <div class="mobile-nav__footer">
+        {%- if i18n %}
+        <a href="{{ i18n.appstore_url }}" class="btn btn-primary" data-cta="mobile-nav" data-direct>{{ i18n.ui.download }}</a>
+        {%- else %}
         <a href="{{ site.appstore_url }}"
            class="appstore-badge-link" data-cta="mobile-nav"
            aria-label="Download Productify on the App Store">
             <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="150" height="44" loading="lazy" decoding="async">
         </a>
+        {%- endif %}
     </div>
 </nav>

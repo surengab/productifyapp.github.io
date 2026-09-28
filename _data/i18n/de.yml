@@ -1,0 +1,42 @@
+# Shared strings for the /de/ pages: navbar, drawer, footer, CTAs.
+# Edit here once; every /de/ page picks it up.
+home_url: /de/
+tools_url: /de/tools/
+appstore_url: https://apps.apple.com/de/app/habit-tracker-productify/id1389900237
+store_name: Habit Tracker - Productify
+currency: EUR
+ui:
+  home_label: Productify – Startseite
+  language_label: Sprache wählen
+  download: Gratis laden
+  language_word: Sprache
+  english_note: Die meisten verlinkten Seiten sind auf Englisch.
+  nav:
+    Features: Funktionen
+    Solutions: Lösungen
+    Compare: Vergleiche
+    Resources: Ressourcen
+    Company: Unternehmen
+    Pricing: Preise
+  cta_button: Productify kostenlos laden
+  cta_note: 5 Gewohnheiten gratis · Kein Konto nötig · Für iPhone und Apple Watch
+  breadcrumb_home: Startseite
+  breadcrumb_tools: Kostenlose Tools
+nav_items:
+  /tools/:
+    href: /de/tools/
+    title: Kostenlose Tools
+    blurb: Vorlagen zum Ausdrucken & Streak-Rechner
+    mobile: Kostenlose Tools
+tools_teaser:
+  eyebrow: Kostenlos · Ohne Anmeldung
+  heading: Habit Tracker Vorlagen zum Ausdrucken
+  lead: 30-Tage-Tracker, Year in Pixels, Monats- und Wochenvorlagen als PDF sowie ein Streak-Rechner. Alles kostenlos, ohne E-Mail-Adresse.
+  cta: Alle kostenlosen Tools ansehen
+footer:
+  blurb: Ein ruhiger Habit Tracker für iPhone und Apple Watch. Baue Routinen auf, die zu deinem Leben passen, kostenlos zum Start.
+  english_site: Englische Website
+  privacy: Datenschutz (Englisch)
+  terms: Nutzungsbedingungen (Englisch)
+  contact: Kontakt
+  tools: Kostenlose Vorlagen & Tools

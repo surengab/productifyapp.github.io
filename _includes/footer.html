@@ -42,6 +42,13 @@
                 </ul>
             </div>
         </div>
+        <nav class="footer__languages" aria-label="Productify in other languages">
+            {%- assign footer_lang = page.lang | default: 'en' %}
+            {%- for l in site.data.languages %}
+            {%- include lang-url.html code=l.code fallback=l.url %}
+            <a href="{{ lang_url }}" hreflang="{{ l.hreflang }}" lang="{{ l.code }}"{% if l.code == footer_lang %} aria-current="true"{% endif %}>{{ l.name }}</a>
+            {%- endfor %}
+        </nav>
         <div class="footer__bottom">
             <span>{{ site.data.footer.copyright }}</span>
             <div class="footer__social">

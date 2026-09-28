@@ -2,7 +2,8 @@
 """Rebuild the printable PDFs: python3 _scripts/build_printables.py.
 
 Builds the monthly and weekly habit trackers, the 30-day trackers and the
-year-in-pixels sheet, in A4 and US Letter. Each PDF footer links back to the
+year-in-pixels sheet, in A4 and US Letter, then the localized editions
+(printables_l10n.py). Each PDF footer links back to the
 page that offers it. Requires reportlab and pypdf for authoring only; the
 deployed site is static.
 """
@@ -21,11 +22,13 @@ LINE = colors.HexColor('#A4ACB9')
 PALE = colors.HexColor('#F1F3F8')
 BLUE = colors.HexColor('#4059BE')
 DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+# Localized sheets swap these for an embedded CJK font where needed (printables_l10n.py).
+FONTS = {'regular': 'Helvetica', 'bold': 'Helvetica-Bold'}
 
 
 def text(c, x, y, value, size=10, bold=False, color=INK):
     c.setFillColor(color)
-    c.setFont('Helvetica-Bold' if bold else 'Helvetica', size)
+    c.setFont(FONTS['bold'] if bold else FONTS['regular'], size)
     c.drawString(x, y, value)
 
 
@@ -49,7 +52,7 @@ def header(c, width, height, title, subtitle, size_label, path=PRINTABLE_PATH):
     text(c, width - 100, 27, size_label, 8, color=MUTED)
     label = 'productifyapp.org' + path
     text(c, 36, 27, label, 8, color=MUTED)
-    link_width = c.stringWidth(label, 'Helvetica', 8)
+    link_width = c.stringWidth(label, FONTS['regular'], 8)
     if path == PRINTABLE_PATH:
         link_width = 214  # the original hit area; keeps the first six PDFs byte-identical
     c.linkURL('https://productifyapp.org' + path, (36, 23, 36 + link_width, 37), relative=0)
@@ -70,7 +73,7 @@ def grid(c, top, widths, labels, rows, row_height, header_height):
         if i == 0:
             text(c, x + 10, top - header_height / 2 - 3, labels[i], 10, True)
         else:
-            c.setFont('Helvetica-Bold', 8 if len(labels) > 8 else 10)
+            c.setFont(FONTS['bold'], 8 if len(labels) > 8 else 10)
             c.setFillColor(INK)
             c.drawCentredString(x + cell_width / 2, top - header_height / 2 - 3, labels[i])
         x += cell_width
@@ -118,7 +121,7 @@ def weekly(c, width, height, size_label, start):
 
 def centred(c, x, y, value, size=10, bold=False, color=INK):
     c.setFillColor(color)
-    c.setFont('Helvetica-Bold' if bold else 'Helvetica', size)
+    c.setFont(FONTS['bold'] if bold else FONTS['regular'], size)
     c.drawCentredString(x, y, value)
 
 
@@ -163,7 +166,7 @@ def thirty_day_single(c, width, height, size_label):
         c.line(left + label_w + cell * 7, y - row_h, left + label_w + cell * 7, y)
         prompt = 'Day 30: keep, adjust or stop?' if week == 4 else 'Easier or harder?'
         c.setFillColor(MUTED)
-        c.setFont('Helvetica', 7)
+        c.setFont(FONTS['regular'], 7)
         c.drawString(left + label_w + cell * 7 + 6, y - 12, prompt if week < 4 else 'Day 30 review:')
         y -= row_h
     bottom = y
@@ -234,7 +237,7 @@ def year_in_pixels(c, width, height, size_label):
     for d in range(1, 32):
         y = top - row_h * (d + 1)
         c.setFillColor(MUTED)
-        c.setFont('Helvetica-Bold', 7)
+        c.setFont(FONTS['bold'], 7)
         c.drawRightString(left + day_w - 6, y + (row_h - 7) / 2 + 1, str(d))
         for m in range(12):
             x = left + day_w + cell_w * m
@@ -344,6 +347,10 @@ def build():
 
     assert len(generated) == 12
     print(f'Built and checked {len(generated)} one-page PDFs:', ', '.join(generated))
+
+    # German, French, Japanese and Korean editions for the /xx/tools/ pages.
+    from printables_l10n import build_localized
+    build_localized()
 
 
 if __name__ == '__main__':

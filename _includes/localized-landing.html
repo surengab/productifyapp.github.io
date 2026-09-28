@@ -1,0 +1,105 @@
+{%- comment -%} Body of a localized homepage (/de/ etc.). Copy comes from the page front matter; shared strings from i18n. {%- endcomment -%}
+{%- assign i18n = site.data.i18n[page.lang] -%}
+<section class="l10n-hero" aria-labelledby="hero-heading">
+    <div class="container l10n-hero__inner">
+        <div class="l10n-hero__text">
+            <div class="eyebrow">{{ page.hero.eyebrow }}</div>
+            <h1 id="hero-heading">{{ page.hero.title }}<span>{{ page.hero.title_em }}</span></h1>
+            <p class="lead">{{ page.hero.lead }}</p>
+            <div class="l10n-hero__cta">
+                <a href="{{ i18n.appstore_url }}" class="btn btn-primary btn-lg" data-cta="hero" data-direct>{{ page.hero.cta }} <span aria-hidden="true">→</span></a>
+                <a href="#how-it-works" class="btn btn-secondary">{{ page.hero.secondary }}</a>
+            </div>
+            <p class="l10n-hero__note">{{ page.hero.note }}</p>
+            <div class="l10n-qr">
+                <img src="/assets/productify-app-store-qr.svg" alt="{{ page.hero.qr_alt }}" width="96" height="96" loading="lazy" decoding="async">
+                <p><strong>{{ page.hero.qr_title }}</strong><br>{{ page.hero.qr_text }}</p>
+            </div>
+        </div>
+        <div class="l10n-hero__visual">
+            <img src="/assets/productify-home-screen-640.webp"
+                 srcset="/assets/productify-home-screen-320.webp 320w, /assets/productify-home-screen-640.webp 640w, /assets/productify-home-screen.webp 946w"
+                 sizes="(max-width: 720px) 240px, 280px"
+                 alt="{{ page.hero.image_alt }}" width="946" height="2048" fetchpriority="high">
+        </div>
+    </div>
+</section>
+
+<section class="section section--alt" id="how-it-works" aria-labelledby="steps-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">{{ page.steps.eyebrow }}</div>
+            <h2 id="steps-heading">{{ page.steps.heading }}</h2>
+            <p class="lead">{{ page.steps.lead }}</p>
+        </div>
+        <ol class="l10n-steps">
+            {%- for s in page.steps.items %}
+            <li><span class="l10n-steps__num" aria-hidden="true">{{ forloop.index }}</span><h3>{{ s.title }}</h3><p>{{ s.text }}</p></li>
+            {%- endfor %}
+        </ol>
+    </div>
+</section>
+
+<section class="section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">{{ page.features.eyebrow }}</div>
+            <h2 id="features-heading">{{ page.features.heading }}</h2>
+            <p class="lead">{{ page.features.lead }}</p>
+        </div>
+        <div class="features-grid">
+            {%- for f in page.features.items %}
+            <div class="feature-card">
+                <div class="feature-card__icon" aria-hidden="true">{{ f.icon }}</div>
+                <h3>{{ f.title }}</h3>
+                <p>{{ f.text }}</p>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="principles-heading">
+    <div class="container l10n-principles">
+        <div>
+            <div class="eyebrow">{{ page.principles.eyebrow }}</div>
+            <h2 id="principles-heading">{{ page.principles.heading }}</h2>
+            <p class="lead">{{ page.principles.lead }}</p>
+        </div>
+        <ul class="check-list">
+            {%- for p in page.principles.items %}
+            <li><strong>{{ p.title }}</strong> {{ p.text }}</li>
+            {%- endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="section section--alt l10n-teaser" aria-labelledby="tools-teaser-heading">
+    <div class="container text-center">
+        <div class="eyebrow">{{ i18n.tools_teaser.eyebrow }}</div>
+        <h2 id="tools-teaser-heading">{{ i18n.tools_teaser.heading }}</h2>
+        <p class="lead" style="margin: 12px auto 24px;">{{ i18n.tools_teaser.lead }}</p>
+        <a href="{{ i18n.tools_url }}" class="btn btn-secondary">{{ i18n.tools_teaser.cta }} →</a>
+    </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">{{ page.faq_section.eyebrow }}</div>
+            <h2 id="faq-heading">{{ page.faq_section.heading }}</h2>
+        </div>
+        <div class="faq-list">
+            {% include faq.html %}
+        </div>
+    </div>
+</section>
+
+<section class="section section--dark l10n-final" aria-labelledby="cta-heading">
+    <div class="container text-center">
+        <h2 id="cta-heading">{{ page.final_cta.heading }}</h2>
+        <p class="lead">{{ page.final_cta.lead }}</p>
+        <a href="{{ i18n.appstore_url }}" class="btn btn-primary btn-lg" data-cta="banner" data-direct>{{ page.hero.cta }} <span aria-hidden="true">→</span></a>
+        <p class="l10n-final__note">{{ page.hero.note }}</p>
+    </div>
+</section>

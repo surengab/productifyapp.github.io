@@ -1,0 +1,42 @@
+# Shared strings for the /ja/ pages: navbar, drawer, footer, CTAs.
+# Edit here once; every /ja/ page picks it up.
+home_url: /ja/
+tools_url: /ja/tools/
+appstore_url: https://apps.apple.com/jp/app/id1389900237
+store_name: Productify - デイリープランナー
+currency: JPY
+ui:
+  home_label: Productify ホーム
+  language_label: 言語を選択
+  download: 無料ダウンロード
+  language_word: 言語
+  english_note: リンク先の多くは英語のページです。
+  nav:
+    Features: 機能
+    Solutions: 活用例
+    Compare: 比較
+    Resources: リソース
+    Company: 会社情報
+    Pricing: 料金
+  cta_button: Productifyを無料でダウンロード
+  cta_note: 5つの習慣まで無料・アカウント登録不要・iPhone／Apple Watch対応
+  breadcrumb_home: ホーム
+  breadcrumb_tools: 無料ツール
+nav_items:
+  /tools/:
+    href: /ja/tools/
+    title: 無料ツール
+    blurb: 印刷できる習慣トラッカーと連続記録計算
+    mobile: 無料ツール
+tools_teaser:
+  eyebrow: 無料・登録不要
+  heading: 印刷できる習慣トラッカー（無料PDF）
+  lead: 30日間トラッカー、Year in Pixels、月間・週間の習慣トラッカーのPDFと、連続記録の計算ツール。すべて無料、メールアドレスも不要です。
+  cta: 無料ツールをすべて見る
+footer:
+  blurb: iPhoneとApple Watchのための、シンプルで穏やかな習慣化アプリ。あなたらしいルーティンを、無料で始められます。
+  english_site: 英語サイト
+  privacy: プライバシーポリシー（英語）
+  terms: 利用規約（英語）
+  contact: お問い合わせ
+  tools: 無料テンプレート・ツール

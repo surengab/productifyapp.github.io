@@ -1,0 +1,42 @@
+# Shared strings for the /ko/ pages: navbar, drawer, footer, CTAs.
+# Edit here once; every /ko/ page picks it up.
+home_url: /ko/
+tools_url: /ko/tools/
+appstore_url: https://apps.apple.com/kr/app/id1389900237
+store_name: Productify 습관 플래너
+currency: KRW
+ui:
+  home_label: Productify 홈
+  language_label: 언어 선택
+  download: 무료 다운로드
+  language_word: 언어
+  english_note: 연결된 페이지 대부분은 영어로 제공됩니다.
+  nav:
+    Features: 기능
+    Solutions: 활용 사례
+    Compare: 비교
+    Resources: 리소스
+    Company: 회사
+    Pricing: 요금
+  cta_button: Productify 무료로 다운로드
+  cta_note: 습관 5개 무료 · 회원가입 불필요 · 아이폰·애플워치 지원
+  breadcrumb_home: 홈
+  breadcrumb_tools: 무료 도구
+nav_items:
+  /tools/:
+    href: /ko/tools/
+    title: 무료 도구
+    blurb: 인쇄용 해빗 트래커와 연속 기록 계산기
+    mobile: 무료 도구
+tools_teaser:
+  eyebrow: 무료 · 가입 없이
+  heading: 인쇄해서 쓰는 해빗 트래커 양식
+  lead: 30일 트래커, 이어 인 픽셀(Year in Pixels), 월간·주간 해빗 트래커 PDF와 연속 기록 계산기. 모두 무료이며 이메일도 필요 없습니다.
+  cta: 무료 도구 모두 보기
+footer:
+  blurb: 아이폰과 애플워치를 위한 차분한 습관 관리 앱. 나에게 맞는 루틴을 무료로 시작하세요.
+  english_site: 영어 사이트
+  privacy: 개인정보 처리방침 (영어)
+  terms: 이용약관 (영어)
+  contact: 문의하기
+  tools: 무료 양식 · 도구
