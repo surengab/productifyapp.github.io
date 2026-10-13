@@ -14,6 +14,7 @@ dropdowns:
 
   - label: Solutions
     items:
+      - { href: /solutions/, icon: layers, title: "All Solutions", blurb: "Find a routine that fits your day", mobile: "All Solutions", divider: true }
       - { href: /solutions/morning-routine/,      icon: sunrise, title: "Build a Morning Routine", blurb: "Start your day with intention",   aria: "Morning Routine guide", mobile: "Morning Routine" }
       - { href: /solutions/evening-routine/,      icon: moon, title: "Build an Evening Routine", blurb: "Wind down and sleep better",     mobile: "Evening Routine" }
       - { href: /solutions/productivity-at-work/, icon: briefcase, title: "Productivity at Work",    blurb: "Habits that improve performance", aria: "Productivity at Work guide", mobile: "Productivity at Work" }

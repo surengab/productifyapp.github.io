@@ -9,6 +9,7 @@ REQUIRED = %w[
   /
   /blog/
   /guides/
+  /solutions/
   /blog/areas-of-life/
   /blog/bad-habits-list/
   /blog/best-habit-tracker-apps-2026/
