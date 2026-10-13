@@ -138,6 +138,7 @@ REQUIRED = %w[
   /llms.txt
   /shared.css
   /editorial/
+  /about/
   /compare/productify-vs-loop/
   /compare/productify-vs-productive/
   /compare/productify-vs-streaks/

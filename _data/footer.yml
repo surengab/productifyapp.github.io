@@ -28,13 +28,13 @@ company:
   links:
     - { href: /pricing/,      label: "Pricing" }
     - { href: /download/,     label: "Download" }
-    - { href: /#about,        label: "About" }
+    - { href: /about/,        label: "About" }
     - { href: /#contact,      label: "Contact" }
     - { href: /#faq,          label: "FAQ" }
     - { href: /privacy.html,  label: "Privacy Policy" }
     - { href: /terms.html,    label: "Terms of Use" }
 
-copyright: "&copy; 2026 Productify. All rights reserved."
+copyright: "&copy; 2026 DEDUCTIFY, LLC. Productify is made by Deductify. All rights reserved."
 
 social:
   - { href: "https://x.com/Productify_app",                 icon: "🐦", aria: "Productify on X" }

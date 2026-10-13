@@ -39,7 +39,7 @@ dropdowns:
   - label: Company
     align: right
     items:
-      - { href: /#about, icon: users, title: "About", blurb: "Get to know Productify", mobile: "About" }
+      - { href: /about/, icon: users, title: "About", blurb: "The studio behind Productify", mobile: "About" }
       - { href: /#contact, icon: smartphone, title: "Contact", blurb: "Get in touch with the team", mobile: "Contact" }
 
 # Plain links after the dropdowns.
