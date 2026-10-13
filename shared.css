@@ -382,6 +382,15 @@ details.mobile-nav__section { padding: 4px 20px; }
 .page-hero h1 { margin-bottom: 18px; }
 .page-hero h1 span { color: var(--blue); }
 .page-hero .lead { margin-bottom: 32px; }
+.page-hero__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.page-hero__grid h1 { font-size: clamp(2rem, 3.2vw, 2.7rem); }
+.page-hero__art { position: relative; z-index: 1; margin: 0; }
+.page-hero__art img { display: block; width: 100%; height: auto; border-radius: 24px; }
+.page-hero__art figcaption { margin-top: 14px; color: var(--ink-muted); font-size: .88rem; line-height: 1.6; text-align: center; }
+@media (max-width: 900px) {
+    .page-hero__grid { grid-template-columns: 1fr; gap: 32px; }
+    .page-hero__art { width: min(100%, 520px); margin: 0 auto; }
+}
 
 /* --- ARTICLE BODY ---------------------------------------------------------- */
 .article { max-width: 760px; }
