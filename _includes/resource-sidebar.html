@@ -7,7 +7,13 @@
         <a href="/guides/"{% if page.section == 'guides' %} aria-current="location"{% endif %}>Guides</a>
         <a href="/blog/"{% if page.section == 'blog' %} aria-current="location"{% endif %}>Blog</a>
     </nav>
-    <details class="resource-sidebar__menu" open>
+    {%- comment -%}
+    Rendered closed: below 1100px the menu sits above the article, and opening it
+    in the HTML only for scripts.html to close it after first paint made the
+    whole article jump (CLS ~0.6 on phones). On desktop the script opens it; there
+    it is a side column, so nothing below it moves.
+    {%- endcomment %}
+    <details class="resource-sidebar__menu">
         <summary>Browse {{ section_title }}</summary>
         <nav aria-label="{{ section_title }} library">
             <ul>

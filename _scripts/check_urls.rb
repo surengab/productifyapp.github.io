@@ -107,6 +107,30 @@ REQUIRED = %w[
   /solutions/productivity-at-work/
   /pricing/
   /download/
+  /de/download/
+  /de/pricing/
+  /fr/download/
+  /fr/pricing/
+  /ja/download/
+  /ja/pricing/
+  /ko/download/
+  /ko/pricing/
+  /de/blog/
+  /fr/blog/
+  /ja/blog/
+  /ko/blog/
+  /de/blog/habit-tracker-app-kostenlos/
+  /de/blog/wie-lange-dauert-es-eine-gewohnheit-aufzubauen/
+  /de/blog/welche-gewohnheiten-tracken/
+  /fr/blog/application-habitudes-gratuite/
+  /fr/blog/combien-de-temps-pour-creer-une-habitude/
+  /fr/blog/quelles-habitudes-suivre/
+  /ja/blog/best-habit-tracker-apps/
+  /ja/blog/how-long-to-build-a-habit/
+  /ja/blog/what-habits-to-track/
+  /ko/blog/best-habit-tracker-apps/
+  /ko/blog/how-long-to-build-a-habit/
+  /ko/blog/what-habits-to-track/
   /privacy.html
   /terms.html
   /sitemap.xml

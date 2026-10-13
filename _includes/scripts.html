@@ -51,6 +51,7 @@
         });
 
         // Keep the resource links visible beside desktop articles and collapsible on mobile.
+        // The menu is rendered closed (see resource-sidebar.html), so only desktop opens it here.
         var resourceMenu = document.querySelector('.resource-sidebar__menu');
         if (resourceMenu) {
             var resourceDesktop = window.matchMedia('(min-width: 1100px)');

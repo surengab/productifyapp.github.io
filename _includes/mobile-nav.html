@@ -40,7 +40,8 @@
         </details>
         <div class="mobile-nav__section">
             {%- for link in site.data.nav.mobile_primary %}
-            <a href="{{ link.href }}" class="mobile-nav__link{% if link.primary %} mobile-nav__link--primary{% endif %}">{{ i18n.ui.nav[link.label] | default: link.label }}</a>
+            {%- assign ov = i18n.nav_items[link.href] %}
+            <a href="{{ ov.href | default: link.href }}" class="mobile-nav__link{% if link.primary %} mobile-nav__link--primary{% endif %}">{{ i18n.ui.nav[link.label] | default: link.label }}</a>
             {%- endfor %}
         </div>
     </div>

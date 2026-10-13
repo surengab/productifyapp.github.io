@@ -13,7 +13,7 @@
             <p class="l10n-hero__note">{{ page.hero.note }}</p>
             <div class="l10n-qr">
                 <img src="/assets/productify-app-store-qr.svg" alt="{{ page.hero.qr_alt }}" width="96" height="96" loading="lazy" decoding="async">
-                <p><strong>{{ page.hero.qr_title }}</strong><br>{{ page.hero.qr_text }}</p>
+                <p><strong>{{ page.hero.qr_title }}</strong><br>{{ page.hero.qr_text }}{% if i18n.download_url %} <a href="{{ i18n.download_url }}">{{ i18n.ui.download_page_link }}</a>{% endif %}</p>
             </div>
         </div>
         <div class="l10n-hero__visual">

@@ -2,6 +2,9 @@
 # Edit here once; every /ko/ page picks it up.
 home_url: /ko/
 tools_url: /ko/tools/
+download_url: /ko/download/
+pricing_url: /ko/pricing/
+blog_url: /ko/blog/
 appstore_url: https://apps.apple.com/kr/app/id1389900237
 store_name: Productify 습관 플래너
 currency: KRW
@@ -20,9 +23,24 @@ ui:
     Pricing: 요금
   cta_button: Productify 무료로 다운로드
   cta_note: 습관 5개 무료 · 회원가입 불필요 · 아이폰·애플워치 지원
+  download_page_link: 다운로드 페이지 보기 →
   breadcrumb_home: 홈
   breadcrumb_tools: 무료 도구
 nav_items:
+  /blog/:
+    href: /ko/blog/
+    title: 블로그
+    blurb: 습관, 연구, 앱 비교 (한국어)
+    mobile: 블로그
+  /pricing/:
+    href: /ko/pricing/
+    title: 요금
+    blurb: 무료와 Pro 비교
+    mobile: 요금
+  /download/:
+    href: /ko/download/
+    title: 다운로드
+    mobile: 다운로드
   /tools/:
     href: /ko/tools/
     title: 무료 도구
@@ -34,6 +52,9 @@ tools_teaser:
   lead: 30일 트래커, 이어 인 픽셀(Year in Pixels), 월간·주간 해빗 트래커 PDF와 연속 기록 계산기. 모두 무료이며 이메일도 필요 없습니다.
   cta: 무료 도구 모두 보기
 footer:
+  blog: 블로그 (한국어)
+  download: Productify 다운로드
+  pricing: 요금
   blurb: 아이폰과 애플워치를 위한 차분한 습관 관리 앱. 나에게 맞는 루틴을 무료로 시작하세요.
   english_site: 영어 사이트
   privacy: 개인정보 처리방침 (영어)

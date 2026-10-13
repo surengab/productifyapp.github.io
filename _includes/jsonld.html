@@ -88,7 +88,7 @@ and the visible page can no longer drift apart (they did, before the migration).
                 "applicationCategory": "LifestyleApplication",
                 "operatingSystem": {{ app.os | jsonify }},
                 "url": {{ app.url | jsonify }},
-                "offers": { "@type": "Offer", "price": "{{ app.price }}", "priceCurrency": "USD" }
+                "offers": { "@type": "Offer", "price": "{{ app.price }}", "priceCurrency": "{{ page.apps_currency | default: 'USD' }}" }
             }
         }{% unless forloop.last %},{% endunless %}
         {%- endfor %}

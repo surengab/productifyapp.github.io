@@ -56,7 +56,8 @@ local App Store link, and replacement links for pages that are translated
                 </div>
                 {%- endfor %}
                 {%- for link in site.data.nav.links %}
-                <a href="{{ link.href }}"{% if i18n %} hreflang="en"{% endif %}>{{ i18n.ui.nav[link.label] | default: link.label }}</a>
+                {%- assign ov = i18n.nav_items[link.href] %}
+                <a href="{{ ov.href | default: link.href }}"{% if i18n and ov == nil %} hreflang="en"{% endif %}>{{ i18n.ui.nav[link.label] | default: link.label }}</a>
                 {%- endfor %}
             </nav>
             <div class="nav-cta">
