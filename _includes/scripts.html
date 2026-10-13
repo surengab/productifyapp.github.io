@@ -269,6 +269,27 @@
         // except the popup, whose button goes straight to the App Store.
         // Source and review links retain their original destination.
         var OUR_APP = 'id1389900237';
+
+        // App Store Connect campaign links: pt = provider token (_config.yml
+        // appstore_pt), ct = which button on which page, e.g.
+        // "inline-b-stoic-habits" or "hero-de-tools-30-day-habit-tracker".
+        // Apple caps ct at 40 characters. Without a token the links stay plain.
+        var CAMPAIGN_PT = {{ site.appstore_pt | jsonify }};
+        if (CAMPAIGN_PT) {
+            var pageToken = location.pathname.replace(/^\/|\/$/g, '')
+                .replace(/^(blog|guides|features|compare|solutions|tools)\//, function (m, s) { return s.charAt(0) + '/'; })
+                .replace(/\//g, '-') || 'home';
+            document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
+                if (a.href.indexOf(OUR_APP) === -1 || !a.matches('.appstore-badge-link, [data-cta]')) return;
+                try {
+                    var u = new URL(a.href);
+                    u.searchParams.set('pt', CAMPAIGN_PT);
+                    u.searchParams.set('ct', (ctaLocation(a) + '-' + pageToken).toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 40));
+                    u.searchParams.set('mt', '8');
+                    a.href = u.toString();
+                } catch (e) {}
+            });
+        }
         if (!isIOS && location.pathname !== '/download/') {
             document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
                 if (a.closest('.sticky-cta, .download-popup')) return;

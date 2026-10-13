@@ -6,6 +6,13 @@ lang: en
 locale: en_US
 twitter: "@Productify_app"
 appstore_url: https://apps.apple.com/us/app/habit-tracker-productify/id1389900237
+# Numeric App Store ID, used by the Smart App Banner in _includes/head.html.
+appstore_id: "1389900237"
+# App Store Connect provider token (App Analytics > Campaigns > generate a link,
+# then copy the number after pt=). When set, _includes/scripts.html adds
+# pt/ct campaign parameters to every download link so App Store Connect can
+# attribute installs to the page and button. Empty = plain links.
+appstore_pt: ""
 default_image: /og-image.jpg
 ga_id: G-M3DE9J4KYW
 # Meta Business domain verification. Checked against the homepage <head>;

@@ -106,6 +106,17 @@ go directly to the App Store; other devices go to `/download/`, which offers a
 static QR code. Regenerate `assets/productify-app-store-qr.svg` if the app's
 App Store URL changes. The QR has no external service dependency.
 
+Safari on iPhone and iPad also shows Apple's Smart App Banner (`apple-itunes-app`
+meta in `_includes/head.html`, from `appstore_id` in `_config.yml`) on every page
+except the download pages. Taps on it appear in App Store Connect as web referrals,
+not as GA events.
+
+Set `appstore_pt` in `_config.yml` to your App Store Connect provider token
+(App Analytics > Campaigns) to tag every download link with campaign parameters:
+`ct` is the button plus the page, e.g. `inline-b-stoic-habits` or
+`hero-de-tools-30-day-habit-tracker` (40 characters max). App Store Connect then
+reports installs per campaign. Left empty, links stay plain.
+
 `download_page_click` measures visits to the handoff page; `download_click`
 measures actual App Store CTA clicks. Review/source links are excluded. Neither
 event measures installs, and scanning the static QR does not emit a web click.
