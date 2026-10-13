@@ -12,6 +12,13 @@ breadcrumbs:
 - label: Home
   href: /
 - label: Solutions
+extra_css: |-
+  .solution-card__icon { display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 8px; border-radius: 20px; }
+  .solution-card__icon svg { display: block; width: 32px; height: 32px; }
+  .solution-card__icon--morning { color: #a45c35; background: #fbede3; }
+  .solution-card__icon--evening { color: #7461a1; background: #eeebf7; }
+  .solution-card__icon--work { color: #496f5c; background: #eaf2ed; }
+  .solution-card__icon--tracking { color: #536da2; background: #eaf0fa; }
 ---
 <section class="guide-hero" aria-labelledby="solutions-heading">
     <div class="container">
@@ -29,21 +36,25 @@ breadcrumbs:
         </div>
         <div class="guide-cards">
             <a class="feature-card feature-card--link guide-card" href="/solutions/morning-routine/">
+                <span class="solution-card__icon solution-card__icon--morning" aria-hidden="true"><svg width="32" height="32" focusable="false"><use href="#ic-sunrise"/></svg></span>
                 <h3>Build a morning routine</h3>
                 <p>Choose a small first step, attach it to something you already do, and plan a version for rushed mornings.</p>
                 <span class="feature-card__cta">Explore morning routines →</span>
             </a>
             <a class="feature-card feature-card--link guide-card" href="/solutions/evening-routine/">
+                <span class="solution-card__icon solution-card__icon--evening" aria-hidden="true"><svg width="32" height="32" focusable="false"><use href="#ic-moon"/></svg></span>
                 <h3>Build an evening routine</h3>
                 <p>Make room to wind down, prepare one thing for tomorrow, and adapt your routine for late or busy nights.</p>
                 <span class="feature-card__cta">Explore evening routines →</span>
             </a>
             <a class="feature-card feature-card--link guide-card" href="/solutions/productivity-at-work/">
+                <span class="solution-card__icon solution-card__icon--work" aria-hidden="true"><svg width="32" height="32" focusable="false"><use href="#ic-briefcase"/></svg></span>
                 <h3>Build useful habits at work</h3>
                 <p>Turn priorities, focused work, and end-of-day planning into repeatable actions that fit your working day.</p>
                 <span class="feature-card__cta">Explore work habits →</span>
             </a>
             <a class="feature-card feature-card--link guide-card" href="/solutions/habit-tracker-for-adhd/">
+                <span class="solution-card__icon solution-card__icon--tracking" aria-hidden="true"><svg width="32" height="32" focusable="false"><use href="#ic-list-checks"/></svg></span>
                 <h3>Habit tracking with ADHD</h3>
                 <p>Explore reminders, manageable goals, and ways to reduce the effort of checking in. Consider which tracking features fit your needs.</p>
                 <span class="feature-card__cta">Explore tracking with ADHD →</span>
