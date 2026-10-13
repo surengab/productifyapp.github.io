@@ -1,5 +1,7 @@
 ---
 lastmod_fallback: '2026-08-27'
+last_modified: '2026-10-14'
+image: /assets/solutions/productivity-at-work.webp
 layout: page
 title: Productivity Habits at Work That Compound Over Time | Productify
 seo_title: 'Productivity Habits at Work That Compound Over Time'
@@ -38,8 +40,8 @@ extra_jsonld:
           "description": "A practical guide to building daily work habits that improve professional performance over time, and how to track them with Productify.",
           "url": "https://productifyapp.org/solutions/productivity-at-work/",
           "datePublished": "2026-04-08",
-          "dateModified": "2026-08-27",
-          "image": "https://productifyapp.org/og-image.jpg",
+          "dateModified": "2026-10-14",
+          "image": "https://productifyapp.org/assets/solutions/productivity-at-work.webp",
           "mainEntityOfPage": { "@type": "WebPage", "@id": "https://productifyapp.org/solutions/productivity-at-work/" },
           "author": { "@type": "Organization", "name": "Productify" },
           "publisher": { "@type": "Organization", "name": "Productify", "logo": { "@type": "ImageObject", "url": "https://productifyapp.org/favicon.svg" } }
@@ -77,118 +79,6 @@ extra_jsonld:
           ]
       }
 extra_css: |-
-  /* -- Hero two-column layout ------------------------- */
-  .hero-work {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
-  }
-  @media (max-width: 760px) {
-      .hero-work { grid-template-columns: 1fr; gap: 32px; }
-  }
-
-  /* -- CSS work habit mockup -------------------------- */
-  .work-mockup {
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 24px 64px rgba(43,28,90,.14), 0 2px 8px rgba(43,28,90,.05);
-      border: 1px solid rgba(107,111,212,.14);
-      padding: 20px 20px 12px;
-      max-width: 320px;
-      width: 100%;
-  }
-  @media (max-width: 760px) {
-      .work-mockup { max-width: 100%; margin: 0 auto; }
-  }
-  .work-mockup__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(107,111,212,.1);
-  }
-  .work-mockup__title {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-  }
-  .work-mockup__date {
-      font-size: .72rem;
-      color: var(--ink-faint);
-  }
-  .work-habit-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(107,111,212,.07);
-  }
-  .work-habit-row:last-of-type { border-bottom: none; }
-  .work-habit-row__check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      border: 2px solid rgba(107,111,212,.3);
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .65rem;
-      color: transparent;
-      transition: all .2s;
-  }
-  .work-habit-row--done .work-habit-row__check {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: #fff;
-  }
-  .work-habit-row__label {
-      flex: 1;
-      font-size: .9rem;
-      font-weight: 500;
-      color: var(--ink);
-  }
-  .work-habit-row--done .work-habit-row__label {
-      color: var(--ink-muted);
-  }
-  .work-habit-row__target {
-      font-size: .78rem;
-      color: var(--ink-faint);
-      font-weight: 500;
-  }
-  .work-habit-row__freq {
-      font-size: .72rem;
-      background: rgba(107,111,212,.1);
-      color: var(--blue);
-      border-radius: 20px;
-      padding: 2px 8px;
-      font-weight: 600;
-  }
-  .work-mockup__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(107,111,212,.08);
-  }
-  .work-mockup__streak {
-      font-size: .72rem;
-      color: var(--ink-faint);
-  }
-  .work-mockup__streak strong {
-      color: var(--blue);
-  }
-  .work-mockup__app-label {
-      font-size: .68rem;
-      color: var(--ink-faint);
-      opacity: .6;
-  }
-
   /* -- Habit tracker vs to-do section --------------- */
   .vs-grid {
       display: grid;
@@ -237,10 +127,10 @@ extra_css: |-
 <!-- PAGE HERO -->
 <section class="page-hero" aria-labelledby="page-hero-heading">
     <div class="container">
-        <div class="hero-work">
-            <div class="page-hero__inner" style="max-width:100%;">
+        <div class="page-hero__grid">
+            <div class="page-hero__inner">
                 <div class="eyebrow">Work Habits · Professional Growth</div>
-                <p style="font-size:.85rem; color:var(--ink-muted); margin:0 0 16px;">Updated August 2026</p>
+                <p style="font-size:.85rem; color:var(--ink-muted); margin:0 0 16px;">Updated October 14, 2026</p>
                 <h1 id="page-hero-heading">
                     Build better productivity<br>
                     <span>habits at work</span>
@@ -255,44 +145,14 @@ extra_css: |-
                 <p style="margin-top:12px; font-size:.8rem; color:var(--ink-faint);">Free to download · iOS 17+ · No account required</p>
             </div>
 
-            <!-- CSS work habit mockup -->
-            <div aria-label="Example work habits in Productify: Deep Work, Reading, Weekly Review, and Shutdown Ritual" role="img">
-                <div class="work-mockup">
-                    <div class="work-mockup__header">
-                        <span class="work-mockup__title">Today's work habits</span>
-                        <span class="work-mockup__date">Mon, May 13</span>
-                    </div>
-
-                    <div class="work-habit-row work-habit-row--done">
-                        <div class="work-habit-row__check" aria-hidden="true">✓</div>
-                        <span class="work-habit-row__label">Deep Work</span>
-                        <span class="work-habit-row__target">90 min</span>
-                    </div>
-
-                    <div class="work-habit-row work-habit-row--done">
-                        <div class="work-habit-row__check" aria-hidden="true">✓</div>
-                        <span class="work-habit-row__label">Professional Reading</span>
-                        <span class="work-habit-row__target">20 min</span>
-                    </div>
-
-                    <div class="work-habit-row">
-                        <div class="work-habit-row__check" aria-hidden="true"></div>
-                        <span class="work-habit-row__label">Weekly Review</span>
-                        <span class="work-habit-row__freq">1×/week</span>
-                    </div>
-
-                    <div class="work-habit-row">
-                        <div class="work-habit-row__check" aria-hidden="true"></div>
-                        <span class="work-habit-row__label">Shutdown Ritual</span>
-                        <span class="work-habit-row__target">daily</span>
-                    </div>
-
-                    <div class="work-mockup__footer">
-                        <span class="work-mockup__streak">Deep Work streak: <strong>14 days</strong></span>
-                        <span class="work-mockup__app-label">Productify</span>
-                    </div>
-                </div>
-            </div>
+            <figure class="page-hero__art">
+                <img src="/assets/solutions/productivity-at-work.webp"
+                     srcset="/assets/solutions/productivity-at-work-720.webp 720w, /assets/solutions/productivity-at-work.webp 1024w"
+                     sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 900px) 520px, (max-width: 1200px) 42vw, 520px"
+                     alt="A woman focuses on her laptop at a tidy desk with a notebook, a small hourglass, books, and a plant."
+                     width="1024" height="1280" loading="eager" fetchpriority="high" decoding="async">
+                <figcaption>Choose one priority. Make room for focused work.</figcaption>
+            </figure>
         </div>
     </div>
 </section>
