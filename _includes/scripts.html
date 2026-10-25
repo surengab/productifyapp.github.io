@@ -169,21 +169,27 @@
         if (downloadPopup && typeof downloadPopup.show === 'function') {
             var popupPreview = new URLSearchParams(location.search).has('preview-popup');
             var popupMobile = window.matchMedia('(max-width: 900px)');
-            var popupReady = popupPreview;
+            // A page can open the offer at a scroll depth (data-scroll, percent of the
+            // page) instead of after 30 s and a third of the page, and repeat it after
+            // data-repeat-days instead of a week.
+            var popupScrollAt = downloadPopup.hasAttribute('data-scroll') ? Number(downloadPopup.getAttribute('data-scroll')) / 100 : 0;
+            var popupRepeatMs = Number(downloadPopup.getAttribute('data-repeat-days') || 7) * 86400000;
+            var popupReady = popupPreview || popupScrollAt > 0;
             var popupShown = false;
             var popupEngaged = false;
             var lastPopupView = 0;
             try { lastPopupView = Number(localStorage.getItem('productifyMobilePopupViewed') || 0); } catch (e) {}
             function popupEvent(name) {
                 if (typeof window.gtag === 'function') gtag('event', name, {
-                    campaign: 'sitewide_mobile_download_v1',
+                    campaign: downloadPopup.getAttribute('data-campaign') || 'sitewide_mobile_download_v1',
                     page_path: location.pathname
                 });
             }
             function maybeShowPopup() {
                 if (!popupMobile.matches || !popupReady || popupShown || document.visibilityState !== 'visible') return;
                 if (!popupPreview) {
-                    if (!isIOS || !popupEngaged || Date.now() - lastPopupView < 7 * 86400000) return;
+                    if (!isIOS) return;
+                    if (!popupEngaged || Date.now() - lastPopupView < popupRepeatMs) return;
                     if (mobileNav && mobileNav.classList.contains('open')) return;
                     var prompts = document.querySelectorAll('.cta-banner, .inline-cta, .mid-cta, .product-tour, footer');
                     if (Array.prototype.some.call(prompts, function (prompt) {
@@ -215,7 +221,7 @@
             });
             function trackPopupReading() {
                 var scrollable = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-                if (scrollY >= 600 && scrollY / scrollable >= .35) popupEngaged = true;
+                if (popupScrollAt ? scrollY / scrollable >= popupScrollAt : scrollY >= 600 && scrollY / scrollable >= .35) popupEngaged = true;
                 maybeShowPopup();
             }
             trackPopupReading();
@@ -225,7 +231,7 @@
                 else maybeShowPopup();
             });
             if (popupPreview) maybeShowPopup();
-            else window.setTimeout(function () { popupReady = true; maybeShowPopup(); }, 30000);
+            else if (!popupScrollAt) window.setTimeout(function () { popupReady = true; maybeShowPopup(); }, 30000);
         }
 
         // Contents rail: highlight the section currently being read. Falls back

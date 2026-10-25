@@ -1,16 +1,35 @@
-<dialog class="download-popup" id="downloadPopup" aria-labelledby="download-popup-title" aria-describedby="download-popup-description">
+{%- assign dp = page.download_popup -%}
+{%- assign featured = false -%}
+{%- if dp.style == 'featured' -%}{%- assign featured = true -%}{%- endif -%}
+<dialog class="download-popup{% if featured %} download-popup--featured{% endif %}" id="downloadPopup" aria-labelledby="download-popup-title" aria-describedby="download-popup-description"{% if dp.campaign %} data-campaign="{{ dp.campaign }}"{% endif %}{% if dp.scroll_percent %} data-scroll="{{ dp.scroll_percent }}"{% endif %}{% if dp.repeat_days %} data-repeat-days="{{ dp.repeat_days }}"{% endif %}>
     <div class="download-popup__content">
         <button class="download-popup__close" type="button" aria-label="Close download offer" data-popup-close>×</button>
         <div class="download-popup__copy">
+            {%- if featured %}
+            <div class="download-popup__week" aria-hidden="true">
+                {%- assign days = 'M,T,W,T,F,S,S' | split: ',' %}
+                {%- for d in days %}
+                <span class="download-popup__day{% if forloop.index < 5 %} is-done{% elsif forloop.index == 5 %} is-today{% endif %}" style="--i: {{ forloop.index0 }}"><i>{% if forloop.index < 5 %}<svg viewBox="0 0 12 12"><path d="M2.6 6.3l2.2 2.2 4.6-4.9"/></svg>{% endif %}</i>{{ d }}</span>
+                {%- endfor %}
+            </div>
+            {%- endif %}
             <span class="download-popup__eyebrow">One small win at a time</span>
             <h2 id="download-popup-title" tabindex="-1">Start one habit today.</h2>
             <p id="download-popup-description">Pick a tiny action. Productify helps you show up again tomorrow.</p>
+            {%- if featured %}
+            <div class="download-popup__actions">
+            {%- endif %}
             <a class="download-popup__store appstore-badge-link" href="{{ site.appstore_url }}" data-cta="popup"
                aria-label="Download Productify on the App Store">
                 <img src="/appstore_badge.svg"
                      alt="Download on the App Store" class="appstore-badge" width="180" height="53">
             </a>
+            {%- if featured %}
+            <p class="download-popup__note"><span>5 habits free</span> <span>No account required</span></p>
+            </div>
+            {%- else %}
             <p class="download-popup__note">5 habits free · No account required</p>
+            {%- endif %}
             <button class="download-popup__later" type="button" data-popup-close>Maybe later</button>
         </div>
     </div>

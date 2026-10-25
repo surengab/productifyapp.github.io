@@ -953,3 +953,52 @@ a.cta-secondary {
 }
 .download-popup__close:hover { background: #fff; color: #111827; }
 .download-popup__store:focus-visible, .download-popup button:focus-visible { outline: 3px solid #6840ca; outline-offset: 3px; }
+/* Featured version of the same sheet (download_popup: style: featured). A week of
+   check-ins fills in as it opens, echoing "show up again tomorrow". */
+.download-popup--featured {
+    --dp-purple: #6840ca; --dp-peach: #f2b28c; --dp-muted: #5b6274;
+    --dp-day: clamp(24px, 7.8vw, 30px);
+    inset: auto 0 calc(10px + env(safe-area-inset-bottom, 0px));
+    width: min(400px, calc(100vw - 20px));
+    border: 1px solid #e6ddfa; border-radius: 24px;
+    background: radial-gradient(95% 55% at 0% 0%, #f3eeff 0%, rgba(243,238,255,0) 72%), #fff;
+    box-shadow: 0 24px 64px rgba(43,28,90,.2), 0 2px 8px rgba(43,28,90,.06);
+}
+.download-popup--featured[open] { animation: dp-rise .34s cubic-bezier(.2,.8,.2,1) both; }
+.download-popup--featured .download-popup__copy { padding: 26px 24px 18px; }
+.download-popup__week { display: flex; gap: clamp(5px, 2vw, 8px); }
+.download-popup__day {
+    display: grid; justify-items: center; gap: 5px;
+    color: #8a8fa3; font-size: .62rem; font-weight: 600; line-height: 1;
+}
+.download-popup__day i {
+    display: grid; place-items: center; width: var(--dp-day); height: var(--dp-day);
+    border: 1.5px solid #e4def2; border-radius: 50%; background: #fff;
+}
+.download-popup__day svg { width: 56%; height: 56%; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.download-popup__day.is-done i { border-color: var(--dp-purple); background: var(--dp-purple); }
+.download-popup__day.is-today { color: var(--dp-purple); }
+.download-popup__day.is-today i { border: 2px solid var(--dp-peach); background: #fff6f0; }
+.download-popup__day.is-today i::after { content: ''; width: 32%; height: 32%; border-radius: 50%; background: var(--dp-peach); }
+.download-popup--featured .download-popup__eyebrow {
+    display: block; margin: 16px 0 0; color: var(--dp-purple);
+    font-size: .84rem; font-weight: 600; letter-spacing: 0; text-transform: none;
+}
+.download-popup--featured .download-popup__eyebrow::before { content: none; }
+.download-popup--featured h2 { margin-top: 6px; padding-right: 0; font-size: clamp(1.75rem, 7.8vw, 2.1rem); line-height: 1.12; text-wrap: balance; }
+.download-popup--featured .download-popup__copy > p#download-popup-description { margin-top: 12px; color: var(--dp-muted); font-size: 1rem; }
+.download-popup--featured .download-popup__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 22px; }
+.download-popup--featured .download-popup__store { margin-top: 0; }
+.download-popup--featured .download-popup__store .appstore-badge { width: clamp(140px, 42vw, 168px); height: auto; }
+.download-popup--featured .download-popup__note { margin: 0; color: var(--dp-muted); font-size: .8rem; line-height: 1.45; }
+.download-popup--featured .download-popup__note span { display: block; }
+.download-popup--featured .download-popup__later { margin-top: 12px; font-size: .88rem; }
+.download-popup--featured .download-popup__close { top: 12px; right: 12px; border: 1px solid #ece6fb; background: rgba(255,255,255,.85); font-size: 1.45rem; }
+.download-popup--featured[open] .download-popup__day.is-done i { animation: dp-check .3s cubic-bezier(.3,1.6,.6,1) both; animation-delay: calc(.3s + var(--i) * .09s); }
+.download-popup--featured[open] .download-popup__day.is-today i { animation: dp-today 1.3s ease-out .75s 2; }
+@keyframes dp-rise { from { opacity: 0; transform: translateY(28px); } }
+@keyframes dp-check { from { opacity: 0; transform: scale(.4); } }
+@keyframes dp-today { from { box-shadow: 0 0 0 0 rgba(242,178,140,.6); } to { box-shadow: 0 0 0 9px rgba(242,178,140,0); } }
+@media (prefers-reduced-motion: reduce) {
+    .download-popup--featured[open], .download-popup--featured[open] .download-popup__day i { animation: none; }
+}

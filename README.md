@@ -106,6 +106,20 @@ go directly to the App Store; other devices go to `/download/`, which offers a
 static QR code. Regenerate `assets/productify-app-store-qr.svg` if the app's
 App Store URL changes. The QR has no external service dependency.
 
+The iPhone download popup (`_includes/download-popup.html`) opens after 30 s of
+reading and a third of the page, at most once a week. A page can change that in
+front matter, as `_blog/areas-of-life.html` does:
+
+```yaml
+download_popup:
+  style: featured     # the same popup with a week of check-ins
+  scroll_percent: 10  # opens once the reader has scrolled 10% of the page
+  repeat_days: 2      # at most once every 2 days (other pages: 7)
+  campaign: areas_of_life_large_v2   # GA campaign for this page's popup events
+```
+
+Add `?preview-popup` to any URL to open the popup immediately.
+
 Safari on iPhone and iPad also shows Apple's Smart App Banner (`apple-itunes-app`
 meta in `_includes/head.html`, from `appstore_id` in `_config.yml`) on every page
 except the download pages. Taps on it appear in App Store Connect as web referrals,

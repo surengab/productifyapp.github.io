@@ -10,6 +10,13 @@ const homepage = readFileSync(join(root, 'index.html'), 'utf8');
 assert.match(homepage, /sitewide_mobile_download_v1/);
 assert.match(homepage, /if \(!popupMobile\.matches/);
 assert.doesNotMatch(homepage, /downloadPopup\.showModal\(/);
+assert.doesNotMatch(homepage, /download-popup--featured/);
+
+// areas-of-life opts into the featured sheet, at 10% of the page, every 2 days at most.
+const areas = readFileSync(join(root, 'blog/areas-of-life/index.html'), 'utf8');
+assert.match(areas, /class="download-popup download-popup--featured"/);
+assert.match(areas, /data-scroll="10" data-repeat-days="2"/);
+assert.equal((areas.match(/id="downloadPopup"/g) || []).length, 1);
 
 for (const page of [
     'index.html', 'pricing/index.html', 'features/habit-duo/index.html',
