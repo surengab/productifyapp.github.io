@@ -27,7 +27,7 @@ This file provides a curated index of the most important pages on {{ site.url | 
 - [Download Productify]({{ '/download/' | absolute_url }}): free on the App Store, no account required
 - [Pricing]({{ '/pricing/' | absolute_url }}): free tier, Pro subscription and lifetime plan
 - [About]({{ '/about/' | absolute_url }}): Productify is made by Deductify (DEDUCTIFY, LLC), an independent product studio
-- [Free habit tools]({{ '/tools/' | absolute_url }}): printable 30-day, monthly and weekly habit trackers, a year in pixels sheet, and a habit streak calculator
+- [Free habit tools]({{ '/tools/' | absolute_url }}): printable 2027 and undated monthly habit trackers, weekly and 30-day trackers, a year in pixels sheet (2027 and undated), and a habit streak calculator
 - [Download on the App Store]({{ site.appstore_url }})
 
 ## Other languages

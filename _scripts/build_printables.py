@@ -2,11 +2,14 @@
 """Rebuild the printable PDFs: python3 _scripts/build_printables.py.
 
 Builds the monthly and weekly habit trackers, the 30-day trackers and the
-year-in-pixels sheet, in A4 and US Letter, then the localized editions
-(printables_l10n.py). Each PDF footer links back to the
+year-in-pixels sheet, in A4 and US Letter, then the dated edition for
+DATED_YEAR (12 dated monthly sheets and a dated year in pixels), then the
+localized editions (printables_l10n.py). Each October, bump DATED_YEAR and
+update the two guide pages that link the dated files. Each PDF footer links back to the
 page that offers it. Requires reportlab and pypdf for authoring only; the
 deployed site is static.
 """
+import calendar
 from pathlib import Path
 
 from reportlab.lib import colors
@@ -43,6 +46,12 @@ THIRTY_DAY_PATH = '/guides/30-day-habit-tracker/'
 PIXELS_PATH = '/guides/year-in-pixels/'
 MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
 MONTH_LENGTHS = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+DATED_YEAR = 2027
+MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+               'November', 'December']
+WEEKDAY_LETTERS = ['M', 'T', 'W', 'T', 'F', 'S', 'S']  # indexed by calendar.weekday(): Monday = 0
+WEEKEND = colors.HexColor('#F7F8FB')
+WEEKEND_HEAD = colors.HexColor('#E3E7F0')
 
 
 def header(c, width, height, title, subtitle, size_label, path=PRINTABLE_PATH):
@@ -210,12 +219,22 @@ def thirty_day_multi(c, width, height, size_label):
     rule(c, width / 2 + 12, bottom - 87, width / 2 - 48)
 
 
-def year_in_pixels(c, width, height, size_label):
-    """A 12 x 31 grid: one small square per day of the year, colored by a key."""
-    header(c, width, height, 'Year in pixels', 'One square for every day of the year. Choose what to track, pick five colors, fill in a square each evening.',
-           size_label + ' / portrait', PIXELS_PATH)
-    text(c, 36, height - 124, 'YEAR', 8, True, MUTED)
-    rule(c, 70, height - 127, 70)
+def year_in_pixels(c, width, height, size_label, year=None):
+    """A 12 x 31 grid: one small square per day of the year, colored by a key.
+
+    With a year, the grid is dated: real month lengths and a small weekday letter in each square.
+    """
+    if year:
+        header(c, width, height, f'Year in pixels {year}',
+               f'One square for every day of {year}. Choose what to track, pick five colors, fill in a square each evening.',
+               size_label + ' / portrait', PIXELS_PATH)
+        text(c, 36, height - 124, 'YEAR', 8, True, MUTED)
+        text(c, 70, height - 124, str(year), 10, True)
+    else:
+        header(c, width, height, 'Year in pixels', 'One square for every day of the year. Choose what to track, pick five colors, fill in a square each evening.',
+               size_label + ' / portrait', PIXELS_PATH)
+        text(c, 36, height - 124, 'YEAR', 8, True, MUTED)
+        rule(c, 70, height - 127, 70)
     text(c, 160, height - 124, 'I AM TRACKING', 8, True, MUTED)
     rule(c, 244, height - 127, width - 280)
 
@@ -241,11 +260,16 @@ def year_in_pixels(c, width, height, size_label):
         c.drawRightString(left + day_w - 6, y + (row_h - 7) / 2 + 1, str(d))
         for m in range(12):
             x = left + day_w + cell_w * m
-            if d > MONTH_LENGTHS[m]:
+            length = calendar.monthrange(year, m + 1)[1] if year else MONTH_LENGTHS[m]
+            if d > length:
                 c.setFillColor(PALE)
                 c.rect(x, y, cell_w, row_h, stroke=0, fill=1)
                 c.setStrokeColor(LINE)
                 c.line(x + 3, y + 3, x + cell_w - 3, y + row_h - 3)
+            elif year:
+                c.setFillColor(LINE)
+                c.setFont(FONTS['regular'], 5)
+                c.drawString(x + 2, y + row_h - 6, WEEKDAY_LETTERS[calendar.weekday(year, m + 1, d)])
             elif m == 1 and d == 29:
                 c.setFillColor(LINE)
                 c.circle(x + cell_w - 4, y + row_h - 4, 1.2, stroke=0, fill=1)
@@ -268,9 +292,67 @@ def year_in_pixels(c, width, height, size_label):
         c.setStrokeColor(LINE)
         c.rect(x, ly - 30, 16, 16, stroke=1, fill=0)
         rule(c, x + 22, ly - 28, swatch_w - 34)
-    text(c, 36, ly - 52, 'Habit example: done, partly done, rest day, missed, not planned. A dot marks 29 February for leap years.', 8, color=MUTED)
+    if year:
+        text(c, 36, ly - 52, f'Habit example: done, partly done, rest day, missed, not planned. Small letters show the weekday of each date in {year}.', 8, color=MUTED)
+    else:
+        text(c, 36, ly - 52, 'Habit example: done, partly done, rest day, missed, not planned. A dot marks 29 February for leap years.', 8, color=MUTED)
     text(c, 36, ly - 76, 'WHAT DID THE YEAR SHOW YOU?', 8, True)
     rule(c, 190, ly - 79, width - 226)
+
+
+def monthly_dated(c, width, height, size_label, year, month, start):
+    """One dated month: weekday letters over every date, shaded weekends and a blue line after each week."""
+    days = calendar.monthrange(year, month)[1]
+    week_word, end_word = ('Monday', 'Sunday') if start == 'monday' else ('Sunday', 'Saturday')
+    header(c, width, height, f'{MONTH_NAMES[month - 1]} {year}',
+           f'{year} habit tracker, {week_word}-start weeks. One mark per day; a small routine is enough.',
+           size_label + ' / landscape')
+    text(c, 36, height - 126, 'MY FOCUS THIS MONTH', 8, True, MUTED)
+    rule(c, 152, height - 129, width - 188)
+
+    left, top, first = 36, height - 150, 160
+    available = width - 72
+    day_w = (available - first) / days
+    header_h, rows, row_h = 34, 8, 29
+    bottom = top - header_h - rows * row_h
+    c.setFillColor(PALE)
+    c.rect(left, top - header_h, available, header_h, stroke=0, fill=1)
+    text(c, left + 10, top - header_h / 2 - 3, 'HABIT + TARGET', 10, True)
+    for d in range(1, days + 1):
+        weekday = calendar.weekday(year, month, d)
+        x = left + first + day_w * (d - 1)
+        if weekday >= 5:
+            c.setFillColor(WEEKEND)
+            c.rect(x, bottom, day_w, top - header_h - bottom, stroke=0, fill=1)
+            c.setFillColor(WEEKEND_HEAD)
+            c.rect(x, top - header_h, day_w, header_h, stroke=0, fill=1)
+        centred(c, x + day_w / 2, top - 13, WEEKDAY_LETTERS[weekday], 7, color=MUTED)
+        centred(c, x + day_w / 2, top - 27, str(d), 8, True)
+    # Grid lines after the shading, so shaded cells never cover them.
+    c.setStrokeColor(LINE)
+    c.setLineWidth(0.5)
+    c.rect(left, bottom, available, top - bottom, stroke=1, fill=0)
+    for d in range(days):
+        x = left + first + day_w * d
+        c.line(x, bottom, x, top)
+    for r in range(rows):
+        y = top - header_h - r * row_h
+        c.line(left, y, left + available, y)
+    week_end = 6 if start == 'monday' else 5
+    c.setStrokeColor(BLUE)
+    c.setLineWidth(1)
+    for d in range(1, days):
+        if calendar.weekday(year, month, d) == week_end:
+            x = left + first + day_w * d
+            c.line(x, bottom, x, top)
+    c.setLineWidth(0.5)
+
+    text(c, 36, bottom - 20, 'KEY  Tick = completed    Dash = not scheduled    Blank = missed or not logged', 9, color=MUTED)
+    text(c, 36, bottom - 36, f'Shaded columns are weekends. A blue line closes each {week_word}-start week, after {end_word}.', 9, color=MUTED)
+    text(c, 36, bottom - 65, 'WHAT WORKED?', 8, True)
+    text(c, width / 2 + 12, bottom - 65, f'ONE CHANGE FOR {year + 1}' if month == 12 else 'ONE CHANGE FOR NEXT MONTH', 8, True)
+    rule(c, 36, bottom - 87, width / 2 - 60)
+    rule(c, width / 2 + 12, bottom - 87, width / 2 - 48)
 
 
 def check(path, pagesize, url_path, required_text):
@@ -287,6 +369,60 @@ def check(path, pagesize, url_path, required_text):
         'https://productifyapp.org' + url_path
     ]
     return content
+
+
+def check_pages(path, pagesize, url_path, page_texts):
+    """Multi-page version of check(): every page gets its own required text and footer link."""
+    pdf = PdfReader(path)
+    assert len(pdf.pages) == len(page_texts), (path.name, len(pdf.pages))
+    contents = []
+    for page, required_text in zip(pdf.pages, page_texts):
+        assert abs(float(page.mediabox.width) - pagesize[0]) < 0.1
+        assert abs(float(page.mediabox.height) - pagesize[1]) < 0.1
+        content = page.extract_text()
+        for value in required_text + ['productifyapp.org' + url_path]:
+            assert value in content, (path.name, value)
+        assert [a.get_object()['/A']['/URI'] for a in page.get('/Annots', [])] == [
+            'https://productifyapp.org' + url_path
+        ]
+        contents.append(content)
+    return contents
+
+
+def build_dated(year=DATED_YEAR):
+    """The dated edition: 12 monthly sheets in one PDF (both week starts, both sizes) and a dated year in pixels."""
+    generated = []
+    for size_name, size in [('a4', A4), ('letter', letter)]:
+        pagesize = landscape(size)
+        for start in ['monday', 'sunday']:
+            path = OUTPUT / f'habit-tracker-{year}-monthly-{size_name}-{start}.pdf'
+            c = new_canvas(path, pagesize, f'Productify {year} monthly habit tracker - {size_name.upper()}, {start.title()} start',
+                           f'Free printable {year} habit tracker for personal use')
+            for month in range(1, 13):
+                monthly_dated(c, *pagesize, size_name.upper(), year, month, start)
+                c.showPage()
+            c.save()
+            contents = check_pages(path, pagesize, PRINTABLE_PATH,
+                                   [[f'{name} {year}', f'{year} habit tracker'] for name in MONTH_NAMES])
+            for month, content in enumerate(contents, 1):
+                tokens = content.split()
+                days = calendar.monthrange(year, month)[1]
+                assert str(days) in tokens and (days == 31 or str(days + 1) not in tokens), (path.name, month)
+            generated.append(path.name)
+
+        path = OUTPUT / f'year-in-pixels-{year}-{size_name}.pdf'
+        c = new_canvas(path, size, f'Productify year in pixels {year} - {size_name.upper()}',
+                       f'Free printable {year} year in pixels tracker for personal use')
+        year_in_pixels(c, *size, size_name.upper(), year)
+        c.showPage()
+        c.save()
+        content = check(path, size, PIXELS_PATH, [f'Year in pixels {year}', 'MY COLOR KEY'])
+        positions = [content.index(month) for month in MONTHS]
+        assert positions == sorted(positions)
+        generated.append(path.name)
+
+    assert len(generated) == 6
+    print(f'Built and checked {len(generated)} dated {year} PDFs:', ', '.join(generated))
 
 
 def new_canvas(path, pagesize, title, subject):
@@ -347,6 +483,8 @@ def build():
 
     assert len(generated) == 12
     print(f'Built and checked {len(generated)} one-page PDFs:', ', '.join(generated))
+
+    build_dated()
 
     # German, French, Japanese and Korean editions for the /xx/tools/ pages.
     from printables_l10n import build_localized

@@ -1,0 +1,647 @@
+diff --git a/.gitignore b/.gitignore
+index 87dc5aa..405ce73 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -9,3 +9,6 @@ vendor/
+ # Internal working files — not part of the site build
+ marketing/
+ concurents/
++
++# Python bytecode from _scripts/build_printables.py
++__pycache__/
+diff --git a/_blog/areas-of-life.html b/_blog/areas-of-life.html
+index e99ac20..86de64f 100644
+--- a/_blog/areas-of-life.html
++++ b/_blog/areas-of-life.html
+@@ -37,7 +37,7 @@ priority: 0.85
+ og_description: The 8 key areas of life and one trackable daily or weekly habit for each, a practical framework for building a balanced routine.
+ heading: 8 Areas of Life to Focus On (And One Habit for Each)
+ date: '2026-05-21'
+-last_modified: '2026-09-25'
++last_modified: '2026-10-28'
+ category: Life and productivity
+ read_time: 10 min read
+ og_type: article
+@@ -324,6 +324,8 @@ extra_css: |-
+     <p><strong>Start with one habit in your lowest-scoring area.</strong> Use the score table above to identify your biggest gap. Define one habit for it. Track it for 60 days. Once it is automatic, move to the next area. Slow and deliberate outperforms ambitious and scattered.</p>
+ </div>
+ 
++<p>Prefer paper? Print the <a href="/guides/habit-tracker-printable/">free 2027 habit tracker</a> and give that habit the first row, or color one square a day on a <a href="/guides/year-in-pixels/">year in pixels 2027</a> to see how the area changes over the year.</p>
++
+ 
+ <!-- Related articles -->
+ <div style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: 14px; padding: 28px; margin-top: 48px;">
+diff --git a/_blog/what-habits-to-track.html b/_blog/what-habits-to-track.html
+index 8e2d645..dba879b 100644
+--- a/_blog/what-habits-to-track.html
++++ b/_blog/what-habits-to-track.html
+@@ -9,7 +9,7 @@ changefreq: monthly
+ priority: 0.8
+ og_description: Find a habit worth tracking, with 30 ideas by category, example schedules, measurable targets, and a simple first-week review.
+ date: '2026-04-12'
+-last_modified: '2026-09-09'
++last_modified: '2026-10-28'
+ category: Habit ideas
+ read_time: 11 min read
+ og_type: article
+@@ -320,7 +320,7 @@ cover_alt: "A lavender walking shoe, teal water bottle, coral book, and cream jo
+ <h2 id="completed-example">A completed tracker with daily and weekly habits</h2>
+ <p>Here is how three ideas can fit into one week. These are example entries; choose the number of habits and targets that suit you.</p>
+ {% include habit-tracker-example.html %}
+-<p>Try the same setup on paper with our <a href="/guides/habit-tracker-printable/">free printable habit trackers</a>. Choose a monthly grid or a weekly sheet in A4 or US Letter. Weekly sheets have Monday and Sunday starts, with no email required. Testing a single habit? The <a href="/guides/30-day-habit-tracker/">30-day habit tracker</a> gives it a one-month trial, and you can browse all our <a href="/tools/">free habit tools</a>.</p>
++<p>Try the same setup on paper with our <a href="/guides/habit-tracker-printable/">free 2027 habit tracker printable</a>: a dated sheet for every month, or an undated monthly grid or weekly sheet, in A4 or US Letter. The 2027 and weekly sheets come with Monday and Sunday starts, with no email required. Testing a single habit? The <a href="/guides/30-day-habit-tracker/">30-day habit tracker</a> gives it a one-month trial, and you can browse all our <a href="/tools/">free habit tools</a>.</p>
+ 
+ <h2 id="where-to-start">Set up one habit, then review the first week</h2>
+ <p>Once you choose an action, give it a starting cue. Our <a href="/blog/habit-stacking-examples/">25 habit stacking examples and fill-in template</a> show how to attach it to something already in your day.</p>
+diff --git a/_guides/30-day-habit-tracker.html b/_guides/30-day-habit-tracker.html
+index 3a9b5ec..9ca0304 100644
+--- a/_guides/30-day-habit-tracker.html
++++ b/_guides/30-day-habit-tracker.html
+@@ -10,7 +10,7 @@ seo_title: 'Free 30-Day Habit Tracker Printable (PDF, A4 & Letter)'
+ description: 'Download a free printable 30-day habit tracker for one habit or up to eight. Start on any date, check in weekly, and review on day 30. A4 and US Letter PDFs.'
+ og_description: 'Thirty days, one small habit, a tick a day. Free 30-day habit tracker PDFs for a single habit or up to eight, with weekly check-ins and a day-30 review.'
+ date: '2026-09-28'
+-last_modified: '2026-09-28'
++last_modified: '2026-10-28'
+ og_type: article
+ priority: 0.8
+ breadcrumbs:
+@@ -109,7 +109,7 @@ extra_css: |-
+ 
+         <h2 id="is-30-days-enough">Is 30 days enough to build a habit?</h2>
+         <p>Thirty days is long enough to learn what a habit costs you and short enough to commit to. It is not a guarantee that the habit will feel automatic by the end. In <a href="/blog/how-long-to-build-a-habit/">the best-known habit research</a>, the median time for a behavior to feel automatic was about 66 days, and the estimates varied a lot between people and behaviors.</p>
+-        <p>So treat day 30 as a checkpoint. If the habit is still helpful, carry it into a <a href="/guides/habit-tracker-printable/">monthly habit tracker</a>, or use the <a href="/guides/habit-streak-calculator/">habit streak calculator</a> to see when you will pass 66 or 100 days.</p>
++        <p>So treat day 30 as a checkpoint. If the habit is still helpful, carry it into the <a href="/guides/habit-tracker-printable/">2027 monthly habit tracker</a>, or use the <a href="/guides/habit-streak-calculator/">habit streak calculator</a> to see when you will pass 66 or 100 days.</p>
+ 
+         <h2 id="challenge-ideas">30-day challenge ideas to start with</h2>
+         <p>Choose something you can do in under 15 minutes on most days. You can grow it later.</p>
+diff --git a/_guides/habit-tracker-printable.html b/_guides/habit-tracker-printable.html
+index 15bfa41..8831131 100644
+--- a/_guides/habit-tracker-printable.html
++++ b/_guides/habit-tracker-printable.html
+@@ -1,16 +1,16 @@
+ ---
+ translation_key: habit-tracker-printable
+ nav_title: "Free Printable Habit Tracker"
+-nav_description: "Monthly and weekly PDFs"
++nav_description: "2027 monthly & weekly PDFs"
+ nav_order: 7
+ layout: page
+ category: Printable resource
+-title: Free Printable Habit Tracker - Monthly and Weekly PDFs
+-seo_title: 'Free Printable Habit Tracker: Monthly & Weekly PDFs'
+-description: 'Download free printable habit trackers in A4 and US Letter. Choose a monthly grid or a weekly sheet with a Monday or Sunday start. No email required.'
+-og_description: 'A little space for the habits you want to keep. Free monthly and weekly habit tracker PDFs, with a completed example and simple printing instructions.'
++title: Free Printable Habit Tracker 2027 - Monthly and Weekly PDFs
++seo_title: 'Free 2027 Habit Tracker Printable: Monthly & Weekly PDFs'
++description: 'Free 2027 habit tracker printable: 12 dated monthly sheets, Monday or Sunday start, in A4 and US Letter. Plus undated monthly and weekly PDFs. No email.'
++og_description: 'Free 2027 habit tracker PDFs with a dated sheet for every month, plus undated monthly and weekly trackers. A4 and US Letter, with a completed example.'
+ date: '2026-09-09'
+-last_modified: '2026-09-09'
++last_modified: '2026-10-28'
+ og_type: article
+ priority: 0.8
+ breadcrumbs:
+@@ -20,14 +20,20 @@ breadcrumbs:
+     href: /guides/
+   - label: Free Printable Habit Tracker
+ faq:
++  - q: Is there a 2027 habit tracker printable?
++    a: '<p>Yes. The 2027 edition is one PDF with a dated sheet for each month, January to December 2027. Every date shows its weekday, weekends are shaded, and a blue line marks the end of each week. Choose A4 or US Letter, with a Monday or Sunday start.</p>'
+   - q: Are these habit tracker printables really free?
+     a: '<p>Yes. Download and print the PDFs for personal use. No email address, account, payment, or Productify app is required.</p>'
+   - q: Which paper size should I choose?
+     a: '<p>Use US Letter for 8.5 × 11 inch paper, commonly used in the US. Choose A4 for 210 × 297 mm paper, commonly used in the UK and Australia. Match the PDF size to the paper in your printer.</p>'
+   - q: Can I start in the middle of a month?
+-    a: '<p>Yes. Write the month and year, cross out dates before you started, and mark any dates that do not exist in that month. Start recording from today; the sheet is undated and reusable in any year.</p>'
++    a: '<p>Yes. On a 2027 sheet, start at today’s date and leave the earlier boxes empty. On the undated sheet, write the month and year, cross out dates before you started, and mark any dates that do not exist in that month.</p>'
+   - q: Do the trackers have Monday and Sunday starts?
+-    a: '<p>The weekly tracker comes in both orders, in A4 and US Letter. The monthly tracker uses dates 1–31, so it works with either week convention without choosing a start day.</p>'
++    a: '<p>Yes. The 2027 monthly tracker and the weekly tracker both come in Monday-start and Sunday-start versions, in A4 and US Letter. On the 2027 sheets, the week start decides where the blue end-of-week lines fall. The undated monthly tracker uses dates 1–31, so it works with either convention.</p>'
++  - q: How many habits should I put on one sheet?
++    a: '<p>Start with one to three. The eight rows are room to grow, not a target: a short list you keep filling in is more useful than a full sheet you stop using. Add a habit once the first ones feel routine.</p>'
++  - q: Should I print all twelve months of 2027 at once?
++    a: '<p>You can, but printing one month at a time lets you adjust as you go. At the end of each month, read your review notes, decide on one change, and print the next page. Most PDF viewers let you choose a page range in the print dialog.</p>'
+   - q: What should I record after a missed day?
+     a: '<p>Leave the cell blank or add a note. Use a dash for a day that was not scheduled, so time off is different from a missed session. Resume at the next planned opportunity and review whether the target or timing needs adjusting.</p>'
+   - q: Are these fillable PDFs?
+@@ -50,26 +56,52 @@ extra_css: |-
+   .printable-downloads { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 20px; }
+   .printable-downloads .btn { font-size: .9rem; padding: 12px 18px; }
+   .printable-card small { color: var(--ink-muted); }
++  .printable-card--featured { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px; align-items: center; margin-bottom: 32px; }
++  .printable-card--featured h3 { margin-top: 8px; }
++  .printable-card--featured ul { margin: 12px 0 0 20px; color: var(--ink-2); list-style: disc; }
++  .printable-more { margin: 0 0 12px; font-size: .9rem; color: var(--ink-muted); }
++  .printable-group { margin: 0 0 16px; }
+   .printable-card h4 { margin: 20px 0 8px; }
+   @media (max-width: 760px) {
+-    .printable-grid { grid-template-columns: 1fr; }
++    .printable-grid, .printable-card--featured { grid-template-columns: 1fr; }
+     .printable-card { padding: 20px; }
+     .printable-preview { height: 250px; }
+   }
+ ---
+ <section class="page-hero" aria-labelledby="printable-heading">
+     <div class="container"><div class="printable-intro">
+-        <div class="eyebrow">Free resource · Paper &amp; pen</div>
+-        <h1 id="printable-heading">Free printable habit trackers<br><span>for a routine that fits.</span></h1>
+-        <p class="lead">Make a little space for reading, practice, a weekly review, or whatever matters to you. Download a monthly or weekly habit tracker, choose one action, and record the days you planned to do it.</p>
+-        <div class="printable-links"><a href="#downloads" class="btn btn-primary">Choose your free PDF ↓</a><a href="#completed-example" class="btn btn-secondary">See a completed example</a></div>
+-        <p class="text-muted">A4 &amp; US Letter · Undated · No email or account required</p>
++        <div class="eyebrow">Free resource · 2027 edition</div>
++        <h1 id="printable-heading">Free 2027 habit tracker printable<br><span>plus undated sheets for any month.</span></h1>
++        <p class="lead">Make a little space for reading, practice, a weekly review, or whatever matters to you. Print a dated sheet for every month of 2027, or an undated monthly or weekly tracker you can reuse. Choose one action and record the days you planned to do it.</p>
++        <div class="printable-links"><a href="#tracker-2027" class="btn btn-primary">Get the 2027 tracker ↓</a><a href="#completed-example" class="btn btn-secondary">See a completed example</a></div>
++        <p class="text-muted">2027 dated &amp; undated · A4 &amp; US Letter · No email or account required</p>
+     </div></div>
+ </section>
+ 
+ <section class="section section--alt" aria-labelledby="downloads">
+     <div class="container">
+-        <div class="section-header"><div class="eyebrow">Download &amp; print</div><h2 id="downloads">Choose your habit tracker printable</h2><p>Choose a format to open its one-page PDF in a new tab. Use the PDF viewer’s Download or Print button to save or print it. Match your paper size and print at actual size or 100%.</p></div>
++        <div class="section-header"><div class="eyebrow">Download &amp; print</div><h2 id="downloads">Choose your habit tracker printable</h2><p>Choose a format to open its PDF in a new tab. Use the PDF viewer’s Download or Print button to save or print it. Match your paper size and print at actual size or 100%.</p></div>
++        <article class="printable-card printable-card--featured" id="tracker-2027" aria-labelledby="tracker-2027-heading">
++            <div class="printable-preview"><img src="/assets/printables/habit-tracker-2027-preview.webp" alt="January 2027 page of the dated habit tracker: eight habit rows, dates 1 to 31 with weekday letters, shaded weekends and a blue line at the end of each week" width="1200" height="927" decoding="async"></div>
++            <div>
++                <div class="eyebrow">New · 2027 edition</div>
++                <h3 id="tracker-2027-heading">2027 monthly habit tracker</h3>
++                <p>Twelve dated sheets, January to December 2027, in one PDF. Print the whole year, or one month at a time so you can adjust as you go.</p>
++                <ul>
++                    <li>Every date shows its weekday; 1 January 2027 is a Friday</li>
++                    <li>Shaded weekends and a blue line at the end of each week</li>
++                    <li>Eight habit rows and a short review on every page</li>
++                    <li>February has 28 days: 2027 is not a leap year</li>
++                </ul>
++                <div class="printable-downloads">
++                    <a class="btn btn-primary" href="/assets/printables/habit-tracker-2027-monthly-letter-sunday.pdf" target="_blank" rel="noopener" data-printable="2027-monthly-letter-sunday">Open US Letter, Sunday start ↗</a>
++                    <a class="btn btn-secondary" href="/assets/printables/habit-tracker-2027-monthly-a4-monday.pdf" target="_blank" rel="noopener" data-printable="2027-monthly-a4-monday">Open A4, Monday start ↗</a>
++                </div>
++                <p class="printable-more">Other week start: <a href="/assets/printables/habit-tracker-2027-monthly-letter-monday.pdf" target="_blank" rel="noopener" data-printable="2027-monthly-letter-monday">US Letter, Monday start</a> · <a href="/assets/printables/habit-tracker-2027-monthly-a4-sunday.pdf" target="_blank" rel="noopener" data-printable="2027-monthly-a4-sunday">A4, Sunday start</a></p>
++                <small>Landscape · 12 pages · Dated for 2027</small>
++            </div>
++        </article>
++        <div class="eyebrow printable-group">Undated · Reuse in any month or year</div>
+         <div class="printable-grid">
+             <article class="printable-card" aria-labelledby="monthly-heading">
+                 <div class="printable-preview"><img src="/assets/printables/monthly-preview.webp" alt="Blank monthly habit tracker with eight habit rows, dates 1 through 31, and space for a monthly review" width="1200" height="927" decoding="async"></div>
+@@ -112,7 +144,17 @@ extra_css: |-
+             <li><strong>Review your planned days.</strong> Notice what got in the way and change one thing, such as the target or time, for next week.</li>
+         </ol>
+         <p>Need a starting point? Browse <a href="/blog/what-habits-to-track/">30 habit tracker ideas</a>, or follow the <a href="/guides/how-to-use-a-habit-tracker/">beginner's habit tracking guide</a>.</p>
+-        <p>Trying one habit for a month? Use the <a href="/guides/30-day-habit-tracker/">30-day habit tracker</a>, which starts on any date. For a whole-year view of mood or a habit, try the <a href="/guides/year-in-pixels/">year in pixels printable</a>.</p>
++        <p>Trying one habit for a month? Use the <a href="/guides/30-day-habit-tracker/">30-day habit tracker</a>, which starts on any date. For a whole-year view of mood or a habit, try the <a href="/guides/year-in-pixels/">year in pixels printable</a>, which also has a dated 2027 edition.</p>
++
++        <h2 id="setup-2027">Set up your 2027 habit tracker in ten minutes</h2>
++        <ol>
++            <li><strong>Pick one to three habits.</strong> Eight rows are room to grow, not a target. A short list you keep filling in beats a full sheet you stop using in February.</li>
++            <li><strong>Write each habit as an action and a schedule.</strong> “Walk 20 minutes, weekdays” tells you exactly which boxes count.</li>
++            <li><strong>Dash the days off before the month starts.</strong> The weekday letters make this quick: dash Saturdays and Sundays for a weekday habit, or every day except Monday, Wednesday and Friday for a three-times-a-week habit.</li>
++            <li><strong>Keep the sheet where you will see it.</strong> On the fridge, by your desk, or inside a notebook you open every day, with a pen next to it.</li>
++            <li><strong>Review on the last day of the month.</strong> Note what worked and one change, then print the next month with that change already written in.</li>
++        </ol>
++        <p>Starting after 1 January is fine. Begin at today’s date and leave the earlier boxes empty; a sheet that starts on the 14th is still a complete record of the days you tracked.</p>
+ 
+         <h2 id="completed-example">What a completed habit tracker looks like</h2>
+         <p>This example mixes weekday reading, skill practice on three days, and a Sunday review. A useful record does not need to be a perfect row of ticks.</p>
+diff --git a/_guides/year-in-pixels.html b/_guides/year-in-pixels.html
+index 3dec89a..fc5a9e8 100644
+--- a/_guides/year-in-pixels.html
++++ b/_guides/year-in-pixels.html
+@@ -1,16 +1,16 @@
+ ---
+ translation_key: year-in-pixels
+ nav_title: "Year in Pixels"
+-nav_description: "One square for every day"
++nav_description: "2027 edition, one square a day"
+ nav_order: 7.2
+ layout: page
+ category: Printable resource
+-title: Free Year in Pixels Printable - Mood and Habit Tracker
+-seo_title: 'Year in Pixels Printable: Free Mood & Habit Tracker PDF'
+-description: 'Download a free year in pixels printable. Color one square a day to track mood, sleep, or a habit for a whole year. Undated A4 and US Letter PDFs.'
+-og_description: 'One small square for every day of the year. A free, undated year in pixels template for mood, sleep, or a single habit, with color key ideas and tips.'
++title: Year in Pixels 2027 Printable - Free Mood and Habit Tracker
++seo_title: 'Year in Pixels 2027: Free Printable Template (PDF)'
++description: 'Free Year in Pixels 2027 printable: a dated square for every day, plus an undated sheet for any year. Track mood, sleep or a habit. A4 and US Letter.'
++og_description: 'One small square for every day of 2027. A free, dated year in pixels template for mood, sleep, or a single habit, plus an undated version for any year.'
+ date: '2026-09-28'
+-last_modified: '2026-09-28'
++last_modified: '2026-10-28'
+ og_type: article
+ priority: 0.8
+ breadcrumbs:
+@@ -20,10 +20,12 @@ breadcrumbs:
+     href: /guides/
+   - label: Year in Pixels
+ faq:
++  - q: Is there a year in pixels for 2027?
++    a: '<p>Yes. The 2027 edition is dated: each square shows the weekday of its date, and the dates 2027 does not have are shaded, including 29 February, because 2027 is not a leap year. Download it in A4 or US Letter. The undated sheet is still available for any year.</p>'
+   - q: What is a year in pixels?
+     a: '<p>A year in pixels is a grid with one small square for every day of the year. At the end of each day you color the square to record one thing, most often your mood. After a few months, the colors show patterns you would not notice day to day.</p>'
+   - q: Can I start a year in pixels in the middle of the year?
+-    a: '<p>Yes. Write the year, start with today’s square, and leave the earlier days blank. The sheet is undated, so you can also run it from any month to the same month next year.</p>'
++    a: '<p>Yes. On the 2027 sheet, start with today’s square and leave the earlier days blank, or fill in the days you remember. The undated sheet can also run from any month to the same month next year.</p>'
+   - q: What should I track in my year in pixels?
+     a: '<p>Mood is the most common choice. Sleep quality, energy, exercise, reading, and a single habit such as a daily walk also work well. Pick one thing per sheet so the colors stay easy to read.</p>'
+   - q: How many colors should I use?
+@@ -44,6 +46,8 @@ extra_css: |-
+   h2[id] { scroll-margin-top: 92px; }
+   .printable-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 32px; align-items: center; padding: 28px; border: 1px solid var(--border); border-radius: 20px; background: var(--bg); }
+   .printable-feature h3 { margin: 0 0 12px; font-size: 1.4rem; }
++  .printable-feature + .printable-feature { margin-top: 24px; }
++  .printable-feature .eyebrow { margin-bottom: 8px; }
+   .printable-preview { display: flex; align-items: center; justify-content: center; height: 420px; padding: 18px; background: var(--bg-alt); border-radius: 12px; }
+   .printable-preview img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 6px 8px rgba(30,40,60,.1)); }
+   .printable-downloads { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 20px; }
+@@ -75,21 +79,40 @@ extra_css: |-
+ ---
+ <section class="page-hero" aria-labelledby="pixels-heading">
+     <div class="container"><div class="printable-intro">
+-        <div class="eyebrow">Free printable · Mood &amp; habit tracker</div>
+-        <h1 id="pixels-heading">Free year in pixels printable<br><span>one square for every day.</span></h1>
++        <div class="eyebrow">Free printable · 2027 edition</div>
++        <h1 id="pixels-heading">Year in pixels 2027 printable<br><span>one square for every day.</span></h1>
+         <p class="lead">Color one small square each evening to record your mood, your sleep, or a single habit. Day by day it is a quick ritual. By the end of the year it is a picture of how the year actually went.</p>
+-        <div class="printable-links"><a href="#downloads" class="btn btn-primary">Get the free PDF ↓</a><a href="#what-to-track" class="btn btn-secondary">Ideas for what to track</a></div>
+-        <p class="text-muted">A4 &amp; US Letter · Undated · No email or account required</p>
++        <div class="printable-links"><a href="#pixels-2027" class="btn btn-primary">Get the 2027 PDF ↓</a><a href="#what-to-track" class="btn btn-secondary">Ideas for what to track</a></div>
++        <p class="text-muted">2027 dated &amp; undated · A4 &amp; US Letter · No email or account required</p>
+     </div></div>
+ </section>
+ 
+ <section class="section section--alt" aria-labelledby="downloads">
+     <div class="container">
+         <div class="section-header"><div class="eyebrow">Download &amp; print</div><h2 id="downloads">Download the year in pixels template</h2><p>Each option opens a one-page PDF in a new tab. Use your PDF viewer’s Download or Print button, match the paper size, and print at actual size or 100%.</p></div>
++        <article class="printable-feature" id="pixels-2027" aria-labelledby="pixels-2027-heading">
++            <div class="printable-preview"><img src="/assets/printables/year-in-pixels-2027-preview.webp" alt="Year in pixels 2027 printable with twelve month columns, rows for days 1 to 31, a small weekday letter in every square, shaded dates that do not exist in 2027, and a five-color key" width="927" height="1200" decoding="async"></div>
++            <div>
++                <div class="eyebrow">New · 2027 edition</div>
++                <h3 id="pixels-2027-heading">Year in pixels 2027</h3>
++                <p>The same one-page grid, dated for 2027. A small letter in each square shows its weekday, so you can spot weekend or Monday patterns without counting.</p>
++                <ul>
++                    <li>Every square labelled; 1 January 2027 is a Friday</li>
++                    <li>Shaded squares for dates 2027 does not have, including 29 February</li>
++                    <li>A five-color key you fill in yourself</li>
++                    <li>A line to note what the year showed you</li>
++                </ul>
++                <div class="printable-downloads">
++                    <a class="btn btn-primary" href="/assets/printables/year-in-pixels-2027-a4.pdf" target="_blank" rel="noopener" data-printable="2027-year-in-pixels-a4">Open 2027 A4 PDF ↗</a>
++                    <a class="btn btn-secondary" href="/assets/printables/year-in-pixels-2027-letter.pdf" target="_blank" rel="noopener" data-printable="2027-year-in-pixels-letter">Open 2027 US Letter PDF ↗</a>
++                </div>
++                <small>Portrait · Dated for 2027 · One page</small>
++            </div>
++        </article>
+         <article class="printable-feature" aria-labelledby="pixels-card-heading">
+             <div class="printable-preview"><img src="/assets/printables/year-in-pixels-preview.webp" alt="Blank year in pixels printable with twelve month columns, rows for days 1 to 31, shaded squares for dates that do not exist, and a five-color key" width="927" height="1200" decoding="async"></div>
+             <div>
+-                <h3 id="pixels-card-heading">Year in pixels, one page</h3>
++                <h3 id="pixels-card-heading">Undated year in pixels</h3>
+                 <p>Twelve month columns and 31 day rows on a single portrait page. Dates that don’t exist are already shaded, so you can’t color the wrong square.</p>
+                 <ul>
+                     <li>Space for the year and what you are tracking</li>
+@@ -147,6 +170,10 @@ extra_css: |-
+             <li><strong>Add patterns if you print in black and white.</strong> A dot, a line, a cross, half-filled and filled are five clear values with a single pen.</li>
+         </ul>
+ 
++        <h2 id="start-2027">Starting your 2027 sheet</h2>
++        <p>Print it in December and put it where you will see it on 1 January, with the pens you chose for your key. Starting later is fine: color today’s square and leave the earlier ones blank, or fill in the days you remember.</p>
++        <p>The weekday letters help with the monthly review. If the pale squares keep landing on the same letter, such as every Monday, that is a pattern worth one small change.</p>
++
+         <h2 id="keep-going">How to keep filling it in</h2>
+         <p>Link the sheet to something you already do every evening, such as brushing your teeth or plugging in your phone, and keep a pen next to it. If you miss a few days, fill them in from memory or leave them blank and carry on. A few gaps do not spoil the picture.</p>
+         <p>Once a month, look at the last few columns and ask what the colors have in common. That review is where a year in pixels becomes useful rather than just pretty. If you notice that one habit lines up with better days, the <a href="/guides/how-to-start-a-daily-habit/">daily habit guide</a> shows how to make it a regular part of your week.</p>
+diff --git a/_scripts/build_printables.py b/_scripts/build_printables.py
+index 4242e00..bf07097 100644
+--- a/_scripts/build_printables.py
++++ b/_scripts/build_printables.py
+@@ -2,11 +2,14 @@
+ """Rebuild the printable PDFs: python3 _scripts/build_printables.py.
+ 
+ Builds the monthly and weekly habit trackers, the 30-day trackers and the
+-year-in-pixels sheet, in A4 and US Letter, then the localized editions
+-(printables_l10n.py). Each PDF footer links back to the
++year-in-pixels sheet, in A4 and US Letter, then the dated edition for
++DATED_YEAR (12 dated monthly sheets and a dated year in pixels), then the
++localized editions (printables_l10n.py). Each October, bump DATED_YEAR and
++update the two guide pages that link the dated files. Each PDF footer links back to the
+ page that offers it. Requires reportlab and pypdf for authoring only; the
+ deployed site is static.
+ """
++import calendar
+ from pathlib import Path
+ 
+ from reportlab.lib import colors
+@@ -43,6 +46,12 @@ THIRTY_DAY_PATH = '/guides/30-day-habit-tracker/'
+ PIXELS_PATH = '/guides/year-in-pixels/'
+ MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+ MONTH_LENGTHS = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
++DATED_YEAR = 2027
++MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
++               'November', 'December']
++WEEKDAY_LETTERS = ['M', 'T', 'W', 'T', 'F', 'S', 'S']  # indexed by calendar.weekday(): Monday = 0
++WEEKEND = colors.HexColor('#F7F8FB')
++WEEKEND_HEAD = colors.HexColor('#E3E7F0')
+ 
+ 
+ def header(c, width, height, title, subtitle, size_label, path=PRINTABLE_PATH):
+@@ -210,12 +219,22 @@ def thirty_day_multi(c, width, height, size_label):
+     rule(c, width / 2 + 12, bottom - 87, width / 2 - 48)
+ 
+ 
+-def year_in_pixels(c, width, height, size_label):
+-    """A 12 x 31 grid: one small square per day of the year, colored by a key."""
+-    header(c, width, height, 'Year in pixels', 'One square for every day of the year. Choose what to track, pick five colors, fill in a square each evening.',
+-           size_label + ' / portrait', PIXELS_PATH)
+-    text(c, 36, height - 124, 'YEAR', 8, True, MUTED)
+-    rule(c, 70, height - 127, 70)
++def year_in_pixels(c, width, height, size_label, year=None):
++    """A 12 x 31 grid: one small square per day of the year, colored by a key.
++
++    With a year, the grid is dated: real month lengths and a small weekday letter in each square.
++    """
++    if year:
++        header(c, width, height, f'Year in pixels {year}',
++               f'One square for every day of {year}. Choose what to track, pick five colors, fill in a square each evening.',
++               size_label + ' / portrait', PIXELS_PATH)
++        text(c, 36, height - 124, 'YEAR', 8, True, MUTED)
++        text(c, 70, height - 124, str(year), 10, True)
++    else:
++        header(c, width, height, 'Year in pixels', 'One square for every day of the year. Choose what to track, pick five colors, fill in a square each evening.',
++               size_label + ' / portrait', PIXELS_PATH)
++        text(c, 36, height - 124, 'YEAR', 8, True, MUTED)
++        rule(c, 70, height - 127, 70)
+     text(c, 160, height - 124, 'I AM TRACKING', 8, True, MUTED)
+     rule(c, 244, height - 127, width - 280)
+ 
+@@ -241,11 +260,16 @@ def year_in_pixels(c, width, height, size_label):
+         c.drawRightString(left + day_w - 6, y + (row_h - 7) / 2 + 1, str(d))
+         for m in range(12):
+             x = left + day_w + cell_w * m
+-            if d > MONTH_LENGTHS[m]:
++            length = calendar.monthrange(year, m + 1)[1] if year else MONTH_LENGTHS[m]
++            if d > length:
+                 c.setFillColor(PALE)
+                 c.rect(x, y, cell_w, row_h, stroke=0, fill=1)
+                 c.setStrokeColor(LINE)
+                 c.line(x + 3, y + 3, x + cell_w - 3, y + row_h - 3)
++            elif year:
++                c.setFillColor(LINE)
++                c.setFont(FONTS['regular'], 5)
++                c.drawString(x + 2, y + row_h - 6, WEEKDAY_LETTERS[calendar.weekday(year, m + 1, d)])
+             elif m == 1 and d == 29:
+                 c.setFillColor(LINE)
+                 c.circle(x + cell_w - 4, y + row_h - 4, 1.2, stroke=0, fill=1)
+@@ -268,11 +292,69 @@ def year_in_pixels(c, width, height, size_label):
+         c.setStrokeColor(LINE)
+         c.rect(x, ly - 30, 16, 16, stroke=1, fill=0)
+         rule(c, x + 22, ly - 28, swatch_w - 34)
+-    text(c, 36, ly - 52, 'Habit example: done, partly done, rest day, missed, not planned. A dot marks 29 February for leap years.', 8, color=MUTED)
++    if year:
++        text(c, 36, ly - 52, f'Habit example: done, partly done, rest day, missed, not planned. Small letters show the weekday of each date in {year}.', 8, color=MUTED)
++    else:
++        text(c, 36, ly - 52, 'Habit example: done, partly done, rest day, missed, not planned. A dot marks 29 February for leap years.', 8, color=MUTED)
+     text(c, 36, ly - 76, 'WHAT DID THE YEAR SHOW YOU?', 8, True)
+     rule(c, 190, ly - 79, width - 226)
+ 
+ 
++def monthly_dated(c, width, height, size_label, year, month, start):
++    """One dated month: weekday letters over every date, shaded weekends and a blue line after each week."""
++    days = calendar.monthrange(year, month)[1]
++    week_word, end_word = ('Monday', 'Sunday') if start == 'monday' else ('Sunday', 'Saturday')
++    header(c, width, height, f'{MONTH_NAMES[month - 1]} {year}',
++           f'{year} habit tracker, {week_word}-start weeks. One mark per day; a small routine is enough.',
++           size_label + ' / landscape')
++    text(c, 36, height - 126, 'MY FOCUS THIS MONTH', 8, True, MUTED)
++    rule(c, 152, height - 129, width - 188)
++
++    left, top, first = 36, height - 150, 160
++    available = width - 72
++    day_w = (available - first) / days
++    header_h, rows, row_h = 34, 8, 29
++    bottom = top - header_h - rows * row_h
++    c.setFillColor(PALE)
++    c.rect(left, top - header_h, available, header_h, stroke=0, fill=1)
++    text(c, left + 10, top - header_h / 2 - 3, 'HABIT + TARGET', 10, True)
++    for d in range(1, days + 1):
++        weekday = calendar.weekday(year, month, d)
++        x = left + first + day_w * (d - 1)
++        if weekday >= 5:
++            c.setFillColor(WEEKEND)
++            c.rect(x, bottom, day_w, top - header_h - bottom, stroke=0, fill=1)
++            c.setFillColor(WEEKEND_HEAD)
++            c.rect(x, top - header_h, day_w, header_h, stroke=0, fill=1)
++        centred(c, x + day_w / 2, top - 13, WEEKDAY_LETTERS[weekday], 7, color=MUTED)
++        centred(c, x + day_w / 2, top - 27, str(d), 8, True)
++    # Grid lines after the shading, so shaded cells never cover them.
++    c.setStrokeColor(LINE)
++    c.setLineWidth(0.5)
++    c.rect(left, bottom, available, top - bottom, stroke=1, fill=0)
++    for d in range(days):
++        x = left + first + day_w * d
++        c.line(x, bottom, x, top)
++    for r in range(rows):
++        y = top - header_h - r * row_h
++        c.line(left, y, left + available, y)
++    week_end = 6 if start == 'monday' else 5
++    c.setStrokeColor(BLUE)
++    c.setLineWidth(1)
++    for d in range(1, days):
++        if calendar.weekday(year, month, d) == week_end:
++            x = left + first + day_w * d
++            c.line(x, bottom, x, top)
++    c.setLineWidth(0.5)
++
++    text(c, 36, bottom - 20, 'KEY  Tick = completed    Dash = not scheduled    Blank = missed or not logged', 9, color=MUTED)
++    text(c, 36, bottom - 36, f'Shaded columns are weekends. A blue line closes each {week_word}-start week, after {end_word}.', 9, color=MUTED)
++    text(c, 36, bottom - 65, 'WHAT WORKED?', 8, True)
++    text(c, width / 2 + 12, bottom - 65, f'ONE CHANGE FOR {year + 1}' if month == 12 else 'ONE CHANGE FOR NEXT MONTH', 8, True)
++    rule(c, 36, bottom - 87, width / 2 - 60)
++    rule(c, width / 2 + 12, bottom - 87, width / 2 - 48)
++
++
+ def check(path, pagesize, url_path, required_text):
+     """Check the file users will actually download, including page dimensions."""
+     pdf = PdfReader(path)
+@@ -289,6 +371,60 @@ def check(path, pagesize, url_path, required_text):
+     return content
+ 
+ 
++def check_pages(path, pagesize, url_path, page_texts):
++    """Multi-page version of check(): every page gets its own required text and footer link."""
++    pdf = PdfReader(path)
++    assert len(pdf.pages) == len(page_texts), (path.name, len(pdf.pages))
++    contents = []
++    for page, required_text in zip(pdf.pages, page_texts):
++        assert abs(float(page.mediabox.width) - pagesize[0]) < 0.1
++        assert abs(float(page.mediabox.height) - pagesize[1]) < 0.1
++        content = page.extract_text()
++        for value in required_text + ['productifyapp.org' + url_path]:
++            assert value in content, (path.name, value)
++        assert [a.get_object()['/A']['/URI'] for a in page.get('/Annots', [])] == [
++            'https://productifyapp.org' + url_path
++        ]
++        contents.append(content)
++    return contents
++
++
++def build_dated(year=DATED_YEAR):
++    """The dated edition: 12 monthly sheets in one PDF (both week starts, both sizes) and a dated year in pixels."""
++    generated = []
++    for size_name, size in [('a4', A4), ('letter', letter)]:
++        pagesize = landscape(size)
++        for start in ['monday', 'sunday']:
++            path = OUTPUT / f'habit-tracker-{year}-monthly-{size_name}-{start}.pdf'
++            c = new_canvas(path, pagesize, f'Productify {year} monthly habit tracker - {size_name.upper()}, {start.title()} start',
++                           f'Free printable {year} habit tracker for personal use')
++            for month in range(1, 13):
++                monthly_dated(c, *pagesize, size_name.upper(), year, month, start)
++                c.showPage()
++            c.save()
++            contents = check_pages(path, pagesize, PRINTABLE_PATH,
++                                   [[f'{name} {year}', f'{year} habit tracker'] for name in MONTH_NAMES])
++            for month, content in enumerate(contents, 1):
++                tokens = content.split()
++                days = calendar.monthrange(year, month)[1]
++                assert str(days) in tokens and (days == 31 or str(days + 1) not in tokens), (path.name, month)
++            generated.append(path.name)
++
++        path = OUTPUT / f'year-in-pixels-{year}-{size_name}.pdf'
++        c = new_canvas(path, size, f'Productify year in pixels {year} - {size_name.upper()}',
++                       f'Free printable {year} year in pixels tracker for personal use')
++        year_in_pixels(c, *size, size_name.upper(), year)
++        c.showPage()
++        c.save()
++        content = check(path, size, PIXELS_PATH, [f'Year in pixels {year}', 'MY COLOR KEY'])
++        positions = [content.index(month) for month in MONTHS]
++        assert positions == sorted(positions)
++        generated.append(path.name)
++
++    assert len(generated) == 6
++    print(f'Built and checked {len(generated)} dated {year} PDFs:', ', '.join(generated))
++
++
+ def new_canvas(path, pagesize, title, subject):
+     c = canvas.Canvas(str(path), pagesize=pagesize, pageCompression=1, invariant=1)
+     c.setTitle(title)
+@@ -348,6 +484,8 @@ def build():
+     assert len(generated) == 12
+     print(f'Built and checked {len(generated)} one-page PDFs:', ', '.join(generated))
+ 
++    build_dated()
++
+     # German, French, Japanese and Korean editions for the /xx/tools/ pages.
+     from printables_l10n import build_localized
+     build_localized()
+diff --git a/guides/index.html b/guides/index.html
+index 44df579..5737992 100644
+--- a/guides/index.html
++++ b/guides/index.html
+@@ -3,13 +3,13 @@ layout: resource-index
+ section: guides
+ title: Habit Tracking Guides and Free Printable Resources
+ seo_title: 'Habit Tracking Guides & Free Printables | Productify'
+-description: 'Follow step-by-step guides to start a daily habit, use a habit tracker, break bad habits, and plan your goals. Download free monthly and weekly printable trackers.'
++description: 'Step-by-step guides to start a daily habit, use a habit tracker, break bad habits and plan goals, plus free 2027 and undated printable habit trackers.'
+ permalink: /guides/
+ heading: Practical guides for your next habit.
+ lead: 'Choose a task, follow the steps, and put it into practice. Start here for habit-tracking tutorials, goal planning, and free printable resources.'
+ library_heading: All guides and resources
+ library_description: 'A clear next step, from your first check-in to a routine you can keep.'
+-last_modified: '2026-09-09'
++last_modified: '2026-10-28'
+ changefreq: weekly
+ priority: 0.9
+ breadcrumbs:
+diff --git a/llms.txt b/llms.txt
+index ef14cca..2493c51 100644
+--- a/llms.txt
++++ b/llms.txt
+@@ -27,7 +27,7 @@ This file provides a curated index of the most important pages on {{ site.url |
+ - [Download Productify]({{ '/download/' | absolute_url }}): free on the App Store, no account required
+ - [Pricing]({{ '/pricing/' | absolute_url }}): free tier, Pro subscription and lifetime plan
+ - [About]({{ '/about/' | absolute_url }}): Productify is made by Deductify (DEDUCTIFY, LLC), an independent product studio
+-- [Free habit tools]({{ '/tools/' | absolute_url }}): printable 30-day, monthly and weekly habit trackers, a year in pixels sheet, and a habit streak calculator
++- [Free habit tools]({{ '/tools/' | absolute_url }}): printable 2027 and undated monthly habit trackers, weekly and 30-day trackers, a year in pixels sheet (2027 and undated), and a habit streak calculator
+ - [Download on the App Store]({{ site.appstore_url }})
+ 
+ ## Other languages
+diff --git a/tools.html b/tools.html
+index 4b5cf1c..815b7a1 100644
+--- a/tools.html
++++ b/tools.html
+@@ -3,10 +3,10 @@ translation_key: tools
+ layout: page
+ title: Free Habit Tracker Tools and Printables
+ seo_title: 'Free Habit Tracker Printables & Tools | Productify'
+-description: 'Free habit tools: a 30-day habit tracker, a year in pixels printable, monthly and weekly trackers, and a habit streak calculator. No email or account needed.'
++description: 'Free habit tools: 2027 habit tracker and year in pixels printables, a 30-day tracker, weekly sheets and a habit streak calculator. No email or account needed.'
+ og_description: 'Printable habit trackers, a year in pixels sheet, and a streak calculator. Free to download and use, with no email address or account required.'
+ permalink: /tools/
+-last_modified: '2026-09-28'
++last_modified: '2026-10-28'
+ changefreq: monthly
+ priority: 0.85
+ breadcrumbs:
+@@ -17,7 +17,7 @@ faq:
+   - q: Are these habit tools really free?
+     a: '<p>Yes. The printables and the calculator are free for personal use. There is no email sign-up, account, or payment, and you don’t need the Productify app to use them.</p>'
+   - q: Which printable should I start with?
+-    a: '<p>If you are starting one new habit, use the <a href="/guides/30-day-habit-tracker/">30-day habit tracker</a>. For an ongoing routine, the <a href="/guides/habit-tracker-printable/">monthly or weekly tracker</a> fits better. For mood or a long-term view, try the <a href="/guides/year-in-pixels/">year in pixels</a>.</p>'
++    a: '<p>If you are starting one new habit, use the <a href="/guides/30-day-habit-tracker/">30-day habit tracker</a>. For an ongoing routine, the <a href="/guides/habit-tracker-printable/">2027 monthly tracker or the weekly tracker</a> fits better. For mood or a long-term view, try the <a href="/guides/year-in-pixels/">year in pixels</a>.</p>'
+   - q: Which paper sizes are available?
+     a: '<p>Every printable comes in A4 (210 × 297 mm) and US Letter (8.5 × 11 inches). Print at actual size or 100%.</p>'
+   - q: Can I share these printables?
+@@ -61,6 +61,8 @@ extra_css: |-
+   .tool-card p { color: var(--ink-2); margin: 0 0 14px; }
+   .tool-card small { color: var(--ink-muted); }
+   .tool-card .feature-card__cta { margin-top: auto; padding-top: 14px; font-weight: 600; color: var(--blue); }
++  .tools-new { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 18px 24px; margin-bottom: 24px; border: 1px solid var(--border); border-radius: 20px; background: var(--bg); }
++  .tools-new p { margin: 0; color: var(--ink-2); }
+   @media (max-width: 760px) {
+     .tools-grid { grid-template-columns: 1fr; }
+     .tool-card__preview { height: 200px; }
+@@ -77,6 +79,10 @@ extra_css: |-
+ <section class="section section--alt" aria-labelledby="all-tools">
+     <div class="container">
+         <div class="section-header"><div class="eyebrow">Printables &amp; calculators</div><h2 id="all-tools">Choose a free habit tool</h2><p>Every printable comes in A4 and US Letter and works in black and white.</p></div>
++        <div class="tools-new" role="note">
++            <span class="eyebrow">New · 2027 editions</span>
++            <p>Dated printables for 2027: a <a href="/guides/habit-tracker-printable/#tracker-2027">2027 habit tracker</a> with a sheet for every month, and a <a href="/guides/year-in-pixels/#pixels-2027">year in pixels 2027</a> with every date labelled.</p>
++        </div>
+         <div class="tools-grid">
+             <a class="tool-card" href="/guides/30-day-habit-tracker/">
+                 <div class="tool-card__preview"><img src="/assets/printables/30-day-single-preview.webp" alt="Preview of the 30-day habit tracker for one habit, with thirty squares in weekly rows" width="927" height="1200" loading="lazy" decoding="async"></div>
+@@ -87,16 +93,16 @@ extra_css: |-
+             </a>
+             <a class="tool-card" href="/guides/year-in-pixels/">
+                 <div class="tool-card__preview"><img src="/assets/printables/year-in-pixels-preview.webp" alt="Preview of the year in pixels printable, with twelve month columns and 31 day rows" width="927" height="1200" loading="lazy" decoding="async"></div>
+-                <span class="eyebrow">Printable · 2 PDFs</span>
++                <span class="eyebrow">Printable · 4 PDFs · 2027 edition</span>
+                 <h3>Year in pixels</h3>
+-                <p>One square for every day of the year. Color it to track mood, sleep, energy, or a single habit and see the patterns.</p>
++                <p>One square for every day of the year, dated for 2027 or undated. Color it to track mood, sleep, energy, or a single habit and see the patterns.</p>
+                 <span class="feature-card__cta">Get the year in pixels →</span>
+             </a>
+             <a class="tool-card" href="/guides/habit-tracker-printable/">
+                 <div class="tool-card__preview"><img src="/assets/printables/monthly-preview.webp" alt="Preview of the monthly habit tracker printable with eight habit rows and dates 1 to 31" width="1200" height="927" loading="lazy" decoding="async"></div>
+-                <span class="eyebrow">Printable · 6 PDFs</span>
++                <span class="eyebrow">Printable · 10 PDFs · 2027 edition</span>
+                 <h3>Monthly &amp; weekly habit trackers</h3>
+-                <p>A monthly grid for up to eight habits, or a weekly sheet with Monday or Sunday start and room for a weekly review.</p>
++                <p>A dated sheet for every month of 2027, an undated monthly grid for up to eight habits, or a weekly sheet with Monday or Sunday start.</p>
+                 <span class="feature-card__cta">Get the monthly &amp; weekly trackers →</span>
+             </a>
+             <a class="tool-card" href="/guides/habit-streak-calculator/">
+@@ -118,9 +124,9 @@ extra_css: |-
+                 <thead><tr><th scope="col">If you want to…</th><th scope="col">Use</th></tr></thead>
+                 <tbody>
+                     <tr><td>Try one new habit for a month</td><td><a href="/guides/30-day-habit-tracker/">30-day habit tracker</a> (single habit)</td></tr>
+-                    <tr><td>Track a routine of several habits</td><td><a href="/guides/habit-tracker-printable/">Monthly habit tracker</a> or the multi-habit 30-day sheet</td></tr>
++                    <tr><td>Track a routine of several habits through 2027</td><td><a href="/guides/habit-tracker-printable/">2027 monthly habit tracker</a>, the undated monthly grid, or the multi-habit 30-day sheet</td></tr>
+                     <tr><td>Plan and review one week at a time</td><td><a href="/guides/habit-tracker-printable/">Weekly habit tracker</a></td></tr>
+-                    <tr><td>See your mood or a habit across a whole year</td><td><a href="/guides/year-in-pixels/">Year in pixels</a></td></tr>
++                    <tr><td>See your mood or a habit across a whole year</td><td><a href="/guides/year-in-pixels/">Year in pixels</a> (2027 or undated)</td></tr>
+                     <tr><td>Know when you will reach 66 or 100 days</td><td><a href="/guides/habit-streak-calculator/">Habit streak calculator</a></td></tr>
+                 </tbody>
+             </table>
