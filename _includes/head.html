@@ -15,6 +15,9 @@
 {%- if site.facebook_domain_verification %}
 <meta name="facebook-domain-verification" content="{{ site.facebook_domain_verification }}">
 {%- endif %}
+{%- if site.pinterest_domain_verify %}
+<meta name="p:domain_verify" content="{{ site.pinterest_domain_verify }}">
+{%- endif %}
 {%- if site.ahrefs_site_verification %}
 <meta name="ahrefs-site-verification" content="{{ site.ahrefs_site_verification }}">
 {%- endif %}

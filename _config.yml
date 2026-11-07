@@ -22,6 +22,7 @@ facebook_domain_verification: t80j6c2w3dtbodjnxkg283562wp4ud
 # site-wide by _includes/head.html. The root ahrefs_<token> file verifies
 # the same property by the alternative file method.
 ahrefs_site_verification: fa4bb1ff66190ceaa3866dffe1adca9a9c0569b8b7ffdfd06263e47dc951ad27
+pinterest_domain_verify: "fb7a4ac393141c73a6b2fc55659e1a4e"
 
 # --- Collections -------------------------------------------------------------
 # Each collection serves its content directly under its section prefix.
