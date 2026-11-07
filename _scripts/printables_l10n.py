@@ -11,6 +11,7 @@ characters these sheets use and converted to TrueType on the fly (fontTools).
 Set NOTO_CJK_DIR if the fonts are not in /usr/share/fonts/opentype/noto.
 Editing a string below is enough: the subset is rebuilt from the strings.
 """
+import calendar
 import os
 import tempfile
 from pathlib import Path
@@ -184,6 +185,60 @@ L = {
                     review='올해 알게 된 것'),
     ),
 }
+
+
+# Dated edition (bp.DATED_YEAR): 12 monthly sheets in one PDF and a dated year in pixels.
+# Weekday labels come from each locale's `days`; the rest of the sheet reuses `monthly`/`pixels`.
+L['de']['dated'] = dict(
+    months=['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober',
+            'November', 'Dezember'],
+    title='{month} {year}',
+    sub={'monday': 'Habit Tracker {year}, Wochen ab Montag. Ein Zeichen pro Tag; eine kleine Routine reicht.',
+         'sunday': 'Habit Tracker {year}, Wochen ab Sonntag. Ein Zeichen pro Tag; eine kleine Routine reicht.'},
+    key2={'monday': 'Grau hinterlegt = Wochenende. Eine blaue Linie schließt jede Woche ab, nach dem Sonntag.',
+          'sunday': 'Grau hinterlegt = Wochenende. Eine blaue Linie schließt jede Woche ab, nach dem Samstag.'},
+    change_year='EINE ÄNDERUNG FÜR {year}',
+    pixels_title='Year in Pixels {year}',
+    pixels_sub='Ein Kästchen für jeden Tag {year}. Wähle ein Thema und fünf Farben, dann male jeden Abend ein Kästchen aus.',
+    pixels_habit='Gewohnheit: erledigt, teilweise, Ruhetag, verpasst, nicht geplant. Die kleinen Buchstaben zeigen den Wochentag.',
+)
+L['fr']['dated'] = dict(
+    months=['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre',
+            'Novembre', 'Décembre'],
+    title='{month} {year}',
+    sub={'monday': 'Habit tracker {year}, semaines du lundi au dimanche. Une marque par jour ; une petite routine suffit.',
+         'sunday': 'Habit tracker {year}, semaines du dimanche au samedi. Une marque par jour ; une petite routine suffit.'},
+    key2={'monday': 'Colonnes grisées = week-ends. Une ligne bleue ferme chaque semaine, après le dimanche.',
+          'sunday': 'Colonnes grisées = week-ends. Une ligne bleue ferme chaque semaine, après le samedi.'},
+    change_year='UN CHANGEMENT POUR {year}',
+    pixels_title='Year in Pixels {year}',
+    pixels_sub='Une case pour chaque jour de {year}. Choisissez un thème et cinq couleurs, puis coloriez une case chaque soir.',
+    pixels_habit='Habitude : fait, en partie, repos, manqué, non prévu. Les petites lettres indiquent le jour de la semaine.',
+)
+L['ja']['dated'] = dict(
+    months=['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+    title='{year}年{month}',
+    sub={'monday': '{year}年の習慣トラッカー（月曜始まり）。1日1マーク、小さな習慣で十分です。',
+         'sunday': '{year}年の習慣トラッカー（日曜始まり）。1日1マーク、小さな習慣で十分です。'},
+    key2={'monday': '色付きの列は週末です。青い線は日曜日のあとで1週間を区切ります。',
+          'sunday': '色付きの列は週末です。青い線は土曜日のあとで1週間を区切ります。'},
+    change_year='{year}年に変えてみること',
+    pixels_title='Year in Pixels {year}',
+    pixels_sub='{year}年の毎日に1マスずつ。記録するものと5つの色を決めて、毎晩1マスを塗りましょう。',
+    pixels_habit='習慣の例：できた、一部できた、休み、できなかった、予定なし。小さな文字は曜日です。',
+)
+L['ko']['dated'] = dict(
+    months=['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    title='{year}년 {month}',
+    sub={'monday': '{year}년 해빗 트래커, 월요일 시작. 하루에 표시 하나, 작은 루틴이면 충분합니다.',
+         'sunday': '{year}년 해빗 트래커, 일요일 시작. 하루에 표시 하나, 작은 루틴이면 충분합니다.'},
+    key2={'monday': '회색 열은 주말입니다. 파란 선은 일요일 다음에 한 주를 구분합니다.',
+          'sunday': '회색 열은 주말입니다. 파란 선은 토요일 다음에 한 주를 구분합니다.'},
+    change_year='{year}년에 바꿀 한 가지',
+    pixels_title='Year in Pixels {year}',
+    pixels_sub='{year}년의 하루하루에 한 칸씩. 기록할 것과 다섯 가지 색을 정하고, 매일 저녁 한 칸을 칠하세요.',
+    pixels_habit='습관 예시: 완료, 일부 완료, 휴식일, 놓침, 계획 없음. 작은 글자는 요일입니다.',
+)
 
 # Where each sheet is offered, and so what its footer links to.
 PAGES = {'monthly': 'habit-tracker-printable', 'weekly': 'habit-tracker-printable',
@@ -480,4 +535,172 @@ def build_localized():
             generated.append(f'{code}/{pdf_path.name}')
     bp.FONTS = {'regular': 'Helvetica', 'bold': 'Helvetica-Bold'}
     print(f'Built and checked {len(generated)} localized PDFs:', ', '.join(generated))
+    return generated
+
+
+# --- dated edition -----------------------------------------------------------
+
+def monthly_dated(c, width, height, t, size_label, path, year, month, start):
+    """One dated month, as bp.monthly_dated: weekday labels, shaded weekends, a blue line after each week."""
+    d, m = t['dated'], t['monthly']
+    days = calendar.monthrange(year, month)[1]
+    header(c, width, height, t, d['title'].format(year=year, month=d['months'][month - 1]),
+           d['sub'][start].format(year=year), size_label, path)
+    label_rule(c, 36, height - 126, m['focus'], width - 36)
+    left, top, first = 36, height - 150, 160
+    available = width - 72
+    day_w = (available - first) / days
+    header_h, rows, row_h = 34, 8, 29
+    bottom = top - header_h - rows * row_h
+    c.setFillColor(PALE)
+    c.rect(left, top - header_h, available, header_h, stroke=0, fill=1)
+    fit(c, left + 10, top - header_h / 2 - 3, m['col'], 10, True, max_width=first - 16)
+    for day in range(1, days + 1):
+        weekday = calendar.weekday(year, month, day)
+        x = left + first + day_w * (day - 1)
+        if weekday >= 5:
+            c.setFillColor(bp.WEEKEND)
+            c.rect(x, bottom, day_w, top - header_h - bottom, stroke=0, fill=1)
+            c.setFillColor(bp.WEEKEND_HEAD)
+            c.rect(x, top - header_h, day_w, header_h, stroke=0, fill=1)
+        bp.centred(c, x + day_w / 2, top - 13, t['days'][weekday], 6.5, color=MUTED)
+        bp.centred(c, x + day_w / 2, top - 27, str(day), 8, True)
+    c.setStrokeColor(LINE)
+    c.setLineWidth(0.5)
+    c.rect(left, bottom, available, top - bottom, stroke=1, fill=0)
+    for i in range(days):
+        x = left + first + day_w * i
+        c.line(x, bottom, x, top)
+    for r in range(rows):
+        y = top - header_h - r * row_h
+        c.line(left, y, left + available, y)
+    week_end = 6 if start == 'monday' else 5
+    c.setStrokeColor(BLUE)
+    c.setLineWidth(1)
+    for day in range(1, days):
+        if calendar.weekday(year, month, day) == week_end:
+            x = left + first + day_w * day
+            c.line(x, bottom, x, top)
+    c.setLineWidth(0.5)
+    key_lines(c, 36, bottom - 20, t, m['key1'], d['key2'][start], width - 72)
+    change = d['change_year'].format(year=year + 1) if month == 12 else m['change']
+    fit(c, 36, bottom - 65, m['worked'], 8, True, max_width=width / 2 - 60)
+    fit(c, width / 2 + 12, bottom - 65, change, 8, True, max_width=width / 2 - 48)
+    bp.rule(c, 36, bottom - 87, width / 2 - 60)
+    bp.rule(c, width / 2 + 12, bottom - 87, width / 2 - 48)
+
+
+def pixels_dated(c, width, height, t, size_label, path, year):
+    """Dated year in pixels: real month lengths and the weekday in each square."""
+    p, d = t['pixels'], t['dated']
+    header(c, width, height, t, d['pixels_title'].format(year=year), d['pixels_sub'].format(year=year), size_label, path)
+    year_w = fit(c, 36, height - 124, p['year'], 8, True, MUTED)
+    bp.text(c, 36 + year_w + 10, height - 124, str(year), 10, True)
+    label_rule(c, 160, height - 124, p['tracking'], width - 36)
+    legend_h = 118
+    top = height - 146
+    grid_bottom = 36 + legend_h
+    row_h = (top - grid_bottom) / 32
+    day_w = 24
+    cell_w = min((width - 72 - day_w) / 12, row_h * 1.9)
+    grid_w = day_w + cell_w * 12
+    left = (width - grid_w) / 2
+    c.setFillColor(PALE)
+    c.rect(left + day_w, top - row_h, cell_w * 12, row_h, stroke=0, fill=1)
+    for i, name in enumerate(t['months']):
+        c.setFillColor(INK)
+        c.setFont(bp.FONTS['bold'], 7)
+        c.drawCentredString(left + day_w + cell_w * i + cell_w / 2, top - row_h + (row_h - 7) / 2 + 1, name)
+    for day in range(1, 32):
+        y = top - row_h * (day + 1)
+        c.setFillColor(MUTED)
+        c.setFont(bp.FONTS['bold'], 7)
+        c.drawRightString(left + day_w - 6, y + (row_h - 7) / 2 + 1, str(day))
+        for i in range(12):
+            x = left + day_w + cell_w * i
+            if day > calendar.monthrange(year, i + 1)[1]:
+                c.setFillColor(PALE)
+                c.rect(x, y, cell_w, row_h, stroke=0, fill=1)
+                c.setStrokeColor(LINE)
+                c.setLineWidth(0.5)
+                c.line(x + 3, y + 3, x + cell_w - 3, y + row_h - 3)
+            else:
+                c.setFillColor(LINE)
+                c.setFont(bp.FONTS['regular'], 5)
+                c.drawString(x + 2, y + row_h - 6, t['days'][calendar.weekday(year, i + 1, day)])
+    c.setStrokeColor(LINE)
+    c.setLineWidth(0.5)
+    c.rect(left + day_w, top - row_h * 32, cell_w * 12, row_h * 32, stroke=1, fill=0)
+    for i in range(1, 12):
+        x = left + day_w + cell_w * i
+        c.line(x, top - row_h * 32, x, top)
+    for r in range(1, 32):
+        y = top - row_h * r
+        c.line(left + day_w, y, left + grid_w, y)
+    ly = grid_bottom - 26
+    key_w = fit(c, 36, ly, p['key'], 8, True)
+    fit(c, 36 + key_w + 14, ly, p['hint'], 8, color=MUTED, max_width=width - 72 - key_w - 14)
+    swatch_w = (width - 72) / 5
+    for i in range(5):
+        x = 36 + swatch_w * i
+        c.setStrokeColor(LINE)
+        c.rect(x, ly - 30, 16, 16, stroke=1, fill=0)
+        bp.rule(c, x + 22, ly - 28, swatch_w - 34)
+    fit(c, 36, ly - 52, d['pixels_habit'], 8, color=MUTED, max_width=width - 72)
+    label_rule(c, 36, ly - 76, p['review'], width - 36)
+
+
+def build_dated_localized(year=None, codes=None):
+    """Localized dated edition, written to assets/printables/<lang>/ next to the undated sheets.
+
+    Separate from build_localized() so it can run alone without rebuilding (and re-subsetting)
+    the existing localized PDFs:  cd _scripts && python3 -c "import printables_l10n as p; p.build_dated_localized()"
+    """
+    year = year or bp.DATED_YEAR
+    generated = []
+    for code in codes or list(L):
+        t = L[code]
+        bp.FONTS = cjk_fonts(code, t['cjk']) if t.get('cjk') else {'regular': 'Helvetica', 'bold': 'Helvetica-Bold'}
+        out_dir = bp.OUTPUT / code
+        out_dir.mkdir(parents=True, exist_ok=True)
+        for size_name, size in t['sizes']:
+            label = size_name.upper() if size_name == 'a4' else 'US LETTER'
+            path = f'/{code}/tools/{PAGES["monthly"]}/'
+            for start in t['week_starts']:
+                pagesize = landscape(size)
+                pdf_path = out_dir / f'habit-tracker-{year}-monthly-{size_name}-{start}.pdf'
+                c = canvas.Canvas(str(pdf_path), pagesize=pagesize, pageCompression=1, invariant=1)
+                c.setTitle(f'Productify – {t["monthly"]["title"]} {year} ({label})')
+                c.setAuthor('Productify')
+                c.setSubject(f'{t["monthly"]["title"]} {year}')
+                for month in range(1, 13):
+                    monthly_dated(c, *pagesize, t, label + ' / ' + t['landscape'], path, year, month, start)
+                    c.showPage()
+                c.save()
+                pdf = PdfReader(pdf_path)
+                assert len(pdf.pages) == 12, pdf_path
+                for month, page in enumerate(pdf.pages, 1):
+                    assert abs(float(page.mediabox.width) - pagesize[0]) < 0.1
+                    assert [a.get_object()['/A']['/URI'] for a in page.get('/Annots', [])] == [ORIGIN + path]
+                    tokens = page.extract_text().split()
+                    days = calendar.monthrange(year, month)[1]
+                    assert str(days) in tokens and (days == 31 or str(days + 1) not in tokens), (pdf_path.name, month)
+                generated.append(f'{code}/{pdf_path.name}')
+
+            path = f'/{code}/tools/{PAGES["pixels"]}/'
+            pdf_path = out_dir / f'year-in-pixels-{year}-{size_name}.pdf'
+            c = canvas.Canvas(str(pdf_path), pagesize=size, pageCompression=1, invariant=1)
+            c.setTitle(f'Productify – Year in Pixels {year} ({label})')
+            c.setAuthor('Productify')
+            c.setSubject(f'Year in Pixels {year}')
+            pixels_dated(c, *size, t, label + ' / ' + t['portrait'], path, year)
+            c.showPage()
+            c.save()
+            pdf = PdfReader(pdf_path)
+            assert len(pdf.pages) == 1
+            assert [a.get_object()['/A']['/URI'] for a in pdf.pages[0].get('/Annots', [])] == [ORIGIN + path]
+            assert 'productifyapp.org' + path in pdf.pages[0].extract_text()
+            generated.append(f'{code}/{pdf_path.name}')
+    bp.FONTS = {'regular': 'Helvetica', 'bold': 'Helvetica-Bold'}
+    print(f'Built and checked {len(generated)} localized dated {year} PDFs:', ', '.join(generated))
     return generated

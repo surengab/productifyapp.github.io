@@ -61,3 +61,10 @@ footer:
   terms: 利用規約（英語）
   contact: お問い合わせ
   tools: 無料テンプレート・ツール
+# Printable pages: panel shown after a PDF opens (_includes/printable-next.html)
+# and the desktop QR hint beside it (_includes/qr-handoff.html).
+printable_next:
+  heading: "印刷したら、iPhoneでも続けてみませんか？"
+  text: "Productifyはリマインダーでお知らせし、連続記録を自動で数え、記録をずっと残します。紙がいっぱいになっても続けられます。"
+  qr_title: "パソコンでご覧の方へ"
+  qr_text: "iPhoneのカメラでこのコードを読み取ると、App StoreのProductifyページが開きます。"

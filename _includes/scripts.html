@@ -271,6 +271,29 @@
 
 
 
+        // Printable pages: after a PDF opens (in a new tab), show the app
+        // offer beside the card the reader used. Built from
+        // <template id="printableNext"> before the link rewriting below runs,
+        // so it gets the same /download/ routing and campaign tags.
+        var nextTpl = document.getElementById('printableNext');
+        if (nextTpl && nextTpl.content && nextTpl.content.firstElementChild) {
+            var printableNext = nextTpl.content.firstElementChild.cloneNode(true);
+            printableNext.hidden = true;
+            nextTpl.parentNode.insertBefore(printableNext, nextTpl);
+            document.addEventListener('click', function (e) {
+                var link = e.target.closest('a[data-printable]');
+                if (!link || !printableNext.hidden) return;
+                var host = link.closest('.printable-grid') ||
+                           link.closest('.printable-card, .printable-feature, article') ||
+                           link.parentElement;
+                host.insertAdjacentElement('afterend', printableNext);
+                printableNext.hidden = false;
+                if (typeof window.gtag === 'function') {
+                    gtag('event', 'printable_next_view', { page_path: location.pathname });
+                }
+            });
+        }
+
         // Keep iOS downloads direct. Other devices use the QR handoff page,
         // except the popup, whose button goes straight to the App Store.
         // Source and review links retain their original destination.

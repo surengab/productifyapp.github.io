@@ -1,0 +1,10 @@
+{%- comment -%}
+Desktop handoff beside a download button: on a computer the App Store button
+can't install an iPhone app, so show the QR code right here. Hidden on phones,
+tablets and iOS by CSS (.qr-handoff in shared.css). Optional params:
+title, text (localized pages pass their own).
+{%- endcomment -%}
+<div class="qr-handoff">
+    <img src="/assets/productify-app-store-qr.svg" width="76" height="76" alt="{{ include.alt | default: 'QR code to open Productify in the App Store' }}" loading="lazy" decoding="async">
+    <p><strong>{{ include.title | default: 'On a computer?' }}</strong> {{ include.text | default: 'Scan with your iPhone camera to open the App Store.' }}</p>
+</div>

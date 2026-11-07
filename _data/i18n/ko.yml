@@ -61,3 +61,10 @@ footer:
   terms: 이용약관 (영어)
   contact: 문의하기
   tools: 무료 양식 · 도구
+# Printable pages: panel shown after a PDF opens (_includes/printable-next.html)
+# and the desktop QR hint beside it (_includes/qr-handoff.html).
+printable_next:
+  heading: "출력하셨나요? 아이폰에서도 이어 가 보세요."
+  text: "Productify가 알림을 보내고, 연속 기록을 자동으로 세고, 기록을 계속 남겨 둡니다. 종이가 다 차도 이어 갈 수 있어요."
+  qr_title: "컴퓨터로 보고 계신가요?"
+  qr_text: "아이폰 카메라로 코드를 스캔하면 App Store의 Productify 페이지가 열립니다."

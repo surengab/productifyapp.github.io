@@ -1,0 +1,37 @@
+{%- comment -%}
+Shown once, beside the card, after a reader opens a printable PDF (the PDF
+opens in a new tab, so this is waiting when they come back). Moved into place
+and revealed by _includes/scripts.html. English by default; /xx/ pages use
+printable_next from _data/i18n/<lang>.yml and their own storefront link.
+{%- endcomment -%}
+{%- assign i18n = site.data.i18n[page.lang] -%}
+{%- if i18n and i18n.printable_next -%}
+{%- assign pn = i18n.printable_next -%}
+<template id="printableNext">
+<aside class="printable-next" aria-label="Productify">
+    <div class="printable-next__copy">
+        <p class="printable-next__heading">{{ pn.heading }}</p>
+        <p class="printable-next__text">{{ pn.text }}</p>
+    </div>
+    <div class="printable-next__actions">
+        <a href="{{ i18n.appstore_url }}" class="download-button" data-cta="printable-next" data-direct>{{ i18n.ui.cta_button }} <span aria-hidden="true">→</span></a>
+        <span class="download-note">{{ i18n.ui.cta_note }}</span>
+    </div>
+    {% include qr-handoff.html title=pn.qr_title text=pn.qr_text %}
+</aside>
+</template>
+{%- else -%}
+<template id="printableNext">
+<aside class="printable-next" aria-label="Try Productify">
+    <div class="printable-next__copy">
+        <p class="printable-next__heading">Printed it? Keep the streak on your phone too.</p>
+        <p class="printable-next__text">Productify reminds you at the right time, counts your streak and keeps your history after the paper runs out.</p>
+    </div>
+    <div class="printable-next__actions">
+        <a href="{{ site.appstore_url }}" class="download-button" data-cta="printable-next">Get Productify free <span aria-hidden="true">→</span></a>
+        <span class="download-note">For iPhone · 5 habits free · No account</span>
+    </div>
+    {% include qr-handoff.html %}
+</aside>
+</template>
+{%- endif -%}

@@ -531,6 +531,35 @@ li a:hover {
     .cta-banner--compact .cta-banner__btns { grid-column: 1; grid-row: auto; margin-top: 24px; }
 }
 
+/* Desktop QR handoff (_includes/qr-handoff.html). Only on wide screens with a
+   mouse and not on iOS, where the App Store button already works directly. */
+.qr-handoff { display: none; }
+@media (min-width: 900px) and (hover: hover) and (pointer: fine) {
+    html:not(.is-ios) .qr-handoff { display: flex; align-items: center; gap: 12px; text-align: left; }
+}
+.qr-handoff img { flex: none; width: 76px; height: 76px; padding: 5px; background: #fff; border-radius: 10px; border: 1px solid var(--border); }
+.qr-handoff p { margin: 0; max-width: 15rem; font-size: .8rem; line-height: 1.45; color: var(--ink-muted); }
+.qr-handoff strong { color: var(--ink); }
+.cta-banner .qr-handoff img { border-color: transparent; }
+.cta-banner .qr-handoff p { color: #B8C4D9; }
+.cta-banner .qr-handoff strong { color: #F8FAFC; }
+.cta-banner--compact .qr-handoff { margin-top: 4px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.1); }
+.cta-banner--compact .qr-handoff img { width: 64px; height: 64px; }
+.inline-cta .qr-handoff img { width: 64px; height: 64px; }
+
+/* After a printable opens: app offer beside the card (_includes/printable-next.html). */
+.printable-next {
+    display: flex; align-items: center; gap: 20px 28px; flex-wrap: wrap;
+    margin: 24px 0; padding: 20px 24px;
+    background: var(--blue-dim); border: 1px solid var(--blue-mid); border-radius: 16px;
+}
+.printable-next[hidden] { display: none; }
+.printable-next__copy { flex: 1 1 280px; min-width: 0; }
+.printable-next__heading { margin: 0 0 4px; font-weight: 700; font-size: 1.05rem; color: var(--ink); }
+.printable-next__text { margin: 0; font-size: .95rem; line-height: 1.55; color: var(--ink-2); }
+.printable-next__actions { flex: none; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.printable-next .qr-handoff img { width: 64px; height: 64px; }
+
 /* --- FOOTER ------------------------------------------------------------ */
 .footer {
     background: var(--dark-bg);

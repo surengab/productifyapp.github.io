@@ -16,6 +16,7 @@
             {%- if cta.link_href %}
             <a href="{{ cta.link_href }}" class="cta-secondary">{{ cta.link_label }}</a>
             {%- endif %}
+            {% include qr-handoff.html %}
         </div>
         {%- unless cta.hide_meta %}
         <p class="cta-banner__meta">

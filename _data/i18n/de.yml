@@ -61,3 +61,10 @@ footer:
   terms: Nutzungsbedingungen (Englisch)
   contact: Kontakt
   tools: Kostenlose Vorlagen & Tools
+# Printable pages: panel shown after a PDF opens (_includes/printable-next.html)
+# and the desktop QR hint beside it (_includes/qr-handoff.html).
+printable_next:
+  heading: "Ausgedruckt? Führ deinen Streak auch auf dem iPhone weiter."
+  text: "Productify erinnert dich zur richtigen Zeit, zählt deinen Streak und speichert deinen Verlauf, auch wenn das Blatt voll ist."
+  qr_title: "Am Computer?"
+  qr_text: "Scanne den Code mit der Kamera deines iPhones, um Productify im App Store zu öffnen."

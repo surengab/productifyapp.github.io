@@ -5,12 +5,12 @@ nav_description: "Count your streak and milestones"
 nav_order: 7.3
 layout: page
 category: Free tool
-title: Habit Streak Calculator - Count Your Streak and Milestones
-seo_title: 'Habit Streak Calculator: Days, Milestones & Consistency'
-description: 'Free habit streak calculator. Enter the day your streak started to see your streak length and the dates you reach 30, 66, 100, and 365 days. Check your consistency too.'
+title: Streak Calculator - Count Your Habit Streak and Milestones
+seo_title: 'Streak Calculator: Count Your Habit Streak and Milestones'
+description: 'Free streak calculator: enter the day your habit streak started to see how many days it is and when you reach 30, 66, 100, and 365 days.'
 og_description: 'How long is your streak, and when do you hit 66 or 100 days? A free calculator for habit streaks, milestone dates, and consistency, with no sign-up.'
 date: '2026-09-28'
-last_modified: '2026-09-28'
+last_modified: '2026-11-07'
 og_type: article
 priority: 0.8
 breadcrumbs:
@@ -65,6 +65,9 @@ extra_css: |-
   .milestones li strong { display: block; color: var(--ink); font-size: 1rem; }
   .milestones li.is-done { border-color: rgba(37,99,235,.35); background: var(--blue-dim); }
   .milestones li.is-done strong::after { content: ' ✓'; color: var(--blue); }
+  .calc-app { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--border); font-size: .95rem; font-weight: 600; }
+  .calc-app a { color: var(--blue-dark); text-decoration: none; }
+  .calc-app a:hover { text-decoration: underline; text-underline-offset: 2px; }
   .calc-note { font-size: .85rem; color: var(--ink-muted); margin-top: 18px; }
   @media (max-width: 760px) {
     .calc-grid { grid-template-columns: 1fr; }
@@ -77,7 +80,7 @@ extra_css: |-
 <section class="page-hero" aria-labelledby="calc-heading">
     <div class="container"><div class="calc-intro">
         <div class="eyebrow">Free tool · No sign-up</div>
-        <h1 id="calc-heading">Habit streak calculator<br><span>how far you’ve come, and what’s next.</span></h1>
+        <h1 id="calc-heading">Streak calculator<br><span>count your habit streak and see what’s next.</span></h1>
         <p class="lead">Enter the day your current streak started to see how many days it has run and when you will reach 30, 66, 100, and 365 days. Then check your consistency, the number that survives a missed day.</p>
     </div></div>
 </section>
@@ -106,6 +109,7 @@ extra_css: |-
                     <p class="calc-big"><span id="streakDays">–</span><small id="streakUnit">day streak</small></p>
                     <p class="calc-line" id="streakNext">Choose a start date to see your streak.</p>
                     <div class="calc-bar" aria-hidden="true"><span id="streakBar"></span></div>
+                    <p class="calc-app"><a href="{{ site.appstore_url }}" data-cta="calculator">Track this streak automatically in Productify <span aria-hidden="true">→</span></a></p>
                 </div>
             </div>
             <ol class="milestones" id="milestoneList" aria-label="Streak milestones"></ol>

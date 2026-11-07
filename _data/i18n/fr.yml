@@ -61,3 +61,10 @@ footer:
   terms: Conditions d’utilisation (en anglais)
   contact: Contact
   tools: Outils et modèles gratuits
+# Printable pages: panel shown after a PDF opens (_includes/printable-next.html)
+# and the desktop QR hint beside it (_includes/qr-handoff.html).
+printable_next:
+  heading: "Imprimé ? Gardez aussi votre série sur iPhone."
+  text: "Productify vous rappelle vos habitudes au bon moment, compte votre série et garde votre historique, même quand la feuille est pleine."
+  qr_title: "Vous êtes sur ordinateur ?"
+  qr_text: "Scannez ce code avec l’appareil photo de votre iPhone pour ouvrir Productify dans l’App Store."
