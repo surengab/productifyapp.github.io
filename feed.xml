@@ -1,0 +1,45 @@
+---
+permalink: /feed.xml
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="utf-8"?>
+{%- comment -%}
+Atom feed of the English blog posts and guides, newest first. Written as a
+plain Liquid template rather than jekyll-feed so it works whether the site is
+built by GitHub Actions or by the branch builder (which ignores Gemfile
+plugins). A document without a `date:` gets the build time from Jekyll, so it
+is left out unless it has `last_modified`, the same rule sitemap.xml uses.
+{%- endcomment -%}
+{%- assign build_day = site.time | date: "%Y-%m-%d" -%}
+{%- assign docs = site.blog | concat: site.guides | where_exp: "d", "d.sitemap != false" | sort: "date" | reverse -%}
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Productify: habits, routines and habit tracking</title>
+  <subtitle>Guides and articles from the makers of Productify, a habit tracker for iPhone.</subtitle>
+  <link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ '/' | absolute_url }}" rel="alternate" type="text/html"/>
+  <id>{{ '/' | absolute_url }}</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author><name>Productify Editorial Team</name><uri>{{ '/editorial/' | absolute_url }}</uri></author>
+  <icon>{{ '/favicon-192x192.png' | absolute_url }}</icon>
+  {%- assign n = 0 -%}
+  {%- for d in docs -%}
+  {%- if n >= 30 %}{% break %}{% endif -%}
+  {%- if d.robots contains 'noindex' or d.redirect_to %}{% continue %}{% endif -%}
+  {%- assign d_day = d.date | date: "%Y-%m-%d" -%}
+  {%- if d_day == build_day and d.last_modified == nil %}{% continue %}{% endif -%}
+  {%- assign updated = d.last_modified | default: d.git_lastmod | default: d.date -%}
+  {%- assign n = n | plus: 1 %}
+  <entry>
+    <title>{{ d.seo_title | default: d.title | xml_escape }}</title>
+    <link href="{{ d.url | absolute_url }}" rel="alternate" type="text/html"/>
+    <id>{{ d.url | absolute_url }}</id>
+    <published>{{ d.date | date_to_xmlschema }}</published>
+    <updated>{{ updated | date_to_xmlschema }}</updated>
+    {%- if d.category %}
+    <category term="{{ d.category | xml_escape }}"/>
+    {%- endif %}
+    <summary>{{ d.description | strip_html | normalize_whitespace | xml_escape }}</summary>
+  </entry>
+  {%- endfor %}
+</feed>

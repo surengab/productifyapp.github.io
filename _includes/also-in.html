@@ -1,0 +1,27 @@
+{%- comment -%}
+"Also in: Deutsch · Français · 日本語 · 한국어" line for English pages that have
+translations (same `translation_key`). Gives each localized twin a contextual
+link from its English page; the header/footer switchers alone carry little
+weight. Renders nothing on localized pages or pages without translations.
+Includes translations.html itself, because page content renders before
+the layout's head.html sets page_translations.
+{%- endcomment -%}
+{%- include translations.html -%}
+{%- assign also_lang = page.lang | default: 'en' -%}
+{%- if also_lang == 'en' and page_translations.size > 1 -%}
+{%- capture also_links -%}
+{%- for l in site.data.languages -%}
+{%- if l.code != 'en' -%}
+{%- for t in page_translations -%}
+{%- if t.lang == l.code -%}
+<a href="{{ t.url }}" hreflang="{{ l.hreflang }}" lang="{{ l.hreflang }}" title="{{ t.title | escape }}">{{ l.name }}</a>|
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign also_list = also_links | split: '|' -%}
+{%- if also_list.size > 0 %}
+<p class="also-in">Also in {{ also_list | join: ' · ' }}</p>
+{%- endif -%}
+{%- endif -%}
