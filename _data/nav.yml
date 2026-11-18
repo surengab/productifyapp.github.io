@@ -11,6 +11,7 @@ dropdowns:
       - { href: /features/habit-templates/, icon: layers, title: "Habit Templates",   blurb: "Start in seconds, not hours",      mobile: "Templates" }
       - { href: /features/measurable-goals/,icon: target, title: "Measurable Goals",  blurb: "Clear targets, less friction", mobile: "Measurable Goals" }
       - { href: /features/streak-tracking/, icon: flame, title: "Streak Tracking",   blurb: "Momentum without the guilt",       mobile: "Streak Tracking" }
+      - { href: /features/diary/,           icon: notebook-pen, title: "Diary",      blurb: "One paper page for every day",     mobile: "Diary" }
 
   - label: Solutions
     items:

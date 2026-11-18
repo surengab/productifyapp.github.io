@@ -1,0 +1,324 @@
+---
+# Before publishing:
+# - Publish together with the app version that ships the Diary (5.34.7), not before.
+# - Facts checked against the app source (Productive2, v5.34.7) on 18 Nov 2026: free (no Pro check), 8 prompts, eraser, evening card after 18:00.
+# - Update "Updated November 2026" and dateModified below to the release date.
+# - Replace the header-only screenshot with a full diary page once a clean one is available.
+layout: page
+title: Diary - One Paper Page for Every Day | Productify
+seo_title: 'Habit Tracker With a Diary: One Page for Every Day'
+description: "Productify's diary gives you one paper page a day with today's habits already on it. Type or write by hand, add stickers, and keep it on your iPhone."
+changefreq: monthly
+priority: 0.9
+image: /assets/social/diary-page.jpg
+og_description: 'A diary inside your habit tracker: one page per day with your habits and a question to start. Type, write by hand or add stickers. It stays on your phone.'
+robots: index, follow
+breadcrumbs:
+- label: Home
+  href: /
+- label: Features
+  href: /#features
+- label: Diary
+  item: /features/diary/
+footer_col:
+  title: Keep the habit
+  links:
+  - href: /guides/how-to-make-journaling-a-habit/
+    label: Make Journaling a Habit
+  - href: /blog/stoic-habits/
+    label: Stoic Habits and the Evening Review
+  - href: /solutions/evening-routine/
+    label: Build an Evening Routine
+  - href: /features/streak-tracking/
+    label: Streak Tracking
+extra_jsonld:
+- |-
+  {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Habit Tracker With a Diary: One Page for Every Day",
+          "description": "Productify's diary gives you one paper page a day with today's habits already on it. Type or write by hand, add stickers, and keep it on your iPhone.",
+          "url": "https://productifyapp.org/features/diary/",
+          "inLanguage": "en",
+          "dateModified": "2026-11-17",
+          "primaryImageOfPage": "https://productifyapp.org/assets/productify-diary-page-header.webp",
+          "isPartOf": { "@type": "WebSite", "name": "Productify", "url": "https://productifyapp.org/" },
+          "about": { "@type": "SoftwareApplication", "name": "Productify - Habit Tracker", "operatingSystem": "iOS", "applicationCategory": "LifestyleApplication" }
+      }
+- |-
+  {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+              {
+                  "@type": "Question",
+                  "name": "Is the diary free?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. The diary is part of Productify's free plan, alongside up to 5 habits. No account is required." }
+              },
+              {
+                  "@type": "Question",
+                  "name": "Does Productify have a journal?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Diary gives you one paper page for every day, inside the app. Each page shows the date, that day's habits with their checkmarks, and a question to get you started." }
+              },
+              {
+                  "@type": "Question",
+                  "name": "Can I write by hand in the diary?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can type on the lines, or pick the pencil, pen or highlighter and write or draw on the same page, in a few preset colors or your own. There is an eraser, and undo works for everything." }
+              },
+              {
+                  "@type": "Question",
+                  "name": "Where are my diary pages stored?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "On your iPhone. Pages save by themselves as you write and are included in your iPhone's regular iCloud or computer backup; there is no separate sync. If you want to share a page, you can export it as an image." }
+              },
+              {
+                  "@type": "Question",
+                  "name": "How do I read older entries?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Swipe across the date to go back a day, or tap the date to open a calendar. All your pages also appear in a grid, where you can open or delete them." }
+              },
+              {
+                  "@type": "Question",
+                  "name": "Can I turn the diary off?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. Go to Settings, then Appearance, and switch off Show Diary in + menu." }
+              }
+          ]
+      }
+extra_css: |-
+  .feature-page-meta-date { font-size: .85rem; color: var(--ink-muted); margin: 0 0 16px; }
+  .diary-shot img { max-width: 560px; border-radius: 18px; border: 1px solid var(--border); background: #FAF8F2; }
+  .diary-prompts { list-style: none; padding: 0; margin: 16px 0 24px; display: grid; gap: 10px; }
+  .diary-prompts li { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 1.05rem; color: var(--ink-2); padding: 10px 16px; border-left: 3px solid var(--border); background: var(--bg-alt); border-radius: 0 10px 10px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 4px 0; }
+  .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 16px 0; font-size: 1rem; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'Inter', sans-serif; }
+  .faq-item.open .faq-question .faq-question__icon { transform: rotate(45deg); }
+  .faq-answer { display: none; padding: 0 0 16px; color: var(--ink-2); line-height: 1.7; }
+  .faq-item.open .faq-answer { display: block; }
+---
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="page-hero-heading">
+    <div class="container">
+        <div class="page-hero__inner">
+            <div class="eyebrow">Feature · Diary</div>
+            <p class="feature-page-meta-date">Updated November 2026</p>
+            <h1 id="page-hero-heading">
+                A diary inside your habit tracker: <span>one paper page for every day</span>
+            </h1>
+            <p class="lead">
+                Your habits show what you did. The diary is where you write how the day went. Each page already has the date and that day's habits on it, plus a question so you never start from a blank page. Write one line or fill the page, by typing or by hand.
+            </p>
+            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+               class="appstore-badge-link" data-cta="hero" aria-label="Download Productify free on the App Store">
+                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="160" height="47">
+            </a>
+            <p style="margin-top: 12px; font-size: .8rem; color: var(--ink-faint);">Free to download · iOS 17+ · No account required</p>
+        </div>
+    </div>
+</section>
+
+<!-- SCREENSHOT -->
+<section class="section feature-shot diary-shot" aria-label="Screenshot">
+    <div class="container">
+        <figure>
+            <img src="/assets/productify-diary-page-header.webp" alt="Top of a Productify diary page for Tuesday 17 November: the habits Stretch, Drink water and Walk, with Walk checked, and the question One small win from today"
+                 width="900" height="535" loading="lazy" decoding="async">
+            <figcaption>Every page starts with the date, that day's habits and a question. Tap ↻ for a different question.</figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section" aria-labelledby="diary-how-heading">
+    <div class="container">
+        <div class="article">
+            <div class="eyebrow">How It Works</div>
+            <h2 id="diary-how-heading">What's on a diary page</h2>
+            <p>
+                Open the diary and you get today's page: the date at the top, your habits for that day with their checkmarks, and a question to get you started, such as:
+            </p>
+            <ul class="diary-prompts">
+                <li>What made today easier?</li>
+                <li>One small win from today</li>
+                <li>How did your habits feel today?</li>
+            </ul>
+            <p>
+                If the question doesn't fit your day, tap ↻ for another. There are eight in all, including “What drained you, and what helped?”, “Who made you smile today?” and “What will you do differently tomorrow?” All eight, with an example answer for each, are in <a href="/blog/end-of-day-reflection-questions/">end-of-day reflection questions</a>. Below the question is the page itself, ready for a line or a whole entry.
+            </p>
+
+            <h3>Opening it</h3>
+            <p>
+                Tap <strong>+</strong> and choose <strong>Diary</strong>. After 6 pm, once every habit due today is done or skipped, a <strong>“How was today?”</strong> card appears on the home screen until you write the day's page, so a line in the diary becomes the last step of the day's check-ins.
+            </p>
+
+            <h3>Type, or write by hand</h3>
+            <p>
+                Type on the lines, or pick the pencil, pen or highlighter and write or draw on the same page. There are a few colors plus your own custom colors, an eraser, and undo for everything. Typed text can be serif, sans or a handwriting style.
+            </p>
+
+            <h3>Stickers</h3>
+            <p>
+                There are 48 hand-drawn stickers for weather, mood, food, nature, habits and frames, with or without color. Tap a sticker, or your own handwriting, to move, turn, resize or delete it. A sun and a tired face can say a lot on a day you don't feel like writing.
+            </p>
+
+            <h3>Paper that matches your app</h3>
+            <p>
+                Choose lined, dotted, grid or plain paper. The page follows your app theme: warm paper by default, lavender on Serene, dark on Mono Black.
+            </p>
+
+            <h3>Going back</h3>
+            <p>
+                Swipe across the date to go back a day, or tap the date to open a calendar. All your pages also appear in a grid, where you can open or delete them.
+            </p>
+
+            <h3>Private by default</h3>
+            <p>
+                Everything saves by itself and stays on your phone; it is included in your iPhone's regular backup, with no separate account or sync. If you want to share a page, export it as an image.
+            </p>
+
+            <h3>Not for you?</h3>
+            <p>
+                Hide it in <strong>Settings › Appearance › Show Diary in + menu</strong>. Your habits work exactly as before.
+            </p>
+
+            <h2>Why keep a diary next to your habits</h2>
+            <p>
+                A checkmark records <em>that</em> you did something. A line in the diary records <em>why</em> it was easy or hard. After a few weeks, the lines explain the pattern in the checkmarks: the walk you skipped three Tuesdays in a row, each time after a late meeting, or the reading habit that only happens when your phone is charging in another room. That is the kind of detail that tells you what to change, and it is hard to remember a week later.
+            </p>
+            <p>
+                Because the habits are already on the page, you don't need to write them out. One honest sentence is enough. If you want help making it a daily habit, read <a href="/guides/how-to-make-journaling-a-habit/">how to make journaling a habit</a>.
+            </p>
+
+            <h2>Ways to use it</h2>
+        </div>
+
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <div class="use-case-card__icon">🌙</div>
+                <h3>One line at night</h3>
+                <p>Answer the question on the page in one sentence after your last habit. On busy days that is the whole entry, and it still counts.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-card__icon">🧭</div>
+                <h3>Notes on missed days</h3>
+                <p>When a habit stays unchecked, write what got in the way. Read those notes back and the fix is usually obvious: a different time, a smaller minimum, a better cue.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-card__icon">🏛️</div>
+                <h3>An evening review</h3>
+                <p>What went well, where did I fall short, what will I do differently tomorrow? The <a href="/blog/stoic-habits/#evening-review">Stoic evening review</a> fits on one page.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-card__icon">✏️</div>
+                <h3>Draw instead of write</h3>
+                <p>Sketch, doodle or add a few stickers for the weather and your mood. A page doesn't need words to bring the day back when you look at it later.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FURTHER READING -->
+<section class="section" aria-labelledby="diary-reading">
+    <div class="container">
+        <div class="article" style="max-width: 780px; margin: 0 auto;">
+            <p style="margin-bottom: 24px;">The diary sits alongside the rest of the <a href="/features/habit-tracker/">habit tracker</a>: <a href="/features/streak-tracking/">streaks</a> and history for each habit, <a href="/features/measurable-goals/">measurable goals</a>, and <a href="/features/habit-duo/">Habit Duo</a> for one shared habit with a friend.</p>
+            <h2 id="diary-reading">Further reading</h2>
+            <ul class="check-list">
+                <li><span><a href="/guides/how-to-make-journaling-a-habit/">How to make journaling a habit</a>: start with one line a day, and what to do after a missed day.</span></li>
+                <li><span><a href="/blog/end-of-day-reflection-questions/">8 end-of-day reflection questions</a>: the diary's questions, with an example answer for each and when to use it.</span></li>
+                <li><span><a href="/blog/stoic-habits/">8 Stoic habits</a>: including the evening review that Seneca kept every night.</span></li>
+                <li><span><a href="/solutions/evening-routine/">Build an evening routine</a>: where a short diary entry fits.</span></li>
+                <li><span><a href="/guides/year-in-pixels/">Year in pixels</a>: one colored square a day, if you'd rather keep a record on paper.</span></li>
+                <li><span><a href="/guides/how-to-track-habits-on-iphone/">How to track habits on iPhone</a>: how a habit tracker compares with Apple's Journal app and Reminders.</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" aria-labelledby="diary-faq-heading">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="eyebrow">FAQ</div>
+            <h2 id="diary-faq-heading">Diary questions</h2>
+        </div>
+        <div class="faq-list" id="diary-faq" style="max-width: 720px; margin: 0 auto;">
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Is the diary free?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>Yes. The diary is part of Productify's free plan, alongside up to 5 habits. No account is required. See <a href="/pricing/">what's in Free and Pro</a>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Does Productify have a journal?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>Yes. The Diary gives you one paper page for every day, inside the app. Each page shows the date, that day's habits with their checkmarks, and a question to get you started.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Can I write by hand in the diary?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>Yes. You can type on the lines, or pick the pencil, pen or highlighter and write or draw on the same page, in a few preset colors or your own. There is an eraser, and undo works for everything.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Where are my diary pages stored?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>On your iPhone. Pages save by themselves as you write and are included in your iPhone's regular iCloud or computer backup; there is no separate sync. If you want to share a page, you can export it as an image.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    How do I read older entries?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>Swipe across the date to go back a day, or tap the date to open a calendar. All your pages also appear in a grid, where you can open or delete them.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Can I turn the diary off?
+                    <span class="faq-question__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <p>Yes. Go to Settings › Appearance and switch off <strong>Show Diary in + menu</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner section--dark" aria-labelledby="cta-heading">
+    <div class="container">
+        <div class="eyebrow" style="background: rgba(255,255,255,.1); color: #93C5FD; border-color: rgba(255,255,255,.1);">Tonight</div>
+        <h2 id="cta-heading">Check off your habits, then write one line.</h2>
+        <p class="lead">
+            The diary is free. Download Productify and open today's page from the + menu; your habits are already on it.
+        </p>
+        <div class="cta-banner__btns">
+            <a href="https://apps.apple.com/us/app/habit-tracker-productify/id1389900237"
+               class="appstore-badge-link" data-cta="banner" aria-label="Download Productify on the App Store">
+                <img src="/appstore_badge.svg" alt="Download on the App Store" class="appstore-badge" width="170" height="50" loading="lazy" decoding="async">
+            </a>
+            <a href="/guides/how-to-make-journaling-a-habit/" class="btn btn-ghost">Make journaling a habit →</a>
+        </div>
+        <p class="cta-banner__meta">
+            Free for up to 5 habits, no account required.
+            <a href="/download/">See what you get</a>
+            <span aria-hidden="true">&middot;</span>
+            <a href="/pricing/">Compare Free and Pro</a>
+        </p>
+    </div>
+</section>

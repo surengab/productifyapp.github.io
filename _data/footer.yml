@@ -12,6 +12,7 @@ features:
     - { href: /features/habit-templates/,  label: "Habit Templates" }
     - { href: /features/measurable-goals/, label: "Measurable Goals" }
     - { href: /features/streak-tracking/,  label: "Streak Tracking" }
+    - { href: /features/diary/,            label: "Diary" }
 
 # Default third column, used when a page does not set `footer_col`.
 contextual:
